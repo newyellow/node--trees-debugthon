@@ -18,6 +18,8 @@ try {
   assert.equal(await page.locator('.park-candidate').count(),1);
   if (name === 'desktop') {
     await page.locator('#park-outline-enabled').uncheck();
+    // fitBounds schedules point rendering; wait for the actual marker frame.
+    await page.waitForFunction(() => document.querySelector('#zoom-label').textContent === 'ZOOM 17' && !document.querySelector('#map-notice').textContent.includes('正在載入'));
     const xy = await page.locator('.leaflet-tile-loaded').first().evaluate(tile => {
       const [z,tx,ty] = new URL(tile.src).pathname.split('/').slice(1).map(v=>parseInt(v));
       const lng=121.5358429,lat=25.0333004, scale=256*2**z,sin=Math.sin(lat*Math.PI/180),r=tile.getBoundingClientRect();

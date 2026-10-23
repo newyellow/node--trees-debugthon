@@ -29,7 +29,11 @@ const drawing = L.layerGroup().addTo(map);
 const scene = new LayerScene(drawing);
 const analysis = createAnalysis({ state, map, scene, visibleLayerIds, loadLayer, scheduleRender });
 const species = createSpecies({ state, map, scene, loadLayer, scheduleRender, fitBounds });
-createParkBoundaries({ map, baseUrl: import.meta.env.BASE_URL, loadParks: async () => { await loadLayer(state.definitions.find(d => d.id === 'parks')); return state.data.get('parks')?.features; } });
+const catalogReady = fetch(`${import.meta.env.BASE_URL}data/manifest.json`).then(async response => {
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
+});
+createParkBoundaries({ map, baseUrl: import.meta.env.BASE_URL, loadParks: async () => { const catalog = await catalogReady; await loadLayer(catalog.layers.find(d => d.id === 'parks')); return state.data.get('parks')?.features; } });
 let densityCache;
 let scheduled;
 function scheduleRender() { clearTimeout(scheduled); scheduled = setTimeout(renderMap, 90); }
@@ -267,9 +271,7 @@ $('#about-dialog').onclick = event => { if (event.target === $('#about-dialog'))
 
 async function init() {
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}data/manifest.json`);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const manifest = await response.json(); state.definitions = manifest.layers;
+    const manifest = await catalogReady; state.definitions = manifest.layers;
     state.snapshot = manifest.fetchedAt;
     const fetchedAt = new Date(manifest.fetchedAt).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false });
     $('#snapshot-date').textContent = `快照 ${fetchedAt.split(' ')[0]}`;
