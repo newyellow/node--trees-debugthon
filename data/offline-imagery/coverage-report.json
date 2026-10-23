@@ -1,0 +1,127 @@
+{
+  "checkedAt": "2026-10-23T11:06:44.912Z",
+  "scope": "臺北市全市含山區，12區實際邊界",
+  "requiredZoomForCrownAnalysis": 19,
+  "complete": false,
+  "images": 262,
+  "bytes": 6812415,
+  "verified": 262,
+  "errors": [],
+  "packages": [],
+  "inventories": {
+    "PHOTO2": {
+      "13": {
+        "images": 20,
+        "intersectingTaipei": 16,
+        "bytes": 623924
+      },
+      "15": {
+        "images": 20,
+        "intersectingTaipei": 20,
+        "bytes": 668670
+      },
+      "16": {
+        "images": 20,
+        "intersectingTaipei": 20,
+        "bytes": 635918
+      },
+      "17": {
+        "images": 49,
+        "intersectingTaipei": 49,
+        "bytes": 1350752
+      },
+      "18": {
+        "images": 24,
+        "intersectingTaipei": 24,
+        "bytes": 559640
+      },
+      "19": {
+        "images": 24,
+        "intersectingTaipei": 24,
+        "bytes": 419513
+      }
+    },
+    "PHOTO2022": {
+      "13": {
+        "images": 20,
+        "intersectingTaipei": 16,
+        "bytes": 361332
+      }
+    },
+    "PHOTO2023": {
+      "13": {
+        "images": 20,
+        "intersectingTaipei": 16,
+        "bytes": 361332
+      }
+    },
+    "PHOTO2024": {
+      "13": {
+        "images": 20,
+        "intersectingTaipei": 16,
+        "bytes": 361332
+      },
+      "17": {
+        "images": 24,
+        "intersectingTaipei": 24,
+        "bytes": 822580
+      }
+    },
+    "PHOTO2025": {
+      "13": {
+        "images": 20,
+        "intersectingTaipei": 16,
+        "bytes": 623924
+      },
+      "16": {
+        "images": 1,
+        "intersectingTaipei": 0,
+        "bytes": 23498
+      }
+    }
+  },
+  "zoom19": [
+    {
+      "layer": "PHOTO2",
+      "images": 24,
+      "intersectingTaipei": 24,
+      "required": 57268,
+      "missing": 57244,
+      "completionPercent": 0.0419
+    },
+    {
+      "layer": "PHOTO2022",
+      "images": 0,
+      "intersectingTaipei": 0,
+      "required": 57268,
+      "missing": 57268,
+      "completionPercent": 0
+    },
+    {
+      "layer": "PHOTO2023",
+      "images": 0,
+      "intersectingTaipei": 0,
+      "required": 57268,
+      "missing": 57268,
+      "completionPercent": 0
+    },
+    {
+      "layer": "PHOTO2024",
+      "images": 0,
+      "intersectingTaipei": 0,
+      "required": 57268,
+      "missing": 57268,
+      "completionPercent": 0
+    },
+    {
+      "layer": "PHOTO2025",
+      "images": 0,
+      "intersectingTaipei": 0,
+      "required": 57268,
+      "missing": 57268,
+      "completionPercent": 0
+    }
+  ],
+  "note": "盤點已存在檔案、SHA-256及圖磚是否與實際市界相交；未下載新影像。低縮放圖磚不能算作第19層影像。未檢查影像實際清晰度及拍攝日期。",
+  "expectedMethod": "將12區實際多邊形逐層與WMTS圖磚矩形求交，保留有面積交集的第19層圖磚，跨區圖磚去重；包括山區"
+}

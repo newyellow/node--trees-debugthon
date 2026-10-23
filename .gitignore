@@ -3,4 +3,7 @@ dist/
 data/raw/
 test-results/
 playwright-report/
+data/offline-imagery/**/*.part
+data/offline-imagery/**/*.tmp
+data/offline-imagery/**/source-key.txt
 .DS_Store

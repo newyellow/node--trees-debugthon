@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-10-23T10:46:31.062Z",
+  "status": "awaiting-official-package",
+  "scope": "臺北市全市（含山區），使用 12 區實際邊界作後續分析遮罩",
+  "bboxCrs": "EPSG:4326",
+  "bbox": [
+    121.4588052324853,
+    24.960317855789974,
+    121.66586599240158,
+    25.21019113795553
+  ],
+  "boundarySource": "https://data.taipei/dataset/detail?id=6b17b31d-4e16-495e-95b1-9fd1f47c80d8",
+  "desiredYears": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "requestedProduct": "高解析度 RGB 正射影像；優先原始 GeoTIFF 及拍攝日期，替代格式 MBTiles",
+  "desiredGroundResolutionMetres": "0.1–0.3（需求值，尚未確認供應；不得將圖磚顯示尺度當作原始解析度）",
+  "offlineService": "https://maps.nlsc.gov.tw/T09/mapshow.action?In_type=web&showOm=true",
+  "offlineServiceYearSelection": "目前表單未提供歷史年度選項，需另外確認年度供應",
+  "offlineServiceMaxZoom": 19,
+  "offlineServiceLevels": [
+    16,
+    17,
+    18,
+    19
+  ],
+  "displayMetresPerPixelAtZoom19": 0.2704192590381991,
+  "estimate": {
+    "method": "全市外接矩形；包括市界外圖磚，並非實際市界內精確數量",
+    "levels": [
+      {
+        "zoom": 16,
+        "minX": 54878,
+        "maxX": 54916,
+        "minY": 28022,
+        "maxY": 28073,
+        "tiles": 2028
+      },
+      {
+        "zoom": 17,
+        "minX": 109757,
+        "maxX": 109833,
+        "minY": 56045,
+        "maxY": 56146,
+        "tiles": 7854
+      },
+      {
+        "zoom": 18,
+        "minX": 219515,
+        "maxX": 219666,
+        "minY": 112091,
+        "maxY": 112292,
+        "tiles": 30704
+      },
+      {
+        "zoom": 19,
+        "minX": 439031,
+        "maxX": 439332,
+        "minY": 224183,
+        "maxY": 224585,
+        "tiles": 121706
+      }
+    ],
+    "tilesPerPackage16to19": 162292,
+    "assumedTileBytes": [
+      20000,
+      80000
+    ],
+    "estimatedGiBPerPackage": [
+      3.02,
+      12.09
+    ],
+    "note": "僅為假設每磚 20–80 KB 的規劃範圍，未抽樣測量；不含容器、索引與原始 GeoTIFF，實際以供應檔案為準"
+  },
+  "purpose": "Trees Debugthon：僅團隊內部離線樹冠辨識、樹木資料交叉比對及年度變化分析，不公開散布影像、不作公開圖磚服務。",
+  "requiredMetadata": [
+    "實際拍攝日期或分區日期索引",
+    "原始地面解析度",
+    "坐標參考系統",
+    "涵蓋範圍與缺漏區",
+    "下載、離線分析及衍生成果之使用條件"
+  ]
+}

@@ -23,6 +23,8 @@
             <h2 id="basemap-title">底圖對照</h2>
             <div class="mode-switch" role="group" aria-label="底圖模式"><button id="basemap-street" aria-pressed="true">街道</button><button id="basemap-aerial" aria-pressed="false">正射航照</button><button id="basemap-blend" aria-pressed="false">混合對照</button></div>
             <div id="aerial-controls" hidden>
+              <label class="density-field aerial-year-field" for="aerial-year">影像年度版本<select id="aerial-year"><option value="latest">最新拼接影像</option><option value="2025">2025 年度版</option><option value="2024">2024 年度版</option><option value="2023">2023 年度版</option><option value="2022">2022 年度版</option></select></label>
+              <p id="aerial-version-note" class="aerial-note">最新拼接影像可能包含不同拍攝年份，請參考各區域浮水印。</p>
               <label id="aerial-opacity-field" class="aerial-opacity" for="aerial-opacity"><span>航照不透明度 <output id="aerial-opacity-value" for="aerial-opacity">60%</output></span><input id="aerial-opacity" type="range" min="0" max="100" step="5" value="60"><span class="opacity-ends"><small>街道</small><small>航照</small></span></label>
               <p class="aerial-note">影像拍攝日期：此介面尚未取得，請勿視為即時現況。影像與樹木調查時間可能不同，點位與樹冠也可能偏移。</p>
               <a class="basemap-source" href="https://maps.nlsc.gov.tw/S09SOA/pro/Wmts_ajax_main.jsp" target="_blank" rel="noopener noreferrer">國土測繪中心・影像來源 ↗</a>

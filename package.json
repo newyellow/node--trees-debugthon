@@ -9,6 +9,9 @@
     "preview": "vite preview --host 127.0.0.1",
     "data:refresh": "node scripts/prepare-data.mjs && node scripts/prepare-regions.mjs",
     "boundaries:refresh": "node scripts/prepare-regions.mjs",
+    "imagery:plan": "node scripts/offline-imagery.mjs plan",
+    "imagery:import": "node scripts/offline-imagery.mjs import",
+    "imagery:download": "node scripts/offline-imagery.mjs download",
     "test": "node --test"
   },
   "dependencies": {
