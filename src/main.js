@@ -3,12 +3,13 @@ import RBush from 'rbush';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
 import { matches, unionBounds, gridGroups } from './explorer.js';
+import { TREE_LAYERS, buildDensityGrid, densityColor, visibleDensityCells } from './density.js';
 
 const $ = selector => document.querySelector(selector);
 const format = value => value.toLocaleString('zh-TW');
 const districts = ['中正區', '大同區', '中山區', '松山區', '大安區', '萬華區', '信義區', '士林區', '北投區', '內湖區', '南港區', '文山區'];
 districts.forEach(name => $('#district').add(new Option(name, name)));
-const state = { definitions: [], active: new Set(['street-trees', 'parks']), data: new Map(), pending: new Map(), errors: new Map(), district: '', query: '', opacity: new Map() };
+const state = { definitions: [], active: new Set(['street-trees', 'parks']), data: new Map(), pending: new Map(), errors: new Map(), district: '', query: '', opacity: new Map(), mode: 'points', cellSize: 250, heatOpacity: 0.6 };
 const map = L.map('map', { zoomControl: false, preferCanvas: true, minZoom: 10, maxZoom: 19 }).setView([25.048, 121.542], 13);
 L.control.zoom({ position: 'topright' }).addTo(map);
 L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
@@ -17,7 +18,9 @@ base.on('tileerror', () => { $('#tile-error').hidden = false; });
 base.on('tileload', () => { $('#tile-error').hidden = true; });
 map.createPane('areas'); map.getPane('areas').style.zIndex = 410;
 map.createPane('points'); map.getPane('points').style.zIndex = 430;
+map.createPane('density'); map.getPane('density').style.zIndex = 405;
 const drawing = L.layerGroup().addTo(map);
+let densityCache;
 let scheduled;
 function scheduleRender() { clearTimeout(scheduled); scheduled = setTimeout(renderMap, 90); }
 map.on('moveend zoomend', scheduleRender);
@@ -45,21 +48,54 @@ function fitBounds(bounds, maxZoom = 17) {
   if (bounds) map.fitBounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]], { padding: [55, 55], maxZoom });
 }
 function filteredFeatures(id) { return (state.data.get(id)?.features ?? []).filter(f => matches(f, state.district, state.query)); }
-function allMatching() { return [...state.active].flatMap(filteredFeatures); }
+function visibleLayerIds() { return [...state.active].filter(id => state.mode !== 'density' || TREE_LAYERS.has(id)); }
+function allMatching() { return visibleLayerIds().flatMap(filteredFeatures); }
+
+function renderDensity(bounds) {
+  const ids = visibleLayerIds().filter(id => state.data.has(id));
+  const key = JSON.stringify([ids, state.district, state.query, state.cellSize]);
+  if (densityCache?.key !== key) {
+    densityCache = { key, grid: buildDensityGrid(ids.map(id => ({ id, features: filteredFeatures(id) })), state.cellSize) };
+  }
+  const cells = visibleDensityCells(densityCache.grid, [bounds.getWest(), bounds.getSouth(), bounds.getEast(), bounds.getNorth()]);
+  for (const cell of cells) {
+    const color = densityColor(cell.density);
+    L.polygon(cell.ring.map(([lng, lat]) => [lat, lng]), { pane: 'density', color, weight: 0.4, opacity: state.heatOpacity, fillColor: color, fillOpacity: state.heatOpacity, className: 'density-cell' })
+      .bindTooltip(`${format(cell.count)} 筆 · ${cell.density.toLocaleString('zh-TW', { maximumFractionDigits: 2 })} 筆／公頃`)
+      .bindPopup(() => {
+        const box = document.createElement('div'); box.className = 'density-popup';
+        const title = document.createElement('h3'); title.textContent = `${state.cellSize} × ${state.cellSize} 公尺網格`;
+        const total = document.createElement('p'); total.textContent = `${format(cell.count)} 筆樹木紀錄 · ${cell.density.toLocaleString('zh-TW', { maximumFractionDigits: 2 })} 筆／公頃`;
+        box.append(title, total);
+        for (const id of visibleLayerIds()) {
+          const row = document.createElement('p'); row.textContent = `${state.definitions.find(d => d.id === id).title}：${format(cell.byLayer[id] ?? 0)} 筆`; box.append(row);
+        }
+        const note = document.createElement('small'); note.textContent = '完整網格統計，套用目前篩選。0 筆代表沒有符合的紀錄，不表示現地無樹；網格範圍不代表已完成調查。'; box.append(note); return box;
+      }, { maxWidth: 300 }).addTo(drawing);
+  }
+  $('#density-legend').dataset.cells = cells.length;
+  $('#cell-area').textContent = `${state.cellSize} m × ${state.cellSize} m · 每格 ${state.cellSize ** 2 / 10000} 公頃`;
+}
 
 function renderMap() {
   drawing.clearLayers(); map.closePopup();
-  let count = 0, loaded = 0;
+  let count = 0;
   const bounds = map.getBounds(), zoom = map.getZoom();
+  const heat = state.mode === 'density', visibleIds = visibleLayerIds();
+  map.getPane('areas').hidden = heat;
+  map.getPane('points').hidden = heat;
+  map.getPane('density').hidden = !heat;
+  if (heat) renderDensity(bounds);
   const areaItems = [], pointItems = [];
   for (const definition of state.definitions) {
     if (!state.active.has(definition.id)) continue;
+    if (!visibleIds.includes(definition.id)) { $(`#count-${definition.id}`).textContent = '點位模式顯示'; continue; }
     const dataset = state.data.get(definition.id);
     if (!dataset) continue;
-    loaded++;
     const features = dataset.index.search({ minX: bounds.getWest(), minY: bounds.getSouth(), maxX: bounds.getEast(), maxY: bounds.getNorth() }).map(item => item.feature).filter(f => matches(f, state.district, state.query));
     count += features.length;
     $(`#count-${definition.id}`).textContent = `${format(features.length)} 筆在視野內`;
+    if (heat) continue;
     const opacity = state.opacity.get(definition.id) ?? 0.8;
     const showAreas = definition.kind === 'polygon' && zoom >= (definition.id === 'tree-pits' ? 18 : 15);
     if (showAreas) {
@@ -94,20 +130,28 @@ function renderMap() {
   }
   areaItems.forEach(draw => draw()); pointItems.forEach(draw => draw());
   $('#visible-count').textContent = format(count);
-  $('#active-count').textContent = state.active.size;
-  $('#layer-count').textContent = `${state.active.size} / ${state.definitions.length}`;
+  $('#active-count').textContent = visibleIds.length;
+  $('#summary-label').textContent = heat ? '目前視野內・符合篩選的樹木紀錄' : '目前視野內・已勾選圖層';
+  $('#layer-count').textContent = `${visibleIds.length} / ${heat ? TREE_LAYERS.size : state.definitions.length}`;
+  $('.section-help').textContent = heat ? '勾選要納入密度統計的樹木資料' : '勾選疊加圖層，點擊地圖查看細節';
   $('#map-title').replaceChildren(document.createTextNode(state.district || '臺北市'), Object.assign(document.createElement('span'), { textContent: state.district ? 'Taipei City' : 'Taipei' }));
   $('#zoom-label').textContent = `ZOOM ${zoom}`;
+  $('#density-legend').hidden = !heat;
+  $('#legend-items').hidden = heat;
+  $('#legend-note').textContent = heat ? '紅少 → 黃中 → 綠多。只畫符合資料的外接矩形；0 筆不代表現地無樹，無色區不作判讀。' : '圓圈數字為合併筆數，點擊可放大。放大後顯示獨立點位與面域。';
   $('#legend-items').replaceChildren(...state.definitions.filter(d => state.active.has(d.id)).map(d => {
     const row = document.createElement('div'); row.className = 'legend-row';
     const swatch = document.createElement('i'); swatch.style.backgroundColor = d.color; if (d.kind === 'polygon') swatch.className = 'area-swatch';
     row.append(swatch, document.createTextNode(d.title)); return row;
   }));
-  const pending = [...state.active].filter(id => state.pending.has(id)).length;
-  const failed = [...state.active].filter(id => state.errors.has(id)).length;
+  const pending = visibleIds.filter(id => state.pending.has(id)).length;
+  const failed = visibleIds.filter(id => state.errors.has(id)).length;
   if (pending) notify(`正在載入 ${pending} 個圖層，首次載入大型資料可能需要數秒…`);
   else if (failed) notify(`${failed} 個圖層載入失敗，可按圖層下方「重試」。`);
+  else if (heat && !visibleIds.length) notify('請勾選「行道樹」或「公園樹木」，開始查看密度。');
   else if (!state.active.size) notify('從左側勾選圖層，開始探索臺北。');
+  else if (heat && !densityCache?.grid.total) notify('沒有符合的樹木紀錄；請調整行政區或搜尋條件。');
+  else if (heat) notify(`密度模式 · ${state.cellSize} 公尺固定網格 · 紅少、黃中、綠多 · 點擊網格查看筆數。`);
   else if (!count) notify('目前視野沒有符合的資料；可調整篩選或按「符合資料」。');
   else notify(zoom < 15 ? '全覽模式 · 數字圓圈合併顯示所有紀錄，點擊可放大。' : zoom < 18 ? '街區模式 · 樹穴放大至層級 18 顯示實際範圍。' : '細節模式 · 點擊點位或面域，查看官方原始屬性。');
 }
@@ -133,10 +177,13 @@ async function loadLayer(definition) {
 }
 function renderLayers() {
   $('#layers').replaceChildren(...state.definitions.map(definition => {
+    const unavailable = state.mode === 'density' && !TREE_LAYERS.has(definition.id);
     const active = state.active.has(definition.id), loaded = state.data.has(definition.id), pending = state.pending.has(definition.id), error = state.errors.get(definition.id);
     const card = document.createElement('div'); card.className = `layer-card ${active ? 'active' : ''}`; card.style.setProperty('--layer-color', definition.color);
+    card.classList.toggle('density-unavailable', unavailable);
     const label = document.createElement('label'); label.className = 'layer-label';
     const checkbox = document.createElement('input'); checkbox.type = 'checkbox'; checkbox.checked = active; checkbox.setAttribute('aria-label', `顯示${definition.title}`);
+    checkbox.disabled = unavailable;
     checkbox.onchange = () => {
       if (checkbox.checked) { state.active.add(definition.id); loadLayer(definition); } else state.active.delete(definition.id);
       renderLayers(); scheduleRender();
@@ -147,7 +194,7 @@ function renderLayers() {
     label.append(checkbox, swatch, title, total);
     const meta = document.createElement('div'); meta.className = 'layer-meta';
     const status = document.createElement('span'); status.id = `count-${definition.id}`;
-    status.textContent = error ? `載入失敗：${error}` : pending ? '載入中…' : active && loaded ? '已載入' : definition.kind === 'point' ? '位置點資料' : '面域資料';
+    status.textContent = unavailable ? '點位模式顯示' : error ? `載入失敗：${error}` : pending ? '載入中…' : active && loaded ? '已載入' : definition.kind === 'point' ? '位置點資料' : '面域資料';
     meta.append(status, externalLink(definition.source, '來源 ↗'));
     card.append(label, meta);
     if (active) {
@@ -156,11 +203,24 @@ function renderLayers() {
       const rangeLabel = document.createElement('label'); rangeLabel.className = 'opacity-control'; rangeLabel.append(document.createTextNode('透明度'));
       const range = document.createElement('input'); range.type = 'range'; range.min = '0.1'; range.max = '1'; range.step = '0.1'; range.value = state.opacity.get(definition.id) ?? 0.8; range.setAttribute('aria-label', `${definition.title}透明度`);
       range.oninput = () => { state.opacity.set(definition.id, Number(range.value)); scheduleRender(); };
-      rangeLabel.append(range); card.append(rangeLabel);
+      rangeLabel.append(range); if (state.mode !== 'density') card.append(rangeLabel);
     }
     return card;
   }));
 }
+
+function setMode(mode) {
+  state.mode = mode;
+  $('#point-mode').setAttribute('aria-pressed', mode === 'points');
+  $('#density-mode').setAttribute('aria-pressed', mode === 'density');
+  $('#density-controls').hidden = mode !== 'density';
+  $('.map-legend').classList.toggle('heat-legend', mode === 'density');
+  renderLayers(); scheduleRender();
+}
+$('#point-mode').onclick = () => setMode('points');
+$('#density-mode').onclick = () => setMode('density');
+$('#grid-size').onchange = event => { state.cellSize = Number(event.target.value); scheduleRender(); };
+$('#heat-opacity').oninput = event => { state.heatOpacity = Number(event.target.value); scheduleRender(); };
 
 $('#district').onchange = async event => {
   state.district = event.target.value;
