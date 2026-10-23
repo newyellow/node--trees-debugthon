@@ -26,3 +26,19 @@ export function parseCSV(bytes, encoding = 'utf-8') {
 export function validCoordinate(lng, lat) {
   return String(lng).trim() !== '' && String(lat).trim() !== '' && Number.isFinite(Number(lng)) && Number.isFinite(Number(lat)) && +lng >= 121.3 && +lng <= 121.8 && +lat >= 24.8 && +lat <= 25.3;
 }
+
+// Only validated, currently scored capabilities may contribute; never coerce N/A to zero.
+export const CAPABILITIES = Object.freeze([
+  { key: 'treeDensity', label: '管理樹木密度', color: '#238443' },
+  { key: 'protectedDensity', label: '受保護樹木', color: '#e58b19' },
+  { key: 'richness', label: '來源名稱豐富度', color: '#8654b9' },
+  { key: 'binDensity', label: '清潔箱便利代理', color: '#1685b5' }
+].map(Object.freeze));
+export const TIE_COLOR = '#b45b83', NEUTRAL_COLOR = '#a6adb0';
+export function dominantCapability(scores = {}) {
+  const valid = CAPABILITIES.filter(c => Number.isFinite(scores?.[c.key]) && scores[c.key] >= 0 && scores[c.key] <= 100);
+  const score = valid.length ? Math.max(...valid.map(c => scores[c.key])) : null;
+  if (score === null || score === 0) return { kind: 'neutral', keys: [], score, color: NEUTRAL_COLOR, text: score === 0 ? '有效能力分數皆為0（非現地缺乏）' : '尚無有效能力分數（N/A）' };
+  const leaders = valid.filter(c => scores[c.key] === score);
+  return { kind: leaders.length > 1 ? 'tie' : 'single', keys: leaders.map(c => c.key), score, color: leaders.length > 1 ? TIE_COLOR : leaders[0].color, text: (leaders.length > 1 ? '多項並列最高：' : '最高能力：') + leaders.map(c => c.label).join('、') + ' · ' + score + ' / 100' };
+}

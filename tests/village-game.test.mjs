@@ -43,3 +43,13 @@ test('derived snapshot conservation, source attribution, identities and all scor
     for (const k of ['treeDensity','protectedDensity','richness','binDensity']) assert.equal(v.scores[k],relativeScore(v[k],d.villages.map(r => r[k])));
   }
 });
+
+test('dominant capability: stable palette, ties, zero and missing', async () => {
+ const {dominantCapability:d, CAPABILITIES:c,TIE_COLOR,NEUTRAL_COLOR}=await import('../src/workspaces/02/domain.js');
+ assert.equal(new Set(c.map(x=>x.color)).size,4);
+ for(const x of c) {const r=d({[x.key]:99,native:100,birdsInsects:100});assert.equal(r.color,x.color);assert.deepEqual(r.keys,[x.key]);assert.equal(r.score,99);}
+ const tie=d({richness:80,treeDensity:80,binDensity:10}); assert.equal(tie.kind,'tie');assert.equal(tie.color,TIE_COLOR);assert.deepEqual(tie.keys,['treeDensity','richness']);assert.match(tie.text,/並列/);
+ for(const scores of [{},{treeDensity:NaN,richness:null},{treeDensity:-1,binDensity:101},{treeDensity:0,protectedDensity:0}]) {const r=d(scores);assert.equal(r.kind,'neutral');assert.equal(r.color,NEUTRAL_COLOR);assert.deepEqual(r.keys,[]);}
+ assert.equal(d({treeDensity:0}).score,0);assert.equal(d(null).score,null);
+ const data=JSON.parse(await read('public/data/village-game.json'));const counts={};for(const v of data.villages){const r=d(v.scores);counts[r.kind]=(counts[r.kind]||0)+1;}assert.deepEqual(counts,{single:434,tie:14,neutral:8});
+});
