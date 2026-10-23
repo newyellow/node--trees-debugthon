@@ -1,3 +1,5 @@
+import { createParkBoundaries } from './parks/ui.js';
+import { parkKey } from './parks/data.js';
 import L from 'leaflet';
 import RBush from 'rbush';
 import 'leaflet/dist/leaflet.css';
@@ -27,6 +29,7 @@ const drawing = L.layerGroup().addTo(map);
 const scene = new LayerScene(drawing);
 const analysis = createAnalysis({ state, map, scene, visibleLayerIds, loadLayer, scheduleRender });
 const species = createSpecies({ state, map, scene, loadLayer, scheduleRender, fitBounds });
+createParkBoundaries({ map, baseUrl: import.meta.env.BASE_URL, loadParks: async () => { await loadLayer(state.definitions.find(d => d.id === 'parks')); return state.data.get('parks')?.features; } });
 let densityCache;
 let scheduled;
 function scheduleRender() { clearTimeout(scheduled); scheduled = setTimeout(renderMap, 90); }
@@ -37,7 +40,7 @@ function externalLink(url, text) {
 }
 function notify(message) { $('#map-notice').textContent = message; }
 function featurePopup(feature, definition) {
-  const box = document.createElement('div'); box.className = 'feature-popup';
+  const box = document.createElement('div'); box.className = 'feature-popup'; if (definition.id === 'parks') box.dataset.officialParkKey = parkKey(feature);
   const tag = document.createElement('div'); tag.className = 'popup-tag'; tag.style.color = definition.color; tag.textContent = definition.title;
   const title = document.createElement('h3'); title.textContent = feature.properties._name;
   box.append(tag, title);

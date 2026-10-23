@@ -49,6 +49,7 @@
               <div id="analysis-status" role="status"></div>
             </div>
           </section>
+          <section class="park-boundary-section" aria-labelledby="park-boundary-title"><h2 id="park-boundary-title">公園輪廓 · 人工對照</h2><label><input type="checkbox" id="park-outline-enabled"> 顯示所選公園候選輪廓</label><label class="density-field" for="park-select">選擇官方公園點位<select id="park-select"><option value="">先啟用輪廓或點此載入</option></select></label><p>虛線為 OSM 候選，綠實線為本機確認、紅虛線為本機否決。這不是官方公園邊界；確認／否決僅存於此瀏覽器，不會送出或公開驗證。</p><p id="park-boundary-status" role="status">尚未載入；不會隨地圖移動請求 Overpass。</p><button id="park-boundary-retry" hidden>重試公園輪廓</button><div id="park-candidates"></div><p id="park-boundary-source"></p><button id="park-review-export">匯出本機審查</button><button id="park-review-reset">清除全部本機審查</button><p id="park-review-feedback" role="status"></p></section>
           <section class="layer-section"><div class="section-heading"><h2>資料圖層 <span id="layer-count">0 / 5</span></h2><button id="clear-layers" class="text-button">全部關閉</button></div><p class="section-help">勾選疊加圖層，點擊地圖查看細節</p><div id="layers" aria-live="polite"><p class="loading">正在讀取資料目錄…</p></div></section>
           <section class="caution"><span aria-hidden="true">ⓘ</span><div><strong>資料探索，不是種植建議</strong><p>樹穴不等於空穴；樹木點位也不等於樹冠範圍。移除履歷與可種植性仍需進一步確認。</p></div></section>
           <footer class="sidebar-footer"><span id="snapshot-date">官方開放資料快照</span><a href="https://puma.taipei/hackathon#issue-1" target="_blank" rel="noreferrer">活動題目 ↗</a></footer>
