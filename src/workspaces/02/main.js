@@ -1,6 +1,8 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
+import { createCapabilityRadar } from './capability-radar.js';
+import './capability-radar.css';
 import { CAPABILITIES, dominantCapability, TIE_COLOR, NEUTRAL_COLOR } from './domain.js';
 const $ = id => document.getElementById(id), base = import.meta.env.BASE_URL;
 let data, regions, map, group, selected, visible = [], layers = new Map();
@@ -12,16 +14,44 @@ function card(title, score, raw, note) {
   if (score !== null) { const meter = el('meter'); meter.min = 0; meter.max = 100; meter.value = score; meter.setAttribute('aria-label', title + '相對分數'); n.append(meter); }
   n.append(el('p', raw, 'raw'), el('p', note, 'caveat')); return n;
 }
-function select(id, fit = true) {
+let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
+function radar(v,size=170,compact=false) { return createCapabilityRadar({axes:CAPABILITIES.map(c=>({...c,value:v.scores[c.key]})),size,compact,label:'能力概覽'}); }
+function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?.78:id===selected?.70:.48}); }
+function hideHover() { $('hover-preview').hidden=true; if(hovered) {styleVillage(hovered);hovered=null;} }
+function showHover(v,point,keyboard=false) {
+ if(popup?.isOpen() || (!keyboard&&!matchMedia('(hover:hover)').matches))return;
+ if(hovered!==v.id) {hideHover();hovered=v.id;$('hover-preview').replaceChildren(el('strong',v.district+'・'+v.name),radar(v,100,true),el('small',CAPABILITIES.map((c,i)=>(i+1)+': '+v.scores[c.key]).join(' · ')),el('small','原生／鳥蟲 N/A'));styleVillage(v.id,true);}
+ const n=$('hover-preview');n.hidden=false;n.style.left=Math.max(8,Math.min(point.x+16,innerWidth-n.offsetWidth-8))+'px';n.style.top=Math.max(120,Math.min(point.y+12,innerHeight-n.offsetHeight-30))+'px';
+}
+function openDetails(trigger,advice=false) {openPanel('passport',trigger);$('planting-advice').hidden=!advice;$('passport').querySelector('.panel-scroll').scrollTop=0;}
+function showOverview(v,latlng,trigger) {
+ hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('passport-toggle');
+ const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
+ content.append(el('h2',v.district+'・'+v.name),radar(v),el('p',dominantCapability(v.scores).text,'overview-strength'));
+ const summary=el('p',undefined,'overview-summary');summary.append(el('span','管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆'),el('br'),el('span','來源名稱 '+fmt(v.richness)+' 類 · 清潔箱 '+fmt(v.bins)+' 處'),el('br'),el('span','快照相對分數；密度／便利為代理指標'),el('br'),el('span','原生比例 N/A · 鳥蟲 N/A'));content.append(summary);
+ const low=CAPABILITIES.filter(c=>Number.isFinite(v.scores[c.key])).sort((a,b)=>v.scores[a.key]-v.scores[b.key])[0]; if(low && v.scores[low.key]<Math.max(...CAPABILITIES.map(c=>v.scores[c.key]))) content.append(el('p',low.label+'分數低於本里其他指標；仍須考量面積與調查覆蓋。','overview-state')); const actions=el('div',undefined,'overview-actions');for(const [text,advice] of [['查看細節',false],['種樹建議',true]]) {const b=el('button',text);b.type='button';b.onclick=()=>openDetails(b,advice);actions.append(b);}content.append(actions);
+ L.DomEvent.disableClickPropagation(content);L.DomEvent.disableScrollPropagation(content);
+ popup=L.popup({className:'village-popup',maxWidth:330,minWidth:Math.min(270,innerWidth-72),maxHeight:Math.max(130,Math.min(510,innerHeight-205)),autoPanPaddingTopLeft:[16,135],autoPanPaddingBottomRight:[16,35],closeOnEscapeKey:false}).setLatLng(latlng||layers.get(v.id).getBounds().getCenter()).setContent(content).openOn(map);
+ popup.on('remove',()=>{if(!panelIds.some(id=>!$(id).hidden)){const n=popupFocus;if(n?.isConnected&&!n.closest('[hidden]'))n.focus({preventScroll:true});else $('passport-toggle').focus({preventScroll:true});}});
+}
+function switchBasemap(kind,retry=false) {
+ if(activeBasemap)map.removeLayer(activeBasemap);basemapKind=kind;$('basemap').value=kind;$('tile-retry').hidden=true;
+ $('imagery-note').textContent=kind==='aerial'?'國土測繪中心最新拼接航照；非即時影像，未提供精確攝影日期。':'OpenStreetMap 街道圖';
+ const layer=L.tileLayer(kind==='aerial'?'https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}':'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:21,maxNativeZoom:19,attribution:kind==='aerial'?'© <a href="https://www.nlsc.gov.tw/">內政部國土測繪中心</a>':'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
+ activeBasemap=layer;let failed=false;layer.on('tileerror',()=>{if(failed||activeBasemap!==layer)return;failed=true;if(kind==='aerial'){switchBasemap('street');$('tile-status').textContent='航照載入失敗，已回到街道圖。';$('tile-retry').textContent='重試航照';}else{$('tile-status').textContent='街道底圖載入失敗；里界仍可操作。';$('tile-retry').textContent='重試底圖';}$('tile-retry').hidden=false;});
+ if(!retry)$('tile-status').textContent='';layer.addTo(map);
+}
+function select(id, fit = true, latlng, trigger = document.activeElement) {
   const v = data.villages.find(r => r.id === id); if (!v) return; selected = id;
-  layers.forEach((l, key) => l.setStyle({ color: key === id ? '#172f35' : '#50616a', weight: key === id ? 4 : 1, fillOpacity: key === id ? .70 : .48 }));
+  layers.forEach((l,key)=>styleVillage(key));
   map.stop(); map.invalidateSize({pan:false,animate:false});
-  layers.get(id)?.bringToFront(); if (fit && layers.has(id)) map.fitBounds(layers.get(id).getBounds(), { animate: false, paddingTopLeft: [24,110], paddingBottomRight: innerWidth > 760 ? [440,70] : innerHeight <= 500 ? [365,40] : [24, Math.round(innerHeight*.52)], maxZoom: 16 });
-  openPanel('passport', document.activeElement);
+  layers.get(id)?.bringToFront(); if(fit&&layers.has(id))map.fitBounds(layers.get(id).getBounds(),{animate:false,paddingTopLeft:[35,145],paddingBottomRight:[35,60],maxZoom:16});
+  showOverview(v,latlng,trigger);
   const strongest = dominantCapability(v.scores); $('strongest').textContent = strongest.text; $('strongest').style.borderColor = strongest.color;
   $('passport-toggle').hidden = false;
   $('passport').querySelector('.panel-scroll').scrollTop = 0;
   $('village-title').textContent = v.district + '・' + v.name;
+  $('advice-evidence').textContent='本里快照：管理樹 '+fmt(v.trees)+' 筆、來源名稱 '+fmt(v.richness)+' 類、保護名冊 '+fmt(v.protected)+' 筆、清潔箱 '+fmt(v.bins)+' 處。先核對現場紀錄與遮蔭缺口；名稱類別不等於原生物種。';
   $('village-meta').textContent = '里全面積 ' + fmt(v.areaKm2, 3) + ' km²｜固定參考母體：全臺北456里｜快照 ' + data.treeSnapshot.slice(0,10);
   $('cards').replaceChildren(
     card('01 管理樹木密度 · 代理指標', v.scores.treeDensity, fmt(v.treeDensity,1) + ' 筆/km²｜' + fmt(v.trees) + ' 筆 ÷ ' + fmt(v.areaKm2,3) + ' km²', '不是綠覆率、樹冠面積或全里樹木普查。'),
@@ -61,8 +91,10 @@ async function load() {
     if (data.schemaVersion !== 1 || data.villages.length !== 456 || regions.features.length !== 456 || regions.treeSnapshot !== data.treeSnapshot || digest !== data.inputHashes['regions.json']) throw new Error('快照或里界版本不一致');
     const ids = new Set(regions.features.map(f => f.properties.id)); if (new Set(data.villages.map(v => v.id)).size !== 456 || data.villages.some(v => !ids.has(v.id))) throw new Error('里代碼不一致');
     if (!map) {
-      map = L.map('map', { scrollWheelZoom: true, zoomControl: false, zoomAnimation: false }).setView([25.06,121.55],11);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).on('tileerror', () => { $('tile-status').textContent = '底圖暫時無法載入；里界與清單仍可操作。請稍後重新整理以重試底圖。'; }).addTo(map);
+      map = L.map('map', { scrollWheelZoom: true, zoomControl: false, zoomAnimation: false, fadeAnimation: false }).setView([25.06,121.55],11);
+      switchBasemap('street');
+      $('basemap').onchange=()=>switchBasemap($('basemap').value);
+      $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
       L.control.zoom({ position: 'bottomleft' }).addTo(map);
       group = L.featureGroup().addTo(map);
     }
@@ -71,11 +103,13 @@ async function load() {
     regions.features.forEach(f => {
       const v = villagesById.get(f.properties.id), strength = dominantCapability(v.scores);
       const l = L.geoJSON(f, { style: { color: '#50616a', weight: 1, fillColor: strength.color, fillOpacity: .48 } });
-      l.bindTooltip(() => el('span', v.district + v.name + '｜' + strength.text));
-      l.on('click', () => select(v.id, false));
+      l.on('mouseover mousemove',e=>showHover(v,e.containerPoint||map.latLngToContainerPoint(l.getBounds().getCenter())));
+      l.on('mouseout',hideHover);
+      l.on('click',e=>select(v.id,false,e.latlng,e.originalEvent?.target));
       l.eachLayer(path => {
         path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜' + strength.text);
-          node.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,false); } });
+          node.onfocus=()=>showHover(v,map.latLngToContainerPoint(l.getBounds().getCenter()),true);node.onblur=hideHover;
+          node.onkeydown = e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,false,undefined,node); popup?.getElement()?.querySelector('button')?.focus({preventScroll:true}); } };
         });
       });
       layers.set(v.id,l); group.addLayer(l);
@@ -84,7 +118,7 @@ async function load() {
     [...new Set(data.villages.map(v => v.district))].sort().forEach(d => { const o = el('option',d); o.value = d; $('district').append(o); });
     ['district','search','reset'].forEach(id => $(id).disabled = false);
     $('district').onchange = filter; $('search').oninput = filter;
-    $('reset').onclick = () => { $('district').value = ''; $('search').value = ''; filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] }); };
+    $('reset').onclick = () => { map.closePopup();hideHover(); $('district').value = ''; $('search').value = ''; filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] }); };
     filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] });
     provenance();
     $('status').textContent = '護照已就緒・456里界與真實快照｜分數是資料相對位置，不是地方好壞。';
@@ -98,15 +132,17 @@ function closePanel(id, focus = true) {
 function openPanel(id, trigger) {
   panelIds.forEach(other => { if(other !== id) closePanel(other,false); });
   returnFocus.set(id,trigger); $(id).hidden = false; $(id+'-toggle')?.setAttribute('aria-expanded','true');
-  $(id).querySelector('button')?.focus({preventScroll:true});
+  hideHover();$(id).querySelector('button')?.focus({preventScroll:true});
 }
 panelIds.forEach(id => {
   const toggle = $(id+'-toggle'); toggle.onclick = () => $(id).hidden ? openPanel(id,toggle) : closePanel(id);
   $(id).querySelector('[data-close]').onclick = () => closePanel(id);
 });
+$('passport-toggle').onclick=()=>{if(selected)select(selected,false,undefined,$('passport-toggle'));};
 for(const node of document.querySelectorAll('.surface')) { L.DomEvent.disableClickPropagation(node); L.DomEvent.disableScrollPropagation(node); }
-document.addEventListener('keydown', e => { if(e.key === 'Escape') { const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } } });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') { const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
 for(const item of [...CAPABILITIES, {label:'多項正值能力並列最高',color:TIE_COLOR}, {label:'有效分數皆0／無有效分數',color:NEUTRAL_COLOR}]) {
   const li = el('li',item.label); const swatch = el('span',undefined,'swatch'); swatch.style.background = item.color; li.prepend(swatch); $('legend-items').append(li);
 }
+$('detail-method').onclick=()=>openPanel('method',$('detail-method'));
 $('retry').onclick = load; load();
