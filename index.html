@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#244d3d" />
+    <meta name="description" content="探索臺北市行道樹、公園、樹穴與人行道開放資料的互動地圖。" />
+    <title>Trees Debugthon · 臺北樹木資料探索</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Trees Debugthon 首頁"><span class="brand-icon">♧</span><span>TREES <b>DEBUGTHON</b><small>臺北樹木資料探索</small></span></a>
+        <div class="project-label"><span class="live-dot"></span> 市政 debug 松 <span class="slash">/</span> ISSUE 01</div>
+        <button id="about-button" class="quiet-button">資料說明 <span>↗</span></button>
+      </header>
+      <div class="workspace">
+        <aside class="sidebar" aria-label="資料圖層與篩選">
+          <div class="sidebar-intro"><div class="eyebrow">TAIPEI · OPEN DATA EXPLORER</div><h1>先看見樹，<br>再想像城市。</h1><p>把城市的綠意攤在地圖上。<br>從現有資料，探索種樹的下一步。</p></div>
+          <form id="search-form" role="search"><label class="sr-only" for="search">搜尋資料中的路名、公園或樹種</label><div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜尋路名、公園、樹種…" autocomplete="off"><button aria-label="定位符合的資料" type="submit">↵</button></div></form>
+          <div class="district-field"><label for="district">探索範圍</label><select id="district"><option value="">全臺北市</option></select></div>
+          <section class="layer-section"><div class="section-heading"><h2>資料圖層 <span id="layer-count">0 / 5</span></h2><button id="clear-layers" class="text-button">全部關閉</button></div><p class="section-help">勾選疊加圖層，點擊地圖查看細節</p><div id="layers" aria-live="polite"><p class="loading">正在讀取資料目錄…</p></div></section>
+          <section class="caution"><span aria-hidden="true">ⓘ</span><div><strong>資料探索，不是種植建議</strong><p>樹穴不等於空穴；樹木點位也不等於樹冠範圍。移除履歷與可種植性仍需進一步確認。</p></div></section>
+          <footer class="sidebar-footer"><span id="snapshot-date">官方開放資料快照</span><a href="https://puma.taipei/hackathon#issue-1" target="_blank" rel="noreferrer">活動題目 ↗</a></footer>
+        </aside>
+        <main class="map-shell" aria-label="互動地圖">
+          <div id="map" aria-label="臺北樹木資料地圖"></div>
+          <div class="map-heading"><span class="map-kicker">探索地圖</span><h2 id="map-title">臺北市 <span>Taipei</span></h2></div>
+          <div class="map-tools"><button id="reset-map" title="回到臺北市全覽">⌂ <span>全市視角</span></button><button id="fit-data" title="縮放至目前符合條件的資料">⊡ <span>符合資料</span></button></div>
+          <div class="map-summary"><span class="summary-icon">♧</span><div><span>目前視野內・已勾選圖層</span><strong id="visible-count">—</strong></div><span class="summary-unit">筆資料</span><div class="summary-divider"></div><div class="summary-layers"><strong id="active-count">0</strong><span>開啟圖層</span></div></div>
+          <div id="map-notice" class="map-notice" role="status">正在載入官方資料…</div>
+          <div class="map-legend" aria-label="地圖圖例"><div class="legend-heading">圖例 <span id="zoom-label">ZOOM 13</span></div><div id="legend-items"></div><p>圓圈數字為合併筆數，點擊可放大。<br>放大後顯示獨立點位與面域。</p></div>
+          <div id="tile-error" class="tile-error" hidden>底圖暫時無法載入，請確認網路連線；資料圖層仍可操作。</div>
+        </main>
+      </div>
+    </div>
+    <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-header"><div><div class="eyebrow">DATA NOTES</div><h2 id="about-title">這張地圖裡有什麼？</h2></div><button id="close-dialog" aria-label="關閉資料說明">×</button></div><p>本工具使用活動所列的官方開放資料快照，沒有模擬資料。資料以筆數呈現，不應跨圖層加總為樹木總數。</p><div id="quality-report"></div><div class="dialog-note"><strong>怎麼閱讀這些資料</strong><ul><li>TWD97（EPSG:3826）已轉換為 WGS84 經緯度；無效或超出臺北合理座標範圍的紀錄不繪製。</li><li>縮小時採空間網格合併筆數，不抽樣；縮放至街廓即可查看個別紀錄。合併位置與圖形中心點不表示實際樹木座標。</li><li>樹穴資料包含花圃，不代表空缺；公園基本資料是位置點，不是公園邊界。資料中沒有樹冠面積與完整移除原因，不能據此直接判定樹蔭公平或可種植地點。</li><li>各圖層調查與更新時間不同；快照擷取時間不等於現地調查時間。原始屬性可點選資料查看。</li><li>資料依來源頁授權使用，政府資料集標示「政府資料開放授權條款第 1 版」。底圖 © OpenStreetMap contributors，地圖引擎 Leaflet。</li></ul></div></dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
