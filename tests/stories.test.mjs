@@ -7,5 +7,5 @@ test('story prototype labels unpublished content and source placeholders', () =>
   assert.ok(!html.includes('<form'));
 });
 test('story page has accessible native disclosure and base-aware navigation', () => {
-  for (const text of ['lang="zh-Hant"', 'href="#main"', '<details><summary>展開故事欄位</summary>', 'href="%BASE_URL%explorer/"', 'id="first-story"']) assert.ok(html.includes(text), text);
+  for (const text of ['lang="zh-Hant"', 'href="#main"', '<details><summary>展開故事欄位</summary>', 'href="%BASE_URL%explorer/index.html"', 'id="first-story"']) assert.ok(html.includes(text), text);
 });
