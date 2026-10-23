@@ -19,7 +19,7 @@ export function gridGroups(features, project, cellSize) {
     const point = project([(s + n) / 2, (w + e) / 2]);
     const key = `${Math.floor(point.x / cellSize)},${Math.floor(point.y / cellSize)}`;
     let cell = cells.get(key);
-    if (!cell) { cell = { features: [], lat: 0, lng: 0 }; cells.set(key, cell); }
+    if (!cell) { cell = { key, features: [], lat: 0, lng: 0 }; cells.set(key, cell); }
     cell.features.push(feature); cell.lat += (s + n) / 2; cell.lng += (w + e) / 2;
   }
   return [...cells.values()].map(c => ({ ...c, lat: c.lat / c.features.length, lng: c.lng / c.features.length }));

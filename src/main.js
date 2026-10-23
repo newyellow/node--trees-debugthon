@@ -2,14 +2,17 @@ import L from 'leaflet';
 import RBush from 'rbush';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
-import { matches, unionBounds, gridGroups } from './explorer.js';
+import { matches, unionBounds } from './explorer.js';
 import { TREE_LAYERS, buildDensityGrid, densityColor, visibleDensityCells } from './density.js';
+import { createAnalysis } from './analysis-ui.js';
+import { LayerScene } from './layer-scene.js';
+import { renderPointLayer } from './point-layers.js';
 
 const $ = selector => document.querySelector(selector);
 const format = value => value.toLocaleString('zh-TW');
 const districts = ['中正區', '大同區', '中山區', '松山區', '大安區', '萬華區', '信義區', '士林區', '北投區', '內湖區', '南港區', '文山區'];
 districts.forEach(name => $('#district').add(new Option(name, name)));
-const state = { definitions: [], active: new Set(['street-trees', 'parks']), data: new Map(), pending: new Map(), errors: new Map(), district: '', query: '', opacity: new Map(), mode: 'points', cellSize: 250, heatOpacity: 0.6 };
+const state = { definitions: [], active: new Set(['street-trees', 'parks']), data: new Map(), pending: new Map(), errors: new Map(), district: '', query: '', opacity: new Map(), mode: 'points', cellSize: 250, heatOpacity: 0.6, analysisShape: 'grid', treeRadius: 10, treeTarget: 10, coverageTarget: 0.7 };
 const map = L.map('map', { zoomControl: false, preferCanvas: true, minZoom: 10, maxZoom: 19 }).setView([25.048, 121.542], 13);
 L.control.zoom({ position: 'topright' }).addTo(map);
 L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
@@ -20,6 +23,8 @@ map.createPane('areas'); map.getPane('areas').style.zIndex = 410;
 map.createPane('points'); map.getPane('points').style.zIndex = 430;
 map.createPane('density'); map.getPane('density').style.zIndex = 405;
 const drawing = L.layerGroup().addTo(map);
+const scene = new LayerScene(drawing);
+const analysis = createAnalysis({ state, map, scene, visibleLayerIds, loadLayer, scheduleRender });
 let densityCache;
 let scheduled;
 function scheduleRender() { clearTimeout(scheduled); scheduled = setTimeout(renderMap, 90); }
@@ -45,11 +50,15 @@ function featurePopup(feature, definition) {
   box.append(table, externalLink(definition.source, '官方資料集 ↗')); return box;
 }
 function fitBounds(bounds, maxZoom = 17) {
-  if (bounds) map.fitBounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]], { padding: [55, 55], maxZoom });
+  if (bounds) map.stop().fitBounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]], { padding: [55, 55], maxZoom, animate: false });
 }
 function filteredFeatures(id) { return (state.data.get(id)?.features ?? []).filter(f => matches(f, state.district, state.query)); }
 function visibleLayerIds() { return [...state.active].filter(id => state.mode !== 'density' || TREE_LAYERS.has(id)); }
-function allMatching() { return visibleLayerIds().flatMap(filteredFeatures); }
+function allMatching() {
+  if (state.mode === 'density' && state.analysisShape === 'sidewalk') return filteredFeatures('sidewalks');
+  if (state.mode === 'density' && ['district', 'village'].includes(state.analysisShape)) return analysis.boundaries() ?? visibleLayerIds().flatMap(filteredFeatures);
+  return visibleLayerIds().flatMap(filteredFeatures);
+}
 
 function renderDensity(bounds) {
   const ids = visibleLayerIds().filter(id => state.data.has(id));
@@ -60,7 +69,7 @@ function renderDensity(bounds) {
   const cells = visibleDensityCells(densityCache.grid, [bounds.getWest(), bounds.getSouth(), bounds.getEast(), bounds.getNorth()]);
   for (const cell of cells) {
     const color = densityColor(cell.density);
-    L.polygon(cell.ring.map(([lng, lat]) => [lat, lng]), { pane: 'density', color, weight: 0.4, opacity: state.heatOpacity, fillColor: color, fillOpacity: state.heatOpacity, className: 'density-cell' })
+    scene.use(`grid:${state.cellSize}:${cell.x}:${cell.y}`, densityCache.key, () => L.polygon(cell.ring.map(([lng, lat]) => [lat, lng]), { pane: 'density', color, weight: 0.4, opacity: state.heatOpacity, fillColor: color, fillOpacity: state.heatOpacity, className: 'density-cell' })
       .bindTooltip(`${format(cell.count)} 筆 · ${cell.density.toLocaleString('zh-TW', { maximumFractionDigits: 2 })} 筆／公頃`)
       .bindPopup(() => {
         const box = document.createElement('div'); box.className = 'density-popup';
@@ -71,22 +80,25 @@ function renderDensity(bounds) {
           const row = document.createElement('p'); row.textContent = `${state.definitions.find(d => d.id === id).title}：${format(cell.byLayer[id] ?? 0)} 筆`; box.append(row);
         }
         const note = document.createElement('small'); note.textContent = '完整網格統計，套用目前篩選。0 筆代表沒有符合的紀錄，不表示現地無樹；網格範圍不代表已完成調查。'; box.append(note); return box;
-      }, { maxWidth: 300 }).addTo(drawing);
+      }, { maxWidth: 300 }), state.heatOpacity, layer => layer.setStyle({ opacity: state.heatOpacity, fillOpacity: state.heatOpacity }));
   }
   $('#density-legend').dataset.cells = cells.length;
   $('#cell-area').textContent = `${state.cellSize} m × ${state.cellSize} m · 每格 ${state.cellSize ** 2 / 10000} 公頃`;
 }
 
 function renderMap() {
-  drawing.clearLayers(); map.closePopup();
+  scene.begin(state.mode === 'density' ? `density:${state.analysisShape}` : 'points');
   let count = 0;
   const bounds = map.getBounds(), zoom = map.getZoom();
   const heat = state.mode === 'density', visibleIds = visibleLayerIds();
   map.getPane('areas').hidden = heat;
   map.getPane('points').hidden = heat;
   map.getPane('density').hidden = !heat;
-  if (heat) renderDensity(bounds);
-  const areaItems = [], pointItems = [];
+  let analysisResult;
+  if (heat) {
+    if (state.analysisShape === 'grid') renderDensity(bounds);
+    else analysisResult = analysis.render(bounds);
+  }
   for (const definition of state.definitions) {
     if (!state.active.has(definition.id)) continue;
     if (!visibleIds.includes(definition.id)) { $(`#count-${definition.id}`).textContent = '點位模式顯示'; continue; }
@@ -96,42 +108,16 @@ function renderMap() {
     count += features.length;
     $(`#count-${definition.id}`).textContent = `${format(features.length)} 筆在視野內`;
     if (heat) continue;
-    const opacity = state.opacity.get(definition.id) ?? 0.8;
-    const showAreas = definition.kind === 'polygon' && zoom >= (definition.id === 'tree-pits' ? 18 : 15);
-    if (showAreas) {
-      areaItems.push(() => L.geoJSON({ type: 'FeatureCollection', features }, { pane: 'areas', style: { color: definition.color, weight: 1.5, opacity, fillOpacity: opacity * 0.3 }, onEachFeature: (feature, layer) => layer.bindPopup(() => featurePopup(feature, definition), { maxWidth: 340 }) }).addTo(drawing));
-      continue;
-    }
-    const cellSize = definition.id === 'parks' || zoom >= 17 ? 1 : 56;
-    const groups = gridGroups(features, coordinate => map.project(coordinate, zoom), cellSize);
-    for (const group of groups) {
-      pointItems.push(() => {
-        const total = group.features.length;
-        if (total === 1) {
-          L.circleMarker([group.lat, group.lng], { pane: 'points', radius: definition.id === 'parks' ? 6 : 4, color: '#fff', weight: 1, fillColor: definition.color, fillOpacity: opacity, opacity }).bindPopup(() => featurePopup(group.features[0], definition), { maxWidth: 340 }).addTo(drawing);
-        } else {
-          const size = Math.min(48, 24 + Math.log10(total) * 7);
-          const marker = L.marker([group.lat, group.lng], { pane: 'points', icon: L.divIcon({ className: 'cluster-wrap', html: `<span class="cluster" style="--cluster-color:${definition.color};width:${size}px;height:${size}px;opacity:${opacity}">${format(total)}</span>`, iconSize: [size, size], iconAnchor: [size / 2, size / 2] }) });
-          marker.bindTooltip(`${definition.title} · ${format(total)} 筆（點擊放大）`);
-          marker.on('click', () => {
-            if (zoom >= 19) {
-              const box = document.createElement('div'); box.className = 'overlap-list';
-              const title = document.createElement('strong'); title.textContent = `此處重疊 ${format(total)} 筆`; box.append(title);
-              for (const feature of group.features) {
-                const button = document.createElement('button'); button.textContent = `${feature.properties._name} · ${feature.properties.TreeID ?? feature.properties.ID ?? feature.properties.OBJECTID ?? ''}`;
-                button.onclick = () => L.popup({ maxWidth: 340 }).setLatLng([group.lat, group.lng]).setContent(featurePopup(feature, definition)).openOn(map); box.append(button);
-              }
-              marker.bindPopup(box).openPopup();
-            } else fitBounds(unionBounds(group.features), Math.min(19, zoom + 3));
-          }); marker.addTo(drawing);
-        }
-      });
-    }
+    renderPointLayer({ definition, dataset, state, map, bounds, scene, featurePopup, fitBounds });
   }
-  areaItems.forEach(draw => draw()); pointItems.forEach(draw => draw());
+  const rendering = scene.finish();
+  for (const [key, value] of Object.entries(rendering)) $('#map').dataset[`render${key[0].toUpperCase()}${key.slice(1)}`] = value;
+  $('#map').dataset.renderFrame = Number($('#map').dataset.renderFrame ?? 0) + 1;
+  if (analysisResult) count = analysisResult.count;
   $('#visible-count').textContent = format(count);
   $('#active-count').textContent = visibleIds.length;
-  $('#summary-label').textContent = heat ? '目前視野內・符合篩選的樹木紀錄' : '目前視野內・已勾選圖層';
+  $('#summary-label').textContent = analysisResult?.label ?? (heat ? '目前視野內・符合篩選的樹木紀錄' : '目前視野內・已勾選圖層');
+  $('#summary-unit').textContent = analysisResult?.unit ?? '筆資料';
   $('#layer-count').textContent = `${visibleIds.length} / ${heat ? TREE_LAYERS.size : state.definitions.length}`;
   $('.section-help').textContent = heat ? '勾選要納入密度統計的樹木資料' : '勾選疊加圖層，點擊地圖查看細節';
   $('#map-title').replaceChildren(document.createTextNode(state.district || '臺北市'), Object.assign(document.createElement('span'), { textContent: state.district ? 'Taipei City' : 'Taipei' }));
@@ -139,6 +125,10 @@ function renderMap() {
   $('#density-legend').hidden = !heat;
   $('#legend-items').hidden = heat;
   $('#legend-note').textContent = heat ? '紅少 → 黃中 → 綠多。只畫符合資料的外接矩形；0 筆不代表現地無樹，無色區不作判讀。' : '圓圈數字為合併筆數，點擊可放大。放大後顯示獨立點位與面域。';
+  const sidewalk = heat && state.analysisShape === 'sidewalk';
+  $('#density-unit').textContent = sidewalk ? '探索目標達標比（取兩項較低值）' : '樹木紀錄／公頃';
+  $('#density-ticks').replaceChildren(...(sidewalk ? ['0%', '25%', '50%', '100%'] : ['0', '5', '10', '20+']).map(text => Object.assign(document.createElement('span'), { textContent: text })));
+  if (heat && state.analysisShape !== 'grid') $('#legend-note').textContent = sidewalk ? '紅低於目標、綠達探索目標；灰缺有效長度。目標可調，非官方充足性標準，也不是實際樹蔭。' : '依官方區里輪廓與完整面積計算。紅低、綠高為紀錄密度，非樹蔭充足性；0 筆不代表現地無樹。';
   $('#legend-items').replaceChildren(...state.definitions.filter(d => state.active.has(d.id)).map(d => {
     const row = document.createElement('div'); row.className = 'legend-row';
     const swatch = document.createElement('i'); swatch.style.backgroundColor = d.color; if (d.kind === 'polygon') swatch.className = 'area-swatch';
@@ -150,6 +140,7 @@ function renderMap() {
   else if (failed) notify(`${failed} 個圖層載入失敗，可按圖層下方「重試」。`);
   else if (heat && !visibleIds.length) notify('請勾選「行道樹」或「公園樹木」，開始查看密度。');
   else if (!state.active.size) notify('從左側勾選圖層，開始探索臺北。');
+  else if (analysisResult) notify(analysisResult.notice);
   else if (heat && !densityCache?.grid.total) notify('沒有符合的樹木紀錄；請調整行政區或搜尋條件。');
   else if (heat) notify(`密度模式 · ${state.cellSize} 公尺固定網格 · 紅少、黃中、綠多 · 點擊網格查看筆數。`);
   else if (!count) notify('目前視野沒有符合的資料；可調整篩選或按「符合資料」。');
@@ -168,7 +159,7 @@ async function loadLayer(definition) {
       if (data.type !== 'FeatureCollection' || !Array.isArray(data.features)) throw new Error('資料格式不正確');
       const index = new RBush();
       index.load(data.features.map(feature => ({ minX: feature.bbox[0], minY: feature.bbox[1], maxX: feature.bbox[2], maxY: feature.bbox[3], feature })));
-      state.data.set(definition.id, { features: data.features, index });
+      state.data.set(definition.id, { features: data.features, index, featureIds: new WeakMap(data.features.map((f, i) => [f, i])) });
     } catch (error) { state.errors.set(definition.id, error.message); }
     finally { state.pending.delete(definition.id); renderLayers(); scheduleRender(); }
   })();
@@ -194,7 +185,8 @@ function renderLayers() {
     label.append(checkbox, swatch, title, total);
     const meta = document.createElement('div'); meta.className = 'layer-meta';
     const status = document.createElement('span'); status.id = `count-${definition.id}`;
-    status.textContent = unavailable ? '點位模式顯示' : error ? `載入失敗：${error}` : pending ? '載入中…' : active && loaded ? '已載入' : definition.kind === 'point' ? '位置點資料' : '面域資料';
+    const analysisGeometry = state.mode === 'density' && state.analysisShape === 'sidewalk' && definition.id === 'sidewalks';
+    status.textContent = analysisGeometry ? (error ? '分析輪廓載入失敗' : pending ? '分析輪廓載入中…' : loaded ? '分析輪廓已載入（自動）' : '分析輪廓自動載入') : unavailable ? '點位模式顯示' : error ? `載入失敗：${error}` : pending ? '載入中…' : active && loaded ? '已載入' : definition.kind === 'point' ? '位置點資料' : '面域資料';
     meta.append(status, externalLink(definition.source, '來源 ↗'));
     card.append(label, meta);
     if (active) {
@@ -215,12 +207,29 @@ function setMode(mode) {
   $('#density-mode').setAttribute('aria-pressed', mode === 'density');
   $('#density-controls').hidden = mode !== 'density';
   $('.map-legend').classList.toggle('heat-legend', mode === 'density');
+  $('#search').placeholder = mode === 'density' && state.analysisShape === 'sidewalk' ? '搜尋人行道路名或路段…' : '搜尋路名、公園、樹種…';
+  analysis.ensure();
   renderLayers(); scheduleRender();
 }
 $('#point-mode').onclick = () => setMode('points');
 $('#density-mode').onclick = () => setMode('density');
 $('#grid-size').onchange = event => { state.cellSize = Number(event.target.value); scheduleRender(); };
 $('#heat-opacity').oninput = event => { state.heatOpacity = Number(event.target.value); scheduleRender(); };
+$('#analysis-shape').onchange = event => {
+  state.analysisShape = event.target.value;
+  $('#grid-field').hidden = state.analysisShape !== 'grid';
+  $('#sidewalk-controls').hidden = state.analysisShape !== 'sidewalk';
+  $('#analysis-status').replaceChildren();
+  $('#analysis-help').textContent = state.analysisShape === 'sidewalk'
+    ? '勾選樹木為分析來源；搜尋只篩選人行道路段。樹木不依行政區裁切，保留跨界鄰樹。輪廓鄰近率不是樹蔭；預設目標為探索設定。'
+    : state.analysisShape === 'grid' ? '只統計勾選的行道樹與公園樹木，其他圖層暫不顯示。色階固定以每公頃紀錄數比較。'
+    : '以官方區里多邊形歸屬樹木，除以完整行政面積。搜尋篩選樹木；山區與道路空間不同，密度不直接判定充足與否。';
+  $('#search').placeholder = state.analysisShape === 'sidewalk' ? '搜尋人行道路名或路段…' : '搜尋路名、公園、樹種…';
+  $('#cell-area').textContent = '';
+  analysis.ensure(); scheduleRender();
+};
+for (const [selector, property] of [['#tree-radius', 'treeRadius'], ['#tree-target', 'treeTarget'], ['#coverage-target', 'coverageTarget']]) $(selector).onchange = event => { state[property] = Number(event.target.value); scheduleRender(); };
+$('#zoom-sidewalk').onclick = () => map.stop().setZoom(Math.max(16, map.getZoom()), { animate: false });
 
 $('#district').onchange = async event => {
   state.district = event.target.value;
@@ -236,7 +245,7 @@ $('#search-form').onsubmit = async event => {
   const bounds = unionBounds(allMatching()); if (bounds) fitBounds(bounds); renderMap();
 };
 $('#clear-layers').onclick = () => { state.active.clear(); renderLayers(); renderMap(); };
-$('#reset-map').onclick = () => { state.district = ''; state.query = ''; $('#district').value = ''; $('#search').value = ''; clearTimeout(searchTimer); map.setView([25.048, 121.542], 13); renderMap(); };
+$('#reset-map').onclick = () => { state.district = ''; state.query = ''; $('#district').value = ''; $('#search').value = ''; clearTimeout(searchTimer); map.stop().setView([25.048, 121.542], 13, { animate: false }); renderMap(); };
 $('#fit-data').onclick = async () => { await Promise.all([...state.pending.values()]); const bounds = unionBounds(allMatching()); if (bounds) fitBounds(bounds); else notify('沒有符合的資料，請選擇圖層或調整搜尋條件。'); };
 $('#about-button').onclick = () => $('#about-dialog').showModal();
 $('#close-dialog').onclick = () => $('#about-dialog').close();
@@ -247,6 +256,7 @@ async function init() {
     const response = await fetch(`${import.meta.env.BASE_URL}data/manifest.json`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const manifest = await response.json(); state.definitions = manifest.layers;
+    state.snapshot = manifest.fetchedAt;
     const fetchedAt = new Date(manifest.fetchedAt).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false });
     $('#snapshot-date').textContent = `快照 ${fetchedAt.split(' ')[0]}`;
     const report = $('#quality-report');

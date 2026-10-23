@@ -7,13 +7,16 @@
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "data:refresh": "node scripts/prepare-data.mjs",
+    "data:refresh": "node scripts/prepare-data.mjs && node scripts/prepare-regions.mjs",
+    "boundaries:refresh": "node scripts/prepare-regions.mjs",
     "test": "node --test"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
+    "polygon-clipping": "^0.15.7",
     "proj4": "^2.19.10",
-    "rbush": "^4.0.1"
+    "rbush": "^4.0.1",
+    "shapefile": "^0.6.6"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
