@@ -19,6 +19,18 @@
           <div class="sidebar-intro"><div class="eyebrow">TAIPEI · OPEN DATA EXPLORER</div><h1>先看見樹，<br>再想像城市。</h1><p>把城市的綠意攤在地圖上。<br>從現有資料，探索種樹的下一步。</p></div>
           <form id="search-form" role="search"><label class="sr-only" for="search">搜尋資料中的路名、公園或樹種</label><div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜尋路名、公園、樹種…" autocomplete="off"><button aria-label="定位符合的資料" type="submit">↵</button></div></form>
           <div class="district-field"><label for="district">探索範圍</label><select id="district"><option value="">全臺北市</option></select></div>
+          <section class="basemap-section" aria-labelledby="basemap-title">
+            <h2 id="basemap-title">底圖對照</h2>
+            <div class="mode-switch" role="group" aria-label="底圖模式"><button id="basemap-street" aria-pressed="true">街道</button><button id="basemap-aerial" aria-pressed="false">正射航照</button><button id="basemap-blend" aria-pressed="false">混合對照</button></div>
+            <div id="aerial-controls" hidden>
+              <label id="aerial-opacity-field" class="aerial-opacity" for="aerial-opacity"><span>航照不透明度 <output id="aerial-opacity-value" for="aerial-opacity">60%</output></span><input id="aerial-opacity" type="range" min="0" max="100" step="5" value="60"><span class="opacity-ends"><small>街道</small><small>航照</small></span></label>
+              <p class="aerial-note">影像拍攝日期：此介面尚未取得，請勿視為即時現況。影像與樹木調查時間可能不同，點位與樹冠也可能偏移。</p>
+              <a class="basemap-source" href="https://maps.nlsc.gov.tw/S09SOA/pro/Wmts_ajax_main.jsp" target="_blank" rel="noopener noreferrer">國土測繪中心・影像來源 ↗</a>
+              <button id="aerial-detail" class="aerial-detail">放大查看樹木點位</button>
+            </div>
+            <label class="overlay-toggle"><input id="overlay-visibility" type="checkbox" checked>顯示資料圖層<span>可暫時隱藏，查看底圖</span></label>
+            <p id="basemap-status" role="status">OpenStreetMap 街道底圖</p>
+          </section>
           <section class="display-section" aria-label="顯示模式">
             <div class="mode-switch" role="group" aria-label="地圖顯示模式"><button id="point-mode" aria-pressed="true">點位與群聚</button><button id="density-mode" aria-pressed="false">樹木密度</button></div>
             <div id="density-controls" hidden>
@@ -46,11 +58,11 @@
           <div class="map-summary"><span class="summary-icon">♧</span><div><span id="summary-label">目前視野內・已勾選圖層</span><strong id="visible-count">—</strong></div><span id="summary-unit" class="summary-unit">筆資料</span><div class="summary-divider"></div><div class="summary-layers"><strong id="active-count">0</strong><span>顯示圖層</span></div></div>
           <div id="map-notice" class="map-notice" role="status">正在載入官方資料…</div>
           <div class="map-legend" aria-label="地圖圖例"><div class="legend-heading">圖例 <span id="zoom-label">ZOOM 13</span></div><div id="legend-items"></div><div id="density-legend" hidden><strong id="density-unit">樹木紀錄／公頃</strong><div class="density-ramp"></div><div id="density-ticks" class="density-ticks"><span>0</span><span>5</span><span>10</span><span>20+</span></div><small id="cell-area"></small></div><p id="legend-note">圓圈數字為合併筆數，點擊可放大。<br>放大後顯示獨立點位與面域。</p></div>
-          <div id="tile-error" class="tile-error" hidden>底圖暫時無法載入，請確認網路連線；資料圖層仍可操作。</div>
+          <div id="tile-error" class="tile-error" role="status" hidden><span id="tile-error-text"></span><div><button id="retry-basemap">重試底圖</button><button id="fallback-street">切回街道</button></div></div>
         </main>
       </div>
     </div>
-    <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-header"><div><div class="eyebrow">DATA NOTES</div><h2 id="about-title">這張地圖裡有什麼？</h2></div><button id="close-dialog" aria-label="關閉資料說明">×</button></div><p>本工具使用活動所列的官方開放資料快照，沒有模擬資料。資料以筆數呈現，不應跨圖層加總為樹木總數。</p><div id="quality-report"></div><div class="dialog-note"><strong>怎麼閱讀這些資料</strong><ul><li>TWD97（EPSG:3826）已轉換為 WGS84 經緯度；無效或超出臺北合理座標範圍的紀錄不繪製。</li><li>縮小時採空間網格合併筆數，不抽樣；縮放至街廓即可查看個別紀錄。合併位置與圖形中心點不表示實際樹木座標。</li><li>樹穴資料包含花圃，不代表空缺；公園基本資料是位置點，不是公園邊界。資料中沒有樹冠面積與完整移除原因，不能據此直接判定樹蔭公平或可種植地點。</li><li>樹木密度使用固定公尺網格，僅統計勾選且已載入的行道樹與公園樹木，套用行政區及文字篩選；固定色階為 0、5、10、20+ 筆／公頃。外接矩形內的 0 筆只表示沒有符合的紀錄，不表示已調查或現地無樹。這不是樹冠覆蓋率，未進行跨資料集去重。</li><li>區里模式使用官方 456 里及由同版里界合併的 12 區，按多邊形歸屬樹木並除以完整行政面積。未落在里界的紀錄另行揭露，不強制歸屬；山地等非道路空間也計入面積。</li><li>人行道依指定距離內的每百公尺樹木數與輪廓鄰近率共同判讀。輪廓外環每約 10 公尺加權取樣，並非中心線或樹蔭覆蓋率。探索目標可調、非官方標準；缺有效長度為灰色。同樹可鄰近多路段，未判斷道路阻隔與樹冠。</li><li>各圖層調查與更新時間不同；快照擷取時間不等於現地調查時間。原始屬性可點選資料查看。</li><li>資料依來源頁授權使用，政府資料集標示「政府資料開放授權條款第 1 版」。底圖 © OpenStreetMap contributors，地圖引擎 Leaflet。</li></ul></div></dialog>
+    <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-header"><div><div class="eyebrow">DATA NOTES</div><h2 id="about-title">這張地圖裡有什麼？</h2></div><button id="close-dialog" aria-label="關閉資料說明">×</button></div><p>本工具使用活動所列的官方開放資料快照，沒有模擬資料。資料以筆數呈現，不應跨圖層加總為樹木總數。</p><div id="quality-report"></div><div class="dialog-note"><strong>怎麼閱讀這些資料</strong><ul><li>TWD97（EPSG:3826）已轉換為 WGS84 經緯度；無效或超出臺北合理座標範圍的紀錄不繪製。</li><li>縮小時採空間網格合併筆數，不抽樣；縮放至街廓即可查看個別紀錄。合併位置與圖形中心點不表示實際樹木座標。</li><li>樹穴資料包含花圃，不代表空缺；公園基本資料是位置點，不是公園邊界。資料中沒有樹冠面積與完整移除原因，不能據此直接判定樹蔭公平或可種植地點。</li><li>樹木密度使用固定公尺網格，僅統計勾選且已載入的行道樹與公園樹木，套用行政區及文字篩選；固定色階為 0、5、10、20+ 筆／公頃。外接矩形內的 0 筆只表示沒有符合的紀錄，不表示已調查或現地無樹。這不是樹冠覆蓋率，未進行跨資料集去重。</li><li>區里模式使用官方 456 里及由同版里界合併的 12 區，按多邊形歸屬樹木並除以完整行政面積。未落在里界的紀錄另行揭露，不強制歸屬；山地等非道路空間也計入面積。</li><li>人行道依指定距離內的每百公尺樹木數與輪廓鄰近率共同判讀。輪廓外環每約 10 公尺加權取樣，並非中心線或樹蔭覆蓋率。探索目標可調、非官方標準；缺有效長度為灰色。同樹可鄰近多路段，未判斷道路阻隔與樹冠。</li><li>正射航照由內政部國土測繪中心提供，支援街道、航照及混合對照。此介面尚未取得各區域影像拍攝日期；影像並非即時現況。僅供人工疊合檢查，尚未辨識樹冠或判斷移除情形。</li><li>各圖層調查與更新時間不同；快照擷取時間不等於現地調查時間。原始屬性可點選資料查看。</li><li>資料依來源頁授權使用，政府資料集標示「政府資料開放授權條款第 1 版」。街道底圖 © OpenStreetMap contributors；正射航照 © 內政部國土測繪中心；地圖引擎 Leaflet。</li></ul></div></dialog>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

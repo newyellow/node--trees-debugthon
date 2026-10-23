@@ -7,6 +7,7 @@ import { TREE_LAYERS, buildDensityGrid, densityColor, visibleDensityCells } from
 import { createAnalysis } from './analysis-ui.js';
 import { LayerScene } from './layer-scene.js';
 import { renderPointLayer } from './point-layers.js';
+import { installBasemaps } from './basemaps.js';
 
 const $ = selector => document.querySelector(selector);
 const format = value => value.toLocaleString('zh-TW');
@@ -16,9 +17,7 @@ const state = { definitions: [], active: new Set(['street-trees', 'parks']), dat
 const map = L.map('map', { zoomControl: false, preferCanvas: true, minZoom: 10, maxZoom: 19 }).setView([25.048, 121.542], 13);
 L.control.zoom({ position: 'topright' }).addTo(map);
 L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
-const base = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors' }).addTo(map);
-base.on('tileerror', () => { $('#tile-error').hidden = false; });
-base.on('tileload', () => { $('#tile-error').hidden = true; });
+installBasemaps(map);
 map.createPane('areas'); map.getPane('areas').style.zIndex = 410;
 map.createPane('points'); map.getPane('points').style.zIndex = 430;
 map.createPane('density'); map.getPane('density').style.zIndex = 405;
