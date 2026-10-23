@@ -39,7 +39,7 @@ function switchBasemap(kind,retry=false) {
  $('imagery-note').textContent=kind==='aerial'?'國土測繪中心最新拼接航照；非即時影像，未提供精確攝影日期。':'OpenStreetMap 街道圖';
  const layer=L.tileLayer(kind==='aerial'?'https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}':'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:21,maxNativeZoom:19,attribution:kind==='aerial'?'© <a href="https://www.nlsc.gov.tw/">內政部國土測繪中心</a>':'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
  activeBasemap=layer;let failed=false;layer.on('tileerror',()=>{if(failed||activeBasemap!==layer)return;failed=true;if(kind==='aerial'){switchBasemap('street');$('tile-status').textContent='航照載入失敗，已回到街道圖。';$('tile-retry').textContent='重試航照';}else{$('tile-status').textContent='街道底圖載入失敗；里界仍可操作。';$('tile-retry').textContent='重試底圖';}$('tile-retry').hidden=false;});
- if(!retry)$('tile-status').textContent='';layer.addTo(map);
+ $('tile-status').textContent='';layer.addTo(map);
 }
 function select(id, fit = true, latlng, trigger = document.activeElement) {
   const v = data.villages.find(r => r.id === id); if (!v) return; selected = id;
