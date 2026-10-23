@@ -1,9 +1,11 @@
+import { explorerUrl, stubRemoteTiles } from './browser-test-helpers.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { readFile, mkdir } from 'node:fs/promises';
 
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+await stubRemoteTiles(page);
 const errors = [];
 page.on('pageerror', e => errors.push(e.message));
 await mkdir('test-results', { recursive: true });
@@ -20,7 +22,7 @@ const street = JSON.parse(await readFile(new URL('../public/data/street-trees.ge
 const targetIndex = data.membership['street-trees'].findIndex(i => i >= 0 && data.features[i].properties.district === '大安區');
 const target = street.features[targetIndex].geometry.coordinates;
 try {
-  await page.goto('http://127.0.0.1:5173/', { waitUntil:'domcontentloaded' });
+  await page.goto(explorerUrl, { waitUntil:'domcontentloaded' });
   await page.waitForFunction(()=>document.querySelector('#map-notice').textContent.includes('全覽模式'));
   await page.locator('#density-mode').click();
   await page.selectOption('#analysis-shape','district');

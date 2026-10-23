@@ -1,3 +1,4 @@
+import { explorerUrl } from './browser-test-helpers.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir } from 'node:fs/promises';
@@ -5,7 +6,7 @@ import { mkdir } from 'node:fs/promises';
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 const errors = [], photos = [], snapshots = [];
-const baseUrl = process.env.BASE_URL ?? 'http://127.0.0.1:5173/';
+const baseUrl = explorerUrl;
 page.on('pageerror', error => errors.push(error.message));
 page.on('request', request => {
   if(/\/(?:wmts|__aerial-cache)\/PHOTO/.test(request.url()))photos.push(request.url());

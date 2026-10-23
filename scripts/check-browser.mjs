@@ -1,3 +1,4 @@
+import { explorerUrl, stubRemoteTiles } from './browser-test-helpers.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir, readFile } from 'node:fs/promises';
@@ -5,11 +6,12 @@ import { toMeters, toLngLat } from '../src/density.js';
 
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+await stubRemoteTiles(page);
 const errors = [];
 page.on('pageerror', error => errors.push(error.message));
 await mkdir('test-results', { recursive: true });
 try {
-  await page.goto(process.env.PREVIEW_URL ?? 'http://127.0.0.1:5173/');
+  await page.goto(explorerUrl);
   await page.waitForFunction(() => document.querySelector('#map-notice').textContent.includes('全覽模式'));
   assert.equal(await page.locator('.layer-card').count(), 5);
   assert.ok(Number((await page.locator('#visible-count').textContent()).replaceAll(',', '')) > 0);
@@ -107,8 +109,9 @@ try {
   console.log('Screenshots: test-results/desktop.png, test-results/mobile.png');
   console.log(`Base map visible: ${await page.locator('.leaflet-tile-loaded').count() > 0}`);
   const failurePage = await browser.newPage();
+  await stubRemoteTiles(failurePage);
   await failurePage.route('**/data/street-trees.geojson', route => route.fulfill({ status: 503, body: 'Unavailable' }));
-  await failurePage.goto('http://127.0.0.1:5173/');
+  await failurePage.goto(explorerUrl);
   await failurePage.getByRole('button', { name: '重試', exact: true }).waitFor();
   await failurePage.unroute('**/data/street-trees.geojson');
   await failurePage.getByRole('button', { name: '重試', exact: true }).click();

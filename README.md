@@ -1,6 +1,6 @@
 # Trees Debugthon
 
-沈伯洋市政 debug 松「把三千棵樹種回來」的第一階段資料探索工具。使用 **Leaflet + OpenStreetMap**，不需要 API 金鑰。這一版在本機執行，尚未部署。
+沈伯洋市政 debug 松「把三千棵樹種回來」的第一階段資料探索工具。使用 **Leaflet + OpenStreetMap**，不需要 API 金鑰。各子站使用獨立 HTML 入口，入口架構見 [多子站開發契約](docs/multisite.md)。
 
 ## 啟動
 
@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-開啟終端機顯示的網址，預設為 http://127.0.0.1:5173/ 。`public/data` 已附官方資料快照，不需要先更新資料。底圖和選用的 Google Fonts 字型需要網路，字型載入失敗時使用系統字型。
+開啟首頁入口（預設 http://127.0.0.1:5173/），完整資料探索地圖位於 `/explorer/index.html`，另有 `/workspaces/02/index.html`、`/workspaces/03/index.html` 兩個功能待定的預留頁。首頁不載入地圖或資料。 `public/data` 已附官方資料快照，不需要先更新資料。底圖和選用的 Google Fonts 字型需要網路，字型載入失敗時使用系統字型。
 
 ## 使用
 

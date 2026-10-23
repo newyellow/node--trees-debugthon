@@ -1,7 +1,8 @@
+import { explorerUrl } from './browser-test-helpers.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import { mkdir, readFile } from 'node:fs/promises';
-const url=process.env.TREES_TEST_URL || 'http://127.0.0.1:5180/';
+const url=explorerUrl;
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
 const errors=[];page.on('pageerror',e=>errors.push(e.message));

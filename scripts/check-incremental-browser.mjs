@@ -1,8 +1,10 @@
+import { explorerUrl, stubRemoteTiles } from './browser-test-helpers.mjs';
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+await stubRemoteTiles(page);
 const errors = [];
 page.on('pageerror', error => errors.push(error.message));
 await page.addInitScript(() => {
@@ -31,7 +33,7 @@ async function pan(label) {
   return after;
 }
 try {
-  await page.goto('http://127.0.0.1:5173/');
+  await page.goto(explorerUrl);
   await page.waitForFunction(()=>document.querySelector('#map-notice').textContent.includes('全覽模式'));
   await page.locator('.cluster-wrap').evaluateAll(markers=>markers.forEach((m,i)=>{m.dataset.qaIdentity=String(i);}));
   await pan('points');

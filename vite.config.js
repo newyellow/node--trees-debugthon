@@ -3,6 +3,17 @@ import { fileURLToPath } from 'node:url';
 import { aerialCachePlugin } from './scripts/aerial-cache.mjs';
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        home: fileURLToPath(new URL('./index.html', import.meta.url)),
+        stories: fileURLToPath(new URL('./stories/index.html', import.meta.url)),
+        explorer: fileURLToPath(new URL('./explorer/index.html', import.meta.url)),
+        workspace02: fileURLToPath(new URL('./workspaces/02/index.html', import.meta.url)),
+        workspace03: fileURLToPath(new URL('./workspaces/03/index.html', import.meta.url)),
+      },
+    },
+  },
   plugins: [aerialCachePlugin({
     directory: fileURLToPath(new URL('./data/offline-imagery/tiles/', import.meta.url)),
     offline: process.env.IMAGERY_OFFLINE === '1',

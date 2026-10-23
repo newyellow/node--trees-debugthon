@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#244d3d" />
+    <meta name="description" content="探索臺北市行道樹、公園、樹穴與人行道開放資料的互動地圖。" />
+    <title>Trees Debugthon · 臺北樹木資料探索</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="%BASE_URL%index.html" aria-label="返回 Trees Debugthon 首頁"><span class="brand-icon">♧</span><span>TREES <b>DEBUGTHON</b><small>臺北樹木資料探索</small></span></a>
+        <div class="project-label"><span class="live-dot"></span> 市政 debug 松 <span class="slash">/</span> ISSUE 01</div>
+        <button id="about-button" class="quiet-button">資料說明 <span>↗</span></button>
+      </header>
+      <div class="workspace">
+        <aside class="sidebar" aria-label="資料圖層與篩選">
+          <div class="sidebar-intro"><div class="eyebrow">TAIPEI · OPEN DATA EXPLORER</div><h1>先看見樹，<br>再想像城市。</h1><p>把城市的綠意攤在地圖上。<br>從現有資料，探索種樹的下一步。</p></div>
+          <form id="search-form" role="search"><label class="sr-only" for="search">搜尋資料中的路名、公園或樹種</label><div class="searchbox"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜尋路名、公園、樹種…" autocomplete="off"><button aria-label="定位符合的資料" type="submit">↵</button></div></form>
+          <div class="district-field"><label for="district">探索範圍</label><select id="district"><option value="">全臺北市</option></select></div>
+          <section class="basemap-section" aria-labelledby="basemap-title">
+            <h2 id="basemap-title">底圖對照</h2>
+            <div class="mode-switch" role="group" aria-label="底圖模式"><button id="basemap-street" aria-pressed="true">街道</button><button id="basemap-aerial" aria-pressed="false">正射航照</button><button id="basemap-blend" aria-pressed="false">混合對照</button></div>
+            <div id="aerial-controls" hidden>
+              <label class="density-field aerial-year-field" for="aerial-year">影像年度版本<select id="aerial-year"><option value="latest">最新拼接影像</option><option value="2025">2025 年度版</option><option value="2024">2024 年度版</option><option value="2023">2023 年度版</option><option value="2022">2022 年度版</option></select></label>
+              <p id="aerial-version-note" class="aerial-note">最新拼接影像可能包含不同拍攝年份，請參考各區域浮水印。</p>
+              <label id="aerial-opacity-field" class="aerial-opacity" for="aerial-opacity"><span>航照不透明度 <output id="aerial-opacity-value" for="aerial-opacity">60%</output></span><input id="aerial-opacity" type="range" min="0" max="100" step="5" value="60"><span class="opacity-ends"><small>街道</small><small>航照</small></span></label>
+              <p class="aerial-note">影像拍攝日期：此介面尚未取得，請勿視為即時現況。影像與樹木調查時間可能不同，點位與樹冠也可能偏移。</p>
+              <a class="basemap-source" href="https://maps.nlsc.gov.tw/S09SOA/pro/Wmts_ajax_main.jsp" target="_blank" rel="noopener noreferrer">國土測繪中心・影像來源 ↗</a>
+              <button id="aerial-detail" class="aerial-detail">放大查看樹木點位</button>
+            </div>
+            <label class="overlay-toggle"><input id="overlay-visibility" type="checkbox" checked>顯示資料圖層<span>可暫時隱藏，查看底圖</span></label>
+            <p id="basemap-status" role="status">OpenStreetMap 街道底圖</p>
+          </section>
+          <section class="display-section" aria-label="顯示模式">
+            <div class="mode-switch" role="group" aria-label="地圖顯示模式"><button id="point-mode" aria-pressed="true">點位與群聚</button><button id="density-mode" aria-pressed="false">樹木密度</button><button id="species-mode" aria-pressed="false">樹種分析</button></div>
+            <div id="species-controls" hidden><label class="density-field" for="species-level">分析方式<select id="species-level"><option value="distribution">樹種空間分布</option><option value="district">依行政區組成</option><option value="village">依里組成</option><option value="park">依公園名稱組成</option></select></label><fieldset><legend>獨立分析來源</legend><label><input type="checkbox" id="species-street-trees" checked>行道樹</label><label><input type="checkbox" id="species-park-trees" checked>公園樹木</label></fieldset><label class="density-field" for="species-search">搜尋來源樹種名稱<input id="species-search" type="search" placeholder="例如：榕樹"></label><button id="species-clear" class="text-button">清除樹種多選</button><p id="species-selection-note"></p><div id="species-options" aria-label="樹種多選"></div><p>多選僅篩選空間分布；區里／公園組成保留全部名稱，套用上方行政區與文字搜尋。豐富度是來源名稱類別數，不是經鑑定的生物物種數。枯木為狀態，排除多樣性。</p><div id="species-status" role="status"></div><button id="species-retry" hidden>重試分析資料</button><details><summary>篩選範圍組成與完整性</summary><div id="species-summary"></div></details><div id="species-unit-list" hidden><h3>地理單位（可點選）</h3><div id="species-units"></div><div id="species-unit-detail" aria-live="polite"></div></div><details open><summary>穩定樹種色彩圖例</summary><div id="species-legend"></div></details></div><div id="density-controls" hidden>
+              <label class="density-field" for="analysis-shape">統計輪廓<select id="analysis-shape"><option value="grid">固定網格</option><option value="district">依行政區</option><option value="village">依里</option><option value="sidewalk">依人行道</option></select></label>
+              <label id="grid-field" class="density-field" for="grid-size">網格邊長<select id="grid-size"><option value="100">100 公尺</option><option value="250" selected>250 公尺</option><option value="500">500 公尺</option></select></label>
+              <div id="sidewalk-controls" hidden>
+                <label class="density-field" for="tree-radius">鄰近樹木距離<select id="tree-radius"><option value="5">5 公尺</option><option value="10" selected>10 公尺</option><option value="15">15 公尺</option><option value="20">20 公尺</option></select></label>
+                <label class="density-field" for="tree-target">每 100 公尺目標<select id="tree-target"><option value="5">5 筆</option><option value="10" selected>10 筆</option><option value="20">20 筆</option></select></label>
+                <label class="density-field" for="coverage-target">輪廓鄰近率目標<select id="coverage-target"><option value="0.5">50%</option><option value="0.7" selected>70%</option><option value="0.9">90%</option></select></label>
+                <button id="zoom-sidewalk" class="retry-button">放大至街區查看</button>
+              </div>
+              <label class="density-field" for="heat-opacity">密度圖透明度<input id="heat-opacity" type="range" min="0.1" max="0.9" step="0.1" value="0.6"></label>
+              <p id="analysis-help">只統計勾選的行道樹與公園樹木，其他圖層暫不顯示。色階固定以每公頃紀錄數比較。</p>
+              <div id="analysis-status" role="status"></div>
+            </div>
+          </section>
+          <section class="layer-section"><div class="section-heading"><h2>資料圖層 <span id="layer-count">0 / 5</span></h2><button id="clear-layers" class="text-button">全部關閉</button></div><p class="section-help">勾選疊加圖層，點擊地圖查看細節</p><div id="layers" aria-live="polite"><p class="loading">正在讀取資料目錄…</p></div></section>
+          <section class="caution"><span aria-hidden="true">ⓘ</span><div><strong>資料探索，不是種植建議</strong><p>樹穴不等於空穴；樹木點位也不等於樹冠範圍。移除履歷與可種植性仍需進一步確認。</p></div></section>
+          <footer class="sidebar-footer"><span id="snapshot-date">官方開放資料快照</span><a href="https://puma.taipei/hackathon#issue-1" target="_blank" rel="noreferrer">活動題目 ↗</a></footer>
+        </aside>
+        <main class="map-shell" aria-label="互動地圖">
+          <div id="map" aria-label="臺北樹木資料地圖"></div>
+          <div class="map-heading"><span class="map-kicker">探索地圖</span><h2 id="map-title">臺北市 <span>Taipei</span></h2></div>
+          <div class="map-tools"><button id="reset-map" title="回到臺北市全覽">⌂ <span>全市視角</span></button><button id="fit-data" title="縮放至目前符合條件的資料">⊡ <span>符合資料</span></button></div>
+          <div class="map-summary"><span class="summary-icon">♧</span><div><span id="summary-label">目前視野內・已勾選圖層</span><strong id="visible-count">—</strong></div><span id="summary-unit" class="summary-unit">筆資料</span><div class="summary-divider"></div><div class="summary-layers"><strong id="active-count">0</strong><span>顯示圖層</span></div></div>
+          <div id="map-notice" class="map-notice" role="status">正在載入官方資料…</div>
+          <div class="map-legend" aria-label="地圖圖例"><div class="legend-heading">圖例 <span id="zoom-label">ZOOM 13</span></div><div id="legend-items"></div><div id="density-legend" hidden><strong id="density-unit">樹木紀錄／公頃</strong><div class="density-ramp"></div><div id="density-ticks" class="density-ticks"><span>0</span><span>5</span><span>10</span><span>20+</span></div><small id="cell-area"></small></div><p id="legend-note">圓圈數字為合併筆數，點擊可放大。<br>放大後顯示獨立點位與面域。</p></div>
+          <div id="tile-error" class="tile-error" role="status" hidden><span id="tile-error-text"></span><div><button id="retry-basemap">重試底圖</button><button id="fallback-street">切回街道</button></div></div>
+        </main>
+      </div>
+    </div>
+    <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-header"><div><div class="eyebrow">DATA NOTES</div><h2 id="about-title">這張地圖裡有什麼？</h2></div><button id="close-dialog" aria-label="關閉資料說明">×</button></div><p>本工具使用活動所列的官方開放資料快照，沒有模擬資料。資料以筆數呈現，不應跨圖層加總為樹木總數。</p><div id="quality-report"></div><div class="dialog-note"><strong>怎麼閱讀這些資料</strong><ul><li>TWD97（EPSG:3826）已轉換為 WGS84 經緯度；無效或超出臺北合理座標範圍的紀錄不繪製。</li><li>縮小時採空間網格合併筆數，不抽樣；縮放至街廓即可查看個別紀錄。合併位置與圖形中心點不表示實際樹木座標。</li><li>樹穴資料包含花圃，不代表空缺；公園基本資料是位置點，不是公園邊界。資料中沒有樹冠面積與完整移除原因，不能據此直接判定樹蔭公平或可種植地點。</li><li>樹木密度使用固定公尺網格，僅統計勾選且已載入的行道樹與公園樹木，套用行政區及文字篩選；固定色階為 0、5、10、20+ 筆／公頃。外接矩形內的 0 筆只表示沒有符合的紀錄，不表示已調查或現地無樹。這不是樹冠覆蓋率，未進行跨資料集去重。</li><li>區里模式使用官方 456 里及由同版里界合併的 12 區，按多邊形歸屬樹木並除以完整行政面積。未落在里界的紀錄另行揭露，不強制歸屬；山地等非道路空間也計入面積。</li><li>人行道依指定距離內的每百公尺樹木數與輪廓鄰近率共同判讀。輪廓外環每約 10 公尺加權取樣，並非中心線或樹蔭覆蓋率。探索目標可調、非官方標準；缺有效長度為灰色。同樹可鄰近多路段，未判斷道路阻隔與樹冠。</li><li>正射航照由內政部國土測繪中心提供，支援街道、航照及混合對照。此介面尚未取得各區域影像拍攝日期；影像並非即時現況。僅供人工疊合檢查，尚未辨識樹冠或判斷移除情形。</li><li>各圖層調查與更新時間不同；快照擷取時間不等於現地調查時間。原始屬性可點選資料查看。</li><li>資料依來源頁授權使用，政府資料集標示「政府資料開放授權條款第 1 版」。街道底圖 © OpenStreetMap contributors；正射航照 © 內政部國土測繪中心；地圖引擎 Leaflet。</li></ul></div></dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
