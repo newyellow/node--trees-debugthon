@@ -7,6 +7,8 @@ import { TREE_LAYERS, buildDensityGrid, densityColor, visibleDensityCells } from
 import { createAnalysis } from './analysis-ui.js';
 import { LayerScene } from './layer-scene.js';
 import { renderPointLayer } from './point-layers.js';
+import { createSpecies } from './species-ui.js';
+import { speciesName, speciesColor } from './species.js';
 import { installBasemaps } from './basemaps.js';
 
 const $ = selector => document.querySelector(selector);
@@ -24,6 +26,7 @@ map.createPane('density'); map.getPane('density').style.zIndex = 405;
 const drawing = L.layerGroup().addTo(map);
 const scene = new LayerScene(drawing);
 const analysis = createAnalysis({ state, map, scene, visibleLayerIds, loadLayer, scheduleRender });
+const species = createSpecies({ state, map, scene, loadLayer, scheduleRender, fitBounds });
 let densityCache;
 let scheduled;
 function scheduleRender() { clearTimeout(scheduled); scheduled = setTimeout(renderMap, 90); }
@@ -52,7 +55,7 @@ function fitBounds(bounds, maxZoom = 17) {
   if (bounds) map.stop().fitBounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]], { padding: [55, 55], maxZoom, animate: false });
 }
 function filteredFeatures(id) { return (state.data.get(id)?.features ?? []).filter(f => matches(f, state.district, state.query)); }
-function visibleLayerIds() { return [...state.active].filter(id => state.mode !== 'density' || TREE_LAYERS.has(id)); }
+function visibleLayerIds() { if (state.mode === 'species') return [...state.speciesDatasets]; return [...state.active].filter(id => state.mode !== 'density' || TREE_LAYERS.has(id)); }
 function allMatching() {
   if (state.mode === 'density' && state.analysisShape === 'sidewalk') return filteredFeatures('sidewalks');
   if (state.mode === 'density' && ['district', 'village'].includes(state.analysisShape)) return analysis.boundaries() ?? visibleLayerIds().flatMap(filteredFeatures);
@@ -86,28 +89,31 @@ function renderDensity(bounds) {
 }
 
 function renderMap() {
-  scene.begin(state.mode === 'density' ? `density:${state.analysisShape}` : 'points');
+  scene.begin(state.mode === 'species' ? 'species:' + state.speciesLevel : state.mode === 'density' ? `density:${state.analysisShape}` : 'points');
   let count = 0;
   const bounds = map.getBounds(), zoom = map.getZoom();
+  const isSpecies = state.mode === 'species';
   const heat = state.mode === 'density', visibleIds = visibleLayerIds();
   map.getPane('areas').hidden = heat;
-  map.getPane('points').hidden = heat;
-  map.getPane('density').hidden = !heat;
+  map.getPane('points').hidden = heat || (isSpecies && state.speciesLevel !== 'distribution');
+  map.getPane('density').hidden = !heat && !isSpecies;
+  if (isSpecies) map.getPane('areas').hidden = true;
   let analysisResult;
+  if (isSpecies) analysisResult = species.render(bounds);
   if (heat) {
     if (state.analysisShape === 'grid') renderDensity(bounds);
     else analysisResult = analysis.render(bounds);
   }
   for (const definition of state.definitions) {
-    if (!state.active.has(definition.id)) continue;
+    if (!(isSpecies ? visibleIds.includes(definition.id) : state.active.has(definition.id))) continue;
     if (!visibleIds.includes(definition.id)) { $(`#count-${definition.id}`).textContent = '點位模式顯示'; continue; }
     const dataset = state.data.get(definition.id);
     if (!dataset) continue;
     const features = dataset.index.search({ minX: bounds.getWest(), minY: bounds.getSouth(), maxX: bounds.getEast(), maxY: bounds.getNorth() }).map(item => item.feature).filter(f => matches(f, state.district, state.query));
     count += features.length;
     $(`#count-${definition.id}`).textContent = `${format(features.length)} 筆在視野內`;
-    if (heat) continue;
-    renderPointLayer({ definition, dataset, state, map, bounds, scene, featurePopup, fitBounds });
+    if (heat || (isSpecies && state.speciesLevel !== 'distribution')) continue;
+    renderPointLayer({ definition, dataset, state, map, bounds, scene, featurePopup, fitBounds, speciesFilter: isSpecies ? species.filter : null, speciesVersion: isSpecies ? species.version() : null, pointColor: isSpecies ? f => speciesColor(speciesName(f.properties.TreeType)) : null });
   }
   const rendering = scene.finish();
   for (const [key, value] of Object.entries(rendering)) $('#map').dataset[`render${key[0].toUpperCase()}${key.slice(1)}`] = value;
@@ -124,18 +130,20 @@ function renderMap() {
   $('#density-legend').hidden = !heat;
   $('#legend-items').hidden = heat;
   $('#legend-note').textContent = heat ? '紅少 → 黃中 → 綠多。只畫符合資料的外接矩形；0 筆不代表現地無樹，無色區不作判讀。' : '圓圈數字為合併筆數，點擊可放大。放大後顯示獨立點位與面域。';
+  if (isSpecies) $('#legend-note').textContent = state.speciesLevel === 'distribution' ? '顯示前 8 個類別色；完整圖例見左側。灰藍代表混合類別群聚，灰色為缺失／枯木。放大或多選少數樹種可辨識；群聚筆數見提示。' : '輪廓／代表點依最多紀錄的已知來源名稱著色；灰色無已知名稱。顯示前 8 個類別色；完整圖例見左側。公園點非邊界。';
   const sidewalk = heat && state.analysisShape === 'sidewalk';
   $('#density-unit').textContent = sidewalk ? '探索目標達標比（取兩項較低值）' : '樹木紀錄／公頃';
   $('#density-ticks').replaceChildren(...(sidewalk ? ['0%', '25%', '50%', '100%'] : ['0', '5', '10', '20+']).map(text => Object.assign(document.createElement('span'), { textContent: text })));
   if (heat && state.analysisShape !== 'grid') $('#legend-note').textContent = sidewalk ? '紅低於目標、綠達探索目標；灰缺有效長度。目標可調，非官方充足性標準，也不是實際樹蔭。' : '依官方區里輪廓與完整面積計算。紅低、綠高為紀錄密度，非樹蔭充足性；0 筆不代表現地無樹。';
-  $('#legend-items').replaceChildren(...state.definitions.filter(d => state.active.has(d.id)).map(d => {
+  $('#legend-items').replaceChildren(...(isSpecies ? analysisResult?.legend ?? [] : state.definitions.filter(d => state.active.has(d.id))).map(d => {
     const row = document.createElement('div'); row.className = 'legend-row';
     const swatch = document.createElement('i'); swatch.style.backgroundColor = d.color; if (d.kind === 'polygon') swatch.className = 'area-swatch';
     row.append(swatch, document.createTextNode(d.title)); return row;
   }));
   const pending = visibleIds.filter(id => state.pending.has(id)).length;
   const failed = visibleIds.filter(id => state.errors.has(id)).length;
-  if (pending) notify(`正在載入 ${pending} 個圖層，首次載入大型資料可能需要數秒…`);
+  if (isSpecies && analysisResult) notify(analysisResult.notice);
+  else if (pending) notify(`正在載入 ${pending} 個圖層，首次載入大型資料可能需要數秒…`);
   else if (failed) notify(`${failed} 個圖層載入失敗，可按圖層下方「重試」。`);
   else if (heat && !visibleIds.length) notify('請勾選「行道樹」或「公園樹木」，開始查看密度。');
   else if (!state.active.size) notify('從左側勾選圖層，開始探索臺北。');
@@ -204,6 +212,9 @@ function setMode(mode) {
   state.mode = mode;
   $('#point-mode').setAttribute('aria-pressed', mode === 'points');
   $('#density-mode').setAttribute('aria-pressed', mode === 'density');
+  $('#species-mode').setAttribute('aria-pressed', mode === 'species');
+  $('#species-controls').hidden = mode !== 'species';
+  if (mode === 'species') species.ensure();
   $('#density-controls').hidden = mode !== 'density';
   $('.map-legend').classList.toggle('heat-legend', mode === 'density');
   $('#search').placeholder = mode === 'density' && state.analysisShape === 'sidewalk' ? '搜尋人行道路名或路段…' : '搜尋路名、公園、樹種…';
@@ -212,6 +223,7 @@ function setMode(mode) {
 }
 $('#point-mode').onclick = () => setMode('points');
 $('#density-mode').onclick = () => setMode('density');
+$('#species-mode').onclick = () => setMode('species');
 $('#grid-size').onchange = event => { state.cellSize = Number(event.target.value); scheduleRender(); };
 $('#heat-opacity').oninput = event => { state.heatOpacity = Number(event.target.value); scheduleRender(); };
 $('#analysis-shape').onchange = event => {

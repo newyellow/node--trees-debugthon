@@ -16,3 +16,23 @@
 @media(max-width:650px){.basemap-section .mode-switch button{font-size:11px}.basemap-section h2{font-size:13px}.overlay-toggle{font-size:11px}.overlay-toggle span{font-size:9px}}
 .aerial-detail{display:block;width:100%;border:1px solid #cfdbc3;border-radius:4px;background:#f1f5ea;color:#607a50;font-size:10px;padding:7px;margin:12px 0 0}
 .aerial-year-field{margin:13px 0 5px}.aerial-year-field select{max-width:165px}#aerial-version-note{margin-top:7px}
+
+#species-controls {font-size:12px;line-height:1.65}
+#species-controls fieldset {border:1px solid #d9ded5;border-radius:8px;margin:12px 0}
+#species-controls fieldset label {display:block}
+#species-options {max-height:180px;overflow:auto}
+#species-options label {display:flex;gap:7px;align-items:center;padding:4px 0}
+#species-options i,#species-legend i {width:12px;height:12px;display:inline-block;flex-shrink:0;border:1px solid #fff;border-radius:3px}
+#species-legend {max-height:220px;overflow:auto}
+#species-legend>div {display:flex;align-items:center;gap:7px}
+#species-units {max-height:220px;overflow:auto}
+#species-units button {display:block;width:100%;text-align:left;border:1px solid #d9ded5;background:#fff;padding:8px;margin:4px 0;border-radius:6px;font:inherit;overflow-wrap:anywhere}
+#species-controls details {border-top:1px solid #d9ded5;padding:10px 0}
+.species-popup {max-width:100%;font-size:12px;overflow-wrap:anywhere}
+.leaflet-popup-content .species-popup {max-height:430px;overflow:auto}
+.species-popup small {display:block;margin:8px 0;color:#58665b}
+.species-chart {max-height:220px;overflow:auto}
+.species-chart-row {margin:6px 0}.species-chart-row span {display:block}.species-chart-row i {display:block;height:7px;min-width:2px;border-radius:2px}
+#species-status {color:#365242;font-weight:600}.mode-switch {grid-template-columns:repeat(3,minmax(0,1fr))}
+
+#species-search {min-width:0;width:100%;height:36px;padding:6px 8px;border:1px solid #d9ded5;border-radius:6px;font:inherit;background:#fff}
