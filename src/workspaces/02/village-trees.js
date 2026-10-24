@@ -1,3 +1,4 @@
+import {TREE_MARKER_SIDE,TREE_MARKER_HIT_RADIUS,TREE_MARKER_DURATION,markerRotation,squarePath} from './tree-marker-style.js';
 import {createFloraPanel} from './flora-lookup.js';
 import {createStoryPanel} from './story-panel.js';
 import L from 'leaflet';
@@ -103,8 +104,14 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
   if (!map || !statusHost) throw new Error('Village trees require map and statusHost');
   const paneName = 'village-trees-' + L.Util.stamp(statusHost), pane = map.createPane(paneName);
   pane.style.zIndex = '470'; pane.style.pointerEvents = 'none'; pane.classList.add('village-trees-pane');
-  const renderer = L.canvas({pane:paneName,padding:0.25}).addTo(map), group = L.layerGroup().addTo(map);
+  const SquareCanvas=L.Canvas.extend({_updateTreeSquare(layer){
+    if(!this._drawing||layer._empty())return;
+    const ctx=this._ctx;ctx.save();squarePath(ctx,layer._point,layer._treeRotation||0);this._fillStroke(ctx,layer);ctx.restore();
+  }});
+  const SquareMarker=L.CircleMarker.extend({_updatePath(){this._renderer._updateTreeSquare(this);}});
+  const renderer = new SquareCanvas({pane:paneName,padding:0.25}).addTo(map), group = L.layerGroup().addTo(map);
   const canvas = renderer._container, container = map.getContainer();
+  canvas.dataset.markerShape='square';canvas.dataset.markerSide=String(TREE_MARKER_SIDE);canvas.dataset.motionDuration=String(TREE_MARKER_DURATION);
   canvas.dataset.villageTrees = ''; canvas.dataset.renderedCount = '0'; canvas.tabIndex = 0;
   canvas.style.pointerEvents = 'none'; canvas.setAttribute('role','group');
   const title = document.createElement('strong'), message = document.createElement('span'), caveat = document.createElement('small'), retry = document.createElement('button');
@@ -113,9 +120,23 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
   const legend=document.createElement('section');legend.className='tree-species-legend';const rawDetails=document.createElement('details'),rawSummary=document.createElement('summary');rawDetails.className='raw-tree-details';rawSummary.append(title);rawDetails.append(rawSummary,message,caveat,retry,legend);statusHost.append(rawDetails);
   const stories=createStoryPanel({base}),flora=createFloraPanel();
   const sidebar=document.createElement('aside');sidebar.id='species-panel';sidebar.className='surface species-panel';sidebar.hidden=true;sidebar.setAttribute('aria-label','樹種與原始紀錄');container.parentElement.append(sidebar);
-  let tooltip,hoverSpecies=null;
+  let tooltip,hoverSpecies=null,hoverMarker=null,motionFrame=0;
+  const motions=new Map(),reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+  function frame(time){
+    motionFrame=0;
+    for(const [marker,m] of motions){marker._treeRotation=markerRotation(m.from,m.to,time-m.start);marker.redraw();if(marker===hoverMarker)canvas.dataset.hoverRotation=String(marker._treeRotation);if(time-m.start>=TREE_MARKER_DURATION)motions.delete(marker);}
+    if(motions.size)motionFrame=requestAnimationFrame(frame);
+  }
+  function rotate(marker,to){
+    if(!marker)return;
+    if(reducedMotion.matches){motions.delete(marker);marker._treeRotation=to;marker.redraw();if(marker===hoverMarker)canvas.dataset.hoverRotation=String(to);return;}
+    motions.set(marker,{from:marker._treeRotation||0,to,start:performance.now()});if(!motionFrame)motionFrame=requestAnimationFrame(frame);
+  }
+  function hoverTree(marker){if(marker===hoverMarker)return;const prior=hoverMarker;hoverMarker=marker;rotate(prior,0);rotate(marker,Math.PI/4);canvas.dataset.hoverRotation=String(marker?marker._treeRotation||0:0);}
+  function resetMotion(){if(motionFrame)cancelAnimationFrame(motionFrame);motionFrame=0;motions.clear();hoverMarker=null;canvas.dataset.hoverRotation='0';}
+
   function highlight(species){if(species===hoverSpecies)return;hoverSpecies=species;canvas.dataset.highlightSpecies=species||'';let count=0;for(const {marker,record} of markers){const match=!species||treeSpecies(record.feature)===species;if(species&&match)count++;marker.setStyle({fillOpacity:match?.95:.15,opacity:match?1:.18,weight:species&&match?2:1});}canvas.dataset.highlightCount=String(count);}
-  function clearHover(){highlight(null);if(tooltip){map.removeLayer(tooltip);tooltip=null;}}
+  function clearHover(){hoverTree(null);highlight(null);if(tooltip){map.removeLayer(tooltip);tooltip=null;}}
   function closeRecord(focus=true){flora.cancel();stories.cancel();sidebar.hidden=true;sidebar.replaceChildren();clearHover();onFeatureClose();if(focus)canvas.focus({preventScroll:true});clearHover();}
   let dead = false, token = 0, state = {records:[]}, markers = [], selected = 0, popup;
   const label = r => String(r.feature.properties.TreeType || r.feature.properties.Name || r.feature.properties._name || '管理樹') + ' · TreeID ' + r.treeId;
@@ -156,7 +177,7 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     void flora.show(floraHost,treeSpecies(record.feature),{detailsHost:traitsHost});const info=villageInfo(state.villageId);void stories.show(storyHost,{species:treeSpecies(record.feature),village:info.name||state.entry.name,district:info.district||state.entry.district,coverageHost});
 
   }
-  function resetRender() {clearHover();if(!sidebar.hidden)closeRecord(false);token++; group.clearLayers(); markers = []; selected = 0; canvas.dataset.renderedCount = '0'; if (popup) {map.closePopup(popup); popup = null;} }
+  function resetRender() {clearHover();resetMotion();if(!sidebar.hidden)closeRecord(false);token++; group.clearLayers(); markers = []; selected = 0; canvas.dataset.renderedCount = '0'; if (popup) {map.closePopup(popup); popup = null;} }
   async function render(next) {
     resetRender(); state = next; const current = token;
     statusHost.dataset.phase = next.phase; statusHost.dataset.villageId = next.villageId || ''; statusHost.dataset.count = String(next.count);
@@ -169,7 +190,7 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     for (let i = 0; i < next.records.length; i++) {
       if (dead || current !== token) return;
       const r = next.records[i], [lng,lat] = r.feature.geometry.coordinates;
-      const marker = L.circleMarker([lat,lng],{renderer,pane:paneName,radius:4,weight:1,color:'#ffffff',fillColor:treeSpeciesColor(r.feature),fillOpacity:0.95,interactive:false,bubblingMouseEvents:false}).addTo(group);
+      const marker = new SquareMarker([lat,lng],{renderer,pane:paneName,radius:TREE_MARKER_HIT_RADIUS,weight:1,color:'#ffffff',fillColor:treeSpeciesColor(r.feature),fillOpacity:0.95,interactive:false,bubblingMouseEvents:false}).addTo(group);
       markers.push({marker,record:r}); canvas.dataset.renderedCount = String(markers.length);
       if (i % 400 === 399) await new Promise(resolve => setTimeout(resolve,0));
     }
@@ -179,7 +200,7 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
   retry.onclick = () => loader.show(state.villageId,{preview:state.preview});
   function hitTestLayerPoint(point) {
     if(isCameraMoving()) return false;
-    return markers.some(({marker}) => marker._point && marker._point.distanceTo(point) <= 7);
+    return markers.some(({marker}) => marker._point && marker._point.distanceTo(point) <= TREE_MARKER_HIT_RADIUS);
   }
   function containsEvent(event) {
     if (dead || isCameraMoving() || map.dragging?.moved() || map.boxZoom?.moved() || event.target?.closest?.('.leaflet-popup,.leaflet-control,button,input,select,textarea,a')) return false;
@@ -190,19 +211,19 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     const p = map.mouseEventToLayerPoint(event);
     for (let i = markers.length-1; i >= 0; i--) {
       const {marker,record} = markers[i];
-      if (marker._point && marker._point.distanceTo(p) <= 7) {event.preventDefault();event.stopImmediatePropagation();openRecord(record);return;}
+      if (marker._point && marker._point.distanceTo(p) <= TREE_MARKER_HIT_RADIUS) {event.preventDefault();event.stopImmediatePropagation();openRecord(record);return;}
     }
   }
   function move(event){
     if(isCameraMoving()){clearHover();return;}
     if(state.preview||event.target.closest?.('.species-panel,.leaflet-popup,.surface,.leaflet-control')){clearHover();return;}
-    const p=map.mouseEventToLayerPoint(event);const hit=[...markers].reverse().find(({marker})=>marker._point&&marker._point.distanceTo(p)<=7);
-    if(!hit){clearHover();return;}const name=treeSpecies(hit.record.feature);highlight(name);
+    const p=map.mouseEventToLayerPoint(event);const hit=[...markers].reverse().find(({marker})=>marker._point&&marker._point.distanceTo(p)<=TREE_MARKER_HIT_RADIUS);
+    if(!hit){clearHover();return;}hoverTree(hit.marker);const name=treeSpecies(hit.record.feature);highlight(name);
     if(!tooltip){tooltip=L.tooltip({className:'tree-name-tooltip',direction:'top',offset:[0,-8],opacity:1}).setLatLng(hit.marker.getLatLng()).setContent(document.createTextNode(name)).addTo(map);}else tooltip.setLatLng(hit.marker.getLatLng()).setContent(document.createTextNode(name));
   }
   function keyboardPreview(){
     if(isCameraMoving())return;
-    const record=state.records[selected];if(!record||state.preview)return;const name=treeSpecies(record.feature);highlight(name);const [lng,lat]=record.feature.geometry.coordinates;
+    const record=state.records[selected];if(!record||state.preview)return;hoverTree(markers[selected]?.marker);const name=treeSpecies(record.feature);highlight(name);const [lng,lat]=record.feature.geometry.coordinates;
     if(!tooltip)tooltip=L.tooltip({className:'tree-name-tooltip',direction:'top',offset:[0,-8],opacity:1}).setLatLng([lat,lng]).setContent(document.createTextNode(name)).addTo(map);
     else tooltip.setLatLng([lat,lng]).setContent(document.createTextNode(name));
   }
