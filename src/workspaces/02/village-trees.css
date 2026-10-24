@@ -1,0 +1,13 @@
+.village-trees-pane,.village-trees-pane canvas { pointer-events:none!important; }
+.village-trees-pane canvas:focus-visible { outline:3px solid #095b72; outline-offset:-4px; }
+#village-tree-status { display:flex; flex-wrap:wrap; align-items:center; gap:3px 8px; font-size:12px; line-height:1.4; }
+#village-tree-status small { flex-basis:100%; color:#465961; }
+#village-tree-status[data-phase="error"] { color:#9a2a19; }
+.village-tree-popup { overflow-wrap:anywhere; font-size:13px; }
+.village-tree-popup h3 { font-size:16px; margin:4px 0 8px; }
+.village-tree-popup dl { display:grid; grid-template-columns:minmax(85px,1fr) minmax(0,2fr); gap:4px 10px; }
+.village-tree-popup dt { font-weight:700; }
+.village-tree-popup dd { margin:0; white-space:pre-wrap; }
+.village-tree-overlap-list { display:flex; flex-direction:column; max-height:160px; overflow:auto; gap:4px; }
+.village-tree-overlap-list button { text-align:left; }
+.village-tree-overlap-list button[aria-pressed="true"] { outline:2px solid #116a43; outline-offset:-2px; }

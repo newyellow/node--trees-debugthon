@@ -48,10 +48,17 @@ export function validateRecordCollection(value) {
 }
 
 
+export function buildTreeExclusions(records=[]) {
+ const result=new Map();for(const r of records){if(!['street-trees','park-trees'].includes(r.layerId)||typeof r.treeId!=='string'||!r.treeId)continue;if(!result.has(r.layerId))result.set(r.layerId,new Set());result.get(r.layerId).add(r.treeId);}return result;
+}
+export function filterExcludedTreeRecords(features,excluded) {return excluded?.size?features.filter(f=>!excluded.has(String(f.properties.TreeID))):features;}
+
 export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () => {} }) {
   if (!map || !host) throw new Error('Record layers require map and host');
   const root = (base.endsWith('/') ? base.slice(0,-1) : base) + '/data/';
-  let dead=false, initialized=false, pendingMetadata=null, district='';
+  let dead=false, initialized=false, pendingMetadata=null, district='',exclusionVersion=0,exclusionSignature='[]';
+  let exclusions=new Map(),priorityHitTest=()=>false;const views=new Map();
+  function datasetView(id,data){const excluded=exclusions.get(id);if(!excluded?.size)return data;const cached=views.get(id);if(cached?.version===exclusionVersion&&cached.source===data)return cached.data;const features=filterExcludedTreeRecords(data.features,excluded);const index=new RBush();index.load(features.map(feature=>({minX:feature.bbox[0],minY:feature.bbox[1],maxX:feature.bbox[2],maxY:feature.bbox[3],feature})));const view={features,index,featureIds:data.featureIds};views.set(id,{version:exclusionVersion,source:data,data:view});return view;}
   const definitions=new Map(), rows=new Map(), scenes=new Map();
   const state={district:'', query:'', opacity:new Map()};
   const prefix='record-' + L.Util.stamp(host);
@@ -110,13 +117,14 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
     if(dead)return;const bounds=map.getBounds(),query={minX:bounds.getWest(),minY:bounds.getSouth(),maxX:bounds.getEast(),maxY:bounds.getNorth()};
     for(const [id,definition]of definitions){
       const record=loader.records.get(id),row=rows.get(id),active=record?.enabled&&record.data;
-      const count=active?record.data.index.search(query).filter(({feature})=>matches(feature,district,'')).length:0;
+      const displayData=active?datasetView(id,record.data):null;
+      const count=active?displayData.index.search(query).filter(({feature})=>matches(feature,district,'')).length:0;
       if(active||scenes.has(id)){
-        const {scene,adapter}=getScene(id);scene.begin('records');
-        if(active)renderPointLayer({definition,dataset:record.data,state,map,bounds,scene:adapter,featurePopup,fitBounds:(bbox,maxZoom)=>map.fitBounds([[bbox[1],bbox[0]],[bbox[3],bbox[2]]],{maxZoom})});
+        const {scene,adapter}=getScene(id);scene.begin('records:'+(exclusions.has(id)?exclusionVersion:0));
+        if(active)renderPointLayer({definition,dataset:displayData,state,map,bounds,scene:adapter,featurePopup,fitBounds:(bbox,maxZoom)=>map.fitBounds([[bbox[1],bbox[0]],[bbox[3],bbox[2]]],{maxZoom})});
         scene.finish();for(const renderer of Object.values(renderers))keyboard(renderer);
       }
-      if(row){row.input.checked=Boolean(record?.enabled);row.status.textContent=record?.status==='loading'?'載入中…':record?.status==='error'?'載入失敗：'+(record.error?.message||'未知錯誤'):active?'目前視窗 '+count.toLocaleString('zh-TW')+' 筆':record?.data?'已快取 · 未顯示':'可用 · 尚未載入';row.status.dataset.count=String(count);row.retry.hidden=record?.status!=='error';}
+      if(row){row.input.checked=Boolean(record?.enabled);row.status.textContent=record?.status==='loading'?'載入中…':record?.status==='error'?'載入失敗：'+(record.error?.message||'未知錯誤'):active?'目前視窗 '+count.toLocaleString('zh-TW')+' 筆'+(exclusions.get(id)?.size?'（里內樹木另以逐棵顯示）':''):record?.data?'已快取 · 未顯示':'可用 · 尚未載入';row.status.dataset.count=String(count);row.retry.hidden=record?.status!=='error';}
     }
   }
   function addDefinition(definition){
@@ -145,6 +153,7 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
   // Hit only real shapes. Empty canvas space must not steal village SVG events.
   const container=map.getContainer();
   function hitRecord(event){
+    if(priorityHitTest(event))return;
     if(map.dragging?.moved() || map.boxZoom?.moved())return;
     if(event.target.closest?.('.leaflet-popup, .leaflet-marker-icon, .leaflet-control'))return;
     const point=map.mouseEventToLayerPoint(event);
@@ -154,13 +163,14 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
     }}
   }
   function hoverRecord(event){
+    if(priorityHitTest(event))return;
     if(event.target.closest?.('.leaflet-popup, .leaflet-marker-icon, .leaflet-control'))return;
     const point=map.mouseEventToLayerPoint(event);
     for(const renderer of Object.values(renderers))for(let order=renderer._drawLast;order;order=order.prev)if(order.layer.options.interactive&&order.layer._containsPoint(point)){event.stopImmediatePropagation();return;}
   }
   container.addEventListener('mousemove',hoverRecord,true);container.addEventListener('mouseover',hoverRecord,true);
   container.addEventListener('click',hitRecord,true);map.on('moveend zoomend',render);
-  return {ensure,setFilter(filter={}){district=typeof filter.district==='string'?filter.district:'';state.district=district;render();},destroy(){
+  return {ensure,setPriorityHitTest(fn){priorityHitTest=typeof fn==='function'?fn:()=>false;},setExcludedTrees(records=[]){const signature=JSON.stringify(records.map(r=>[r.layerId,String(r.treeId)]));if(signature===exclusionSignature)return;exclusionSignature=signature;exclusions=buildTreeExclusions(records);exclusionVersion++;views.clear();render();},setFilter(filter={}){district=typeof filter.district==='string'?filter.district:'';state.district=district;render();},destroy(){
     dead=true;loader.destroy();map.off('moveend zoomend',render);container.removeEventListener('click',hitRecord,true);container.removeEventListener('mousemove',hoverRecord,true);container.removeEventListener('mouseover',hoverRecord,true);
     for(const {group}of scenes.values())map.removeLayer(group);
     for(const renderer of Object.values(renderers))if(map.hasLayer(renderer))map.removeLayer(renderer);

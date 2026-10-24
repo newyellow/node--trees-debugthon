@@ -1,4 +1,6 @@
 import L from 'leaflet';
+import { createVillageTrees } from './village-trees.js';
+import './village-trees.css';
 import { installRecordLayers } from './record-layers.js';
 import './record-layers.css';
 import { interiorAnchor } from './hover-anchor.js';
@@ -8,7 +10,7 @@ import { createCapabilityRadar } from './capability-radar.js';
 import './capability-radar.css';
 import { CAPABILITIES, RADAR_CAPABILITIES, dominantCapability, TIE_COLOR, NEUTRAL_COLOR } from './domain.js';
 const $ = id => document.getElementById(id), base = import.meta.env.BASE_URL;
-let data, regions, map, group, selected, recordLayers, visible = [], layers = new Map();
+let data, regions, map, group, selected, recordLayers, villageTrees, visible = [], layers = new Map();
 function el(tag, text, className) { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (className) n.className = className; return n; }
 const fmt = (v, digits = 0) => Number.isFinite(v) ? v.toLocaleString('zh-TW', { maximumFractionDigits: digits }) : 'N/A';
 function card(title, score, raw, note) {
@@ -21,13 +23,16 @@ let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
 function radar(v,size=170,compact=false) { return createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,label:'能力概覽'}); }
 function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?.78:id===selected?.70:.48}); }
 const hoverAnchors = new Map();
-function hideHover() { $('hover-preview')?.remove(); if(hovered) {styleVillage(hovered);hovered=null;} }
+let previewTimer,pinnedTreeVillage=null,shownTreeKey=null;
+function showVillageTrees(id,preview=false){clearTimeout(previewTimer);if(!villageTrees)return;const key=id+':'+preview;if(shownTreeKey===key)return;shownTreeKey=key;$('village-trees-controls').hidden=false;villageTrees.show(id,{preview});}
+function restorePinnedTrees(){clearTimeout(previewTimer);if(!villageTrees)return;if(pinnedTreeVillage)showVillageTrees(pinnedTreeVillage,false);else{shownTreeKey=null;villageTrees.clear();$('village-trees-controls').hidden=true;}}
+function hideHover(keepTrees=false) { $('hover-preview')?.remove(); if(hovered) {styleVillage(hovered);hovered=null;} if(!keepTrees)restorePinnedTrees(); }
 function positionHover() {
  const n=$('hover-preview'), anchor=hoverAnchors.get(hovered);if(!n||!anchor)return;
  const p=map.latLngToLayerPoint(anchor);n.setAttribute('transform','translate('+p.x+','+p.y+')');
 }
 function showHover(v,keyboard=false) {
- if(popup?.isOpen() || (!keyboard&&!matchMedia('(hover:hover)').matches))return;
+ if(map?.getContainer().querySelector('.leaflet-popup') || (!keyboard&&!matchMedia('(hover:hover)').matches))return;
  if(hovered===v.id)return;
  hideHover();const layer=layers.get(v.id),path=layer.getLayers()[0]?.getElement();if(!path)return;
  if(!hoverAnchors.has(v.id)) {
@@ -36,7 +41,7 @@ function showHover(v,keyboard=false) {
   const projected=polygons.map(p=>p.map(r=>r.map(([lng,lat])=>{const p=map.project([lat,lng],0);return [p.x,p.y];})));
   const point=interiorAnchor(projected);if(!point)return;hoverAnchors.set(v.id,map.unproject(point,0));
  }
- hovered=v.id;styleVillage(v.id,true);
+ hovered=v.id;styleVillage(v.id,true);previewTimer=setTimeout(()=>{if(!map.getContainer().querySelector('.leaflet-popup'))showVillageTrees(v.id,true);},180);
  const ns='http://www.w3.org/2000/svg', n=document.createElementNS(ns,'g');n.id='hover-preview';n.classList.add('polygon-hover','radar-chart');n.dataset.village=v.id;n.setAttribute('role','img');n.setAttribute('aria-label',v.district+v.name+'能力概覽');
  const text=(value,y,cls)=>{const t=document.createElementNS(ns,'text');t.textContent=value;t.setAttribute('x','0');t.setAttribute('y',y);t.setAttribute('text-anchor','middle');t.setAttribute('class',cls);n.append(t);return t;};
  text(v.district+'・'+v.name,-62,'hover-name');
@@ -64,7 +69,7 @@ function switchBasemap(kind,retry=false) {
  $('tile-status').textContent='';layer.addTo(map);
 }
 function select(id, fit = true, latlng, trigger = document.activeElement) {
-  const v = data.villages.find(r => r.id === id); if (!v) return; selected = id;
+  const v = data.villages.find(r => r.id === id); if (!v) return; selected = id;pinnedTreeVillage=id;showVillageTrees(id,false);
   layers.forEach((l,key)=>styleVillage(key));
   map.stop(); map.invalidateSize({pan:false,animate:false});
   layers.get(id)?.bringToFront(); if(fit&&layers.has(id))map.fitBounds(layers.get(id).getBounds(),{animate:false,paddingTopLeft:[35,145],paddingBottomRight:[35,60],maxZoom:16});
@@ -91,6 +96,7 @@ function filter() {
   const district = $('district').value, query = $('search').value.trim();
   visible = data.villages.filter(v => (!district || v.district === district) && (v.district + v.name).includes(query));
   const ids = new Set(visible.map(v => v.id));
+  if(pinnedTreeVillage&&!ids.has(pinnedTreeVillage)){pinnedTreeVillage=null;restorePinnedTrees();}
   layers.forEach((l,id) => { if (ids.has(id)) { if (!group.hasLayer(l)) group.addLayer(l); } else group.removeLayer(l); });
   $('result-count').textContent = visible.length + ' 里符合條件';
   $('villages').replaceChildren(...visible.map(v => { const li = el('li'), b = el('button', v.district + '・' + v.name); b.type = 'button'; b.dataset.id = v.id; b.setAttribute('aria-pressed', String(v.id === selected)); b.onclick = () => select(v.id); li.append(b); return li; }));
@@ -122,7 +128,9 @@ async function load() {
       L.control.zoom({ position: 'bottomleft' }).addTo(map);
       group = L.featureGroup().addTo(map);
       recordLayers=installRecordLayers({map,host:$('record-layers-list'),base,onFeatureOpen:()=>{hideHover();panelIds.forEach(id=>closePanel(id,false));}});
-      map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',hideHover);
+      villageTrees=createVillageTrees({map,base,statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,onFeatureOpen:({villageId}={})=>{if(villageId){pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';}hideHover(true);panelIds.forEach(id=>closePanel(id,false));},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
+      recordLayers.setPriorityHitTest(event=>villageTrees.containsEvent?.(event)||false);
+      map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',()=>hideHover());
     }
     hideHover();hoverAnchors.clear();group.clearLayers(); layers = new Map();
     const villagesById = new Map(data.villages.map(v => [v.id,v]));
@@ -130,11 +138,11 @@ async function load() {
       const v = villagesById.get(f.properties.id), strength = dominantCapability(v.scores);
       const l = L.geoJSON(f, { style: { color: '#50616a', weight: 1, fillColor: strength.color, fillOpacity: .48 } });
       l.on('mouseover',()=>showHover(v));
-      l.on('mouseout',hideHover);
+      l.on('mouseout',()=>hideHover());
       l.on('click',e=>select(v.id,false,e.latlng,e.originalEvent?.target));
       l.eachLayer(path => {
         path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜' + strength.text);
-          node.onfocus=()=>showHover(v,true);node.onblur=hideHover;
+          node.onfocus=()=>showHover(v,true);node.onblur=()=>hideHover();
           node.onkeydown = e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,false,undefined,node); popup?.getElement()?.querySelector('button')?.focus({preventScroll:true}); } };
         });
       });
@@ -144,7 +152,7 @@ async function load() {
     [...new Set(data.villages.map(v => v.district))].sort().forEach(d => { const o = el('option',d); o.value = d; $('district').append(o); });
     ['district','search','reset'].forEach(id => $(id).disabled = false);
     $('district').onchange = filter; $('search').oninput = filter;
-    $('reset').onclick = () => { map.closePopup();hideHover(); $('district').value = ''; $('search').value = ''; filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] }); };
+    $('reset').onclick = () => { map.closePopup();pinnedTreeVillage=null;hideHover(); $('district').value = ''; $('search').value = ''; filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] }); };
     filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] });
     provenance();
     $('status').textContent = '護照已就緒・456里界與真實快照｜分數是資料相對位置，不是地方好壞。';
@@ -172,4 +180,5 @@ for(const item of [...CAPABILITIES, {label:'多項正值能力並列最高',colo
   const li = el('li',(item.emoji?item.emoji+' ':'')+item.label); const swatch = el('span',undefined,'swatch'); swatch.style.background = item.color; li.prepend(swatch); $('legend-items').append(li);
 }
 $('detail-method').onclick=()=>openPanel('method',$('detail-method'));
+$('clear-village-trees').onclick=()=>{pinnedTreeVillage=null;hideHover();};
 $('retry').onclick = load; load();

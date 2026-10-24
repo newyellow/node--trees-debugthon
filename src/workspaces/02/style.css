@@ -17,3 +17,7 @@
 .polygon-hover .hover-score{font-size:9px;font-weight:700}.polygon-hover.radar-chart .radar-svg{width:120px;height:120px}.polygon-hover.radar-chart .radar-axis-index{font-size:23px;stroke-width:1px}.village-overview .radar-chart .radar-axis-index{font-size:21px}
 
 #records{left:max(12px,env(safe-area-inset-left));right:auto;width:305px}#records input[type=checkbox]{width:auto;padding:0}#records .panel-scroll>p{font-size:11px}@media(max-width:760px){#records{left:8px;right:8px;width:auto;max-height:52dvh}}@media(max-height:500px){#records{left:8px;right:auto;width:305px}}
+
+#village-trees-controls{position:absolute;right:12px;bottom:48px;z-index:490;max-width:min(320px,calc(100% - 80px));padding:8px 10px;font-size:11px}#village-trees-controls button{font-size:11px;padding:4px 8px;margin-top:5px}@media(max-width:760px){#village-trees-controls{right:8px;bottom:48px;max-width:235px}#stage:has(.panel:not([hidden])) #village-trees-controls{display:none}}
+
+#stage:has(.village-tree-popup-shell) #village-trees-controls,#stage:has(.village-tree-popup-shell) .status-wrap{display:none}
