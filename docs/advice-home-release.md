@@ -1,0 +1,9 @@
+# Reviewed native home release
+
+Newyellow authorized replacing all456 home texts after accepting the Linquan pilot. The original batch/DB remain archival and unchanged. The authoritative home-only safe overlay is data/advice-home-releases/current.json; scripts/export-precomputed-advice.mjs joins it to the original planting records. Each public shard has one planting and one home record; planting payloads, tours and source records remain identical. The loader pins the new content-derived version for cache invalidation.
+
+455 new village texts were generated with native isolated agents and reviewed by different isolated agents; the accepted Linquan pilot was reused. At most six children were active. Four-village chunks returned structured JSON, with one bounded initial transport recovery and one bounded exception correction pass for four villages. Three villages lack tree records: they use future/conditional green-network observations, never imported local tree species. Misclassified cultivation evidence IDs were moved to their proper ledger field without changing prose. Hypothetical requests for road names are not factual blockers: the requirement is actual street-tree species labels, not roads.
+
+Private checkpoints retain raw generation, independent review, final text, fact input, source/trait evidence, request/task hashes, model/run metadata, exception decisions and original baselines. None of those private ledgers or raw responses is published. Public output contains only final answer, candidate names and safe source citations; dynamic plant API images/details and the fixed AI disclosure remain unchanged. Cached-only reading and legacy inference410 remain in effect.
+
+The shared evidence-bounded candidate pool contains Taiwan toad lily, fishmint and tuberous sword fern. Repeated species are intentional; no claim of resolved list homogeneity or household-specific suitability is made. Future plant-pool research is separate from this release.

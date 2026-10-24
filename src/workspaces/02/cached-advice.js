@@ -1,6 +1,6 @@
 import {safeHTTPS} from '../03/model.js';
 
-export const CACHED_ADVICE_VERSION = '4577aeaa30f65e6052df3bc5d9aef737f3d8f7cc9f5eeb82df5982800c70efab';
+export const CACHED_ADVICE_VERSION = '8bc0d8a564e5b36d573445c5767accb2147393afbf7a0cf3c064b94b9296f36c';
 export const ADVICE_MODES = Object.freeze(['planting', 'home']);
 const abortError = () => new DOMException('已停止讀取', 'AbortError');
 const check = (signal, isCurrent) => { if (signal?.aborted || !isCurrent()) throw abortError(); };
