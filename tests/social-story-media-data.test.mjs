@@ -8,11 +8,11 @@ const data = read('social-story-media.json');
 const report = readFileSync(new URL('../docs/research/social-story-media-audit.md', import.meta.url), 'utf8');
 const statuses = ['displayable', 'source-only', 'unavailable', 'blocked', 'provided-document', 'user-provided', 'source-attributed'];
 const https = value => { const u = new URL(value); assert.equal(u.protocol, 'https:'); assert.equal(u.username, ''); assert.equal(u.password, ''); };
-test('media manifest covers exactly the 54 canonical story IDs', () => {
+test('media manifest covers exactly the 55 canonical story IDs', () => {
  assert.equal(data.schemaVersion, 1);
  assert.ok(Number.isFinite(Date.parse(data.updatedAt)));
- assert.equal(catalogue.entries.length, 54);
- assert.equal(Object.keys(data.entries).length, 54);
+ assert.equal(catalogue.entries.length, 55);
+ assert.equal(Object.keys(data.entries).length, 55);
  assert.deepEqual(Object.keys(data.entries).sort(), catalogue.entries.map(e => e.id).sort());
 });
 test('displayable images have original source, credit, caption, grant and audit evidence', () => {
@@ -25,7 +25,7 @@ test('displayable images have original source, credit, caption, grant and audit 
    https(entry.sourceUrl);
    assert.ok(story.sources.some(s => s.url === entry.sourceUrl));
   }
-  if(['user-provided','source-attributed'].includes(entry.status)){validateStoryMedia({images:[entry.image]});assert.deepEqual(entry.image,story.images[0]);assert.ok(report.includes(entry.image.path));continue;}
+  if(['user-provided','source-attributed'].includes(entry.status)){validateStoryMedia({images:entry.images??[entry.image]});assert.deepEqual(entry.images??[entry.image],story.images);assert.ok(report.includes(entry.image.path));continue;}
   if (entry.status !== 'displayable') { assert.equal(Object.hasOwn(entry, 'image'), false); continue; }
   const image = entry.image;
   for (const field of ['url','sourceUrl','license','licenseUrl','credit','caption']) assert.ok(image[field]?.trim(), story.id + ': ' + field);
@@ -47,7 +47,7 @@ test('provided documents cannot invent public URLs or image permissions', () => 
  }
 });
 test('coverage counts are derived from entries and audit request budget is bounded', () => {
- assert.equal(data.coverage.total, 54);
+ assert.equal(data.coverage.total, 55);
  for (const status of statuses) assert.equal(data.coverage.byStatus[status], Object.values(data.entries).filter(e => e.status === status).length);
  assert.equal(data.coverage.originalArticleRequests, data.coverage.uniqueOriginalSourceUrls);
  assert.ok(data.coverage.originalArticleRequests <= 40);

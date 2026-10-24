@@ -1,0 +1,47 @@
+{
+  "id": "beitou-heart-village-edible-landscape",
+  "accessedAt": "2026-10-24",
+  "sourceUrl": "https://artogo.co/zh-TW/exhibition/beitouheartvillage/work/38068f18847a",
+  "sourceTitle": "可食地景｜走進中心新村的街談巷語",
+  "sourceStatus": 200,
+  "sourcePublishedAt": null,
+  "sourceReview": "已閱讀作品#10全文。文章列芒果為庭院果樹，並說明菜、花、家畜、自給自足與今日志工可食地景；未載明個別植樹者或年分。",
+  "sourceLocation": "臺北市北投區中心新村",
+  "photoContext": "青年公園地點依使用者說明；與中心新村故事分開註明，非同地或芒果個株證據。",
+  "baselineCommit": "4f51c8b3b3622a1a5bdd88042e2324a6ce6486ca",
+  "preserved54EntriesSHA256": "4dfcbd6aaa1ba51c07649ae32994436fb2fa7916f7ebdc2856a1763853998221",
+  "preservedExistingStoryCount": 54,
+  "storyCount": 55,
+  "photos": [
+    {
+      "originalFilename": "861132744_1147725930929020_4483307957822611865_n.jpg",
+      "path": "story-media/qingnian-park-memory-crowd.jpg",
+      "width": 665,
+      "height": 461,
+      "alt": "黑白老照片中，許多人聚集在階梯、棚架與街道旁。",
+      "caption": "青年公園老照片（一，地點依提供者說明）；作為早期生活氛圍配圖，非中心新村現場。",
+      "credit": "Newyellow 提供；原攝影者與拍攝年代未核。",
+      "sourcePage": "https://discord.com/channels/1562706666758082580/1563198305092243578/1563427713308561503",
+      "provenance": "user-provided",
+      "sha256": "040bd7b173f1a92432928dd5f47fd03ad6f15108641a12c9e8e8c2bb8606a209",
+      "rightsNote": "使用者明確指定本次故事展示；原影像權利歸原權利人，未宣稱開放授權，保留原圖浮水印。照片不作中心新村、芒果樹或特定年代的證明。"
+    },
+    {
+      "originalFilename": "861801733_1146205954600206_3974340314736606504_n.jpg",
+      "path": "story-media/qingnian-park-memory-street.jpg",
+      "width": 682,
+      "height": 450,
+      "alt": "黑白街景中，車輛、乘客與行人穿梭在低矮屋舍之間，右下保留udndata.com浮水印。",
+      "caption": "青年公園老照片（二，地點依提供者說明）；作為早期生活氛圍配圖，非中心新村現場。",
+      "credit": "Newyellow 提供；原圖帶 udndata.com 浮水印，攝影者與拍攝年代未核。",
+      "sourcePage": "https://discord.com/channels/1562706666758082580/1563198305092243578/1563427713308561503",
+      "provenance": "user-provided",
+      "sha256": "5cfbc49bfd7e72373ed1db11a8840b773d1ad975ab3374d7408dbde8b9fd7eb8",
+      "rightsNote": "使用者明確指定本次故事展示；原影像權利歸原權利人，未宣稱開放授權，保留原圖浮水印。照片不作中心新村、芒果樹或特定年代的證明。"
+    }
+  ],
+  "exhibitionCredit": "北投中心新村、山峸製作設計；策展：山峸製作設計；ARTOGO為展示平台非作者",
+  "exhibitionPeriod": "2023-09-30至2026-09-30（展期，不作文章發布日期）",
+  "independentReview": "來源複核與圖片歸屬審閱完成；兩地分開註明，不推定浮水印即攝影者",
+  "presentation": "所有配圖先於摘要；缺圖原因、照片權利、查證等說明只在來源與限制，不進閱讀內容；遊戲保留coverageHost生命週期與相對位置。"
+}

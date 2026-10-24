@@ -647,27 +647,72 @@
         "sha256": "fac96c55bc1c2e042e8168851ceaab5955f8080f2ae8eb60d5da55cc075097bf",
         "rightsNote": "使用者提供作本故事展示；原影像著作權歸原權利人，未宣稱開放授權。"
       }
+    },
+    "beitou-heart-village-edible-landscape": {
+      "status": "user-provided",
+      "sourceUrl": "https://discord.com/channels/1562706666758082580/1563198305092243578/1563427713308561503",
+      "reason": "使用者指定兩張青年公園老照片作本篇氛圍配圖，非中心新村或芒果個株證據。",
+      "image": {
+        "path": "story-media/qingnian-park-memory-crowd.jpg",
+        "width": 665,
+        "height": 461,
+        "alt": "黑白老照片中，許多人聚集在階梯、棚架與街道旁。",
+        "caption": "青年公園老照片（一，地點依提供者說明）；作為早期生活氛圍配圖，非中心新村現場。",
+        "credit": "Newyellow 提供；原攝影者與拍攝年代未核。",
+        "sourcePage": "https://discord.com/channels/1562706666758082580/1563198305092243578/1563427713308561503",
+        "provenance": "user-provided",
+        "sha256": "040bd7b173f1a92432928dd5f47fd03ad6f15108641a12c9e8e8c2bb8606a209",
+        "rightsNote": "使用者明確指定本次故事展示；原影像權利歸原權利人，未宣稱開放授權，保留原圖浮水印。照片不作中心新村、芒果樹或特定年代的證明。"
+      },
+      "images": [
+        {
+          "path": "story-media/qingnian-park-memory-crowd.jpg",
+          "width": 665,
+          "height": 461,
+          "alt": "黑白老照片中，許多人聚集在階梯、棚架與街道旁。",
+          "caption": "青年公園老照片（一，地點依提供者說明）；作為早期生活氛圍配圖，非中心新村現場。",
+          "credit": "Newyellow 提供；原攝影者與拍攝年代未核。",
+          "sourcePage": "https://discord.com/channels/1562706666758082580/1563198305092243578/1563427713308561503",
+          "provenance": "user-provided",
+          "sha256": "040bd7b173f1a92432928dd5f47fd03ad6f15108641a12c9e8e8c2bb8606a209",
+          "rightsNote": "使用者明確指定本次故事展示；原影像權利歸原權利人，未宣稱開放授權，保留原圖浮水印。照片不作中心新村、芒果樹或特定年代的證明。"
+        },
+        {
+          "path": "story-media/qingnian-park-memory-street.jpg",
+          "width": 682,
+          "height": 450,
+          "alt": "黑白街景中，車輛、乘客與行人穿梭在低矮屋舍之間，右下保留udndata.com浮水印。",
+          "caption": "青年公園老照片（二，地點依提供者說明）；作為早期生活氛圍配圖，非中心新村現場。",
+          "credit": "Newyellow 提供；原圖帶 udndata.com 浮水印，攝影者與拍攝年代未核。",
+          "sourcePage": "https://discord.com/channels/1562706666758082580/1563198305092243578/1563427713308561503",
+          "provenance": "user-provided",
+          "sha256": "5cfbc49bfd7e72373ed1db11a8840b773d1ad975ab3374d7408dbde8b9fd7eb8",
+          "rightsNote": "使用者明確指定本次故事展示；原影像權利歸原權利人，未宣稱開放授權，保留原圖浮水印。照片不作中心新村、芒果樹或特定年代的證明。"
+        }
+      ]
     }
   },
   "coverage": {
-    "total": 54,
+    "total": 55,
     "byStatus": {
       "source-only": 10,
       "source-attributed": 26,
       "provided-document": 17,
-      "user-provided": 1,
+      "user-provided": 2,
       "displayable": 0,
       "unavailable": 0,
       "blocked": 0
     },
-    "uniqueOriginalSourceUrls": 32,
-    "originalArticleRequests": 32,
-    "readableOriginalSources": 30,
+    "uniqueOriginalSourceUrls": 33,
+    "originalArticleRequests": 33,
+    "readableOriginalSources": 31,
     "blockedOriginalSources": 2,
     "licensePolicyRequests": 6,
     "verifiedImageUrls": 0,
     "articleRequestLimit": 40,
-    "auditDocument": "docs/research/social-story-media-audit.md"
+    "auditDocument": "docs/research/social-story-media-audit.md",
+    "storiesWithStoredImages": 28,
+    "storedImageCount": 29
   },
   "editorialAudit": {
     "total": 54,
@@ -702,6 +747,7 @@
       "yuanshan-avenue-banyan-removal",
       "yuanshan-expo-barringtonia"
     ],
-    "auditDocument": "docs/research/story-editorial-audit.json"
+    "auditDocument": "docs/research/story-editorial-audit.json",
+    "scope": "historical-original-54-stories"
   }
 }

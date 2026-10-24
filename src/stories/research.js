@@ -13,18 +13,18 @@ function el(tag,text,className) {
 function cell(label,...children) {const td=el('td');td.dataset.label=label;td.append(...children);return td;}
 function renderRow(e) {
  const row=el('tr'),details=el('details');row.dataset.storyId=e.id;
- const story=cell('摘要',el('p',e.summary));
+ const story=cell('摘要');appendStoredStoryImages(story,e.images??[],import.meta.env.BASE_URL);story.append(el('p',e.summary,'story-summary'));
  if(e.storyText?.length){const text=el('details',undefined,'story-text');text.append(el('summary','閱讀完整故事'),...e.storyText.map(p=>el('p',p)));story.append(text);}
- appendStoredStoryImages(story,e.images??[],import.meta.env.BASE_URL);
- if(!e.images?.length && e.imageNote)story.append(el('p',e.imageNote,'muted story-photo-note'));
- details.append(el('summary','查閱來源與限制（'+e.sources.length+'）'),el('p','適用限制：'+e.limitations,'limitations'));
+ details.className='story-provenance';details.append(el('summary','查閱來源與限制（'+e.sources.length+'）'),el('p','適用限制：'+e.limitations,'limitations'));
+ if(e.imageNote)details.append(el('p',e.imageNote,'story-photo-note'));
+ for(const image of e.images??[])details.append(el('p','圖片使用說明：'+image.rightsNote,'story-image-rights'));
  const list=el('ol',undefined,'sources');
  for (const s of e.sources) {
   const item=el('li'),url=safeSourceURL(s.url),link=el(url?'a':'strong',s.title);if(url){link.href=url;link.rel='noopener noreferrer';}else{item.append(el('p','使用者提供 PDF · 印刷頁 '+(s.page??'未標示')+' · 文件：'+(s.documentPath??s.documentId??'未標示')));}
   item.append(link,el('p','發布者：'+s.publisher),el('p','發布日期：'+(s.publishedAt??'未標示')+' · 查閱日期：'+s.accessedAt),el('p','來源定位：'+s.locator),el('blockquote',s.excerpt));list.append(item);
  }
  details.append(list);
- row.append(cell('主題／樹種',el('h2',e.title),el('p',e.species.join('、'))),cell('地點／年代',el('p',e.location),el('p',e.period,'muted')),story,cell('查證／證據範圍',el('span',STATUSES[e.verificationStatus],'badge '+e.verificationStatus),el('p',SCOPES[e.evidenceScope])),cell('來源與限制',el('p',e.limitations,'limitations'),details));return row;
+ row.append(cell('主題／樹種',el('h2',e.title),el('p',e.species.join('、'))),cell('地點／年代',el('p',e.location),el('p',e.period,'muted')),story,cell('查證／證據範圍',el('span',STATUSES[e.verificationStatus],'badge '+e.verificationStatus),el('p',SCOPES[e.evidenceScope])),cell('來源與限制',details));return row;
 }
 function render() {
  if(!data)return;

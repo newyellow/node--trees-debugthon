@@ -12,7 +12,18 @@ export function createStoryPanel({base,fetcher}) {
    for(const [key,title] of [['local','本里明確記載'],['regional','同區記載（非本里證據）'],['general','其他地點／物種背景'],['leads','待查線索（未核實）']]) {
     if(!result[key].length)continue;const section=el('section');section.dataset.storyGroup=key;section.append(el('h4',title));
 
-    for(const entry of result[key]){const article=el('article');article.dataset.storyId=entry.id;article.append(el('h5',entry.title),el('p',[entry.location,entry.period].filter(Boolean).join(' · ')),el('p',entry.summary),el('p',entry.limitations));if(entry.storyText?.length){const text=el('details');text.append(el('summary','閱讀完整故事'),...entry.storyText.map(p=>el('p',p)));article.append(text);}for(const s of entry.sources||[]){try{const u=new URL(s.url);if(!['https:','http:'].includes(u.protocol))continue;const a=el('a',s.title||s.url);a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';article.append(a);}catch{ /* Invalid links are not navigation. */ }}section.append(article);void media.load().then(entries=>{if(token===generation&&article.isConnected)appendStoryMedia(article,entries[entry.id],base);}).catch(()=>{});}host.append(section);
+    for(const entry of result[key]){
+     const article=el('article');article.dataset.storyId=entry.id;
+     const reading=el('div'),photos=el('div'),summary=el('p',entry.summary),sources=el('details');reading.className='story-reading';photos.className='story-photo-group';summary.className='story-summary';sources.className='story-provenance';
+     reading.append(photos,summary);
+     if(entry.storyText?.length){const text=el('details');text.className='story-text';text.append(el('summary','閱讀完整故事'),...entry.storyText.map(p=>el('p',p)));reading.append(text);}
+     sources.append(el('summary','來源與限制（'+entry.sources.length+'）'),el('p',entry.limitations));
+     if(entry.imageNote){const note=el('p',entry.imageNote);note.className='story-photo-note';sources.append(note);}
+     for(const image of entry.images??[])sources.append(el('p','圖片使用說明：'+image.rightsNote));
+     for(const source of entry.sources||[]){try{const url=new URL(source.url);if(!['https:','http:'].includes(url.protocol))continue;const a=el('a',source.title||source.url);a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';sources.append(a,el('p',source.publisher+' · '+(source.publishedAt||'未標示日期')));}catch{/* Non-public document references are not links. */}}
+     article.append(el('h5',entry.title),reading,el('p',[entry.location,entry.period].filter(Boolean).join(' · ')),sources);section.append(article);
+     void media.load().then(entries=>{if(token===generation&&article.isConnected)appendStoryMedia(photos,entries[entry.id],base,sources);}).catch(()=>{});
+    }host.append(section);
    }
 
   }catch(error){if(token!==generation)return;host.dataset.phase='error';host.replaceChildren(el('p','研究目錄載入失敗，尚未完成查詢；不是沒有歷史。'+error.message));const b=el('button','重試故事查詢');b.type='button';b.onclick=()=>this.show(host,{species,village,district,coverageHost});host.append(b);}
