@@ -2,7 +2,7 @@
 
 ## Authority and scope
 
-Version: home-reader-v3.1. Canonical policy, input projection and review rubric: scripts/advice-home-reader-contract.mjs. Canonical native request assembly: prepareHomeReaderRequest in scripts/advice-home-draft-core.mjs. The historical HTTP runner is not the new workflow and must not be invoked for this task. No production prompt, original batch, DB, public shard, website API or deployment is changed.
+Version: home-reader-v3.2. Canonical policy, input projection and review rubric: scripts/advice-home-reader-contract.mjs. Canonical native request assembly: prepareHomeReaderRequest in scripts/advice-home-draft-core.mjs. The historical HTTP runner is not the new workflow and must not be invoked for this task. No production prompt, original batch, DB, public shard, website API or deployment is changed.
 
 prepareHomeReaderRequest({basePrompt,grounding,plantFacts,researchLedger}) returns systemPrompt, message, safe input, promptHash and inputHash without network/file/model operations. It preserves the original planting prefix and safety suffix, replaces only the home draft policy, then explicitly sets a separate native-only editorLedger envelope. It does not include candidate examples in the generation input. New generation/dispatch always needs its own authorization; constructing these packets is zero inference.
 
@@ -52,3 +52,9 @@ Comparison rubric:
     node --check scripts/advice-home-draft-core.mjs
 
 These are offline contract/mock tests, not real generation or content acceptance. No unchanged frontend/full suite/build/viewport matrix is required for these draft-only modules. No HTTP model dispatch, retry, re-sampling, full-batch regeneration or public deployment belongs to this change.
+
+## Single pilot gate (2026-10-24 22:49)
+
+Newyellow accepted the three v3 texts as STYLE REFERENCES, not universal factual templates, not approval of every village or production deployment. Keep their exact private bytes and record approval message1563565000424161393 separately from candidate factual status. The Linquan pilot is purpose-selected for comparison, not random. Generator sees canonical rules/facts only, no Linquan old article and no other example (no-example fresh generation). An independently isolated reviewer receives draft, same facts, policy and rubric through prepareHomeReaderReviewRequest; one generation plus one review maximum, no automatic repair/retry. Save raw/final, both prompt/input hashes, actual model/run IDs and edits privately. Stop for user confirmation after final; no HTTP or production writes.
+
+Future bulk DESIGN ONLY: at most six native children active across BOTH stages, deterministic village-ID shards, immutable source/version/hash, generator then different isolated reviewer then mechanical validation then atomic checkpoint. Single integrator owns all output writes; workers return data only. Per-stage one attempt by default; failure checkpoint remains failed and needs explicit bounded retry authorization, no loops. Resume only matching input/rule hashes, skip completed IDs. Whole-batch authorization is not granted by accepting a style sample.
