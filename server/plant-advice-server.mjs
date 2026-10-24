@@ -6,9 +6,7 @@ import {randomUUID} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {resolve,sep} from 'node:path';
 import {pipeline} from 'node:stream/promises';
-import {loadGrounding} from './plant-advice-grounding.mjs';
-import {createModelClient} from './plant-advice-model.mjs';
-import {HttpError,validateRequest,formatResponse} from './plant-advice-validation.mjs';
+import {HttpError} from './plant-advice-validation.mjs';
 export const PUBLIC_ORIGIN='https://trees.piyellowclaw.xyz';
 const loopback=ip=>['127.0.0.1','::1','::ffff:127.0.0.1'].includes(ip);
 export function requestIP(req) {const peer=req.socket.remoteAddress;const cf=req.headers['cf-connecting-ip'];return loopback(peer)&&typeof cf==='string'&&isIP(cf) ? cf : peer || 'unknown';}
@@ -24,22 +22,6 @@ export function validateStaticUpstream(value='http://127.0.0.1:5175') {
   const u=new URL(value);if(u.protocol!=='http:'||!['127.0.0.1','localhost'].includes(u.hostname)||!u.port||Number(u.port)===18789||u.username||u.password||u.pathname!=='/'||u.search||u.hash)throw new Error('Invalid static upstream');return u;
 }
 function reply(res,status,data,retryAfter) {if(res.destroyed||res.writableEnded)return;res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...(retryAfter?{'Retry-After':String(retryAfter)}:{})});res.end(JSON.stringify(data));}
-// Each awaited write bounds the producer to one small NDJSON event plus socket buffers.
-async function streamEvent(res,event,signal) {
-  if(signal.aborted||res.destroyed)throw new Error('Disconnected');
-  if(res.write(JSON.stringify(event)+'\n'))return;
-  await new Promise((yes,no)=>{
-    const clean=()=>{res.off('drain',drain);res.off('close',closed);res.off('error',closed);signal.removeEventListener('abort',closed);};
-    const drain=()=>{clean();yes();},closed=()=>{clean();no(new Error('Disconnected'));};
-    res.once('drain',drain);res.once('close',closed);res.once('error',closed);signal.addEventListener('abort',closed,{once:true});
-    if(signal.aborted||res.destroyed)closed();
-  });
-}
-async function bodyJSON(req) {
-  if(Number(req.headers['content-length'])>16384)throw new HttpError(413,'訊息內容過大。');
-  const chunks=[];let size=0;const iterator=req.iterator({destroyOnReturn:false});for await(const chunk of iterator){size+=chunk.length;if(size>16384){req.resume();throw new HttpError(413,'訊息內容過大。');}chunks.push(chunk);}
-  try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw new HttpError(400,'JSON 格式錯誤。');}
-}
 function proxyStatic(req,res,upstream) {
   // Only an allowlist of static negotiation headers crosses this boundary.
   const headers={};for(const k of ['accept','accept-encoding','accept-language','if-none-match','if-modified-since','range','if-range'])if(req.headers[k])headers[k]=req.headers[k];
@@ -50,8 +32,8 @@ function proxyStatic(req,res,upstream) {
   });
   upstreamReq.setTimeout(30000,()=>upstreamReq.destroy());upstreamReq.on('error',()=>{if(!res.headersSent)reply(res,502,{error:'靜態頁面暫時無法載入。'});else res.destroy();});res.on('close',()=>upstreamReq.destroy());upstreamReq.end();
 }
-export function createHandler({grounding,model=createModelClient(),limiter=createLimiter(),staticUpstream='http://127.0.0.1:5175',localOrigin,staticRoot}={}) {
-  if(!grounding?.get)throw new Error('Grounding required');const upstream=staticRoot?null:validateStaticUpstream(staticUpstream);
+export function createHandler({grounding,model,limiter=createLimiter(),staticUpstream='http://127.0.0.1:5175',localOrigin,staticRoot}={}) {
+  const upstream=staticRoot?null:validateStaticUpstream(staticUpstream);
   const staticOptions=staticRoot?{public:resolve(staticRoot),cleanUrls:false,directoryListing:false,symlinks:false,etag:true,headers:[{source:'**/*',headers:[{key:'X-Content-Type-Options',value:'nosniff'},{key:'Referrer-Policy',value:'strict-origin-when-cross-origin'}]}],rewrites:[{source:'/',destination:'/index.html'}]}:null;
   const origins=new Set([PUBLIC_ORIGIN]);if(localOrigin){const u=new URL(localOrigin);if(u.protocol!=='http:'||!['127.0.0.1','localhost'].includes(u.hostname)||u.origin!==localOrigin)throw new Error('Invalid local staging origin');origins.add(localOrigin);}
   return async(req,res)=>{
@@ -62,27 +44,8 @@ export function createHandler({grounding,model=createModelClient(),limiter=creat
       if(path.includes('..')||path.includes('\0')||path.includes('\\'))throw new HttpError(400,'無效路徑。');
       if(path==='/api/plant-advice/health'&&req.method==='GET')return reply(res,200,{ok:true});
       if(path==='/api/plant-advice') {
-        if(req.method!=='POST')throw new HttpError(405,'僅接受 POST。');
-        if(!origins.has(req.headers.origin)||req.headers['sec-fetch-site']==='cross-site')throw new HttpError(403,'僅接受本站請求。');
-        if(!/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(req.headers['content-type']||'')||req.headers['content-encoding'])throw new HttpError(400,'僅接受 application/json。');
-        const input=validateRequest(await bodyJSON(req));
-        release=limiter.acquire(requestIP(req));
-        const context=await grounding.get(input.villageId);if(controller.signal.aborted)return;
-        const wantsStream=(req.headers.accept||'').split(',').some(part=>{
-          const [type,...parameters]=part.trim().split(';');
-          return type.toLowerCase()==='application/x-ndjson'&&!parameters.some(p=>/^\s*q=0(?:\.0*)?\s*$/i.test(p));
-        });
-        let deltaText='';
-        const begin=()=>{if(streaming)return;streaming=true;res.writeHead(200,{'Content-Type':'application/x-ndjson; charset=utf-8','Cache-Control':'no-store, no-transform','X-Content-Type-Options':'nosniff','X-Accel-Buffering':'no','Vary':'Accept'});res.flushHeaders();};
-        const output=await model(input,context,controller.signal,wantsStream?async text=>{
-          if(typeof text!=='string'||deltaText.length+text.length>6000)throw new Error('Invalid delta');
-          if(!text)return;deltaText+=text;begin();await streamEvent(res,{type:'delta',text},controller.signal);
-        }:undefined);
-        const formatted=formatResponse(output,input,grounding.sources,requestId);
-        if(!wantsStream)return reply(res,200,formatted);
-        // Models injected by tests may return without callbacks; production always streams.
-        if(deltaText!==formatted.answer)throw new HttpError(502,'AI 回覆格式異常，請手動重試。');
-        begin();await streamEvent(res,{type:'done',...formatted},controller.signal);res.end();return;
+        // Cached-only reading: old clients must never silently incur inference.
+        req.resume();return reply(res,410,{error:'即時 AI 建議已停用，請重新整理頁面以閱讀預生成建議。',mode:'precomputed-only'});
       }
       if(path.startsWith('/api')||/^\/(?:v1|ws|gateway)(?:\/|$)/i.test(path))throw new HttpError(404,'找不到此服務。');
       if(!['GET','HEAD'].includes(req.method))throw new HttpError(405,'不支援此請求。');
@@ -104,7 +67,7 @@ export function createHandler({grounding,model=createModelClient(),limiter=creat
 export async function startServer(options={}) {
   const port=options.port??Number(process.env.PORT||6996);if(!Number.isInteger(port)||port<0||port>65535)throw new Error('Invalid port');
   const rootDist=options.rootDist??process.env.ROOT_DIST??fileURLToPath(new URL('../dist',import.meta.url));
-  const grounding=options.grounding??await loadGrounding({root:rootDist});
+  const grounding=options.grounding;
   const staticUpstream=options.staticUpstream??process.env.STATIC_UPSTREAM;
   const staticRoot=staticUpstream?undefined:rootDist;
   if(staticUpstream&&Number(new URL(staticUpstream).port)===port)throw new Error('Static proxy loop');

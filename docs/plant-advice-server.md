@@ -1,3 +1,17 @@
+# Current production mode: pre-generated advice only
+
+As authorized by Newyellow2026-10-24 19:48, the website reads456 village JSON shards (912 successful mode records) under public/data/precomputed-advice/. Build copies these to dist. The browser locally plays saved text and labels it pre-generated; it never submits user chat or invokes the model. Missing/failed reads offer only a static read retry, never live inference fallback. Exact candidate photographs/descriptions remain runtime calls to the existing plant API and are not stored in the batch.
+
+npm start listens on127.0.0.1:6996 by default and serves dist directly. PORT and ROOT_DIST overrides remain. Explicit STATIC_UPSTREAM retains the existing split-static architecture. GET /api/plant-advice/health remains process health. Any request to /api/plant-advice now returns410 with mode:precomputed-only, including legacy POSTs. The current server imports neither model client nor grounding loader; no credential or Gateway is needed for cached reading. No domain-specific inference Origin policy applies to static GETs. General static/control-route protections remain.
+
+Regenerate sanitized public shards offline with node scripts/export-precomputed-advice.mjs only from a complete audited artifact; this command makes zero model calls. Do not expose private SQLite files, raw provider data, images or Flora descriptions. Exactly two home jobs were explicitly regenerated once; original910 successful results and previous attempts remain intact. Final912 successes used914 total attempts.
+
+For the existing demo, back up prior backend source and dist first; copy public precomputed shards and built assets, reload only the advice application (not Gateway/static/tunnel), verify health and legacy POST410, then publish changed HTML last. Do not copy unrelated batch-planning JSON into public dist. Rollback restores previous source/dist and reloads only the advice app; restoring historical live source also restores its old inference behavior, so do not do that silently after cached-only authorization.
+
+## Historical implementation notes (superseded by cached-only mode)
+
+The following records the prior live inference implementation; its POST/credential/streaming sections are not current operating instructions.
+
 # Server-mediated plant advice
 
 Node 24 built-ins only; no npm dependencies. Entry: server/plant-advice-server.mjs; exports startServer(options), createHandler(options). Validation, grounding and limiter helpers are independently exported/testable. The frontend and service deployment are separate integration work; this change does not deploy or modify Gateway/LaunchAgents.

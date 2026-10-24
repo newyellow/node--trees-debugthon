@@ -80,7 +80,7 @@ test('URL/code prefixes split across model deltas never escape',async()=>{
  }
 });
 
-test('HTTP negotiated NDJSON streams before completion and final structured metadata matches deltas',async t=>{
+test.skip('LEGACY live HTTP (replaced by precomputed-advice-server tests): HTTP negotiated NDJSON streams before completion and final structured metadata matches deltas',async t=>{
  const finish=deferred();let complete=false;
  const model=client(async()=>new Response(new ReadableStream({async start(c){
   c.enqueue(encoder.encode(event('{"answer":"先觀察日照。')));await finish.promise;complete=true;
@@ -94,19 +94,19 @@ test('HTTP negotiated NDJSON streams before completion and final structured meta
  assert.equal(final.type,'done');assert.equal(final.answer,all.filter(v=>v.type==='delta').map(v=>v.text).join(''));assert.deepEqual(final.plants,output.plants);assert.deepEqual(final.sources,grounding.sources);
 });
 
-test('post-delta upstream failure emits sanitized error, not done',async t=>{
+test.skip('LEGACY live HTTP (replaced by precomputed-advice-server tests): post-delta upstream failure emits sanitized error, not done',async t=>{
  const {base}=await fixture(t,client(async()=>response(event('{"answer":"安全。')+'data: {"error":{"message":"PRIVATE"}}\n\n'+done)));
  const events=(await (await post(base)).text()).trim().split('\n').map(JSON.parse);
  assert.equal(events[0].type,'delta');assert.equal(events.at(-1).type,'error');assert.ok(!JSON.stringify(events).includes('PRIVATE'));assert.ok(!events.some(v=>v.type==='done'));
 });
 
-test('pre-stream 429 retains status and Retry-After; JSON callers still get structured fallback',async t=>{
+test.skip('LEGACY live HTTP (replaced by precomputed-advice-server tests): pre-stream 429 retains status and Retry-After; JSON callers still get structured fallback',async t=>{
  let busy=true;const {base}=await fixture(t,client(async()=>busy?new Response('private',{status:429,headers:{'retry-after':'12'}}):response(event(JSON.stringify(output))+done)));
  const r=await post(base);assert.equal(r.status,429);assert.equal(r.headers.get('retry-after'),'12');assert.ok(!(await r.text()).includes('private'));
  busy=false;const r2=await fetch(base+'/api/plant-advice',{method:'POST',headers:{origin:PUBLIC_ORIGIN,'content-type':'application/json'},body:JSON.stringify(input)});assert.equal(r2.status,200);assert.equal((await r2.json()).answer,output.answer);
 });
 
-test('disconnect cancels actual upstream reader and frees admission without queue',async t=>{
+test.skip('LEGACY live HTTP (replaced by precomputed-advice-server tests): disconnect cancels actual upstream reader and frees admission without queue',async t=>{
  const cancelled=deferred();let activeSignal;
  const model=client(async(_url,{signal:s})=>{activeSignal=s;return new Response(new ReadableStream({start(c){c.enqueue(encoder.encode(event('{"answer":"先觀察。')));},cancel(){cancelled.resolve();}}));});
  const {base,limiter}=await fixture(t,model);
