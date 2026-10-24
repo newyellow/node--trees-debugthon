@@ -31,7 +31,7 @@ try{
   assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   const dataRequests=requests.filter(u=>new URL(u).pathname.includes('/data/'));
   assert.deepEqual(dataRequests.map(u=>new URL(u).pathname).sort(),[base.pathname+'data/tree-cultural-stories.json',base.pathname+'data/tree-history-search-coverage.json'].sort());
-  for(const format of ['json','csv']){const response=await p.request.get(new URL('data/tree-cultural-stories.'+format,base).href);assert.equal(response.status(),200);assert.equal(await response.text(),await readFile(new URL('../public/data/tree-cultural-stories.'+format,import.meta.url),'utf8'));}
+  for(const format of ['json','csv']){const response=await p.request.get(await p.getByRole('link',{name:'下載 '+format.toUpperCase(),exact:true}).getAttribute('href'));assert.equal(response.status(),200);assert.equal(await response.text(),await readFile(new URL('../public/data/tree-cultural-stories.'+format,import.meta.url),'utf8'));}
   await p.locator('#coverage-details > summary').click();
   await p.waitForFunction(()=>document.querySelectorAll('#coverage-rows tr').length===471);
   assert.equal(await p.locator('#coverage-rows tr').count(),471);
@@ -39,7 +39,7 @@ try{
   await p.getByLabel('搜尋標籤、ID、狀態或查詢字串').fill('species-214');
   assert.equal(await p.locator('#coverage-rows tr').count(),1);
   assert.match(await p.locator('#coverage-rows').textContent(),/未提供名稱/);
-  for(const format of ['json','csv']){const response=await p.request.get(new URL('data/tree-history-search-coverage.'+format,base).href);assert.equal(response.status(),200);assert.equal(await response.text(),await readFile(new URL('../public/data/tree-history-search-coverage.'+format,import.meta.url),'utf8'));}
+  for(const format of ['json','csv']){const response=await p.request.get(await p.getByRole('link',{name:'下載搜尋進度 '+format.toUpperCase(),exact:true}).getAttribute('href'));assert.equal(response.status(),200);assert.equal(await response.text(),await readFile(new URL('../public/data/tree-history-search-coverage.'+format,import.meta.url),'utf8'));}
   const pdfEntry=expected.entries.find(e=>e.verificationStatus==='lead' && e.sources.some(s=>s.kind==='provided-document'));
   if(pdfEntry){
    await p.getByLabel('全文搜尋',{exact:true}).fill(pdfEntry.title);

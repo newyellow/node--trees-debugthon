@@ -2,6 +2,7 @@ import './research.css';
 import {validateResearchData,filterEntries,SCOPES,STATUSES,safeSourceURL,validateCoverageData,filterCoverage,coverageStatus} from './research-model.js';
 const $ = id => document.getElementById(id);
 let data;
+async function downloadRevision(value){const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(value)));return [...new Uint8Array(bytes)].map(b=>b.toString(16).padStart(2,'0')).join('');}
 function el(tag,text,className) {
  const node = document.createElement(tag);
  if (text !== undefined) node.textContent = text;
@@ -33,6 +34,8 @@ async function load() {
   const response=await fetch(import.meta.env.BASE_URL+'data/tree-cultural-stories.json');
   if(!response.ok)throw new Error('HTTP '+response.status);
   data=validateResearchData(await response.json());
+  const revision=await downloadRevision(data);
+  for(const link of document.querySelectorAll('[aria-label="下載研究資料"] a')){const url=new URL(link.href);url.searchParams.set('v',revision);link.href=url.href;}
   $('description').textContent=data.description;$('coverage').textContent='收錄範圍：'+data.coverageNote;$('updated').textContent='資料更新：'+data.updatedAt;
   $('filters').hidden=false;render();
  }catch{$('message').textContent='研究資料暫時無法載入，請稍後重試。';$('retry').hidden=false;}
@@ -74,6 +77,8 @@ async function loadCoverage(){
  try{
   const response=await fetch(import.meta.env.BASE_URL+'data/tree-history-search-coverage.json');if(!response.ok)throw Error('HTTP '+response.status);
   coverageData=validateCoverageData(await response.json());const s=coverageData.summary;
+  const revision=await downloadRevision(coverageData);
+  for(const link of coverageDownloads.querySelectorAll('a')){const url=new URL(link.href);url.searchParams.set('v',revision);link.href=url.href;}
   coverageMessage.textContent=s.totalLabels+' 個來源標籤（不是分類學物種）；'+s.meaningfulLabels+' 個有意義標籤。'+s.statusCounts.searched+' 個取得可用搜尋結果；'+s.statusCounts['blocked-search-access']+' 個受阻（'+s.labelsWithOnlyBlockedRequests+' 個僅受阻請求、'+s.labelsBlockedWithoutIndividualRequest+' 個未逐名請求）；'+s.statusCounts['needs-name-review']+' 個名稱待核。'+s.labelsWithActualRequest+' 個有實際請求，共 '+s.actualQueryRequests+' 次。未搜尋或受阻不表示沒有故事；搜尋結果不等於有來源支持的故事。';
   coverageDetails.hidden=false;if(coverageDetails.open)renderCoverage();
  }catch{coverageMessage.textContent='搜尋涵蓋進度暫時無法載入；不影響下方故事查閱。';coverageRetry.hidden=false;}

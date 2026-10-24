@@ -28,7 +28,7 @@ try{
   assert.equal(await page.locator('#rows img').count(),0,'source text is not interpreted as HTML');
   assert.equal(await page.getByRole('link',{name:'返回首頁',exact:true}).getAttribute('href'),base.pathname+'index.html');
   assert.equal(await page.getByRole('link',{name:'返回樹木故事',exact:true}).getAttribute('href'),base.pathname+'stories/index.html');
-  for(const format of ['JSON','CSV'])assert.equal(await page.getByRole('link',{name:'下載 '+format,exact:true}).getAttribute('href'),base.pathname+'data/tree-cultural-stories.'+format.toLowerCase());
+  for(const format of ['JSON','CSV']){const url=new URL(await page.getByRole('link',{name:'下載 '+format,exact:true}).getAttribute('href'),base);assert.equal(url.pathname,base.pathname+'data/tree-cultural-stories.'+format.toLowerCase());assert.match(url.searchParams.get('v'),/^[a-f0-9]{64}$/);}
   await page.getByLabel('樹種',{exact:true}).fill('樹甲');assert.equal(await page.locator('#rows tr').count(),1);
   await page.getByLabel('地點',{exact:true}).fill('地乙');await page.locator('#empty').waitFor({state:'visible'});
   await page.getByRole('button',{name:'清除篩選'}).click();await page.waitForFunction(()=>document.querySelectorAll('#rows tr').length===2);assert.equal(await page.locator('#rows tr').count(),2);
@@ -46,7 +46,7 @@ try{
   await page.locator('#coverage-search').fill('未逐名請求');assert.equal(await page.locator('#coverage-rows tr').count(),223);
   await page.locator('#coverage-search').fill('未提供名稱');assert.equal(await page.locator('#coverage-rows tr').count(),1);
   await page.locator('#coverage-search').fill('');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-  for(const format of ['JSON','CSV'])assert.equal(await page.getByRole('link',{name:'下載搜尋進度 '+format,exact:true}).getAttribute('href'),base.pathname+'data/tree-history-search-coverage.'+format.toLowerCase());
+  for(const format of ['JSON','CSV']){const url=new URL(await page.getByRole('link',{name:'下載搜尋進度 '+format,exact:true}).getAttribute('href'),base);assert.equal(url.pathname,base.pathname+'data/tree-history-search-coverage.'+format.toLowerCase());assert.match(url.searchParams.get('v'),/^[a-f0-9]{64}$/);}
   await page.screenshot({path:'test-results/stories-research-'+width+'.png',fullPage:true});
  }
  failCoverage=true;await page.reload();await page.getByRole('button',{name:'重試搜尋進度',exact:true}).waitFor({state:'visible'});await page.locator('#filters').waitFor({state:'visible'});assert.equal(await page.locator('#rows tr').count(),2);
