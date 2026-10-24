@@ -1,10 +1,11 @@
+import {appendPlantDetails} from './plant-card.js';
 import {readAdviceStream} from './advice-stream.js';
 import {API, createClient, identityWarning, safeHTTPS} from '../03/model.js';
 import {exactPlants, lookupName, normalizeName, referenceImage} from './flora-lookup.js';
 import {createWikiFigureSession, createWikiImages, scientificName} from '../../shared/wiki-plant-images.js';
 
 export const INITIAL_MESSAGES = Object.freeze({
-  planting: '請像懂植物的朋友，先用一句四區綠網未來願景，再連結本里公開資料，推薦2至3種可供現勘評估的樹。約120至180個中文字、短段落，不先問卷、不列長篇免責；願景是構想，不是全里適種保證。請附可精確核對的植物用名，讓介面配來源照片。',
+  planting: '請用四個以空白行分隔的短段落，像植物朋友聊本里的未來願景：整體山系綠網願景；有依據的研究與本里綠網機會連結；實際樹木組成與養護方向；直接行動優先序及2至3種候選。山名、鄰近、地質只用資料支持，不編造。沒有樹況證據不建議移除。約180至240字，不重複免責註記。plants請完整對應第四段所有候選，讓介面配資料庫照片與詳細介紹。',
   home: '請像懂植物的朋友，先用一句綠生活願景連結本里公開資料，再分明亮陽台、較少光室內兩種情境推薦植物；少光不等於無光。約120至180個中文字、短段落，不推定我家日照、寵物或安全，不先問卷；最多一句選答問題放最後。請附精確植物用名讓介面配來源照片。'
 });
 export const boundedHistory = history => (Array.isArray(history) ? history : []).filter(m => ['user','assistant'].includes(m?.role) && typeof m.content === 'string').slice(-8).map(m => ({role:m.role,content:m.content.slice(0,1200)}));
@@ -14,7 +15,7 @@ export function adviceEndpoint(base = '/', origin = globalThis.location?.origin)
   return new URL('/api/plant-advice', origin).href;
 }
 export function validateAdvice(value) {
-  if (!value || typeof value.answer !== 'string' || !value.answer.trim() || value.answer.length > 12000 || !Array.isArray(value.plants) || !Array.isArray(value.sources) || value.plants.length > 16 || value.sources.length > 20) throw Error('AI 回應格式不符');
+  if (!value || typeof value.answer !== 'string' || !value.answer.trim() || value.answer.length > 12000 || !Array.isArray(value.plants) || !Array.isArray(value.sources) || value.plants.length > 4 || value.sources.length > 20) throw Error('AI 回應格式不符');
   if (value.plants.some(p => typeof p?.name !== 'string' || !p.name.trim() || p.name.length > 100 || (p.scientificName !== undefined && (typeof p.scientificName !== 'string' || p.scientificName.length > 150)))) throw Error('植物資料格式不符');
   if (value.sources.some(s => typeof s?.title !== 'string' || !s.title.trim() || s.title.length > 300 || (s.url !== undefined && (typeof s.url !== 'string' || s.url.length > 1200)))) throw Error('來源資料格式不符');
   if (value.requestId !== undefined && (typeof value.requestId !== 'string' || value.requestId.length > 200)) throw Error('請求識別格式不符');
@@ -25,6 +26,7 @@ export function referenceCandidates(data,plant){
  return exactPlants(data,name).filter(p=>scientificName(p.scientific_name)&&!identityWarning(p)&&(!latin||normalizeName(p.scientific_name)===latin));
 }
 export function confirmedPlant(data,plant){const matches=referenceCandidates(data,plant);return matches.length===1?matches[0]:null;}
+export const AI_ADVICE_QUOTE='※以上建議由 AI 經由樹木資料進行生成，實際應用仍須諮詢相關領域專家';
 const el = (tag,text) => { const node=document.createElement(tag); if(text !== undefined) node.textContent=text; return node; };
 const button = text => {const node=el('button',text);node.type='button';return node;};
 const link = (title,url) => {const node=el('a',title);node.href=url;node.target='_blank';node.rel='noopener noreferrer';return node;};
@@ -63,7 +65,7 @@ export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()
         for(const p of matches.slice(0,2)){
           const figure=el('figure'),image=referenceImage(p);section.append(figure);
           if(image){const img=el('img');img.alt=plant.name+'｜'+p.scientific_name+'（參考照片，非現存樹鑑定）';img.loading='lazy';img.referrerPolicy='no-referrer';img.src=image.url;const cap=el('figcaption',plant.name+' · '+p.scientific_name+' · '+image.attribution+' · '+image.license+' · ');cap.append(link('圖片來源',image.source));figure.append(img,cap);img.addEventListener('error',()=>{if(token===generation){img.remove();cap.prepend('照片無法載入 · ');}},{once:true});}
-          else figure.append(el('figcaption',plant.name+' · '+p.scientific_name+'：暫無參考照片。'));figures.attach(figure,p,image,{blocked:!!identityWarning(p)});
+          else figure.append(el('figcaption',plant.name+' · '+p.scientific_name+'：暫無參考照片。'));appendPlantDetails(section,p);figures.attach(figure,p,image,{blocked:!!identityWarning(p)});
         }
       }catch{if(token===generation)section.append(el('p','參考照片暫時未能載入。'));}
     }
@@ -89,6 +91,7 @@ export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()
       if(result.tour)startTour();
       if(tourHandle){panel.dataset.phase='tour';status.textContent='願景導覽進行中…';}
       await tourFinished;if(token!==generation||signal.aborted||panel.hidden)return;
+      const aiQuote=el('small',AI_ADVICE_QUOTE);aiQuote.className='advice-ai-quote';answer.after(aiQuote);
       answer.removeAttribute('aria-hidden');row.removeAttribute('aria-live');history=boundedHistory([...payload.history,{role:'user',content:message},{role:'assistant',content:result.answer}]);
       if(result.sources.length){const sources=el('details'),summary=el('summary','參考來源'),list=el('ul');sources.className='advice-sources';for(const source of result.sources){const item=el('li');item.append(source.url?link(source.title,source.url):el('span',source.title));list.append(item);}sources.append(summary,list);row.append(sources);}
       composerReady=true;panel.dataset.phase='ready';status.textContent=tourNote;last=null;input.value='';void pictures(row,result.plants,token);
