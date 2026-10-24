@@ -1,3 +1,4 @@
+import { createVegetation } from './vegetation/ui.js';
 import { createParkBoundaries } from './parks/ui.js';
 import { parkKey } from './parks/data.js';
 import L from 'leaflet';
@@ -22,6 +23,7 @@ const map = L.map('map', { zoomControl: false, preferCanvas: true, minZoom: 10, 
 L.control.zoom({ position: 'topright' }).addTo(map);
 L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
 installBasemaps(map);
+createVegetation({ map, baseUrl: import.meta.env.BASE_URL });
 map.createPane('areas'); map.getPane('areas').style.zIndex = 410;
 map.createPane('points'); map.getPane('points').style.zIndex = 430;
 map.createPane('density'); map.getPane('density').style.zIndex = 405;

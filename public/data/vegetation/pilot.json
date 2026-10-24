@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "method": "rgb-excess-green-v1",
+  "methodType": "spectral-color-heuristic-not-learned-model",
+  "parameters": {
+    "greenMin": 35,
+    "greenRedRatio": 1.1,
+    "greenBlueRatio": 1.06,
+    "excessGreenMin": 18,
+    "connectivity": 4,
+    "minAreaM2": 3
+  },
+  "grid": {
+    "z": 19,
+    "minX": 439181,
+    "minY": 224446,
+    "tileSize": 256
+  },
+  "columns": 4,
+  "rows": 3,
+  "analysisDisplayMetresPerPixel": 0.2705036376068301,
+  "nativeGroundResolutionMetres": null,
+  "captureDate": null,
+  "areaCrs": "EPSG:3826",
+  "outputCrs": "EPSG:4326",
+  "regionSha256": "c88a1380269c14d71b5ada31862d99cfa584d6244150cb0eb2160d1fc6ac9a56",
+  "inputs": [
+    {
+      "x": 439181,
+      "y": 224446,
+      "z": 19,
+      "sha256": "475689a97d79cc4e756bde6f1b921a505f33fa7959f3b6db30083890322fc318",
+      "bytes": 17604,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224446/439181",
+      "captureDate": null
+    },
+    {
+      "x": 439182,
+      "y": 224446,
+      "z": 19,
+      "sha256": "5d0e4a6eca1b835dfd448a03c85ffe5ffb5a63205427940ab5c2f5f71008d6d3",
+      "bytes": 18701,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224446/439182",
+      "captureDate": null
+    },
+    {
+      "x": 439183,
+      "y": 224446,
+      "z": 19,
+      "sha256": "32c64866215dd63538833452837ca18d6f7821933408e32af7be2f2009ad17af",
+      "bytes": 18530,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224446/439183",
+      "captureDate": null
+    },
+    {
+      "x": 439184,
+      "y": 224446,
+      "z": 19,
+      "sha256": "2d44e0c8ed378b492a4f2c30f73d96cb954e3c17c3f5668eed356aebd15fc852",
+      "bytes": 17925,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224446/439184",
+      "captureDate": null
+    },
+    {
+      "x": 439181,
+      "y": 224447,
+      "z": 19,
+      "sha256": "5b43be6353486f1b646adc0c4a4537ba01ea483a46cfa444a8e0e8beee959f99",
+      "bytes": 11297,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224447/439181",
+      "captureDate": null
+    },
+    {
+      "x": 439182,
+      "y": 224447,
+      "z": 19,
+      "sha256": "1bc97cb7aa9522e7b732827baf24cdba2541d9aa5dc4f97e44f73325cee036a0",
+      "bytes": 16173,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224447/439182",
+      "captureDate": null
+    },
+    {
+      "x": 439183,
+      "y": 224447,
+      "z": 19,
+      "sha256": "2d64449afef1f06157b65b7d01706a5265890ea6093b62f8e1f3146b5ef853f2",
+      "bytes": 15155,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224447/439183",
+      "captureDate": null
+    },
+    {
+      "x": 439184,
+      "y": 224447,
+      "z": 19,
+      "sha256": "a45212c263c060d26f04a6880369f4cc02fde8a78cdb20402e1c6b9aa5771a93",
+      "bytes": 17076,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224447/439184",
+      "captureDate": null
+    },
+    {
+      "x": 439181,
+      "y": 224448,
+      "z": 19,
+      "sha256": "b3f1a6d40d941ad2689a2c5da12ac7c1ba868bf0e412033b2b6b6a208ab14f7e",
+      "bytes": 18372,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224448/439181",
+      "captureDate": null
+    },
+    {
+      "x": 439182,
+      "y": 224448,
+      "z": 19,
+      "sha256": "3e13cfdcadb9da00fa624f382b5d1ece7398ab073ab9f7c21aa86f8a7b476907",
+      "bytes": 17505,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224448/439182",
+      "captureDate": null
+    },
+    {
+      "x": 439183,
+      "y": 224448,
+      "z": 19,
+      "sha256": "1a2e971bbd540295bc67cb7165e8cc57cf4b2897ea8f68b3a0b67a4bb055ab4d",
+      "bytes": 16998,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224448/439183",
+      "captureDate": null
+    },
+    {
+      "x": 439184,
+      "y": 224448,
+      "z": 19,
+      "sha256": "4005132232292fafa39aff1558b268e6806ae72d86e9b887888de845597eeea1",
+      "bytes": 14335,
+      "source": "https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/19/224448/439184",
+      "captureDate": null
+    }
+  ],
+  "counts": {
+    "roof": 0,
+    "micro": 31,
+    "small": 9,
+    "medium": 0,
+    "large": 0
+  },
+  "coverage": {
+    "type": "Feature",
+    "properties": {
+      "role": "actual-analysis-coverage"
+    },
+    "geometry": {
+      "type": "MultiPolygon",
+      "coordinates": [
+        [
+          [
+            [
+              121.56166076660156,
+              25.047036394082365
+            ],
+            [
+              121.56166076660156,
+              25.04517015867983
+            ],
+            [
+              121.5644073486328,
+              25.045170158679838
+            ],
+            [
+              121.5644073486328,
+              25.04703639408237
+            ],
+            [
+              121.56166076660156,
+              25.047036394082365
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "coverageAreaM2": 57291.130920410156,
+  "studyAreaM2": 19923609.635742188,
+  "coverageComplete": false,
+  "roofStatus": "unavailable: no verified roof evidence; non-green remainder is NOT roof",
+  "publicationReview": "NLSC terms permit attributed public display, prohibit mass download and removing source marks; derived polygon redistribution requires owner review; raw imagery never published",
+  "sourceTerms": "https://maps.nlsc.gov.tw/pro/use_clause.jsp",
+  "limitations": "3m² detection is approximate RGB footprint, not ecological forest type or confirmed tree canopy. No pH/soil/planting suitability inference. PHOTO2 is a layer version, NOT capture date.",
+  "downloadedTiles": 0,
+  "newBytes": 0,
+  "geojsonSha256": "32500afba462dd8a622a4879c63c80030774b71c60ed4902a6e94eccb1053cf6",
+  "file": "patches-32500afba462dd8a.geojson"
+}
