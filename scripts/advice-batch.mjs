@@ -27,7 +27,7 @@ async function freezeSource(source, base = BASE) {
       }
     }
   }
-  const data = ["public/data/village-game.json", "public/data/social-metrics.json", "public/data/plant-advice-knowledge.json", "public/data/mountain-ecology-knowledge.json", "public/data/village-trees/manifest.json"];
+  const data = ["public/data/village-game.json", "public/data/social-metrics.json", "public/data/plant-advice-knowledge.json", "public/data/mountain-ecology-knowledge.json", "public/data/street-tree-planning-knowledge.json", "public/data/village-trees/manifest.json"];
   const manifest = JSON.parse(git("show", sha + ":public/data/village-trees/manifest.json"));
   for (const v of Object.values(manifest.villages)) {
     if (!/^villages\/[A-Za-z0-9_-]+\.json$/.test(v.file)) throw Error("Unsafe manifest path");
