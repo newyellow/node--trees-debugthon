@@ -96,7 +96,7 @@ function openAdvice(v,mode,trigger){visionTour?.cancel('new-advice');panelIds.fo
 function showOverview(v,latlng,trigger) {
  hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('finder-toggle');
  const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
- content.append(el('div','里鄰自然輪廓','overview-radar-title'),el('div','六項指標・資料說明請查看細節','overview-radar-status'),radar(v,220,true));
+ content.append(el('div',v.name+' 自然輪廓','overview-radar-title'),radar(v,220,true));
  const rating=compositeRating(v.scores),ratingText=rating===null?'N/A':rating.toFixed(1)+' / 5';
  const stars=el('div',undefined,'rating-note summary-stars');stars.setAttribute('role','img');stars.setAttribute('aria-label','綜合星等 '+ratingText);
  const glyph=el('span',undefined,'stars-glyph'),back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');glyph.setAttribute('aria-hidden','true');front.style.width=(rating===null?0:rating/5*100)+'%';glyph.append(back,front);stars.append(glyph,el('span',ratingText,'stars-number'));content.append(stars);

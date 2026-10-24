@@ -87,3 +87,6 @@ header a:focus-visible{outline-color:var(--ne-lime)}
 .village-overview .overview-actions button:hover{background:#97ca46}
 .village-overview .overview-actions button:focus-visible{outline:2px solid #fffdf4;outline-offset:2px}
 #cards .nature-metric-icon{width:24px;height:24px}
+
+/* Separate the village heading from the chart without explanatory text. */
+.village-overview .overview-radar-title{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgb(151 202 70 / 35%)}
