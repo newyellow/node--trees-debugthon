@@ -77,4 +77,3 @@ test('loader bounds declared and streamed size and entry count, retry remains po
     await assert.rejects(loader.load(), /上限|解析/); assert.equal((await loader.load()).entries.length,53);
   }
 });
-

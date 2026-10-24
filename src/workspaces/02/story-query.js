@@ -88,4 +88,3 @@ export function createStoryQueryLoader({ base = '/', fetcher = globalThis.fetch 
   };
   return { load };
 }
-
