@@ -61,7 +61,7 @@ function clearSelection() {
   else $('finder-toggle').focus({preventScroll: true});
   suppressPreview = false;
 }
-let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
+let popup, popupFocus, hovered, activeBasemap, basemapKind = 'aerial';
 function radar(v,size=170,compact=false) { const chart=createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,pixelStyle:true,label:'六項能力概覽'});chart.querySelector('.radar-units').textContent='0–100 分；指標定義與資料限制請查看細節';return chart; }
 function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?VILLAGE_OPACITY.hover:id===selected?VILLAGE_OPACITY.selected:VILLAGE_OPACITY.base}); }
 const hoverAnchors = new Map();
@@ -182,7 +182,7 @@ async function load() {
       camera=createCameraMotion(map,{host:$('stage')});
       visionTour=createVisionTour({map,camera,leaflet:L,host:$('stage'),getRegions:()=>regions,getBasemap:()=>basemapKind,setBasemap:kind=>switchBasemap(kind)});
       advice=createAdvicePanel({base,container:$('stage'),onVision:()=>{if(!adviceKnowledge)throw Error('願景資料暫不可用');const started=visionTour.start(adviceKnowledge);return started?{finished:visionTour.whenFinished(),cancel:()=>visionTour.cancel('advice-cancel')}:null;},onClose:()=>visionTour.cancel('advice-close')});
-      switchBasemap('street');
+      switchBasemap('aerial');
       $('basemap').onchange=()=>{visionTour.cancel('manual-basemap',{restoreBasemap:false});switchBasemap($('basemap').value);};
       $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('地形')?'terrain':$('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
       L.control.zoom({ position: 'bottomleft' }).addTo(map);
