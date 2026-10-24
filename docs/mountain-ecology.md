@@ -51,4 +51,3 @@ Run the local source audit with the original attachment path:
 The inference fixture is mock-only; no credential is read and no model usage occurs. Required build runs once on the committed snapshot. No unrelated full test suite, viewport matrix or live model sample is required for this data integration.
 
 Serialized integrator must preserve current main, deploy new JSON/CSV before reloading ONLY the advice app, verify startup + public health and exact versioned JSON/CSV bytes, and verify deployed-source projection against production dist. No Gateway/agent configuration, credential, LaunchAgent, static service, hostname or tunnel changes are needed. No frontend entry changes are intended. Changing catalogue bytes requires updating ECOLOGY_SHA256; missing/tampered data fails closed. Back up previous backend source and dist before incremental deployment. Keep raw DOCX outside public/git.
-

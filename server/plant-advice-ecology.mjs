@@ -33,4 +33,3 @@ export function projectEcology(d,district,blueprint) {
  const contextClaims=['transect','microhabitats','adaptation-not-native-only','shade-caution','maintenance','diversity-and-disease'].map(id=>{const c=d.claims.find(c=>c.id===id);return {summary:c.summary,locator:c.locator};});
  return {...base,observations,candidateReferences,contextClaims,restrictions:[...d.recommendationPolicy.restrictions,'山系調查和走廊設計可擴充候選參考，不代表所選里已調查；非室內或陽台植物清單。','只引用有來源定位的生境／設計理由；資料未給的成樹大小、安全性、學名、動物成效、全年物候不得補猜。'],dataIssues:d.issues.filter(x=>['first-total','status-subtotals','percentages','taxon-labels','origin-conflict','missing-inventory'].includes(x.id)).map(x=>({id:x.id,detail:x.detail}))};
 }
-

@@ -43,4 +43,3 @@ test('actual server grounding supplies new ecology and source citation without l
  const dataMessage=body.messages[1].content;assert.ok(dataMessage.includes('candidateReferences'));assert.ok(dataMessage.includes('茄苳'));assert.ok(dataMessage.includes('selectedVillageSurveyed'));
  assert.ok(SYSTEM_PROMPT.includes('觀測出現不等於建議種植'));assert.ok(SYSTEM_PROMPT.includes('不把此山系清單當居家植物清單'));
 });
-
