@@ -148,12 +148,13 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     L.DomEvent.disableClickPropagation(box); L.DomEvent.disableScrollPropagation(box);
     const close=document.createElement('button');close.type='button';close.textContent='關閉樹種';close.className='species-close';close.onclick=()=>closeRecord();
     const floraHost=document.createElement('section');floraHost.className='species-flora';const storyHost=document.createElement('section');storyHost.className='species-stories';
+    const traitsHost=document.createElement('section');traitsHost.className='species-traits';const coverageHost=document.createElement('section');coverageHost.className='species-coverage';
     const heading=box.querySelector('h3'),source=[...box.querySelectorAll('p')].find(n=>n.textContent.startsWith('來源：'));
     const originals=document.createElement('details'),originalSummary=document.createElement('summary');originals.className='original-record-details';originalSummary.textContent='完整原始紀錄／同座標紀錄';originals.append(originalSummary);
     for(const child of [...box.children])if(child!==heading&&child!==source)originals.append(child);
-    box.replaceChildren(heading,source,floraHost,storyHost,originals);
+    box.replaceChildren(heading,source,floraHost,storyHost,traitsHost,coverageHost,originals);
     sidebar.replaceChildren(close,box);sidebar.hidden=false;close.focus({preventScroll:true});sidebar.scrollTop=0;
-    void flora.show(floraHost,treeSpecies(record.feature));const info=villageInfo(state.villageId);void stories.show(storyHost,{species:treeSpecies(record.feature),village:info.name||state.entry.name,district:info.district||state.entry.district});
+    void flora.show(floraHost,treeSpecies(record.feature),{detailsHost:traitsHost});const info=villageInfo(state.villageId);void stories.show(storyHost,{species:treeSpecies(record.feature),village:info.name||state.entry.name,district:info.district||state.entry.district,coverageHost});
 
   }
   function resetRender() {clearHover();if(!sidebar.hidden)closeRecord(false);token++; group.clearLayers(); markers = []; selected = 0; canvas.dataset.renderedCount = '0'; if (popup) {map.closePopup(popup); popup = null;} }

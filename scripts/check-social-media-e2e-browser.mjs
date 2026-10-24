@@ -25,7 +25,7 @@ try{for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
   await canvas.evaluate((c,steps)=>{for(let i=0;i<steps;i++)c.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));},steps);position=index;await page.keyboard.press('Enter');
   await page.waitForFunction(()=>!!document.querySelector('.species-flora article')||document.querySelector('.species-flora')?.textContent.includes('手動重試'));
   assert.ok(await page.locator('.species-flora article').count(),await page.locator('.species-flora').innerText());
-  assert.equal(await page.locator('.species-flora details').first().evaluate(n=>n.open),false);
+  assert.equal(await page.locator('.species-traits details').first().evaluate(n=>n.open),false);
   if(name==='榕樹'){
    const img=page.locator('.species-flora img').first();await img.scrollIntoViewIfNeeded();await page.waitForFunction(()=>{const i=document.querySelector('.species-flora img');return i?.complete&&i.naturalWidth>0;});await img.evaluate(i=>i.decode());
    assert.equal(await img.getAttribute('referrerpolicy'),'no-referrer');assert.equal(await page.locator('.species-flora article').first().evaluate(n=>n.firstElementChild.tagName),'FIGURE');

@@ -183,3 +183,7 @@ these checks do not certify a basemap provider's availability.
 ## Compact selected-village summary
 
 Selected-village bubble now contains only the six-axis radar, fractional star glyphs/numeric rating, and action buttons. Village identity remains in its accessible label and the detail overlay heading. Statistics, composite formula, simulation/proxy explanations and per-axis denominators are shown in 查看細節; the global DEMO banner remains visible. Camera behavior, datasets, story/media and rating calculations are unchanged. Focused acceptance: node scripts/check-social-summary-browser.mjs (VILLAGE_GAME_URL selects built/public URL).
+
+## Story-first tree sidebar
+
+The selected-tree sidebar reserves stable hosts in this order: plant photos, cultural stories, collapsed plant traits, collapsed research coverage, full original records. Separate async targets keep this order regardless of API/catalogue completion order; cancellation and retry retain the targets. The research caveat travels with coverage. Social-game API reference images accept credential-free HTTPS URLs regardless of licence category and retain original source/author/licence metadata; displaying or linking does not assert permission or an open redistribution licence. Shared planner safeImage and audited story-image rules are unchanged; Wiki fallback remains exact-species and handles absent/broken API photos. Run scripts/check-social-story-first-browser.mjs for one bounded mocked ordering/image/source-link check, not subjective animation testing.
