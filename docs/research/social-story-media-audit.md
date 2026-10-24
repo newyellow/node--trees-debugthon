@@ -427,3 +427,11 @@ Credit is publishing agency, not an invented photographer. Original caption reta
 | yuanshan-palm-introduction | provided-document | provided-document: not public image permission |
 | yuanshan-avenue-banyan-removal | provided-document | provided-document: not public image permission |
 | yuanshan-expo-barringtonia | provided-document | provided-document: not public image permission |
+
+### royal-palm-southern-imagination
+status: user-provided (not a third-party open-license grant)
+asset: public/story-media/royal-palm-zhongshan-south-film.jpg
+sourcePage: https://eyesonplace.net/2022/03/30/20124/
+Newyellow supplied the JPEG and explicitly requested storing it and displaying it with this story, Discord 1563418440436424734, 2026-10-24. Original filename: 859315176_1081415137670259_4168328379544740740_n.jpg. SHA256 fac96c55bc1c2e042e8168851ceaab5955f8080f2ae8eb60d5da55cc075097bf; 600x400 pixels. Preserved bytes, no hotlink. Original image rights remain with the rightsholder; no CC/public-domain license asserted. Existing article-image permissions and all prior53media statuses unchanged; coverage has54stories plus a separate supplied-image branch.
+Caption provenance: the article labels its image as 1950s Zhongshan South Road and credits the1959film《空中小姐》. Attached image resembles that scene; this is an attributed caption, not independent film-frame/date verification. Do not infer a specific tree ID or photographer.
+Story angle: southern imagination and changing city aesthetics, not a duplicate of inst-three-lane-uniform-policy or inst-renai-palms-retention. Both requested articles actually read; linkage stored with exact species label 大王椰子; no fuzzy mapping to other palms. Narrative rephrased rather than article republication. 2022maintenance discussion remains historical background, not current pruning advice.

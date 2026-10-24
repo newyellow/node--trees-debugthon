@@ -6,8 +6,8 @@ const catalogue = JSON.parse(await readFile(new URL('../public/data/tree-cultura
 const groups = r => ['local','regional','general','leads'].flatMap(k => r[k]);
 const entry = (location, extra = {}) => ({ id: location, species:['榕樹'], location, title:'Test fixture, not a historical claim', summary:'Fixture only', evidenceScope:'site-history', verificationStatus:'source-supported', sources:[], ...extra });
 
-test('real 53-entry catalogue: all exact species matches conserved once and source fields intact', () => {
-  assert.equal(catalogue.entries.length, 53);
+test('real 54-entry catalogue: all exact species matches conserved once and source fields intact', () => {
+  assert.equal(catalogue.entries.length, 54);
   for (const species of new Set(catalogue.entries.flatMap(e => e.species))) {
     if (species === '未載明樹種') continue;
     const result = queryStories(catalogue, { species, village:'大屯里', district:'北投區' });
@@ -58,7 +58,7 @@ test('loader lazy single request, concurrent dedup, cached real catalogue and pr
   const loader = createStoryQueryLoader({base:'/review/',fetcher:async (url, options) => {calls++;requested=url;assert.ok(options.signal instanceof AbortSignal);await wait;return new Response(JSON.stringify(catalogue));}});
   assert.equal(calls,0);
   const a=loader.load(), b=loader.load(); assert.equal(a,b); assert.equal(calls,1); release();
-  const loaded = await a; assert.equal(loaded.entries.length,53); assert.equal(await loader.load(), loaded); assert.equal(calls,1); assert.equal(requested,'/review/data/tree-cultural-stories.json');
+  const loaded = await a; assert.equal(loaded.entries.length,54); assert.equal(await loader.load(), loaded); assert.equal(calls,1); assert.equal(requested,'/review/data/tree-cultural-stories.json');
 });
 
 test('loader explicit errors clear failed cache and allow retry for HTTP, transport, parse and schema', async () => {
@@ -66,7 +66,7 @@ test('loader explicit errors clear failed cache and allow retry for HTTP, transp
   for (const failure of failures) {
     let calls=0;
     const loader=createStoryQueryLoader({base:'/',fetcher:async()=>++calls===1?failure():new Response(JSON.stringify(catalogue))});
-    await assert.rejects(loader.load()); assert.equal((await loader.load()).entries.length,53); await loader.load(); assert.equal(calls,2);
+    await assert.rejects(loader.load()); assert.equal((await loader.load()).entries.length,54); await loader.load(); assert.equal(calls,2);
   }
 });
 
@@ -74,6 +74,6 @@ test('loader bounds declared and streamed size and entry count, retry remains po
   for (const response of [() => new Response('{}',{headers:{'content-length':'2097153'}}), () => new Response('x'.repeat(2097153)), () => new Response(JSON.stringify({entries:Array(2001).fill(entry('test'))}))]) {
     let calls=0;
     const loader=createStoryQueryLoader({fetcher:async()=>++calls===1?response():new Response(JSON.stringify(catalogue))});
-    await assert.rejects(loader.load(), /上限|解析/); assert.equal((await loader.load()).entries.length,53);
+    await assert.rejects(loader.load(), /上限|解析/); assert.equal((await loader.load()).entries.length,54);
   }
 });

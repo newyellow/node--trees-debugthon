@@ -1,3 +1,4 @@
+import {validateStoryMedia} from './story-media.js';
 export const SCOPES = Object.freeze({'specific-tree':'特定樹木','site-history':'場域歷史','planting-policy':'植栽政策','general-context':'一般文化背景'});
 export const STATUSES = Object.freeze({'source-supported':'有來源支持',lead:'待查線索'});
 const string = value => typeof value === 'string' && value.trim().length > 0;
@@ -9,7 +10,7 @@ export function validateResearchData(data) {
  const ids = new Set();
  for (const e of data.entries) {
   if (!e || !['id','location','period','title','summary','limitations'].every(k=>string(e[k])) || ids.has(e.id) || !Array.isArray(e.species) || !e.species.length || !e.species.every(string) || !Object.hasOwn(SCOPES,e.evidenceScope) || !Object.hasOwn(STATUSES,e.verificationStatus) || !Array.isArray(e.sources) || !e.sources.length) throw new Error('研究條目格式不符');
-  ids.add(e.id);
+  ids.add(e.id);validateStoryMedia(e);
   for (const s of e.sources) if (!s || !['title','publisher','accessedAt','locator','excerpt'].every(k=>string(s[k])) || !(s.kind==='provided-document' ? s.url===null && string(s.documentId) && string(s.documentPath) && /^docs\/research\/[a-zA-Z0-9_/-]+\.pdf$/.test(s.documentPath) && !s.documentPath.split('/').includes('..') && Number.isInteger(s.page) && s.page>0 && Number.isInteger(s.pdfPage) && s.pdfPage>0 : safeSourceURL(s.url)) || !(s.publishedAt === null || string(s.publishedAt))) throw new Error('來源格式不符');
  }
  return data;
@@ -21,7 +22,7 @@ export function filterEntries(entries,{species='',location='',query='',status='a
   if (status !== 'all' && e.verificationStatus !== status) return false;
   if (!normalize(e.species.join(' ')).includes(normalize(species))) return false;
   if (!normalize(e.location).includes(normalize(location))) return false;
-  const full = normalize([e.title,e.summary,...e.species,e.location,e.period,e.limitations,SCOPES[e.evidenceScope],...e.sources.flatMap(s=>[s.title,s.publisher,s.locator,s.excerpt])].join(' '));
+  const full = normalize([e.title,e.summary,...(e.storyText??[]),...e.species,e.location,e.period,e.limitations,SCOPES[e.evidenceScope],...e.sources.flatMap(s=>[s.title,s.publisher,s.locator,s.excerpt])].join(' '));
   return words.every(word=>full.includes(word));
  });
 }

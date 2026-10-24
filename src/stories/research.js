@@ -1,4 +1,5 @@
 import './research.css';
+import {appendStoredStoryImages} from './story-media.js';
 import {validateResearchData,filterEntries,SCOPES,STATUSES,safeSourceURL,validateCoverageData,filterCoverage,coverageStatus} from './research-model.js';
 const $ = id => document.getElementById(id);
 let data;
@@ -11,7 +12,10 @@ function el(tag,text,className) {
 }
 function cell(label,...children) {const td=el('td');td.dataset.label=label;td.append(...children);return td;}
 function renderRow(e) {
- const row=el('tr'),details=el('details');
+ const row=el('tr'),details=el('details');row.dataset.storyId=e.id;
+ const story=cell('摘要',el('p',e.summary));
+ if(e.storyText?.length){const text=el('details',undefined,'story-text');text.append(el('summary','閱讀完整故事'),...e.storyText.map(p=>el('p',p)));story.append(text);}
+ appendStoredStoryImages(story,e.images??[],import.meta.env.BASE_URL);
  details.append(el('summary','查閱來源與限制（'+e.sources.length+'）'),el('p','適用限制：'+e.limitations,'limitations'));
  const list=el('ol',undefined,'sources');
  for (const s of e.sources) {
@@ -19,7 +23,7 @@ function renderRow(e) {
   item.append(link,el('p','發布者：'+s.publisher),el('p','發布日期：'+(s.publishedAt??'未標示')+' · 查閱日期：'+s.accessedAt),el('p','來源定位：'+s.locator),el('blockquote',s.excerpt));list.append(item);
  }
  details.append(list);
- row.append(cell('主題／樹種',el('h2',e.title),el('p',e.species.join('、'))),cell('地點／年代',el('p',e.location),el('p',e.period,'muted')),cell('摘要',el('p',e.summary)),cell('查證／證據範圍',el('span',STATUSES[e.verificationStatus],'badge '+e.verificationStatus),el('p',SCOPES[e.evidenceScope])),cell('來源與限制',el('p',e.limitations,'limitations'),details));return row;
+ row.append(cell('主題／樹種',el('h2',e.title),el('p',e.species.join('、'))),cell('地點／年代',el('p',e.location),el('p',e.period,'muted')),story,cell('查證／證據範圍',el('span',STATUSES[e.verificationStatus],'badge '+e.verificationStatus),el('p',SCOPES[e.evidenceScope])),cell('來源與限制',el('p',e.limitations,'limitations'),details));return row;
 }
 function render() {
  if(!data)return;
@@ -42,7 +46,8 @@ async function load() {
  finally{$('results').setAttribute('aria-busy','false');}
 }
 $('filters').addEventListener('submit',event=>event.preventDefault());
-$('filters').addEventListener('input',render);$('filters').addEventListener('change',render);
+// Input covers search fields and select; duplicate change-on-blur used to replace rows during the first disclosure click.
+$('filters').addEventListener('input',render);
 $('filters').addEventListener('reset',()=>setTimeout(render,0));$('retry').addEventListener('click',load);load();
 
 // Coverage is deliberately independent of the story catalogue and its retry path.

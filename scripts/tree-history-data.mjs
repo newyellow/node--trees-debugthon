@@ -1,3 +1,4 @@
+import {validateStoryMedia} from '../src/stories/story-media.js';
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 const LF=String.fromCharCode(10), CRLF=String.fromCharCode(13,10), BOM=String.fromCharCode(65279);
@@ -9,6 +10,7 @@ export function validateCatalogue(data) {
   const ids = new Set();
   for (const row of data.entries) {
     for (const key of ['id','location','period','title','summary','limitations']) if (typeof row[key] !== 'string' || !row[key].trim()) throw new Error('Missing entry '+key);
+    validateStoryMedia(row);
     if (ids.has(row.id)) throw new Error('Duplicate id '+row.id); ids.add(row.id);
     if (!Array.isArray(row.species) || !row.species.length || row.species.some(v=>typeof v !== 'string' || !v.trim())) throw new Error('Missing species '+row.id);
     if (!scopes.has(row.evidenceScope) || !statuses.has(row.verificationStatus)) throw new Error('Invalid evidence scope/status '+row.id);
@@ -33,15 +35,15 @@ export function csvCell(value) {
 }
 export function toCsv(data) {
   validateCatalogue(data);
-  const rows=[['ID','樹種（來源名稱）','地點','時期','標題','故事摘要','證據範圍','查證狀態','限制','來源標題','來源單位','來源網址','刊出日期','查閱日期','定位資訊','短摘錄']];
-  for (const e of data.entries) rows.push([e.id,e.species.join('／'),e.location,e.period,e.title,e.summary,scopeName(e.evidenceScope),statusName(e.verificationStatus),e.limitations,...['title','publisher','url','publishedAt','accessedAt','locator','excerpt'].map(key=>e.sources.map(s=>key==='url' && s.kind==='provided-document' ? s.documentPath+'（印刷頁'+s.page+'／PDF頁'+s.pdfPage+'）' : s[key] ?? '未標示').join(LF))]);
+  const rows=[['ID','樹種（來源名稱）','地點','時期','標題','故事摘要','證據範圍','查證狀態','限制','來源標題','來源單位','來源網址','刊出日期','查閱日期','定位資訊','短摘錄','故事內文','照片檔案','照片說明與出處']];
+  for (const e of data.entries) rows.push([e.id,e.species.join('／'),e.location,e.period,e.title,e.summary,scopeName(e.evidenceScope),statusName(e.verificationStatus),e.limitations,...['title','publisher','url','publishedAt','accessedAt','locator','excerpt'].map(key=>e.sources.map(s=>key==='url' && s.kind==='provided-document' ? s.documentPath+'（印刷頁'+s.page+'／PDF頁'+s.pdfPage+'）' : s[key] ?? '未標示').join(LF)),(e.storyText??[]).join(LF),(e.images??[]).map(i=>i.path).join(LF),(e.images??[]).map(i=>[i.caption,i.credit,i.sourcePage,i.rightsNote].join('；')).join(LF)]);
   return BOM+rows.map(row=>row.map(csvCell).join(',')).join(CRLF)+CRLF;
 }
 const md = value => String(value).replaceAll('|',String.fromCharCode(92)+'|').replaceAll(LF,'<br>');
 export function toMarkdown(data) {
   validateCatalogue(data);
   const lines=['# 臺北樹木歷史文化故事資料表','',data.description,'',data.coverageNote,'','更新日期：'+data.updatedAt,'','「來源支持摘要」只表示所列來源正文支持此筆摘要，不表示已完成獨立交叉查證、可推及同樹種所有地區，或已對應現有樹木 GIS 個體。口述、推測與來源未載的種植身世必須保留限制。','', '本表由 public/data/tree-cultural-stories.json 產生；請編輯 JSON 後執行 node scripts/tree-history-data.mjs。CSV：public/data/tree-cultural-stories.csv。','', '| ID | 樹種 | 地點／時期 | 故事摘要 | 證據範圍／狀態 | 來源與定位 | 限制 |','|---|---|---|---|---|---|---|'];
-  for (const e of data.entries) lines.push('| '+[e.id,e.species.join('／'),e.location+'；'+e.period,e.title+'：'+e.summary,scopeName(e.evidenceScope)+'／'+statusName(e.verificationStatus),e.sources.map(s=>s.publisher+'：'+(s.kind==='provided-document' ? s.title+'（使用者提供PDF；'+s.documentPath+'；印刷頁'+s.page+'／PDF頁'+s.pdfPage+'）' : '['+s.title+']('+s.url+')')+'；'+s.locator+'；刊出 '+(s.publishedAt||'未標示')+'／查閱 '+s.accessedAt+'；短摘錄「'+s.excerpt+'」').join(LF),e.limitations].map(md).join(' | ')+' |');
+  for (const e of data.entries) lines.push('| '+[e.id,e.species.join('／'),e.location+'；'+e.period,e.title+'：'+e.summary+(e.storyText?.length ? LF+e.storyText.join(LF):'')+(e.images?.length ? LF+e.images.map(i=>'照片：['+i.caption+'](../public/'+i.path+')；'+i.credit+'；'+i.rightsNote).join(LF):''),scopeName(e.evidenceScope)+'／'+statusName(e.verificationStatus),e.sources.map(s=>s.publisher+'：'+(s.kind==='provided-document' ? s.title+'（使用者提供PDF；'+s.documentPath+'；印刷頁'+s.page+'／PDF頁'+s.pdfPage+'）' : '['+s.title+']('+s.url+')')+'；'+s.locator+'；刊出 '+(s.publishedAt||'未標示')+'／查閱 '+s.accessedAt+'；短摘錄「'+s.excerpt+'」').join(LF),e.limitations].map(md).join(' | ')+' |');
   return lines.join(LF)+LF;
 }
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {

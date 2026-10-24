@@ -7,8 +7,8 @@ const root=new URL('../',import.meta.url);
 const json=async path=>JSON.parse(await readFile(new URL(path,root),'utf8'));
 test('integrated catalogue keeps PDF leads separate and validates in browser model',async()=>{
  const d=validateResearchData(await json('public/data/tree-cultural-stories.json'));
- assert.equal(d.entries.length,53);assert.equal(d.entries.filter(e=>e.verificationStatus==='lead').length,17);
- assert.equal(d.entries.filter(e=>e.verificationStatus==='source-supported').length,36);
+ assert.equal(d.entries.length,54);assert.equal(d.entries.filter(e=>e.verificationStatus==='lead').length,17);
+ assert.equal(d.entries.filter(e=>e.verificationStatus==='source-supported').length,37);
  for(const e of d.entries.filter(e=>e.id.startsWith('yuanshan-')))assert.equal(e.verificationStatus,'lead');
  for(const e of d.entries)for(const s of e.sources.filter(s=>s.kind==='provided-document')){assert.equal(s.url,null);const body=await readFile(new URL('docs/research/provided-yuanshan-20261024/extracted-page-'+s.page+'.txt',root),'utf8');assert.ok(body.replace(/\s+/gu,'').includes(s.excerpt.replace(/\s+/gu,'')));}
 });

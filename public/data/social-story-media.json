@@ -314,16 +314,34 @@
       "status": "provided-document",
       "sourceUrl": null,
       "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+    },
+    "royal-palm-southern-imagination": {
+      "status": "user-provided",
+      "sourceUrl": "https://eyesonplace.net/2022/03/30/20124/",
+      "reason": "Newyellow於2026-10-24提供附件並明確要求保存及於故事顯示；非第三方網站圖片開放授權判定。",
+      "image": {
+        "path": "story-media/royal-palm-zhongshan-south-film.jpg",
+        "width": 600,
+        "height": 400,
+        "alt": "老街景照片中，道路兩側成排椰子樹，車輛往來，遠處可見城門。",
+        "caption": "1950年代中山南路的大王椰子（地點與年代依眼底城事圖說）",
+        "credit": "Newyellow 提供圖片；參考文章圖說標示影像來自1959年電影《空中小姐》。",
+        "sourcePage": "https://eyesonplace.net/2022/03/30/20124/",
+        "provenance": "user-provided",
+        "sha256": "fac96c55bc1c2e042e8168851ceaab5955f8080f2ae8eb60d5da55cc075097bf",
+        "rightsNote": "使用者提供作本故事展示；原影像著作權歸原權利人，未宣稱開放授權。"
+      }
     }
   },
   "coverage": {
-    "total": 53,
+    "total": 54,
     "byStatus": {
       "displayable": 6,
       "source-only": 27,
       "unavailable": 0,
       "blocked": 3,
-      "provided-document": 17
+      "provided-document": 17,
+      "user-provided": 1
     },
     "uniqueOriginalSourceUrls": 32,
     "originalArticleRequests": 32,
