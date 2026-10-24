@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+const dir='docs/research/species-round1';
+const inventory=JSON.parse(fs.readFileSync('docs/research/species-inventory.json'));
+const existing=JSON.parse(fs.readFileSync('public/data/tree-cultural-stories.json'));
+const batches=Array.from({length:5},(_,i)=>JSON.parse(fs.readFileSync(`${dir}/batch-${i+1}.json`)));
+const entries=batches.flatMap(b=>b.entries).sort((a,b)=>a.id.localeCompare(b.id));
+const ids=new Set();
+for(const e of entries){if(ids.has(e.id))throw Error(`duplicate ${e.id}`);ids.add(e.id);const src=inventory.entries.find(s=>s.id===e.id);if(!src||src.label!==e.label)throw Error(`identity mismatch ${e.id}`);if(!Array.isArray(e.queries)||!Array.isArray(e.bodyReviews))throw Error(`missing evidence lists ${e.id}`);if(!['searched','blocked-search-access','needs-name-review'].includes(e.searchStatus))throw Error(`invalid status ${e.id}: ${e.searchStatus}`);if(e.searchStatus==='searched'&&!e.queries.some(q=>['usable-results','no-results','results','results-accessible','success'].includes(q.outcome)))throw Error(`searched without usable outcome ${e.id}`);}
+if(entries.length!==inventory.entries.length)throw Error(`coverage ${entries.length}`);
+const stories=batches.flatMap(b=>b.stories??[]);
+const storyIds=new Set();
+for(const s of stories){if(storyIds.has(s.id))throw Error(`story duplicate ${s.id}`);storyIds.add(s.id);for(const k of ['id','species','location','period','title','summary','evidenceScope','verificationStatus','limitations','sources'])if(!(k in s))throw Error(`missing story field ${k} ${s.id}`);if(s.verificationStatus!=='source-supported')throw Error(`not supported ${s.id}`);for(const src of s.sources){for(const k of ['title','publisher','url','publishedAt','accessedAt','locator','excerpt'])if(!(k in src))throw Error(`missing source field ${k}`);if(Array.from(src.excerpt).length>100)throw Error(`long excerpt ${s.id}`);}}
+const statusCounts=Object.fromEntries(['searched','blocked-search-access','needs-name-review'].map(s=>[s,entries.filter(e=>e.searchStatus===s).length]));
+const summary={totalLabels:entries.length,meaningfulLabels:entries.filter(e=>e.searchStatus!=='needs-name-review').length,statusCounts,labelsWithActualRequest:entries.filter(e=>e.queries.length).length,labelsBlockedWithoutIndividualRequest:entries.filter(e=>e.searchStatus==='blocked-search-access'&&!e.queries.length).length,labelsWithOnlyBlockedRequests:entries.filter(e=>e.searchStatus==='blocked-search-access'&&e.queries.length).length,labelsWithAtLeastTwoDistinctQueries:entries.filter(e=>new Set(e.queries.map(q=>q.query)).size>=2).length,actualDistinctPerLabelQueryStrings:entries.reduce((n,e)=>n+new Set(e.queries.map(q=>q.query)).size,0),actualQueryRequests:entries.reduce((n,e)=>n+e.queries.length,0),bodyReviews:entries.reduce((n,e)=>n+e.bodyReviews.length,0),newSourceSupportedStories:stories.length,nameReview:entries.filter(e=>e.searchStatus==='needs-name-review').map(e=>({id:e.id,label:e.label})),limitations:'Source labels are not taxonomic species. Search negatives mean not found in this bounded round, not absence of history. Search snippets are leads, never source-supported evidence. Blocked requests do not count as usable search coverage. No story is automatically associated with present GIS individuals.'};
+const ledger={schemaVersion:1,createdAt:'2026-10-24',inventoryPath:'docs/research/species-inventory.json',inputPins:inventory.inputs,inventorySha256:crypto.createHash('sha256').update(fs.readFileSync('docs/research/species-inventory.json')).digest('hex'),summary,entries};
+fs.writeFileSync(`${dir}/research-ledger.json`,JSON.stringify(ledger,null,2)+'\n');
+fs.writeFileSync(`${dir}/candidate-stories.json`,JSON.stringify({schemaVersion:1,updatedAt:'2026-10-24',description:'Research candidates only; parent review required before formal integration.',entries:stories},null,2)+'\n');
+fs.writeFileSync(`${dir}/summary.json`,JSON.stringify(summary,null,2)+'\n');
+console.log(JSON.stringify(summary,null,2));

@@ -1,0 +1,72 @@
+{
+  "duplicateUploadCount" : 2,
+  "extractionMethod" : "macOS PDFKit PDFPage.string; Swift; all four unique single-page PDFs",
+  "publishedAt" : null,
+  "publisherAttribution" : "文化銀行（使用者提供研究摘頁）",
+  "receivedAt" : "2026-10-24",
+  "rightsNote" : "User-supplied research excerpts retained under docs/research only; not placed in public/.",
+  "uniqueDocumentCount" : 4,
+  "uploadCount" : 6,
+  "uploads" : [
+    {
+      "bytes" : 241821,
+      "documentId" : "bank-culture-yuanshan-p21",
+      "documentPath" : "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+      "originalFilename" : "input-1---cd8875ae-dba6-4064-ba71-a118d65e76c3.pdf",
+      "pdfPage" : 1,
+      "pdfPageCount" : 1,
+      "printedPage" : 21,
+      "sha256" : "4fb1c404ba37709a684167e43ac679378362326e6a247996e6f00730226baa3f"
+    },
+    {
+      "bytes" : 213508,
+      "documentId" : "bank-culture-yuanshan-p24",
+      "documentPath" : "docs/research/provided-yuanshan-20261024/source-page-24.pdf",
+      "originalFilename" : "input-1a13218f8698ca92---4628ad13-a045-43e3-9f57-b9cf51ae9b40.pdf",
+      "pdfPage" : 1,
+      "pdfPageCount" : 1,
+      "printedPage" : 24,
+      "sha256" : "2b7251959e642455fd8529506d5fdc63b15e7ec8a9277a845b924ca840b51b03"
+    },
+    {
+      "bytes" : 241821,
+      "documentId" : "bank-culture-yuanshan-p21",
+      "documentPath" : "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+      "originalFilename" : "input-2---a03c0967-be9c-4efc-ba88-c243b61eae9b.pdf",
+      "pdfPage" : 1,
+      "pdfPageCount" : 1,
+      "printedPage" : 21,
+      "sha256" : "4fb1c404ba37709a684167e43ac679378362326e6a247996e6f00730226baa3f"
+    },
+    {
+      "bytes" : 218488,
+      "documentId" : "bank-culture-yuanshan-p22",
+      "documentPath" : "docs/research/provided-yuanshan-20261024/source-page-22.pdf",
+      "originalFilename" : "input-3---284d6b62-aed8-4958-bd8e-bce469c6c1ce.pdf",
+      "pdfPage" : 1,
+      "pdfPageCount" : 1,
+      "printedPage" : 22,
+      "sha256" : "f43bc8405dc019c0a0da9d1091648bdf32efeb7734bbb3a48ab51211a3a2cc83"
+    },
+    {
+      "bytes" : 239803,
+      "documentId" : "bank-culture-yuanshan-p23",
+      "documentPath" : "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+      "originalFilename" : "input-4---faebeb8f-5a38-4f2e-b76e-e361a09f07f1.pdf",
+      "pdfPage" : 1,
+      "pdfPageCount" : 1,
+      "printedPage" : 23,
+      "sha256" : "b4753bc65390ae4f696b7a43ed171dcff1d5c84776ea005e86d2d443ce0df055"
+    },
+    {
+      "bytes" : 213508,
+      "documentId" : "bank-culture-yuanshan-p24",
+      "documentPath" : "docs/research/provided-yuanshan-20261024/source-page-24.pdf",
+      "originalFilename" : "input-5---060ed9a7-5b52-4b28-aac8-90819ecca00e.pdf",
+      "pdfPage" : 1,
+      "pdfPageCount" : 1,
+      "printedPage" : 24,
+      "sha256" : "2b7251959e642455fd8529506d5fdc63b15e7ec8a9277a845b924ca840b51b03"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "reviewedAt": "2026-10-24",
+  "candidateCount": 22,
+  "addedLeads": 17,
+  "overlappingCandidates": 5,
+  "duplicateUploads": 2,
+  "uniquePdfPages": 4,
+  "policy": "5 overlapping candidates attached as explicitly unverified document references to2existing stories, not new confirmed events; other17remainlead.",
+  "decisions": [
+    {
+      "candidateId": "yuanshan-pollen-oak",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-pollen-castanopsis",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-machilus",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-camphor-prehistory",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-ficus-prehistory",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-barringtonia-lagoon",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-cephalanthus-lagoon",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-dalongdong-banyan",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-dalongdong-acacia",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-park-cherry",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-park-camphor",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-park-pine",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-park-cedar",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-shrine-forest",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-avenue-acacia",
+      "action": "related-document-not-new-story",
+      "targetId": "inst-zhongshan-practical-acacia"
+    },
+    {
+      "candidateId": "yuanshan-palm-introduction",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-avenue-banyan-removal",
+      "action": "added-as-lead"
+    },
+    {
+      "candidateId": "yuanshan-avenue-camphor",
+      "action": "related-document-not-new-story",
+      "targetId": "inst-zhongshan-diplomatic-avenue"
+    },
+    {
+      "candidateId": "yuanshan-avenue-sweetgum",
+      "action": "related-document-not-new-story",
+      "targetId": "inst-zhongshan-diplomatic-avenue"
+    },
+    {
+      "candidateId": "yuanshan-postwar-camphor",
+      "action": "related-document-not-new-story",
+      "targetId": "inst-zhongshan-diplomatic-avenue"
+    },
+    {
+      "candidateId": "yuanshan-postwar-sweetgum",
+      "action": "related-document-not-new-story",
+      "targetId": "inst-zhongshan-diplomatic-avenue"
+    },
+    {
+      "candidateId": "yuanshan-expo-barringtonia",
+      "action": "added-as-lead"
+    }
+  ]
+}

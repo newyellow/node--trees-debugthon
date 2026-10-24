@@ -1,0 +1,8457 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-24",
+  "scope": "Current mapped street and park tree snapshots; exact trimmed source labels, not taxonomic species. No synonym merging or source refresh.",
+  "inputs": [
+    {
+      "path": "public/data/street-trees.geojson",
+      "sha256": "a47f844b5122a3f9aac59bb7ae27358d05ea9dd2b24995a4e1d430ac6603a89e",
+      "records": 90358
+    },
+    {
+      "path": "public/data/park-trees.geojson",
+      "sha256": "3c9c90a9fe947856ca687f78b39c49e9c91aa32967800144866d054038623592",
+      "records": 72011
+    }
+  ],
+  "totalLabels": 471,
+  "totalRecords": 162369,
+  "entries": [
+    {
+      "id": "species-001",
+      "label": "榕樹",
+      "count": 18637,
+      "byDataset": {
+        "street-trees": 10585,
+        "park-trees": 8052
+      },
+      "districts": {
+        "士林區": 2501,
+        "大同區": 837,
+        "大安區": 1823,
+        "中山區": 2060,
+        "中正區": 1704,
+        "內湖區": 1422,
+        "文山區": 1081,
+        "北投區": 1435,
+        "松山區": 1794,
+        "信義區": 1334,
+        "南港區": 1259,
+        "萬華區": 1387
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-002",
+      "label": "茄苳",
+      "count": 14127,
+      "byDataset": {
+        "street-trees": 10205,
+        "park-trees": 3922
+      },
+      "districts": {
+        "士林區": 1365,
+        "大同區": 787,
+        "大安區": 1745,
+        "中山區": 1865,
+        "中正區": 1525,
+        "內湖區": 803,
+        "文山區": 628,
+        "北投區": 1259,
+        "松山區": 1374,
+        "信義區": 855,
+        "南港區": 1192,
+        "萬華區": 729
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-003",
+      "label": "樟樹",
+      "count": 11842,
+      "byDataset": {
+        "street-trees": 8428,
+        "park-trees": 3414
+      },
+      "districts": {
+        "士林區": 1758,
+        "大同區": 237,
+        "大安區": 2031,
+        "中山區": 1264,
+        "中正區": 965,
+        "內湖區": 621,
+        "文山區": 655,
+        "北投區": 1045,
+        "松山區": 1382,
+        "信義區": 1043,
+        "南港區": 551,
+        "萬華區": 290
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-004",
+      "label": "楓香",
+      "count": 10395,
+      "byDataset": {
+        "street-trees": 7662,
+        "park-trees": 2733
+      },
+      "districts": {
+        "士林區": 1558,
+        "大同區": 321,
+        "大安區": 1389,
+        "中山區": 1804,
+        "中正區": 508,
+        "內湖區": 448,
+        "文山區": 230,
+        "北投區": 1197,
+        "松山區": 1232,
+        "信義區": 743,
+        "南港區": 713,
+        "萬華區": 252
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-005",
+      "label": "臺灣欒樹",
+      "count": 8781,
+      "byDataset": {
+        "street-trees": 6376,
+        "park-trees": 2405
+      },
+      "districts": {
+        "士林區": 2125,
+        "大同區": 201,
+        "大安區": 1341,
+        "中山區": 525,
+        "中正區": 93,
+        "內湖區": 1225,
+        "文山區": 759,
+        "北投區": 955,
+        "松山區": 348,
+        "信義區": 347,
+        "南港區": 587,
+        "萬華區": 275
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-006",
+      "label": "黑板樹",
+      "count": 7558,
+      "byDataset": {
+        "street-trees": 3982,
+        "park-trees": 3576
+      },
+      "districts": {
+        "士林區": 564,
+        "大同區": 144,
+        "大安區": 1291,
+        "中山區": 296,
+        "中正區": 205,
+        "內湖區": 1203,
+        "文山區": 856,
+        "北投區": 622,
+        "松山區": 733,
+        "信義區": 860,
+        "南港區": 691,
+        "萬華區": 93
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-007",
+      "label": "白千層",
+      "count": 5573,
+      "byDataset": {
+        "street-trees": 4387,
+        "park-trees": 1186
+      },
+      "districts": {
+        "士林區": 1315,
+        "大同區": 120,
+        "大安區": 928,
+        "中山區": 1422,
+        "中正區": 242,
+        "內湖區": 482,
+        "文山區": 203,
+        "北投區": 190,
+        "松山區": 232,
+        "信義區": 128,
+        "南港區": 271,
+        "萬華區": 40
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-008",
+      "label": "小葉欖仁",
+      "count": 4833,
+      "byDataset": {
+        "street-trees": 2813,
+        "park-trees": 2020
+      },
+      "districts": {
+        "士林區": 446,
+        "大同區": 232,
+        "大安區": 387,
+        "中山區": 566,
+        "中正區": 184,
+        "內湖區": 660,
+        "文山區": 181,
+        "北投區": 502,
+        "松山區": 250,
+        "信義區": 734,
+        "南港區": 250,
+        "萬華區": 441
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-009",
+      "label": "水黃皮",
+      "count": 3908,
+      "byDataset": {
+        "street-trees": 2004,
+        "park-trees": 1904
+      },
+      "districts": {
+        "士林區": 345,
+        "大同區": 37,
+        "大安區": 564,
+        "中山區": 370,
+        "中正區": 169,
+        "內湖區": 371,
+        "文山區": 297,
+        "北投區": 458,
+        "松山區": 137,
+        "信義區": 364,
+        "南港區": 746,
+        "萬華區": 50
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-010",
+      "label": "山櫻花",
+      "count": 3255,
+      "byDataset": {
+        "street-trees": 1232,
+        "park-trees": 2023
+      },
+      "districts": {
+        "士林區": 504,
+        "大同區": 143,
+        "大安區": 279,
+        "中山區": 181,
+        "中正區": 110,
+        "內湖區": 157,
+        "文山區": 246,
+        "北投區": 754,
+        "松山區": 207,
+        "信義區": 268,
+        "南港區": 274,
+        "萬華區": 132
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-011",
+      "label": "大花紫薇",
+      "count": 2844,
+      "byDataset": {
+        "street-trees": 2242,
+        "park-trees": 602
+      },
+      "districts": {
+        "士林區": 114,
+        "大同區": 189,
+        "大安區": 120,
+        "中山區": 190,
+        "中正區": 14,
+        "內湖區": 1606,
+        "文山區": 34,
+        "北投區": 40,
+        "松山區": 47,
+        "信義區": 92,
+        "南港區": 268,
+        "萬華區": 130
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-012",
+      "label": "大王椰子",
+      "count": 2726,
+      "byDataset": {
+        "street-trees": 1781,
+        "park-trees": 945
+      },
+      "districts": {
+        "士林區": 347,
+        "大同區": 16,
+        "大安區": 732,
+        "中山區": 121,
+        "中正區": 772,
+        "內湖區": 124,
+        "文山區": 71,
+        "北投區": 69,
+        "松山區": 164,
+        "信義區": 169,
+        "南港區": 52,
+        "萬華區": 89
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-013",
+      "label": "光蠟樹",
+      "count": 2670,
+      "byDataset": {
+        "street-trees": 1793,
+        "park-trees": 877
+      },
+      "districts": {
+        "士林區": 115,
+        "大同區": 90,
+        "大安區": 532,
+        "中山區": 310,
+        "中正區": 111,
+        "內湖區": 385,
+        "文山區": 130,
+        "北投區": 354,
+        "松山區": 93,
+        "信義區": 211,
+        "南港區": 288,
+        "萬華區": 51
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-014",
+      "label": "阿勃勒",
+      "count": 2479,
+      "byDataset": {
+        "street-trees": 778,
+        "park-trees": 1701
+      },
+      "districts": {
+        "士林區": 349,
+        "大同區": 39,
+        "大安區": 587,
+        "中山區": 436,
+        "內湖區": 299,
+        "文山區": 76,
+        "北投區": 194,
+        "松山區": 105,
+        "信義區": 106,
+        "南港區": 159,
+        "中正區": 25,
+        "萬華區": 104
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-015",
+      "label": "苦楝",
+      "count": 2432,
+      "byDataset": {
+        "street-trees": 1794,
+        "park-trees": 638
+      },
+      "districts": {
+        "士林區": 159,
+        "大同區": 40,
+        "大安區": 228,
+        "中山區": 116,
+        "中正區": 12,
+        "內湖區": 630,
+        "文山區": 60,
+        "北投區": 696,
+        "松山區": 11,
+        "信義區": 231,
+        "南港區": 218,
+        "萬華區": 31
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-016",
+      "label": "木棉",
+      "count": 2119,
+      "byDataset": {
+        "street-trees": 1689,
+        "park-trees": 430
+      },
+      "districts": {
+        "士林區": 151,
+        "大同區": 18,
+        "大安區": 865,
+        "中山區": 81,
+        "中正區": 161,
+        "內湖區": 62,
+        "文山區": 160,
+        "北投區": 294,
+        "松山區": 27,
+        "信義區": 146,
+        "南港區": 38,
+        "萬華區": 116
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-017",
+      "label": "垂榕",
+      "count": 2022,
+      "byDataset": {
+        "street-trees": 451,
+        "park-trees": 1571
+      },
+      "districts": {
+        "士林區": 148,
+        "大同區": 18,
+        "大安區": 683,
+        "中山區": 199,
+        "中正區": 40,
+        "內湖區": 128,
+        "文山區": 25,
+        "北投區": 113,
+        "松山區": 50,
+        "信義區": 193,
+        "南港區": 177,
+        "萬華區": 248
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-018",
+      "label": "福木",
+      "count": 1982,
+      "byDataset": {
+        "street-trees": 484,
+        "park-trees": 1498
+      },
+      "districts": {
+        "士林區": 86,
+        "大同區": 42,
+        "大安區": 153,
+        "中山區": 558,
+        "內湖區": 310,
+        "文山區": 219,
+        "北投區": 242,
+        "松山區": 57,
+        "信義區": 110,
+        "南港區": 132,
+        "萬華區": 66,
+        "中正區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-019",
+      "label": "蒲葵",
+      "count": 1781,
+      "byDataset": {
+        "street-trees": 741,
+        "park-trees": 1040
+      },
+      "districts": {
+        "士林區": 195,
+        "大同區": 82,
+        "大安區": 149,
+        "中山區": 150,
+        "中正區": 226,
+        "內湖區": 182,
+        "文山區": 48,
+        "北投區": 98,
+        "松山區": 280,
+        "信義區": 61,
+        "南港區": 266,
+        "萬華區": 44
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-020",
+      "label": "烏桕",
+      "count": 1563,
+      "byDataset": {
+        "street-trees": 871,
+        "park-trees": 692
+      },
+      "districts": {
+        "士林區": 126,
+        "大同區": 22,
+        "大安區": 91,
+        "中山區": 41,
+        "中正區": 53,
+        "內湖區": 345,
+        "文山區": 114,
+        "北投區": 319,
+        "松山區": 16,
+        "信義區": 89,
+        "南港區": 322,
+        "萬華區": 25
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-021",
+      "label": "菩提樹",
+      "count": 1534,
+      "byDataset": {
+        "street-trees": 1388,
+        "park-trees": 146
+      },
+      "districts": {
+        "士林區": 62,
+        "大同區": 15,
+        "大安區": 527,
+        "中山區": 54,
+        "內湖區": 67,
+        "文山區": 90,
+        "北投區": 16,
+        "松山區": 655,
+        "信義區": 5,
+        "中正區": 11,
+        "南港區": 7,
+        "萬華區": 25
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-022",
+      "label": "芒果",
+      "count": 1378,
+      "byDataset": {
+        "street-trees": 646,
+        "park-trees": 732
+      },
+      "districts": {
+        "士林區": 150,
+        "大同區": 77,
+        "大安區": 161,
+        "中山區": 37,
+        "中正區": 203,
+        "內湖區": 39,
+        "文山區": 59,
+        "北投區": 154,
+        "松山區": 39,
+        "信義區": 155,
+        "南港區": 165,
+        "萬華區": 139
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-023",
+      "label": "黃椰子",
+      "count": 1359,
+      "byDataset": {
+        "street-trees": 289,
+        "park-trees": 1070
+      },
+      "districts": {
+        "士林區": 727,
+        "大同區": 16,
+        "大安區": 133,
+        "中山區": 88,
+        "中正區": 60,
+        "內湖區": 54,
+        "文山區": 23,
+        "北投區": 92,
+        "松山區": 43,
+        "信義區": 67,
+        "南港區": 36,
+        "萬華區": 20
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-024",
+      "label": "紫薇",
+      "count": 1316,
+      "byDataset": {
+        "street-trees": 1011,
+        "park-trees": 305
+      },
+      "districts": {
+        "士林區": 55,
+        "大同區": 29,
+        "大安區": 144,
+        "中山區": 164,
+        "中正區": 45,
+        "內湖區": 9,
+        "文山區": 360,
+        "北投區": 118,
+        "松山區": 27,
+        "信義區": 92,
+        "南港區": 103,
+        "萬華區": 170
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-025",
+      "label": "榔榆",
+      "count": 1297,
+      "byDataset": {
+        "street-trees": 672,
+        "park-trees": 625
+      },
+      "districts": {
+        "士林區": 88,
+        "大同區": 6,
+        "大安區": 100,
+        "中山區": 143,
+        "中正區": 12,
+        "內湖區": 220,
+        "文山區": 44,
+        "北投區": 109,
+        "松山區": 174,
+        "信義區": 14,
+        "南港區": 170,
+        "萬華區": 217
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-026",
+      "label": "九芎",
+      "count": 1266,
+      "byDataset": {
+        "street-trees": 668,
+        "park-trees": 598
+      },
+      "districts": {
+        "士林區": 106,
+        "大安區": 44,
+        "中山區": 93,
+        "中正區": 27,
+        "內湖區": 93,
+        "文山區": 79,
+        "北投區": 459,
+        "松山區": 123,
+        "信義區": 61,
+        "南港區": 153,
+        "萬華區": 25,
+        "大同區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-027",
+      "label": "盾柱木",
+      "count": 1151,
+      "byDataset": {
+        "street-trees": 879,
+        "park-trees": 272
+      },
+      "districts": {
+        "士林區": 179,
+        "大同區": 2,
+        "大安區": 282,
+        "中山區": 248,
+        "中正區": 4,
+        "內湖區": 20,
+        "北投區": 129,
+        "信義區": 231,
+        "南港區": 16,
+        "萬華區": 33,
+        "文山區": 3,
+        "松山區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-028",
+      "label": "龍柏",
+      "count": 1123,
+      "byDataset": {
+        "street-trees": 211,
+        "park-trees": 912
+      },
+      "districts": {
+        "士林區": 422,
+        "大安區": 37,
+        "中山區": 152,
+        "中正區": 91,
+        "文山區": 61,
+        "北投區": 139,
+        "南港區": 78,
+        "內湖區": 94,
+        "松山區": 4,
+        "信義區": 17,
+        "萬華區": 28
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-029",
+      "label": "落羽杉",
+      "count": 1063,
+      "byDataset": {
+        "street-trees": 218,
+        "park-trees": 845
+      },
+      "districts": {
+        "大同區": 5,
+        "中正區": 2,
+        "內湖區": 252,
+        "文山區": 33,
+        "北投區": 206,
+        "信義區": 103,
+        "南港區": 71,
+        "士林區": 273,
+        "大安區": 46,
+        "中山區": 39,
+        "松山區": 15,
+        "萬華區": 18
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-030",
+      "label": "櫻花",
+      "count": 1060,
+      "byDataset": {
+        "street-trees": 74,
+        "park-trees": 986
+      },
+      "districts": {
+        "士林區": 208,
+        "內湖區": 82,
+        "文山區": 102,
+        "北投區": 299,
+        "信義區": 39,
+        "大同區": 5,
+        "大安區": 62,
+        "中山區": 131,
+        "松山區": 89,
+        "南港區": 42,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-031",
+      "label": "櫸",
+      "count": 992,
+      "byDataset": {
+        "street-trees": 635,
+        "park-trees": 357
+      },
+      "districts": {
+        "士林區": 29,
+        "大同區": 23,
+        "大安區": 114,
+        "中正區": 84,
+        "北投區": 314,
+        "松山區": 18,
+        "信義區": 220,
+        "南港區": 59,
+        "萬華區": 63,
+        "中山區": 15,
+        "內湖區": 40,
+        "文山區": 13
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-032",
+      "label": "羅比親王海棗",
+      "count": 990,
+      "byDataset": {
+        "street-trees": 339,
+        "park-trees": 651
+      },
+      "districts": {
+        "士林區": 129,
+        "大安區": 136,
+        "中山區": 161,
+        "中正區": 141,
+        "文山區": 14,
+        "北投區": 141,
+        "松山區": 86,
+        "南港區": 53,
+        "萬華區": 57,
+        "內湖區": 48,
+        "信義區": 24
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-033",
+      "label": "亞力山大椰子",
+      "count": 972,
+      "byDataset": {
+        "street-trees": 53,
+        "park-trees": 919
+      },
+      "districts": {
+        "士林區": 489,
+        "大同區": 9,
+        "大安區": 50,
+        "中山區": 40,
+        "文山區": 85,
+        "北投區": 138,
+        "松山區": 9,
+        "信義區": 23,
+        "南港區": 50,
+        "中正區": 15,
+        "內湖區": 19,
+        "萬華區": 45
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-034",
+      "label": "流蘇",
+      "count": 914,
+      "byDataset": {
+        "street-trees": 218,
+        "park-trees": 696
+      },
+      "districts": {
+        "士林區": 169,
+        "大同區": 26,
+        "大安區": 71,
+        "中山區": 108,
+        "中正區": 40,
+        "內湖區": 105,
+        "文山區": 67,
+        "北投區": 72,
+        "松山區": 36,
+        "信義區": 48,
+        "南港區": 150,
+        "萬華區": 22
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-035",
+      "label": "蘭嶼羅漢松",
+      "count": 914,
+      "byDataset": {
+        "street-trees": 434,
+        "park-trees": 480
+      },
+      "districts": {
+        "士林區": 115,
+        "大安區": 40,
+        "內湖區": 53,
+        "文山區": 54,
+        "北投區": 57,
+        "松山區": 235,
+        "信義區": 46,
+        "南港區": 151,
+        "萬華區": 7,
+        "大同區": 38,
+        "中山區": 94,
+        "中正區": 24
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-036",
+      "label": "印度紫檀",
+      "count": 807,
+      "byDataset": {
+        "street-trees": 408,
+        "park-trees": 399
+      },
+      "districts": {
+        "士林區": 35,
+        "大安區": 144,
+        "中山區": 31,
+        "中正區": 44,
+        "內湖區": 18,
+        "文山區": 224,
+        "北投區": 22,
+        "松山區": 118,
+        "信義區": 155,
+        "大同區": 1,
+        "南港區": 13,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-037",
+      "label": "第倫桃",
+      "count": 782,
+      "byDataset": {
+        "street-trees": 70,
+        "park-trees": 712
+      },
+      "districts": {
+        "士林區": 221,
+        "中山區": 81,
+        "內湖區": 153,
+        "松山區": 12,
+        "南港區": 113,
+        "大安區": 80,
+        "中正區": 19,
+        "文山區": 18,
+        "北投區": 71,
+        "信義區": 14
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-038",
+      "label": "鳳凰木",
+      "count": 691,
+      "byDataset": {
+        "street-trees": 230,
+        "park-trees": 461
+      },
+      "districts": {
+        "士林區": 134,
+        "大同區": 21,
+        "大安區": 100,
+        "中山區": 131,
+        "中正區": 20,
+        "內湖區": 24,
+        "文山區": 21,
+        "北投區": 33,
+        "松山區": 26,
+        "信義區": 47,
+        "南港區": 64,
+        "萬華區": 70
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-039",
+      "label": "血桐",
+      "count": 668,
+      "byDataset": {
+        "street-trees": 221,
+        "park-trees": 447
+      },
+      "districts": {
+        "士林區": 161,
+        "大同區": 9,
+        "大安區": 15,
+        "中山區": 66,
+        "內湖區": 45,
+        "文山區": 90,
+        "北投區": 250,
+        "信義區": 5,
+        "南港區": 25,
+        "松山區": 1,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-040",
+      "label": "黃連木",
+      "count": 665,
+      "byDataset": {
+        "street-trees": 451,
+        "park-trees": 214
+      },
+      "districts": {
+        "士林區": 17,
+        "大同區": 18,
+        "大安區": 53,
+        "中正區": 109,
+        "內湖區": 37,
+        "文山區": 96,
+        "北投區": 93,
+        "松山區": 45,
+        "信義區": 60,
+        "南港區": 14,
+        "萬華區": 105,
+        "中山區": 18
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-041",
+      "label": "鵝掌柴",
+      "count": 659,
+      "byDataset": {
+        "street-trees": 19,
+        "park-trees": 640
+      },
+      "districts": {
+        "士林區": 128,
+        "大同區": 1,
+        "中山區": 9,
+        "內湖區": 149,
+        "北投區": 44,
+        "南港區": 152,
+        "文山區": 130,
+        "信義區": 46
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-042",
+      "label": "羅漢松",
+      "count": 658,
+      "byDataset": {
+        "street-trees": 389,
+        "park-trees": 269
+      },
+      "districts": {
+        "士林區": 101,
+        "大同區": 22,
+        "大安區": 78,
+        "中山區": 14,
+        "中正區": 17,
+        "內湖區": 43,
+        "文山區": 10,
+        "北投區": 117,
+        "松山區": 13,
+        "信義區": 96,
+        "南港區": 13,
+        "萬華區": 134
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-043",
+      "label": "梅",
+      "count": 636,
+      "byDataset": {
+        "street-trees": 94,
+        "park-trees": 542
+      },
+      "districts": {
+        "士林區": 315,
+        "大同區": 14,
+        "大安區": 26,
+        "北投區": 99,
+        "松山區": 23,
+        "南港區": 18,
+        "中山區": 32,
+        "中正區": 43,
+        "內湖區": 19,
+        "文山區": 4,
+        "信義區": 3,
+        "萬華區": 40
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-044",
+      "label": "欖仁樹",
+      "count": 622,
+      "byDataset": {
+        "street-trees": 333,
+        "park-trees": 289
+      },
+      "districts": {
+        "士林區": 64,
+        "大同區": 33,
+        "大安區": 36,
+        "中山區": 38,
+        "中正區": 26,
+        "內湖區": 47,
+        "文山區": 28,
+        "北投區": 187,
+        "松山區": 35,
+        "信義區": 44,
+        "南港區": 37,
+        "萬華區": 47
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-045",
+      "label": "美人樹",
+      "count": 582,
+      "byDataset": {
+        "street-trees": 339,
+        "park-trees": 243
+      },
+      "districts": {
+        "士林區": 110,
+        "大同區": 2,
+        "大安區": 19,
+        "中山區": 57,
+        "中正區": 6,
+        "內湖區": 36,
+        "文山區": 120,
+        "北投區": 77,
+        "松山區": 64,
+        "信義區": 57,
+        "南港區": 28,
+        "萬華區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-046",
+      "label": "黃脈刺桐",
+      "count": 579,
+      "byDataset": {
+        "street-trees": 369,
+        "park-trees": 210
+      },
+      "districts": {
+        "士林區": 13,
+        "中山區": 118,
+        "中正區": 19,
+        "內湖區": 22,
+        "北投區": 244,
+        "松山區": 48,
+        "信義區": 29,
+        "萬華區": 11,
+        "大安區": 56,
+        "文山區": 17,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-047",
+      "label": "青楓",
+      "count": 566,
+      "byDataset": {
+        "street-trees": 271,
+        "park-trees": 295
+      },
+      "districts": {
+        "士林區": 42,
+        "大同區": 6,
+        "大安區": 80,
+        "中山區": 36,
+        "中正區": 12,
+        "內湖區": 20,
+        "文山區": 71,
+        "北投區": 116,
+        "松山區": 59,
+        "信義區": 38,
+        "南港區": 31,
+        "萬華區": 55
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-048",
+      "label": "印度橡膠樹",
+      "count": 537,
+      "byDataset": {
+        "street-trees": 300,
+        "park-trees": 237
+      },
+      "districts": {
+        "士林區": 99,
+        "大同區": 8,
+        "大安區": 79,
+        "中山區": 70,
+        "內湖區": 24,
+        "北投區": 143,
+        "松山區": 35,
+        "信義區": 21,
+        "南港區": 11,
+        "萬華區": 18,
+        "中正區": 11,
+        "文山區": 18
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-049",
+      "label": "厚皮香",
+      "count": 537,
+      "byDataset": {
+        "street-trees": 24,
+        "park-trees": 513
+      },
+      "districts": {
+        "大安區": 24,
+        "中山區": 6,
+        "北投區": 114,
+        "南港區": 5,
+        "士林區": 76,
+        "中正區": 14,
+        "內湖區": 156,
+        "文山區": 14,
+        "松山區": 12,
+        "信義區": 72,
+        "萬華區": 44
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-050",
+      "label": "猢猻木",
+      "count": 536,
+      "byDataset": {
+        "street-trees": 223,
+        "park-trees": 313
+      },
+      "districts": {
+        "士林區": 129,
+        "大同區": 10,
+        "大安區": 16,
+        "中山區": 48,
+        "北投區": 145,
+        "松山區": 1,
+        "信義區": 33,
+        "南港區": 64,
+        "萬華區": 44,
+        "中正區": 8,
+        "內湖區": 12,
+        "文山區": 26
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-051",
+      "label": "洋紅風鈴木",
+      "count": 527,
+      "byDataset": {
+        "street-trees": 400,
+        "park-trees": 127
+      },
+      "districts": {
+        "士林區": 68,
+        "大同區": 7,
+        "大安區": 31,
+        "中山區": 9,
+        "中正區": 54,
+        "內湖區": 9,
+        "文山區": 30,
+        "北投區": 169,
+        "松山區": 61,
+        "南港區": 37,
+        "萬華區": 31,
+        "信義區": 21
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-052",
+      "label": "火焰木",
+      "count": 511,
+      "byDataset": {
+        "street-trees": 275,
+        "park-trees": 236
+      },
+      "districts": {
+        "士林區": 40,
+        "大同區": 17,
+        "大安區": 19,
+        "中山區": 38,
+        "中正區": 20,
+        "內湖區": 43,
+        "文山區": 213,
+        "北投區": 51,
+        "信義區": 2,
+        "南港區": 27,
+        "萬華區": 41
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-053",
+      "label": "水柳",
+      "count": 505,
+      "byDataset": {
+        "street-trees": 220,
+        "park-trees": 285
+      },
+      "districts": {
+        "大同區": 2,
+        "大安區": 91,
+        "北投區": 219,
+        "士林區": 103,
+        "中山區": 11,
+        "中正區": 1,
+        "內湖區": 20,
+        "文山區": 9,
+        "松山區": 9,
+        "南港區": 23,
+        "萬華區": 17
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-054",
+      "label": "肯氏蒲桃",
+      "count": 494,
+      "byDataset": {
+        "street-trees": 291,
+        "park-trees": 203
+      },
+      "districts": {
+        "士林區": 57,
+        "大同區": 4,
+        "大安區": 25,
+        "中山區": 5,
+        "內湖區": 231,
+        "松山區": 9,
+        "信義區": 4,
+        "南港區": 115,
+        "中正區": 25,
+        "文山區": 15,
+        "北投區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-055",
+      "label": "構樹",
+      "count": 488,
+      "byDataset": {
+        "street-trees": 193,
+        "park-trees": 295
+      },
+      "districts": {
+        "士林區": 73,
+        "大同區": 12,
+        "大安區": 7,
+        "中山區": 22,
+        "中正區": 1,
+        "內湖區": 26,
+        "文山區": 102,
+        "北投區": 156,
+        "信義區": 20,
+        "南港區": 63,
+        "萬華區": 2,
+        "松山區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-056",
+      "label": "馬拉巴栗",
+      "count": 483,
+      "byDataset": {
+        "street-trees": 173,
+        "park-trees": 310
+      },
+      "districts": {
+        "士林區": 148,
+        "大同區": 6,
+        "大安區": 40,
+        "中山區": 31,
+        "中正區": 2,
+        "內湖區": 57,
+        "文山區": 50,
+        "北投區": 51,
+        "松山區": 27,
+        "信義區": 30,
+        "南港區": 37,
+        "萬華區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-057",
+      "label": "大葉山欖",
+      "count": 473,
+      "byDataset": {
+        "street-trees": 225,
+        "park-trees": 248
+      },
+      "districts": {
+        "士林區": 20,
+        "大同區": 2,
+        "大安區": 47,
+        "中正區": 21,
+        "內湖區": 95,
+        "文山區": 2,
+        "北投區": 39,
+        "信義區": 55,
+        "南港區": 151,
+        "萬華區": 18,
+        "中山區": 18,
+        "松山區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-058",
+      "label": "杜英",
+      "count": 470,
+      "byDataset": {
+        "street-trees": 278,
+        "park-trees": 192
+      },
+      "districts": {
+        "士林區": 81,
+        "大同區": 12,
+        "大安區": 20,
+        "中山區": 50,
+        "中正區": 2,
+        "內湖區": 40,
+        "文山區": 33,
+        "北投區": 66,
+        "信義區": 95,
+        "南港區": 66,
+        "松山區": 3,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-059",
+      "label": "豔紫荊",
+      "count": 462,
+      "byDataset": {
+        "street-trees": 249,
+        "park-trees": 213
+      },
+      "districts": {
+        "士林區": 30,
+        "大同區": 8,
+        "大安區": 172,
+        "中山區": 40,
+        "中正區": 5,
+        "內湖區": 74,
+        "文山區": 23,
+        "北投區": 13,
+        "松山區": 7,
+        "信義區": 23,
+        "南港區": 54,
+        "萬華區": 13
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-060",
+      "label": "龍眼",
+      "count": 456,
+      "byDataset": {
+        "street-trees": 136,
+        "park-trees": 320
+      },
+      "districts": {
+        "士林區": 108,
+        "大同區": 27,
+        "大安區": 60,
+        "中山區": 29,
+        "中正區": 15,
+        "內湖區": 25,
+        "文山區": 57,
+        "北投區": 77,
+        "松山區": 16,
+        "信義區": 20,
+        "南港區": 16,
+        "萬華區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-061",
+      "label": "雀榕",
+      "count": 455,
+      "byDataset": {
+        "street-trees": 132,
+        "park-trees": 323
+      },
+      "districts": {
+        "士林區": 103,
+        "大同區": 16,
+        "大安區": 110,
+        "中山區": 31,
+        "中正區": 22,
+        "內湖區": 19,
+        "文山區": 15,
+        "北投區": 82,
+        "松山區": 7,
+        "信義區": 20,
+        "南港區": 22,
+        "萬華區": 8
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-062",
+      "label": "風鈴木",
+      "count": 405,
+      "byDataset": {
+        "street-trees": 280,
+        "park-trees": 125
+      },
+      "districts": {
+        "大同區": 63,
+        "大安區": 29,
+        "中山區": 14,
+        "中正區": 31,
+        "內湖區": 20,
+        "文山區": 12,
+        "北投區": 106,
+        "南港區": 13,
+        "萬華區": 55,
+        "士林區": 39,
+        "松山區": 21,
+        "信義區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-063",
+      "label": "海檬果",
+      "count": 385,
+      "byDataset": {
+        "street-trees": 89,
+        "park-trees": 296
+      },
+      "districts": {
+        "士林區": 10,
+        "大同區": 9,
+        "中正區": 75,
+        "內湖區": 4,
+        "南港區": 228,
+        "大安區": 12,
+        "文山區": 33,
+        "松山區": 2,
+        "信義區": 6,
+        "萬華區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-064",
+      "label": "小葉南洋杉",
+      "count": 373,
+      "byDataset": {
+        "street-trees": 68,
+        "park-trees": 305
+      },
+      "districts": {
+        "士林區": 68,
+        "大同區": 5,
+        "大安區": 39,
+        "中山區": 26,
+        "內湖區": 19,
+        "文山區": 19,
+        "北投區": 67,
+        "松山區": 11,
+        "信義區": 8,
+        "南港區": 39,
+        "中正區": 3,
+        "萬華區": 69
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-065",
+      "label": "蓮霧",
+      "count": 370,
+      "byDataset": {
+        "street-trees": 93,
+        "park-trees": 277
+      },
+      "districts": {
+        "士林區": 115,
+        "大同區": 21,
+        "大安區": 57,
+        "中山區": 13,
+        "中正區": 5,
+        "文山區": 55,
+        "北投區": 32,
+        "松山區": 9,
+        "信義區": 7,
+        "南港區": 18,
+        "內湖區": 9,
+        "萬華區": 29
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-066",
+      "label": "香楠",
+      "count": 360,
+      "byDataset": {
+        "street-trees": 26,
+        "park-trees": 334
+      },
+      "districts": {
+        "士林區": 44,
+        "大安區": 11,
+        "中山區": 11,
+        "北投區": 86,
+        "南港區": 53,
+        "大同區": 2,
+        "內湖區": 22,
+        "文山區": 120,
+        "松山區": 1,
+        "信義區": 8,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-067",
+      "label": "富士櫻",
+      "count": 358,
+      "byDataset": {
+        "street-trees": 356,
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 111,
+        "北投區": 245,
+        "大安區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-068",
+      "label": "無患子",
+      "count": 358,
+      "byDataset": {
+        "street-trees": 182,
+        "park-trees": 176
+      },
+      "districts": {
+        "士林區": 177,
+        "大同區": 21,
+        "大安區": 24,
+        "內湖區": 4,
+        "北投區": 21,
+        "松山區": 11,
+        "信義區": 6,
+        "南港區": 76,
+        "中山區": 4,
+        "中正區": 1,
+        "文山區": 12,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-069",
+      "label": "緬梔花",
+      "count": 347,
+      "byDataset": {
+        "street-trees": 69,
+        "park-trees": 278
+      },
+      "districts": {
+        "士林區": 14,
+        "大安區": 51,
+        "中正區": 5,
+        "內湖區": 53,
+        "文山區": 40,
+        "北投區": 16,
+        "信義區": 25,
+        "大同區": 9,
+        "中山區": 43,
+        "松山區": 31,
+        "南港區": 7,
+        "萬華區": 53
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-070",
+      "label": "蘭嶼烏心石",
+      "count": 322,
+      "byDataset": {
+        "street-trees": 149,
+        "park-trees": 173
+      },
+      "districts": {
+        "大同區": 11,
+        "大安區": 86,
+        "中山區": 4,
+        "內湖區": 38,
+        "文山區": 20,
+        "北投區": 37,
+        "信義區": 99,
+        "南港區": 26,
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-071",
+      "label": "竹柏",
+      "count": 319,
+      "byDataset": {
+        "street-trees": 44,
+        "park-trees": 275
+      },
+      "districts": {
+        "士林區": 19,
+        "大同區": 1,
+        "大安區": 18,
+        "中山區": 34,
+        "文山區": 87,
+        "北投區": 40,
+        "松山區": 15,
+        "南港區": 14,
+        "萬華區": 18,
+        "中正區": 63,
+        "內湖區": 5,
+        "信義區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-072",
+      "label": "黃金風鈴木",
+      "count": 319,
+      "byDataset": {
+        "street-trees": 161,
+        "park-trees": 158
+      },
+      "districts": {
+        "士林區": 88,
+        "大安區": 25,
+        "中山區": 10,
+        "中正區": 1,
+        "內湖區": 17,
+        "文山區": 12,
+        "北投區": 74,
+        "松山區": 21,
+        "南港區": 7,
+        "信義區": 40,
+        "萬華區": 24
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-073",
+      "label": "青剛櫟",
+      "count": 318,
+      "byDataset": {
+        "street-trees": 97,
+        "park-trees": 221
+      },
+      "districts": {
+        "士林區": 82,
+        "大安區": 12,
+        "中山區": 7,
+        "北投區": 17,
+        "信義區": 12,
+        "南港區": 89,
+        "大同區": 25,
+        "中正區": 15,
+        "內湖區": 35,
+        "文山區": 13,
+        "松山區": 7,
+        "萬華區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-074",
+      "label": "肯氏南洋杉",
+      "count": 315,
+      "byDataset": {
+        "street-trees": 30,
+        "park-trees": 285
+      },
+      "districts": {
+        "士林區": 52,
+        "大同區": 8,
+        "內湖區": 25,
+        "北投區": 25,
+        "松山區": 18,
+        "南港區": 34,
+        "大安區": 70,
+        "中山區": 55,
+        "文山區": 4,
+        "信義區": 21,
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-075",
+      "label": "白玉蘭",
+      "count": 305,
+      "byDataset": {
+        "street-trees": 100,
+        "park-trees": 205
+      },
+      "districts": {
+        "士林區": 31,
+        "大同區": 18,
+        "大安區": 57,
+        "中山區": 60,
+        "內湖區": 14,
+        "文山區": 28,
+        "北投區": 13,
+        "松山區": 22,
+        "信義區": 25,
+        "南港區": 16,
+        "萬華區": 13,
+        "中正區": 8
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-076",
+      "label": "刺桐",
+      "count": 284,
+      "byDataset": {
+        "street-trees": 140,
+        "park-trees": 144
+      },
+      "districts": {
+        "大同區": 8,
+        "中山區": 81,
+        "中正區": 9,
+        "內湖區": 2,
+        "北投區": 39,
+        "信義區": 21,
+        "萬華區": 65,
+        "士林區": 13,
+        "大安區": 19,
+        "文山區": 8,
+        "松山區": 10,
+        "南港區": 9
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-077",
+      "label": "桂花",
+      "count": 284,
+      "byDataset": {
+        "street-trees": 37,
+        "park-trees": 247
+      },
+      "districts": {
+        "士林區": 56,
+        "大同區": 1,
+        "大安區": 17,
+        "文山區": 40,
+        "北投區": 49,
+        "信義區": 17,
+        "中山區": 49,
+        "中正區": 1,
+        "內湖區": 16,
+        "松山區": 13,
+        "南港區": 25
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-078",
+      "label": "陰香",
+      "count": 280,
+      "byDataset": {
+        "street-trees": 98,
+        "park-trees": 182
+      },
+      "districts": {
+        "士林區": 28,
+        "大同區": 7,
+        "大安區": 20,
+        "中山區": 11,
+        "內湖區": 18,
+        "文山區": 19,
+        "北投區": 34,
+        "松山區": 8,
+        "信義區": 14,
+        "南港區": 108,
+        "萬華區": 9,
+        "中正區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-079",
+      "label": "桑樹",
+      "count": 272,
+      "byDataset": {
+        "street-trees": 111,
+        "park-trees": 161
+      },
+      "districts": {
+        "士林區": 38,
+        "大同區": 18,
+        "大安區": 33,
+        "中山區": 16,
+        "內湖區": 8,
+        "文山區": 22,
+        "北投區": 64,
+        "松山區": 16,
+        "信義區": 24,
+        "南港區": 17,
+        "萬華區": 8,
+        "中正區": 8
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-080",
+      "label": "穗花棋盤腳",
+      "count": 269,
+      "byDataset": {
+        "street-trees": 20,
+        "park-trees": 249
+      },
+      "districts": {
+        "北投區": 20,
+        "士林區": 91,
+        "大同區": 2,
+        "大安區": 17,
+        "中山區": 39,
+        "中正區": 10,
+        "內湖區": 43,
+        "文山區": 3,
+        "松山區": 4,
+        "南港區": 34,
+        "萬華區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-081",
+      "label": "洋紫荊",
+      "count": 265,
+      "byDataset": {
+        "street-trees": 58,
+        "park-trees": 207
+      },
+      "districts": {
+        "士林區": 21,
+        "大同區": 3,
+        "大安區": 18,
+        "中山區": 22,
+        "內湖區": 30,
+        "文山區": 21,
+        "北投區": 45,
+        "松山區": 4,
+        "南港區": 55,
+        "萬華區": 15,
+        "中正區": 12,
+        "信義區": 19
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-082",
+      "label": "鐵刀木",
+      "count": 263,
+      "byDataset": {
+        "street-trees": 258,
+        "park-trees": 5
+      },
+      "districts": {
+        "大同區": 2,
+        "大安區": 101,
+        "中山區": 90,
+        "中正區": 14,
+        "信義區": 53,
+        "內湖區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-083",
+      "label": "柚子",
+      "count": 262,
+      "byDataset": {
+        "street-trees": 66,
+        "park-trees": 196
+      },
+      "districts": {
+        "士林區": 42,
+        "大同區": 18,
+        "大安區": 30,
+        "中山區": 13,
+        "內湖區": 37,
+        "文山區": 30,
+        "北投區": 24,
+        "松山區": 11,
+        "信義區": 14,
+        "南港區": 25,
+        "萬華區": 2,
+        "中正區": 16
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-084",
+      "label": "大葉桉",
+      "count": 255,
+      "byDataset": {
+        "street-trees": 108,
+        "park-trees": 147
+      },
+      "districts": {
+        "士林區": 22,
+        "大同區": 16,
+        "大安區": 32,
+        "中山區": 72,
+        "中正區": 12,
+        "文山區": 13,
+        "北投區": 36,
+        "松山區": 2,
+        "信義區": 9,
+        "南港區": 12,
+        "萬華區": 27,
+        "內湖區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-085",
+      "label": "溼地松",
+      "count": 250,
+      "byDataset": {
+        "street-trees": 66,
+        "park-trees": 184
+      },
+      "districts": {
+        "大安區": 2,
+        "中山區": 20,
+        "內湖區": 29,
+        "松山區": 12,
+        "南港區": 20,
+        "北投區": 4,
+        "萬華區": 163
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-086",
+      "label": "楊桃",
+      "count": 239,
+      "byDataset": {
+        "street-trees": 43,
+        "park-trees": 196
+      },
+      "districts": {
+        "士林區": 53,
+        "大同區": 5,
+        "大安區": 16,
+        "中山區": 23,
+        "中正區": 9,
+        "文山區": 30,
+        "北投區": 54,
+        "信義區": 10,
+        "南港區": 13,
+        "內湖區": 6,
+        "松山區": 7,
+        "萬華區": 13
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-087",
+      "label": "鐵冬青",
+      "count": 239,
+      "byDataset": {
+        "street-trees": 224,
+        "park-trees": 15
+      },
+      "districts": {
+        "大同區": 3,
+        "中山區": 114,
+        "北投區": 26,
+        "松山區": 71,
+        "信義區": 12,
+        "南港區": 6,
+        "士林區": 2,
+        "大安區": 3,
+        "文山區": 1,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-088",
+      "label": "側柏",
+      "count": 228,
+      "byDataset": {
+        "street-trees": 23,
+        "park-trees": 205
+      },
+      "districts": {
+        "大安區": 5,
+        "北投區": 20,
+        "松山區": 30,
+        "士林區": 58,
+        "大同區": 1,
+        "中山區": 47,
+        "中正區": 1,
+        "內湖區": 24,
+        "文山區": 25,
+        "信義區": 3,
+        "南港區": 7,
+        "萬華區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-089",
+      "label": "錫蘭橄欖",
+      "count": 224,
+      "byDataset": {
+        "street-trees": 84,
+        "park-trees": 140
+      },
+      "districts": {
+        "大安區": 80,
+        "中山區": 6,
+        "北投區": 14,
+        "松山區": 10,
+        "信義區": 7,
+        "南港區": 8,
+        "萬華區": 4,
+        "士林區": 86,
+        "內湖區": 3,
+        "文山區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-090",
+      "label": "紅楠",
+      "count": 216,
+      "byDataset": {
+        "street-trees": 22,
+        "park-trees": 194
+      },
+      "districts": {
+        "大同區": 1,
+        "內湖區": 74,
+        "文山區": 4,
+        "北投區": 23,
+        "南港區": 65,
+        "士林區": 21,
+        "大安區": 3,
+        "中山區": 14,
+        "松山區": 1,
+        "信義區": 5,
+        "萬華區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-091",
+      "label": "桃花心木",
+      "count": 213,
+      "byDataset": {
+        "street-trees": 198,
+        "park-trees": 15
+      },
+      "districts": {
+        "士林區": 127,
+        "大安區": 19,
+        "中山區": 1,
+        "中正區": 1,
+        "文山區": 3,
+        "松山區": 1,
+        "信義區": 4,
+        "南港區": 56,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-092",
+      "label": "掌葉蘋婆",
+      "count": 209,
+      "byDataset": {
+        "street-trees": 35,
+        "park-trees": 174
+      },
+      "districts": {
+        "文山區": 17,
+        "松山區": 12,
+        "信義區": 11,
+        "士林區": 29,
+        "大安區": 8,
+        "中山區": 81,
+        "內湖區": 12,
+        "北投區": 16,
+        "南港區": 22,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-093",
+      "label": "烏心石",
+      "count": 208,
+      "byDataset": {
+        "street-trees": 169,
+        "park-trees": 39
+      },
+      "districts": {
+        "大同區": 12,
+        "中山區": 21,
+        "中正區": 83,
+        "內湖區": 24,
+        "文山區": 9,
+        "北投區": 30,
+        "南港區": 5,
+        "萬華區": 6,
+        "士林區": 8,
+        "大安區": 8,
+        "松山區": 1,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-094",
+      "label": "大葉桃花心木",
+      "count": 197,
+      "byDataset": {
+        "street-trees": 81,
+        "park-trees": 116
+      },
+      "districts": {
+        "大安區": 78,
+        "中正區": 2,
+        "內湖區": 7,
+        "北投區": 5,
+        "松山區": 10,
+        "信義區": 7,
+        "南港區": 25,
+        "士林區": 23,
+        "中山區": 39,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-095",
+      "label": "山黃麻",
+      "count": 195,
+      "byDataset": {
+        "street-trees": 31,
+        "park-trees": 164
+      },
+      "districts": {
+        "士林區": 31,
+        "大同區": 9,
+        "大安區": 3,
+        "中山區": 6,
+        "文山區": 67,
+        "北投區": 51,
+        "萬華區": 1,
+        "內湖區": 7,
+        "信義區": 3,
+        "南港區": 17
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-096",
+      "label": "相思樹",
+      "count": 193,
+      "byDataset": {
+        "street-trees": 12,
+        "park-trees": 181
+      },
+      "districts": {
+        "士林區": 50,
+        "中山區": 4,
+        "文山區": 29,
+        "北投區": 7,
+        "大安區": 1,
+        "內湖區": 32,
+        "信義區": 2,
+        "南港區": 68
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-097",
+      "label": "華盛頓椰子",
+      "count": 184,
+      "byDataset": {
+        "street-trees": 43,
+        "park-trees": 141
+      },
+      "districts": {
+        "內湖區": 43,
+        "士林區": 108,
+        "中山區": 17,
+        "中正區": 1,
+        "文山區": 15
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-098",
+      "label": "朴樹",
+      "count": 165,
+      "byDataset": {
+        "street-trees": 83,
+        "park-trees": 82
+      },
+      "districts": {
+        "士林區": 58,
+        "大同區": 8,
+        "大安區": 15,
+        "中山區": 26,
+        "中正區": 8,
+        "內湖區": 20,
+        "文山區": 4,
+        "北投區": 18,
+        "松山區": 1,
+        "南港區": 1,
+        "萬華區": 5,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-099",
+      "label": "番石榴",
+      "count": 164,
+      "byDataset": {
+        "street-trees": 34,
+        "park-trees": 130
+      },
+      "districts": {
+        "士林區": 44,
+        "大同區": 15,
+        "大安區": 20,
+        "內湖區": 13,
+        "文山區": 18,
+        "北投區": 21,
+        "信義區": 3,
+        "南港區": 4,
+        "萬華區": 5,
+        "中山區": 8,
+        "中正區": 7,
+        "松山區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-100",
+      "label": "稜果榕",
+      "count": 160,
+      "byDataset": {
+        "street-trees": 40,
+        "park-trees": 120
+      },
+      "districts": {
+        "士林區": 23,
+        "大同區": 5,
+        "大安區": 25,
+        "內湖區": 17,
+        "文山區": 11,
+        "北投區": 19,
+        "信義區": 29,
+        "萬華區": 5,
+        "中山區": 8,
+        "中正區": 2,
+        "松山區": 1,
+        "南港區": 15
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-101",
+      "label": "酒瓶椰子",
+      "count": 144,
+      "byDataset": {
+        "street-trees": 33,
+        "park-trees": 111
+      },
+      "districts": {
+        "士林區": 19,
+        "大安區": 15,
+        "中山區": 23,
+        "文山區": 3,
+        "北投區": 19,
+        "信義區": 14,
+        "南港區": 11,
+        "萬華區": 16,
+        "大同區": 3,
+        "中正區": 7,
+        "內湖區": 5,
+        "松山區": 9
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-102",
+      "label": "菲律賓紫檀",
+      "count": 140,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 139
+      },
+      "districts": {
+        "中山區": 1,
+        "大安區": 133,
+        "松山區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-103",
+      "label": "臺灣海棗",
+      "count": 136,
+      "byDataset": {
+        "street-trees": 58,
+        "park-trees": 78
+      },
+      "districts": {
+        "士林區": 12,
+        "大安區": 14,
+        "中山區": 4,
+        "內湖區": 26,
+        "文山區": 11,
+        "松山區": 32,
+        "南港區": 6,
+        "中正區": 23,
+        "萬華區": 8
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-104",
+      "label": "槭葉翅子木",
+      "count": 134,
+      "byDataset": {
+        "street-trees": 26,
+        "park-trees": 108
+      },
+      "districts": {
+        "士林區": 40,
+        "大安區": 17,
+        "文山區": 5,
+        "松山區": 2,
+        "信義區": 1,
+        "南港區": 69
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-105",
+      "label": "羊蹄甲",
+      "count": 131,
+      "byDataset": {
+        "street-trees": 73,
+        "park-trees": 58
+      },
+      "districts": {
+        "士林區": 42,
+        "大同區": 5,
+        "中山區": 14,
+        "中正區": 2,
+        "內湖區": 11,
+        "北投區": 17,
+        "松山區": 4,
+        "信義區": 6,
+        "南港區": 5,
+        "萬華區": 13,
+        "大安區": 9,
+        "文山區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-106",
+      "label": "檳榔",
+      "count": 124,
+      "byDataset": {
+        "street-trees": 41,
+        "park-trees": 83
+      },
+      "districts": {
+        "士林區": 43,
+        "大同區": 1,
+        "中山區": 3,
+        "內湖區": 11,
+        "文山區": 22,
+        "北投區": 15,
+        "松山區": 1,
+        "南港區": 18,
+        "大安區": 3,
+        "信義區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-107",
+      "label": "麵包樹",
+      "count": 124,
+      "byDataset": {
+        "street-trees": 28,
+        "park-trees": 96
+      },
+      "districts": {
+        "大安區": 26,
+        "中山區": 8,
+        "中正區": 35,
+        "文山區": 8,
+        "北投區": 6,
+        "松山區": 11,
+        "信義區": 5,
+        "南港區": 5,
+        "士林區": 8,
+        "大同區": 6,
+        "內湖區": 2,
+        "萬華區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-108",
+      "label": "海棗",
+      "count": 123,
+      "byDataset": {
+        "street-trees": 28,
+        "park-trees": 95
+      },
+      "districts": {
+        "大同區": 2,
+        "中山區": 20,
+        "內湖區": 39,
+        "信義區": 8,
+        "中正區": 1,
+        "文山區": 8,
+        "北投區": 1,
+        "松山區": 12,
+        "南港區": 2,
+        "萬華區": 30
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-109",
+      "label": "島榕",
+      "count": 121,
+      "byDataset": {
+        "street-trees": 16,
+        "park-trees": 105
+      },
+      "districts": {
+        "士林區": 36,
+        "大同區": 5,
+        "大安區": 21,
+        "中山區": 11,
+        "文山區": 21,
+        "南港區": 10,
+        "中正區": 4,
+        "內湖區": 1,
+        "北投區": 6,
+        "松山區": 1,
+        "信義區": 4,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-110",
+      "label": "森氏紅淡比",
+      "count": 118,
+      "byDataset": {
+        "street-trees": 32,
+        "park-trees": 86
+      },
+      "districts": {
+        "士林區": 12,
+        "中山區": 19,
+        "北投區": 49,
+        "松山區": 4,
+        "信義區": 4,
+        "南港區": 18,
+        "大安區": 5,
+        "中正區": 2,
+        "內湖區": 4,
+        "文山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-111",
+      "label": "緬梔",
+      "count": 118,
+      "byDataset": {
+        "street-trees": 73,
+        "park-trees": 45
+      },
+      "districts": {
+        "士林區": 38,
+        "大同區": 3,
+        "大安區": 1,
+        "中正區": 2,
+        "北投區": 32,
+        "南港區": 9,
+        "中山區": 18,
+        "內湖區": 8,
+        "文山區": 2,
+        "松山區": 3,
+        "信義區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-112",
+      "label": "洋玉蘭",
+      "count": 115,
+      "byDataset": {
+        "street-trees": 62,
+        "park-trees": 53
+      },
+      "districts": {
+        "士林區": 7,
+        "大同區": 5,
+        "中山區": 37,
+        "中正區": 12,
+        "文山區": 5,
+        "北投區": 15,
+        "南港區": 3,
+        "萬華區": 4,
+        "大安區": 19,
+        "內湖區": 7,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-113",
+      "label": "酪梨",
+      "count": 115,
+      "byDataset": {
+        "street-trees": 46,
+        "park-trees": 69
+      },
+      "districts": {
+        "士林區": 16,
+        "大同區": 4,
+        "大安區": 9,
+        "中山區": 7,
+        "中正區": 4,
+        "內湖區": 4,
+        "文山區": 19,
+        "北投區": 21,
+        "松山區": 7,
+        "信義區": 8,
+        "南港區": 10,
+        "萬華區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-114",
+      "label": "月橘",
+      "count": 112,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 105
+      },
+      "districts": {
+        "士林區": 50,
+        "大同區": 3,
+        "中山區": 3,
+        "中正區": 2,
+        "文山區": 8,
+        "信義區": 5,
+        "內湖區": 4,
+        "北投區": 31,
+        "松山區": 1,
+        "南港區": 1,
+        "萬華區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-115",
+      "label": "蒲桃",
+      "count": 108,
+      "byDataset": {
+        "street-trees": 11,
+        "park-trees": 97
+      },
+      "districts": {
+        "大同區": 1,
+        "北投區": 3,
+        "信義區": 8,
+        "士林區": 66,
+        "大安區": 4,
+        "中山區": 2,
+        "中正區": 3,
+        "內湖區": 8,
+        "文山區": 2,
+        "南港區": 11
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-116",
+      "label": "大葉楠",
+      "count": 107,
+      "byDataset": {
+        "street-trees": 77,
+        "park-trees": 30
+      },
+      "districts": {
+        "大同區": 72,
+        "信義區": 4,
+        "南港區": 4,
+        "士林區": 11,
+        "中山區": 12,
+        "內湖區": 3,
+        "文山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-117",
+      "label": "亞里垂榕",
+      "count": 107,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 106
+      },
+      "districts": {
+        "北投區": 18,
+        "大安區": 3,
+        "內湖區": 86
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-118",
+      "label": "木麻黃",
+      "count": 105,
+      "byDataset": {
+        "street-trees": 71,
+        "park-trees": 34
+      },
+      "districts": {
+        "士林區": 31,
+        "大同區": 2,
+        "大安區": 6,
+        "中山區": 14,
+        "中正區": 1,
+        "北投區": 27,
+        "萬華區": 16,
+        "文山區": 6,
+        "松山區": 1,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-119",
+      "label": "黑松",
+      "count": 105,
+      "byDataset": {
+        "street-trees": 54,
+        "park-trees": 51
+      },
+      "districts": {
+        "士林區": 6,
+        "大安區": 11,
+        "中山區": 42,
+        "北投區": 10,
+        "中正區": 21,
+        "南港區": 1,
+        "萬華區": 14
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-120",
+      "label": "石朴",
+      "count": 104,
+      "byDataset": {
+        "street-trees": 26,
+        "park-trees": 78
+      },
+      "districts": {
+        "士林區": 60,
+        "中山區": 2,
+        "北投區": 17,
+        "大安區": 3,
+        "中正區": 2,
+        "內湖區": 2,
+        "文山區": 4,
+        "松山區": 1,
+        "信義區": 11,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-121",
+      "label": "臺灣海桐",
+      "count": 102,
+      "byDataset": {
+        "street-trees": 38,
+        "park-trees": 64
+      },
+      "districts": {
+        "士林區": 26,
+        "大安區": 21,
+        "內湖區": 16,
+        "文山區": 15,
+        "松山區": 9,
+        "中山區": 5,
+        "北投區": 2,
+        "信義區": 1,
+        "南港區": 6,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-122",
+      "label": "日本山茶",
+      "count": 92,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 90
+      },
+      "districts": {
+        "士林區": 68,
+        "北投區": 19,
+        "內湖區": 2,
+        "文山區": 2,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-123",
+      "label": "白匏子",
+      "count": 91,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 90
+      },
+      "districts": {
+        "中山區": 1,
+        "士林區": 28,
+        "內湖區": 15,
+        "文山區": 25,
+        "北投區": 6,
+        "信義區": 3,
+        "南港區": 13
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-124",
+      "label": "楊梅",
+      "count": 90,
+      "byDataset": {
+        "street-trees": 26,
+        "park-trees": 64
+      },
+      "districts": {
+        "士林區": 9,
+        "大同區": 3,
+        "大安區": 4,
+        "文山區": 18,
+        "北投區": 8,
+        "南港區": 28,
+        "中山區": 5,
+        "中正區": 1,
+        "內湖區": 12,
+        "松山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-125",
+      "label": "棍棒椰子",
+      "count": 89,
+      "byDataset": {
+        "street-trees": 26,
+        "park-trees": 63
+      },
+      "districts": {
+        "士林區": 12,
+        "大同區": 2,
+        "內湖區": 20,
+        "文山區": 5,
+        "北投區": 3,
+        "大安區": 4,
+        "中山區": 2,
+        "中正區": 8,
+        "松山區": 2,
+        "信義區": 3,
+        "南港區": 4,
+        "萬華區": 24
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-126",
+      "label": "錫蘭饅頭果",
+      "count": 89,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 82
+      },
+      "districts": {
+        "大安區": 24,
+        "文山區": 7,
+        "信義區": 12,
+        "南港區": 2,
+        "士林區": 10,
+        "中山區": 15,
+        "中正區": 1,
+        "內湖區": 3,
+        "北投區": 12,
+        "松山區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-127",
+      "label": "肖楠",
+      "count": 88,
+      "byDataset": {
+        "street-trees": 6,
+        "park-trees": 82
+      },
+      "districts": {
+        "士林區": 3,
+        "中山區": 16,
+        "內湖區": 5,
+        "大安區": 2,
+        "中正區": 3,
+        "文山區": 2,
+        "北投區": 3,
+        "松山區": 30,
+        "信義區": 6,
+        "南港區": 16,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-128",
+      "label": "苦茶",
+      "count": 86,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 85
+      },
+      "districts": {
+        "士林區": 83,
+        "信義區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-129",
+      "label": "蠟腸樹",
+      "count": 86,
+      "byDataset": {
+        "street-trees": 68,
+        "park-trees": 18
+      },
+      "districts": {
+        "大安區": 40,
+        "中正區": 4,
+        "信義區": 14,
+        "萬華區": 23,
+        "士林區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-130",
+      "label": "風箱樹",
+      "count": 84,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 82
+      },
+      "districts": {
+        "大安區": 5,
+        "士林區": 34,
+        "中山區": 40,
+        "內湖區": 3,
+        "文山區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-131",
+      "label": "樹杞",
+      "count": 83,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 78
+      },
+      "districts": {
+        "南港區": 13,
+        "士林區": 13,
+        "中山區": 3,
+        "中正區": 3,
+        "內湖區": 7,
+        "文山區": 1,
+        "北投區": 41,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-132",
+      "label": "海桐",
+      "count": 81,
+      "byDataset": {
+        "street-trees": 81
+      },
+      "districts": {
+        "文山區": 79,
+        "信義區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-133",
+      "label": "土肉桂",
+      "count": 80,
+      "byDataset": {
+        "street-trees": 56,
+        "park-trees": 24
+      },
+      "districts": {
+        "士林區": 10,
+        "文山區": 52,
+        "北投區": 6,
+        "南港區": 4,
+        "大安區": 3,
+        "信義區": 4,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-134",
+      "label": "凍子椰子",
+      "count": 77,
+      "byDataset": {
+        "street-trees": 14,
+        "park-trees": 63
+      },
+      "districts": {
+        "中山區": 28,
+        "中正區": 43,
+        "內湖區": 4,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-135",
+      "label": "千年桐",
+      "count": 75,
+      "byDataset": {
+        "park-trees": 75
+      },
+      "districts": {
+        "士林區": 42,
+        "大安區": 6,
+        "文山區": 1,
+        "松山區": 17,
+        "信義區": 2,
+        "南港區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-136",
+      "label": "銀樺",
+      "count": 73,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 66
+      },
+      "districts": {
+        "大安區": 8,
+        "北投區": 2,
+        "松山區": 5,
+        "南港區": 3,
+        "士林區": 9,
+        "中山區": 19,
+        "中正區": 4,
+        "內湖區": 2,
+        "文山區": 13,
+        "信義區": 1,
+        "萬華區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-137",
+      "label": "墨西哥落羽松",
+      "count": 73,
+      "byDataset": {
+        "park-trees": 73
+      },
+      "districts": {
+        "中山區": 2,
+        "內湖區": 36,
+        "松山區": 10,
+        "南港區": 25
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-138",
+      "label": "小葉桑",
+      "count": 71,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 68
+      },
+      "districts": {
+        "北投區": 5,
+        "信義區": 1,
+        "士林區": 14,
+        "大安區": 2,
+        "中山區": 4,
+        "內湖區": 16,
+        "文山區": 12,
+        "南港區": 17
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-139",
+      "label": "軟毛柿",
+      "count": 71,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 70
+      },
+      "districts": {
+        "大安區": 1,
+        "士林區": 63,
+        "中正區": 2,
+        "內湖區": 4,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-140",
+      "label": "象牙柿",
+      "count": 70,
+      "byDataset": {
+        "street-trees": 10,
+        "park-trees": 60
+      },
+      "districts": {
+        "內湖區": 10,
+        "士林區": 6,
+        "大安區": 31,
+        "中山區": 1,
+        "松山區": 14,
+        "信義區": 8
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-141",
+      "label": "荔枝",
+      "count": 66,
+      "byDataset": {
+        "street-trees": 33,
+        "park-trees": 33
+      },
+      "districts": {
+        "大安區": 31,
+        "文山區": 1,
+        "北投區": 5,
+        "萬華區": 1,
+        "士林區": 23,
+        "中正區": 2,
+        "內湖區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-142",
+      "label": "臺灣赤楠",
+      "count": 66,
+      "byDataset": {
+        "street-trees": 42,
+        "park-trees": 24
+      },
+      "districts": {
+        "士林區": 16,
+        "中正區": 3,
+        "南港區": 37,
+        "大安區": 1,
+        "文山區": 9
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-143",
+      "label": "春不老",
+      "count": 64,
+      "byDataset": {
+        "street-trees": 13,
+        "park-trees": 51
+      },
+      "districts": {
+        "士林區": 18,
+        "大同區": 1,
+        "文山區": 8,
+        "信義區": 6,
+        "南港區": 2,
+        "大安區": 1,
+        "中山區": 5,
+        "中正區": 1,
+        "內湖區": 1,
+        "北投區": 7,
+        "松山區": 14
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-144",
+      "label": "旅人蕉",
+      "count": 63,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 61
+      },
+      "districts": {
+        "士林區": 6,
+        "北投區": 3,
+        "大安區": 25,
+        "中山區": 9,
+        "中正區": 2,
+        "內湖區": 5,
+        "信義區": 9,
+        "南港區": 2,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-145",
+      "label": "象牙樹",
+      "count": 62,
+      "byDataset": {
+        "park-trees": 62
+      },
+      "districts": {
+        "士林區": 3,
+        "中山區": 36,
+        "內湖區": 18,
+        "文山區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-146",
+      "label": "枇杷",
+      "count": 58,
+      "byDataset": {
+        "street-trees": 14,
+        "park-trees": 44
+      },
+      "districts": {
+        "士林區": 10,
+        "大同區": 7,
+        "大安區": 5,
+        "中山區": 6,
+        "內湖區": 1,
+        "文山區": 8,
+        "北投區": 11,
+        "中正區": 2,
+        "松山區": 4,
+        "信義區": 1,
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-147",
+      "label": "澳洲鴨腳木",
+      "count": 57,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 50
+      },
+      "districts": {
+        "大同區": 1,
+        "中山區": 5,
+        "北投區": 6,
+        "信義區": 1,
+        "南港區": 40,
+        "士林區": 1,
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-148",
+      "label": "石栗",
+      "count": 55,
+      "byDataset": {
+        "street-trees": 14,
+        "park-trees": 41
+      },
+      "districts": {
+        "士林區": 23,
+        "內湖區": 11,
+        "松山區": 2,
+        "南港區": 3,
+        "中山區": 12,
+        "北投區": 1,
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-149",
+      "label": "叢立孔雀椰子",
+      "count": 55,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 53
+      },
+      "districts": {
+        "文山區": 4,
+        "中正區": 1,
+        "北投區": 3,
+        "信義區": 1,
+        "萬華區": 46
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-150",
+      "label": "含笑花",
+      "count": 54,
+      "byDataset": {
+        "street-trees": 9,
+        "park-trees": 45
+      },
+      "districts": {
+        "士林區": 8,
+        "大同區": 6,
+        "文山區": 5,
+        "北投區": 13,
+        "大安區": 3,
+        "中山區": 6,
+        "中正區": 1,
+        "松山區": 5,
+        "南港區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-151",
+      "label": "紅花鐵刀木",
+      "count": 53,
+      "byDataset": {
+        "street-trees": 51,
+        "park-trees": 2
+      },
+      "districts": {
+        "大安區": 1,
+        "中山區": 3,
+        "中正區": 2,
+        "信義區": 46,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-152",
+      "label": "大葉雀榕",
+      "count": 52,
+      "byDataset": {
+        "street-trees": 9,
+        "park-trees": 43
+      },
+      "districts": {
+        "士林區": 12,
+        "中正區": 5,
+        "文山區": 7,
+        "松山區": 2,
+        "大安區": 3,
+        "中山區": 9,
+        "內湖區": 2,
+        "北投區": 5,
+        "南港區": 4,
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-153",
+      "label": "欖仁",
+      "count": 52,
+      "byDataset": {
+        "street-trees": 4,
+        "park-trees": 48
+      },
+      "districts": {
+        "南港區": 6,
+        "士林區": 16,
+        "中山區": 5,
+        "內湖區": 4,
+        "文山區": 12,
+        "北投區": 1,
+        "松山區": 1,
+        "信義區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-154",
+      "label": "吉野櫻",
+      "count": 51,
+      "byDataset": {
+        "street-trees": 25,
+        "park-trees": 26
+      },
+      "districts": {
+        "士林區": 16,
+        "中山區": 1,
+        "南港區": 8,
+        "大同區": 10,
+        "大安區": 11,
+        "信義區": 4,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-155",
+      "label": "串錢柳",
+      "count": 50,
+      "byDataset": {
+        "street-trees": 9,
+        "park-trees": 41
+      },
+      "districts": {
+        "中正區": 9,
+        "中山區": 36,
+        "北投區": 1,
+        "松山區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-156",
+      "label": "蛋黃果",
+      "count": 50,
+      "byDataset": {
+        "street-trees": 19,
+        "park-trees": 31
+      },
+      "districts": {
+        "士林區": 5,
+        "大同區": 5,
+        "大安區": 2,
+        "文山區": 9,
+        "北投區": 9,
+        "南港區": 6,
+        "萬華區": 2,
+        "中山區": 4,
+        "中正區": 2,
+        "內湖區": 3,
+        "松山區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-157",
+      "label": "蟲屎",
+      "count": 50,
+      "byDataset": {
+        "park-trees": 50
+      },
+      "districts": {
+        "士林區": 19,
+        "中山區": 7,
+        "內湖區": 3,
+        "北投區": 21
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-158",
+      "label": "油椰子",
+      "count": 48,
+      "byDataset": {
+        "park-trees": 48
+      },
+      "districts": {
+        "士林區": 5,
+        "中山區": 18,
+        "中正區": 8,
+        "南港區": 17
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-159",
+      "label": "孟加拉榕",
+      "count": 47,
+      "byDataset": {
+        "park-trees": 47
+      },
+      "districts": {
+        "大安區": 46,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-160",
+      "label": "菲律賓榕",
+      "count": 45,
+      "byDataset": {
+        "park-trees": 45
+      },
+      "districts": {
+        "士林區": 10,
+        "中山區": 1,
+        "內湖區": 2,
+        "文山區": 22,
+        "北投區": 3,
+        "信義區": 1,
+        "南港區": 4,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-161",
+      "label": "黃玉蘭",
+      "count": 45,
+      "byDataset": {
+        "street-trees": 8,
+        "park-trees": 37
+      },
+      "districts": {
+        "士林區": 2,
+        "大同區": 6,
+        "大安區": 7,
+        "文山區": 1,
+        "松山區": 5,
+        "南港區": 2,
+        "中山區": 4,
+        "中正區": 7,
+        "內湖區": 5,
+        "北投區": 2,
+        "信義區": 3,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-162",
+      "label": "大風子",
+      "count": 44,
+      "byDataset": {
+        "park-trees": 44
+      },
+      "districts": {
+        "內湖區": 2,
+        "文山區": 29,
+        "信義區": 2,
+        "南港區": 11
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-163",
+      "label": "藍花楹",
+      "count": 44,
+      "byDataset": {
+        "street-trees": 17,
+        "park-trees": 27
+      },
+      "districts": {
+        "士林區": 15,
+        "大安區": 4,
+        "中山區": 11,
+        "松山區": 5,
+        "信義區": 1,
+        "南港區": 4,
+        "中正區": 1,
+        "文山區": 2,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-164",
+      "label": "臺灣櫸",
+      "count": 43,
+      "byDataset": {
+        "street-trees": 43
+      },
+      "districts": {
+        "南港區": 43
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-165",
+      "label": "波羅蜜",
+      "count": 42,
+      "byDataset": {
+        "street-trees": 14,
+        "park-trees": 28
+      },
+      "districts": {
+        "士林區": 13,
+        "大安區": 9,
+        "中山區": 1,
+        "文山區": 3,
+        "大同區": 2,
+        "內湖區": 6,
+        "北投區": 3,
+        "信義區": 3,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-166",
+      "label": "魚木",
+      "count": 42,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 41
+      },
+      "districts": {
+        "士林區": 2,
+        "大安區": 3,
+        "中山區": 1,
+        "中正區": 2,
+        "文山區": 1,
+        "北投區": 9,
+        "松山區": 8,
+        "南港區": 9,
+        "萬華區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-167",
+      "label": "水同木",
+      "count": 40,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 39
+      },
+      "districts": {
+        "大安區": 3,
+        "士林區": 1,
+        "中山區": 1,
+        "文山區": 16,
+        "北投區": 7,
+        "松山區": 2,
+        "南港區": 10
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-168",
+      "label": "壯幹棕櫚",
+      "count": 40,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 33
+      },
+      "districts": {
+        "松山區": 7,
+        "大安區": 12,
+        "中山區": 9,
+        "中正區": 8,
+        "內湖區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-169",
+      "label": "苦橙",
+      "count": 38,
+      "byDataset": {
+        "park-trees": 38
+      },
+      "districts": {
+        "士林區": 5,
+        "大同區": 2,
+        "大安區": 7,
+        "中山區": 5,
+        "中正區": 8,
+        "內湖區": 1,
+        "文山區": 2,
+        "北投區": 3,
+        "松山區": 4,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-170",
+      "label": "海南菜豆樹",
+      "count": 38,
+      "byDataset": {
+        "street-trees": 19,
+        "park-trees": 19
+      },
+      "districts": {
+        "士林區": 2,
+        "文山區": 9,
+        "北投區": 5,
+        "松山區": 3,
+        "信義區": 5,
+        "南港區": 4,
+        "大同區": 1,
+        "中山區": 6,
+        "中正區": 1,
+        "內湖區": 1,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-171",
+      "label": "琴葉榕",
+      "count": 38,
+      "byDataset": {
+        "street-trees": 22,
+        "park-trees": 16
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 6,
+        "北投區": 17,
+        "南港區": 3,
+        "萬華區": 2,
+        "中山區": 3,
+        "中正區": 1,
+        "內湖區": 1,
+        "松山區": 2,
+        "信義區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-172",
+      "label": "木瓜",
+      "count": 36,
+      "byDataset": {
+        "street-trees": 13,
+        "park-trees": 23
+      },
+      "districts": {
+        "士林區": 4,
+        "大安區": 5,
+        "文山區": 9,
+        "北投區": 5,
+        "大同區": 4,
+        "中山區": 2,
+        "中正區": 4,
+        "內湖區": 1,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-173",
+      "label": "珊瑚樹",
+      "count": 36,
+      "byDataset": {
+        "street-trees": 4,
+        "park-trees": 32
+      },
+      "districts": {
+        "士林區": 13,
+        "文山區": 2,
+        "信義區": 18,
+        "內湖區": 1,
+        "北投區": 1,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-174",
+      "label": "披針葉饅頭果",
+      "count": 35,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 34
+      },
+      "districts": {
+        "文山區": 8,
+        "士林區": 2,
+        "大同區": 5,
+        "大安區": 6,
+        "中山區": 3,
+        "中正區": 1,
+        "內湖區": 1,
+        "北投區": 5,
+        "松山區": 2,
+        "信義區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-175",
+      "label": "樹蘭",
+      "count": 35,
+      "byDataset": {
+        "street-trees": 9,
+        "park-trees": 26
+      },
+      "districts": {
+        "士林區": 3,
+        "大同區": 2,
+        "北投區": 4,
+        "松山區": 4,
+        "信義區": 2,
+        "大安區": 1,
+        "中山區": 3,
+        "中正區": 1,
+        "內湖區": 2,
+        "文山區": 1,
+        "萬華區": 12
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-176",
+      "label": "大頭茶",
+      "count": 34,
+      "byDataset": {
+        "park-trees": 34
+      },
+      "districts": {
+        "士林區": 7,
+        "大同區": 4,
+        "文山區": 8,
+        "北投區": 7,
+        "信義區": 3,
+        "南港區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-177",
+      "label": "水石榕",
+      "count": 34,
+      "byDataset": {
+        "park-trees": 34
+      },
+      "districts": {
+        "士林區": 7,
+        "中山區": 20,
+        "內湖區": 2,
+        "萬華區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-178",
+      "label": "金桔",
+      "count": 34,
+      "byDataset": {
+        "street-trees": 8,
+        "park-trees": 26
+      },
+      "districts": {
+        "士林區": 5,
+        "大安區": 5,
+        "北投區": 1,
+        "南港區": 2,
+        "大同區": 2,
+        "中山區": 7,
+        "內湖區": 5,
+        "松山區": 3,
+        "信義區": 3,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-179",
+      "label": "大葉合歡",
+      "count": 33,
+      "byDataset": {
+        "street-trees": 4,
+        "park-trees": 29
+      },
+      "districts": {
+        "大同區": 2,
+        "南港區": 2,
+        "士林區": 1,
+        "大安區": 3,
+        "中山區": 13,
+        "中正區": 2,
+        "北投區": 5,
+        "信義區": 1,
+        "萬華區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-180",
+      "label": "香椿",
+      "count": 33,
+      "byDataset": {
+        "street-trees": 12,
+        "park-trees": 21
+      },
+      "districts": {
+        "士林區": 5,
+        "大安區": 1,
+        "文山區": 6,
+        "北投區": 8,
+        "南港區": 2,
+        "大同區": 2,
+        "中山區": 1,
+        "中正區": 1,
+        "內湖區": 2,
+        "松山區": 2,
+        "信義區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-181",
+      "label": "黃金榕",
+      "count": 33,
+      "byDataset": {
+        "street-trees": 17,
+        "park-trees": 16
+      },
+      "districts": {
+        "北投區": 18,
+        "士林區": 15
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-182",
+      "label": "臺灣三角楓",
+      "count": 33,
+      "byDataset": {
+        "street-trees": 26,
+        "park-trees": 7
+      },
+      "districts": {
+        "士林區": 2,
+        "北投區": 21,
+        "信義區": 3,
+        "內湖區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-183",
+      "label": "扁柏",
+      "count": 32,
+      "byDataset": {
+        "street-trees": 28,
+        "park-trees": 4
+      },
+      "districts": {
+        "大同區": 1,
+        "大安區": 1,
+        "中正區": 13,
+        "文山區": 12,
+        "信義區": 1,
+        "松山區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-184",
+      "label": "破布子",
+      "count": 32,
+      "byDataset": {
+        "street-trees": 8,
+        "park-trees": 24
+      },
+      "districts": {
+        "士林區": 5,
+        "大安區": 1,
+        "中山區": 1,
+        "文山區": 4,
+        "北投區": 18,
+        "內湖區": 2,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-185",
+      "label": "咖啡樹",
+      "count": 31,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 28
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 1,
+        "文山區": 1,
+        "大同區": 1,
+        "中山區": 22,
+        "中正區": 1,
+        "內湖區": 3,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-186",
+      "label": "銀合歡",
+      "count": 31,
+      "byDataset": {
+        "street-trees": 26,
+        "park-trees": 5
+      },
+      "districts": {
+        "士林區": 7,
+        "文山區": 9,
+        "北投區": 15
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-187",
+      "label": "九節木",
+      "count": 30,
+      "byDataset": {
+        "park-trees": 30
+      },
+      "districts": {
+        "士林區": 6,
+        "內湖區": 12,
+        "北投區": 11,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-188",
+      "label": "柳橙",
+      "count": 30,
+      "byDataset": {
+        "street-trees": 6,
+        "park-trees": 24
+      },
+      "districts": {
+        "士林區": 6,
+        "文山區": 3,
+        "南港區": 3,
+        "大安區": 2,
+        "中山區": 4,
+        "北投區": 5,
+        "松山區": 1,
+        "信義區": 3,
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-189",
+      "label": "刺杜密",
+      "count": 29,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 28
+      },
+      "districts": {
+        "士林區": 10,
+        "內湖區": 8,
+        "文山區": 2,
+        "南港區": 9
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-190",
+      "label": "厚葉榕",
+      "count": 28,
+      "byDataset": {
+        "park-trees": 28
+      },
+      "districts": {
+        "大安區": 28
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-191",
+      "label": "桃",
+      "count": 28,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 21
+      },
+      "districts": {
+        "士林區": 6,
+        "大安區": 5,
+        "北投區": 6,
+        "中山區": 2,
+        "文山區": 4,
+        "松山區": 2,
+        "南港區": 1,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-192",
+      "label": "九重葛",
+      "count": 27,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 26
+      },
+      "districts": {
+        "士林區": 10,
+        "大同區": 1,
+        "中山區": 1,
+        "松山區": 7,
+        "信義區": 2,
+        "南港區": 2,
+        "萬華區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-193",
+      "label": "印度黃檀",
+      "count": 27,
+      "byDataset": {
+        "street-trees": 20,
+        "park-trees": 7
+      },
+      "districts": {
+        "大同區": 2,
+        "中山區": 22,
+        "信義區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-194",
+      "label": "落羽松",
+      "count": 27,
+      "byDataset": {
+        "street-trees": 27
+      },
+      "districts": {
+        "南港區": 27
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-195",
+      "label": "魯花樹",
+      "count": 27,
+      "byDataset": {
+        "park-trees": 27
+      },
+      "districts": {
+        "士林區": 16,
+        "中山區": 1,
+        "中正區": 1,
+        "內湖區": 3,
+        "文山區": 1,
+        "北投區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-196",
+      "label": "河津櫻",
+      "count": 26,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 19
+      },
+      "districts": {
+        "南港區": 7,
+        "大安區": 18,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-197",
+      "label": "黃皮",
+      "count": 25,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 22
+      },
+      "districts": {
+        "中山區": 11,
+        "文山區": 1,
+        "信義區": 1,
+        "北投區": 2,
+        "松山區": 1,
+        "南港區": 8,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-198",
+      "label": "檸檬",
+      "count": 25,
+      "byDataset": {
+        "street-trees": 10,
+        "park-trees": 15
+      },
+      "districts": {
+        "大安區": 7,
+        "北投區": 6,
+        "松山區": 3,
+        "大同區": 1,
+        "中山區": 2,
+        "內湖區": 2,
+        "文山區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-199",
+      "label": "烏?",
+      "count": 24,
+      "byDataset": {
+        "park-trees": 24
+      },
+      "districts": {
+        "文山區": 3,
+        "信義區": 2,
+        "南港區": 19
+      },
+      "nameStatus": "needs-name-review",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-200",
+      "label": "黃褥花",
+      "count": 24,
+      "byDataset": {
+        "street-trees": 16,
+        "park-trees": 8
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 13,
+        "文山區": 6,
+        "北投區": 1,
+        "松山區": 2,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-201",
+      "label": "煙火樹",
+      "count": 23,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 21
+      },
+      "districts": {
+        "中正區": 1,
+        "信義區": 1,
+        "士林區": 10,
+        "中山區": 1,
+        "內湖區": 1,
+        "文山區": 2,
+        "北投區": 2,
+        "松山區": 2,
+        "南港區": 1,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-202",
+      "label": "山菜豆",
+      "count": 22,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 20
+      },
+      "districts": {
+        "北投區": 18,
+        "信義區": 1,
+        "士林區": 1,
+        "文山區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-203",
+      "label": "香龍血樹",
+      "count": 22,
+      "byDataset": {
+        "street-trees": 12,
+        "park-trees": 10
+      },
+      "districts": {
+        "士林區": 3,
+        "大同區": 5,
+        "文山區": 9,
+        "信義區": 1,
+        "大安區": 1,
+        "內湖區": 1,
+        "北投區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-204",
+      "label": "加拿列海棗",
+      "count": 21,
+      "byDataset": {
+        "park-trees": 21
+      },
+      "districts": {
+        "中山區": 21
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-205",
+      "label": "柑橘",
+      "count": 21,
+      "byDataset": {
+        "street-trees": 14,
+        "park-trees": 7
+      },
+      "districts": {
+        "士林區": 3,
+        "大同區": 3,
+        "內湖區": 2,
+        "文山區": 2,
+        "北投區": 3,
+        "南港區": 5,
+        "萬華區": 2,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-206",
+      "label": "臺灣肖楠",
+      "count": 21,
+      "byDataset": {
+        "street-trees": 12,
+        "park-trees": 9
+      },
+      "districts": {
+        "南港區": 12,
+        "士林區": 3,
+        "內湖區": 2,
+        "信義區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-207",
+      "label": "孔雀椰子",
+      "count": 20,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 19
+      },
+      "districts": {
+        "文山區": 2,
+        "士林區": 10,
+        "大同區": 3,
+        "松山區": 1,
+        "萬華區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-208",
+      "label": "可可椰子",
+      "count": 20,
+      "byDataset": {
+        "street-trees": 15,
+        "park-trees": 5
+      },
+      "districts": {
+        "文山區": 4,
+        "北投區": 10,
+        "松山區": 2,
+        "士林區": 3,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-209",
+      "label": "人心果",
+      "count": 19,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 18
+      },
+      "districts": {
+        "士林區": 7,
+        "大安區": 12
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-210",
+      "label": "尖尾長葉榕",
+      "count": 19,
+      "byDataset": {
+        "park-trees": 19
+      },
+      "districts": {
+        "大安區": 19
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-211",
+      "label": "馬尼拉椰子",
+      "count": 19,
+      "byDataset": {
+        "street-trees": 13,
+        "park-trees": 6
+      },
+      "districts": {
+        "信義區": 14,
+        "中山區": 3,
+        "北投區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-212",
+      "label": "銀葉鈕扣樹",
+      "count": 19,
+      "byDataset": {
+        "park-trees": 19
+      },
+      "districts": {
+        "士林區": 19
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-213",
+      "label": "瓊崖海棠",
+      "count": 19,
+      "byDataset": {
+        "street-trees": 12,
+        "park-trees": 7
+      },
+      "districts": {
+        "中正區": 11,
+        "北投區": 1,
+        "士林區": 2,
+        "中山區": 1,
+        "松山區": 1,
+        "信義區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-214",
+      "label": "",
+      "count": 18,
+      "byDataset": {
+        "street-trees": 17,
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 17,
+        "內湖區": 1
+      },
+      "nameStatus": "needs-name-review",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-215",
+      "label": "雞冠刺桐",
+      "count": 18,
+      "byDataset": {
+        "street-trees": 6,
+        "park-trees": 12
+      },
+      "districts": {
+        "大安區": 4,
+        "北投區": 1,
+        "松山區": 2,
+        "中山區": 3,
+        "內湖區": 2,
+        "信義區": 4,
+        "南港區": 1,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-216",
+      "label": "山陀兒",
+      "count": 17,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 12
+      },
+      "districts": {
+        "士林區": 3,
+        "大安區": 2,
+        "內湖區": 11,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-217",
+      "label": "垂柳",
+      "count": 17,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 16
+      },
+      "districts": {
+        "大同區": 1,
+        "士林區": 5,
+        "中山區": 1,
+        "內湖區": 4,
+        "文山區": 3,
+        "北投區": 1,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-218",
+      "label": "大漁櫻",
+      "count": 16,
+      "byDataset": {
+        "park-trees": 16
+      },
+      "districts": {
+        "大安區": 14,
+        "內湖區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-219",
+      "label": "山紅柿",
+      "count": 16,
+      "byDataset": {
+        "park-trees": 16
+      },
+      "districts": {
+        "內湖區": 6,
+        "北投區": 6,
+        "南港區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-220",
+      "label": "毛風鈴木",
+      "count": 16,
+      "byDataset": {
+        "street-trees": 8,
+        "park-trees": 8
+      },
+      "districts": {
+        "大同區": 1,
+        "中山區": 1,
+        "中正區": 6,
+        "大安區": 3,
+        "內湖區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-221",
+      "label": "爪哇旃那",
+      "count": 16,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 14
+      },
+      "districts": {
+        "大安區": 2,
+        "中正區": 1,
+        "士林區": 7,
+        "文山區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-222",
+      "label": "南洋含笑",
+      "count": 16,
+      "byDataset": {
+        "street-trees": 4,
+        "park-trees": 12
+      },
+      "districts": {
+        "士林區": 4,
+        "大安區": 1,
+        "文山區": 1,
+        "中山區": 6,
+        "內湖區": 1,
+        "北投區": 2,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-223",
+      "label": "黃槿",
+      "count": 16,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 14
+      },
+      "districts": {
+        "文山區": 2,
+        "士林區": 3,
+        "中山區": 3,
+        "北投區": 3,
+        "信義區": 3,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-224",
+      "label": "臺灣五葉松",
+      "count": 16,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 11
+      },
+      "districts": {
+        "大同區": 1,
+        "內湖區": 1,
+        "萬華區": 3,
+        "南港區": 11
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-225",
+      "label": "金龜樹",
+      "count": 15,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 14
+      },
+      "districts": {
+        "內湖區": 4,
+        "士林區": 4,
+        "中正區": 1,
+        "松山區": 5,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-226",
+      "label": "厚葉石斑木",
+      "count": 15,
+      "byDataset": {
+        "street-trees": 12,
+        "park-trees": 3
+      },
+      "districts": {
+        "文山區": 12,
+        "士林區": 2,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-227",
+      "label": "薄葉虎皮楠",
+      "count": 15,
+      "byDataset": {
+        "park-trees": 15
+      },
+      "districts": {
+        "內湖區": 11,
+        "北投區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-228",
+      "label": "九丁榕",
+      "count": 14,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 13
+      },
+      "districts": {
+        "文山區": 8,
+        "大安區": 1,
+        "內湖區": 2,
+        "南港區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-229",
+      "label": "日日櫻",
+      "count": 14,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 9
+      },
+      "districts": {
+        "士林區": 2,
+        "文山區": 2,
+        "南港區": 1,
+        "大安區": 1,
+        "內湖區": 5,
+        "松山區": 2,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-230",
+      "label": "柿子",
+      "count": 14,
+      "byDataset": {
+        "street-trees": 8,
+        "park-trees": 6
+      },
+      "districts": {
+        "大安區": 8,
+        "北投區": 1,
+        "士林區": 4,
+        "文山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-231",
+      "label": "珊瑚刺桐",
+      "count": 14,
+      "byDataset": {
+        "park-trees": 14
+      },
+      "districts": {
+        "大安區": 3,
+        "中山區": 3,
+        "中正區": 1,
+        "文山區": 1,
+        "松山區": 2,
+        "南港區": 1,
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-232",
+      "label": "筆筒樹",
+      "count": 14,
+      "byDataset": {
+        "park-trees": 14
+      },
+      "districts": {
+        "士林區": 1,
+        "文山區": 1,
+        "南港區": 12
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-233",
+      "label": "龍眼樹",
+      "count": 14,
+      "byDataset": {
+        "street-trees": 12,
+        "park-trees": 2
+      },
+      "districts": {
+        "南港區": 12,
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-234",
+      "label": "山刈葉",
+      "count": 13,
+      "byDataset": {
+        "park-trees": 13
+      },
+      "districts": {
+        "士林區": 2,
+        "內湖區": 1,
+        "南港區": 10
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-235",
+      "label": "山芙蓉",
+      "count": 13,
+      "byDataset": {
+        "park-trees": 13
+      },
+      "districts": {
+        "大安區": 10,
+        "北投區": 1,
+        "信義區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-236",
+      "label": "木芙蓉",
+      "count": 13,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 10
+      },
+      "districts": {
+        "士林區": 2,
+        "北投區": 1,
+        "大安區": 4,
+        "文山區": 5,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-237",
+      "label": "池杉",
+      "count": 13,
+      "byDataset": {
+        "park-trees": 13
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 1,
+        "內湖區": 11
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-238",
+      "label": "李",
+      "count": 13,
+      "byDataset": {
+        "street-trees": 9,
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 2,
+        "大安區": 3,
+        "內湖區": 4,
+        "信義區": 1,
+        "文山區": 1,
+        "松山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-239",
+      "label": "紅瓶刷子樹",
+      "count": 13,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 8
+      },
+      "districts": {
+        "北投區": 5,
+        "士林區": 3,
+        "內湖區": 3,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-240",
+      "label": "澳洲茶樹",
+      "count": 13,
+      "byDataset": {
+        "park-trees": 13
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 8,
+        "松山區": 1,
+        "信義區": 1,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-241",
+      "label": "山埔姜",
+      "count": 12,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 10
+      },
+      "districts": {
+        "北投區": 2,
+        "信義區": 1,
+        "士林區": 8,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-242",
+      "label": "毛柿",
+      "count": 12,
+      "byDataset": {
+        "park-trees": 12
+      },
+      "districts": {
+        "士林區": 7,
+        "北投區": 1,
+        "南港區": 1,
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-243",
+      "label": "扁桃葉斑鳩菊",
+      "count": 12,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 7
+      },
+      "districts": {
+        "士林區": 2,
+        "大同區": 5,
+        "中山區": 2,
+        "文山區": 1,
+        "北投區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-244",
+      "label": "野梨",
+      "count": 12,
+      "byDataset": {
+        "street-trees": 12
+      },
+      "districts": {
+        "大安區": 12
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-245",
+      "label": "黃金蒲桃",
+      "count": 12,
+      "byDataset": {
+        "park-trees": 12
+      },
+      "districts": {
+        "士林區": 6,
+        "萬華區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-246",
+      "label": "臺灣二葉松",
+      "count": 12,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 10
+      },
+      "districts": {
+        "大同區": 1,
+        "南港區": 1,
+        "士林區": 2,
+        "中山區": 5,
+        "文山區": 2,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-247",
+      "label": "樹葡萄",
+      "count": 12,
+      "byDataset": {
+        "street-trees": 4,
+        "park-trees": 8
+      },
+      "districts": {
+        "士林區": 5,
+        "大安區": 1,
+        "內湖區": 1,
+        "文山區": 1,
+        "松山區": 3,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-248",
+      "label": "小實女貞",
+      "count": 11,
+      "byDataset": {
+        "park-trees": 11
+      },
+      "districts": {
+        "大同區": 1,
+        "中山區": 5,
+        "內湖區": 3,
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-249",
+      "label": "山黃梔",
+      "count": 11,
+      "byDataset": {
+        "park-trees": 11
+      },
+      "districts": {
+        "士林區": 1,
+        "大同區": 1,
+        "大安區": 1,
+        "內湖區": 5,
+        "文山區": 1,
+        "北投區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-250",
+      "label": "牛樟",
+      "count": 11,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 10
+      },
+      "districts": {
+        "大安區": 7,
+        "士林區": 1,
+        "北投區": 2,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-251",
+      "label": "加羅林魚木",
+      "count": 11,
+      "byDataset": {
+        "street-trees": 6,
+        "park-trees": 5
+      },
+      "districts": {
+        "士林區": 2,
+        "大安區": 9
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-252",
+      "label": "夾竹桃",
+      "count": 11,
+      "byDataset": {
+        "street-trees": 9,
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 2,
+        "北投區": 8,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-253",
+      "label": "南美假櫻桃",
+      "count": 11,
+      "byDataset": {
+        "street-trees": 10,
+        "park-trees": 1
+      },
+      "districts": {
+        "大安區": 10,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-254",
+      "label": "黃槐",
+      "count": 11,
+      "byDataset": {
+        "street-trees": 6,
+        "park-trees": 5
+      },
+      "districts": {
+        "內湖區": 6,
+        "大安區": 2,
+        "松山區": 1,
+        "信義區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-255",
+      "label": "黃鐘花",
+      "count": 11,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 9
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 4,
+        "內湖區": 1,
+        "松山區": 4,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-256",
+      "label": "錫蘭肉桂",
+      "count": 11,
+      "byDataset": {
+        "park-trees": 11
+      },
+      "districts": {
+        "大同區": 1,
+        "大安區": 1,
+        "中山區": 2,
+        "中正區": 1,
+        "北投區": 5,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-257",
+      "label": "檸檬桉",
+      "count": 11,
+      "byDataset": {
+        "street-trees": 8,
+        "park-trees": 3
+      },
+      "districts": {
+        "文山區": 8,
+        "士林區": 2,
+        "中正區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-258",
+      "label": "山油麻",
+      "count": 10,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 8
+      },
+      "districts": {
+        "北投區": 3,
+        "士林區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-259",
+      "label": "水杉",
+      "count": 10,
+      "byDataset": {
+        "park-trees": 10
+      },
+      "districts": {
+        "文山區": 8,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-260",
+      "label": "玉蘭",
+      "count": 10,
+      "byDataset": {
+        "street-trees": 8,
+        "park-trees": 2
+      },
+      "districts": {
+        "南港區": 8,
+        "內湖區": 1,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-261",
+      "label": "朱槿",
+      "count": 10,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 5
+      },
+      "districts": {
+        "士林區": 4,
+        "南港區": 2,
+        "文山區": 1,
+        "松山區": 2,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-262",
+      "label": "杜虹花",
+      "count": 10,
+      "byDataset": {
+        "park-trees": 10
+      },
+      "districts": {
+        "士林區": 4,
+        "內湖區": 1,
+        "文山區": 1,
+        "北投區": 3,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-263",
+      "label": "沉香",
+      "count": 10,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 8
+      },
+      "districts": {
+        "士林區": 1,
+        "大同區": 1,
+        "中山區": 1,
+        "文山區": 5,
+        "松山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-264",
+      "label": "食茱萸",
+      "count": 10,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 9
+      },
+      "districts": {
+        "北投區": 2,
+        "士林區": 3,
+        "內湖區": 2,
+        "文山區": 2,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-265",
+      "label": "草莓番石榴",
+      "count": 10,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 7
+      },
+      "districts": {
+        "大安區": 3,
+        "士林區": 3,
+        "中正區": 2,
+        "松山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-266",
+      "label": "臺灣石楠",
+      "count": 10,
+      "byDataset": {
+        "street-trees": 8,
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 2,
+        "內湖區": 2,
+        "南港區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-267",
+      "label": "羅氏鹽膚木",
+      "count": 10,
+      "byDataset": {
+        "park-trees": 10
+      },
+      "districts": {
+        "士林區": 4,
+        "文山區": 4,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-268",
+      "label": "土楠",
+      "count": 9,
+      "byDataset": {
+        "park-trees": 9
+      },
+      "districts": {
+        "中山區": 5,
+        "北投區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-269",
+      "label": "紅淡比",
+      "count": 9,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 4,
+        "北投區": 4,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-270",
+      "label": "臭娘子",
+      "count": 9,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 6
+      },
+      "districts": {
+        "中山區": 2,
+        "松山區": 1,
+        "士林區": 1,
+        "大安區": 1,
+        "內湖區": 1,
+        "文山區": 1,
+        "信義區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-271",
+      "label": "寒櫻",
+      "count": 9,
+      "byDataset": {
+        "park-trees": 9
+      },
+      "districts": {
+        "內湖區": 4,
+        "信義區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-272",
+      "label": "菲律賓饅頭果",
+      "count": 9,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 2,
+        "大安區": 2,
+        "中山區": 3,
+        "文山區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-273",
+      "label": "澀葉榕",
+      "count": 9,
+      "byDataset": {
+        "street-trees": 5,
+        "park-trees": 4
+      },
+      "districts": {
+        "文山區": 3,
+        "南港區": 3,
+        "大安區": 2,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-274",
+      "label": "蘭嶼肉桂",
+      "count": 9,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 7
+      },
+      "districts": {
+        "士林區": 1,
+        "南港區": 2,
+        "內湖區": 1,
+        "文山區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-275",
+      "label": "八重櫻",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 4,
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 4,
+        "中山區": 3,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-276",
+      "label": "大果藤榕",
+      "count": 8,
+      "byDataset": {
+        "park-trees": 8
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 1,
+        "萬華區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-277",
+      "label": "小梗木薑子",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 7
+      },
+      "districts": {
+        "北投區": 1,
+        "文山區": 4,
+        "信義區": 2,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-278",
+      "label": "山刺番荔枝",
+      "count": 8,
+      "byDataset": {
+        "park-trees": 8
+      },
+      "districts": {
+        "士林區": 6,
+        "北投區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-279",
+      "label": "火筒樹",
+      "count": 8,
+      "byDataset": {
+        "park-trees": 8
+      },
+      "districts": {
+        "中山區": 8
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-280",
+      "label": "吉貝木棉",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 7
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 5,
+        "北投區": 1,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-281",
+      "label": "尾葉灰木",
+      "count": 8,
+      "byDataset": {
+        "park-trees": 8
+      },
+      "districts": {
+        "內湖區": 1,
+        "北投區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-282",
+      "label": "金露花",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 6
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 4,
+        "大同區": 1,
+        "內湖區": 1,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-283",
+      "label": "細葉饅頭果",
+      "count": 8,
+      "byDataset": {
+        "park-trees": 8
+      },
+      "districts": {
+        "士林區": 3,
+        "內湖區": 1,
+        "北投區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-284",
+      "label": "斑葉垂榕",
+      "count": 8,
+      "byDataset": {
+        "park-trees": 8
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 1,
+        "信義區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-285",
+      "label": "臺灣油杉",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 6,
+        "park-trees": 2
+      },
+      "districts": {
+        "萬華區": 6,
+        "中正區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-286",
+      "label": "辣木",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 4,
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 1,
+        "北投區": 1,
+        "信義區": 1,
+        "萬華區": 2,
+        "大同區": 1,
+        "文山區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-287",
+      "label": "槭葉酒瓶樹",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 1
+      },
+      "districts": {
+        "大同區": 7,
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-288",
+      "label": "檬果",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 8
+      },
+      "districts": {
+        "大安區": 2,
+        "南港區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-289",
+      "label": "雞爪楓",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 7,
+        "park-trees": 1
+      },
+      "districts": {
+        "中山區": 2,
+        "松山區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-290",
+      "label": "釋迦",
+      "count": 8,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 5
+      },
+      "districts": {
+        "士林區": 3,
+        "大安區": 1,
+        "文山區": 1,
+        "大同區": 1,
+        "信義區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-291",
+      "label": "大花曼陀羅",
+      "count": 7,
+      "byDataset": {
+        "street-trees": 7
+      },
+      "districts": {
+        "大安區": 1,
+        "文山區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-292",
+      "label": "小花鼠刺",
+      "count": 7,
+      "byDataset": {
+        "park-trees": 7
+      },
+      "districts": {
+        "內湖區": 3,
+        "文山區": 1,
+        "北投區": 2,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-293",
+      "label": "火刺木",
+      "count": 7,
+      "byDataset": {
+        "park-trees": 7
+      },
+      "districts": {
+        "士林區": 1,
+        "中山區": 4,
+        "內湖區": 1,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-294",
+      "label": "枯木",
+      "count": 7,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 6
+      },
+      "districts": {
+        "南港區": 2,
+        "士林區": 1,
+        "萬華區": 4
+      },
+      "nameStatus": "needs-name-review",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-295",
+      "label": "紅花繼木",
+      "count": 7,
+      "byDataset": {
+        "park-trees": 7
+      },
+      "districts": {
+        "大安區": 3,
+        "文山區": 1,
+        "南港區": 1,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-296",
+      "label": "番仔林投",
+      "count": 7,
+      "byDataset": {
+        "park-trees": 7
+      },
+      "districts": {
+        "大安區": 1,
+        "信義區": 5,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-297",
+      "label": "紫玉蘭",
+      "count": 7,
+      "byDataset": {
+        "park-trees": 7
+      },
+      "districts": {
+        "中山區": 2,
+        "文山區": 1,
+        "松山區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-298",
+      "label": "龍鱗櫚",
+      "count": 7,
+      "byDataset": {
+        "park-trees": 7
+      },
+      "districts": {
+        "士林區": 2,
+        "信義區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-299",
+      "label": "糙葉樹",
+      "count": 7,
+      "byDataset": {
+        "park-trees": 7
+      },
+      "districts": {
+        "士林區": 7
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-300",
+      "label": "蘋婆",
+      "count": 7,
+      "byDataset": {
+        "park-trees": 7
+      },
+      "districts": {
+        "文山區": 2,
+        "北投區": 1,
+        "松山區": 2,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-301",
+      "label": "豆梨",
+      "count": 6,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 5
+      },
+      "districts": {
+        "士林區": 4,
+        "文山區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-302",
+      "label": "花旗木",
+      "count": 6,
+      "byDataset": {
+        "street-trees": 6
+      },
+      "districts": {
+        "大安區": 2,
+        "松山區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-303",
+      "label": "金剛纂",
+      "count": 6,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 4
+      },
+      "districts": {
+        "北投區": 2,
+        "士林區": 1,
+        "大同區": 1,
+        "松山區": 1,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-304",
+      "label": "重瓣彎子木",
+      "count": 6,
+      "byDataset": {
+        "park-trees": 6
+      },
+      "districts": {
+        "萬華區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-305",
+      "label": "馬尼拉欖仁",
+      "count": 6,
+      "byDataset": {
+        "park-trees": 6
+      },
+      "districts": {
+        "中山區": 6
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-306",
+      "label": "錫蘭海棗",
+      "count": 6,
+      "byDataset": {
+        "park-trees": 6
+      },
+      "districts": {
+        "士林區": 2,
+        "信義區": 2,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-307",
+      "label": "三角椰子",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "士林區": 3,
+        "中山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-308",
+      "label": "油茶",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "萬華區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-309",
+      "label": "長梗紫麻",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "士林區": 2,
+        "文山區": 2,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-310",
+      "label": "南洋櫻",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "中山區": 2,
+        "松山區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-311",
+      "label": "昭和櫻",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "中山區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-312",
+      "label": "紅邊竹蕉",
+      "count": 5,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 1,
+        "文山區": 1,
+        "中正區": 1,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-313",
+      "label": "香水樹",
+      "count": 5,
+      "byDataset": {
+        "street-trees": 4,
+        "park-trees": 1
+      },
+      "districts": {
+        "南港區": 4,
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-314",
+      "label": "倒卵葉冬青",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "士林區": 2,
+        "北投區": 1,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-315",
+      "label": "栗豆樹",
+      "count": 5,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 4
+      },
+      "districts": {
+        "大同區": 1,
+        "士林區": 1,
+        "大安區": 1,
+        "北投區": 1,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-316",
+      "label": "酒瓶蘭",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "大同區": 1,
+        "中山區": 1,
+        "中正區": 1,
+        "松山區": 1,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-317",
+      "label": "馬尾松",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "松山區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-318",
+      "label": "象耳榕",
+      "count": 5,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 2
+      },
+      "districts": {
+        "大安區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-319",
+      "label": "圓柏",
+      "count": 5,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 1,
+        "中山區": 1,
+        "內湖區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-320",
+      "label": "臺東漆",
+      "count": 5,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 2,
+        "大同區": 2,
+        "大安區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-321",
+      "label": "霸王櫚",
+      "count": 5,
+      "byDataset": {
+        "park-trees": 5
+      },
+      "districts": {
+        "文山區": 5
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-322",
+      "label": "三年桐",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "中山區": 2,
+        "內湖區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-323",
+      "label": "三腳虌",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "內湖區": 1,
+        "文山區": 2,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-324",
+      "label": "千頭木麻黃",
+      "count": 4,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 1
+      },
+      "districts": {
+        "大安區": 3,
+        "中正區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-325",
+      "label": "土樟",
+      "count": 4,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 3
+      },
+      "districts": {
+        "大安區": 1,
+        "士林區": 1,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-326",
+      "label": "山豬肝",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "內湖區": 1,
+        "文山區": 1,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-327",
+      "label": "木槿",
+      "count": 4,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 3
+      },
+      "districts": {
+        "大安區": 3,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-328",
+      "label": "牛油果",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-329",
+      "label": "白鳥蕉",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "內湖區": 2,
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-330",
+      "label": "白樹仔",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "中正區": 3,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-331",
+      "label": "印度棗",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 3,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-332",
+      "label": "細葉桉",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "信義區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-333",
+      "label": "野桐",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 2,
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-334",
+      "label": "奧氏虎皮楠",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "南港區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-335",
+      "label": "臺灣香檬",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "士林區": 4
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-336",
+      "label": "蘇鐵",
+      "count": 4,
+      "byDataset": {
+        "street-trees": 3,
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 2,
+        "文山區": 1,
+        "中正區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-337",
+      "label": "變葉木",
+      "count": 4,
+      "byDataset": {
+        "park-trees": 4
+      },
+      "districts": {
+        "中正區": 1,
+        "北投區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-338",
+      "label": "小實孔雀豆",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 1,
+        "北投區": 1,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-339",
+      "label": "水金京",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "內湖區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-340",
+      "label": "火漆木",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 1
+      },
+      "districts": {
+        "信義區": 2,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-341",
+      "label": "台灣梭羅木",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "大安區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-342",
+      "label": "石斑木",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "士林區": 1,
+        "中山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-343",
+      "label": "杏",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 2,
+        "park-trees": 1
+      },
+      "districts": {
+        "大安區": 2,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-344",
+      "label": "沙盒樹",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "大同區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-345",
+      "label": "刺葉桂櫻",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "內湖區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-346",
+      "label": "金新木薑子",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "萬華區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-347",
+      "label": "南洋馬蹄花",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 2
+      },
+      "districts": {
+        "大同區": 1,
+        "士林區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-348",
+      "label": "紅棕櫚",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "松山區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-349",
+      "label": "烏來冬青",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "南港區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-350",
+      "label": "棋盤腳",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 2
+      },
+      "districts": {
+        "大安區": 1,
+        "士林區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-351",
+      "label": "黃花風鈴木",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 3
+      },
+      "districts": {
+        "南港區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-352",
+      "label": "黃蝴蝶",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 2
+      },
+      "districts": {
+        "信義區": 1,
+        "士林區": 1,
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-353",
+      "label": "稜果蒲桃",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "士林區": 1,
+        "中正區": 1,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-354",
+      "label": "賊仔樹",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "松山區": 1,
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-355",
+      "label": "臺東石楠",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "士林區": 2,
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-356",
+      "label": "臺灣雅楠",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "北投區": 3
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-357",
+      "label": "墨水樹",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "大同區": 1,
+        "文山區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-358",
+      "label": "橄欖",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 2
+      },
+      "districts": {
+        "大安區": 1,
+        "士林區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-359",
+      "label": "賽赤楠",
+      "count": 3,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 2
+      },
+      "districts": {
+        "信義區": 1,
+        "士林區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-360",
+      "label": "羅望子",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "士林區": 1,
+        "中山區": 1,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-361",
+      "label": "蘇利南合歡",
+      "count": 3,
+      "byDataset": {
+        "park-trees": 3
+      },
+      "districts": {
+        "士林區": 2,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-362",
+      "label": "大香葉樹",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 1,
+        "文山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-363",
+      "label": "山桂花",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-364",
+      "label": "山馬茶",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "大同區": 1,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-365",
+      "label": "孔雀木",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "信義區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-366",
+      "label": "巴西乳香",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-367",
+      "label": "水冬瓜",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-368",
+      "label": "白水木",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "北投區": 1,
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-369",
+      "label": "白桕",
+      "count": 2,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 1
+      },
+      "districts": {
+        "松山區": 1,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-370",
+      "label": "合歡",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "大同區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-371",
+      "label": "安石榴",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "北投區": 1,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-372",
+      "label": "百合竹",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "信義區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-373",
+      "label": "辛夷",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "中山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-374",
+      "label": "垂花琴木",
+      "count": 2,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 1
+      },
+      "districts": {
+        "大安區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-375",
+      "label": "昆欄樹",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "北投區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-376",
+      "label": "林投",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "文山區": 1,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-377",
+      "label": "金棗",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "大安區": 1,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-378",
+      "label": "長尾栲",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "內湖區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-379",
+      "label": "雨豆樹",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "大同區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-380",
+      "label": "神秘果",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-381",
+      "label": "密花白飯樹",
+      "count": 2,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 1
+      },
+      "districts": {
+        "大同區": 1,
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-382",
+      "label": "梧桐",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "大同區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-383",
+      "label": "粗糠柴",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-384",
+      "label": "棕櫚",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-385",
+      "label": "椬梧",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 1,
+        "大安區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-386",
+      "label": "番龍眼",
+      "count": 2,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 1
+      },
+      "districts": {
+        "大安區": 1,
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-387",
+      "label": "黃杞",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "內湖區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-388",
+      "label": "黃金果",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "大同區": 1,
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-389",
+      "label": "圓葉福祿桐",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 1,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-390",
+      "label": "楠樹",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-391",
+      "label": "綠珊瑚",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 1,
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-392",
+      "label": "蒲瓜樹",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "萬華區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-393",
+      "label": "銀葉樹",
+      "count": 2,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 1
+      },
+      "districts": {
+        "文山區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-394",
+      "label": "樹商陸",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-395",
+      "label": "橘子",
+      "count": 2,
+      "byDataset": {
+        "street-trees": 1,
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 1,
+        "文山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-396",
+      "label": "橡皮樹",
+      "count": 2,
+      "byDataset": {
+        "street-trees": 2
+      },
+      "districts": {
+        "南港區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-397",
+      "label": "頷垂豆",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "內湖區": 1,
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-398",
+      "label": "龍血樹",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "文山區": 1,
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-399",
+      "label": "檄樹",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "士林區": 1,
+        "文山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-400",
+      "label": "藍棕櫚",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "文山區": 2
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-401",
+      "label": "羅庚果",
+      "count": 2,
+      "byDataset": {
+        "park-trees": 2
+      },
+      "districts": {
+        "中山區": 1,
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-402",
+      "label": "七里香",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "文山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-403",
+      "label": "大明橘",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-404",
+      "label": "小果油茶",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-405",
+      "label": "山枇杷",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-406",
+      "label": "山柿",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-407",
+      "label": "冇骨消",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-408",
+      "label": "化香樹",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-409",
+      "label": "太平洋榲桲",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-410",
+      "label": "巴西胡椒木",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-411",
+      "label": "日本香柏",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-412",
+      "label": "牛奶榕",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-413",
+      "label": "冬青",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-414",
+      "label": "白木香",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-415",
+      "label": "白仙丹花",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中正區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-416",
+      "label": "白桐",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-417",
+      "label": "石苓舅",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-418",
+      "label": "印度塔樹",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-419",
+      "label": "早田氏柃木",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-420",
+      "label": "灰木",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-421",
+      "label": "米飯花",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-422",
+      "label": "赤皮",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-423",
+      "label": "亞歷山大椰子",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-424",
+      "label": "使君子",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "大安區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-425",
+      "label": "夜合花",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-426",
+      "label": "夜香木",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "大安區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-427",
+      "label": "油桐",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-428",
+      "label": "油葉石櫟",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-429",
+      "label": "狐尾椰子",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-430",
+      "label": "芭樂",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-431",
+      "label": "金雞納樹",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-432",
+      "label": "長紅木",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-433",
+      "label": "南洋含笑花",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-434",
+      "label": "柳丁",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-435",
+      "label": "紅仔珠",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "內湖區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-436",
+      "label": "紅皮",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-437",
+      "label": "紅刺露兜",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-438",
+      "label": "紅葉樹",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-439",
+      "label": "美國紅梣",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中正區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-440",
+      "label": "香拔",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-441",
+      "label": "桂葉黃梅",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-442",
+      "label": "茜草樹",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-443",
+      "label": "馬氏射葉椰子",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-444",
+      "label": "馬拉巴柿",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-445",
+      "label": "麻楝",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "大安區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-446",
+      "label": "朝鮮紫珠",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-447",
+      "label": "番茉莉",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "大安區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-448",
+      "label": "象腳王蘭",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-449",
+      "label": "黃果垂榕",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-450",
+      "label": "黃荊",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-451",
+      "label": "楓港柿",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "大安區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-452",
+      "label": "裡白楤木",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "大安區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-453",
+      "label": "過山香",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-454",
+      "label": "綠葉竹蕉",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-455",
+      "label": "臺灣泡桐",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-456",
+      "label": "臺灣梣",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-457",
+      "label": "銀杏",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-458",
+      "label": "銀葉桉",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中正區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-459",
+      "label": "劍葉緬梔",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中正區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-460",
+      "label": "槭樹",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "文山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-461",
+      "label": "槲櫟",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-462",
+      "label": "樟葉槭",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "萬華區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-463",
+      "label": "潺槁木薑子",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "信義區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-464",
+      "label": "盤龍木",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "北投區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-465",
+      "label": "糊樗",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "南港區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-466",
+      "label": "澳洲胡桃",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-467",
+      "label": "叢花百日青",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "中山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-468",
+      "label": "蘭嶼山桂花",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-469",
+      "label": "霸王椰子",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-470",
+      "label": "彎子木",
+      "count": 1,
+      "byDataset": {
+        "street-trees": 1
+      },
+      "districts": {
+        "士林區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    },
+    {
+      "id": "species-471",
+      "label": "鷹爪花",
+      "count": 1,
+      "byDataset": {
+        "park-trees": 1
+      },
+      "districts": {
+        "松山區": 1
+      },
+      "nameStatus": "source-label",
+      "searchStatus": "pending"
+    }
+  ]
+}

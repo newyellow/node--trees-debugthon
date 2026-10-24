@@ -1,0 +1,2237 @@
+{
+  "schemaVersion": 1,
+  "batch": 2,
+  "range": [
+    96,
+    190
+  ],
+  "entries": [
+    {
+      "id": "species-096",
+      "label": "相思樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "相思樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%9B%B8%E6%80%9D%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:37.859Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://teia.tw/archives/natural_valley_star/pw2017-11-02",
+            "https://www.facebook.com/tfri.coa/posts/%E7%9B%B8%E6%80%9D%E6%A8%B9%E5%9C%A8%E8%87%BA%E7%81%A3%E7%9A%84%E6%AD%B7%E5%8F%B2-%E7%9B%B8%E6%80%9D%E6%A8%B9acacia-confusa-merr%E7%82%BA%E8%87%BA%E7%81%A3%E5%8D%81%E5%88%86%E5%B8%B8%E8%A6%8B%E7%9A%84%E6%9C%AC%E5%9C%9F%E9%97%8A%E8%91%89%E6%A8%B9%E7%A8%AE%E5%8E%9F%E7%94%A2%E6%96%BC%E6%81%86%E6%98%A5%E5%8D%8A%E5%B3%B61896%E5%B9%B4%E8%87%BA%E7%81%A3%E7%B8%BD%E7%9D%A3%E5%BA%9C%E5%9C%A8%E8%87%BA%E5%8C%97%E5%B0%8F%E5%8D%97%E9%96%80%E9%96%8B%E8%A8%AD%E6%A8%B9%E6%9C%A8%E8%A9%A6%E9%A9%97%E8%8B%97%E5%9C%83%E7%9B%B8%E6%80%9D%E6%A8%B9/3145326658861051/",
+            "https://www.thenewslens.com/article/265496",
+            "https://gozhuolan.com.tw/2025/11/05-%E7%9B%B8%E6%80%9D%E6%A8%B9acacia-confusa/",
+            "https://www.fountain.org.tw/tag/nature/article/formosa-acacia",
+            "https://parks.gov.taipei/parks/m3/pkl_parks_m3s2C.php?sid=207",
+            "https://digiarch.sinica.edu.tw/content/subject/resource_content.jsp?id=4064",
+            "http://slyfchen.blogspot.com/2018/07/blog-post_17.html",
+            "https://www.e-info.org.tw/node/107347"
+          ],
+          "resultNotes": "瀏覽器實際載入並擷取搜尋結果；HTTP狀態未由browser回報。"
+        },
+        {
+          "query": "相思樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?q=%E7%9B%B8%E6%80%9D%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:40.262Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://dado.gov.taipei/News_Content.aspx?n=C32953E0EED9A871&s=036F1689CDEAE431",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/1839",
+            "https://www.forest.gov.tw/news/0063823",
+            "https://ntufinance.wixsite.com/ntutree/ntutreeplacard",
+            "https://taiwanplant.org.tw/donation/",
+            "https://tw.news.yahoo.com/%E9%83%BD%E5%B8%82%E5%8F%A2%E6%9E%97%E8%97%8F%E7%A5%95%E5%A2%83-%E5%B0%8B%E8%A6%93%E7%9B%B8%E6%80%9D%E6%A8%B9-215005551.html",
+            "https://toaf.org.tw/treeplanting",
+            "https://www.e-info.org.tw/node/210493",
+            "https://tnf.org.tw/thetaotree"
+          ],
+          "resultNotes": "瀏覽器實際載入並擷取搜尋結果；HTTP狀態未由browser回報。"
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://www.fountain.org.tw/tag/nature/article/formosa-acacia",
+          "accessedAt": "2026-10-24T02:35:18.042Z",
+          "outcome": "body-access-blocked",
+          "notes": "Error: Web fetch extraction failed: Readability, provider fallback, and basic HTML cleanup returned no content."
+        }
+      ],
+      "candidateStoryIds": [],
+      "limitations": "第一輪線索搜尋；搜尋摘要不作證據，未比對現有GIS個體。"
+    },
+    {
+      "id": "species-097",
+      "label": "華盛頓椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "華盛頓椰子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%8F%AF%E7%9B%9B%E9%A0%93%E6%A4%B0%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:42.600Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.tfri.gov.tw/News_Content.aspx?n=7658&s=225",
+            "https://www.agriharvest.tw/archives/34927/",
+            "https://blog.udn.com/chhsia1113/71015837",
+            "https://www.facebook.com/100063705587827/posts/%E8%A1%8C%E9%81%93%E6%A8%B9%E4%B8%A6%E9%9D%9E%E4%BB%BB%E4%BD%95%E6%A8%B9%E7%A8%AE%E9%83%BD%E9%81%A9%E5%90%88%E5%8F%B0%E7%81%A3%E5%9C%A8%E6%97%A5%E6%93%9A%E6%99%82%E4%BB%A3%E5%B0%8E%E5%85%A5%E6%A3%95%E6%AB%9A%E7%A7%91%E4%BD%9C%E7%82%BA%E8%A1%8C%E9%81%93%E6%A8%B9%E7%A8%AE%E6%A4%8D%E7%8E%87%E5%85%88%E6%96%BC%E5%8F%B0%E5%8C%97%E7%94%9A%E8%87%B3%E5%8F%B0%E5%8D%97%E9%83%BD%E6%9C%89%E6%88%90%E5%88%97%E6%A4%B0%E6%A8%B9%E8%A1%8C%E9%81%93%E6%A8%B9%E7%A8%AE%E6%A4%8D%E8%A1%8C%E9%81%93%E6%A8%B9%E5%B0%8D%E7%92%B0%E5%A2%83%E7%A4%BE%E6%9C%83%E4%BB%A5%E5%8F%8A%E9%83%BD%E5%B8%82%E7%94%9F%E6%B4%BB%E9%83%BD%E5%85%B7%E6%9C%89%E5%BE%88%E5%A4%A7%E8%B2%A2%E7%8D%BB%E5%B0%B1%E9%83%BD%E5%B8%82%E5%BE%AE%E6%B0%A3%E5%80%99%E8%AA%BF%E7%AF%80/1051651346968375/",
+            "http://dgnet.com.tw/articleview.php?article_id=21905",
+            "https://tlpg.hsiliu.org.tw/plant/view/81",
+            "https://eyesonplace.net/2022/03/30/20124/",
+            "https://www.e-info.org.tw/node/225849",
+            "http://w3.dhps.tp.edu.tw/plant/b12.htm"
+          ],
+          "resultNotes": "瀏覽器實際載入並擷取搜尋結果；HTTP狀態未由browser回報。"
+        },
+        {
+          "query": "華盛頓椰子 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?q=%E8%8F%AF%E7%9B%9B%E9%A0%93%E6%A4%B0%E5%AD%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:45.110Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=9FE8ECED6A376AEA",
+            "https://taiwan.md/lifestyle/%E5%8F%B0%E7%81%A3%E8%A1%8C%E9%81%93%E6%A8%B9/",
+            "https://www.threads.com/@yihongcho/post/DaSvmn1GKRj/%E6%84%9F%E8%AC%9D%E4%BD%A0%E5%80%91%E7%95%B6%E6%99%82%E7%9A%84%E8%AD%B7%E6%A8%B9%E8%A1%8C%E5%8B%95/",
+            "https://www.facebook.com/lovetreelaw/posts/%E6%84%9F%E8%AC%9D%E8%AD%B7%E6%A8%B9%E4%BA%BA%E7%9A%84%E5%8A%AA%E5%8A%9B%E5%A4%A7%E7%8E%8B%E6%A4%B0%E5%AD%90%E5%B7%B2%E7%B6%93%E6%98%AF%E5%8F%B0%E7%81%A3%E7%9A%84%E6%AD%B7%E5%8F%B2%E5%8F%A4%E8%B9%9F%E6%98%AF%E4%B8%80%E5%80%8B%E6%99%82%E4%BB%A3%E5%8D%B0%E8%A8%98%E4%BB%A5%E5%BE%8C%E5%8F%AF%E8%83%BD%E4%B9%9F%E4%B8%8D%E6%9C%83%E6%9C%89%E4%BA%BA%E7%A8%AE%E4%BA%86%E4%BD%86%E6%98%AF%E9%80%99%E4%BA%9B%E5%85%B7%E6%9C%89%E6%84%8F%E7%BE%A9%E7%9A%84%E6%A4%8D%E6%A0%BD%E8%83%BD%E5%A4%A0%E7%95%99%E4%B8%8B%E4%BE%86%E7%9C%9F%E7%9A%84%E5%BE%88%E5%A5%BDhttpswwwfacebookcoms/1248948663936850/?locale=zh_TW",
+            "https://ntufinance.wixsite.com/ntutree/ntutreeplacard",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3D%3D&icon=.pdf",
+            "https://www.tfri.gov.tw/News_Content.aspx?n=7658&s=225",
+            "https://taiwanplant.org.tw/cart/donate500/"
+          ],
+          "resultNotes": "瀏覽器實際載入並擷取搜尋結果；HTTP狀態未由browser回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "第一輪線索搜尋；搜尋摘要不作證據，未比對現有GIS個體。"
+    },
+    {
+      "id": "species-098",
+      "label": "朴樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "朴樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%9C%B4%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:50.053Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://eculture.gov.taipei/trees/zh-tw/tree/108",
+            "https://www.wenshan.org.tw/index.php/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91/%E8%B3%87%E8%A8%8A%E6%8F%AD%E9%9C%B2/item/1021-2013-10-31-11-49-01",
+            "https://sowhc.sow.org.tw/html/observation/plant/a06plant/a060603-po-su/po-su.htm",
+            "https://www.facebook.com/ShisizhangDapinglinXindian/posts/%E9%81%B8%E6%93%87%E6%80%A7%E7%9A%84%E7%A0%8D%E9%99%A4%E6%88%96%E4%BF%9D%E5%AD%98%E5%8D%81%E5%9B%9B%E5%BC%B5%E8%80%81%E6%9C%B4%E6%A8%B9%E7%9A%84%E5%86%A4%E6%AD%BB%E5%B0%8F%E5%B9%B4%E5%A4%9C%E7%9A%84%E5%89%8D%E5%A4%95%E6%9C%89%E4%BD%8D%E5%8D%81%E5%9B%9B%E5%BC%B5%E7%9A%84%E5%9C%A8%E5%9C%B0%E4%BA%BA%E5%82%B3%E4%BE%86%E4%B8%80%E5%80%8B%E4%BB%A4%E4%BA%BA%E9%9B%A3%E9%81%8E%E7%9A%84%E6%B6%88%E6%81%AF%E6%B0%91%E7%94%9F%E5%8F%A4%E8%B7%AF%E7%9A%84%E7%99%BE%E5%B9%B4%E6%9C%B4%E6%A8%B9%E9%81%AD%E5%88%B0%E7%A0%8D%E9%99%A4%E9%80%99%E6%A3%B5%E6%9C%B4%E6%A8%B9%E8%A2%AB%E7%A0%8D%E9%99%A4%E7%9A%84%E7%90%86%E7%94%B1%E6%98%AF%E5%9B%A0%E7%82%BA%E9%81%8E%E6%96%BC%E5%82%BE%E6%96%9C%E6%9C%89%E5%82%B7%E4%BA%BA%E7%9A%84%E9%A2%A8%E9%9A%AA/784258520407208/",
+            "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66",
+            "https://nativetree.forest.gov.tw/Tree/Info/5a7f7791d1e64bb68a9a11eb44926284",
+            "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/flowers/Theme-F00578/",
+            "https://zh.wikipedia.org/zh-tw/%E6%9C%B4%E6%A8%B9",
+            "https://taipei-trees.org/tree?code=PT-4606"
+          ],
+          "resultNotes": "瀏覽器實際載入並擷取搜尋結果；HTTP狀態未由browser回報。"
+        },
+        {
+          "query": "朴樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?q=%E6%9C%B4%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:52.721Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://eculture.gov.taipei/trees/zh-tw/tree/99",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/108",
+            "https://taiwanplant.org.tw/donation/",
+            "https://ntufinance.wixsite.com/ntutree/ntutreeplacard",
+            "https://dado.gov.taipei/News_Content.aspx?n=C32953E0EED9A871&s=036F1689CDEAE431",
+            "https://toaf.org.tw/treeplanting",
+            "https://nativetree.forest.gov.tw/Bulletin/List?category=1&page=7",
+            "https://www.facebook.com/lovetreelaw/posts/%E8%AD%B7%E6%A8%B9%E7%AD%94%E5%AE%A2%E5%95%8F%E5%95%8F%E5%8F%B0%E5%8C%97%E7%A0%8D%E6%A8%B9%E4%BD%A0%E5%80%91%E6%80%8E%E9%BA%BC%E9%9D%9C%E6%82%84%E6%82%84%E7%AD%941%E8%87%BA%E5%8C%97%E6%9C%89%E5%BE%88%E5%A4%9A%E8%AD%B7%E6%A8%B9%E5%9C%98%E9%AB%94%E4%BE%8B%E5%A6%82%E6%A8%B9%E4%BA%BA%E6%9C%83%E6%92%AB%E9%81%A0%E5%85%AC%E5%9C%92%E8%AD%B7%E6%A8%B9%E8%81%AF%E7%9B%9F%E5%9F%8E%E8%A3%A1%E8%A6%81%E6%9C%89%E6%A8%B9%E7%AD%91%E6%A8%B9%E5%B0%8F%E4%B8%98%E8%AD%B7%E6%A8%B9%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%9F%8E%E5%8D%97%E8%80%81%E6%A8%B9%E5%B7%A1%E5%AE%88%E9%9A%8A%E6%B7%A1%E6%B0%B4%E5%85%AC%E4%B8%83%E5%85%AC%E5%9C%92%E8%87%AA%E6%95%91%E6%9C%83%E7%92%B0%E5%A2%83%E6%B3%95%E5%BE%8B%E4%BA%BA%E5%8D%94%E6%9C%83%E9%9B%99%E5%92%8C/1486120590219655/?locale=zh_TW",
+            "https://www.iplanting.org/donate"
+          ],
+          "resultNotes": "瀏覽器實際載入並擷取搜尋結果；HTTP狀態未由browser回報。"
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66",
+          "accessedAt": "2026-10-24T02:35:05.714Z",
+          "outcome": "supports-local-memory",
+          "notes": "已閱讀正文；詳batch-2-body-evidence.json。"
+        },
+        {
+          "url": "https://www.wenshan.org.tw/index.php/關於我們/資訊揭露/item/1021-2013-10-31-11-49-01",
+          "accessedAt": "2026-10-24T02:35:05.999Z",
+          "outcome": "supports-local-context",
+          "notes": "已閱讀正文；詳batch-2-body-evidence.json。"
+        }
+      ],
+      "candidateStoryIds": [
+        "round1-xiaokeng-celtis-shrine"
+      ],
+      "limitations": "第一輪線索搜尋；搜尋摘要不作證據，未比對現有GIS個體。"
+    },
+    {
+      "id": "species-099",
+      "label": "番石榴",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "番石榴 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%95%AA%E7%9F%B3%E6%A6%B4%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:55.270Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://kmweb.moa.gov.tw/subject/subject.php?id=11786",
+            "https://www.agriharvest.tw/archives/100517/",
+            "https://www.rhythmsmonthly.com/?p=10618",
+            "https://zh.wikipedia.org/zh-tw/%E7%95%AA%E7%9F%B3%E6%A6%B4",
+            "https://www.ia.gov.tw/zh-TW/fun/articles?a=296",
+            "https://tw.news.yahoo.com/%E6%B0%B4%E6%9E%9C%E7%8E%8B%E5%9C%8B%E5%8F%B0%E7%81%A3%E7%9A%84%E8%94%AC%E6%9E%9C%E9%83%BD%E6%89%93%E5%BE%9E%E5%93%AA%E4%BE%86-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E8%B2%B7%E5%8F%B0%E7%81%A3%E8%8A%AD%E6%A8%82%E8%AA%AA%E8%B5%B7-011249793.html",
+            "https://www.airitilibrary.com/Publication/alDetailedMesh?DocID=05296544-199806-44-2-116-124-a",
+            "https://book.tndais.gov.tw/Brochure/tech117.htm",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=602259"
+          ],
+          "resultNotes": "瀏覽器實際載入並擷取搜尋結果；HTTP狀態未由browser回報。"
+        },
+        {
+          "query": "番石榴 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?q=%E7%95%AA%E7%9F%B3%E6%A6%B4%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:57.595Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://eculture.gov.taipei/trees/zh-tw/tree/1935",
+            "https://dado.gov.taipei/News_Content.aspx?n=C32953E0EED9A871&s=036F1689CDEAE431",
+            "https://ntufinance.wixsite.com/ntutree/ntutreeplacard",
+            "https://toaf.org.tw/treeplanting",
+            "https://www.facebook.com/lovetreelaw/?locale=zh_TW",
+            "https://www.rti.org.tw/news?uid=3&pid=234970",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3D%3D&icon=.pdf",
+            "https://www.ntl.edu.tw/wSite/ct?xItem=70918&ctNode=1708&mp=18",
+            "https://www.ntsec.edu.tw/Attachments/Science/22831_NPHSF2025-082918.pdf"
+          ],
+          "resultNotes": "瀏覽器實際載入並擷取搜尋結果；HTTP狀態未由browser回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "第一輪線索搜尋；搜尋摘要不作證據，未比對現有GIS個體。"
+    },
+    {
+      "id": "species-100",
+      "label": "稜果榕",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "稜果榕 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%A8%9C%E6%9E%9C%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:05.492Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://twpeec.water.gov.taipei/News_Content.aspx?n=C7A9554735654002&sms=1A9C98D712B400E8&s=7D8424DBACEA0C8C",
+            "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/flowers/Theme-F00543/",
+            "https://www.ntl.edu.tw/wSite/ct?xItem=70870&ctNode=1708&mp=2222",
+            "https://collections.culture.tw/ntm_collectionsweb/collection.aspx?GID=0ZMEMB0FMB",
+            "https://openmuseum.tw/muse/digi_object/93e5471015029a9e5df8f218ca87ea25",
+            "https://www.facebook.com/nmnsTaiwan/posts/%E5%9C%A8%E4%B8%AD%E7%A7%8B%E8%B7%9F%E9%9B%99%E5%8D%81%E5%9C%8B%E6%85%B6%E4%B9%8B%E9%96%93%E7%9A%84%E7%AF%80%E6%9C%9F%E5%AF%92%E9%9C%B2%E4%BB%8A%E5%A4%A9%E4%BD%8E%E8%AA%BF%E7%99%BB%E5%A0%B4%E5%9B%89%E6%97%A9%E6%99%9A%E7%9A%84%E9%9C%B2%E6%B0%B4%E8%B6%8A%E4%BE%86%E8%B6%8A%E9%87%8D%E7%A9%BA%E6%B0%A3%E4%B8%AD%E4%B9%9F%E5%A4%9A%E4%BA%86%E4%B8%80%E5%88%86%E6%B6%BC%E6%84%8F%E6%A4%8D%E7%89%A9%E5%9C%92%E8%A3%A1%E7%9A%84%E5%9B%9B%E6%99%82%E5%85%AB%E7%AF%80-%E5%AF%92%E9%9C%B2-%E7%A8%9C%E6%9E%9C%E6%A6%95%E7%A8%9C%E6%9E%9C%E6%A6%95%F0%9D%98%8D%F0%9D%98%AA%F0%9D%98%A4%F0%9D%98%B6%F0%9D%98%B4-%F0%9D%98%B4%F0%9D%98%A6%F0%9D%98%B1%F0%9D%98%B5%F0%9D%98%AA%F0%9D%98%A4%F0%9D%98%A2-%F0%9D%96%A1%F0%9D%97%8E%F0%9D%97%8B%F0%9D%97%86-%F0%9D%96%BF/1123638299925881/",
+            "https://sites.google.com/mail.xses.ntpc.edu.tw/ecology/%E6%88%B6%E5%A4%96%E8%87%AA%E7%84%B6%E6%95%99%E5%AE%A4%E5%8F%8A%E9%98%B2%E9%A2%A8%E5%AF%86%E6%9E%97/%E7%A8%9C%E6%9E%9C%E6%A6%95",
+            "https://indigenapedia-alcd.nccu.edu.tw/detail?id=9636&search=&cat=0&race=0&writer="
+          ],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-101",
+      "label": "酒瓶椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "酒瓶椰子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%85%92%E7%93%B6%E6%A4%B0%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:08.038Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://tm.ncl.edu.tw/article?u=001_002_0000362058&n=59&d=%7B%22_hidingFromList%22:0,%22_deleted%22:0,%22_hiding%22:0,%22query_words%22:%22%E6%94%B9%E5%88%B6%22,%22page%22:%221%22,%22page_limit%22:%2210%22%7D&query_words=%E6%94%B9%E5%88%B6",
+            "https://www.future.url.tw/plant/view/342",
+            "https://blog.igarden.com.tw/2009/04/5M90433.html",
+            "https://www.facebook.com/chen.jin.rong.504552/posts/%E5%89%8D%E4%BA%BA%E7%A8%AE%E6%A8%B9%E5%BE%8C%E4%BA%BA%E8%A7%80%E8%B3%9E%E9%80%99%E9%85%92%E7%93%B6%E6%A4%B0%E5%AD%90%E4%B9%9F60%E5%B9%B4%E7%95%B6%E5%88%9D%E7%9F%B3%E5%B7%9D%E7%8F%BE%E4%BB%BB%E8%B2%A1%E5%8B%99%E9%84%AD%E9%95%B7%E8%80%81%E5%8E%BB%E8%B2%B7%E4%BE%86%E7%A8%AE%E6%A4%8D%E6%9C%AC%E4%BE%86%E7%A8%AE%E5%9C%A8%E6%95%99%E6%9C%83%E5%BB%A3%E5%A0%B4%E5%9B%A0%E7%82%BA%E5%BB%A3%E5%A0%B4%E8%A6%81%E9%8B%AA%E6%B0%B4%E6%B3%A5%E6%89%80%E4%BB%A5%E5%B0%B1%E7%A7%BB%E5%88%B0%E5%9C%8D%E7%89%86%E9%82%8A%E7%9C%8B%E5%88%B0%E6%84%9F%E5%88%B0%E9%9D%9E%E5%B8%B8%E6%BC%82%E4%BA%AE/8613899038628853/",
+            "https://daap.ly.gov.tw/tw/daap/164-4404.html",
+            "https://vocus.cc/article/67ec95dafd897800011410b2",
+            "https://www.ntl.edu.tw/public/Attachment/071914361277.PDF",
+            "https://okapi.books.com.tw/article/12190"
+          ],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-102",
+      "label": "菲律賓紫檀",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "菲律賓紫檀 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%8F%B2%E5%BE%8B%E8%B3%93%E7%B4%AB%E6%AA%80%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:10.671Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://eculture.gov.taipei/trees/zh-tw/tree/849",
+            "https://taipei-trees.org/tree?code=PT-849",
+            "https://www.facebook.com/groups/303145213133378/posts/29121613260859856/",
+            "https://iesn.tfri.gov.tw/SpeciesContent.aspx?n=7760&sms=0&fs=6C9C27306ABF1361",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/110",
+            "http://w3.dhps.tp.edu.tw/plant/f06.htm",
+            "https://www.ntl.edu.tw/public/Attachment/071914361277.PDF",
+            "https://sowhc.sow.org.tw/html/observation/plant/a11plant/a111403-philippin-zhutain/philippin-zhutain.htm",
+            "https://smallflower.tw/tpbg/flower/%E8%8F%B2%E5%BE%8B%E8%B3%93%E7%B4%AB%E6%AA%80/"
+          ],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-103",
+      "label": "臺灣海棗",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "臺灣海棗 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%87%BA%E7%81%A3%E6%B5%B7%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:13.042Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.tfri.gov.tw/News_Content.aspx?n=7495&s=499",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=327792",
+            "https://www.future.url.tw/plant/view/98",
+            "https://scitechvista.nat.gov.tw/Article/c000008/detail?ID=38fe4df4-9ef4-4e11-9ebb-bd5fc1e1acba",
+            "https://www.ktnp.gov.tw/cp.aspx?n=2c28d363038c300f&s=968CEA1212042C2C",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/4343",
+            "https://taipei-trees.org/tree.html?code=PT-4339",
+            "https://kplant.atfr.org.tw/%E5%8F%B0%E7%81%A3%E6%B5%B7%E6%A3%97/%E6%BA%AB%E4%BF%8A%E5%82%91/%E7%94%9F%E6%85%8B%E5%8F%B0%E7%81%A3%E5%AD%A3%E5%88%8A%E7%AC%AC%E5%8D%81%E5%85%AD%E6%9C%9F.htm",
+            "https://www.facebook.com/TaiwanMOA/posts/%E8%87%BA%E7%81%A3%E6%B5%B7%E6%A3%97%E6%B5%B4%E7%81%AB%E5%BE%A9%E7%94%A6%E5%BF%AB-ai%E9%81%A0%E7%AB%AF%E7%9B%A3%E6%B8%AC%E7%B2%BE%E6%BA%96%E6%8E%8C%E6%8F%A1%E8%87%BA%E7%81%A3%E6%B5%B7%E6%A3%97-%E4%BF%97%E7%A8%B1-%E6%A7%BA%E6%A6%94%E5%AD%B8%E5%90%8D%E7%82%BAphoenix-hanceana-naudin%E7%82%BA%E5%86%B0%E6%B2%B3%E5%AD%91%E9%81%BA%E6%A4%8D%E7%89%A9%E6%97%A9%E5%B9%B4%E7%94%9F%E9%95%B7%E5%9C%A8%E8%87%BA%E7%81%A3%E5%85%A8%E5%B3%B6%E6%B2%BF%E6%B5%B7%E5%9C%B0%E5%8D%80%E6%97%A9%E6%9C%9F%E5%B1%85%E6%B0%91/2890836521241166/"
+          ],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-104",
+      "label": "槭葉翅子木",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "槭葉翅子木 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A7%AD%E8%91%89%E7%BF%85%E5%AD%90%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:20.724Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.tfri.gov.tw/News_Content.aspx?n=7658&sms=12314&s=503",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=2891&page=363",
+            "https://kplant.atfr.org.tw/%E6%A7%AD%E8%91%89%E7%BF%85%E5%AD%90%E6%9C%A8/%E6%A7%AD%E8%91%89%E7%BF%85%E5%AD%90%E6%9C%A8.htm",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=241784",
+            "https://sowhc.sow.org.tw/html/observation/plant/a11plant/a111503-zhu-yei-chu-zi-su/zhu-yei-chu-zi-su.htm",
+            "https://blog.igarden.com.tw/2005/08/5M50833.html",
+            "https://bruce0342.blogspot.com/2012/03/blog-post_3.html",
+            "https://www.nnp.gov.tw/ch/specialreport/plant-ecology-taichung/360",
+            "https://www.merit-times.com/news/330834"
+          ],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://www.tfri.gov.tw/News_Content.aspx?n=7658&sms=12314&s=503",
+          "accessedAt": "2026-10-24T02:35:07.370Z",
+          "outcome": "generic-botany-only",
+          "notes": "已閱讀正文；詳batch-2-body-evidence.json。"
+        }
+      ],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-105",
+      "label": "羊蹄甲",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "羊蹄甲 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%BE%8A%E8%B9%84%E7%94%B2%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:23.370Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://ws.tfri.gov.tw/001/Upload/OldFile/files/109%E5%B0%88%E8%A8%8A_1%E5%B0%88%E9%A1%8C%E8%AB%96%E8%BF%B0_03.pdf",
+            "https://www.ctworld.org.tw/monthly/251/p01.htm",
+            "https://parks.gov.taipei/parks/m3/pkl_parks_m3s2C.php?sid=106",
+            "https://www.facebook.com/groups/303145213133378/posts/24407963582224871/",
+            "https://pkblog0438.blogspot.com/2018/05/blog-post_26.html",
+            "https://sowhc.sow.org.tw/html/note/ruician/ruician04/ruician04.htm",
+            "https://blog.udn.com/AAC3343/53087548",
+            "https://bruce0342.blogspot.com/2012/08/blog-post.html",
+            "https://zh.wikipedia.org/zh-tw/%E5%AE%AE%E7%B2%89%E7%BE%8A%E8%B9%84%E7%94%B2"
+          ],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-106",
+      "label": "檳榔",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "檳榔 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%AA%B3%E6%A6%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:25.814Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.newsmarket.com.tw/areca-betel-nut/post-01/",
+            "https://udn.com/news/story/7266/9366879",
+            "https://phlib.org.tw/highlight/%E6%AA%B3%E6%A6%94%E7%9A%84%E6%AD%B7%E5%8F%B2/",
+            "https://www.cw.com.tw/article/5105582",
+            "https://icloud.nmp.gov.tw/Library/EPaperContent?a=212&id=138&nid=499",
+            "https://storystudio.tw/article/gushi/betel-nut",
+            "https://j-media.tw/Article/Detail/37238",
+            "https://ihc.cip.gov.tw/EJournal/EJournalCat/563",
+            "https://openmuseum.tw/muse/curation/3991c18db39f18105e1d518ce5d03498"
+          ],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-107",
+      "label": "麵包樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "麵包樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BA%B5%E5%8C%85%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:28.446Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.sinica.edu.tw/news_content/557/3242",
+            "https://www.scimonth.com.tw/archives/6368",
+            "http://www.swan.org.tw/mz/p42-45_145%20%E5%A4%A7%E8%87%AA%E7%84%B6-%E7%99%BE%E5%B9%B4%E4%BE%86%E6%88%91%E5%80%91%E4%B8%80%E7%9B%B4%E8%AA%8D%E9%8C%AF%E7%9A%84%E9%BA%B5%E5%8C%85%E6%A8%B9%E2%80%94%E5%8F%B0%E7%81%A3%E9%BA%B5%E5%8C%85%E6%A8%B9%E7%9A%84%E6%AD%A3%E5%90%8D.pdf",
+            "https://psf02131968.pixnet.net/blog/posts/13367052113",
+            "https://tm.ncl.edu.tw/article?u=001_003_0000362797&n=121&d=",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/824",
+            "https://sousoucorner.org/media/breadfruit-tree-in-taiwan/",
+            "https://www.threads.com/@_monetevan_/post/DBOPT9EzexP?hl=zh-tw",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=140950"
+          ],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://www.sinica.edu.tw/news_content/557/3242",
+          "accessedAt": "2026-10-24T02:35:18.427Z",
+          "outcome": "supports-site-research-history",
+          "notes": "已閱讀正文；詳batch-2-body-evidence.json。"
+        }
+      ],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-108",
+      "label": "海棗",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "海棗 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%B5%B7%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:34.839Z",
+          "httpStatus": null,
+          "outcome": "blocked-or-unreadable",
+          "candidateURLs": [],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        },
+        {
+          "query": "海棗 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%B5%B7%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:01.798Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.future.url.tw/plant/view/72",
+            "https://indigenapedia-alcd.nccu.edu.tw/detail?id=9678&cat=0&race=19",
+            "https://zh.wikipedia.org/zh-tw/%E8%87%BA%E7%81%A3%E6%B5%B7%E6%A3%97",
+            "https://www.future.url.tw/plant/view/98",
+            "https://www.th.gov.tw/News_Content/128/4017/",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=224268",
+            "https://kplant.atfr.org.tw/%E5%8F%B0%E7%81%A3%E6%B5%B7%E6%A3%97/%E6%BA%AB%E4%BF%8A%E5%82%91/%E7%94%9F%E6%85%8B%E5%8F%B0%E7%81%A3%E5%AD%A3%E5%88%8A%E7%AC%AC%E5%8D%81%E5%85%AD%E6%9C%9F.htm",
+            "https://ws.th.gov.tw/Download.ashx?u=LzAwMi9USC90anBkZjIwMjQxMDE1L3Zhci93d3cvaHRtbC9uZXdfc2l0ZS8wNXB1Ymxpc2gvMDNwdWJsaXNocXVlcnkvMDJqb3VybmFsL3RqLzQwMTA2NjIwNi5wZGY%3D&n=NDAxMDY2MjA2LnBkZg%3D%3D",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=327792",
+            "https://indigenapedia-alcd.nccu.edu.tw/detail?id=9678&cat=37&race=0"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-109",
+      "label": "島榕",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "島榕 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B3%B6%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:37.163Z",
+          "httpStatus": null,
+          "outcome": "blocked-or-unreadable",
+          "candidateURLs": [],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        },
+        {
+          "query": "島榕 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%B3%B6%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:04.155Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://aborgpedia.alcd.center/detail?id=9639&cat=0&race=19",
+            "https://zh.wikipedia.org/zh-tw/%E5%B2%9B%E6%A6%95",
+            "https://tcmb.culture.tw/zh-tw/detail?id=331724&indexCode=Culture_Object",
+            "https://kplant.atfr.org.tw/%E5%B3%B6%E6%A6%95/%E5%B3%B6%E6%A6%95.htm",
+            "https://www.yingge.ntpc.gov.tw/home.jsp?id=42fccc87e66b7b56",
+            "http://rmbjbtw.rmb.com.tw/INF_List_NP.asp?SortStr=INF&Sucaid=1&ID=IN250217TAIPEIXX01101&SID=1123&Daystr=2025-02-17&CGUID=3113BE4B-842A-40B5-B2D1-0D6EE1862180&ToUrl=1",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=1754&page=221",
+            "https://htjh-plantlist.blogspot.com/2019/02/blog-post_12.html",
+            "https://www.tntd.com.tw/product/%E5%B3%B6%E6%A6%95",
+            "https://www.taipeitimes.com/News/lang/archives/2025/02/17/2003831983"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-110",
+      "label": "森氏紅淡比",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "森氏紅淡比 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A3%AE%E6%B0%8F%E7%B4%85%E6%B7%A1%E6%AF%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:39.507Z",
+          "httpStatus": null,
+          "outcome": "blocked-or-unreadable",
+          "candidateURLs": [],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        },
+        {
+          "query": "森氏紅淡比 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%A3%AE%E6%B0%8F%E7%B4%85%E6%B7%A1%E6%AF%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:06.642Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zh.wikipedia.org/zh-tw/%E6%A3%AE%E6%B0%8F%E7%BA%A2%E6%B7%A1%E6%AF%94",
+            "https://tlpg.hsiliu.org.tw/plant/view/55",
+            "https://zh.wikipedia.org/zh-hk/%E6%A3%AE%E6%B0%8F%E7%BA%A2%E6%B7%A1%E6%AF%94",
+            "https://gisweb.gov.taipei/plant/narration-27.html",
+            "https://nativetree.forest.gov.tw/Tree/Info/acfdfe484d6d4b148f25c99f8274736a",
+            "https://www.future.url.tw/plant/view/124",
+            "https://ecoacademia.org/site/species.jsf?id=1,58",
+            "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/flowers/Theme-000272/",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=1721&page=216",
+            "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/flowers/Theme-F00227/"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-111",
+      "label": "緬梔",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "緬梔 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%B7%AC%E6%A2%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:41.602Z",
+          "httpStatus": null,
+          "outcome": "blocked-or-unreadable",
+          "candidateURLs": [],
+          "resultNotes": "browser載入；未回報HTTP狀態。"
+        },
+        {
+          "query": "緬梔 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%B7%AC%E6%A2%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:09.054Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=2564&page=322",
+            "https://parktaipeiai.media-net.com.tw/parks/m3/pkl_parks_m3s2C.php?sid=121",
+            "https://zh.wikipedia.org/zh-tw/%E7%B7%AC%E6%A2%94%E5%AD%90",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=328125",
+            "https://tlpg.hsiliu.org.tw/search/view/19",
+            "https://sites.google.com/goo.tyai.tyc.edu.tw/tyaiplants/%E9%A6%96%E9%A0%81/g%E5%8D%80/%E7%B7%AC%E6%A2%94",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=2883&page=362",
+            "https://www.future.url.tw/plant/view/325",
+            "https://zh.wikipedia.org/zh-hant/%E7%B7%AC%E6%A2%94%E5%AD%90",
+            "https://www.facebook.com/NTMuseum/posts/%E7%B7%AC%E6%A2%94%E7%B7%AC%E6%A2%94%E6%98%AF%E5%A4%BE%E7%AB%B9%E6%A1%83%E7%A7%91%E5%AE%B6%E6%97%8F%E7%9A%84%E6%88%90%E5%93%A1%E8%8E%96%E6%9E%9D%E5%91%88%E8%82%89%E8%B3%AA%E6%80%A7%E5%85%A8%E6%A0%AA%E4%B9%B3%E6%B1%81%E8%B1%90%E6%B2%9B%E8%87%AA%E5%A4%8F%E8%87%B3%E5%86%AC%E5%B9%BE%E4%B9%8E%E8%8A%B1%E9%96%8B%E4%B8%8D%E6%96%B7%E7%9B%8A%E5%A2%9E%E5%85%B6%E8%A7%80%E8%B3%9E%E5%83%B9%E5%80%BC%E8%87%BA%E7%81%A3%E6%9C%80%E6%97%A9%E5%BC%95%E9%80%B2%E6%A0%BD%E6%A4%8D%E7%9A%84%E7%99%BD%E7%93%A3%E9%BB%83%E5%BF%83%E9%9B%9E%E8%9B%8B%E8%8A%B1%E5%B9%BE%E4%B9%8E%E9%83%BD%E4%B8%8D%E6%9C%83%E7%B5%90%E6%9E%9C%E4%BD%86%E6%98%AF%E5%BE%8C%E4%BE%86%E6%89%8D%E5%BC%95%E9%80%B2%E7%9A%84%E7%B4%85%E8%8A%B1%E7%B7%AC%E6%A2%94%E5%B0%B1%E6%9C%89/10157394555731193/"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-112",
+      "label": "洋玉蘭",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "洋玉蘭 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%B4%8B%E7%8E%89%E8%98%AD%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:13.860Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://tlpg.hsiliu.org.tw/plant/view/13",
+            "https://digitalarchives.tw/Exhibition/5244/2.html",
+            "https://kknews.cc/zh-tw/history/m5pzz59.html",
+            "https://www.ctworld.org.tw/monthly/168/p01.htm",
+            "https://ascdc.digitalarchives.tw/subject_1410.html",
+            "https://zh.wikipedia.org/zh-tw/%E8%8D%B7%E8%8A%B1%E7%8E%89%E5%85%B0",
+            "https://vocus.cc/article/665c7598fd89780001248343",
+            "https://wwwfs.vghks.gov.tw/001/VghksUploadFiles/273/relfile/13805/71037/1%E6%9C%88%E9%86%AB%E8%A8%8A_p21.pdf",
+            "https://zh.wikipedia.org/zh-tw/%E8%87%BA%E5%8C%97%E5%B8%82%E6%AD%B7%E5%8F%B2",
+            "https://www.mcc.gov.tw/mcct/index.php?category=49"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-113",
+      "label": "酪梨",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "酪梨 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%85%AA%E6%A2%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:16.407Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://kmweb.moa.gov.tw/subject/subject.php?id=25509",
+            "https://uptogo.com.tw/%E6%AD%B7%E5%8F%B2/%E5%8F%B0%E7%81%A3%E6%AD%B7%E5%8F%B2/%E9%85%AA%E6%A2%A8-%E4%BD%95%E6%99%82%E5%BC%95%E9%80%B2%E5%8F%B0%E7%81%A3%EF%BC%9F/",
+            "https://tyaward.com.tw/%e5%9c%92%e8%97%9d/%e5%8f%b0%e7%81%a3%e6%9c%89%e7%a8%ae%e9%85%aa%e6%a2%a8/",
+            "https://uptogo.com.tw/%E5%9C%92%E8%97%9D/%E5%8F%B0%E7%81%A3%E6%9C%89%E7%A8%AE%E9%85%AA%E6%A2%A8%EF%BC%9F/",
+            "https://kmweb.moa.gov.tw/subject/subject.php?id=3076",
+            "https://bookzone.cwgv.com.tw/article/13382",
+            "https://zh.wikipedia.org/zh-tw/%E9%B3%84%E6%A2%A8",
+            "https://vocus.cc/article/67cfe2ecfd89780001c9876f",
+            "https://scitechvista.nat.gov.tw/Article/C000009/detail?ID=659a59fd-d834-4347-820e-ef8a38d74e36",
+            "https://www.iseetaiwan.org/feature/%E4%B8%BB%E9%A1%8C%E6%8E%A2%E7%B4%A2/j0dNT0ICyW"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-114",
+      "label": "月橘",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "月橘 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%9C%88%E6%A9%98%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:18.927Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zh.wikipedia.org/zh-hant/Murraya_paniculata",
+            "https://indigenapedia-alcd.nccu.edu.tw/detail?id=9745&cat=0&race=0",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=334890",
+            "https://tcmb.culture.tw/zh-tw/detail?id=310517&indexCode=Culture_Object",
+            "https://nativetree.forest.gov.tw/Tree/Info/d8e855416820488ab8da3b6909262bd7",
+            "https://indigenapedia-alcd.nccu.edu.tw/detail?id=9746&cat=0&race=19",
+            "https://hctbg.tfri.gov.tw/view.php?theme=web_structure&id=145",
+            "https://www.dongwangask.com/ask/1754771434651484",
+            "https://uptogo.com.tw/%E5%9C%92%E8%97%9D/%E4%B8%83%E9%87%8C%E9%A6%99%E6%98%AF%E6%9C%88%E6%A9%98%E5%97%8E%EF%BC%9F/",
+            "https://www.future.url.tw/plant/view/115"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-115",
+      "label": "蒲桃",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "蒲桃 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%92%B2%E6%A1%83%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:21.484Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zh.wikipedia.org/zh-tw/%E8%92%B2%E6%A1%83",
+            "https://uptogo.com.tw/%e5%9c%92%e8%97%9d/%e6%a4%8d%e7%89%a9%e6%a0%bd%e5%9f%b9/%e8%92%b2%e6%a1%83%e6%98%af%e4%bb%80%e9%ba%bc%ef%bc%9f/",
+            "https://zh.wikipedia.org/zh-tw/%E8%87%BA%E5%8C%97%E5%B8%82%E6%AD%B7%E5%8F%B2",
+            "https://cptfri.tfri.gov.tw/view.php?theme=plants&id=13320&font-size=l",
+            "https://tlpg.hsiliu.org.tw/search/view/119",
+            "https://uptogo.com.tw/%e7%be%8e%e9%a3%9f/%e9%a3%9f%e5%93%81/%e8%92%b2%e6%a1%83-%e9%a3%9f%e7%94%a8%ef%bc%9f/",
+            "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/flowers/Flower-000091/",
+            "https://kknews.cc/zh-tw/nature/9km6xbq.html",
+            "https://www.facebook.com/fubowuforum/photos/%E5%90%8D%E6%A1%83%E5%8D%BB%E9%9D%9E%E6%A1%83%E8%92%B2%E6%A1%83%E9%96%8B%E8%8A%B1%E5%85%89%E8%8A%92%E5%9B%9B%E5%B0%84%E5%8F%B0%E5%8C%97%E6%A4%8D%E7%89%A9%E5%9C%92%E7%9A%84%E8%92%B2%E6%A1%83%E9%96%8B%E8%8A%B1%E9%9B%84%E8%95%8A%E7%B4%B0%E7%B5%B2%E5%91%88%E7%90%83%E5%BD%A2%E6%94%BE%E5%B0%84%E7%8B%80%E4%B9%8D%E7%9C%8B%E4%B9%8B%E4%B8%8B%E7%8C%B6%E5%A6%82%E5%85%89%E8%8A%92%E5%9B%9B%E5%B0%84%E7%9A%84%E8%8A%B1%E7%90%83%E7%9B%B8%E7%95%B6%E5%90%B8%E5%BC%95%E9%81%8A%E5%AE%A2%E7%9B%AE%E5%85%89%E8%92%B2%E6%A1%83%E7%9A%84%E5%90%8D%E5%AD%97%E6%9C%89%E6%A1%83%E5%AD%97%E5%8D%BB%E8%88%87%E6%A1%83%E6%AF%AB%E4%B8%8D%E7%9B%B8%E5%B9%B2%E7%84%A1%E8%AB%96%E5%BE%9E%E9%96%8B%E8%8A%B1%E7%9A%84%E8%8A%B1%E8%B2%8C%E6%88%96%E6%9E%9C%E5%AF%A6/1121299696680384/",
+            "https://vocus.cc/article/68b4a0affd89780001bd40e2"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-116",
+      "label": "大葉楠",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "大葉楠 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%A4%A7%E8%91%89%E6%A5%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:28.273Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zh.wikipedia.org/zh-tw/%E5%A4%A7%E5%8F%B6%E6%A5%A0",
+            "https://indigenapedia-alcd.nccu.edu.tw/detail?id=9545&cat=0&race=19",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=MOCCOLLECTIONS&id=139000006948",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/1338",
+            "https://uptogo.com.tw/%e7%a7%91%e5%ad%b8/%e7%92%b0%e5%a2%83%e7%a7%91%e5%ad%b8/%e5%a4%a7%e8%91%89%e6%a5%a0-%e7%89%b9%e5%be%b5%ef%bc%9f/",
+            "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/flowers/Theme-000582/",
+            "https://uptogo.com.tw/%e7%a7%91%e5%ad%b8/%e7%94%9f%e5%91%bd%e7%a7%91%e5%ad%b8/%e5%a4%a7%e8%91%89%e6%a5%a0-%e5%ad%b8%e5%90%8d%ef%bc%9f/",
+            "https://nativetree.forest.gov.tw/tree/Info/85873795a7434bfa803ba0913aef2da9",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=1445&page=182",
+            "https://zh.wikipedia.org/zh-hk/%E5%A4%A7%E5%8F%B6%E6%A5%A0"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-117",
+      "label": "亞里垂榕",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "亞里垂榕 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E4%BA%9E%E9%87%8C%E5%9E%82%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:30.778Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.future.url.tw/plant/view/408",
+            "https://kplant.atfr.org.tw/%E4%BA%9E%E9%87%8C%E5%9E%82%E6%A6%95/%E4%BA%9E%E9%87%8C%E5%9E%82%E6%A6%95.htm",
+            "https://cpark.taichung.gov.tw/print-bulletin/233",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=3261&page=409",
+            "https://sites.google.com/a/mail.yses.tyc.edu.tw/plant/6%E6%80%A5%E9%80%9F%E5%86%B0%E5%8E%9F/%E4%BA%9E%E9%87%8C%E5%9E%82%E6%A6%95",
+            "https://www.newton.com.tw/wiki/%E4%BA%9E%E9%87%8C%E5%9E%82%E6%A6%95/2586369",
+            "https://taipei-trees.org/parks/bihu",
+            "https://taiwan-trees.org/",
+            "https://www.loveway.org.tw/demo/upload/file/4001/?option=menupage2&type=article&id=1766",
+            "https://ahonline.drnh.gov.tw/"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-118",
+      "label": "木麻黃",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "木麻黃 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%9C%A8%E9%BA%BB%E9%BB%83%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:33.378Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zh.wikipedia.org/zh-tw/%E6%9C%A8%E9%BA%BB%E9%BB%84",
+            "https://zh.wikipedia.org/zh-tw/%E8%87%BA%E5%8C%97%E5%B8%82%E6%AD%B7%E5%8F%B2",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=662238",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=650879&recOffset=2",
+            "https://uptogo.com.tw/%e5%9c%92%e8%97%9d/%e6%9c%a8%e9%ba%bb%e9%bb%83%e7%9a%84%e5%a3%bd%e5%91%bd%ef%bc%9f/",
+            "https://dr590921.pixnet.net/blog/posts/4039307467",
+            "https://ahonline.drnh.gov.tw/",
+            "https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&rno=2002.007.0643",
+            "https://www.ahpal.com/nature/taiwan-casuarina-ecology",
+            "https://tlpg.hsiliu.org.tw/search/view/56"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-119",
+      "label": "黑松",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "黑松 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%BB%91%E6%9D%BE%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:35.946Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zh.wikipedia.org/zh-tw/%E9%BB%91%E6%9D%BE_(%E5%85%AC%E5%8F%B8)",
+            "https://uptogo.com.tw/%E7%BE%8E%E9%A3%9F/%E9%A3%B2%E6%96%99/%E7%A2%B3%E9%85%B8%E9%A3%B2%E6%96%99-%E9%81%8B%E5%8B%95%E9%A3%B2%E6%96%99/%E9%BB%91%E6%9D%BE%E6%98%AF%E5%8F%B0%E7%81%A3%E5%93%81%E7%89%8C%E5%97%8E%EF%BC%9F/",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=321427",
+            "https://zh.wikipedia.org/zh/%E9%BB%91%E6%9D%BE%E6%B1%BD%E6%B0%B4",
+            "https://time.udn.com/udntime/story/122835/8934516",
+            "https://uptogo.com.tw/%e7%be%8e%e9%a3%9f/%e9%a3%b2%e6%96%99/%e9%bb%91%e6%9d%be%e6%98%af%e5%8f%b0%e7%81%a3%e7%9a%84%e5%97%8e%ef%bc%9f/",
+            "https://taiwan.md/food/%E9%BB%91%E6%9D%BE/",
+            "https://www.heysong.com.tw/about/",
+            "https://www.thenewslens.com/article/74835",
+            "https://gordm77.blogspot.com/2026/04/blog-post_35.html"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-120",
+      "label": "石朴",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "石朴 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%9F%B3%E6%9C%B4%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:40.724Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://indigenapedia-alcd.nccu.edu.tw/detail?id=9801&cat=0&race=19",
+            "https://zh.wikipedia.org/zh-tw/%E7%9F%B3%E6%9C%B4",
+            "https://kplant.atfr.org.tw/%E5%8F%B0%E7%81%A3%E6%9C%B4%E6%A8%B9/%E5%8F%B0%E7%81%A3%E6%9C%B4%E6%A8%B9.htm",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=1760&page=221",
+            "https://tpbg.tfri.gov.tw/nativeplantsContent468f.html?ID=3152&parentID=0&menuID=0&pn=1",
+            "https://zh.wikipedia.org/wiki/%E7%9F%B3%E6%9C%B4",
+            "https://gisweb.gov.taipei/plant/narration-28.html",
+            "https://collections.culture.tw/Object.aspx?SYSUID=13&RNO=VEFJTUgwMDU5NTk=",
+            "https://sites.google.com/mail.jges.ntpc.edu.tw/nature/1/1-016",
+            "https://collections.culture.tw/Object.aspx?SYSUID=13&RNO=VEFJTUgwMDU5NTg="
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-121",
+      "label": "臺灣海桐",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "臺灣海桐 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E7%81%A3%E6%B5%B7%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:43.168Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://tlpg.hsiliu.org.tw/plant/view/124",
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=MOCCOLLECTIONS&id=147000000940",
+            "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/flowers/Theme-000608/",
+            "https://tlpg.hsiliu.org.tw/search/view/248",
+            "https://hctbg.tfri.gov.tw/view.php?theme=web_structure&id=144",
+            "https://gisweb.gov.taipei/plant/19_Pittosporum.html",
+            "https://nativetree.forest.gov.tw/Tree/Info/284e79cce7f647c79ba96ffdad1a787d",
+            "https://hctbg.tfri.gov.tw/view.php?theme=web_structure&id=144&print=Y",
+            "https://www.future.url.tw/plant/view/272",
+            "https://parks.gov.taipei/parks/m3/pkl_parks_m3s2C.php?sid=277"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-122",
+      "label": "日本山茶",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "日本山茶 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%97%A5%E6%9C%AC%E5%B1%B1%E8%8C%B6%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:45.723Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zh.wikipedia.org/zh-tw/%E6%97%A5%E6%9C%AC%E5%B1%B1%E8%8C%B6",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=1718&page=216",
+            "https://www.facebook.com/100071040410859/posts/%E5%B1%B1%E8%8C%B6%E8%8A%B1%E6%98%AF%E8%91%97%E5%90%8D%E7%9A%84%E8%A7%80%E8%B3%9E%E8%8A%B1%E5%8D%89%E6%A0%BD%E5%9F%B9%E6%AD%B7%E5%8F%B2%E5%B7%B2%E8%B6%85%E9%81%8E%E5%8D%83%E5%B9%B4%E7%99%BC%E5%B1%95%E5%87%BA%E5%A4%9A%E7%A8%AE%E8%8A%B1%E8%89%B2%E5%8F%8A%E8%8A%B1%E7%93%A3%E6%A8%A3%E5%BC%8F%E4%BD%86%E6%9C%80%E5%88%9D%E6%98%AF%E5%BE%9E%E9%87%8E%E7%94%9F%E5%96%AE%E7%93%A3%E5%9E%8B%E7%9A%84%E6%97%A5%E6%9C%AC%E5%B1%B1%E8%8C%B6%E5%9F%B9%E8%82%B2%E8%80%8C%E4%BE%86%E4%BB%8A%E6%97%A5%E6%88%91%E6%9C%80%E7%BE%8E%E6%97%A5%E6%9C%AC%E5%B1%B1%E8%8C%B6%F0%9D%98%BE%F0%9D%99%96%F0%9D%99%A2%F0%9D%99%9A%F0%9D%99%A1%F0%9D%99%A1%F0%9D%99%9E%F0%9D%99%96-%F0%9D%99%9F%F0%9D%99%96%F0%9D%99%A5%F0%9D%99%A4%F0%9D%99%A3%F0%9D%99%9E%F0%9D%99%98%F0%9D%99%96-l%E9%9B%96/225040623207283/",
+            "https://kids.moa.gov.tw/view.php?func=knowledge&subfunc=kids_knowledge&category=A17&id=298",
+            "https://www.tbn.org.tw/taxa/3c691807-7369-4a24-9dfa-8b45fa013050",
+            "https://plant.apaostudio.com/read.php/ri-ben-shan-cha/",
+            "https://pinglin-tea-trails.com/tea-knowledge/taiwan-tea-history/",
+            "https://tpbg.tfri.gov.tw/mobile/flower.php?ID=3958&secureChk=d41189951db22941d4680c37125d0551&rid=1212",
+            "https://www.facebook.com/100071040410859/posts/今日我最美日本山茶camellia-japonica-l山茶花是著名的觀賞花卉栽培歷史已超過千年發展出多種花色及花瓣樣式但最初都是從野生單瓣型的-日本山茶-培育/4913558588736988/",
+            "https://www.ntsec.gov.tw/article/detail.aspx?a=6080"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-123",
+      "label": "白匏子",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "白匏子 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%99%BD%E5%8C%8F%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:48.160Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zh.wikipedia.org/zh-tw/%E7%99%BD%E5%8C%8F%E5%AD%90",
+            "https://aborgpedia.alcd.center/detail?id=9447&cat=0&race=0",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=1313&page=165",
+            "https://teia.tw/archives/natural_valley_star/pw2015-09-01",
+            "https://tlpg.hsiliu.org.tw/plant/view/873",
+            "https://zh.wikipedia.org/zh-hans/%E7%99%BD%E5%8C%8F%E5%AD%90",
+            "https://kplant.atfr.org.tw/../白匏子/白匏子.htm",
+            "https://sowhc.sow.org.tw/html/observation/plant/a01plant/a010502-bai-pow-zi/bai-pow-zi.htm",
+            "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/flowers/Theme-000246/"
+          ],
+          "resultNotes": "Bing browser實際結果，原始重導連結留存，HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-124",
+      "label": "楊梅",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "楊梅 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%A5%8A%E6%A2%85%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:26.794Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://chiayi.forest.gov.tw/0000541",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://www.facebook.com/followtudigong/posts/三元宮頒贈感謝狀儀式博士門於9月12日在楊梅三元宮舉行隆重的景觀植栽捐贈儀式三元宮感謝博士門親自敬獻一批精心挑選的景觀植栽為社區增添綠意與美化環境植栽捐贈儀式結/846325494302605/",
+            "https://www.facebook.com/BossmenInc/posts/%E4%B8%89%E5%85%83%E5%AE%AE%E9%A0%92%E8%B4%88%E6%84%9F%E8%AC%9D%E7%8B%80%E5%84%80%E5%BC%8F%E4%BB%8A%E6%97%A5%E5%9C%A8%E6%A5%8A%E6%A2%85%E4%B8%89%E5%85%83%E5%AE%AE%E8%88%89%E8%A1%8C%E9%9A%86%E9%87%8D%E7%9A%84%E6%99%AF%E8%A7%80%E6%A4%8D%E6%A0%BD%E6%8D%90%E8%B4%88%E5%84%80%E5%BC%8F%E4%B8%89%E5%85%83%E5%AE%AE%E6%84%9F%E8%AC%9D%E5%8D%9A%E5%A3%AB%E9%96%80%E8%A6%AA%E8%87%AA%E6%95%AC%E7%8D%BB%E4%B8%80%E6%89%B9%E7%B2%BE%E5%BF%83%E6%8C%91%E9%81%B8%E7%9A%84%E6%99%AF%E8%A7%80%E6%A4%8D%E6%A0%BD%E7%82%BA%E7%A4%BE%E5%8D%80%E5%A2%9E%E6%B7%BB%E7%B6%A0%E6%84%8F%E8%88%87%E7%BE%8E%E5%8C%96%E7%92%B0%E5%A2%83%E6%A4%8D%E6%A0%BD%E6%8D%90%E8%B4%88%E5%84%80%E5%BC%8F%E7%B5%90%E6%9D%9F%E5%BE%8C%E4%B8%80%E5%A0%B4%E7%B2%BE%E5%BD%A9%E7%9A%84/1002734248320184/",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://laws.gov.taipei/law/LawSearch/LawInformation/FL031456",
+            "https://www.forest.gov.tw/0000056",
+            "https://yilan.forest.gov.tw/0000831",
+            "https://eculture.gov.taipei/trees/zh-tw/QA/1"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-125",
+      "label": "棍棒椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "棍棒椰子 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%A3%8D%E6%A3%92%E6%A4%B0%E5%AD%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:29.248Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://tlpg.hsiliu.org.tw/plant/view/836",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://sites.google.com/kses.ntpc.edu.tw/plant/%E6%A4%8D%E7%89%A9%E5%9C%B0%E5%9C%96/%E5%A4%A7%E9%96%80%E5%9C%8D%E7%89%86%E5%8D%80/%E6%A3%8D%E6%A3%92%E6%A4%B0%E5%AD%90",
+            "https://ga.kh.usc.edu.tw/p/404-1002-46942.php",
+            "https://sites.google.com/taes.tp.edu.tw/taes-botanic/%E6%A3%8D%E6%A3%92%E6%A4%B0%E5%AD%90",
+            "http://w3.haps.tp.edu.tw/plant/0511/54%E6%A3%8D%E6%A3%92%E6%A4%B0%E5%AD%90.html",
+            "https://catalog.digitalarchives.tw/item/00/25/e5/dc.html",
+            "https://kplant.atfr.org.tw/%E6%A3%8D%E6%A3%92%E6%A4%B0%E5%AD%90/%E6%A3%8D%E6%A3%92%E6%A4%B0%E5%AD%90.htm",
+            "https://www.wsfa.com.tw/plants/p068/",
+            "https://daap.ly.gov.tw/tw/daap/164-4408.html"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-126",
+      "label": "錫蘭饅頭果",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "錫蘭饅頭果 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%8C%AB%E8%98%AD%E9%A5%85%E9%A0%AD%E6%9E%9C%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:31.597Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://kplant.atfr.org.tw/%E9%8C%AB%E8%98%AD%E9%A5%85%E9%A0%AD%E6%9E%9C/%E9%8C%AB%E8%98%AD%E9%A5%85%E9%A0%AD%E6%9E%9C.htm",
+            "https://www.tbn.org.tw/taxa/0211111f-9cdf-4524-aec9-1918ae3a6e72",
+            "https://ecoacademia.org/site/species.jsf?id=4,271",
+            "https://ecoacademia.org/site/species.jsf?id=28,271",
+            "https://tpbg.tfri.gov.tw/plants/plants_info.php?rid=132",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=1308&page=165",
+            "https://www.picturethisai.com/zh-tw/care/transplant/Glochidion_zeylanicum.html"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-127",
+      "label": "肖楠",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "肖楠 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%82%96%E6%A5%A0%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:33.971Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.facebook.com/patagoniataiwan/photos/312-%E6%A4%8D%E6%A8%B9%E7%AF%80%E6%8D%90%E6%AC%BE%E9%80%81%E6%A8%B9%E8%8B%97%E5%8D%B3%E6%97%A5%E8%B5%B7%E8%87%B33%E6%9C%88%E5%BA%95patagonia%E7%9B%B4%E7%87%9F%E9%96%80%E5%B8%82%E5%B0%87%E6%8F%90%E4%BE%9B%E6%95%B8%E7%A8%AE%E7%A2%B3%E5%90%B8%E5%AD%98%E6%A8%B9%E8%8B%97%E5%85%89%E8%A0%9F%E6%A8%B9%E5%8F%B0%E7%81%A3%E6%AB%B8%E8%82%96%E6%A5%A0%E5%8F%8A%E6%A8%9F%E6%A8%B9%E6%A1%83%E8%8A%B1%E5%BF%83%E6%9C%A8%E4%BE%9B%E6%B6%88%E8%B2%BB%E8%80%85%E8%B3%BC%E8%B2%B7-50%E5%85%83%E6%A0%AA%E8%80%8C%E6%A8%B9%E8%8B%97%E6%89%80%E5%BE%97patagon/574986964659511/",
+            "https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?id=0000531913_UXY8U8FJ2ZG5JU2Q67WLO",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/661",
+            "https://www.forest.gov.tw/culture/news/0069923",
+            "https://www.reforestation.tw/?p=40478",
+            "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%81%A3%E8%82%96%E6%A5%A0",
+            "https://e-info.org.tw/node/231983",
+            "https://uptogo.com.tw/%e5%9c%92%e8%97%9d/%e6%a4%8d%e7%89%a9%e6%a0%bd%e5%9f%b9/%e5%8f%b0%e7%81%a3%e8%82%96%e6%a5%a0%e5%a5%bd%e7%a8%ae%e5%97%8e%ef%bc%9f/",
+            "https://tw.news.yahoo.com/%E5%8D%81%E9%8A%93%E7%A7%91%E6%8A%80-%E9%9F%BF%E6%87%89%E7%A8%80%E6%9C%89%E6%A8%B9%E6%9C%A8%E4%BF%9D%E8%82%B2%E3%80%80-%E7%A9%8D%E6%A5%B5%E6%8A%95%E5%85%A5%E7%A4%BE%E6%9C%83%E5%8F%83%E8%88%87%E3%80%80-091942646.html",
+            "https://www.travel.taipei/zh-tw/news/details/67053"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-128",
+      "label": "苦茶",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "苦茶 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%8B%A6%E8%8C%B6%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:39.002Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://circular-taiwan.org/case/chatzutang-grass-cultivation/",
+            "https://toaf.org.tw/treeplanting",
+            "https://www.facebook.com/hsiliu.org.tw/",
+            "https://www.forest.gov.tw/0000056",
+            "https://www.facebook.com/groups/342889106765631/",
+            "https://taiwanplant.org.tw/donation/",
+            "https://www.cmmedia.com.tw/home/articles/13035"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-129",
+      "label": "蠟腸樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "蠟腸樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%A0%9F%E8%85%B8%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:41.410Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://www.civilmedia.tw/archives/140264",
+            "https://www.scribd.com/document/903361125/%E6%88%91%E6%9C%89%E4%B8%80%E6%A3%B5%E6%A8%B9-%E5%8F%B0%E5%8C%97%E5%B8%82%E8%AD%B7%E6%A8%B9%E6%8C%87%E5%8D%97",
+            "https://www.eracom.com.tw/EraNews/Home/political/2026-09-21/2473604.html",
+            "https://eculture.gov.taipei/trees/zh-tw/QA/1",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://toaf.org.tw/treeplanting",
+            "https://taiwanplant.org.tw/donation/",
+            "https://newtalk.tw/news/view/2026-10-19/1066404",
+            "https://pkl.gov.taipei/News_Content.aspx?n=43E05059FCC72525&sms=72544237BBE4C5F6&s=22B83B5B724E4A3C"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-130",
+      "label": "風箱樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "風箱樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%A2%A8%E7%AE%B1%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:43.993Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://laws.gov.taipei/law/LawSearch/LawArticleAmend/FL031456",
+            "https://laws.gov.taipei/law/LawSearch/LawExport/FL031456",
+            "https://dado.gov.taipei/News_Content.aspx?n=C32953E0EED9A871&sms=5A6D91B1B37F8B38&s=036F1689CDEAE431",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/1284",
+            "https://tlpg.hsiliu.org.tw/plant/view/268",
+            "https://arch-people.com/laws/%E8%87%BA%E5%8C%97%E5%B8%82%E6%A8%B9%E6%9C%A8%E6%8D%90%E8%B4%88%E8%A6%81%E9%BB%9E/",
+            "https://www.rootlaw.com.tw/LawArticle.aspx?LawID=B010060011003000-0930826",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=DD2709113F4E671E"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://eculture.gov.taipei/trees/zh-tw/tree/1284",
+          "accessedAt": "2026-10-24T02:35:19.924Z",
+          "outcome": "protected-record-only",
+          "notes": "已閱讀正文；詳batch-2-body-evidence.json。"
+        }
+      ],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-131",
+      "label": "樹杞",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "樹杞 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%A8%B9%E6%9D%9E%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:46.480Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://laws.gov.taipei/law/LawSearch/LawArticleAmend/FL031456",
+            "https://www.forest.gov.tw/0000056",
+            "https://laws.gov.taipei/law/LawSearch/LawInformation/FL031456",
+            "https://toaf.org.tw/treeplanting",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://chiayi.forest.gov.tw/0000541",
+            "http://tree-planting.com.tw/",
+            "https://arch-people.com/laws/%E8%87%BA%E5%8C%97%E5%B8%82%E6%A8%B9%E6%9C%A8%E6%8D%90%E8%B4%88%E8%A6%81%E9%BB%9E/",
+            "https://toaf.org.tw/260-home"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-132",
+      "label": "海桐",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "海桐 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%B5%B7%E6%A1%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:51.838Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://yllot.com/archives-543",
+            "https://lseyd.com/content-204775",
+            "https://zh-tw.jardineriaon.com/%E6%B5%B7%E6%A1%90.html",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://www.forest.gov.tw/0000056",
+            "https://nativetree.forest.gov.tw/Tree/Info/284e79cce7f647c79ba96ffdad1a787d",
+            "https://www.facebook.com/lovetreelaw/",
+            "https://www.mcc.gov.tw/mcct/index.php?category=16",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://chiayi.forest.gov.tw/0000541"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-133",
+      "label": "土肉桂",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "土肉桂 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%9C%9F%E8%82%89%E6%A1%82%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:54.291Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://pmountain.heavenfortress.com/donate_seedlings/",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://chiayi.forest.gov.tw/0000614",
+            "https://esg.businesstoday.com.tw/article/category/183105/post/202403040028",
+            "https://www.kskk.org.tw/main/?p=2932",
+            "https://www.forest.gov.tw/0001724",
+            "https://tlpg.hsiliu.org.tw/plant/view/96",
+            "https://zine.yiri.com.tw/%e5%93%81%e7%89%8c%e4%bc%81%e5%8a%83/%e4%bc%8a%e8%81%96%e8%a9%a9%e8%8a%b3%e7%99%82%e7%94%9f%e6%b4%bb%e9%a4%a8%e6%94%9c%e6%89%8b%e3%80%8c%e6%a1%82-gui%e3%80%8d%ef%bc%8c%e6%8e%a8%e5%8b%95%e3%80%8c%e5%be%a9%e8%82%b2%e5%8f%b0%e7%81%a3/",
+            "https://niniandblue.com/blog/post/treefree",
+            "https://chiayi.forest.gov.tw/0000541"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-134",
+      "label": "凍子椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "凍子椰子 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%87%8D%E5%AD%90%E6%A4%B0%E5%AD%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:56.752Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://tlpg.hsiliu.org.tw/plant/view/832",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://chiayi.forest.gov.tw/0000541",
+            "https://taiwanplant.org.tw/donation/",
+            "https://biodiv.gov.taipei/page/additional/show.aspx?num=2288&page=287",
+            "https://kplant.atfr.org.tw/%E6%AF%9B%E5%87%8D%E5%AD%90%E6%A4%B0%E5%AD%90/%E6%AF%9B%E5%87%8D%E5%AD%90%E6%A4%B0%E5%AD%90.htm",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-135",
+      "label": "千年桐",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "千年桐 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%8D%83%E5%B9%B4%E6%A1%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:59.161Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://laws.gov.taipei/law/LawSearch/LawExport/FL031456",
+            "https://laws.gov.taipei/law/LawSearch/LawInformation/FL031456",
+            "https://arch-people.com/laws/%E8%87%BA%E5%8C%97%E5%B8%82%E6%A8%B9%E6%9C%A8%E6%8D%90%E8%B4%88%E8%A6%81%E9%BB%9E/",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://www.rootlaw.com.tw/LawArticle.aspx?LawID=B010060011002400-0921119",
+            "https://sianchen.github.io/taipei-tree-shade/",
+            "https://www.forest.gov.tw/0000056",
+            "https://www.tree-planting.com.tw/index.php/tree_planting_maps/index/%E5%8F%B0%E5%8C%97%E5%B8%82"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-136",
+      "label": "銀樺",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "銀樺 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%8A%80%E6%A8%BA%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:04.402Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://eculture.gov.taipei/trees/zh-tw/tree/1470",
+            "https://yllot.com/archives-666",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://eculture.gov.taipei/trees/zh-tw",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://tlpg.hsiliu.org.tw/plant/view/7",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://e-info.org.tw/node/43268"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-137",
+      "label": "墨西哥落羽松",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "墨西哥落羽松 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%A2%A8%E8%A5%BF%E5%93%A5%E8%90%BD%E7%BE%BD%E6%9D%BE%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:06.773Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.forest.gov.tw/0000056",
+            "https://ctworld.org.tw/chungtai/plants/100plant/100.htm",
+            "https://www.ctworld.org.tw/monthly/245/p01-gb.htm",
+            "https://daodi.com.tw/zh-TW/works/74",
+            "https://www.facebook.com/LoveTree.org/",
+            "https://toaf.org.tw/treeplanting",
+            "https://www.forest.gov.tw/0001724",
+            "https://zh.wikipedia.org/zh-tw/%E5%A2%A8%E8%A5%BF%E5%93%A5%E8%90%BD%E7%BE%BD%E6%9D%89",
+            "https://www.facebook.com/SummerRainGarden/posts/%E6%9C%AC%E5%9C%92%E7%9A%84%E5%A2%A8%E8%A5%BF%E5%93%A5%E8%90%BD%E7%BE%BD%E6%9D%BE%E6%A0%AA%E6%A0%AA%E5%A3%AF%E7%A2%A9%E6%9C%89%E5%9E%8B%E6%98%AF%E7%B6%A0%E5%8C%96%E9%A6%96%E9%81%B8/281567998322159/",
+            "https://www.peopo.org/news/827139"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://daodi.com.tw/zh-TW/works/74",
+          "accessedAt": "2026-10-24T02:35:06.246Z",
+          "outcome": "species-not-specific",
+          "notes": "已閱讀正文；詳batch-2-body-evidence.json。"
+        }
+      ],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-138",
+      "label": "小葉桑",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "小葉桑 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%B0%8F%E8%91%89%E6%A1%91%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:09.283Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://www.ccbook.tw/%E6%A4%8D%E7%89%A9/%E5%B0%8F%E8%91%89%E6%A1%91",
+            "https://www.forest.gov.tw/0000056",
+            "https://blog.taes.tyc.edu.tw/taes3131/%E6%A0%A1%E5%9C%92%E6%A4%8D%E7%89%A9/%E5%B0%8F%E8%91%89%E6%A1%91/",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://www.ntsec.gov.tw/article/detail.aspx?a=5203",
+            "https://chiayi.forest.gov.tw/0000541",
+            "https://kplant.atfr.org.tw/%E5%8F%B0%E7%81%A3%E6%A1%91/%E5%B0%8F%E8%91%89%E6%A1%91/%E5%B0%8F%E8%91%89%E6%A1%91.htm",
+            "https://taipei-trees.org/",
+            "https://indigenapedia-alcd.nccu.edu.tw/detail?id=9641&cat=0&race=19"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-139",
+      "label": "軟毛柿",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "軟毛柿 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%BB%9F%E6%AF%9B%E6%9F%BF%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:11.654Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://www.reforestation.tw/?p=29485",
+            "https://www.reforestation.tw/?p=26611",
+            "https://yilan.forest.gov.tw/0000831",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://www.forest.gov.tw/file/68957",
+            "https://chiayi.forest.gov.tw/0000541",
+            "https://nativetree.forest.gov.tw/Tree/Info/eb6bb9a016684a37a44b3e14fcefc23c",
+            "https://tlpg.hsiliu.org.tw/plant/view/866"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-140",
+      "label": "象牙柿",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "象牙柿 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%B1%A1%E7%89%99%E6%9F%BF%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:14.237Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://tlpg.hsiliu.org.tw/plant/view/231",
+            "https://nativetree.forest.gov.tw/Tree/Info/3861c58640c34a2d876e3394755b8b6d",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://www.forest.gov.tw/file/68957",
+            "https://law.moa.gov.tw/LawContent.aspx?id=GL000926&kw=%E8%AA%8D%E9%A4%8A",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://www.forest.gov.tw/0000056",
+            "https://www.newton.com.tw/wiki/%E8%B1%A1%E7%89%99%E6%A8%B9",
+            "https://chiayi.forest.gov.tw/0000541"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-141",
+      "label": "荔枝",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "荔枝 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%8D%94%E6%9E%9D%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:17.941Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://yllot.com/archives-1693",
+            "https://www.forest.gov.tw/file/68957",
+            "https://chiayi.forest.gov.tw/0000541",
+            "https://www.forest.gov.tw/0000056"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-142",
+      "label": "臺灣赤楠",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "臺灣赤楠 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E7%81%A3%E8%B5%A4%E6%A5%A0%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:20.410Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://yilan.forest.gov.tw/0000831",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://chiayi.forest.gov.tw/0000541",
+            "https://www.forest.gov.tw/0000056",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://taiwanplant.org.tw/donation/",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://ocacnews.net/article/393396",
+            "https://lseyd.com/content-1749",
+            "https://www.forest.gov.tw/0000061/0000741"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-143",
+      "label": "春不老",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "春不老 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%98%A5%E4%B8%8D%E8%80%81%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:22.858Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://kmweb.moa.gov.tw/theme_data.php?theme=plant_illustration&id=56",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://www.facebook.com/lovetreelaw/",
+            "https://chiayi.forest.gov.tw/0000541",
+            "https://www.forest.gov.tw/0000056",
+            "https://bhworld.tw/articles/716",
+            "https://bhworld.tw/articles/712",
+            "https://taiwanplant.org.tw/donation/",
+            "https://www.ia.gov.tw/zh-TW/fapi/AttFile?type=AttFile&id=28257"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-144",
+      "label": "旅人蕉",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "旅人蕉 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%97%85%E4%BA%BA%E8%95%89%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:25.418Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://benjamintrips.tw/read-10012",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://tlpg.hsiliu.org.tw/plant/view/70",
+            "https://www.facebook.com/taipeiflowers/posts/%E5%B0%8F%E7%B7%A8%E6%84%9B%E5%88%86%E4%BA%AB-%E8%87%AA%E7%84%B6%E7%95%8C%E7%89%B9%E6%9C%89%E7%9A%84%E5%A4%A9%E7%84%B6%E8%B2%AF%E6%B0%B4%E5%99%A8%E5%9C%A8%E9%80%99%E8%A3%A1-%E8%87%BA%E5%8C%97%E5%85%B8%E8%97%8F%E6%A4%8D%E7%89%A9%E5%9C%92%E5%B0%8B%E5%AF%B6%E8%B6%A3-%E5%9C%92%E5%8D%80%E5%85%A7%E7%A8%AE%E6%9C%89%E4%B8%89%E6%A0%AA%E6%A8%B9%E5%9E%8B%E9%AB%98%E5%A4%A7%E7%9A%84%E6%97%85%E4%BA%BA%E8%95%89%E5%9B%A0%E8%91%89%E9%9E%98%E5%9F%BA%E9%83%A8%E5%8F%AF%E8%B2%AF%E5%AD%98%E7%94%9A%E5%A4%9A%E9%9B%A8%E6%B0%B4%E8%83%BD%E5%81%9A%E7%82%BA%E6%97%85%E4%BA%BA%E7%B7%8A%E6%80%A5%E9%A3%B2%E7%94%A8%E7%9A%84%E6%B0%B4%E6%BA%90%E8%80%8C%E6%9C%89%E5%A4%A9%E7%84%B6%E8%B2%AF%E6%B0%B4%E5%99%A8%E4%B9%8B%E7%A8%B1/1047111117443182/",
+            "https://lseyd.com/content-758",
+            "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=1EE55DEBF4EDCAAE",
+            "https://www.flowersfestival.taipei/news/319.html",
+            "https://www.travel.taipei/zh-tw/news/details/63855",
+            "https://topflora.tw/Product/53",
+            "https://tpbg.tfri.gov.tw/"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-145",
+      "label": "象牙樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "象牙樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%B1%A1%E7%89%99%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:30.805Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://eculture.gov.taipei/trees/zh-tw/tree/5",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/698",
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://taipei-trees.org/",
+            "https://taiwan-trees.org/",
+            "https://taipei-trees.org/about",
+            "https://e-info.org.tw/node/43268",
+            "http://tree-planting.com.tw/",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://www.civilmedia.tw/archives/140264"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://eculture.gov.taipei/trees/zh-tw/tree/5",
+          "accessedAt": "2026-10-24T02:35:21.751Z",
+          "outcome": "supports-oral-memory",
+          "notes": "已閱讀正文；詳batch-2-body-evidence.json。"
+        }
+      ],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-146",
+      "label": "枇杷",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "枇杷 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%9E%87%E6%9D%B7%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:33.298Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://www.ccf.org.tw/56/donation/Nzg5",
+            "https://yilan.forest.gov.tw/0000831",
+            "https://www.forest.gov.tw/0000056",
+            "https://www.ardswc.gov.tw/Home/Service/show_detail?id=b5da1751911d414793ec716a7b903331",
+            "https://www.instagram.com/p/DeOfatHFHUD/",
+            "https://laws.gov.taipei/law/LawSearch/LawArticleAmend/FL031456"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-147",
+      "label": "澳洲鴨腳木",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "澳洲鴨腳木 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%BE%B3%E6%B4%B2%E9%B4%A8%E8%85%B3%E6%9C%A8%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:35.733Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www-ws.gov.taipei/Download.ashx?u=LzAwMS9VcGxvYWQvMzQ4L3JlbGZpbGUvNDc0MzIvNzk2Mjk4NC82MTJkYzNhOC0zZTkxLTQ5MWMtOTIzOC0wYjE2NTI2NzYwNzEucGRm&n=6Ie65YyX5biC5qi55pyo5o2Q6LSI6KaB6bueLnBkZg%3d%3d&icon=.pdf",
+            "https://tlpg.hsiliu.org.tw/plant/view/54",
+            "https://chiayi.forest.gov.tw/0000489",
+            "https://www.forest.gov.tw/0000056",
+            "https://www.imomoplant.com/wiki/1739069083115478.html",
+            "https://www.future.url.tw/plant/view/420",
+            "https://lseyd.com/content-204751",
+            "https://world.taobao.com/lang/zh-tw/shopping-guide/2004345048107319296.htm",
+            "https://kknews.cc/zh-tw/home/j3kg83p.html",
+            "https://kknews.cc/zh-tw/home/prqrqgp.html"
+          ],
+          "resultNotes": "browser實際載入；HTTP狀態未回報。"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-148",
+      "label": "石栗",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [
+        {
+          "query": "石栗 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%9F%B3%E6%A0%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:58.946Z",
+          "httpStatus": null,
+          "outcome": "blocked-search-access",
+          "candidateURLs": [],
+          "resultNotes": "Error: Error: goto: net::ERR_CONNECTION_CLOSED at https://www.bing.com/search?q=%E7%9F%B3%E6%A0%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2\nCall log:\n  - navigating to \"https://www.bing.com/search?q=%E7%9F%B3%E6%A0%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2\", waiting until \"load\"\n"
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "搜尋摘要不是證據；未比對GIS個體。"
+    },
+    {
+      "id": "species-149",
+      "label": "叢立孔雀椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-150",
+      "label": "含笑花",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-151",
+      "label": "紅花鐵刀木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-152",
+      "label": "大葉雀榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-153",
+      "label": "欖仁",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-154",
+      "label": "吉野櫻",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-155",
+      "label": "串錢柳",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-156",
+      "label": "蛋黃果",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-157",
+      "label": "蟲屎",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-158",
+      "label": "油椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-159",
+      "label": "孟加拉榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-160",
+      "label": "菲律賓榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-161",
+      "label": "黃玉蘭",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-162",
+      "label": "大風子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-163",
+      "label": "藍花楹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-164",
+      "label": "臺灣櫸",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-165",
+      "label": "波羅蜜",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-166",
+      "label": "魚木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-167",
+      "label": "水同木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-168",
+      "label": "壯幹棕櫚",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-169",
+      "label": "苦橙",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-170",
+      "label": "海南菜豆樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-171",
+      "label": "琴葉榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-172",
+      "label": "木瓜",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-173",
+      "label": "珊瑚樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-174",
+      "label": "披針葉饅頭果",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-175",
+      "label": "樹蘭",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-176",
+      "label": "大頭茶",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-177",
+      "label": "水石榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-178",
+      "label": "金桔",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-179",
+      "label": "大葉合歡",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-180",
+      "label": "香椿",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-181",
+      "label": "黃金榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-182",
+      "label": "臺灣三角楓",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-183",
+      "label": "扁柏",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-184",
+      "label": "破布子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-185",
+      "label": "咖啡樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-186",
+      "label": "銀合歡",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-187",
+      "label": "九節木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-188",
+      "label": "柳橙",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-189",
+      "label": "刺杜密",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    },
+    {
+      "id": "species-190",
+      "label": "厚葉榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": "未逐標籤請求：DDG challenge；Google browser人機驗證；Bing browser改源後ERR_CONNECTION_CLOSED（石栗亦失敗），停止重複引擎請求。沒有宣稱搜尋完成或無故事。"
+    }
+  ],
+  "stories": [
+    {
+      "id": "round1-xiaokeng-celtis-shrine",
+      "species": [
+        "朴樹"
+      ],
+      "location": "臺北市文山區小坑福德宮、鄭厝下方",
+      "period": "來源回述清光緒二年（1876）廟史；老樹敘述年代未載明",
+      "title": "小坑福德宮旁的朴樹與庄頭信仰",
+      "summary": "文山區公所記錄鄭厝下方老朴樹與小坑福德宮相依的景象，並轉述廟方主任委員依樹旁石碑所述，土地公廟最早建於1876年。文中也記載朴樹前另設山神神位，來此膜拜者會一併燃香祭拜，呈現老樹、廟宇與鄰里情感的連結。",
+      "evidenceScope": "specific-tree",
+      "verificationStatus": "source-supported",
+      "limitations": "官方地方敘事含口述與碑文轉述；未直接核讀石碑。朴樹約140多歲是來源估述，非獨立驗齡；廟建年不等於植樹年，未比對GIS樹號或現況。",
+      "sources": [
+        {
+          "title": "珍貴老樹－香楠與朴樹",
+          "publisher": "臺北市文山區公所",
+          "url": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "「鄭厝下方另有一科朴樹」與「廟側的朴樹前面」段",
+          "excerpt": "在廟側的朴樹前面，亦有一座山神神位，到此膜拜的民眾，都會一併虔誠燃香祭拜。"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "assignedLabels": 95,
+    "labelsWithActualSearchRequests": 53,
+    "labelsWithUsableSearch": 52,
+    "recordedQueryRequests": 61,
+    "usableQueries": 56,
+    "blockedLabels": 43,
+    "unattemptedLabelsWithExplicitBlocker": 42,
+    "bodyReviewAttempts": 8,
+    "sourceSupportedStories": 1,
+    "coverageLimitations": "未完成全95標籤實搜：DDG 202 challenge；Google browser人機驗證；Bing browser連線中斷。usable僅表示可讀結果，不表示找到相關故事；browser無HTTP狀態故null。"
+  }
+}

@@ -25,3 +25,17 @@ test('filter species, location, fulltext tokens, statuses and combined queries',
  assert.equal(filterEntries(entries,{species:'樹甲',status:'lead'}).length,0);
  assert.equal(filterEntries(entries,{query:'no-match'}).length,0);
 });
+
+ test('coverage distinguishes usable, blocked-only and never individually requested; safe links and blank names',async()=>{
+ const {coverageStatus,filterCoverage,validateCoverageData}=await import('../src/stories/research-model.js');
+ const {readFile}=await import('node:fs/promises');const coverage=JSON.parse(await readFile(new URL('../public/data/tree-history-search-coverage.json',import.meta.url),'utf8'));
+ assert.equal(validateCoverageData(coverage),coverage);
+ assert.equal(filterCoverage(coverage.entries,'未逐名請求').length,223);
+ assert.equal(filterCoverage(coverage.entries,'僅有受阻請求').length,75);
+ assert.equal(filterCoverage(coverage.entries,'已取得可用搜尋結果').length,170);
+ assert.equal(filterCoverage(coverage.entries,'未提供名稱')[0].label,'');
+ assert.equal(filterCoverage(coverage.entries,'species-001 榕樹').length,1);
+ assert.equal(coverageStatus({searchStatus:'needs-name-review',queryCount:0}),'名稱待核');
+ assert.equal(safeSourceURL('javascript:alert(1)'),null);
+ const bad=structuredClone(coverage);bad.entries[0].queryCount++;assert.throws(()=>validateCoverageData(bad));
+ });

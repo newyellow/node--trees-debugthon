@@ -1,0 +1,1561 @@
+{
+  "schemaVersion": 1,
+  "batch": 1,
+  "range": [
+    1,
+    95
+  ],
+  "entries": [
+    {
+      "id": "species-001",
+      "label": "榕樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "榕樹 臺北 歷史",
+          "requestURL": "https://html.duckduckgo.com/html/?q=%E6%A6%95%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:17.443Z",
+          "httpStatus": 200,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.mirrormedia.mg/story/20261019edi040",
+            "https://yllot.com/archives-205330",
+            "https://today.line.me/tw/v3/article/2D9PMJN",
+            "https://news.nextapple.com/politics/20261021/A2C768C2F073C15F01CF970367EE4FE9",
+            "https://www.msn.com/zh-tw/news/other/%E7%BE%8E%E5%B4%99%E5%85%AC%E5%9C%92-%E6%9D%8E%E7%99%BB%E8%BC%9D%E7%B8%BD%E7%B5%B1%E6%A8%B9-%E9%81%AD%E7%A0%8D-%E5%8C%97%E5%B8%82%E5%BA%9C-%E6%9F%93%E8%A4%90%E6%A0%B9%E7%97%85%E7%A7%BB%E9%99%A4/ar-AA2fzDxU",
+            "https://www.ftnn.com.tw/news/588497",
+            "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108",
+            "https://www.mnews.tw/story/mm-20261019edi040",
+            "https://www.upmedia.mg/tw/focus/politics/271768",
+            "https://news.ltn.com.tw/news/Taipei/breakingnews/5611066"
+          ],
+          "resultNotes": "搜尋片段僅線索，不當正文證據。"
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108",
+          "accessedAt": "2026-10-24T02:28:56.017Z",
+          "outcome": "reviewed",
+          "notes": "已閱讀正文；正文封存 batch-1-bodies.json；摘要僅限來源明述。"
+        }
+      ],
+      "candidateStoryIds": [
+        "meilun-presidential-banyans-removal"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "species-002",
+      "label": "茄苳",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://html.duckduckgo.com/html/?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:40.492Z",
+          "httpStatus": 202,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "搜尋片段僅線索，不當正文證據。"
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:28.994Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.facebook.com/HenamaTaiwan/posts/%E4%B8%89%E7%B7%9A%E9%81%93%E8%B7%AF%E4%B8%8A%E7%9A%84%E8%8C%84%E5%86%AC%E6%A8%B9%E5%9C%A8%E6%97%A5%E6%B2%BB%E6%99%82%E4%BB%A3%E5%8F%B0%E5%8C%97%E7%9A%84%E4%B8%89%E7%B7%9A%E9%81%93%E8%B7%AF%E6%98%AF%E9%80%A3%E6%97%A5%E6%9C%AC%E4%BA%BA%E9%83%BD%E6%84%9F%E5%88%B0%E9%A9%9A%E8%89%B7%E7%9A%84%E5%9C%B0%E6%96%B9%E5%9B%A0%E7%82%BA%E9%81%93%E8%B7%AF%E5%AF%AC%E5%BB%A3%E8%B7%AF%E9%82%8A%E5%92%8C%E4%B8%AD%E9%96%93%E7%9A%84%E5%AE%89%E5%85%A8%E5%B3%B6%E9%83%BD%E7%A8%AE%E6%A4%8D%E4%BA%86%E6%A8%B9%E6%9C%A8%E5%8F%88%E6%9C%89%E5%B0%8F%E5%B7%B4%E9%BB%8E%E4%B9%8B%E7%A8%B1%E4%B8%89%E7%B7%9A%E9%81%93%E8%B7%AF%E5%88%86%E7%82%BA%E6%9D%B1%E5%8D%97%E8%A5%BF%E5%8C%97%E5%9B%9B%E6%AE%B5%E5%A4%A7%E8%87%B4%E6%98%AF%E4%BB%8A%E5%A4%A9%E7%9A%84/455219302999304/",
+            "https://blog.udn.com/jashling/81933619",
+            "https://tw.news.yahoo.com/500%E5%B9%B4%E6%AD%B7%E5%8F%B2-%E5%8F%A4%E5%9D%91%E6%96%B0%E5%BA%84%E8%8C%84%E8%8B%B3%E5%82%B3%E5%A5%87-081732451.html",
+            "https://nativetree.forest.gov.tw/Story/Info?sid=8233dae1bcc14d23ad1a8211235ad136",
+            "https://hsu042.pixnet.net/blog/posts/16095034430",
+            "https://eculture.gov.taipei/trees/zh-tw/tree/2070",
+            "http://icontent.nkps.tp.edu.tw/naturesci/HtmlPage.aspx?specID=329&TaxonID=36&funcID=0&kindID=11",
+            "https://ourisland.pts.org.tw/content/1263",
+            "https://teia.tw/archives/natural_valley_star/pw2021-06-01"
+          ],
+          "resultNotes": "Browser DOM; HTTP status unavailable. Snippets/AI overview not evidence."
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://search.yahoo.com/search?p=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "httpStatus": null,
+          "outcome": "error-redirect-loop",
+          "candidateURLs": [],
+          "resultNotes": "Actual alternate request; time minute approximate. Challenge/redirect/404; no usable results. Brave429 not retried."
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://www.ecosia.org/search?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "httpStatus": 403,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "Actual alternate request; time minute approximate. Challenge/redirect/404; no usable results. Brave429 not retried."
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://www.mojeek.com/search?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "httpStatus": 200,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "Actual alternate request; time minute approximate. Challenge/redirect/404; no usable results. Brave429 not retried."
+        },
+        {
+          "query": "茄苳 歷史",
+          "requestURL": "https://www.gov.taipei/Search.aspx?q=%E8%8C%84%E8%8B%B3%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "httpStatus": 404,
+          "outcome": "error-not-found",
+          "candidateURLs": [],
+          "resultNotes": "Actual alternate request; time minute approximate. Challenge/redirect/404; no usable results. Brave429 not retried."
+        },
+        {
+          "query": "茄苳",
+          "requestURL": "https://www.travel.taipei/zh-tw/search?keyword=%E8%8C%84%E8%8B%B3",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "httpStatus": 403,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "Actual alternate request; time minute approximate. Challenge/redirect/404; no usable results. Brave429 not retried."
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://search.brave.com/search?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "httpStatus": 429,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "Actual alternate request; time minute approximate. Challenge/redirect/404; no usable results. Brave429 not retried."
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://www.gov.taipei/Advanced_Search.aspx?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:21.875Z",
+          "httpStatus": 200,
+          "outcome": "unusable-response",
+          "candidateURLs": [],
+          "resultNotes": "Only footer extracted; inspected HTML confirms dynamic Google CSE. Not no-results."
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://eculture.gov.taipei/trees/zh-tw/tree/2070",
+          "accessedAt": "2026-10-24T02:31:00.856Z",
+          "outcome": "reviewed",
+          "notes": "已閱讀正文；正文封存 batch-1-bodies.json；摘要僅限來源明述。"
+        }
+      ],
+      "candidateStoryIds": [
+        "cukeng-bischofia-road-preservation"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "species-003",
+      "label": "樟樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "樟樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A8%9F%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://tmrc.tiec.tp.edu.tw/HTML/RSR20081121214055ELL/%E5%8F%B0%E7%81%A3%E6%AD%B7%E5%8F%B2%E4%B8%8D%E6%9C%BD%E7%9A%84%E7%AF%87%E3%80%8C%E6%A8%9F%E3%80%8D/past02.htm"
+          ],
+          "resultNotes": "Actual browser navigation/evaluation and usable result URLs emitted in tool execution before outer bridge timeout (02:29–02:30 UTC). Exact timestamp unavailable; minute approximate. Full DOM not checkpointed; one emitted candidate retained. Later repeat challenged."
+        },
+        {
+          "query": "樟樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A8%9F%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:31.690Z",
+          "httpStatus": null,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "Browser DOM; HTTP status unavailable. Snippets/AI overview not evidence."
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "搜尋通路遇反機器人挑戰；不能解讀為沒有文化史。",
+        "首次瀏覽器搜尋回傳可用結果；外層逾時造成完整DOM未保存，工具輸出中的候選網址已回收。"
+      ]
+    },
+    {
+      "id": "species-004",
+      "label": "楓香",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "楓香 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A5%93%E9%A6%99%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/"
+          ],
+          "resultNotes": "Actual browser navigation/evaluation and usable result URLs emitted in tool execution before outer bridge timeout (02:29–02:30 UTC). Exact timestamp unavailable; minute approximate. Full DOM not checkpointed; one emitted candidate retained. Later repeat challenged."
+        },
+        {
+          "query": "楓香 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A5%93%E9%A6%99%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:34.024Z",
+          "httpStatus": null,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "Browser DOM; HTTP status unavailable. Snippets/AI overview not evidence."
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/",
+          "accessedAt": "2026-10-24T02:31:01.579Z",
+          "outcome": "reviewed",
+          "notes": "已閱讀正文；正文封存 batch-1-bodies.json；摘要僅限來源明述。"
+        },
+        {
+          "url": "https://www.storytellingtw.com/single-post/2015/12/19/%E6%A5%93%E9%A6%99%E6%9E%97%E8%94%AD%E5%A4%A7%E9%81%93",
+          "accessedAt": "2026-10-24T02:31:01.769Z",
+          "outcome": "reviewed",
+          "notes": "已閱讀正文；正文封存 batch-1-bodies.json；摘要僅限來源明述。"
+        }
+      ],
+      "candidateStoryIds": [
+        "tmu-maple-walk-campus-memory"
+      ],
+      "limitations": [
+        "搜尋通路遇反機器人挑戰；不能解讀為沒有文化史。",
+        "首次瀏覽器搜尋回傳可用結果；外層逾時造成完整DOM未保存，工具輸出中的候選網址已回收。"
+      ]
+    },
+    {
+      "id": "species-005",
+      "label": "臺灣欒樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "臺灣欒樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%87%BA%E7%81%A3%E6%AC%92%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.agriharvest.tw/archives/128445/"
+          ],
+          "resultNotes": "Actual browser navigation/evaluation and usable result URLs emitted in tool execution before outer bridge timeout (02:29–02:30 UTC). Exact timestamp unavailable; minute approximate. Full DOM not checkpointed; one emitted candidate retained. Later repeat challenged."
+        },
+        {
+          "query": "臺灣欒樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%87%BA%E7%81%A3%E6%AC%92%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:36.170Z",
+          "httpStatus": null,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "Browser DOM; HTTP status unavailable. Snippets/AI overview not evidence."
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://www.agriharvest.tw/archives/128445/",
+          "accessedAt": "2026-10-24T02:31:02.072Z",
+          "outcome": "reviewed",
+          "notes": "已閱讀正文；正文封存 batch-1-bodies.json；摘要僅限來源明述。"
+        }
+      ],
+      "candidateStoryIds": [
+        "ntu-koelreuteria-road-naming"
+      ],
+      "limitations": [
+        "搜尋通路遇反機器人挑戰；不能解讀為沒有文化史。",
+        "首次瀏覽器搜尋回傳可用結果；外層逾時造成完整DOM未保存，工具輸出中的候選網址已回收。"
+      ]
+    },
+    {
+      "id": "species-006",
+      "label": "黑板樹",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "黑板樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%91%E6%9D%BF%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://zyt.ddm.org.tw/xmnews/cont?xsmsid=0K320734280028547604&sid=0Q020572513932610000"
+          ],
+          "resultNotes": "Actual browser navigation/evaluation and usable result URLs emitted in tool execution before outer bridge timeout (02:29–02:30 UTC). Exact timestamp unavailable; minute approximate. Full DOM not checkpointed; one emitted candidate retained. Later repeat challenged."
+        },
+        {
+          "query": "黑板樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%91%E6%9D%BF%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:38.397Z",
+          "httpStatus": null,
+          "outcome": "blocked",
+          "candidateURLs": [],
+          "resultNotes": "Browser DOM; HTTP status unavailable. Snippets/AI overview not evidence."
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "搜尋通路遇反機器人挑戰；不能解讀為沒有文化史。",
+        "首次瀏覽器搜尋回傳可用結果；外層逾時造成完整DOM未保存，工具輸出中的候選網址已回收。"
+      ]
+    },
+    {
+      "id": "species-007",
+      "label": "白千層",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "白千層 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%99%BD%E5%8D%83%E5%B1%A4%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://www.cw.com.tw/article/5128071"
+          ],
+          "resultNotes": "Actual browser navigation/evaluation and usable result URLs emitted in tool execution before outer bridge timeout (02:29–02:30 UTC). Exact timestamp unavailable; minute approximate. Full DOM not checkpointed; one emitted candidate retained. Later repeat challenged."
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "首次瀏覽器搜尋回傳可用結果；外層逾時造成完整DOM未保存，工具輸出中的候選網址已回收。"
+      ]
+    },
+    {
+      "id": "species-008",
+      "label": "小葉欖仁",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "小葉欖仁 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B0%8F%E8%91%89%E6%AC%96%E4%BB%81%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://parks.gov.taipei/parks/m3/pkl_parks_m3s2C.php?sid=228"
+          ],
+          "resultNotes": "Actual browser navigation/evaluation and usable result URLs emitted in tool execution before outer bridge timeout (02:29–02:30 UTC). Exact timestamp unavailable; minute approximate. Full DOM not checkpointed; one emitted candidate retained. Later repeat challenged."
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "首次瀏覽器搜尋回傳可用結果；外層逾時造成完整DOM未保存，工具輸出中的候選網址已回收。"
+      ]
+    },
+    {
+      "id": "species-009",
+      "label": "水黃皮",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "水黃皮 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%B0%B4%E9%BB%83%E7%9A%AE%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=282188"
+          ],
+          "resultNotes": "Actual browser navigation/evaluation and usable result URLs emitted in tool execution before outer bridge timeout (02:29–02:30 UTC). Exact timestamp unavailable; minute approximate. Full DOM not checkpointed; one emitted candidate retained. Later repeat challenged."
+        }
+      ],
+      "bodyReviews": [
+        {
+          "url": "https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=282188",
+          "accessedAt": "2026-10-24T02:31:02.363Z",
+          "outcome": "excluded-non-Taipei",
+          "notes": "正文是雲林溪生態介紹；排除。"
+        }
+      ],
+      "candidateStoryIds": [],
+      "limitations": [
+        "首次瀏覽器搜尋回傳可用結果；外層逾時造成完整DOM未保存，工具輸出中的候選網址已回收。"
+      ]
+    },
+    {
+      "id": "species-010",
+      "label": "山櫻花",
+      "nameStatus": "source-label",
+      "searchStatus": "searched",
+      "queries": [
+        {
+          "query": "山櫻花 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E6%AB%BB%E8%8A%B1%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "httpStatus": null,
+          "outcome": "usable-results",
+          "candidateURLs": [
+            "https://toaj.stpi.niar.org.tw/index/journal/volume/article/4b1141f98b57d3f7018b5a3b673d0027"
+          ],
+          "resultNotes": "Actual browser navigation/evaluation and usable result URLs emitted in tool execution before outer bridge timeout (02:29–02:30 UTC). Exact timestamp unavailable; minute approximate. Full DOM not checkpointed; one emitted candidate retained. Later repeat challenged."
+        }
+      ],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "首次瀏覽器搜尋回傳可用結果；外層逾時造成完整DOM未保存，工具輸出中的候選網址已回收。"
+      ]
+    },
+    {
+      "id": "species-011",
+      "label": "大花紫薇",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-012",
+      "label": "大王椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-013",
+      "label": "光蠟樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-014",
+      "label": "阿勃勒",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-015",
+      "label": "苦楝",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-016",
+      "label": "木棉",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-017",
+      "label": "垂榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-018",
+      "label": "福木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-019",
+      "label": "蒲葵",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-020",
+      "label": "烏桕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-021",
+      "label": "菩提樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-022",
+      "label": "芒果",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-023",
+      "label": "黃椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-024",
+      "label": "紫薇",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-025",
+      "label": "榔榆",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-026",
+      "label": "九芎",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-027",
+      "label": "盾柱木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-028",
+      "label": "龍柏",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-029",
+      "label": "落羽杉",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-030",
+      "label": "櫻花",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-031",
+      "label": "櫸",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-032",
+      "label": "羅比親王海棗",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-033",
+      "label": "亞力山大椰子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-034",
+      "label": "流蘇",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-035",
+      "label": "蘭嶼羅漢松",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-036",
+      "label": "印度紫檀",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-037",
+      "label": "第倫桃",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-038",
+      "label": "鳳凰木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-039",
+      "label": "血桐",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-040",
+      "label": "黃連木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-041",
+      "label": "鵝掌柴",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-042",
+      "label": "羅漢松",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-043",
+      "label": "梅",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-044",
+      "label": "欖仁樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-045",
+      "label": "美人樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-046",
+      "label": "黃脈刺桐",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-047",
+      "label": "青楓",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-048",
+      "label": "印度橡膠樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-049",
+      "label": "厚皮香",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-050",
+      "label": "猢猻木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-051",
+      "label": "洋紅風鈴木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-052",
+      "label": "火焰木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-053",
+      "label": "水柳",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-054",
+      "label": "肯氏蒲桃",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-055",
+      "label": "構樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-056",
+      "label": "馬拉巴栗",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-057",
+      "label": "大葉山欖",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-058",
+      "label": "杜英",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-059",
+      "label": "豔紫荊",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-060",
+      "label": "龍眼",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-061",
+      "label": "雀榕",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-062",
+      "label": "風鈴木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-063",
+      "label": "海檬果",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-064",
+      "label": "小葉南洋杉",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-065",
+      "label": "蓮霧",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-066",
+      "label": "香楠",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-067",
+      "label": "富士櫻",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-068",
+      "label": "無患子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-069",
+      "label": "緬梔花",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-070",
+      "label": "蘭嶼烏心石",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-071",
+      "label": "竹柏",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-072",
+      "label": "黃金風鈴木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-073",
+      "label": "青剛櫟",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-074",
+      "label": "肯氏南洋杉",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-075",
+      "label": "白玉蘭",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-076",
+      "label": "刺桐",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-077",
+      "label": "桂花",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-078",
+      "label": "陰香",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-079",
+      "label": "桑樹",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-080",
+      "label": "穗花棋盤腳",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-081",
+      "label": "洋紫荊",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-082",
+      "label": "鐵刀木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-083",
+      "label": "柚子",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-084",
+      "label": "大葉桉",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-085",
+      "label": "溼地松",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-086",
+      "label": "楊桃",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-087",
+      "label": "鐵冬青",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-088",
+      "label": "側柏",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-089",
+      "label": "錫蘭橄欖",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-090",
+      "label": "紅楠",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-091",
+      "label": "桃花心木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-092",
+      "label": "掌葉蘋婆",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-093",
+      "label": "烏心石",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-094",
+      "label": "大葉桃花心木",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    },
+    {
+      "id": "species-095",
+      "label": "山黃麻",
+      "nameStatus": "source-label",
+      "searchStatus": "blocked-search-access",
+      "queries": [],
+      "bodyReviews": [],
+      "candidateStoryIds": [],
+      "limitations": [
+        "未逐標籤查詢：共用通路DDG/Google CAPTCHA、Brave429；已改試多來源仍阻擋。非查無故事。"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "meilun-presidential-banyans-removal",
+      "species": [
+        "榕樹"
+      ],
+      "location": "臺北市士林區美崙公園",
+      "period": "2025年11月鑑定；2026年4月24日移除",
+      "title": "總統手植榕樹的保存與安全處置",
+      "summary": "公園處2026年10月公告稱，美崙公園內李登輝總統與李元簇副總統種植的兩株榕樹，於2025年11月24日邀樹保委員現勘確認褐根病，經文化局同意解除列管後，2026年4月24日移除，紀念石碑另行收藏管理。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "依管理機關單一公告；未獨立取得鑑定報告或解除列管文件，未證實原植樹年份；不可對應為現有GIS個體。",
+      "sources": [
+        {
+          "title": "美崙公園李登輝總統及李元簇副總統樹114年鑑定罹患褐根病 為確保公園內活動民眾安全 已於115年4月移除",
+          "publisher": "臺北市政府工務局公園路燈工程管理處",
+          "url": "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108",
+          "publishedAt": "2026-10-19",
+          "accessedAt": "2026-10-24",
+          "locator": "正文第1段，114年11月24日現勘至石碑收藏敘述",
+          "excerpt": "經文化局同意解除列管後，公園處後續已於115年4月24日完成移除工作，另外，石碑已另行收藏管理。"
+        }
+      ]
+    },
+    {
+      "id": "cukeng-bischofia-road-preservation",
+      "species": [
+        "茄苳"
+      ],
+      "location": "臺北市北投區復興三路300巷15號前",
+      "period": "道路拓寬時，確切年份未載；2011年曾勘查",
+      "title": "路中央的粗坑茄苳，留下舊地名與拓寬記憶",
+      "summary": "文化局受保護樹木平臺介紹，復興三路300巷15號前的茄苳是民政局時代普查的臺北百大老樹之一；因當地古名「粗坑」而稱粗坑茄苳。資料記載，道路拓寬時特別保留，使樹留在路中央。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "官方資料以背景訪談或環境描述呈現；沒有提供拓寬確切年代、原始工程文件或訪談對象。2011年是勘查年份，不當成拓寬年份。未核對當前道路或GIS樹號。",
+      "sources": [
+        {
+          "title": "茄苳｜受保護樹木資訊平臺",
+          "publisher": "臺北市政府文化局",
+          "url": "https://eculture.gov.taipei/trees/zh-tw/tree/2070",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "背景訪談或環境描述全段",
+          "excerpt": "因當地古名「粗坑」該樹也被命名粗坑茄苳，曾於100年度進行勘查，當時馬路拓寬時特予保留現位於路中央。"
+        }
+      ]
+    },
+    {
+      "id": "tmu-maple-walk-campus-memory",
+      "species": [
+        "楓香"
+      ],
+      "location": "臺北市信義區臺北醫學大學校園往拇山學苑大道",
+      "period": "創校之初，來源未載確切植樹年份",
+      "title": "往宿舍的楓林道：北醫校景與居民散步路",
+      "summary": "臺北醫學大學校史館說明，校園往拇山學苑大道兩旁的楓香是創校之初所植，形成學生往宿舍的綠色隧道；大道兩側是籃球場與足壘球場，也是附近居民散步與學生課餘休憩的場所。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "校史館單一敘述，未提供植樹者或逐株年份；不代表今日所有楓香都是創校原株，未建立現有GIS個體關聯。",
+      "sources": [
+        {
+          "title": "楓林道",
+          "publisher": "臺北醫學大學校史館",
+          "url": "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "「楓林道」正文第1段",
+          "excerpt": "校園往拇山學苑的大道旁之楓香是創校之初所植，夾道兩旁，枝葉茂密繁榮，形成一條綠色隧道。"
+        }
+      ]
+    },
+    {
+      "id": "ntu-koelreuteria-road-naming",
+      "species": [
+        "臺灣欒樹"
+      ],
+      "location": "臺北市大安區國立臺灣大學校園欒樹道",
+      "period": "2000年代初期",
+      "title": "年輕的欒樹道進入臺大校園命名記憶",
+      "summary": "黃瀚嶢在農傳媒專欄回顧臺大以樹木命名幹道的習慣，稱隨新系館向南延伸，「欒樹道」在2000年代初獲得命名。他以欒樹道對照早年椰林道、蒲葵道等校景，呈現較新植栽進入校園地名的歷程。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "為作者回憶性專欄，未核對校方正式命名公文；只採其校園命名敘述，不以文章「第一條欒樹大道」說法推論全臺最早植栽。刊出日期未於抽取正文顯示，留null；無GIS個體關聯。",
+      "sources": [
+        {
+          "title": "【林間散步】欒樹的道路",
+          "publisher": "農傳媒；作者黃瀚嶢",
+          "url": "https://www.agriharvest.tw/archives/128445/",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "正文第1段",
+          "excerpt": "「欒樹道」在兩千年初獲得命名，此時欒樹也才剛流行了約二十年，就樹木的時間而言，如此年輕。"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "assignedLabels": 95,
+    "attemptedLabels": 10,
+    "usableSearchLabels": 10,
+    "blockedSearchLabels": 85,
+    "explicitBlockedWithoutRequest": 85,
+    "recordedQueryAttempts": 22,
+    "usableQueryAttempts": 10,
+    "bodyReviews": 6,
+    "sourceSupportedStories": 4,
+    "needsNameReview": 0,
+    "limitations": [
+      "搜尋通路大範圍反機器人阻擋；85個標籤無可用搜尋，並非查無文化史。",
+      "Google首次species002–010查詢曾成功；外層bridge timeout僅留下工具輸出的候選網址，未保存完整DOM；重新查詢003–006遇CAPTCHA後停止。",
+      "查詢嘗試數計入已記錄且實際送出請求；未查標籤沒有偽造queries。",
+      "跨引擎探測時間部分為分鐘近似，逐筆已註明。",
+      "所有候選仍待parent review，不變更正式18筆。"
+    ]
+  }
+}

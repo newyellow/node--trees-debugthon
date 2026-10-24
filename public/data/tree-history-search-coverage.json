@@ -1,0 +1,5980 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-24",
+  "description": "來源標籤的首輪搜尋涵蓋進度；不是分類學物種清單，也不是故事有無判定。",
+  "limitations": "Source labels are not taxonomic species. Search negatives mean not found in this bounded round, not absence of history. Search snippets are leads, never source-supported evidence. Blocked requests do not count as usable search coverage. No story is automatically associated with present GIS individuals.",
+  "sourcePins": [
+    {
+      "path": "docs/research/species-inventory.json",
+      "sha256": "43eb9aee566627c3952cd280d6115f1509d30c34163f249e631d36dad9290912"
+    },
+    {
+      "path": "docs/research/species-round1/research-ledger.json",
+      "sha256": "7740799457d2f58deb658b8f1943198ad862b9c5ae654e6f14aa2d21dfe038ea"
+    },
+    {
+      "path": "docs/research/species-round1/summary.json",
+      "sha256": "b7e674e4d88b38fb39decbee7c29101560aa8b8b9ec3a77abf87d076fc448ff2"
+    },
+    {
+      "path": "public/data/street-trees.geojson",
+      "sha256": "a47f844b5122a3f9aac59bb7ae27358d05ea9dd2b24995a4e1d430ac6603a89e",
+      "records": 90358
+    },
+    {
+      "path": "public/data/park-trees.geojson",
+      "sha256": "3c9c90a9fe947856ca687f78b39c49e9c91aa32967800144866d054038623592",
+      "records": 72011
+    }
+  ],
+  "summary": {
+    "totalLabels": 471,
+    "meaningfulLabels": 468,
+    "statusCounts": {
+      "searched": 170,
+      "blocked-search-access": 298,
+      "needs-name-review": 3
+    },
+    "labelsWithActualRequest": 245,
+    "labelsBlockedWithoutIndividualRequest": 223,
+    "labelsWithOnlyBlockedRequests": 75,
+    "labelsWithAtLeastTwoDistinctQueries": 37,
+    "actualDistinctPerLabelQueryStrings": 290,
+    "actualQueryRequests": 320
+  },
+  "entries": [
+    {
+      "id": "species-001",
+      "label": "榕樹",
+      "recordCount": 18637,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "榕樹 臺北 歷史",
+          "requestURL": "https://html.duckduckgo.com/html/?q=%E6%A6%95%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:17.443Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-002",
+      "label": "茄苳",
+      "recordCount": 14127,
+      "searchStatus": "searched",
+      "queryCount": 9,
+      "queries": [
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://html.duckduckgo.com/html/?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:40.492Z",
+          "outcome": "blocked"
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:28.994Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://search.yahoo.com/search?p=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "outcome": "error-redirect-loop"
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://www.ecosia.org/search?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "outcome": "blocked"
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://www.mojeek.com/search?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "outcome": "blocked"
+        },
+        {
+          "query": "茄苳 歷史",
+          "requestURL": "https://www.gov.taipei/Search.aspx?q=%E8%8C%84%E8%8B%B3%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "outcome": "error-not-found"
+        },
+        {
+          "query": "茄苳",
+          "requestURL": "https://www.travel.taipei/zh-tw/search?keyword=%E8%8C%84%E8%8B%B3",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "outcome": "blocked"
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://search.brave.com/search?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:46Z",
+          "outcome": "blocked"
+        },
+        {
+          "query": "茄苳 臺北 歷史",
+          "requestURL": "https://www.gov.taipei/Advanced_Search.aspx?q=%E8%8C%84%E8%8B%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:21.875Z",
+          "outcome": "unusable-response"
+        }
+      ]
+    },
+    {
+      "id": "species-003",
+      "label": "樟樹",
+      "recordCount": 11842,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "樟樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A8%9F%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "樟樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A8%9F%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:31.690Z",
+          "outcome": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "species-004",
+      "label": "楓香",
+      "recordCount": 10395,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "楓香 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A5%93%E9%A6%99%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "楓香 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A5%93%E9%A6%99%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:34.024Z",
+          "outcome": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "species-005",
+      "label": "臺灣欒樹",
+      "recordCount": 8781,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "臺灣欒樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%87%BA%E7%81%A3%E6%AC%92%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "臺灣欒樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%87%BA%E7%81%A3%E6%AC%92%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:36.170Z",
+          "outcome": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "species-006",
+      "label": "黑板樹",
+      "recordCount": 7558,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "黑板樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%91%E6%9D%BF%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "黑板樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%91%E6%9D%BF%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:38.397Z",
+          "outcome": "blocked"
+        }
+      ]
+    },
+    {
+      "id": "species-007",
+      "label": "白千層",
+      "recordCount": 5573,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "白千層 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%99%BD%E5%8D%83%E5%B1%A4%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-008",
+      "label": "小葉欖仁",
+      "recordCount": 4833,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "小葉欖仁 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B0%8F%E8%91%89%E6%AC%96%E4%BB%81%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-009",
+      "label": "水黃皮",
+      "recordCount": 3908,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "水黃皮 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%B0%B4%E9%BB%83%E7%9A%AE%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-010",
+      "label": "山櫻花",
+      "recordCount": 3255,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山櫻花 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E6%AB%BB%E8%8A%B1%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-011",
+      "label": "大花紫薇",
+      "recordCount": 2844,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-012",
+      "label": "大王椰子",
+      "recordCount": 2726,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-013",
+      "label": "光蠟樹",
+      "recordCount": 2670,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-014",
+      "label": "阿勃勒",
+      "recordCount": 2479,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-015",
+      "label": "苦楝",
+      "recordCount": 2432,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-016",
+      "label": "木棉",
+      "recordCount": 2119,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-017",
+      "label": "垂榕",
+      "recordCount": 2022,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-018",
+      "label": "福木",
+      "recordCount": 1982,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-019",
+      "label": "蒲葵",
+      "recordCount": 1781,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-020",
+      "label": "烏桕",
+      "recordCount": 1563,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-021",
+      "label": "菩提樹",
+      "recordCount": 1534,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-022",
+      "label": "芒果",
+      "recordCount": 1378,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-023",
+      "label": "黃椰子",
+      "recordCount": 1359,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-024",
+      "label": "紫薇",
+      "recordCount": 1316,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-025",
+      "label": "榔榆",
+      "recordCount": 1297,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-026",
+      "label": "九芎",
+      "recordCount": 1266,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-027",
+      "label": "盾柱木",
+      "recordCount": 1151,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-028",
+      "label": "龍柏",
+      "recordCount": 1123,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-029",
+      "label": "落羽杉",
+      "recordCount": 1063,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-030",
+      "label": "櫻花",
+      "recordCount": 1060,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-031",
+      "label": "櫸",
+      "recordCount": 992,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-032",
+      "label": "羅比親王海棗",
+      "recordCount": 990,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-033",
+      "label": "亞力山大椰子",
+      "recordCount": 972,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-034",
+      "label": "流蘇",
+      "recordCount": 914,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-035",
+      "label": "蘭嶼羅漢松",
+      "recordCount": 914,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-036",
+      "label": "印度紫檀",
+      "recordCount": 807,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-037",
+      "label": "第倫桃",
+      "recordCount": 782,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-038",
+      "label": "鳳凰木",
+      "recordCount": 691,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-039",
+      "label": "血桐",
+      "recordCount": 668,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-040",
+      "label": "黃連木",
+      "recordCount": 665,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-041",
+      "label": "鵝掌柴",
+      "recordCount": 659,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-042",
+      "label": "羅漢松",
+      "recordCount": 658,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-043",
+      "label": "梅",
+      "recordCount": 636,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-044",
+      "label": "欖仁樹",
+      "recordCount": 622,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-045",
+      "label": "美人樹",
+      "recordCount": 582,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-046",
+      "label": "黃脈刺桐",
+      "recordCount": 579,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-047",
+      "label": "青楓",
+      "recordCount": 566,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-048",
+      "label": "印度橡膠樹",
+      "recordCount": 537,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-049",
+      "label": "厚皮香",
+      "recordCount": 537,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-050",
+      "label": "猢猻木",
+      "recordCount": 536,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-051",
+      "label": "洋紅風鈴木",
+      "recordCount": 527,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-052",
+      "label": "火焰木",
+      "recordCount": 511,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-053",
+      "label": "水柳",
+      "recordCount": 505,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-054",
+      "label": "肯氏蒲桃",
+      "recordCount": 494,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-055",
+      "label": "構樹",
+      "recordCount": 488,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-056",
+      "label": "馬拉巴栗",
+      "recordCount": 483,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-057",
+      "label": "大葉山欖",
+      "recordCount": 473,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-058",
+      "label": "杜英",
+      "recordCount": 470,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-059",
+      "label": "豔紫荊",
+      "recordCount": 462,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-060",
+      "label": "龍眼",
+      "recordCount": 456,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-061",
+      "label": "雀榕",
+      "recordCount": 455,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-062",
+      "label": "風鈴木",
+      "recordCount": 405,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-063",
+      "label": "海檬果",
+      "recordCount": 385,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-064",
+      "label": "小葉南洋杉",
+      "recordCount": 373,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-065",
+      "label": "蓮霧",
+      "recordCount": 370,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-066",
+      "label": "香楠",
+      "recordCount": 360,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-067",
+      "label": "富士櫻",
+      "recordCount": 358,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-068",
+      "label": "無患子",
+      "recordCount": 358,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-069",
+      "label": "緬梔花",
+      "recordCount": 347,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-070",
+      "label": "蘭嶼烏心石",
+      "recordCount": 322,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-071",
+      "label": "竹柏",
+      "recordCount": 319,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-072",
+      "label": "黃金風鈴木",
+      "recordCount": 319,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-073",
+      "label": "青剛櫟",
+      "recordCount": 318,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-074",
+      "label": "肯氏南洋杉",
+      "recordCount": 315,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-075",
+      "label": "白玉蘭",
+      "recordCount": 305,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-076",
+      "label": "刺桐",
+      "recordCount": 284,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-077",
+      "label": "桂花",
+      "recordCount": 284,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-078",
+      "label": "陰香",
+      "recordCount": 280,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-079",
+      "label": "桑樹",
+      "recordCount": 272,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-080",
+      "label": "穗花棋盤腳",
+      "recordCount": 269,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-081",
+      "label": "洋紫荊",
+      "recordCount": 265,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-082",
+      "label": "鐵刀木",
+      "recordCount": 263,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-083",
+      "label": "柚子",
+      "recordCount": 262,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-084",
+      "label": "大葉桉",
+      "recordCount": 255,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-085",
+      "label": "溼地松",
+      "recordCount": 250,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-086",
+      "label": "楊桃",
+      "recordCount": 239,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-087",
+      "label": "鐵冬青",
+      "recordCount": 239,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-088",
+      "label": "側柏",
+      "recordCount": 228,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-089",
+      "label": "錫蘭橄欖",
+      "recordCount": 224,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-090",
+      "label": "紅楠",
+      "recordCount": 216,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-091",
+      "label": "桃花心木",
+      "recordCount": 213,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-092",
+      "label": "掌葉蘋婆",
+      "recordCount": 209,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-093",
+      "label": "烏心石",
+      "recordCount": 208,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-094",
+      "label": "大葉桃花心木",
+      "recordCount": 197,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-095",
+      "label": "山黃麻",
+      "recordCount": 195,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-096",
+      "label": "相思樹",
+      "recordCount": 193,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "相思樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%9B%B8%E6%80%9D%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:37.859Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "相思樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?q=%E7%9B%B8%E6%80%9D%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:40.262Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-097",
+      "label": "華盛頓椰子",
+      "recordCount": 184,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "華盛頓椰子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%8F%AF%E7%9B%9B%E9%A0%93%E6%A4%B0%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:42.600Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "華盛頓椰子 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?q=%E8%8F%AF%E7%9B%9B%E9%A0%93%E6%A4%B0%E5%AD%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:45.110Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-098",
+      "label": "朴樹",
+      "recordCount": 165,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "朴樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%9C%B4%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:50.053Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "朴樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?q=%E6%9C%B4%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:52.721Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-099",
+      "label": "番石榴",
+      "recordCount": 164,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "番石榴 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%95%AA%E7%9F%B3%E6%A6%B4%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:55.270Z",
+          "outcome": "usable-results"
+        },
+        {
+          "query": "番石榴 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?q=%E7%95%AA%E7%9F%B3%E6%A6%B4%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:57.595Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-100",
+      "label": "稜果榕",
+      "recordCount": 160,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "稜果榕 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%A8%9C%E6%9E%9C%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:05.492Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-101",
+      "label": "酒瓶椰子",
+      "recordCount": 144,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "酒瓶椰子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%85%92%E7%93%B6%E6%A4%B0%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:08.038Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-102",
+      "label": "菲律賓紫檀",
+      "recordCount": 140,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "菲律賓紫檀 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%8F%B2%E5%BE%8B%E8%B3%93%E7%B4%AB%E6%AA%80%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:10.671Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-103",
+      "label": "臺灣海棗",
+      "recordCount": 136,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺灣海棗 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%87%BA%E7%81%A3%E6%B5%B7%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:13.042Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-104",
+      "label": "槭葉翅子木",
+      "recordCount": 134,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "槭葉翅子木 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A7%AD%E8%91%89%E7%BF%85%E5%AD%90%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:20.724Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-105",
+      "label": "羊蹄甲",
+      "recordCount": 131,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "羊蹄甲 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%BE%8A%E8%B9%84%E7%94%B2%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:23.370Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-106",
+      "label": "檳榔",
+      "recordCount": 124,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "檳榔 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%AA%B3%E6%A6%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:25.814Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-107",
+      "label": "麵包樹",
+      "recordCount": 124,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "麵包樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BA%B5%E5%8C%85%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:28.446Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-108",
+      "label": "海棗",
+      "recordCount": 123,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "海棗 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%B5%B7%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:34.839Z",
+          "outcome": "blocked-or-unreadable"
+        },
+        {
+          "query": "海棗 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%B5%B7%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:01.798Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-109",
+      "label": "島榕",
+      "recordCount": 121,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "島榕 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B3%B6%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:37.163Z",
+          "outcome": "blocked-or-unreadable"
+        },
+        {
+          "query": "島榕 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%B3%B6%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:04.155Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-110",
+      "label": "森氏紅淡比",
+      "recordCount": 118,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "森氏紅淡比 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A3%AE%E6%B0%8F%E7%B4%85%E6%B7%A1%E6%AF%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:39.507Z",
+          "outcome": "blocked-or-unreadable"
+        },
+        {
+          "query": "森氏紅淡比 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%A3%AE%E6%B0%8F%E7%B4%85%E6%B7%A1%E6%AF%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:06.642Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-111",
+      "label": "緬梔",
+      "recordCount": 118,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "緬梔 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%B7%AC%E6%A2%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:41.602Z",
+          "outcome": "blocked-or-unreadable"
+        },
+        {
+          "query": "緬梔 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%B7%AC%E6%A2%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:09.054Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-112",
+      "label": "洋玉蘭",
+      "recordCount": 115,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "洋玉蘭 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%B4%8B%E7%8E%89%E8%98%AD%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:13.860Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-113",
+      "label": "酪梨",
+      "recordCount": 115,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "酪梨 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%85%AA%E6%A2%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:16.407Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-114",
+      "label": "月橘",
+      "recordCount": 112,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "月橘 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%9C%88%E6%A9%98%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:18.927Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-115",
+      "label": "蒲桃",
+      "recordCount": 108,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "蒲桃 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%92%B2%E6%A1%83%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:21.484Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-116",
+      "label": "大葉楠",
+      "recordCount": 107,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "大葉楠 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%A4%A7%E8%91%89%E6%A5%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:28.273Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-117",
+      "label": "亞里垂榕",
+      "recordCount": 107,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "亞里垂榕 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E4%BA%9E%E9%87%8C%E5%9E%82%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:30.778Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-118",
+      "label": "木麻黃",
+      "recordCount": 105,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "木麻黃 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%9C%A8%E9%BA%BB%E9%BB%83%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:33.378Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-119",
+      "label": "黑松",
+      "recordCount": 105,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "黑松 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%BB%91%E6%9D%BE%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:35.946Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-120",
+      "label": "石朴",
+      "recordCount": 104,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "石朴 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%9F%B3%E6%9C%B4%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:40.724Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-121",
+      "label": "臺灣海桐",
+      "recordCount": 102,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺灣海桐 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E7%81%A3%E6%B5%B7%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:43.168Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-122",
+      "label": "日本山茶",
+      "recordCount": 92,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "日本山茶 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%97%A5%E6%9C%AC%E5%B1%B1%E8%8C%B6%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:45.723Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-123",
+      "label": "白匏子",
+      "recordCount": 91,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "白匏子 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%99%BD%E5%8C%8F%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:48.160Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-124",
+      "label": "楊梅",
+      "recordCount": 90,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "楊梅 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%A5%8A%E6%A2%85%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:26.794Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-125",
+      "label": "棍棒椰子",
+      "recordCount": 89,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "棍棒椰子 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%A3%8D%E6%A3%92%E6%A4%B0%E5%AD%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:29.248Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-126",
+      "label": "錫蘭饅頭果",
+      "recordCount": 89,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "錫蘭饅頭果 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%8C%AB%E8%98%AD%E9%A5%85%E9%A0%AD%E6%9E%9C%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:31.597Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-127",
+      "label": "肖楠",
+      "recordCount": 88,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "肖楠 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%82%96%E6%A5%A0%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:33.971Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-128",
+      "label": "苦茶",
+      "recordCount": 86,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "苦茶 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%8B%A6%E8%8C%B6%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:39.002Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-129",
+      "label": "蠟腸樹",
+      "recordCount": 86,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "蠟腸樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%A0%9F%E8%85%B8%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:41.410Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-130",
+      "label": "風箱樹",
+      "recordCount": 84,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "風箱樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%A2%A8%E7%AE%B1%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:43.993Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-131",
+      "label": "樹杞",
+      "recordCount": 83,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "樹杞 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%A8%B9%E6%9D%9E%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:46.480Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-132",
+      "label": "海桐",
+      "recordCount": 81,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "海桐 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%B5%B7%E6%A1%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:51.838Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-133",
+      "label": "土肉桂",
+      "recordCount": 80,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "土肉桂 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%9C%9F%E8%82%89%E6%A1%82%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:54.291Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-134",
+      "label": "凍子椰子",
+      "recordCount": 77,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "凍子椰子 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%87%8D%E5%AD%90%E6%A4%B0%E5%AD%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:56.752Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-135",
+      "label": "千年桐",
+      "recordCount": 75,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "千年桐 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%8D%83%E5%B9%B4%E6%A1%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:32:59.161Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-136",
+      "label": "銀樺",
+      "recordCount": 73,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "銀樺 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%8A%80%E6%A8%BA%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:04.402Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-137",
+      "label": "墨西哥落羽松",
+      "recordCount": 73,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "墨西哥落羽松 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%A2%A8%E8%A5%BF%E5%93%A5%E8%90%BD%E7%BE%BD%E6%9D%BE%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:06.773Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-138",
+      "label": "小葉桑",
+      "recordCount": 71,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "小葉桑 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%B0%8F%E8%91%89%E6%A1%91%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:09.283Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-139",
+      "label": "軟毛柿",
+      "recordCount": 71,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "軟毛柿 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%BB%9F%E6%AF%9B%E6%9F%BF%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:11.654Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-140",
+      "label": "象牙柿",
+      "recordCount": 70,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "象牙柿 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%B1%A1%E7%89%99%E6%9F%BF%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:14.237Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-141",
+      "label": "荔枝",
+      "recordCount": 66,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "荔枝 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%8D%94%E6%9E%9D%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:17.941Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-142",
+      "label": "臺灣赤楠",
+      "recordCount": 66,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺灣赤楠 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E7%81%A3%E8%B5%A4%E6%A5%A0%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:20.410Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-143",
+      "label": "春不老",
+      "recordCount": 64,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "春不老 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%98%A5%E4%B8%8D%E8%80%81%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:22.858Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-144",
+      "label": "旅人蕉",
+      "recordCount": 63,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "旅人蕉 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%97%85%E4%BA%BA%E8%95%89%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:25.418Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-145",
+      "label": "象牙樹",
+      "recordCount": 62,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "象牙樹 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E8%B1%A1%E7%89%99%E6%A8%B9%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:30.805Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-146",
+      "label": "枇杷",
+      "recordCount": 58,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "枇杷 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%9E%87%E6%9D%B7%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:33.298Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-147",
+      "label": "澳洲鴨腳木",
+      "recordCount": 57,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "澳洲鴨腳木 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%BE%B3%E6%B4%B2%E9%B4%A8%E8%85%B3%E6%9C%A8%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:33:35.733Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-148",
+      "label": "石栗",
+      "recordCount": 55,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "石栗 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%9F%B3%E6%A0%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:58.946Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-149",
+      "label": "叢立孔雀椰子",
+      "recordCount": 55,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-150",
+      "label": "含笑花",
+      "recordCount": 54,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-151",
+      "label": "紅花鐵刀木",
+      "recordCount": 53,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-152",
+      "label": "大葉雀榕",
+      "recordCount": 52,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-153",
+      "label": "欖仁",
+      "recordCount": 52,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-154",
+      "label": "吉野櫻",
+      "recordCount": 51,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-155",
+      "label": "串錢柳",
+      "recordCount": 50,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-156",
+      "label": "蛋黃果",
+      "recordCount": 50,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-157",
+      "label": "蟲屎",
+      "recordCount": 50,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-158",
+      "label": "油椰子",
+      "recordCount": 48,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-159",
+      "label": "孟加拉榕",
+      "recordCount": 47,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-160",
+      "label": "菲律賓榕",
+      "recordCount": 45,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-161",
+      "label": "黃玉蘭",
+      "recordCount": 45,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-162",
+      "label": "大風子",
+      "recordCount": 44,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-163",
+      "label": "藍花楹",
+      "recordCount": 44,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-164",
+      "label": "臺灣櫸",
+      "recordCount": 43,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-165",
+      "label": "波羅蜜",
+      "recordCount": 42,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-166",
+      "label": "魚木",
+      "recordCount": 42,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-167",
+      "label": "水同木",
+      "recordCount": 40,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-168",
+      "label": "壯幹棕櫚",
+      "recordCount": 40,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-169",
+      "label": "苦橙",
+      "recordCount": 38,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-170",
+      "label": "海南菜豆樹",
+      "recordCount": 38,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-171",
+      "label": "琴葉榕",
+      "recordCount": 38,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-172",
+      "label": "木瓜",
+      "recordCount": 36,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-173",
+      "label": "珊瑚樹",
+      "recordCount": 36,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-174",
+      "label": "披針葉饅頭果",
+      "recordCount": 35,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-175",
+      "label": "樹蘭",
+      "recordCount": 35,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-176",
+      "label": "大頭茶",
+      "recordCount": 34,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-177",
+      "label": "水石榕",
+      "recordCount": 34,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-178",
+      "label": "金桔",
+      "recordCount": 34,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-179",
+      "label": "大葉合歡",
+      "recordCount": 33,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-180",
+      "label": "香椿",
+      "recordCount": 33,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-181",
+      "label": "黃金榕",
+      "recordCount": 33,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-182",
+      "label": "臺灣三角楓",
+      "recordCount": 33,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-183",
+      "label": "扁柏",
+      "recordCount": 32,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-184",
+      "label": "破布子",
+      "recordCount": 32,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-185",
+      "label": "咖啡樹",
+      "recordCount": 31,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-186",
+      "label": "銀合歡",
+      "recordCount": 31,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-187",
+      "label": "九節木",
+      "recordCount": 30,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-188",
+      "label": "柳橙",
+      "recordCount": 30,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-189",
+      "label": "刺杜密",
+      "recordCount": 29,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-190",
+      "label": "厚葉榕",
+      "recordCount": 28,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-191",
+      "label": "桃",
+      "recordCount": 28,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "桃 臺北 歷史 植栽",
+          "requestURL": "https://html.duckduckgo.com/html/?q=%E6%A1%83%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2%20%E6%A4%8D%E6%A0%BD",
+          "accessedAt": "2026-10-24T02:28:21.764Z",
+          "outcome": "blocked-challenge"
+        },
+        {
+          "query": "桃 臺北 歷史 植栽",
+          "requestURL": "https://search.yahoo.com/search?p=%E6%A1%83%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2%20%E6%A4%8D%E6%A0%BD",
+          "accessedAt": "2026-10-24T02:28:33.882Z",
+          "outcome": "blocked-redirect-limit"
+        },
+        {
+          "query": "桃 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A1%83%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:23.246Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-192",
+      "label": "九重葛",
+      "recordCount": 27,
+      "searchStatus": "searched",
+      "queryCount": 4,
+      "queries": [
+        {
+          "query": "九重葛 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E4%B9%9D%E9%87%8D%E8%91%9B%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2&gbv=1",
+          "accessedAt": "2026-10-24T02:28:33.986Z",
+          "outcome": "blocked-empty-shell"
+        },
+        {
+          "query": "九重葛 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E4%B9%9D%E9%87%8D%E8%91%9B%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:34.233Z",
+          "outcome": "unusable-off-topic-response"
+        },
+        {
+          "query": "九重葛 臺北 歷史",
+          "requestURL": "https://search.brave.com/search?q=%E4%B9%9D%E9%87%8D%E8%91%9B%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:49.573Z",
+          "outcome": "blocked-rate-limit"
+        },
+        {
+          "query": "九重葛 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E4%B9%9D%E9%87%8D%E8%91%9B%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:24.494Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-193",
+      "label": "印度黃檀",
+      "recordCount": 27,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "印度黃檀 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%8D%B0%E5%BA%A6%E9%BB%83%E6%AA%80%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:25.626Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-194",
+      "label": "落羽松",
+      "recordCount": 27,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "落羽松",
+          "requestURL": "https://www.gov.taipei/Search.aspx?q=%E8%90%BD%E7%BE%BD%E6%9D%BE",
+          "accessedAt": "2026-10-24T02:28:49.573Z",
+          "outcome": "blocked-endpoint-not-found"
+        },
+        {
+          "query": "\"落羽松\" \"臺北\" \"歷史\"",
+          "requestURL": "https://www.google.com/search?q=%22%E8%90%BD%E7%BE%BD%E6%9D%BE%22%20%22%E8%87%BA%E5%8C%97%22%20%22%E6%AD%B7%E5%8F%B2%22&udm=14",
+          "accessedAt": "2026-10-24T02:28:49.662Z",
+          "outcome": "blocked-empty-shell"
+        },
+        {
+          "query": "落羽松 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%90%BD%E7%BE%BD%E6%9D%BE%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:13.203Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-195",
+      "label": "魯花樹",
+      "recordCount": 27,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "魯花樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%AD%AF%E8%8A%B1%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:35.201Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-196",
+      "label": "河津櫻",
+      "recordCount": 26,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "河津櫻 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%B2%B3%E6%B4%A5%E6%AB%BB%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:36.532Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-197",
+      "label": "黃皮",
+      "recordCount": 25,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "黃皮 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%83%E7%9A%AE%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:37.625Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-198",
+      "label": "檸檬",
+      "recordCount": 25,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "檸檬 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%AA%B8%E6%AA%AC%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:38.942Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-199",
+      "label": "烏?",
+      "recordCount": 24,
+      "searchStatus": "needs-name-review",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-200",
+      "label": "黃褥花",
+      "recordCount": 24,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "黃褥花 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%83%E8%A4%A5%E8%8A%B1%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:40.233Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-201",
+      "label": "煙火樹",
+      "recordCount": 23,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "煙火樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%85%99%E7%81%AB%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:42.081Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-202",
+      "label": "山菜豆",
+      "recordCount": 22,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山菜豆 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E8%8F%9C%E8%B1%86%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:43.707Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-203",
+      "label": "香龍血樹",
+      "recordCount": 22,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "香龍血樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%A6%99%E9%BE%8D%E8%A1%80%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:45.310Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-204",
+      "label": "加拿列海棗",
+      "recordCount": 21,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "加拿列海棗 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%8A%A0%E6%8B%BF%E5%88%97%E6%B5%B7%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:46.580Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-205",
+      "label": "柑橘",
+      "recordCount": 21,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "柑橘 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%9F%91%E6%A9%98%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:48.051Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-206",
+      "label": "臺灣肖楠",
+      "recordCount": 21,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺灣肖楠 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%87%BA%E7%81%A3%E8%82%96%E6%A5%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:58.353Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-207",
+      "label": "孔雀椰子",
+      "recordCount": 20,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "孔雀椰子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%AD%94%E9%9B%80%E6%A4%B0%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:59.867Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-208",
+      "label": "可可椰子",
+      "recordCount": 20,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "可可椰子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%8F%AF%E5%8F%AF%E6%A4%B0%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00.962Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-209",
+      "label": "人心果",
+      "recordCount": 19,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "人心果 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E4%BA%BA%E5%BF%83%E6%9E%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:03.010Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-210",
+      "label": "尖尾長葉榕",
+      "recordCount": 19,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "尖尾長葉榕 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B0%96%E5%B0%BE%E9%95%B7%E8%91%89%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:04.443Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-211",
+      "label": "馬尼拉椰子",
+      "recordCount": 19,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "馬尼拉椰子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%A6%AC%E5%B0%BC%E6%8B%89%E6%A4%B0%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:05.751Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-212",
+      "label": "銀葉鈕扣樹",
+      "recordCount": 19,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "銀葉鈕扣樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%8A%80%E8%91%89%E9%88%95%E6%89%A3%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:07.341Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-213",
+      "label": "瓊崖海棠",
+      "recordCount": 19,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "瓊崖海棠 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%93%8A%E5%B4%96%E6%B5%B7%E6%A3%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:08.626Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-214",
+      "label": "",
+      "recordCount": 18,
+      "searchStatus": "needs-name-review",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-215",
+      "label": "雞冠刺桐",
+      "recordCount": 18,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "雞冠刺桐 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%9B%9E%E5%86%A0%E5%88%BA%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:10.228Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-216",
+      "label": "山陀兒",
+      "recordCount": 17,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山陀兒 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E9%99%80%E5%85%92%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:11.456Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-217",
+      "label": "垂柳",
+      "recordCount": 17,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "垂柳 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%9E%82%E6%9F%B3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:13.002Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-218",
+      "label": "大漁櫻",
+      "recordCount": 16,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "大漁櫻 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%A4%A7%E6%BC%81%E6%AB%BB%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:14.411Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-219",
+      "label": "山紅柿",
+      "recordCount": 16,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山紅柿 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E7%B4%85%E6%9F%BF%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:15.803Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-220",
+      "label": "毛風鈴木",
+      "recordCount": 16,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "毛風鈴木 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%AF%9B%E9%A2%A8%E9%88%B4%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:17.485Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-221",
+      "label": "爪哇旃那",
+      "recordCount": 16,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "爪哇旃那 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%88%AA%E5%93%87%E6%97%83%E9%82%A3%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:19.006Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-222",
+      "label": "南洋含笑",
+      "recordCount": 16,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "南洋含笑 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%8D%97%E6%B4%8B%E5%90%AB%E7%AC%91%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:28.761Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-223",
+      "label": "黃槿",
+      "recordCount": 16,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "黃槿 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%83%E6%A7%BF%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:30.000Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-224",
+      "label": "臺灣五葉松",
+      "recordCount": 16,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺灣五葉松 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%87%BA%E7%81%A3%E4%BA%94%E8%91%89%E6%9D%BE%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:31.247Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-225",
+      "label": "金龜樹",
+      "recordCount": 15,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "金龜樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%87%91%E9%BE%9C%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:32.286Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-226",
+      "label": "厚葉石斑木",
+      "recordCount": 15,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "厚葉石斑木 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%8E%9A%E8%91%89%E7%9F%B3%E6%96%91%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:33.616Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-227",
+      "label": "薄葉虎皮楠",
+      "recordCount": 15,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "薄葉虎皮楠 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%96%84%E8%91%89%E8%99%8E%E7%9A%AE%E6%A5%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:34.803Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-228",
+      "label": "九丁榕",
+      "recordCount": 14,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "九丁榕 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E4%B9%9D%E4%B8%81%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:35.748Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-229",
+      "label": "日日櫻",
+      "recordCount": 14,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "日日櫻 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%97%A5%E6%97%A5%E6%AB%BB%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:36.860Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-230",
+      "label": "柿子",
+      "recordCount": 14,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "柿子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%9F%BF%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:38.033Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-231",
+      "label": "珊瑚刺桐",
+      "recordCount": 14,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "珊瑚刺桐 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%8F%8A%E7%91%9A%E5%88%BA%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:39.081Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-232",
+      "label": "筆筒樹",
+      "recordCount": 14,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "筆筒樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%AD%86%E7%AD%92%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:40.474Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-233",
+      "label": "龍眼樹",
+      "recordCount": 14,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "龍眼樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BE%8D%E7%9C%BC%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:41.628Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-234",
+      "label": "山刈葉",
+      "recordCount": 13,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山刈葉 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E5%88%88%E8%91%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:42.694Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-235",
+      "label": "山芙蓉",
+      "recordCount": 13,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山芙蓉 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E8%8A%99%E8%93%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:43.938Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-236",
+      "label": "木芙蓉",
+      "recordCount": 13,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "木芙蓉 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%9C%A8%E8%8A%99%E8%93%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:45.136Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-237",
+      "label": "池杉",
+      "recordCount": 13,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "池杉 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%B1%A0%E6%9D%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:46.441Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-238",
+      "label": "李",
+      "recordCount": 13,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "李 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%9D%8E%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:47.611Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-239",
+      "label": "紅瓶刷子樹",
+      "recordCount": 13,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "紅瓶刷子樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%B4%85%E7%93%B6%E5%88%B7%E5%AD%90%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:48.671Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-240",
+      "label": "澳洲茶樹",
+      "recordCount": 13,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "澳洲茶樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%BE%B3%E6%B4%B2%E8%8C%B6%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:49.733Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-241",
+      "label": "山埔姜",
+      "recordCount": 12,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山埔姜 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E5%9F%94%E5%A7%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:50.974Z",
+          "outcome": "blocked-challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-242",
+      "label": "毛柿",
+      "recordCount": 12,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-243",
+      "label": "扁桃葉斑鳩菊",
+      "recordCount": 12,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-244",
+      "label": "野梨",
+      "recordCount": 12,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-245",
+      "label": "黃金蒲桃",
+      "recordCount": 12,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-246",
+      "label": "臺灣二葉松",
+      "recordCount": 12,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-247",
+      "label": "樹葡萄",
+      "recordCount": 12,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-248",
+      "label": "小實女貞",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-249",
+      "label": "山黃梔",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-250",
+      "label": "牛樟",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-251",
+      "label": "加羅林魚木",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-252",
+      "label": "夾竹桃",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-253",
+      "label": "南美假櫻桃",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-254",
+      "label": "黃槐",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-255",
+      "label": "黃鐘花",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-256",
+      "label": "錫蘭肉桂",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-257",
+      "label": "檸檬桉",
+      "recordCount": 11,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-258",
+      "label": "山油麻",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-259",
+      "label": "水杉",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-260",
+      "label": "玉蘭",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-261",
+      "label": "朱槿",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-262",
+      "label": "杜虹花",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-263",
+      "label": "沉香",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-264",
+      "label": "食茱萸",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-265",
+      "label": "草莓番石榴",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-266",
+      "label": "臺灣石楠",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-267",
+      "label": "羅氏鹽膚木",
+      "recordCount": 10,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-268",
+      "label": "土楠",
+      "recordCount": 9,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-269",
+      "label": "紅淡比",
+      "recordCount": 9,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-270",
+      "label": "臭娘子",
+      "recordCount": 9,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-271",
+      "label": "寒櫻",
+      "recordCount": 9,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-272",
+      "label": "菲律賓饅頭果",
+      "recordCount": 9,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-273",
+      "label": "澀葉榕",
+      "recordCount": 9,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-274",
+      "label": "蘭嶼肉桂",
+      "recordCount": 9,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-275",
+      "label": "八重櫻",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-276",
+      "label": "大果藤榕",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-277",
+      "label": "小梗木薑子",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-278",
+      "label": "山刺番荔枝",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-279",
+      "label": "火筒樹",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-280",
+      "label": "吉貝木棉",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-281",
+      "label": "尾葉灰木",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-282",
+      "label": "金露花",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-283",
+      "label": "細葉饅頭果",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-284",
+      "label": "斑葉垂榕",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-285",
+      "label": "臺灣油杉",
+      "recordCount": 8,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "臺灣油杉 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E7%81%A3%E6%B2%B9%E6%9D%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2&setlang=zh-Hant",
+          "accessedAt": "2026-10-24T02:30:59.358Z",
+          "outcome": "unusable-off-topic-response"
+        },
+        {
+          "query": "臺灣油杉 臺北 歷史",
+          "requestURL": "https://tw.search.yahoo.com/search?p=%E8%87%BA%E7%81%A3%E6%B2%B9%E6%9D%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:10.734Z",
+          "outcome": "blocked-redirect-limit"
+        }
+      ]
+    },
+    {
+      "id": "species-286",
+      "label": "辣木",
+      "recordCount": 8,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "辣木 臺北 歷史",
+          "requestURL": "https://html.duckduckgo.com/html/?q=%E8%BE%A3%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:30.378Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "辣木 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:31:22.356355+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-287",
+      "label": "槭葉酒瓶樹",
+      "recordCount": 8,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "槭葉酒瓶樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%A7%AD%E8%91%89%E9%85%92%E7%93%B6%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:45.717Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "槭葉酒瓶樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%A7%AD%E8%91%89%E9%85%92%E7%93%B6%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:10.639Z",
+          "outcome": "results"
+        },
+        {
+          "query": "槭葉酒瓶樹 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:31:40.128810+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-288",
+      "label": "檬果",
+      "recordCount": 8,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "檬果 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%AA%AC%E6%9E%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:47.056Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "檬果 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%AA%AC%E6%9E%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:11.564Z",
+          "outcome": "results"
+        },
+        {
+          "query": "檬果 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:31:56.043027+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-289",
+      "label": "雞爪楓",
+      "recordCount": 8,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "雞爪楓 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%9B%9E%E7%88%AA%E6%A5%93%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:48.381Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "雞爪楓 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%9B%9E%E7%88%AA%E6%A5%93%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:12.600Z",
+          "outcome": "results"
+        },
+        {
+          "query": "雞爪楓 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:32:19.058260+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-290",
+      "label": "釋迦",
+      "recordCount": 8,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "釋迦 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%87%8B%E8%BF%A6%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:49.703Z",
+          "outcome": "results"
+        },
+        {
+          "query": "釋迦 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%87%8B%E8%BF%A6%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:34:19.448Z",
+          "outcome": "results"
+        },
+        {
+          "query": "釋迦 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:32:37.188547+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-291",
+      "label": "大花曼陀羅",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "大花曼陀羅 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%A4%A7%E8%8A%B1%E6%9B%BC%E9%99%80%E7%BE%85%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:51.066Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "大花曼陀羅 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%A4%A7%E8%8A%B1%E6%9B%BC%E9%99%80%E7%BE%85%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:34:20.428Z",
+          "outcome": "results"
+        },
+        {
+          "query": "大花曼陀羅 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:33:01.883881+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-292",
+      "label": "小花鼠刺",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "小花鼠刺 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%B0%8F%E8%8A%B1%E9%BC%A0%E5%88%BA%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:10.917Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "小花鼠刺 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E5%B0%8F%E8%8A%B1%E9%BC%A0%E5%88%BA%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:34:21.605Z",
+          "outcome": "results"
+        },
+        {
+          "query": "小花鼠刺 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:33:18.683891+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-293",
+      "label": "火刺木",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "火刺木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%81%AB%E5%88%BA%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:12.276Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "火刺木 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E7%81%AB%E5%88%BA%E6%9C%A8%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:34:23.029Z",
+          "outcome": "results"
+        },
+        {
+          "query": "火刺木 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:33:36.925145+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-294",
+      "label": "枯木",
+      "recordCount": 7,
+      "searchStatus": "needs-name-review",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-295",
+      "label": "紅花繼木",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "紅花繼木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%B4%85%E8%8A%B1%E7%B9%BC%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:13.623Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "紅花繼木 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E7%B4%85%E8%8A%B1%E7%B9%BC%E6%9C%A8%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:34:23.975Z",
+          "outcome": "results"
+        },
+        {
+          "query": "紅花繼木 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:33:58.625105+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-296",
+      "label": "番仔林投",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "番仔林投 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%95%AA%E4%BB%94%E6%9E%97%E6%8A%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:14.939Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "番仔林投 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%95%AA%E4%BB%94%E6%9E%97%E6%8A%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:30.765Z",
+          "outcome": "results"
+        },
+        {
+          "query": "番仔林投 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:34:22.472687+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-297",
+      "label": "紫玉蘭",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 3,
+      "queries": [
+        {
+          "query": "紫玉蘭 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%B4%AB%E7%8E%89%E8%98%AD%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:16.232Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "紫玉蘭 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%B4%AB%E7%8E%89%E8%98%AD%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:31.752Z",
+          "outcome": "results"
+        },
+        {
+          "query": "紫玉蘭 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:34:38.739861+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-298",
+      "label": "龍鱗櫚",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "龍鱗櫚 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%BE%8D%E9%B1%97%E6%AB%9A%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:32.786Z",
+          "outcome": "results"
+        },
+        {
+          "query": "龍鱗櫚 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:34:55.207893+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-299",
+      "label": "糙葉樹",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "糙葉樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%B3%99%E8%91%89%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:33.733Z",
+          "outcome": "results"
+        },
+        {
+          "query": "糙葉樹 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:35:12.522163+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-300",
+      "label": "蘋婆",
+      "recordCount": 7,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "蘋婆 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%98%8B%E5%A9%86%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:34.817Z",
+          "outcome": "results"
+        },
+        {
+          "query": "蘋婆 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:35:31.134170+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-301",
+      "label": "豆梨",
+      "recordCount": 6,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "豆梨 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%B1%86%E6%A2%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:35.808Z",
+          "outcome": "results"
+        },
+        {
+          "query": "豆梨 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:35:54.542610+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-302",
+      "label": "花旗木",
+      "recordCount": 6,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "花旗木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%8A%B1%E6%97%97%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:36.695Z",
+          "outcome": "results"
+        },
+        {
+          "query": "花旗木 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:36:10.230355+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-303",
+      "label": "金剛纂",
+      "recordCount": 6,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "金剛纂 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%87%91%E5%89%9B%E7%BA%82%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:37.615Z",
+          "outcome": "results"
+        },
+        {
+          "query": "金剛纂 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:36:33.151400+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-304",
+      "label": "重瓣彎子木",
+      "recordCount": 6,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "重瓣彎子木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%87%8D%E7%93%A3%E5%BD%8E%E5%AD%90%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:38.581Z",
+          "outcome": "results"
+        },
+        {
+          "query": "重瓣彎子木 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:36:48.483929+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-305",
+      "label": "馬尼拉欖仁",
+      "recordCount": 6,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "馬尼拉欖仁 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%A6%AC%E5%B0%BC%E6%8B%89%E6%AC%96%E4%BB%81%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:34:39.458Z",
+          "outcome": "results"
+        },
+        {
+          "query": "馬尼拉欖仁 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:37:04.195332+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-306",
+      "label": "錫蘭海棗",
+      "recordCount": 6,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "錫蘭海棗 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%8C%AB%E8%98%AD%E6%B5%B7%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:30.759Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "錫蘭海棗 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:37:20.792562+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-307",
+      "label": "三角椰子",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "三角椰子 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E4%B8%89%E8%A7%92%E6%A4%B0%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:32.095Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "三角椰子 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:37:36.715571+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-308",
+      "label": "油茶",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "油茶 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%B2%B9%E8%8C%B6%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:33.454Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "油茶 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:37:59.142938+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-309",
+      "label": "長梗紫麻",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "長梗紫麻 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%95%B7%E6%A2%97%E7%B4%AB%E9%BA%BB%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:34.803Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "長梗紫麻 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:38:21.037149+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-310",
+      "label": "南洋櫻",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "南洋櫻 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%8D%97%E6%B4%8B%E6%AB%BB%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:36.114Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "南洋櫻 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:38:42.664932+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-311",
+      "label": "昭和櫻",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "昭和櫻 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%98%AD%E5%92%8C%E6%AB%BB%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:37.867Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "昭和櫻 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:38:58.328726+00:00",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-312",
+      "label": "紅邊竹蕉",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "紅邊竹蕉 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%B4%85%E9%82%8A%E7%AB%B9%E8%95%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:44.546Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "紅邊竹蕉 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:39:25.319504+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-313",
+      "label": "香水樹",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "香水樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%A6%99%E6%B0%B4%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:45.841Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "香水樹 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:39:42.103613+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-314",
+      "label": "倒卵葉冬青",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "倒卵葉冬青 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%80%92%E5%8D%B5%E8%91%89%E5%86%AC%E9%9D%92%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:47.154Z",
+          "outcome": "blocked-search-access"
+        },
+        {
+          "query": "倒卵葉冬青 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:39:58.691645+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-315",
+      "label": "栗豆樹",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "栗豆樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%A0%97%E8%B1%86%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:48.441Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "栗豆樹 (Taipei official news fulltext)",
+          "requestURL": "https://www.gov.taipei/News.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&Create=1",
+          "accessedAt": "2026-10-24T02:40:14.202350+00:00",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-316",
+      "label": "酒瓶蘭",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "酒瓶蘭 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%85%92%E7%93%B6%E8%98%AD%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:49.750Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-317",
+      "label": "馬尾松",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "馬尾松 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%A6%AC%E5%B0%BE%E6%9D%BE%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:51.052Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-318",
+      "label": "象耳榕",
+      "recordCount": 5,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "象耳榕 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%B1%A1%E8%80%B3%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:57.929Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-319",
+      "label": "圓柏",
+      "recordCount": 5,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "圓柏 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%9C%93%E6%9F%8F%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:36:59.285Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-320",
+      "label": "臺東漆",
+      "recordCount": 5,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺東漆 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E6%9D%B1%E6%BC%86%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:00.608Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-321",
+      "label": "霸王櫚",
+      "recordCount": 5,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "霸王櫚 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%9C%B8%E7%8E%8B%E6%AB%9A%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:01.993Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-322",
+      "label": "三年桐",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "三年桐 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E4%B8%89%E5%B9%B4%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:03.301Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-323",
+      "label": "三腳虌",
+      "recordCount": 4,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "三腳虌 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E4%B8%89%E8%85%B3%E8%99%8C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:04.697Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-324",
+      "label": "千頭木麻黃",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "千頭木麻黃 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%8D%83%E9%A0%AD%E6%9C%A8%E9%BA%BB%E9%BB%83%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:29.138Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-325",
+      "label": "土樟",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "土樟 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%9C%9F%E6%A8%9F%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:30.479Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-326",
+      "label": "山豬肝",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山豬肝 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%B1%B1%E8%B1%AC%E8%82%9D%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:31.856Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-327",
+      "label": "木槿",
+      "recordCount": 4,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "木槿 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%9C%A8%E6%A7%BF%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:33.225Z",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-328",
+      "label": "牛油果",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "牛油果 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%89%9B%E6%B2%B9%E6%9E%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:34.550Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-329",
+      "label": "白鳥蕉",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "白鳥蕉 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%99%BD%E9%B3%A5%E8%95%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:35.890Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-330",
+      "label": "白樹仔",
+      "recordCount": 4,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "白樹仔 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%99%BD%E6%A8%B9%E4%BB%94%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:42.544Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-331",
+      "label": "印度棗",
+      "recordCount": 4,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "印度棗 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%8D%B0%E5%BA%A6%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:43.847Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-332",
+      "label": "細葉桉",
+      "recordCount": 4,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "細葉桉 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%B4%B0%E8%91%89%E6%A1%89%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:45.131Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-333",
+      "label": "野桐",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "野桐 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%87%8E%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:46.460Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-334",
+      "label": "奧氏虎皮楠",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "奧氏虎皮楠 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%A5%A7%E6%B0%8F%E8%99%8E%E7%9A%AE%E6%A5%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:47.825Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-335",
+      "label": "臺灣香檬",
+      "recordCount": 4,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺灣香檬 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E7%81%A3%E9%A6%99%E6%AA%AC%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:49.160Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-336",
+      "label": "蘇鐵",
+      "recordCount": 4,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "蘇鐵 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%98%87%E9%90%B5%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:56.530Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-337",
+      "label": "變葉木",
+      "recordCount": 4,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "變葉木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%AE%8A%E8%91%89%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:57.899Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-338",
+      "label": "小實孔雀豆",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "小實孔雀豆 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%B0%8F%E5%AF%A6%E5%AD%94%E9%9B%80%E8%B1%86%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:37:59.284Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-339",
+      "label": "水金京",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "水金京 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%B0%B4%E9%87%91%E4%BA%AC%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:00.656Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-340",
+      "label": "火漆木",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "火漆木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%81%AB%E6%BC%86%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:01.961Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-341",
+      "label": "台灣梭羅木",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "台灣梭羅木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%8F%B0%E7%81%A3%E6%A2%AD%E7%BE%85%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:03.594Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-342",
+      "label": "石斑木",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "石斑木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%9F%B3%E6%96%91%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:11.206Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-343",
+      "label": "杏",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "杏 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%9D%8F%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:12.711Z",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-344",
+      "label": "沙盒樹",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "沙盒樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%B2%99%E7%9B%92%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:14.063Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-345",
+      "label": "刺葉桂櫻",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "刺葉桂櫻 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%88%BA%E8%91%89%E6%A1%82%E6%AB%BB%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:15.389Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-346",
+      "label": "金新木薑子",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "金新木薑子 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%87%91%E6%96%B0%E6%9C%A8%E8%96%91%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:16.736Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-347",
+      "label": "南洋馬蹄花",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "南洋馬蹄花 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%8D%97%E6%B4%8B%E9%A6%AC%E8%B9%84%E8%8A%B1%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:18.148Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-348",
+      "label": "紅棕櫚",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "紅棕櫚 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E7%B4%85%E6%A3%95%E6%AB%9A%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:40:52.047Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-349",
+      "label": "烏來冬青",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "烏來冬青 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E7%83%8F%E4%BE%86%E5%86%AC%E9%9D%92%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:40:53.427Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-350",
+      "label": "棋盤腳",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "棋盤腳 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E6%A3%8B%E7%9B%A4%E8%85%B3%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:40:54.752Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-351",
+      "label": "黃花風鈴木",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "黃花風鈴木 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%BB%83%E8%8A%B1%E9%A2%A8%E9%88%B4%E6%9C%A8%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:40:56.024Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-352",
+      "label": "黃蝴蝶",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "黃蝴蝶 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E9%BB%83%E8%9D%B4%E8%9D%B6%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:40:57.412Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-353",
+      "label": "稜果蒲桃",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "稜果蒲桃 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.bing.com/search?q=%E7%A8%9C%E6%9E%9C%E8%92%B2%E6%A1%83%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:40:58.849Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-354",
+      "label": "賊仔樹",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "賊仔樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%B3%8A%E4%BB%94%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:50.542Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-355",
+      "label": "臺東石楠",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺東石楠 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E6%9D%B1%E7%9F%B3%E6%A5%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:51.877Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-356",
+      "label": "臺灣雅楠",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "臺灣雅楠 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%87%BA%E7%81%A3%E9%9B%85%E6%A5%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:53.231Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-357",
+      "label": "墨水樹",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "墨水樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%A2%A8%E6%B0%B4%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:54.552Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-358",
+      "label": "橄欖",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "橄欖 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%A9%84%E6%AC%96%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:55.919Z",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-359",
+      "label": "賽赤楠",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "賽赤楠 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%B3%BD%E8%B5%A4%E6%A5%A0%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:38:57.504Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-360",
+      "label": "羅望子",
+      "recordCount": 3,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "羅望子 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%BE%85%E6%9C%9B%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:10.633Z",
+          "outcome": "results"
+        }
+      ]
+    },
+    {
+      "id": "species-361",
+      "label": "蘇利南合歡",
+      "recordCount": 3,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "蘇利南合歡 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%98%87%E5%88%A9%E5%8D%97%E5%90%88%E6%AD%A1%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:12.045Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-362",
+      "label": "大香葉樹",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "大香葉樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%A4%A7%E9%A6%99%E8%91%89%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:13.371Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-363",
+      "label": "山桂花",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山桂花 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%B1%B1%E6%A1%82%E8%8A%B1%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:14.665Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-364",
+      "label": "山馬茶",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山馬茶 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%B1%B1%E9%A6%AC%E8%8C%B6%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:16.029Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-365",
+      "label": "孔雀木",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "孔雀木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%AD%94%E9%9B%80%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:17.357Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-366",
+      "label": "巴西乳香",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "巴西乳香 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%B7%B4%E8%A5%BF%E4%B9%B3%E9%A6%99%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:33.662Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-367",
+      "label": "水冬瓜",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "水冬瓜 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%B0%B4%E5%86%AC%E7%93%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:34.966Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-368",
+      "label": "白水木",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "白水木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%99%BD%E6%B0%B4%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:36.320Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-369",
+      "label": "白桕",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "白桕 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%99%BD%E6%A1%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:37.619Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-370",
+      "label": "合歡",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "合歡 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%90%88%E6%AD%A1%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:38.973Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-371",
+      "label": "安石榴",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "安石榴 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%AE%89%E7%9F%B3%E6%A6%B4%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:40.300Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-372",
+      "label": "百合竹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "百合竹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%99%BE%E5%90%88%E7%AB%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:53.898Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-373",
+      "label": "辛夷",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "辛夷 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E8%BE%9B%E5%A4%B7%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:55.215Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-374",
+      "label": "垂花琴木",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "垂花琴木 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%9E%82%E8%8A%B1%E7%90%B4%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:56.577Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-375",
+      "label": "昆欄樹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "昆欄樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%98%86%E6%AC%84%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:57.896Z",
+          "outcome": "no-results"
+        }
+      ]
+    },
+    {
+      "id": "species-376",
+      "label": "林投",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "林投 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%9E%97%E6%8A%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:39:59.227Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-377",
+      "label": "金棗",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "金棗 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%87%91%E6%A3%97%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:40:00.549Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-378",
+      "label": "長尾栲",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "長尾栲 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%95%B7%E5%B0%BE%E6%A0%B2%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:40:13.108Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-379",
+      "label": "雨豆樹",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "雨豆樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E9%9B%A8%E8%B1%86%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:40:14.434Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-380",
+      "label": "神秘果",
+      "recordCount": 2,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "神秘果 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E7%A5%9E%E7%A7%98%E6%9E%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:40:15.746Z",
+          "outcome": "blocked-search-access"
+        }
+      ]
+    },
+    {
+      "id": "species-381",
+      "label": "密花白飯樹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 4,
+      "queries": [
+        {
+          "query": "密花白飯樹 臺北 歷史",
+          "requestURL": "https://html.duckduckgo.com/html/?q=%E5%AF%86%E8%8A%B1%E7%99%BD%E9%A3%AF%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:40.589Z",
+          "outcome": "challenge"
+        },
+        {
+          "query": "密花白飯樹 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E5%AF%86%E8%8A%B1%E7%99%BD%E9%A3%AF%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:50.121Z",
+          "outcome": "no-results"
+        },
+        {
+          "query": "密花白飯樹 臺北 歷史",
+          "requestURL": "https://search.yahoo.com/search?p=%E5%AF%86%E8%8A%B1%E7%99%BD%E9%A3%AF%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:50.132Z",
+          "outcome": "redirect-loop"
+        },
+        {
+          "query": "密花白飯樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%AF%86%E8%8A%B1%E7%99%BD%E9%A3%AF%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:37.800Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-382",
+      "label": "梧桐",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 5,
+      "queries": [
+        {
+          "query": "梧桐 臺北 歷史",
+          "requestURL": "https://www.bing.com/search?q=%E6%A2%A7%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:53.930Z",
+          "outcome": "unusable-off-topic-results"
+        },
+        {
+          "query": "梧桐 臺北 歷史",
+          "requestURL": "https://tw.search.yahoo.com/search?p=%E6%A2%A7%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:28:59.670Z",
+          "outcome": "redirect-loop"
+        },
+        {
+          "query": "梧桐 台北 捐贈 植栽 護樹",
+          "requestURL": "https://www.google.com/search?gbv=1&q=%E6%A2%A7%E6%A1%90%20%E5%8F%B0%E5%8C%97%20%E6%8D%90%E8%B4%88%20%E6%A4%8D%E6%A0%BD%20%E8%AD%B7%E6%A8%B9",
+          "accessedAt": "2026-10-24T02:29:05.022Z",
+          "outcome": "empty-shell"
+        },
+        {
+          "query": "\"梧桐\" \"臺北\" 歷史",
+          "requestURL": "https://www.bing.com/search?setlang=zh-hant&cc=tw&q=%22%E6%A2%A7%E6%A1%90%22%20%22%E8%87%BA%E5%8C%97%22%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:09.565Z",
+          "outcome": "unusable-off-topic-results"
+        },
+        {
+          "query": "梧桐 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A2%A7%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:29.240Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-383",
+      "label": "粗糠柴",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "粗糠柴 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%B2%97%E7%B3%A0%E6%9F%B4%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:39.040Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-384",
+      "label": "棕櫚",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "棕櫚 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A3%95%E6%AB%9A%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:40.377Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-385",
+      "label": "椬梧",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "椬梧 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A4%AC%E6%A2%A7%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:42.224Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-386",
+      "label": "番龍眼",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "番龍眼 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%95%AA%E9%BE%8D%E7%9C%BC%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:49.883Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-387",
+      "label": "黃杞",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "黃杞 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%83%E6%9D%9E%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:51.034Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-388",
+      "label": "黃金果",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "黃金果 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BB%83%E9%87%91%E6%9E%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:53.036Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-389",
+      "label": "圓葉福祿桐",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "圓葉福祿桐 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%9C%93%E8%91%89%E7%A6%8F%E7%A5%BF%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:54.067Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-390",
+      "label": "楠樹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "楠樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A5%A0%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:55.781Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-391",
+      "label": "綠珊瑚",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "綠珊瑚 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%B6%A0%E7%8F%8A%E7%91%9A%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:57.417Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-392",
+      "label": "蒲瓜樹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "蒲瓜樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%92%B2%E7%93%9C%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:29:58.644Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-393",
+      "label": "銀葉樹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "銀葉樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%8A%80%E8%91%89%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:00.137Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-394",
+      "label": "樹商陸",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "樹商陸 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A8%B9%E5%95%86%E9%99%B8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:01.792Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-395",
+      "label": "橘子",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "橘子 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A9%98%E5%AD%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:03.398Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-396",
+      "label": "橡皮樹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "橡皮樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%A9%A1%E7%9A%AE%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:11.128Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-397",
+      "label": "頷垂豆",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "頷垂豆 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%A0%B7%E5%9E%82%E8%B1%86%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:12.390Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-398",
+      "label": "龍血樹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "龍血樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E9%BE%8D%E8%A1%80%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:14.101Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-399",
+      "label": "檄樹",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "檄樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%AA%84%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:15.478Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-400",
+      "label": "藍棕櫚",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "藍棕櫚 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E8%97%8D%E6%A3%95%E6%AB%9A%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:17.365Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-401",
+      "label": "羅庚果",
+      "recordCount": 2,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "羅庚果 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%BE%85%E5%BA%9A%E6%9E%9C%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:18.975Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-402",
+      "label": "七里香",
+      "recordCount": 1,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "七里香 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E4%B8%83%E9%87%8C%E9%A6%99%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:20.056Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-403",
+      "label": "大明橘",
+      "recordCount": 1,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "大明橘 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%A4%A7%E6%98%8E%E6%A9%98%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:21.525Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-404",
+      "label": "小果油茶",
+      "recordCount": 1,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "小果油茶 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B0%8F%E6%9E%9C%E6%B2%B9%E8%8C%B6%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:23.320Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-405",
+      "label": "山枇杷",
+      "recordCount": 1,
+      "searchStatus": "searched",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山枇杷 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E6%9E%87%E6%9D%B7%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:24.496Z",
+          "outcome": "usable-results"
+        }
+      ]
+    },
+    {
+      "id": "species-406",
+      "label": "山柿",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "山柿 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B1%B1%E6%9F%BF%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:31.685Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-407",
+      "label": "冇骨消",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "冇骨消 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%86%87%E9%AA%A8%E6%B6%88%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:32.646Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-408",
+      "label": "化香樹",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "化香樹 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%8C%96%E9%A6%99%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:33.621Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-409",
+      "label": "太平洋榲桲",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "太平洋榲桲 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%A4%AA%E5%B9%B3%E6%B4%8B%E6%A6%B2%E6%A1%B2%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:34.794Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-410",
+      "label": "巴西胡椒木",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "巴西胡椒木 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%B7%B4%E8%A5%BF%E8%83%A1%E6%A4%92%E6%9C%A8%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:36.141Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-411",
+      "label": "日本香柏",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "日本香柏 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E9%A6%99%E6%9F%8F%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:37.491Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-412",
+      "label": "牛奶榕",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "牛奶榕 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%89%9B%E5%A5%B6%E6%A6%95%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:38.459Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-413",
+      "label": "冬青",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "冬青 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E5%86%AC%E9%9D%92%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:39.590Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-414",
+      "label": "白木香",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "白木香 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%99%BD%E6%9C%A8%E9%A6%99%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:40.617Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-415",
+      "label": "白仙丹花",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "白仙丹花 臺北 歷史",
+          "requestURL": "https://www.google.com/search?q=%E7%99%BD%E4%BB%99%E4%B8%B9%E8%8A%B1%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:41.702Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-416",
+      "label": "白桐",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 2,
+      "queries": [
+        {
+          "query": "白桐 臺北 歷史",
+          "requestURL": "https://search.brave.com/search?q=%E7%99%BD%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:49.708Z",
+          "outcome": "rate-limited"
+        },
+        {
+          "query": "白桐 臺北 歷史",
+          "requestURL": "https://www.gov.taipei/Search.aspx?q=%E7%99%BD%E6%A1%90%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:30:55.727Z",
+          "outcome": "invalid-search-endpoint"
+        }
+      ]
+    },
+    {
+      "id": "species-417",
+      "label": "石苓舅",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "石苓舅 臺北 歷史",
+          "requestURL": "https://www.startpage.com/sp/search?query=%E7%9F%B3%E8%8B%93%E8%88%85%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:26.139Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-418",
+      "label": "印度塔樹",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 1,
+      "queries": [
+        {
+          "query": "印度塔樹 臺北 歷史",
+          "requestURL": "https://www.mojeek.com/search?q=%E5%8D%B0%E5%BA%A6%E5%A1%94%E6%A8%B9%20%E8%87%BA%E5%8C%97%20%E6%AD%B7%E5%8F%B2",
+          "accessedAt": "2026-10-24T02:31:30.884Z",
+          "outcome": "challenge"
+        }
+      ]
+    },
+    {
+      "id": "species-419",
+      "label": "早田氏柃木",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-420",
+      "label": "灰木",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-421",
+      "label": "米飯花",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-422",
+      "label": "赤皮",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-423",
+      "label": "亞歷山大椰子",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-424",
+      "label": "使君子",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-425",
+      "label": "夜合花",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-426",
+      "label": "夜香木",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-427",
+      "label": "油桐",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-428",
+      "label": "油葉石櫟",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-429",
+      "label": "狐尾椰子",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-430",
+      "label": "芭樂",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-431",
+      "label": "金雞納樹",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-432",
+      "label": "長紅木",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-433",
+      "label": "南洋含笑花",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-434",
+      "label": "柳丁",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-435",
+      "label": "紅仔珠",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-436",
+      "label": "紅皮",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-437",
+      "label": "紅刺露兜",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-438",
+      "label": "紅葉樹",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-439",
+      "label": "美國紅梣",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-440",
+      "label": "香拔",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-441",
+      "label": "桂葉黃梅",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-442",
+      "label": "茜草樹",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-443",
+      "label": "馬氏射葉椰子",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-444",
+      "label": "馬拉巴柿",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-445",
+      "label": "麻楝",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-446",
+      "label": "朝鮮紫珠",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-447",
+      "label": "番茉莉",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-448",
+      "label": "象腳王蘭",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-449",
+      "label": "黃果垂榕",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-450",
+      "label": "黃荊",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-451",
+      "label": "楓港柿",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-452",
+      "label": "裡白楤木",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-453",
+      "label": "過山香",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-454",
+      "label": "綠葉竹蕉",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-455",
+      "label": "臺灣泡桐",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-456",
+      "label": "臺灣梣",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-457",
+      "label": "銀杏",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-458",
+      "label": "銀葉桉",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-459",
+      "label": "劍葉緬梔",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-460",
+      "label": "槭樹",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-461",
+      "label": "槲櫟",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-462",
+      "label": "樟葉槭",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-463",
+      "label": "潺槁木薑子",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-464",
+      "label": "盤龍木",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-465",
+      "label": "糊樗",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-466",
+      "label": "澳洲胡桃",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-467",
+      "label": "叢花百日青",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-468",
+      "label": "蘭嶼山桂花",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-469",
+      "label": "霸王椰子",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-470",
+      "label": "彎子木",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    },
+    {
+      "id": "species-471",
+      "label": "鷹爪花",
+      "recordCount": 1,
+      "searchStatus": "blocked-search-access",
+      "queryCount": 0,
+      "queries": []
+    }
+  ]
+}

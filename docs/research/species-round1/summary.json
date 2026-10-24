@@ -1,0 +1,32 @@
+{
+  "totalLabels": 471,
+  "meaningfulLabels": 468,
+  "statusCounts": {
+    "searched": 170,
+    "blocked-search-access": 298,
+    "needs-name-review": 3
+  },
+  "labelsWithActualRequest": 245,
+  "labelsBlockedWithoutIndividualRequest": 223,
+  "labelsWithOnlyBlockedRequests": 75,
+  "labelsWithAtLeastTwoDistinctQueries": 37,
+  "actualDistinctPerLabelQueryStrings": 290,
+  "actualQueryRequests": 320,
+  "bodyReviews": 40,
+  "newSourceSupportedStories": 18,
+  "nameReview": [
+    {
+      "id": "species-199",
+      "label": "烏?"
+    },
+    {
+      "id": "species-214",
+      "label": ""
+    },
+    {
+      "id": "species-294",
+      "label": "枯木"
+    }
+  ],
+  "limitations": "Source labels are not taxonomic species. Search negatives mean not found in this bounded round, not absence of history. Search snippets are leads, never source-supported evidence. Blocked requests do not count as usable search coverage. No story is automatically associated with present GIS individuals."
+}

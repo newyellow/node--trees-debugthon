@@ -1,0 +1,857 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-24T02:46:33.819Z",
+  "method": "逐一重新呼叫 web_fetch 原始URL並閱讀抽取正文；工具快取命中如實記錄，不使用子代理結論、搜尋片段或AI摘要。source-supported只代表所引來源支持有限敘事。",
+  "candidateCount": 18,
+  "acceptedCount": 18,
+  "rejectedCount": 0,
+  "acceptedUnchangedCount": 14,
+  "acceptedWithAdjustmentsCount": 4,
+  "urlCount": 19,
+  "independentAccessFailures": 0,
+  "coverageNote": "18筆全數完成正文檢視；19個來源URL均取得正文，1個web_fetch結果為工具快取。未動正式資料、UI、影像、git staging或部署。",
+  "duplicationReview": {
+    "formalEntryCount": 18,
+    "method": "逐筆閱讀正式18筆的樹種、地點、時期、摘要與來源URL；比較故事事件而非僅比ID。",
+    "duplicateIds": [],
+    "duplicateUrls": [],
+    "nearOverlaps": [
+      {
+        "candidateId": "ntu-koelreuteria-road-naming",
+        "formalIds": [
+          "inst-ntu-palm-axis",
+          "inst-ntu-azalea-donation",
+          "inst-ntu-camphor-wave",
+          "inst-ntu-fu-phoenix",
+          "inst-ntu-juniper-road-widening"
+        ],
+        "reason": "同為臺大校園，樹種、時期與命名事件不同。"
+      },
+      {
+        "candidateId": "site-zhongzheng138-mango-early-planting",
+        "formalIds": [
+          "inst-three-lane-uniform-policy"
+        ],
+        "reason": "同涉三線路，但此筆是中正138綠地早年檬果與2026回顧，不是1936後各路段植栽政策。"
+      }
+    ],
+    "verdict": "18筆均無重複既有故事；同物種或同校園不視為重複。"
+  },
+  "entries": [
+    {
+      "id": "meilun-presidential-banyans-removal",
+      "verdict": "accept",
+      "reason": "正文支持兩株榕樹的種植者、2025-11-24鑑定、2026-04-24移除及石碑收藏；日期有明文。只代表機關公告，非獨立病理鑑定。",
+      "originalSpecies": [
+        "榕樹"
+      ],
+      "reviewedSpecies": [
+        "榕樹"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:13.133Z",
+            "finalUrl": "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "經文化局同意解除列管後，公園處後續已於115年4月24日完成移除工作，另外，石碑已另行收藏管理。",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "經文化局同意解除列管後，公園處後續已於115年4月24日完成移除工作，另外，石碑已另行收藏管理。"
+          },
+          "claimReview": "正文支持兩株榕樹的種植者、2025-11-24鑑定、2026-04-24移除及石碑收藏；日期有明文。只代表機關公告，非獨立病理鑑定。",
+          "verdict": "accept",
+          "reason": "正文支持兩株榕樹的種植者、2025-11-24鑑定、2026-04-24移除及石碑收藏；日期有明文。只代表機關公告，非獨立病理鑑定。",
+          "bodyEvidence": {
+            "sha256": "78bbf8d816eba84ced813ef9cf91a430f69dc7a231d5dd1ef2e94d19fed9faed",
+            "characters": 840,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cukeng-bischofia-road-preservation",
+      "verdict": "accept",
+      "reason": "正文支持地址、百大老樹、粗坑名稱與拓寬保留；100年度為勘查，不能當拓寬年份。",
+      "originalSpecies": [
+        "茄苳"
+      ],
+      "reviewedSpecies": [
+        "茄苳"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://eculture.gov.taipei/trees/zh-tw/tree/2070",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:14.199Z",
+            "finalUrl": "https://eculture.gov.taipei/trees/zh-tw/tree/2070",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "因當地古名「粗坑」該樹也被命名粗坑茄苳，曾於100年度進行勘查，當時馬路拓寬時特予保留現位於路中央。",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "因當地古名「粗坑」該樹也被命名粗坑茄苳，曾於100年度進行勘查，當時馬路拓寬時特予保留現位於路中央。"
+          },
+          "claimReview": "正文支持地址、百大老樹、粗坑名稱與拓寬保留；100年度為勘查，不能當拓寬年份。",
+          "verdict": "accept",
+          "reason": "正文支持地址、百大老樹、粗坑名稱與拓寬保留；100年度為勘查，不能當拓寬年份。",
+          "bodyEvidence": {
+            "sha256": "39fa5e0f868855e208247d68334d649b0552acdb4fefee11b786306db76a3a56",
+            "characters": 427,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tmu-maple-walk-campus-memory",
+      "verdict": "accept-with-adjustments",
+      "reason": "正文支持創校初植、宿舍通道與居民散步；原摘錄將原文「隧道，」截斷改為「隧道。」並非逐字連續引用，移除自行加上的句號。",
+      "originalSpecies": [
+        "楓香"
+      ],
+      "reviewedSpecies": [
+        "楓香"
+      ],
+      "adjustments": {
+        "excerpt": "校園往拇山學苑的大道旁之楓香是創校之初所植，夾道兩旁，枝葉茂密繁榮，形成一條綠色隧道"
+      },
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:14.932Z",
+            "finalUrl": "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "校園往拇山學苑的大道旁之楓香是創校之初所植，夾道兩旁，枝葉茂密繁榮，形成一條綠色隧道。",
+            "exact": false,
+            "whitespaceNormalized": false,
+            "reviewedExcerpt": "校園往拇山學苑的大道旁之楓香是創校之初所植，夾道兩旁，枝葉茂密繁榮，形成一條綠色隧道"
+          },
+          "claimReview": "正文支持創校初植、宿舍通道與居民散步；原摘錄將原文「隧道，」截斷改為「隧道。」並非逐字連續引用，移除自行加上的句號。",
+          "verdict": "accept-with-adjustments",
+          "reason": "正文支持創校初植、宿舍通道與居民散步；原摘錄將原文「隧道，」截斷改為「隧道。」並非逐字連續引用，移除自行加上的句號。",
+          "bodyEvidence": {
+            "sha256": "aa7d188bce804ac2f4b3d4fdc7242202bd53df2bd87e5a170783d5a18f21d7db",
+            "characters": 517,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ntu-koelreuteria-road-naming",
+      "verdict": "accept",
+      "reason": "作者第一人稱專欄支持2000年代初欒樹道命名；不認定正式命名決議或全臺第一。",
+      "originalSpecies": [
+        "臺灣欒樹"
+      ],
+      "reviewedSpecies": [
+        "臺灣欒樹"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.agriharvest.tw/archives/128445/",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:15.072Z",
+            "finalUrl": "https://www.agriharvest.tw/archives/128445/",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "「欒樹道」在兩千年初獲得命名，此時欒樹也才剛流行了約二十年，就樹木的時間而言，如此年輕。",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "「欒樹道」在兩千年初獲得命名，此時欒樹也才剛流行了約二十年，就樹木的時間而言，如此年輕。"
+          },
+          "claimReview": "作者第一人稱專欄支持2000年代初欒樹道命名；不認定正式命名決議或全臺第一。",
+          "verdict": "accept",
+          "reason": "作者第一人稱專欄支持2000年代初欒樹道命名；不認定正式命名決議或全臺第一。",
+          "bodyEvidence": {
+            "sha256": "724d782add6f7fbd1795d6c40ce03236edfce98ff61a075ca6f2405314d1d82b",
+            "characters": 1515,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "round1-xiaokeng-celtis-shrine",
+      "verdict": "accept",
+      "reason": "正文支持鄭厝下方朴樹、小坑福德宮與山神神位；1876為主委轉述碑文廟建年，不是樹齡。",
+      "originalSpecies": [
+        "朴樹"
+      ],
+      "reviewedSpecies": [
+        "朴樹"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:35:05.714Z",
+            "finalUrl": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66",
+            "extractor": "readability",
+            "cached": true,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "在廟側的朴樹前面，亦有一座山神神位，到此膜拜的民眾，都會一併虔誠燃香祭拜。",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "在廟側的朴樹前面，亦有一座山神神位，到此膜拜的民眾，都會一併虔誠燃香祭拜。"
+          },
+          "claimReview": "正文支持鄭厝下方朴樹、小坑福德宮與山神神位；1876為主委轉述碑文廟建年，不是樹齡。",
+          "verdict": "accept",
+          "reason": "正文支持鄭厝下方朴樹、小坑福德宮與山神神位；1876為主委轉述碑文廟建年，不是樹齡。",
+          "bodyEvidence": {
+            "sha256": "db641c6f8c798e48ab9019bdd31a0263a4e409aeddd2031fb591f2e2818e83a1",
+            "characters": 1567,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ntu-indian-rosewood-rescue-debate",
+      "verdict": "accept",
+      "reason": "正文支持文學作品、告別、靜坐與院方風險理由；只描述截至報導的爭議，不裁定療效及最終移除。",
+      "originalSpecies": [
+        "印度黃檀"
+      ],
+      "reviewedSpecies": [
+        "印度黃檀"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.cna.com.tw/news/ahel/202204060351.aspx",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:20.036Z",
+            "finalUrl": "https://www.cna.com.tw/news/ahel/202204060351.aspx",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "詩人楊牧曾為它寫下「學院之樹」一詩",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "詩人楊牧曾為它寫下「學院之樹」一詩"
+          },
+          "claimReview": "正文支持文學作品、告別、靜坐與院方風險理由；只描述截至報導的爭議，不裁定療效及最終移除。",
+          "verdict": "accept",
+          "reason": "正文支持文學作品、告別、靜坐與院方風險理由；只描述截至報導的爭議，不裁定療效及最終移除。",
+          "bodyEvidence": {
+            "sha256": "0835851ee851cc6fc51e364cbfa0150672d68836a7d2f04763e0d4c235ace3af",
+            "characters": 1216,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "lishan-plaza-cypress-school-memory",
+      "verdict": "accept",
+      "reason": "正文支持日治書院背景、改善工程及落羽松設計元素；非日治原株，正文未見刊日。",
+      "originalSpecies": [
+        "落羽松"
+      ],
+      "reviewedSpecies": [
+        "落羽松"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://travel.ettoday.net/article/2131139.htm",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:20.045Z",
+            "finalUrl": "https://travel.ettoday.net/article/2131139.htm",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "為呼應這段歷史大地處配合農業社區環境改善時，融合日式涼亭、落羽松和景觀石等元素",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "為呼應這段歷史大地處配合農業社區環境改善時，融合日式涼亭、落羽松和景觀石等元素"
+          },
+          "claimReview": "正文支持日治書院背景、改善工程及落羽松設計元素；非日治原株，正文未見刊日。",
+          "verdict": "accept",
+          "reason": "正文支持日治書院背景、改善工程及落羽松設計元素；非日治原株，正文未見刊日。",
+          "bodyEvidence": {
+            "sha256": "704f55f164dd10fdfbc29d308e8335463d2338af055e654529f7483eab0703e6",
+            "characters": 1025,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "xinglong-scolopia-community-stele",
+      "verdict": "accept",
+      "reason": "前兩段支持1994立碑與神像；剔除文章的台北湖、氣候預測推論，估齡不換算現齡。",
+      "originalSpecies": [
+        "魯花樹"
+      ],
+      "reviewedSpecies": [
+        "魯花樹"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://wenshan.org.tw/wss/index.php/%E7%94%9F%E6%85%8B/item/2079-%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%89%E6%AE%B5%E7%9A%84%E7%99%BE%E5%B9%B4%E9%AD%AF%E8%8A%B1%E6%A8%B9%E8%88%87%E5%8F%B0%E5%8C%97%E6%B9%96",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:20.233Z",
+            "finalUrl": "https://wenshan.org.tw/wss/index.php/%E7%94%9F%E6%85%8B/item/2079-%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%89%E6%AE%B5%E7%9A%84%E7%99%BE%E5%B9%B4%E9%AD%AF%E8%8A%B1%E6%A8%B9%E8%88%87%E5%8F%B0%E5%8C%97%E6%B9%96",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "附近居民因其特殊性，已於1994年為其立碑紀念，碑名為”護百年老樹誌”",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "附近居民因其特殊性，已於1994年為其立碑紀念，碑名為”護百年老樹誌”"
+          },
+          "claimReview": "前兩段支持1994立碑與神像；剔除文章的台北湖、氣候預測推論，估齡不換算現齡。",
+          "verdict": "accept",
+          "reason": "前兩段支持1994立碑與神像；剔除文章的台北湖、氣候預測推論，估齡不換算現齡。",
+          "bodyEvidence": {
+            "sha256": "46f92a7b3a109cc0344c98a94e17563b30c3cafd5f9af61fd59eea7564d89452",
+            "characters": 2707,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rongxing-hibiscus-play-care",
+      "verdict": "accept",
+      "reason": "正文支持乘涼、童玩、修剪後再茂與未來可能植穴方案；不是工程完工證明或醫學證據。",
+      "originalSpecies": [
+        "黃槿"
+      ],
+      "reviewedSpecies": [
+        "黃槿"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=C97A944E3C88A5D0",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:20.021Z",
+            "finalUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=C97A944E3C88A5D0",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "女孩們則以它的花苞當做耳環，用暗紫色的花心當作指甲油",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "女孩們則以它的花苞當做耳環，用暗紫色的花心當作指甲油"
+          },
+          "claimReview": "正文支持乘涼、童玩、修剪後再茂與未來可能植穴方案；不是工程完工證明或醫學證據。",
+          "verdict": "accept",
+          "reason": "正文支持乘涼、童玩、修剪後再茂與未來可能植穴方案；不是工程完工證明或醫學證據。",
+          "bodyEvidence": {
+            "sha256": "b42a71e928dee482be13bb514736271598a8c859e69ebcc99b42dc37eab64653",
+            "characters": 1065,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "beitou-citrus-naming-orchard-memory",
+      "verdict": "accept",
+      "reason": "正文首段支持桶柑、草山柑及年柑命名說法與北投栽培；保留來源原稱柑橘，不作分類鑑定。",
+      "originalSpecies": [
+        "柑橘"
+      ],
+      "reviewedSpecies": [
+        "柑橘"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E789E8819879CC5",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:19.994Z",
+            "finalUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E789E8819879CC5",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "又多種植在草山地區，而有「草山柑」名稱",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "又多種植在草山地區，而有「草山柑」名稱"
+          },
+          "claimReview": "正文首段支持桶柑、草山柑及年柑命名說法與北投栽培；保留來源原稱柑橘，不作分類鑑定。",
+          "verdict": "accept",
+          "reason": "正文首段支持桶柑、草山柑及年柑命名說法與北投栽培；保留來源原稱柑橘，不作分類鑑定。",
+          "bodyEvidence": {
+            "sha256": "1baff5ce0471eead89eb255ffc765b566fe2e1808c4f0c21915d385649c74e85",
+            "characters": 913,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "site-zhongzheng138-mango-early-planting",
+      "verdict": "accept",
+      "reason": "正文與發稿日期支持2026回顧、1981綠地開闢及早年植樟樹、茄冬、檬果；不混同開闢與定植年。",
+      "originalSpecies": [
+        "檬果"
+      ],
+      "reviewedSpecies": [
+        "檬果"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=26843120BAF90963",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:25.653Z",
+            "finalUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=26843120BAF90963",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "早年栽植許多樟樹、茄冬、檬果樹等，如今已成齡成蔭",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "早年栽植許多樟樹、茄冬、檬果樹等，如今已成齡成蔭"
+          },
+          "claimReview": "正文與發稿日期支持2026回顧、1981綠地開闢及早年植樟樹、茄冬、檬果；不混同開闢與定植年。",
+          "verdict": "accept",
+          "reason": "正文與發稿日期支持2026回顧、1981綠地開闢及早年植樟樹、茄冬、檬果；不混同開闢與定植年。",
+          "bodyEvidence": {
+            "sha256": "4876a8bd40d6113b12e3405739f13e0b90f6fa7fa8ef2f899052fd231c43c8ba",
+            "characters": 1528,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "inst-tbg-palmetto-donation-import",
+      "verdict": "accept",
+      "reason": "正文支持1898日本寄贈及1909印度引入、兩植物園栽培與文成時十餘株；不認定今日皆原株。",
+      "originalSpecies": [
+        "龍鱗櫚"
+      ],
+      "reviewedSpecies": [
+        "龍鱗櫚"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.tfri.gov.tw/News_Content.aspx?n=7658&s=262",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:25.660Z",
+            "finalUrl": "https://www.tfri.gov.tw/News_Content.aspx?n=7658&s=262",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "本植物1898年由福羽逸人氏從日本寄贈，隨後1909年田代安定氏亦由印度引入台灣",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "本植物1898年由福羽逸人氏從日本寄贈，隨後1909年田代安定氏亦由印度引入台灣"
+          },
+          "claimReview": "正文支持1898日本寄贈及1909印度引入、兩植物園栽培與文成時十餘株；不認定今日皆原株。",
+          "verdict": "accept",
+          "reason": "正文支持1898日本寄贈及1909印度引入、兩植物園栽培與文成時十餘株；不認定今日皆原株。",
+          "bodyEvidence": {
+            "sha256": "41277ab1b6c69ce4f33c7dfe79b1c5b8a14155023e190b9eff9e17cf714a4a21",
+            "characters": 1522,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "site-jingshan-grafted-japanese-maple",
+      "verdict": "accept-with-adjustments",
+      "reason": "正文支持嫁接、苗圃供應、水圳及平台改善；來源明稱紅葉雞爪槭，不是雞爪楓，須改為原文名稱。",
+      "originalSpecies": [
+        "雞爪楓"
+      ],
+      "reviewedSpecies": [
+        "紅葉雞爪槭"
+      ],
+      "adjustments": {
+        "species": [
+          "紅葉雞爪槭"
+        ]
+      },
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.geo.gov.taipei/News_Content.aspx?n=23285747C0511EC4&sms=72544237BBE4C5F6&s=43EC368CF988933B",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:25.582Z",
+            "finalUrl": "https://www.geo.gov.taipei/News_Content.aspx?n=23285747C0511EC4&sms=72544237BBE4C5F6&s=43EC368CF988933B",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "是當地業者將日本槭的枝芽嫁接在臺灣本土青楓的枝幹上",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "是當地業者將日本槭的枝芽嫁接在臺灣本土青楓的枝幹上"
+          },
+          "claimReview": "正文支持嫁接、苗圃供應、水圳及平台改善；來源明稱紅葉雞爪槭，不是雞爪楓，須改為原文名稱。",
+          "verdict": "accept-with-adjustments",
+          "reason": "正文支持嫁接、苗圃供應、水圳及平台改善；來源明稱紅葉雞爪槭，不是雞爪楓，須改為原文名稱。",
+          "bodyEvidence": {
+            "sha256": "712f0788bdc2f86d5c1b8181593caa049b3876878d93f49b91d2bfe251784cba",
+            "characters": 1176,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "site-shuanglian-cassia-spacing-2026",
+      "verdict": "accept",
+      "reason": "正文發稿日期及說明段支持里長會勘、園路寬與10株花旗木位置；未驗證市府後續承諾。",
+      "originalSpecies": [
+        "花旗木"
+      ],
+      "reviewedSpecies": [
+        "花旗木"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E23EF226D87E480",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:25.636Z",
+            "finalUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E23EF226D87E480",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "公園處種植10株花旗木時，為預留日後生長空間，以及與園路另一側既有樹木保持適當距離",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "公園處種植10株花旗木時，為預留日後生長空間，以及與園路另一側既有樹木保持適當距離"
+          },
+          "claimReview": "正文發稿日期及說明段支持里長會勘、園路寬與10株花旗木位置；未驗證市府後續承諾。",
+          "verdict": "accept",
+          "reason": "正文發稿日期及說明段支持里長會勘、園路寬與10株花旗木位置；未驗證市府後續承諾。",
+          "bodyEvidence": {
+            "sha256": "62fe56084306fbad278c3d8a5cf3bdad49307c9c708a8061ec52d9cc3816a460",
+            "characters": 674,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "site-daan-hundredflowers-loropetalum-design",
+      "verdict": "accept",
+      "reason": "正文支持共同設計者、紅花繼木混植與2021花季；沒有捐贈或逐株定植證據。",
+      "originalSpecies": [
+        "紅花繼木"
+      ],
+      "reviewedSpecies": [
+        "紅花繼木"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=208EAE53ED2BFF08",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:25.571Z",
+            "finalUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=208EAE53ED2BFF08",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "植栽設計要考量基地特性、植物型態、花期、花色等",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "植栽設計要考量基地特性、植物型態、花期、花色等"
+          },
+          "claimReview": "正文支持共同設計者、紅花繼木混植與2021花季；沒有捐贈或逐株定植證據。",
+          "verdict": "accept",
+          "reason": "正文支持共同設計者、紅花繼木混植與2021花季；沒有捐贈或逐株定植證據。",
+          "bodyEvidence": {
+            "sha256": "e13835fbb3af6883c8c60a51c0856efc0a8636de23d92a3f5cb8d2f38cd56368",
+            "characters": 1050,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "round1-dalunwei-myrsine-2021",
+      "verdict": "accept",
+      "reason": "公視正文及荒野立場文支持計畫、爭議、原有大明橘及各方說法；荒野是參與方，兩文不等於兩個獨立調查，10公頃非單種純林。",
+      "originalSpecies": [
+        "大明橘"
+      ],
+      "reviewedSpecies": [
+        "大明橘"
+      ],
+      "adjustments": {},
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://ourisland.pts.org.tw/content/8106",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:32.460Z",
+            "finalUrl": "https://ourisland.pts.org.tw/content/8106",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "大明橘則是特有種蝴蝶，台灣尾蜆蝶的重要寄主植物。",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "大明橘則是特有種蝴蝶，台灣尾蜆蝶的重要寄主植物。"
+          },
+          "claimReview": "公視正文及荒野立場文支持計畫、爭議、原有大明橘及各方說法；荒野是參與方，兩文不等於兩個獨立調查，10公頃非單種純林。",
+          "verdict": "accept",
+          "reason": "公視正文及荒野立場文支持計畫、爭議、原有大明橘及各方說法；荒野是參與方，兩文不等於兩個獨立調查，10公頃非單種純林。",
+          "bodyEvidence": {
+            "sha256": "bc2aeb92874d2b9be658ba374e2a63adff58963415f865b20aab5bdd541c7f57",
+            "characters": 2610,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        },
+        {
+          "url": "https://www.sow.org.tw/blog/20210709/42304",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:32.972Z",
+            "finalUrl": "https://www.sow.org.tw/blog/20210709/42304",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "伐除原有以風衝林代表樹種「大明橘」為主的次生林相",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "伐除原有以風衝林代表樹種「大明橘」為主的次生林相"
+          },
+          "claimReview": "公視正文及荒野立場文支持計畫、爭議、原有大明橘及各方說法；荒野是參與方，兩文不等於兩個獨立調查，10公頃非單種純林。",
+          "verdict": "accept",
+          "reason": "公視正文及荒野立場文支持計畫、爭議、原有大明橘及各方說法；荒野是參與方，兩文不等於兩個獨立調查，10公頃非單種純林。",
+          "bodyEvidence": {
+            "sha256": "477a4fc2f6ccd9c870600a9ed717687b6d0be2a57871406a024237c021697e83",
+            "characters": 5149,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "round1-daan-rubber-family-memory",
+      "verdict": "accept-with-adjustments",
+      "reason": "全文支持作者及父母的家族回憶、園內重訪、落葉船與喝茶；樹前牌子據作者記為印度橡膠樹，不能用GIS橡皮樹標籤取代。",
+      "originalSpecies": [
+        "印度橡膠樹（原標籤「橡皮樹」之候選，未確認同種）"
+      ],
+      "reviewedSpecies": [
+        "印度橡膠樹"
+      ],
+      "adjustments": {
+        "species": [
+          "印度橡膠樹"
+        ]
+      },
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://vocus.cc/article/63e74f3cfd8978000140015f",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:32.533Z",
+            "finalUrl": "https://vocus.cc/article/63e74f3cfd8978000140015f",
+            "extractor": "cf-markdown",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "我沒有想到雖然我們家以前房舍被拆除，但是公園建設時還是保留了那棵橡膠樹。",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "我沒有想到雖然我們家以前房舍被拆除，但是公園建設時還是保留了那棵橡膠樹。"
+          },
+          "claimReview": "全文支持作者及父母的家族回憶、園內重訪、落葉船與喝茶；樹前牌子據作者記為印度橡膠樹，不能用GIS橡皮樹標籤取代。",
+          "verdict": "accept-with-adjustments",
+          "reason": "全文支持作者及父母的家族回憶、園內重訪、落葉船與喝茶；樹前牌子據作者記為印度橡膠樹，不能用GIS橡皮樹標籤取代。",
+          "bodyEvidence": {
+            "sha256": "90d8b18e87f569a5941f3ddfbd2854d2e5ef5c8f6a081ad2327a1c4ca32e35b5",
+            "characters": 2597,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "round1-neihu-citrus-leisure-2011",
+      "verdict": "accept-with-adjustments",
+      "reason": "正文及明示發布時間支持2011-12-22、12/31開放、50元及城市近郊採果體驗；正文兼用橘子、桶柑，保留橘子原稱，不添加標籤評論。",
+      "originalSpecies": [
+        "橘子（報導具稱桶柑；原標籤未細分）"
+      ],
+      "reviewedSpecies": [
+        "橘子"
+      ],
+      "adjustments": {
+        "species": [
+          "橘子"
+        ]
+      },
+      "limitationsReview": "保留原限制；未把單一來源、口述、估齡、政策意圖或來源分類轉為獨立證實。",
+      "duplicateOf": [],
+      "sources": [
+        {
+          "url": "https://news.pts.org.tw/article/198873",
+          "fetch": {
+            "status": 200,
+            "fetchedAt": "2026-10-24T02:45:32.206Z",
+            "finalUrl": "https://news.pts.org.tw/article/198873",
+            "extractor": "readability",
+            "cached": false,
+            "truncated": false,
+            "access": "body-obtained",
+            "archivedBodySupplement": null
+          },
+          "excerptMatch": {
+            "originalExcerpt": "帶您看，內湖採桶柑，31號就要正式開放，每個人入園費50塊",
+            "exact": true,
+            "whitespaceNormalized": true,
+            "reviewedExcerpt": "帶您看，內湖採桶柑，31號就要正式開放，每個人入園費50塊"
+          },
+          "claimReview": "正文及明示發布時間支持2011-12-22、12/31開放、50元及城市近郊採果體驗；正文兼用橘子、桶柑，保留橘子原稱，不添加標籤評論。",
+          "verdict": "accept-with-adjustments",
+          "reason": "正文及明示發布時間支持2011-12-22、12/31開放、50元及城市近郊採果體驗；正文兼用橘子、桶柑，保留橘子原稱，不添加標籤評論。",
+          "bodyEvidence": {
+            "sha256": "cb5171fd30d6b8b53f8c49c9beebd7d7b27543a849309b17930b15ca1289a82a",
+            "characters": 754,
+            "note": "Full fetched text retained in local research working evidence only; concise exact excerpts and claim reviews committed."
+          }
+        }
+      ]
+    }
+  ]
+}

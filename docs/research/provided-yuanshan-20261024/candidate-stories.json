@@ -1,0 +1,835 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-24",
+  "description": "使用者提供四頁研究摘頁的分拆線索；全數lead，非正式史實認定。",
+  "coverageNote": "六份上傳按SHA256去重為四頁；22筆候選不等於22個獨立已證實事件。保留重疊補證候選供parent去重，不自動合併正式資料。",
+  "entries": [
+    {
+      "id": "yuanshan-pollen-oak",
+      "species": [
+        "青剛櫟屬（Cyclobalanopsis）"
+      ],
+      "location": "臺北盆地鑽探範圍；圓山僅為報告推論",
+      "period": "約5500–3200 BP（原報告分期；BP原則以1950年為基準，未確認校正）",
+      "title": "盆地花粉與圓山森林的尺度差異",
+      "summary": "摘頁引述Liew等花粉研究，將青剛櫟屬（Cyclobalanopsis）列為盆地暖期植被線索，再推論圓山丘陵的森林面貌。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "盆地花粉不能證實圓山特定山坡當時的林分或個體；論文題名、鑽孔位置、年代與花粉分類均待核對。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p21",
+          "printedPage": 21,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p21",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+          "page": 21,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁21／PDF第1頁；盆地花粉與圓山森林的尺度差異",
+          "excerpt": "全新世暖期植被以青剛櫟屬（Cyclobalanopsis）與栲屬（Castanopsis）"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-pollen-castanopsis",
+      "species": [
+        "栲屬（Castanopsis）"
+      ],
+      "location": "臺北盆地鑽探範圍；圓山僅為報告推論",
+      "period": "約5500–3200 BP（原報告分期；BP原則以1950年為基準，未確認校正）",
+      "title": "盆地花粉與圓山森林的尺度差異",
+      "summary": "摘頁引述Liew等花粉研究，將栲屬（Castanopsis）列為盆地暖期植被線索，再推論圓山丘陵的森林面貌。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "盆地花粉不能證實圓山特定山坡當時的林分或個體；論文題名、鑽孔位置、年代與花粉分類均待核對。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p21",
+          "printedPage": 21,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p21",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+          "page": 21,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁21／PDF第1頁；盆地花粉與圓山森林的尺度差異",
+          "excerpt": "為優勢，屬楠櫧林帶"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-machilus",
+      "species": [
+        "紅楠"
+      ],
+      "location": "圓山孤丘（摘頁推測）",
+      "period": "約5500–3200 BP（原報告分期；BP原則以1950年為基準，未確認校正）",
+      "title": "圓山史前闊葉林的推測名單：紅楠",
+      "summary": "摘頁以「丘陵推測覆蓋」描述紅楠等闊葉林成分；這是作者的環境重建想像，非已取得圓山植物遺存鑑定。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "缺圓山本地花粉、木材或種實證據；不得由現有植物反推六千年前分布。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p21",
+          "printedPage": 21,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p21",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+          "page": 21,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁21／PDF第1頁；圓山史前闊葉林的推測名單：紅楠",
+          "excerpt": "丘陵推測覆蓋樟科（紅楠、樟樹）、殼斗科、桑科榕屬等亞熱帶常綠闊葉林。"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-camphor-prehistory",
+      "species": [
+        "樟樹"
+      ],
+      "location": "圓山孤丘（摘頁推測）",
+      "period": "約5500–3200 BP（原報告分期；BP原則以1950年為基準，未確認校正）",
+      "title": "圓山史前闊葉林的推測名單：樟樹",
+      "summary": "摘頁以「丘陵推測覆蓋」描述樟樹等闊葉林成分；這是作者的環境重建想像，非已取得圓山植物遺存鑑定。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "缺圓山本地花粉、木材或種實證據；不得由現有植物反推六千年前分布。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p21",
+          "printedPage": 21,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p21",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+          "page": 21,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁21／PDF第1頁；圓山史前闊葉林的推測名單：樟樹",
+          "excerpt": "丘陵推測覆蓋樟科（紅楠、樟樹）、殼斗科、桑科榕屬等亞熱帶常綠闊葉林。"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-ficus-prehistory",
+      "species": [
+        "桑科榕屬"
+      ],
+      "location": "圓山孤丘（摘頁推測）",
+      "period": "約5500–3200 BP（原報告分期；BP原則以1950年為基準，未確認校正）",
+      "title": "圓山史前闊葉林的推測名單：桑科榕屬",
+      "summary": "摘頁以「丘陵推測覆蓋」描述桑科榕屬等闊葉林成分；這是作者的環境重建想像，非已取得圓山植物遺存鑑定。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "缺圓山本地花粉、木材或種實證據；不得由現有植物反推六千年前分布。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p21",
+          "printedPage": 21,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p21",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+          "page": 21,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁21／PDF第1頁；圓山史前闊葉林的推測名單：桑科榕屬",
+          "excerpt": "丘陵推測覆蓋樟科（紅楠、樟樹）、殼斗科、桑科榕屬等亞熱帶常綠闊葉林。"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-barringtonia-lagoon",
+      "species": [
+        "穗花棋盤腳（Barringtonia racemosa）"
+      ],
+      "location": "臺北盆地潟湖岸；圓山周緣為摘頁敘事範圍",
+      "period": "約5500–3200 BP（原報告分期；BP原則以1950年為基準，未確認校正）",
+      "title": "潟湖岸濕地植物敘事待核：穗花棋盤腳（Barringtonia racemosa）",
+      "summary": "摘頁稱穗花棋盤腳（Barringtonia racemosa）主導湖岸鹹淡交界帶，並把物種變化連到潟湖水文消失；尚未取得對應古植物與生態證據。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "「直接依賴潮汐」與鹽分需求不能視為已證實；風箱樹學名須查分類，不擅改為其他學名。頁21稱北投五分港溪仍有野生族群，與頁24盆地已消失說法有張力。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p21",
+          "printedPage": 21,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p21",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+          "page": 21,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁21／PDF第1頁；潟湖岸濕地植物敘事待核：穗花棋盤腳（Barringtonia racemosa）",
+          "excerpt": "湖岸鹹淡交界帶則由耐鹽的穗花棋盤腳"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-cephalanthus-lagoon",
+      "species": [
+        "風箱樹（Cephalanthus naucleoides；原文拼寫）"
+      ],
+      "location": "臺北盆地潟湖岸；圓山周緣為摘頁敘事範圍",
+      "period": "約5500–3200 BP（原報告分期；BP原則以1950年為基準，未確認校正）",
+      "title": "潟湖岸濕地植物敘事待核：風箱樹（Cephalanthus naucleoides；原文拼寫）",
+      "summary": "摘頁稱風箱樹（Cephalanthus naucleoides；原文拼寫）主導湖岸鹹淡交界帶，並把物種變化連到潟湖水文消失；尚未取得對應古植物與生態證據。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "「直接依賴潮汐」與鹽分需求不能視為已證實；風箱樹學名須查分類，不擅改為其他學名。頁21稱北投五分港溪仍有野生族群，與頁24盆地已消失說法有張力。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p21",
+          "printedPage": 21,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p21",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-21.pdf",
+          "page": 21,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁21／PDF第1頁；潟湖岸濕地植物敘事待核：風箱樹（Cephalanthus naucleoides；原文拼寫）",
+          "excerpt": "湖岸鹹淡交界帶則由耐鹽的穗花棋盤腳"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-dalongdong-banyan",
+      "species": [
+        "榕樹（Ficus microcarpa）"
+      ],
+      "location": "大龍峒聚落；榕樹敘事另及保安宮、孔廟周邊",
+      "period": "清治（摘頁標18世紀中葉–1895）；現存樹未定年",
+      "title": "大龍峒聚落的人文植栽線索：榕樹（Ficus microcarpa）",
+      "summary": "摘頁把榕樹（Ficus microcarpa）列為聚落周邊主要人文植栽，並以榕樹連結廟埕信仰。這是研究報告的歷史歸納，尚待地方志與逐樹資料佐證。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "一般端午插榕、避邪與樹王公習俗不能直接證明特定廟埕的植樹動機；今日老樹不等於清代原株。孔廟不同時期位置也須核對。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p22",
+          "printedPage": 22,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p22",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-22.pdf",
+          "page": 22,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁22／PDF第1頁；大龍峒聚落的人文植栽線索：榕樹（Ficus microcarpa）",
+          "excerpt": "聚落周邊以榕樹（Ficus microcarpa）、相思樹（Acacia confusa）為主要人文植栽。"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-dalongdong-acacia",
+      "species": [
+        "相思樹（Acacia confusa）"
+      ],
+      "location": "大龍峒聚落；榕樹敘事另及保安宮、孔廟周邊",
+      "period": "清治（摘頁標18世紀中葉–1895）；現存樹未定年",
+      "title": "大龍峒聚落的人文植栽線索：相思樹（Acacia confusa）",
+      "summary": "摘頁把相思樹（Acacia confusa）列為聚落周邊主要人文植栽，並以榕樹連結廟埕信仰。這是研究報告的歷史歸納，尚待地方志與逐樹資料佐證。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "一般端午插榕、避邪與樹王公習俗不能直接證明特定廟埕的植樹動機；今日老樹不等於清代原株。孔廟不同時期位置也須核對。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p22",
+          "printedPage": 22,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p22",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-22.pdf",
+          "page": 22,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁22／PDF第1頁；大龍峒聚落的人文植栽線索：相思樹（Acacia confusa）",
+          "excerpt": "聚落周邊以榕樹（Ficus microcarpa）、相思樹（Acacia confusa）為主要人文植栽。"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-park-cherry",
+      "species": [
+        "櫻（未細分種類）"
+      ],
+      "location": "圓山公園",
+      "period": "1898年（摘頁稱首次植樹）",
+      "title": "圓山公園首批植樹名單待核：櫻（未細分種類）",
+      "summary": "摘頁稱53名總督府官員攜150株苗木到圓山公園，名單包括「櫻、樟、松、杉」；櫻（未細分種類）為其中一類。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "人數、株數、來源苗圃與「首次」須核原書及植樹紀錄。正文櫻不能因插圖標山櫻花就指定山櫻花；松、杉亦不細分種。「故鄉／新領土」是作者詮釋，無已讀動機文書。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；圓山公園首批植樹名單待核：櫻（未細分種類）",
+          "excerpt": "1898年首次植樹，總督府官員53人自小南門苗圃（臺北植物園前身）攜150株"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-park-camphor",
+      "species": [
+        "樟"
+      ],
+      "location": "圓山公園",
+      "period": "1898年（摘頁稱首次植樹）",
+      "title": "圓山公園首批植樹名單待核：樟",
+      "summary": "摘頁稱53名總督府官員攜150株苗木到圓山公園，名單包括「櫻、樟、松、杉」；樟為其中一類。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "人數、株數、來源苗圃與「首次」須核原書及植樹紀錄。正文櫻不能因插圖標山櫻花就指定山櫻花；松、杉亦不細分種。「故鄉／新領土」是作者詮釋，無已讀動機文書。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；圓山公園首批植樹名單待核：樟",
+          "excerpt": "1898年首次植樹，總督府官員53人自小南門苗圃（臺北植物園前身）攜150株"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-park-pine",
+      "species": [
+        "松（未細分種類）"
+      ],
+      "location": "圓山公園",
+      "period": "1898年（摘頁稱首次植樹）",
+      "title": "圓山公園首批植樹名單待核：松（未細分種類）",
+      "summary": "摘頁稱53名總督府官員攜150株苗木到圓山公園，名單包括「櫻、樟、松、杉」；松（未細分種類）為其中一類。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "人數、株數、來源苗圃與「首次」須核原書及植樹紀錄。正文櫻不能因插圖標山櫻花就指定山櫻花；松、杉亦不細分種。「故鄉／新領土」是作者詮釋，無已讀動機文書。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；圓山公園首批植樹名單待核：松（未細分種類）",
+          "excerpt": "1898年首次植樹，總督府官員53人自小南門苗圃（臺北植物園前身）攜150株"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-park-cedar",
+      "species": [
+        "杉（未細分種類）"
+      ],
+      "location": "圓山公園",
+      "period": "1898年（摘頁稱首次植樹）",
+      "title": "圓山公園首批植樹名單待核：杉（未細分種類）",
+      "summary": "摘頁稱53名總督府官員攜150株苗木到圓山公園，名單包括「櫻、樟、松、杉」；杉（未細分種類）為其中一類。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "人數、株數、來源苗圃與「首次」須核原書及植樹紀錄。正文櫻不能因插圖標山櫻花就指定山櫻花；松、杉亦不細分種。「故鄉／新領土」是作者詮釋，無已讀動機文書。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；圓山公園首批植樹名單待核：杉（未細分種類）",
+          "excerpt": "1898年首次植樹，總督府官員53人自小南門苗圃（臺北植物園前身）攜150株"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-shrine-forest",
+      "species": [
+        "原生闊葉林（未載明單一樹種）"
+      ],
+      "location": "劍潭山臺灣神社周邊",
+      "period": "1901年；至戰後圓山飯店時期為頁24延伸敘述",
+      "title": "神社森林與「鎮守之森」的報告詮釋",
+      "summary": "摘頁把劍潭山闊葉林描述為神社鎮守之森基底，另稱森林跨越神社與飯店兩時代延續。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "森林連續性、實際保留範圍與植栽變動尚未核對；宗教功能與原生性須分別查證，不能視所有現樹為神社原株。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；神社森林與「鎮守之森」的報告詮釋",
+          "excerpt": "周邊原生闊葉林構成日本神道「鎮守之森」基底。"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-avenue-acacia",
+      "species": [
+        "相思樹"
+      ],
+      "location": "敕使街道（今中山北路）",
+      "period": "1901年起（摘頁說法）",
+      "title": "敕使街道早期相思樹：既有故事補充線索",
+      "summary": "摘頁稱敕使街道初期行道樹為相思樹，兩側為稻田；作為既有故事的補充資料，非新增已證實事件。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "與既有相思樹故事重疊，優先補來源而非重複新增；道路竣工年與各段植樹年須分開。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [
+        "inst-zhongshan-practical-acacia"
+      ],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；敕使街道早期相思樹：既有故事補充線索",
+          "excerpt": "敕使街道1901年竣工，初期行道樹為相思樹，兩側仍為稻田景觀。"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-palm-introduction",
+      "species": [
+        "大王椰子（Roystonea regia）"
+      ],
+      "location": "臺灣引種敘事；圓山具體栽植點未載",
+      "period": "1896年（摘頁主張，未確認）",
+      "title": "大王椰子引種年與「南方」意圖待核",
+      "summary": "摘頁稱1896年引入大王椰子，並把種植解讀為製造熱帶「南方」景觀；未提供可對應圓山的種植紀錄。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "引入年份文獻不一致，不採為定論；沒有已讀政策文書可證排他性的「不是遮蔭而是南方」動機；地點不足，暫不合併正式故事。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [
+        "inst-three-lane-uniform-policy",
+        "inst-renai-palms-retention"
+      ],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；大王椰子引種年與「南方」意圖待核",
+          "excerpt": "1896年日本政府引進大王椰子（Roystonea regia）"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-avenue-banyan-removal",
+      "species": [
+        "榕樹"
+      ],
+      "location": "敕使街道",
+      "period": "1937–1941拓寬敘事；樹木撤換確切年未證",
+      "title": "榕樹撤換與田代安定理論不可直接串成同年因果",
+      "summary": "摘頁在後期拓寬段落引用田代安定對榕樹行道樹適性判斷，接續敘述相思樹與榕樹撤換。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "田代安定卒於1928年（年代警示仍應補權威傳記核驗），不能寫成他於1937–1941現場判定。須分查理論發表、工程與撤樹年份。「殖民現代性／民間傳統界線」僅作者詮釋。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；榕樹撤換與田代安定理論不可直接串成同年因果",
+          "excerpt": "植物學家田代安定判定榕樹不適合行道樹，原有相思樹與榕樹被撤換"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-avenue-camphor",
+      "species": [
+        "樟樹（Cinnamomum camphora）"
+      ],
+      "location": "敕使街道（今中山北路）分隔島",
+      "period": "日治後期（摘頁置於1937–1945段落）",
+      "title": "帝國軸線植栽配置：樟樹（Cinnamomum camphora）",
+      "summary": "摘頁稱分隔島種植樟樹（Cinnamomum camphora），並賦予政治美學意義；配置敘事與既有中山北路故事有重疊。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "拓寬期不直接等於各株種植年；樟腦經濟數字不能證明此處植樹動機；賞楓、日本想像與神木需求均須與可驗植栽紀錄分開。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [
+        "inst-zhongshan-diplomatic-avenue"
+      ],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；帝國軸線植栽配置：樟樹（Cinnamomum camphora）",
+          "excerpt": "分隔島種植樟樹（Cinnamomum camphora），人行道種植楓香"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-avenue-sweetgum",
+      "species": [
+        "楓香（Liquidambar formosana）"
+      ],
+      "location": "敕使街道（今中山北路）人行道",
+      "period": "日治後期（摘頁置於1937–1945段落）",
+      "title": "帝國軸線植栽配置：楓香（Liquidambar formosana）",
+      "summary": "摘頁稱人行道種植楓香（Liquidambar formosana），並賦予政治美學意義；配置敘事與既有中山北路故事有重疊。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "拓寬期不直接等於各株種植年；樟腦經濟數字不能證明此處植樹動機；賞楓、日本想像與神木需求均須與可驗植栽紀錄分開。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [
+        "inst-zhongshan-diplomatic-avenue"
+      ],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p23",
+          "printedPage": 23,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p23",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-23.pdf",
+          "page": 23,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁23／PDF第1頁；帝國軸線植栽配置：楓香（Liquidambar formosana）",
+          "excerpt": "分隔島種植樟樹（Cinnamomum camphora），人行道種植楓香"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-postwar-camphor",
+      "species": [
+        "樟樹"
+      ],
+      "location": "中山北路",
+      "period": "戰後（摘頁1945–2009分期；密植年份未載）",
+      "title": "中山北路戰後密植：既有故事補充線索（樟樹）",
+      "summary": "摘頁將中山北路樟樹等綠蔭連到蔣中正通勤的安全與隱蔽需求，解讀為舊植栽基礎設施被新政權沿用。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "與既有密植故事重疊，不重複計成新歷史事件；政權挪用為作者分析。未核全線禁天橋的範圍、期間及原始命令；不能將現有GIS樹木作為歷史原株。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [
+        "inst-zhongshan-diplomatic-avenue"
+      ],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p24",
+          "printedPage": 24,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p24",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-24.pdf",
+          "page": 24,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁24／PDF第1頁；中山北路戰後密植：既有故事補充線索（樟樹）",
+          "excerpt": "沿路加密種植綠樹以便安全人員隱蔽"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-postwar-sweetgum",
+      "species": [
+        "楓香"
+      ],
+      "location": "中山北路",
+      "period": "戰後（摘頁1945–2009分期；密植年份未載）",
+      "title": "中山北路戰後密植：既有故事補充線索（楓香）",
+      "summary": "摘頁將中山北路楓香等綠蔭連到蔣中正通勤的安全與隱蔽需求，解讀為舊植栽基礎設施被新政權沿用。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "與既有密植故事重疊，不重複計成新歷史事件；政權挪用為作者分析。未核全線禁天橋的範圍、期間及原始命令；不能將現有GIS樹木作為歷史原株。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [
+        "inst-zhongshan-diplomatic-avenue"
+      ],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p24",
+          "printedPage": 24,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p24",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-24.pdf",
+          "page": 24,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁24／PDF第1頁；中山北路戰後密植：既有故事補充線索（楓香）",
+          "excerpt": "沿路加密種植綠樹以便安全人員隱蔽"
+        }
+      ]
+    },
+    {
+      "id": "yuanshan-expo-barringtonia",
+      "species": [
+        "穗花棋盤腳（Barringtonia racemosa）"
+      ],
+      "location": "花博新生園區臺北典藏植物園（非圓山園區）",
+      "period": "2010年花博至今（摘頁分期；實際植入年未載）",
+      "title": "展示濕地植物是否等於生態記憶復原？",
+      "summary": "摘頁稱典藏植物園種植穗花棋盤腳，並以「生態記憶復原」串接臺北盆地濕地植物史；目前僅能確認報告如此敘述。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "lead",
+      "limitations": "需園方植栽清單與現場／館藏紀錄。「臺北盆地已消失」與頁21北投五分港溪殘存敘述矛盾，故不沿用；展示栽培不等於野外族群復育或圓山原生棲地恢復。 僅讀使用者提供摘頁，未讀其所引原始研究；不對應現有GIS個體。",
+      "relatedExistingIDs": [],
+      "sourceDocumentRefs": [
+        {
+          "documentId": "bank-culture-yuanshan-p24",
+          "printedPage": 24,
+          "pdfPage": 1
+        }
+      ],
+      "sources": [
+        {
+          "kind": "provided-document",
+          "url": null,
+          "documentId": "bank-culture-yuanshan-p24",
+          "documentPath": "docs/research/provided-yuanshan-20261024/source-page-24.pdf",
+          "page": 24,
+          "pdfPage": 1,
+          "title": "植物史文獻收集：從亞熱帶闊葉浮島到林蔭大道",
+          "publisher": "文化銀行（使用者提供研究摘頁）",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "印刷頁24／PDF第1頁；展示濕地植物是否等於生態記憶復原？",
+          "excerpt": "種植穗花棋盤腳（Barringtonia racemosa）等臺北盆地已消失的原生濕地物種。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-24",
+  "description": "全18筆候選經獨立原始URL正文審查後的研究目錄；尚未合併正式資料。",
+  "entries": [
+    {
+      "id": "meilun-presidential-banyans-removal",
+      "species": [
+        "榕樹"
+      ],
+      "location": "臺北市士林區美崙公園",
+      "period": "2025年11月鑑定；2026年4月24日移除",
+      "title": "總統手植榕樹的保存與安全處置",
+      "summary": "公園處2026年10月公告稱，美崙公園內李登輝總統與李元簇副總統種植的兩株榕樹，於2025年11月24日邀樹保委員現勘確認褐根病，經文化局同意解除列管後，2026年4月24日移除，紀念石碑另行收藏管理。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "依管理機關單一公告；未獨立取得鑑定報告或解除列管文件，未證實原植樹年份；不可對應為現有GIS個體。",
+      "sources": [
+        {
+          "title": "美崙公園李登輝總統及李元簇副總統樹114年鑑定罹患褐根病 為確保公園內活動民眾安全 已於115年4月移除",
+          "publisher": "臺北市政府工務局公園路燈工程管理處",
+          "url": "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108",
+          "publishedAt": "2026-10-19",
+          "accessedAt": "2026-10-24",
+          "locator": "正文第1段，114年11月24日現勘至石碑收藏敘述",
+          "excerpt": "經文化局同意解除列管後，公園處後續已於115年4月24日完成移除工作，另外，石碑已另行收藏管理。"
+        }
+      ]
+    },
+    {
+      "id": "cukeng-bischofia-road-preservation",
+      "species": [
+        "茄苳"
+      ],
+      "location": "臺北市北投區復興三路300巷15號前",
+      "period": "道路拓寬時，確切年份未載；2011年曾勘查",
+      "title": "路中央的粗坑茄苳，留下舊地名與拓寬記憶",
+      "summary": "文化局受保護樹木平臺介紹，復興三路300巷15號前的茄苳是民政局時代普查的臺北百大老樹之一；因當地古名「粗坑」而稱粗坑茄苳。資料記載，道路拓寬時特別保留，使樹留在路中央。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "官方資料以背景訪談或環境描述呈現；沒有提供拓寬確切年代、原始工程文件或訪談對象。2011年是勘查年份，不當成拓寬年份。未核對當前道路或GIS樹號。",
+      "sources": [
+        {
+          "title": "茄苳｜受保護樹木資訊平臺",
+          "publisher": "臺北市政府文化局",
+          "url": "https://eculture.gov.taipei/trees/zh-tw/tree/2070",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "背景訪談或環境描述全段",
+          "excerpt": "因當地古名「粗坑」該樹也被命名粗坑茄苳，曾於100年度進行勘查，當時馬路拓寬時特予保留現位於路中央。"
+        }
+      ]
+    },
+    {
+      "id": "tmu-maple-walk-campus-memory",
+      "species": [
+        "楓香"
+      ],
+      "location": "臺北市信義區臺北醫學大學校園往拇山學苑大道",
+      "period": "創校之初，來源未載確切植樹年份",
+      "title": "往宿舍的楓林道：北醫校景與居民散步路",
+      "summary": "臺北醫學大學校史館說明，校園往拇山學苑大道兩旁的楓香是創校之初所植，形成學生往宿舍的綠色隧道；大道兩側是籃球場與足壘球場，也是附近居民散步與學生課餘休憩的場所。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "校史館單一敘述，未提供植樹者或逐株年份；不代表今日所有楓香都是創校原株，未建立現有GIS個體關聯。",
+      "sources": [
+        {
+          "title": "楓林道",
+          "publisher": "臺北醫學大學校史館",
+          "url": "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "「楓林道」正文第1段",
+          "excerpt": "校園往拇山學苑的大道旁之楓香是創校之初所植，夾道兩旁，枝葉茂密繁榮，形成一條綠色隧道"
+        }
+      ]
+    },
+    {
+      "id": "ntu-koelreuteria-road-naming",
+      "species": [
+        "臺灣欒樹"
+      ],
+      "location": "臺北市大安區國立臺灣大學校園欒樹道",
+      "period": "2000年代初期",
+      "title": "年輕的欒樹道進入臺大校園命名記憶",
+      "summary": "黃瀚嶢在農傳媒專欄回顧臺大以樹木命名幹道的習慣，稱隨新系館向南延伸，「欒樹道」在2000年代初獲得命名。他以欒樹道對照早年椰林道、蒲葵道等校景，呈現較新植栽進入校園地名的歷程。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "為作者回憶性專欄，未核對校方正式命名公文；只採其校園命名敘述，不以文章「第一條欒樹大道」說法推論全臺最早植栽。刊出日期未於抽取正文顯示，留null；無GIS個體關聯。",
+      "sources": [
+        {
+          "title": "【林間散步】欒樹的道路",
+          "publisher": "農傳媒；作者黃瀚嶢",
+          "url": "https://www.agriharvest.tw/archives/128445/",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "正文第1段",
+          "excerpt": "「欒樹道」在兩千年初獲得命名，此時欒樹也才剛流行了約二十年，就樹木的時間而言，如此年輕。"
+        }
+      ]
+    },
+    {
+      "id": "round1-xiaokeng-celtis-shrine",
+      "species": [
+        "朴樹"
+      ],
+      "location": "臺北市文山區小坑福德宮、鄭厝下方",
+      "period": "來源回述清光緒二年（1876）廟史；老樹敘述年代未載明",
+      "title": "小坑福德宮旁的朴樹與庄頭信仰",
+      "summary": "文山區公所記錄鄭厝下方老朴樹與小坑福德宮相依的景象，並轉述廟方主任委員依樹旁石碑所述，土地公廟最早建於1876年。文中也記載朴樹前另設山神神位，來此膜拜者會一併燃香祭拜，呈現老樹、廟宇與鄰里情感的連結。",
+      "evidenceScope": "specific-tree",
+      "verificationStatus": "source-supported",
+      "limitations": "官方地方敘事含口述與碑文轉述；未直接核讀石碑。朴樹約140多歲是來源估述，非獨立驗齡；廟建年不等於植樹年，未比對GIS樹號或現況。",
+      "sources": [
+        {
+          "title": "珍貴老樹－香楠與朴樹",
+          "publisher": "臺北市文山區公所",
+          "url": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "「鄭厝下方另有一科朴樹」與「廟側的朴樹前面」段",
+          "excerpt": "在廟側的朴樹前面，亦有一座山神神位，到此膜拜的民眾，都會一併虔誠燃香祭拜。"
+        }
+      ]
+    },
+    {
+      "id": "ntu-indian-rosewood-rescue-debate",
+      "species": [
+        "印度黃檀"
+      ],
+      "location": "臺北市大安區臺灣大學文學院中庭",
+      "period": "2021至2022年；報導截至2022年4月6日",
+      "title": "文學院黃檀的告別、靜坐與救治爭議",
+      "summary": "中央社報導，文學院印度黃檀曾入楊牧〈學院之樹〉等文學作品；染褐根病後，院方舉辦告別儀式並規劃移除。孫岩章在樹下靜坐主張注射救治，院方則以根部腐爛、傳染及安全風險說明移除理由，表示將繼續溝通。",
+      "evidenceScope": "specific-tree",
+      "verificationStatus": "source-supported",
+      "limitations": "僅記錄2022年4月6日報導中的不同立場，不判定療法有效或哪方評估正確，亦未核對最終處置。百年與日治種植為報導敘述，未驗年；不得套用到GIS其他印度黃檀。",
+      "sources": [
+        {
+          "title": "台大師盼搶救百年黃檀  文學院持續溝通凝聚共識",
+          "publisher": "中央通訊社",
+          "url": "https://www.cna.com.tw/news/ahel/202204060351.aspx",
+          "publishedAt": "2022-04-06",
+          "accessedAt": "2026-10-24",
+          "locator": "正文第1至5段及孫岩章、黃慕萱受訪段落",
+          "excerpt": "詩人楊牧曾為它寫下「學院之樹」一詩"
+        }
+      ]
+    },
+    {
+      "id": "lishan-plaza-cypress-school-memory",
+      "species": [
+        "落羽松"
+      ],
+      "location": "臺北市南港區四分溪畔麗山農民廣場",
+      "period": "農業社區環境改善期間；來源未載工程年份",
+      "title": "用落羽松與日式涼亭呼應昔日書院",
+      "summary": "ETtoday報導引述大地工程處，麗山農民廣場所在位置日治時期曾為教育學童的書院；進行農業社區環境改善時，融合日式涼亭、落羽松和景觀石，並於地板鑲嵌蘇軾〈定風波〉詞句，以景觀記憶昔日書院。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "工程與歷史關係據單一新聞轉述機關說法；未查原始設計圖、書院檔案及定植日期。落羽松為改善工程景觀元素，不是日治原植的證據。未在正文核出刊日，故留null。",
+      "sources": [
+        {
+          "title": "南港落羽松秘境轉紅了！還有「雙心跳石、日式涼亭」超清幽",
+          "publisher": "ETtoday旅遊雲",
+          "url": "https://travel.ettoday.net/article/2131139.htm",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "正文「大地工程處表示」段落",
+          "excerpt": "為呼應這段歷史大地處配合農業社區環境改善時，融合日式涼亭、落羽松和景觀石等元素"
+        }
+      ]
+    },
+    {
+      "id": "xinglong-scolopia-community-stele",
+      "species": [
+        "魯花樹"
+      ],
+      "location": "臺北市文山區興隆路三段229巷9弄4號旁",
+      "period": "1994年居民立碑；來源文章回顧",
+      "title": "居民為巷內魯花樹立下「護百年老樹誌」",
+      "summary": "文山社區大學文章記錄，興隆路巷內魯花樹在列為文化資產前，居民於1994年立「護百年老樹誌」碑紀念；樹下簡易遮蔽中安置福德正神與木刻神像，呈現居民對老樹的重視及信仰連結。",
+      "evidenceScope": "specific-tree",
+      "verificationStatus": "source-supported",
+      "limitations": "立碑年份與神像據社大文章，未獨立勘查碑文。文章估齡不轉算當前年齡；不採納其「台北湖遺留證據」推論或其他地質、氣候預測，樹木存在不能直接證明古海灣。",
+      "sources": [
+        {
+          "title": "興隆路三段的百年魯花樹與台北湖 - 台北市文山社區大學",
+          "publisher": "臺北市文山社區大學",
+          "url": "https://wenshan.org.tw/wss/index.php/%E7%94%9F%E6%85%8B/item/2079-%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%89%E6%AE%B5%E7%9A%84%E7%99%BE%E5%B9%B4%E9%AD%AF%E8%8A%B1%E6%A8%B9%E8%88%87%E5%8F%B0%E5%8C%97%E6%B9%96",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "正文前2段",
+          "excerpt": "附近居民因其特殊性，已於1994年為其立碑紀念，碑名為”護百年老樹誌”"
+        }
+      ]
+    },
+    {
+      "id": "rongxing-hibiscus-play-care",
+      "species": [
+        "黃槿"
+      ],
+      "location": "臺北市中山區榮星花園公園",
+      "period": "新聞稿記錄的日常生活及修剪後照護；未載年代",
+      "title": "從童玩到植穴照護：榮星花園老黃槿",
+      "summary": "公園處新聞稿將榮星花園黃槿稱為居民熟悉的鎮園老當家，記錄樹蔭休憩、孩子爬樹、以花苞與花心裝扮的生活情景。稿件也說明老樹修剪後再度枝繁葉茂，並提出未來可能擴大植穴、移除水泥地坪及增加圍欄。",
+      "evidenceScope": "specific-tree",
+      "verificationStatus": "source-supported",
+      "limitations": "生活敘事為機關新聞稿，非具名口述或行為普查；植穴外擴等僅是文中未來可能方案，不能宣稱已完成。未取得樹號、種植年、刊日或現況；不背書稿中樹木醫療類泛論。",
+      "sources": [
+        {
+          "title": "臺北市政府全球資訊網-市府新聞稿-多少寒暑修練 老黃槿熬成榮星花園鎮園老當家",
+          "publisher": "臺北市政府工務局公園路燈工程管理處",
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=C97A944E3C88A5D0",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "正文第1、3至5段",
+          "excerpt": "女孩們則以它的花苞當做耳環，用暗紫色的花心當作指甲油"
+        }
+      ]
+    },
+    {
+      "id": "beitou-citrus-naming-orchard-memory",
+      "species": [
+        "柑橘"
+      ],
+      "location": "臺北市北投區草山、大屯里與泉源里觀光柑園",
+      "period": "機關新聞稿回顧百年栽培；未載明刊日",
+      "title": "草山柑、年柑：北投柑橘的地名與節令記憶",
+      "summary": "臺北市府新聞稿回顧北投柑橘栽培歷史，將桶柑、草山柑、年柑等名稱分別連結桶裝運輸、草山產地及春節前上市，並介紹北投觀光柑園採果，呈現果樹生產與地方節令、地名的關係。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "命名由來與百年栽培為新聞稿說法，未追溯最早文獻。故事限北投栽培文化，不指向現有街道、公園GIS個株；標籤柑橘為廣稱，來源具體是桶柑。採果價格及聯絡資訊不作現行資訊。",
+      "sources": [
+        {
+          "title": "臺北市政府全球資訊網-市府新聞稿-農曆年後桶柑轉紅正好食 北投觀光柑園即日起開放桶柑採果樂",
+          "publisher": "臺北市政府全球資訊網（文中引述北投區農會）",
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E789E8819879CC5",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "正文首段",
+          "excerpt": "又多種植在草山地區，而有「草山柑」名稱"
+        }
+      ]
+    },
+    {
+      "id": "site-zhongzheng138-mango-early-planting",
+      "species": [
+        "檬果"
+      ],
+      "location": "臺北市中正區愛國西路中正138號綠地",
+      "period": "早年植栽；2026年官方回顧",
+      "title": "城牆舊線上的綠蔭：中正138號綠地早年檬果植栽",
+      "summary": "公園處2026年回顧，愛國西路沿用臺北府城拆除城垣後形成的三線道路歷史軸線；位在路線上的中正138號綠地早年栽植樟樹、茄冬與檬果，如今成齡成蔭。近年增設步道、遊戲場及文史解說牌，讓日常散步休憩也能認識舊城歷史。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "來源記載綠地1981年開闢，但未交代各樹種定植年、植栽者或逐株清冊，不以開闢年當作檬果植樹年；亦不將歷史軸線形成時間誤作現有植樹年代。來源用「檬果」，原樣保留，未鑑定GIS個體。",
+      "sources": [
+        {
+          "title": "臺北三線路懷舊散步策 愛國西路上滿滿綠意",
+          "publisher": "臺北市政府工務局公園路燈工程管理處",
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=26843120BAF90963",
+          "publishedAt": "2026-01-25",
+          "accessedAt": "2026-10-24",
+          "locator": "正文「公園處園藝工程隊楊國瑜隊長表示」段及前段三線路歷史",
+          "excerpt": "早年栽植許多樟樹、茄冬、檬果樹等，如今已成齡成蔭"
+        }
+      ]
+    },
+    {
+      "id": "inst-tbg-palmetto-donation-import",
+      "species": [
+        "龍鱗櫚"
+      ],
+      "location": "臺北市中正區台北植物園棕櫚科植物區",
+      "period": "1898年、1909年引入；來源回顧時園內栽植",
+      "title": "從日本寄贈與印度引入的龍鱗櫚",
+      "summary": "林業試驗所呂勝由撰文記錄，龍鱗櫚1898年由福羽逸人從日本寄贈，1909年田代安定又從印度引入臺灣，於台北植物園及恆春熱帶植物園栽植培育。文中記錄台北植物園棕櫚區有十餘株，串起植物園跨國引種與觀賞栽培的歷史。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "引種年與人名據林試所單一回顧，未取得當年寄贈清冊；不推定現存每株均為1898年原株。來源稱百餘年，未獨立驗齡；未見發布日期，數量與高度僅屬成文時觀察。學名分類沿用原文敘述，不據此整併GIS標籤。",
+      "sources": [
+        {
+          "title": "台北植物園好花共賞系列61-龍鱗櫚",
+          "publisher": "農業部林業試驗所；文／圖呂勝由",
+          "url": "https://www.tfri.gov.tw/News_Content.aspx?n=7658&s=262",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "正文第1段「本植物1898年由福羽逸人氏」",
+          "excerpt": "本植物1898年由福羽逸人氏從日本寄贈，隨後1909年田代安定氏亦由印度引入台灣"
+        }
+      ]
+    },
+    {
+      "id": "site-jingshan-grafted-japanese-maple",
+      "species": [
+        "紅葉雞爪槭"
+      ],
+      "location": "臺北市士林區菁山社區苗圃；菁山路131巷及永公路底一帶",
+      "period": "2014年官稿記錄當地嫁接栽培與環境改善",
+      "title": "菁山苗圃嫁接的春紅與供應臺北植栽的產業景觀",
+      "summary": "大地工程處2014年新聞稿記錄，菁山社區俗稱紅葉雞爪槭的植栽，是當地業者將日本槭枝芽嫁接在臺灣本土青楓枝幹上；眾多苗圃供應臺北地區植栽。市府近年恢復水圳、改善步道與設置平台，讓農業灌溉與賞景休憩並存。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "來源稱紅葉雞爪槭／日本槭，與原始GIS標籤雞爪楓的關係仍需分類及個體核實，不能將本故事套用到地圖8株。未載嫁接技術開始年代、各苗圃創立年或個別樹齡；環境改善計畫非全數植栽的定植年。",
+      "sources": [
+        {
+          "title": "菁山社區「槭」紅醉人此刻遊賞正當時",
+          "publisher": "臺北市政府工務局大地工程處",
+          "url": "https://www.geo.gov.taipei/News_Content.aspx?n=23285747C0511EC4&sms=72544237BBE4C5F6&s=43EC368CF988933B",
+          "publishedAt": "2014-04-18",
+          "accessedAt": "2026-10-24",
+          "locator": "正文第2段嫁接與第3段苗圃、水圳改善",
+          "excerpt": "是當地業者將日本槭的枝芽嫁接在臺灣本土青楓的枝幹上"
+        }
+      ]
+    },
+    {
+      "id": "site-shuanglian-cassia-spacing-2026",
+      "species": [
+        "花旗木"
+      ],
+      "location": "臺北市捷運雙連站線型公園",
+      "period": "2026年10月",
+      "title": "十株花旗木為何種在草坪內側：地方會勘與生長空間",
+      "summary": "公園處2026年10月回應民眾對雙連站線型公園新植位置的質疑，說明里長透過議會會勘反映地方種喬木需求。因園路約1.5至2公尺寬，新植10株花旗木略向草坪內側，預留成長空間並與道路另一側既有樹木保持距離。",
+      "evidenceScope": "planting-policy",
+      "verificationStatus": "source-supported",
+      "limitations": "僅為公園處對爭議的官方說明，未取得會勘紀錄、獨立訪談或完工逐株清冊；未核對GIS花旗木6株與此案10株，不能認作同一批。未驗證後續支架移除或草坪使用影響。",
+      "sources": [
+        {
+          "title": "地方會勘要求捷運雙連站線型公園種植樹木 位置略偏向草坪側 預留樹木生長空間",
+          "publisher": "臺北市政府工務局公園路燈工程管理處",
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E23EF226D87E480",
+          "publishedAt": "2026-10-20",
+          "accessedAt": "2026-10-24",
+          "locator": "正文唯一說明段「為里長透過議會辦理現場會勘」至生長空間",
+          "excerpt": "公園處種植10株花旗木時，為預留日後生長空間，以及與園路另一側既有樹木保持適當距離"
+        }
+      ]
+    },
+    {
+      "id": "site-daan-hundredflowers-loropetalum-design",
+      "species": [
+        "紅花繼木"
+      ],
+      "location": "臺北市大安區大安森林公園捷運站2號出口附近百花園",
+      "period": "2021年臺北杜鵑花季",
+      "title": "達人共議百花園：紅花繼木成為混植景觀的一環",
+      "summary": "公園處為2021年杜鵑花季集結張乃中、陳昆煜、陳秋鵬、陳主奉等具植栽設計與苗圃經驗者，規劃大安森林公園百花園。以平戶杜鵑為主，配置紅花繼木等多種花卉，並依基地、型態、花期及花色交錯安排層次，呈現公園景觀共同設計過程。",
+      "evidenceScope": "planting-policy",
+      "verificationStatus": "source-supported",
+      "limitations": "來源未載發布日，僅由正文確定2021花季，publishedAt留null。不推定顧問捐樹或出資，也不認定現存GIS個體均於該次定植。來源字作紅花繼木，未自行更名或分類合併。",
+      "sources": [
+        {
+          "title": "達人聯手打造秘境 大安森林公園百花園這樣做",
+          "publisher": "臺北市政府工務局公園路燈工程管理處",
+          "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=208EAE53ED2BFF08",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "正文第1段共同設計、第2至3段紅花繼木混植配置、末段2021花季",
+          "excerpt": "植栽設計要考量基地特性、植物型態、花期、花色等"
+        }
+      ]
+    },
+    {
+      "id": "round1-dalunwei-myrsine-2021",
+      "species": [
+        "大明橘"
+      ],
+      "location": "臺北市士林區與內湖區交界大崙尾山、翠山步道周邊",
+      "period": "2020年臺北雙年展計畫；2021年伐林及爭議",
+      "title": "碳中和造林遇上大明橘森林：大崙尾山的保育爭議",
+      "summary": "公視報導，北美館為2020年臺北雙年展推動碳中和造林，於大崙尾山伐除部分次生林、改植以臺灣肖楠為主的樹苗，引發生態團體與居民質疑。荒野保護協會以長期觀察提出大明橘等原有植物的重要性；市府則主張林相改良與示範經濟林可與生態共存。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "報導呈現各方主張，並非獨立裁定政策違法或碳中和成效；約10公頃是作業林地面積，不是大明橘單一樹種數量或純林面積。未比對現有GIS個體，也未查最新林相。",
+      "sources": [
+        {
+          "title": "大崙尾山整形記｜怎樣才算是好的森林？",
+          "publisher": "公共電視《我們的島》",
+          "url": "https://ourisland.pts.org.tw/content/8106",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "「台北雙年展引發砍樹造林爭議」節及大明橘、台灣尾蜆蝶段落",
+          "excerpt": "大明橘則是特有種蝴蝶，台灣尾蜆蝶的重要寄主植物。"
+        },
+        {
+          "title": "翠山步道花生了甚麼樹？！",
+          "publisher": "荒野保護協會",
+          "url": "https://www.sow.org.tw/blog/20210709/42304",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "2021年3月底到4月初調查與4月28日說明會；第6項質疑及結語",
+          "excerpt": "伐除原有以風衝林代表樹種「大明橘」為主的次生林相"
+        }
+      ]
+    },
+    {
+      "id": "round1-daan-rubber-family-memory",
+      "species": [
+        "印度橡膠樹"
+      ],
+      "location": "臺北市大安區大安森林公園西側竹林",
+      "period": "作者童年、建園徵收前後及多年後重訪；來源正文未列確年",
+      "title": "房舍不在、院樹仍在：大安森林公園的橡膠樹家族回憶",
+      "summary": "〈樹。回憶。我們家。〉作者記述，童年居住的日式平房土地後被徵收建為大安森林公園，父母在公園開放後發現院中橡膠樹被保留。作者多年後循西側入口重訪竹林中的印度橡膠樹，回想兒時以落葉做船、大人在樹下喝茶及鄰里往來。",
+      "evidenceScope": "specific-tree",
+      "verificationStatus": "source-supported",
+      "limitations": "個人回憶文章，不等於土地徵收檔案或樹木身分獨立查證；橡皮樹原始標籤未經學名校正，不確定GIS兩株是否同種，更不能推定同一株。正文未附完整刊出日，採null。",
+      "sources": [
+        {
+          "title": "樹。回憶。我們家。",
+          "publisher": "方格子／文青沙龍（個人回憶）",
+          "url": "https://vocus.cc/article/63e74f3cfd8978000140015f",
+          "publishedAt": null,
+          "accessedAt": "2026-10-24",
+          "locator": "母親越洋電話敘述、橡膠樹落葉小船與樹下喝茶段落",
+          "excerpt": "我沒有想到雖然我們家以前房舍被拆除，但是公園建設時還是保留了那棵橡膠樹。"
+        }
+      ]
+    },
+    {
+      "id": "round1-neihu-citrus-leisure-2011",
+      "species": [
+        "橘子"
+      ],
+      "location": "臺北市內湖區觀光果園（來源未具名）",
+      "period": "2011年12月報導；12月31日開放採果",
+      "title": "城市轉彎成鄉村：內湖桶柑採果的休閒生活",
+      "summary": "公視2011年報導記錄內湖觀光果園準備在12月31日開放採桶柑，當時每人入園費50元。報導以從城市車行轉入果園、採果、溪流與白鷺鷥的體驗，呈現臺北都市生活旁的農園休閒景觀。",
+      "evidenceScope": "site-history",
+      "verificationStatus": "source-supported",
+      "limitations": "只支持2011年當時報導與地方休閒生活；果園名稱及精確地點未載，費用和開放日不代表現況。桶柑不是將所有橘子標籤重新定種，未套用GIS個體。",
+      "sources": [
+        {
+          "title": "吃橘子正當時! 12/31來內湖採果",
+          "publisher": "公共電視新聞網 PNN",
+          "url": "https://news.pts.org.tw/article/198873",
+          "publishedAt": "2011-12-22",
+          "accessedAt": "2026-10-24",
+          "locator": "發布時間與正文首段；「城市變鄉村」及沿路溪流段落",
+          "excerpt": "帶您看，內湖採桶柑，31號就要正式開放，每個人入園費50塊"
+        }
+      ]
+    }
+  ],
+  "coverageNote": "18筆故事、19個不同來源URL均重新以web_fetch取得並閱讀正文（1個工具快取命中）；18筆通過，其中4筆調整逐字摘錄或來源名稱。與既有正式18筆無故事重複。僅為探索性選樣，不代表新增18個分類學物種或完成全部原始標籤搜尋；名稱保留來源用語，不把雞爪楓、橡皮樹等GIS標籤自動等同故事樹種，亦不將故事套到現有GIS個體。"
+}
