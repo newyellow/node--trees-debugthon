@@ -96,7 +96,11 @@ function openAdvice(v,mode,trigger){visionTour?.cancel('new-advice');panelIds.fo
 function showOverview(v,latlng,trigger) {
  hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('finder-toggle');
  const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
- content.append(el('div',v.name+' 自然輪廓','overview-radar-title'),radar(v,220,true));
+ const chart=el('div',undefined,'overview-radar-wrap'),helpWrap=el('div',undefined,'metric-help-wrap');
+ const help=el('button','?','metric-help');help.type='button';help.setAttribute('aria-label','指標說明');help.setAttribute('aria-controls','method');help.setAttribute('aria-expanded','false');help.setAttribute('aria-describedby','overview-metric-tooltip');
+ const tooltip=el('span','指標說明','metric-help-tooltip');tooltip.id='overview-metric-tooltip';tooltip.setAttribute('role','tooltip');helpWrap.append(help,tooltip);
+ help.onclick=()=>openPanel('method',help);chart.append(radar(v,220,true),helpWrap);
+ content.append(el('div',v.name+' 自然輪廓','overview-radar-title'),chart);
  const rating=compositeRating(v.scores),ratingText=rating===null?'N/A':rating.toFixed(1)+' / 5';
  const stars=el('div',undefined,'rating-note summary-stars');stars.setAttribute('role','img');stars.setAttribute('aria-label','綜合星等 '+ratingText);
  const glyph=el('span',undefined,'stars-glyph'),back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');glyph.setAttribute('aria-hidden','true');front.style.width=(rating===null?0:rating/5*100)+'%';glyph.append(back,front);stars.append(glyph,el('span',ratingText,'stars-number'));content.append(stars);
@@ -217,17 +221,17 @@ async function load() {
   } catch (error) { $('status').textContent = '資料載入失敗：' + error.message + '。請檢查連線後重試。'; $('retry').hidden = false; }
 }
 const panelIds = ['finder','ranking','passport','method','records'], returnFocus = new Map();
-let indicatorScroll=0;
+let indicatorScroll=0,indicatorFromDetails=false;
 function closePanel(id, focus = true) {
-  $(id).hidden = true; $(id+'-toggle')?.setAttribute('aria-expanded','false');
-  if(id==='method'&&focus&&selected){$('passport').hidden=false;$('passport').querySelector('.panel-scroll').scrollTop=indicatorScroll;$('detail-method').focus({preventScroll:true});return;}
+  $(id).hidden = true; $(id+'-toggle')?.setAttribute('aria-expanded','false');returnFocus.get(id)?.setAttribute('aria-expanded','false');
+  if(id==='method'&&focus&&selected&&indicatorFromDetails){$('passport').hidden=false;$('passport').querySelector('.panel-scroll').scrollTop=indicatorScroll;$('detail-method').focus({preventScroll:true});return;}
   if(focus) { const target = returnFocus.get(id); if(target?.isConnected && !target.closest('[hidden]')) target.focus({preventScroll:true}); else $(id+'-toggle')?.focus({preventScroll:true}); }
 }
 function openPanel(id, trigger) {
   advice?.close(false);visionTour?.cancel('open-panel');
-  if(id==='method')indicatorScroll=$('passport').querySelector('.panel-scroll').scrollTop;
+  if(id==='method'){indicatorFromDetails=trigger===$('detail-method');indicatorScroll=$('passport').querySelector('.panel-scroll').scrollTop;$('indicator-back').textContent=indicatorFromDetails?'返回里細節':'返回自然輪廓';$('method').querySelector('.panel-scroll').scrollTop=0;}
   panelIds.forEach(other => { if(other !== id) closePanel(other,false); });
-  returnFocus.set(id,trigger); $(id).hidden = false; $(id+'-toggle')?.setAttribute('aria-expanded','true');
+  returnFocus.set(id,trigger);trigger?.setAttribute('aria-expanded','true'); $(id).hidden = false; $(id+'-toggle')?.setAttribute('aria-expanded','true');
   hideHover();$(id).querySelector('button')?.focus({preventScroll:true});
   if(id==='records'&&recordLayers)Promise.resolve(recordLayers.ensure()).catch(error=>{$('record-layers-list').textContent='圖層清單載入失敗：'+error.message;});
 }
@@ -238,7 +242,15 @@ panelIds.forEach(id => {
 for(const node of document.querySelectorAll('.surface')) { L.DomEvent.disableClickPropagation(node); L.DomEvent.disableScrollPropagation(node); }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') {if(advice?.isOpen()){e.preventDefault();advice.close();return;}if(villageTrees?.isRecordOpen()){e.preventDefault();villageTrees.closeRecord();return;} const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
 for(const item of CAPABILITIES) {
- const li=el('li',(item.emoji?item.emoji+' ':'')+item.label),swatch=el('span',undefined,'swatch');swatch.style.background=item.color;li.prepend(swatch);$('legend-items').append(li);
+ const descriptions={
+ treeDensity:'以每平方公里管理樹木紀錄量計算相對分數，作為綠意的代理指標；不是實測綠覆百分比或樹冠面積。',
+ protectedDensity:'依官方受保護樹木名冊紀錄量除以里面積計分；詳細資料另列實際筆數。名冊較舊，法律現況須另查證。',
+ richness:'以來源資料中的樹木名稱類別數計分，排除未知與枯木；不是完整物種調查，取樣量會影響結果。',
+ nativeShare:'藍圖19個名稱相符的紀錄占全部管理樹木的比例；未列名稱暫作非原生，僅為原型代理，並非分類學鑑定。',
+ birdInsect:'展示鳥類與昆蟲的指標位置，目前為固定種子產生的展示分數，非實際觀測或物種數。※ 回報互動系統尚未實裝，目前為模擬資料',
+ activity:'近7日已回報筆數／應回報樹數×100；目前沒有真實市民回報，分母為零時記0。※ 回報互動系統尚未實裝，目前為模擬資料'
+ };
+ const li=el('li'),heading=el('h4',item.label);heading.prepend(createMetricIcon(item.key),document.createTextNode(' '));li.append(heading,el('p',descriptions[item.key]));$('legend-items').append(li);
 }
 for(const item of [...STAR_BANDS,{label:'N/A 無有效星等',color:STAR_UNKNOWN_COLOR}]){const li=el('li',item.label),swatch=el('span',undefined,'swatch');swatch.style.background=item.color;li.prepend(swatch);$('star-color-items').append(li);}
 $('detail-method').onclick=()=>openPanel('method',$('detail-method'));

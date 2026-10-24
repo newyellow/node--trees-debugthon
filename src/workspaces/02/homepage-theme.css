@@ -90,3 +90,20 @@ header a:focus-visible{outline-color:var(--ne-lime)}
 
 /* Separate the village heading from the chart without explanatory text. */
 .village-overview .overview-radar-title{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgb(151 202 70 / 35%)}
+
+/* Radar contextual help: non-modal right-side explanation, accessible by keyboard. */
+.village-overview .overview-radar-title{font-size:17px}
+.overview-radar-wrap{position:relative;isolation:isolate}
+.overview-radar-wrap .radar-chart{margin:0 auto}
+.metric-help-wrap{position:absolute;right:0;top:0;z-index:201}
+.village-overview .metric-help{display:grid;place-items:center;width:28px;height:28px;padding:0;border:1px solid #97ca46;border-radius:50%;background:#014f35;color:#fffdf4;font-size:17px;font-weight:750;cursor:pointer}
+.metric-help:hover{background:#32653a}
+.metric-help:focus-visible{outline:2px solid #fffdf4;outline-offset:3px}
+.metric-help-tooltip{display:none;position:absolute;right:0;top:34px;white-space:nowrap;padding:4px 8px;background:#fffdf4;color:#014f35;font-size:12px;pointer-events:none}
+.metric-help-wrap:hover .metric-help-tooltip,.metric-help-wrap:focus-within .metric-help-tooltip{display:block}
+#method{left:auto;right:12px;width:min(380px,calc(100vw - 24px))}
+#legend-items{list-style:none;padding:0}
+#legend-items li{padding:12px 0;border-bottom:1px solid #cbd5b9}
+#legend-items h4{display:flex;align-items:center;gap:8px;margin:0;font-size:15px;color:#014f35}
+#legend-items .nature-metric-icon{width:24px;height:24px;flex:none}
+#legend-items p{margin:8px 0 0;font-size:13px}
