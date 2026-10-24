@@ -18,7 +18,7 @@ try{for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  await page.goto(url);await page.getByText('護照已就緒',{exact:false}).waitFor();assert.equal(api.length,0);
  await page.locator('#finder-toggle').click();await page.locator('#search').fill(chosen.name);await page.locator('#villages button').filter({hasText:chosen.district+'・'+chosen.name}).click();
  await page.waitForFunction(id=>{const c=document.querySelector('canvas[data-village-trees]');return c?.dataset.phase==='ready'&&c.dataset.villageId===id;},chosen.id);
- assert.equal(await page.locator('.village-overview .radar-axis-index').count(),6);assert.match(await page.locator('.rating-note').innerText(),/含模擬/);
+ assert.equal(await page.locator('.village-overview .radar-axis-index').count(),6);assert.match(await page.locator('.rating-note').getAttribute('aria-label'),/含模擬/);
  await cameraIdle(page);const canvas=page.locator('canvas[data-village-trees]');let position=0;
  for(const name of ['榕樹','樟樹']){
   const index=records.findIndex(r=>treeSpecies(r.feature)===name),steps=(index-position+records.length)%records.length;await canvas.focus();

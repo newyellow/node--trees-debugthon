@@ -58,3 +58,7 @@ header.surface { flex-wrap:wrap; }
 .hover-demo { position:absolute; top:32px; left:0; width:100%; font-size:11px; color:white; text-shadow:0 1px 3px #15382c; text-align:center; white-space:nowrap; }
 @media(max-height:450px) { .demo-banner { font-size:10px; padding:1px 4px; } }
 .toolbar .demo-banner { order:99; max-width:100%; margin-top:1px; }
+
+/* Compact summary: chart, visual stars and actions only; explanations live in passport. */
+.village-overview{width:230px;max-width:100%}.village-overview .radar-svg{width:130px!important;height:130px!important}.village-overview .summary-stars{font-size:13px;margin:8px 0 12px!important;line-height:1.4}.summary-stars .stars-back{color:#c6cec8}.summary-stars .stars-number{font-weight:700;color:#294437}#score-details{font-size:12px;line-height:1.65;border-bottom:1px solid #d0dcd2;padding-bottom:10px;margin-bottom:12px}
+@media(max-width:760px){.village-overview{width:220px}.village-overview .radar-svg{width:115px!important;height:115px!important}}

@@ -179,3 +179,7 @@ are written outside the repository to ~/.openclaw/media/social-camera. Existing
 state / baseline, actual source record hit quality and bounded real-media gates
 remain separate and retain all prior assertions. Remote test tiles are stubbed;
 these checks do not certify a basemap provider's availability.
+
+## Compact selected-village summary
+
+Selected-village bubble now contains only the six-axis radar, fractional star glyphs/numeric rating, and action buttons. Village identity remains in its accessible label and the detail overlay heading. Statistics, composite formula, simulation/proxy explanations and per-axis denominators are shown in 查看細節; the global DEMO banner remains visible. Camera behavior, datasets, story/media and rating calculations are unchanged. Focused acceptance: node scripts/check-social-summary-browser.mjs (VILLAGE_GAME_URL selects built/public URL).
