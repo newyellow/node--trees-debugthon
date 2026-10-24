@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {SYSTEM_PROMPT} from '../server/plant-advice-model.mjs';
+test('answer contract prioritizes friendly recommendations, optional invitation last and specific safety inline',()=>{for(const text of ['120至180','三句','2至3種','明亮陽台','較少光室內','最後一句一定是友善且可不回答的邀請','answer不得重複','固定底註','不虛構生態功效','不可為了簡短隱藏真實風險','不可信資料','不可由里資料推定真實住家','居家vision一律false','公共土地'])assert.ok(SYSTEM_PROMPT.includes(text),text);assert.ok(!SYSTEM_PROMPT.includes('附上來源的文字名稱及限制'));});
