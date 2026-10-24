@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
+import { faviconPlugin } from './scripts/favicon.mjs';
 import { googleAnalyticsPlugin } from './scripts/google-analytics.mjs';
 import { aerialCachePlugin } from './scripts/aerial-cache.mjs';
 
@@ -18,7 +19,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [googleAnalyticsPlugin(), aerialCachePlugin({
+  plugins: [faviconPlugin(), googleAnalyticsPlugin(), aerialCachePlugin({
     directory: fileURLToPath(new URL('./data/offline-imagery/tiles/', import.meta.url)),
     offline: process.env.IMAGERY_OFFLINE === '1',
   })],
