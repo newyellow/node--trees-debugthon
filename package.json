@@ -12,7 +12,8 @@
     "imagery:plan": "node scripts/offline-imagery.mjs plan",
     "imagery:import": "node scripts/offline-imagery.mjs import",
     "imagery:download": "node scripts/offline-imagery.mjs download",
-    "test": "node --test"
+    "test": "node --test",
+    "start": "node server/plant-advice-server.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

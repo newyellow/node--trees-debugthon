@@ -93,7 +93,7 @@ export function createHandler({grounding,model=createModelClient(),limiter=creat
   };
 }
 export async function startServer(options={}) {
-  const port=options.port??Number(process.env.PORT||5173);if(!Number.isInteger(port)||port<0||port>65535)throw new Error('Invalid port');
+  const port=options.port??Number(process.env.PORT||6996);if(!Number.isInteger(port)||port<0||port>65535)throw new Error('Invalid port');
   const grounding=options.grounding??await loadGrounding({root:process.env.ROOT_DIST||fileURLToPath(new URL('../dist',import.meta.url))});
   const staticUpstream=options.staticUpstream??process.env.STATIC_UPSTREAM??'http://127.0.0.1:5175';
   if(Number(new URL(staticUpstream).port)===port)throw new Error('Static proxy loop');

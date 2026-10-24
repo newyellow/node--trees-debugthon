@@ -105,3 +105,7 @@ By default, suggest alternatives without explaining the exclusions. If an explan
 Approval: knowledge-channel messages1563481344183635999 (Justin),1563481964164677754 (water-pongamia correction),1563481989326307420 (Newyellow prompt-only confirmation). PPT ingestion is a separate unfinished task: this prompt patch does not claim that all slide tables/district records are already imported. No raw PPT publication.
 
 Verification: one focused prompt/request-fixture test with mock SSE, syntax check, required build, exact GitHub main SHA and public health after ONLY advice-app reload. No new inference, broad tests or UI gates.
+
+## Future production deployment port (2026-10-24)
+
+Default app entry is 127.0.0.1:6996 (npm start); PORT remains an explicit override. Vite dev and preview also use6996 with strictPort to avoid silently selecting another port. The app static upstream remains127.0.0.1:5175; serve dist there separately as documented, after building. Keep Gateway18789 private and unchanged. The existing demonstration LaunchAgent explicitly sets PORT5173, so this source-default change does not move or interrupt that existing public route. Future production hostname/reverse proxy should forward to6996 when that host is deployed; no Cloudflare route was changed here.

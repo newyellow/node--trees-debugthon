@@ -3,6 +3,8 @@ import { fileURLToPath } from 'node:url';
 import { aerialCachePlugin } from './scripts/aerial-cache.mjs';
 
 export default defineConfig({
+  server: { port: 6996, strictPort: true },
+  preview: { port: 6996, strictPort: true },
   build: {
     rollupOptions: {
       input: {
