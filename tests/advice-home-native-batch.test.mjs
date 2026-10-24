@@ -1,0 +1,2 @@
+import test from'node:test';import assert from'node:assert/strict';import{chunkIds}from'../scripts/advice-home-native-batch.mjs';
+test('deterministic disjoint chunks conserve455 pending IDs',()=>{const ids=Array.from({length:455},(_,i)=>String(i)),c=chunkIds(ids);assert.equal(c.length,114);assert.deepEqual(c.flat(),ids);assert.ok(c.every(x=>x.length<=4));assert.equal(new Set(c.flat()).size,455);});
