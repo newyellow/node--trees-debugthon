@@ -13,7 +13,7 @@ const mb = await read('public/data/manifest.json'), rb = await read('public/data
 const manifest = JSON.parse(mb), regions = JSON.parse(rb);
 if (regions.treeSnapshot !== manifest.fetchedAt || regions.features.length !== 456) throw new Error('Snapshot mismatch');
 const inputHashes = { 'manifest.json': sha(mb), 'regions.json': sha(rb) };
-const villages = regions.features.map(f => ({ ...f.properties, trees: 0, protected: 0, bins: 0, areaKm2: f.properties.area / 1e6, _trees: [] }));
+const villages = regions.features.map(f => ({ ...f.properties, trees: 0, protected: 0, areaKm2: f.properties.area / 1e6, _trees: [] }));
 const index = new RBush(); index.load(regions.features.map((f, i) => ({ minX: f.bbox[0], minY: f.bbox[1], maxX: f.bbox[2], maxY: f.bbox[3], i, geometry: mapGeometry(f.geometry, toMeters) })));
 function assign(lng, lat) { const p = toMeters([lng, lat]); return index.search({ minX: lng, maxX: lng, minY: lat, maxY: lat }).filter(v => containsPoint(p, v.geometry)).sort((a,b) => a.i-b.i)[0]?.i ?? -1; }
 const treeAudit = {};
@@ -32,7 +32,6 @@ for (const id of ['street-trees', 'park-trees']) {
 const cacheDir = new URL('test-results/village-sources/', root); await mkdir(cacheDir, { recursive: true });
 const configs = [
   { key: 'protected', rid: 'a7c2db0d-8b6e-42b2-bdcc-ae69a6797e1d', encoding: 'utf-8', agency: '臺北市文化局', title: '受保護樹木名冊', source: 'https://data.taipei/dataset/detail?id=d9d1140b-c2c3-405f-8dd1-7b87b00f6f53', sourceFileUpdated: '2026-03-23', metadataCoverageEnd: '2023-04-11' },
-  { key: 'bins', rid: '267d550f-c6ec-46e0-b8af-fd5a464eb098', encoding: 'big5', agency: '臺北市環境保護局', title: '行人專用清潔箱', source: 'https://data.taipei/dataset/detail?id=a835f3ba-7f50-4b0d-91a6-9df128632d1c', sourceFileUpdated: null }
 ];
 const sources = await Promise.all(configs.map(async c => {
   const url = 'https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=' + c.rid, file = new URL(c.key + '.csv', cacheDir);
@@ -55,9 +54,9 @@ const sources = await Promise.all(configs.map(async c => {
 }));
 for (const v of villages) {
   const s = summarizeSpecies(v._trees); delete v._trees;
-  Object.assign(v, { knownNames: s.known, missingNames: s.missingCount, deadStatus: s.statusCount, richness: s.richness, shannon: s.shannon, dominance: s.dominance, treeDensity: v.trees / v.areaKm2, protectedDensity: v.protected / v.areaKm2, binDensity: v.bins / v.areaKm2, native: null, birdsInsects: null });
+  Object.assign(v, { knownNames: s.known, missingNames: s.missingCount, deadStatus: s.statusCount, richness: s.richness, shannon: s.shannon, dominance: s.dominance, treeDensity: v.trees / v.areaKm2, protectedDensity: v.protected / v.areaKm2, native: null, birdsInsects: null });
 }
-for (const v of villages) v.scores = Object.fromEntries(['treeDensity','protectedDensity','richness','binDensity'].map(key => [key, relativeScore(v[key], villages.map(r => r[key]))]));
+for (const v of villages) v.scores = Object.fromEntries(['treeDensity','protectedDensity','richness'].map(key => [key, relativeScore(v[key], villages.map(r => r[key]))]));
 const output = { schemaVersion: 1, preparedAt: new Date().toISOString(), treeSnapshot: manifest.fetchedAt, boundaryFetchedAt: regions.fetchedAt, boundarySource: regions.source, inputHashes, treeAudit, sources, treeSource: { agency: '臺北市政府工務局公園路燈工程管理處', url: 'https://data.gov.tw/dataset/128274', licenseUrl: 'https://data.gov.tw/license' }, reference: { count: villages.length, method: 'zero-anchored-midrank-v1', scope: '全臺北456里；固定快照，不隨行政區篩選重算' }, villages };
 const file = new URL('public/data/village-game.json', root); await writeFile(fileURLToPath(file) + '.tmp', JSON.stringify(output)); await rename(fileURLToPath(file) + '.tmp', fileURLToPath(file));
 console.log(JSON.stringify({ treeAudit, sources, villages: villages.length }, null, 2));

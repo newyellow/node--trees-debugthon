@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import {treeSpeciesColor,updateSpeciesLegend} from './tree-species.js';
 import './village-trees.css';
 
 const TREE_LAYERS = ['street-trees', 'park-trees'];
@@ -107,7 +108,7 @@ export function createVillageTrees({map, base = '/', statusHost, onFeatureOpen =
   const title = document.createElement('strong'), message = document.createElement('span'), caveat = document.createElement('small'), retry = document.createElement('button');
   retry.type = 'button'; retry.textContent = '重試管理樹'; retry.hidden = true;
   caveat.textContent = '管理樹來源紀錄，非全里所有現地樹木；非即時普查。';
-  statusHost.append(title,message,caveat,retry); statusHost.setAttribute('aria-live','polite');
+  const legend=document.createElement('section');legend.className='tree-species-legend';statusHost.append(title,message,caveat,retry,legend); statusHost.setAttribute('aria-live','polite');
   let dead = false, token = 0, state = {records:[]}, markers = [], selected = 0, popup;
   const label = r => String(r.feature.properties.TreeType || r.feature.properties.Name || r.feature.properties._name || '管理樹') + ' · TreeID ' + r.treeId;
   function keyboardLabel() {
@@ -145,13 +146,13 @@ export function createVillageTrees({map, base = '/', statusHost, onFeatureOpen =
     canvas.dataset.villageId = next.villageId || ''; canvas.dataset.phase = next.phase; retry.hidden = next.phase !== 'error';
     title.textContent = next.entry ? next.entry.district + '・' + next.entry.name : next.villageId || '里內管理樹';
     message.textContent = next.phase === 'loading' ? '管理樹載入中…' : next.phase === 'error' ? '管理樹載入失敗：' + next.error.message : next.phase === 'clear' ? '指向或選取里以顯示每筆管理樹' : '共 ' + next.count.toLocaleString('zh-TW') + ' 筆（行道樹 ' + next.entry.byLayer['street-trees'] + '／公園樹 ' + next.entry.byLayer['park-trees'] + '）';
-    keyboardLabel(); onState(next);
+    keyboardLabel(); updateSpeciesLegend(legend,(next.records||[]).map(r=>r.feature)); onState(next);
     if (next.phase !== 'ready') return;
     statusHost.dataset.phase = 'rendering';
     for (let i = 0; i < next.records.length; i++) {
       if (dead || current !== token) return;
       const r = next.records[i], [lng,lat] = r.feature.geometry.coordinates;
-      const marker = L.circleMarker([lat,lng],{renderer,pane:paneName,radius:4,weight:1,color:'#ffffff',fillColor:r.layerId === 'street-trees' ? '#116a43' : '#b95e12',fillOpacity:0.95,interactive:false,bubblingMouseEvents:false}).addTo(group);
+      const marker = L.circleMarker([lat,lng],{renderer,pane:paneName,radius:4,weight:1,color:'#ffffff',fillColor:treeSpeciesColor(r.feature),fillOpacity:0.95,interactive:false,bubblingMouseEvents:false}).addTo(group);
       markers.push({marker,record:r}); canvas.dataset.renderedCount = String(markers.length);
       if (i % 400 === 399) await new Promise(resolve => setTimeout(resolve,0));
     }
@@ -185,6 +186,6 @@ export function createVillageTrees({map, base = '/', statusHost, onFeatureOpen =
     async show(villageId, options = {}) {return loader.show(String(villageId),options);},
     clear() {loader.clear();},
     containsEvent, hitTestLayerPoint,
-    destroy() {if (dead) return; loader.clear(); loader.destroy(); dead = true; resetRender();container.removeEventListener('click',hit,true);canvas.removeEventListener('keydown',key);map.removeLayer(group);map.removeLayer(renderer);pane.remove();delete map._panes[paneName];title.remove();message.remove();caveat.remove();retry.remove();}
+    destroy() {if (dead) return; loader.clear(); loader.destroy(); dead = true; resetRender();container.removeEventListener('click',hit,true);canvas.removeEventListener('keydown',key);map.removeLayer(group);map.removeLayer(renderer);pane.remove();delete map._panes[paneName];title.remove();message.remove();caveat.remove();retry.remove();legend.remove();}
   };
 }

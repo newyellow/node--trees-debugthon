@@ -7,7 +7,7 @@ const snapshot=JSON.parse(await read('public/data/village-game.json')),regionsBy
 const metadata=JSON.parse(await read('public/data/village-record-layers.json'));
 test('pinned boundaries and standard point manifest',()=>{
   assert.equal(sha256(regionsBytes),snapshot.inputHashes['regions.json']);
-  assert.equal(metadata.schemaVersion,1);assert.deepEqual(metadata.layers.map(l=>l.id),['protected-trees','clean-bins']);
+  assert.equal(metadata.schemaVersion,1);assert.deepEqual(metadata.layers.map(l=>l.id),['protected-trees']);
   for(const l of metadata.layers){assert.equal(l.kind,'point');assert.match(l.color,/^#[0-9a-f]{6}$/i);assert.equal(l.licenseUrl,'https://data.gov.tw/license');}
 });
 for(const source of snapshot.sources)test(source.key+' conserves bytes, audit, identities, attributes and WGS84 geometry',async t=>{

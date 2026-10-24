@@ -10,7 +10,7 @@ import { createCapabilityRadar } from './capability-radar.js';
 import './capability-radar.css';
 import { CAPABILITIES, RADAR_CAPABILITIES, dominantCapability, TIE_COLOR, NEUTRAL_COLOR } from './domain.js';
 const $ = id => document.getElementById(id), base = import.meta.env.BASE_URL;
-let data, regions, map, group, selected, recordLayers, villageTrees, visible = [], layers = new Map();
+let data, regions, map, group, hoverRenderer, selected, recordLayers, villageTrees, visible = [], layers = new Map();
 function el(tag, text, className) { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (className) n.className = className; return n; }
 const fmt = (v, digits = 0) => Number.isFinite(v) ? v.toLocaleString('zh-TW', { maximumFractionDigits: digits }) : 'N/A';
 function card(title, score, raw, note) {
@@ -48,14 +48,14 @@ function showHover(v,keyboard=false) {
  const chart=radar(v,120,true).querySelector('svg');chart.setAttribute('x','-60');chart.setAttribute('y','-58');chart.setAttribute('width','120');chart.setAttribute('height','120');n.append(chart);
  RADAR_CAPABILITIES.forEach((c,i)=>{const col=i%3,row=Math.floor(i/3),t=text(c.emoji+' '+(c.unavailable?'N/A':v.scores[c.key]+' / 100'),68+row*14,'hover-score');t.setAttribute('x',(col-1)*55);t.dataset.capability=c.key;});
  text('N/A 以 0 位置顯示・非實際零分',99,'hover-na');
- path.parentNode.append(n);positionHover();
+ hoverRenderer._rootGroup.append(n);positionHover();
 }
 function openDetails(trigger,advice=false) {openPanel('passport',trigger);$('planting-advice').hidden=!advice;$('passport').querySelector('.panel-scroll').scrollTop=0;}
 function showOverview(v,latlng,trigger) {
  hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('passport-toggle');
  const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
  content.append(el('h2',v.district+'・'+v.name),radar(v),el('p',dominantCapability(v.scores).text,'overview-strength'));
- const summary=el('p',undefined,'overview-summary');summary.append(el('span','管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆'),el('br'),el('span','來源名稱 '+fmt(v.richness)+' 類 · 清潔箱 '+fmt(v.bins)+' 處'),el('br'),el('span','快照相對分數；密度／便利為代理指標'));content.append(summary);
+ const summary=el('p',undefined,'overview-summary');summary.append(el('span','管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆'),el('br'),el('span','來源名稱 '+fmt(v.richness)+' 類'),el('br'),el('span','快照相對分數；密度為代理指標'));content.append(summary);
  const low=CAPABILITIES.filter(c=>Number.isFinite(v.scores[c.key])).sort((a,b)=>v.scores[a.key]-v.scores[b.key])[0]; if(low && v.scores[low.key]<Math.max(...CAPABILITIES.map(c=>v.scores[c.key]))) content.append(el('p',low.label+'分數低於本里其他指標；仍須考量面積與調查覆蓋。','overview-state')); const actions=el('div',undefined,'overview-actions');for(const [text,advice] of [['查看細節',false],['種樹建議',true]]) {const b=el('button',text);b.type='button';b.onclick=()=>openDetails(b,advice);actions.append(b);}content.append(actions);
  L.DomEvent.disableClickPropagation(content);L.DomEvent.disableScrollPropagation(content);
  popup=L.popup({className:'village-popup',maxWidth:330,minWidth:Math.min(270,innerWidth-72),maxHeight:Math.max(130,Math.min(510,innerHeight-205)),autoPanPaddingTopLeft:[16,135],autoPanPaddingBottomRight:[16,35],closeOnEscapeKey:false}).setLatLng(latlng||layers.get(v.id).getBounds().getCenter()).setContent(content).openOn(map);
@@ -78,7 +78,7 @@ function select(id, fit = true, latlng, trigger = document.activeElement) {
   $('passport-toggle').hidden = false;
   $('passport').querySelector('.panel-scroll').scrollTop = 0;
   $('village-title').textContent = v.district + '・' + v.name;
-  $('advice-evidence').textContent='本里快照：管理樹 '+fmt(v.trees)+' 筆、來源名稱 '+fmt(v.richness)+' 類、保護名冊 '+fmt(v.protected)+' 筆、清潔箱 '+fmt(v.bins)+' 處。先核對現場紀錄與遮蔭缺口；名稱類別不等於原生物種。';
+  $('advice-evidence').textContent='本里快照：管理樹 '+fmt(v.trees)+' 筆、來源名稱 '+fmt(v.richness)+' 類、保護名冊 '+fmt(v.protected)+' 筆。先核對現場紀錄與遮蔭缺口；名稱類別不等於原生物種。';
   $('village-meta').textContent = '里全面積 ' + fmt(v.areaKm2, 3) + ' km²｜固定參考母體：全臺北456里｜快照 ' + data.treeSnapshot.slice(0,10);
   $('cards').replaceChildren(
     card('01 管理樹木密度 · 代理指標', v.scores.treeDensity, fmt(v.treeDensity,1) + ' 筆/km²｜' + fmt(v.trees) + ' 筆 ÷ ' + fmt(v.areaKm2,3) + ' km²', '不是綠覆率、樹冠面積或全里樹木普查。'),
@@ -86,9 +86,8 @@ function select(id, fit = true, latlng, trigger = document.activeElement) {
     card('03 管理樹木名稱豐富度', v.scores.richness, fmt(v.richness) + ' 類｜有名稱 ' + fmt(v.knownNames) + '/' + fmt(v.trees) + ' 筆', 'Shannon ' + fmt(v.shannon,3) + '；最大類別占比 ' + (v.dominance === null ? 'N/A' : fmt(v.dominance*100,1) + '%') + '。未知 ' + v.missingNames + '、枯木 ' + v.deadStatus + ' 筆。非全植物物種數；受取樣量影響。'),
     card('04 原生比例', null, '待分類對照', '尚無審核過的名稱→分類群對照；未知不是外來種，不計假零。'),
     card('05 鳥類／昆蟲圖鑑', null, '待可靠觀測資料', '未納入精度、授權與努力量可比較的觀測；沒有紀錄不等於沒有生物。'),
-    card('06 散步便利 · 清潔箱代理', v.scores.binDensity, fmt(v.binDensity,1) + ' 處/km²｜' + v.bins + ' 處 ÷ ' + fmt(v.areaKm2,3) + ' km²', '僅行人清潔箱快照密度；不是整體便利性、清潔程度或步行可達性。未納入廁所、飲水與跨里設施。')
   );
-  [...$('cards').children].forEach((n,i) => { const c = CAPABILITIES[[0,1,2,-1,-1,3][i]]; n.style.setProperty('--capability', c?.color || NEUTRAL_COLOR); if(c) n.dataset.capability = c.key; });
+  [...$('cards').children].forEach((n,i) => { const c = CAPABILITIES[[0,1,2,-1,-1][i]]; n.style.setProperty('--capability', c?.color || NEUTRAL_COLOR); if(c) n.dataset.capability = c.key; });
   document.querySelectorAll('#villages button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
 }
 function filter() {
@@ -127,6 +126,9 @@ async function load() {
       $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
       L.control.zoom({ position: 'bottomleft' }).addTo(map);
       group = L.featureGroup().addTo(map);
+      const hoverPane=map.createPane('village-hover');hoverPane.style.zIndex='490';hoverPane.style.pointerEvents='none';
+      hoverRenderer=L.svg({pane:'village-hover',padding:0.5}).addTo(map);
+      hoverRenderer._container.style.pointerEvents='none';
       recordLayers=installRecordLayers({map,host:$('record-layers-list'),base,onFeatureOpen:()=>{hideHover();panelIds.forEach(id=>closePanel(id,false));}});
       villageTrees=createVillageTrees({map,base,statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,onFeatureOpen:({villageId}={})=>{if(villageId){pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';}hideHover(true);panelIds.forEach(id=>closePanel(id,false));},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
       recordLayers.setPriorityHitTest(event=>villageTrees.containsEvent?.(event)||false);

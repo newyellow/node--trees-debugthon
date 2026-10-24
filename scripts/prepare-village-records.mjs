@@ -51,7 +51,7 @@ export async function publishRecords(root=new URL('../',import.meta.url)) {
   const read=path=>readFile(new URL(path,root)),snapshot=JSON.parse(await read('public/data/village-game.json')),rb=await read('public/data/regions.json');
   if(sha256(rb)!==snapshot.inputHashes['regions.json'])throw new Error('BLOCKED REGIONS_SHA_MISMATCH');
   const regions=JSON.parse(rb),assign=createAssigner(regions),outputs=[],layers=[];
-  for(const [key,config]of Object.entries(SOURCE_CONFIG)) {
+  for(const [key,config]of Object.entries(SOURCE_CONFIG).filter(([key])=>key==='protected')) {
     const source=snapshot.sources.find(s=>s.key===key);if(!source)throw new Error('BLOCKED SOURCE_METADATA_MISSING: '+key);
     let bytes;try{bytes=await read('test-results/village-sources/'+key+'.csv');}catch(error){if(error.code==='ENOENT')throw new Error('BLOCKED SOURCE_CACHE_MISSING: '+key+'.csv');throw error;}
     verifySourceBytes(bytes,source);

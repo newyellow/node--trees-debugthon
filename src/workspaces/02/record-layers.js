@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import {treeSpeciesColor,updateSpeciesLegend} from './tree-species.js';
 import RBush from 'rbush';
 import { renderPointLayer } from '../../point-layers.js';
 import { LayerScene } from '../../layer-scene.js';
@@ -60,6 +61,7 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
   let exclusions=new Map(),priorityHitTest=()=>false;const views=new Map();
   function datasetView(id,data){const excluded=exclusions.get(id);if(!excluded?.size)return data;const cached=views.get(id);if(cached?.version===exclusionVersion&&cached.source===data)return cached.data;const features=filterExcludedTreeRecords(data.features,excluded);const index=new RBush();index.load(features.map(feature=>({minX:feature.bbox[0],minY:feature.bbox[1],maxX:feature.bbox[2],maxY:feature.bbox[3],feature})));const view={features,index,featureIds:data.featureIds};views.set(id,{version:exclusionVersion,source:data,data:view});return view;}
   const definitions=new Map(), rows=new Map(), scenes=new Map();
+  const speciesLegend=document.createElement('section');speciesLegend.className='tree-species-legend';
   const state={district:'', query:'', opacity:new Map()};
   const prefix='record-' + L.Util.stamp(host);
   const panes={areas:prefix+'-areas', points:prefix+'-points'};
@@ -121,11 +123,12 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
       const count=active?displayData.index.search(query).filter(({feature})=>matches(feature,district,'')).length:0;
       if(active||scenes.has(id)){
         const {scene,adapter}=getScene(id);scene.begin('records:'+(exclusions.has(id)?exclusionVersion:0));
-        if(active)renderPointLayer({definition,dataset:displayData,state,map,bounds,scene:adapter,featurePopup,fitBounds:(bbox,maxZoom)=>map.fitBounds([[bbox[1],bbox[0]],[bbox[3],bbox[2]]],{maxZoom})});
+        if(active)renderPointLayer({definition,dataset:displayData,state,map,bounds,scene:adapter,featurePopup,pointColor:['street-trees','park-trees'].includes(id)?treeSpeciesColor:null,fitBounds:(bbox,maxZoom)=>map.fitBounds([[bbox[1],bbox[0]],[bbox[3],bbox[2]]],{maxZoom})});
         scene.finish();for(const renderer of Object.values(renderers))keyboard(renderer);
       }
       if(row){row.input.checked=Boolean(record?.enabled);row.status.textContent=record?.status==='loading'?'載入中…':record?.status==='error'?'載入失敗：'+(record.error?.message||'未知錯誤'):active?'目前視窗 '+count.toLocaleString('zh-TW')+' 筆'+(exclusions.get(id)?.size?'（里內樹木另以逐棵顯示）':''):record?.data?'已快取 · 未顯示':'可用 · 尚未載入';row.status.dataset.count=String(count);row.retry.hidden=record?.status!=='error';}
     }
+    updateSpeciesLegend(speciesLegend,['street-trees','park-trees'].flatMap(id=>{const r=loader.records.get(id);return r?.enabled&&r.data?datasetView(id,r.data).features:[];}));
   }
   function addDefinition(definition){
     definitions.set(definition.id,definition);
@@ -144,10 +147,10 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
       results.forEach((result,index)=>{try{
         if(result.status==='rejected')throw result.reason;
         if(index===1&&result.value.schemaVersion!==1)throw new Error('補充目錄版本不支援');
-        for(const item of validateRecordDefinitions(result.value))if(!definitions.has(item.id))addDefinition({fetchedAt:result.value.fetchedAt,...item});
+        for(const item of validateRecordDefinitions(result.value).filter(d=>d.id!=='clean-bins'))if(!definitions.has(item.id))addDefinition({fetchedAt:result.value.fetchedAt,...item});
       }catch(error){failed=true;const message=document.createElement('p');message.textContent=(index?'補充':'原始')+'圖層目錄載入失敗：'+error.message;host.append(message);}});
       for(const {row}of rows.values())if(!host.contains(row))host.append(row);
-      initialized=!failed;if(failed){const retry=document.createElement('button');retry.type='button';retry.textContent='重試圖層目錄';retry.onclick=ensure;host.append(retry);}render();
+      host.append(speciesLegend);initialized=!failed;if(failed){const retry=document.createElement('button');retry.type='button';retry.textContent='重試圖層目錄';retry.onclick=ensure;host.append(retry);}render();
     }).finally(()=>{pendingMetadata=null;});return pendingMetadata;
   }
   // Hit only real shapes. Empty canvas space must not steal village SVG events.
