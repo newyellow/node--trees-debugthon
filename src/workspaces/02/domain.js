@@ -29,12 +29,12 @@ export function validCoordinate(lng, lat) {
 
 // All six scores participate; demo/proxy status is explicit, not field evidence.
 export const CAPABILITIES = Object.freeze([
-  {key:'treeDensity',label:'管理樹木密度',emoji:'🌳',color:'#238443',simulated:false},
-  {key:'protectedDensity',label:'受保護樹木',emoji:'🛡️',color:'#e58b19',simulated:false},
-  {key:'richness',label:'來源名稱豐富度',emoji:'🌿',color:'#8654b9',simulated:false},
-  {key:'nativeShare',label:'原生比例（藍圖 PROXY）',emoji:'🌱',color:'#478b79',proxy:true,simulated:false,method:'blueprint-native-proxy-v1'},
-  {key:'birdInsect',label:'鳥類／昆蟲（DEMO）',emoji:'🦋',color:'#c96998',simulated:true,method:'seeded-demo-v1'},
-  {key:'activity',label:'七日回報活躍（DEMO）',emoji:'📣',color:'#278bad',simulated:true,method:'seeded-seven-day-demo-v1'}
+  {key:'treeDensity',shortLabel:'樹木密度',label:'管理樹木密度',emoji:'🌳',color:'#238443',simulated:false},
+  {key:'protectedDensity',shortLabel:'保護樹木',label:'受保護樹木',emoji:'🛡️',color:'#e58b19',simulated:false},
+  {key:'richness',shortLabel:'名稱多樣',label:'來源名稱豐富度',emoji:'🌿',color:'#8654b9',simulated:false},
+  {key:'nativeShare',shortLabel:'原生代理',label:'原生比例（藍圖 PROXY）',emoji:'🌱',color:'#478b79',proxy:true,simulated:false,method:'blueprint-native-proxy-v1'},
+  {key:'birdInsect',shortLabel:'鳥蟲模擬',label:'鳥類／昆蟲（DEMO）',emoji:'🦋',color:'#c96998',simulated:true,method:'seeded-demo-v1'},
+  {key:'activity',shortLabel:'回報模擬',label:'七日回報活躍（DEMO）',emoji:'📣',color:'#278bad',simulated:true,method:'seeded-seven-day-demo-v1'}
 ].map(Object.freeze));
 export const RADAR_CAPABILITIES = CAPABILITIES;
 export const TIE_COLOR = '#b45b83', NEUTRAL_COLOR = '#a6adb0';

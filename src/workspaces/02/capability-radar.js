@@ -16,6 +16,7 @@ export function computeRadarGeometry(axes, { size = 180, missingAtZero = false }
     const measuredPoint = value === null ? null : point(center, radius * value / 100, angle);
     return {
       key: String(axis?.key ?? index), label: String(axis?.label ?? axis?.key ?? index + 1),
+      shortLabel: typeof axis?.shortLabel === 'string' ? axis.shortLabel : '',
       emoji: typeof axis?.emoji === 'string' ? axis.emoji : '',
       color: safeColor(axis?.color), value, angle,
       end: point(center, radius, angle), labelPoint: point(center, radius + size * .09, angle),
@@ -43,7 +44,7 @@ export function createCapabilityRadar({ axes, size = 180, compact = false, label
   wrapper.style.setProperty('--radar-size', size + 'px');
   const svg = document.createElementNS(SVG_NS, 'svg');
   const uid = 'radar-' + globalThis.crypto.randomUUID();
-  for (const [k, v] of Object.entries({ viewBox: '0 0 240 240', class: 'radar-svg', role: 'img', 'aria-labelledby': uid + '-title', 'aria-describedby': uid + '-desc' })) svg.setAttribute(k, v);
+  for (const [k, v] of Object.entries({ viewBox: '-16 -2 272 244', class: 'radar-svg', role: 'img', 'aria-labelledby': uid + '-title', 'aria-describedby': uid + '-desc' })) svg.setAttribute(k, v);
   const append = (tag, attrs = {}, content) => {
     const el = document.createElementNS(SVG_NS, tag);
     for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, String(v));
@@ -78,7 +79,11 @@ export function createCapabilityRadar({ axes, size = 180, compact = false, label
     }
   });
   g.axes.forEach((a, index) => {
-    append('text', { class: 'radar-axis-index' + (a.emoji ? ' radar-axis-emoji' : ''), x: a.labelPoint.x, y: a.labelPoint.y, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, (a.emoji || index + 1) + (a.value === null ? ' N/A' : ''));
+    if (!a.shortLabel) { append('text', { class: 'radar-axis-index' + (a.emoji ? ' radar-axis-emoji' : ''), x: a.labelPoint.x, y: a.labelPoint.y, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, (a.emoji || index + 1) + (a.value === null ? ' N/A' : '')); return; }
+    const axis = append('text', { class: 'radar-axis-index' + (a.emoji ? ' radar-axis-emoji' : ''), x: a.labelPoint.x, y: a.labelPoint.y, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
+    const icon = document.createElementNS(SVG_NS, 'tspan'); icon.textContent = a.emoji || index + 1; axis.append(icon);
+    if (a.shortLabel) { const name = document.createElementNS(SVG_NS, 'tspan'); name.setAttribute('class', 'radar-axis-label'); name.setAttribute('dx', '4'); name.textContent = a.shortLabel; axis.append(name); }
+    if (a.value === null) { const missing = document.createElementNS(SVG_NS, 'tspan'); missing.textContent = ' N/A'; axis.append(missing); }
   });
   wrapper.append(svg);
   const caption = document.createElement('figcaption');

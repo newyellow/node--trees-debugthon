@@ -55,3 +55,8 @@ header a:focus-visible{outline-color:var(--ne-lime)}
 .vision-tour-banner{border-top:5px solid var(--ne-forest)}
 .vision-region-label{border-radius:0;background:var(--ne-paper);color:var(--ne-forest)}
 @media(max-width:760px){header.surface{padding:10px;gap:10px}header h1{font-size:16px;letter-spacing:.025em}header a{font-size:11px}.neighborhood-brand{gap:6px}.toolbar.surface{gap:4px;padding:5px}.toolbar button{padding:7px 10px}.panel,#finder{border-radius:0}.panel-head{padding:11px 12px}.panel-scroll{padding:12px}.advice-panel{padding:18px}}
+
+/* Short axis names sit beside the same icons used by detail headings. */
+.village-overview .radar-svg { width:220px!important; height:auto!important; }
+.village-overview .radar-chart .radar-axis-index { font-size:18px; }
+#cards .capability-icon { display:inline-block; margin-inline-end:3px; font-size:1.2em; }

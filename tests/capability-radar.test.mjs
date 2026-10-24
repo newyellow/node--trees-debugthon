@@ -132,3 +132,15 @@ test('radar render: generic default retains numeric fallback and unfilled gaps',
  assert.notEqual(missing.attrs.cx,'120');assert.equal(hasClass(missing,'radar-missing--center'),false);
  assert.match(els.find(e=>e.tag==='desc').textContent,/不跨越缺值連線/);
 });
+
+test('radar render: compact names sit next to matching icons without replacing full accessible labels',async()=>{
+ const {CAPABILITIES}=await import('../src/workspaces/02/domain.js');
+ const input=CAPABILITIES.map(c=>({...c,value:50}));
+ const els=descendants(renderRadar({axes:input}));
+ const labels=els.filter(e=>hasClass(e,'radar-axis-label'));
+ assert.deepEqual(labels.map(e=>e.textContent),['樹木密度','保護樹木','名稱多樣','原生代理','鳥蟲模擬','回報模擬']);
+ assert.ok(labels.every(e=>[...e.textContent].length<=4));
+ const axis=els.filter(e=>hasClass(e,'radar-axis-index'));
+ axis.forEach((e,i)=>{assert.equal(e.children[0].textContent,CAPABILITIES[i].emoji);assert.equal(e.children[1],labels[i]);});
+ for(const c of CAPABILITIES)assert.ok(els.find(e=>e.tag==='desc').textContent.includes(c.label));
+});

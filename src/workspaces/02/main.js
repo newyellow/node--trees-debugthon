@@ -132,7 +132,7 @@ function select(id, fit = true, latlng, trigger = document.activeElement) {
     card('05 鳥類／昆蟲 · DEMO 模擬',v.scores.birdInsect,'seeded DEMO 指派分數','非真實觀測、圖鑑數量或生態品質；固定種子僅供介面展示。'),
     card('06 回報活躍度 · DEMO 模擬',v.scores.activity,fmt(v.socialMetrics.activity.reportedCount)+' / '+fmt(v.socialMetrics.activity.dueCount)+' 筆 · 7日模擬回報／應回報樹數','7日模擬回報數 ÷ 應回報樹數 ×100；2026-10-18–24。沒有真實市民回報、上傳或使用者評論。'),
   );
-  [...$('cards').children].forEach((n,i) => { const c = CAPABILITIES[i]; n.style.setProperty('--capability', c?.color || NEUTRAL_COLOR); if(c) n.dataset.capability = c.key; });
+  [...$('cards').children].forEach((n,i) => { const c = CAPABILITIES[i]; if(c) { const icon=el('span',c.emoji,'capability-icon'); icon.setAttribute('aria-hidden','true'); n.querySelector('h3').prepend(icon,document.createTextNode(' ')); } n.style.setProperty('--capability', c?.color || NEUTRAL_COLOR); if(c) n.dataset.capability = c.key; });
   document.querySelectorAll('#villages button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
 }
 function renderRankings(){

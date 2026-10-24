@@ -24,3 +24,5 @@
 .radar-chart .radar-axis-emoji { font-family:system-ui,"Apple Color Emoji","Segoe UI Emoji",sans-serif; }
 .radar-chart .radar-policy { display:block; font-size:11px; color:#465e69; }
 .radar-chart .radar-missing--center { fill:none; }
+
+.radar-chart .radar-axis-label { font:650 14px system-ui,sans-serif; }
