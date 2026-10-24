@@ -21,3 +21,34 @@
 #village-trees-controls{position:absolute;right:12px;bottom:48px;z-index:490;max-width:min(320px,calc(100% - 80px));padding:8px 10px;font-size:11px}#village-trees-controls button{font-size:11px;padding:4px 8px;margin-top:5px}@media(max-width:760px){#village-trees-controls{right:8px;bottom:48px;max-width:235px}#stage:has(.panel:not([hidden])) #village-trees-controls{display:none}}
 
 #stage:has(.village-tree-popup-shell) #village-trees-controls,#stage:has(.village-tree-popup-shell) .status-wrap{display:none}
+
+/* Three navigation levels: overview ink, fixed north bubble, right record pane. */
+.polygon-hover .hover-name{fill:#fff;stroke:#234b3d;stroke-width:3px;font-size:18px}
+.hover-stars{text-align:center;color:white;font-size:12px;text-shadow:0 1px 3px #123}
+.stars-glyph{display:inline-block;position:relative;font-size:25px;line-height:1.2;letter-spacing:2px;color:#f9c846;white-space:nowrap;vertical-align:middle}
+.stars-front{position:absolute;inset:0 auto 0 0;overflow:hidden;color:#f9c846}.stars-number{margin-left:7px}
+.village-overview{width:260px}.village-overview .radar-chart{display:flex;align-items:center;gap:6px}.village-overview .radar-svg{width:105px;height:105px;flex-shrink:0}.village-overview .radar-caption{flex:1}.village-overview .radar-heading{display:none}.village-overview .radar-values{display:block;margin:0}.village-overview .radar-value{display:block;font-size:9px}.village-overview .radar-score{font-size:9px}.village-overview .radar-name{display:inline}.village-overview .overview-strength,.village-overview .overview-state{display:none}.village-overview .overview-summary{margin:4px 0!important;font-size:10px}.village-overview h2{font-size:16px}.village-popup .leaflet-popup-content{margin:10px}.village-popup{margin-bottom:18px}
+.species-panel{position:absolute;z-index:800;right:8px;top:120px;bottom:28px;width:344px;max-width:48vw;overflow:auto;overscroll-behavior:contain;padding:12px;font-size:12px;overflow-wrap:anywhere}.species-close{position:sticky;top:0;z-index:1}.species-stories h3{font-size:16px}.species-stories h4{border-top:1px solid #ccd7cb;padding-top:12px}.species-stories h5{font-size:14px;margin:8px 0}.species-stories article{padding-bottom:12px}.species-stories a{display:block;margin:6px 0}.tree-name-tooltip{font-size:12px;padding:3px 7px;pointer-events:none}
+#stage[data-level=tree] #village-trees-controls,#stage[data-level=tree] .status-wrap{display:none}
+@media(max-width:760px){.species-panel{right:4px;width:43vw;max-width:none;min-width:145px;padding:8px;font-size:11px;top:120px}.village-tree-popup h3{font-size:13px}.village-tree-popup dl{display:block}.village-tree-popup dd{margin-bottom:6px}.species-close{padding:5px;font-size:11px}.village-overview{width:230px}.village-overview .radar-svg{width:95px;height:95px}}
+
+.village-overview .radar-chart{display:flex!important}.rating-note{font-size:9px;line-height:1.35;margin:4px!important}.village-overview .radar-caption{display:block!important}.village-overview .radar-values{display:block!important}
+
+#stage[data-level=village] #village-trees-controls,#stage[data-level=village] .status-wrap{display:none}.village-overview .radar-policy{display:none}
+
+.village-overview .radar-caption{position:absolute!important;width:1px!important;height:1px!important;clip-path:inset(50%)!important;overflow:hidden!important}.village-overview .radar-chart{justify-content:center}.village-overview .radar-svg{width:105px!important;height:105px!important}
+@media(max-width:760px){#stage[data-level=tree] .village-popup .leaflet-popup-content{width:180px!important;margin:8px}#stage[data-level=tree] .village-overview{width:180px}#stage[data-level=tree] .village-popup .leaflet-popup-content-wrapper{width:196px}#stage[data-level=tree] .village-overview h2{font-size:13px}#stage[data-level=tree] .overview-actions button{padding:4px;font-size:10px}}
+
+#stage[data-level=village] #village-trees-controls:has([data-phase=error]){display:block;left:60px;right:auto;bottom:28px;max-height:90px}#village-trees-controls:has([data-phase=error]) .tree-species-legend{display:none}
+
+@media(max-width:760px){#stage[data-level=tree] .village-popup .leaflet-popup-content,#stage[data-level=tree] .village-overview{width:min(180px,calc(100vw - max(145px,43vw) - 24px))!important}#stage[data-level=tree] .village-popup .leaflet-popup-content-wrapper{width:min(196px,calc(100vw - max(145px,43vw) - 8px))}}
+
+.tree-name-tooltip{white-space:nowrap!important;max-width:none;min-width:max-content}
+
+/* Keep overview labels unobstructed; full raw legend is deliberate disclosure. */
+#stage:has(#hover-preview) #village-trees-controls:not(.raw-status-expanded){display:none}
+.raw-tree-details{padding:0;border:0}.raw-tree-details:not([open])~*{display:none}.raw-tree-details>summary{font-size:11px}.raw-tree-details>span,.raw-tree-details>small{display:block}
+#village-trees-controls:has(.raw-tree-details:not([open])){max-width:180px;max-height:90px}
+.original-record-details{margin-top:12px}.species-stories h3{margin:8px 0}.species-stories h4{margin:10px 0 4px}
+
+#stage #village-trees-controls.raw-status-expanded{display:block}.village-popup .leaflet-popup-content{overscroll-behavior:contain}.village-popup .leaflet-popup-scrolled{overflow-y:auto}

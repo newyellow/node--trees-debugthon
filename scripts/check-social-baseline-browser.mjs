@@ -1,0 +1,35 @@
+import {chromium} from '@playwright/test';
+import assert from 'node:assert/strict';
+import {readFile,mkdir} from 'node:fs/promises';
+const url=process.env.VILLAGE_GAME_URL||'http://127.0.0.1:5201/workspaces/02/index.html';
+const out=new URL('../test-results/social-states/',import.meta.url);await mkdir(out,{recursive:true});
+const data=JSON.parse(await readFile(new URL('../public/data/village-game.json',import.meta.url)));
+const manifest=JSON.parse(await readFile(new URL('../public/data/village-trees/manifest.json',import.meta.url)));
+const v=data.villages.find(v=>v.name==='龍安里'&&v.district==='大安區');
+const zero=Object.values(manifest.villages).find(v=>v.count===0);
+const tile='<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256"><rect width="256" height="256" fill="#e3ecdf"/></svg>';
+const browser=await chromium.launch({channel:'chrome',headless:true});
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.route('https://*.tile.openstreetmap.org/**',r=>r.fulfill({contentType:'image/svg+xml',body:tile}));
+ let failAerial=true;await page.route('https://wmts.nlsc.gov.tw/**',r=>failAerial?r.fulfill({status:503,body:'unavailable'}):r.fulfill({contentType:'image/svg+xml',body:tile}));
+ await page.goto(url);await page.getByText('護照已就緒',{exact:false}).waitFor();
+ assert.match(await page.locator('.leaflet-control-attribution').innerText(),/OpenStreetMap/);
+ const polygon=page.locator('path[data-village="'+v.id+'"]');const initial=await polygon.boundingBox();
+ const bbox=async()=>polygon.boundingBox();const same=(a,b)=>{for(const k of ['x','y','width','height'])assert.ok(Math.abs(a[k]-b[k])<2,JSON.stringify({a,b}));};
+ const before=await bbox();await page.locator('#basemap').selectOption('aerial');await page.getByText('航照載入失敗，已回到街道圖。',{exact:true}).waitFor();assert.equal(await page.locator('#basemap').inputValue(),'street');same(before,await bbox());
+ failAerial=false;await page.locator('#tile-retry').click();await page.waitForTimeout(250);assert.equal(await page.locator('#basemap').inputValue(),'aerial');assert.equal(await page.locator('#tile-status').innerText(),'');assert.match(await page.locator('.leaflet-control-attribution').innerText(),/內政部國土測繪中心/);same(before,await bbox());
+ const aerial=await page.locator('img.leaflet-tile-loaded').first().getAttribute('src');assert.match(aerial,/GoogleMapsCompatible/);const parts=aerial.split('/').slice(-3).map(Number);assert.ok(parts[1]<parts[2]);
+ assert.equal(await page.locator('.leaflet-tile-container').evaluateAll(ns=>new Set(ns.map(n=>n.parentElement)).size),1);
+ await page.locator('#basemap').selectOption('street');same(before,await bbox());assert.match(await page.locator('.leaflet-control-attribution').innerText(),/OpenStreetMap/);
+ const transform=await page.locator('.leaflet-map-pane').getAttribute('style');await page.mouse.move(850,450);await page.mouse.down();await page.mouse.move(930,490,{steps:10});await page.mouse.up();await page.waitForTimeout(250);assert.notEqual(await page.locator('.leaflet-map-pane').getAttribute('style'),transform);await page.locator('.leaflet-control-zoom-in').click();
+ await page.locator('#finder-toggle').click();await page.locator('#reset').click();await page.keyboard.press('Escape');same(initial,await bbox());
+ const choose=async entry=>{if(!await page.locator('#finder').isVisible())await page.locator('#finder-toggle').click();await page.locator('#search').fill(entry.name);await page.locator('#villages button').filter({hasText:entry.district+'・'+entry.name}).click();await page.waitForFunction(id=>document.querySelector('canvas[data-village-trees]').dataset.phase==='ready'&&document.querySelector('canvas[data-village-trees]').dataset.villageId===id,entry.id);};
+ await choose(zero);assert.equal(await page.locator('canvas[data-village-trees]').getAttribute('data-rendered-count'),'0');assert.equal(await page.locator('#stage').getAttribute('data-level'),'village');assert.equal(await page.locator('.village-popup').count(),1);await page.keyboard.press('Escape');
+ const zeroRating=data.villages.find(v=>Object.values(v.scores).filter(Number.isFinite).every(n=>n===0));await choose(zeroRating);assert.ok((await page.locator('.rating-note').innerText()).includes('0.0 / 5'));await page.keyboard.press('Escape');
+ await page.setViewportSize({width:667,height:375});await choose(v);
+ const checkFit=async()=>{const b=await page.locator('.village-popup').boundingBox(),p=await bbox(),toolbar=await page.locator('.toolbar').boundingBox();assert.ok(b.x>=0&&b.x+b.width<=667&&b.y>=toolbar.y+toolbar.height,JSON.stringify({b,toolbar}));assert.ok(p.x>=0&&p.x+p.width<=667&&p.y>=b.y+b.height-3&&p.y+p.height<=350,JSON.stringify({p,b}));};
+ await checkFit();assert.ok(await page.locator('.leaflet-popup-content').evaluate(n=>n.scrollHeight>n.clientHeight),'landscape bubble scrolls instead of consuming map');await page.screenshot({path:new URL('landscape-village.png',out).pathname});
+ const canvas=page.locator('canvas[data-village-trees]');await canvas.focus();await page.keyboard.press('Enter');await page.locator('#species-panel:not([hidden])').waitFor();await checkFit();const p=await bbox(),side=await page.locator('#species-panel').boundingBox();assert.ok(p.x+p.width<=side.x+2);await page.screenshot({path:new URL('landscape-tree.png',out).pathname});await page.keyboard.press('Escape');await page.keyboard.press('Escape');
+ assert.deepEqual(errors,[]);await page.close();console.log(JSON.stringify({baseline:true,url,aerialRetry:true,panReset:true,zero:true,landscape:true}));
+}finally{await browser.close();}

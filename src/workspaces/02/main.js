@@ -1,3 +1,4 @@
+import {compositeRating,villageFitPadding,RATING_POLICY} from './social-state.js';
 import L from 'leaflet';
 import { createVillageTrees } from './village-trees.js';
 import './village-trees.css';
@@ -19,6 +20,37 @@ function card(title, score, raw, note) {
   if (score !== null) { const meter = el('meter'); meter.min = 0; meter.max = 100; meter.value = score; meter.setAttribute('aria-label', title + '相對分數'); n.append(meter); }
   n.append(el('p', raw, 'raw'), el('p', note, 'caveat')); return n;
 }
+let level='overview',overviewCamera,switching=false,suppressPreview=false;
+function setLevel(value){level=value;$('stage').dataset.level=value;}
+function fitVillage() {
+  if (!selected) return;
+  const toolbar = Math.ceil(document.querySelector('.toolbar').getBoundingClientRect().bottom + 12);
+  if(popup)popup.options.maxHeight=Math.max(50,Math.min(340,(innerHeight-toolbar-50)*.5-40));
+  popup?.update();
+  const sidebar = level === 'tree'
+    ? Math.min(innerWidth < 761 ? Math.max(145, innerWidth * .43) : 360, innerWidth * .48) : 0;
+  const bubble = popup?.getElement()?.getBoundingClientRect().height || 280;
+  if ($('species-panel')) $('species-panel').style.top = toolbar + 'px';
+  map.fitBounds(layers.get(selected).getBounds(), {
+    animate: false, maxZoom: 18,
+    ...villageFitPadding(innerWidth, innerHeight, {bubble: bubble + 18, sidebar, toolbar})
+  });
+}
+function clearSelection() {
+  if (switching) return;
+  selected = null; pinnedTreeVillage = null; setLevel('overview');
+  villageTrees?.closeRecord(false); shownTreeKey = null; hideHover();
+  $('passport-toggle').hidden = true;
+  panelIds.forEach(id => closePanel(id, false));
+  layers.forEach((layer, id) => styleVillage(id));
+  if (overviewCamera) map.setView(overviewCamera.center, overviewCamera.zoom, {animate: false});
+  // Returning keyboard focus must not silently start a fresh hover tree request.
+  suppressPreview = true;
+  const target = popupFocus;
+  if (target?.isConnected && !target.closest('[hidden]')) target.focus({preventScroll: true});
+  else $('finder-toggle').focus({preventScroll: true});
+  suppressPreview = false;
+}
 let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
 function radar(v,size=170,compact=false) { return createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,label:'能力概覽'}); }
 function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?.78:id===selected?.70:.48}); }
@@ -32,7 +64,7 @@ function positionHover() {
  const p=map.latLngToLayerPoint(anchor);n.setAttribute('transform','translate('+p.x+','+p.y+')');
 }
 function showHover(v,keyboard=false) {
- if(map?.getContainer().querySelector('.leaflet-popup') || (!keyboard&&!matchMedia('(hover:hover)').matches))return;
+ if(suppressPreview||level!=='overview'||map?.getContainer().querySelector('.leaflet-popup') || (!keyboard&&!matchMedia('(hover:hover)').matches))return;
  if(hovered===v.id)return;
  hideHover();const layer=layers.get(v.id),path=layer.getLayers()[0]?.getElement();if(!path)return;
  if(!hoverAnchors.has(v.id)) {
@@ -44,22 +76,23 @@ function showHover(v,keyboard=false) {
  hovered=v.id;styleVillage(v.id,true);previewTimer=setTimeout(()=>{if(!map.getContainer().querySelector('.leaflet-popup'))showVillageTrees(v.id,true);},180);
  const ns='http://www.w3.org/2000/svg', n=document.createElementNS(ns,'g');n.id='hover-preview';n.classList.add('polygon-hover','radar-chart');n.dataset.village=v.id;n.setAttribute('role','img');n.setAttribute('aria-label',v.district+v.name+'能力概覽');
  const text=(value,y,cls)=>{const t=document.createElementNS(ns,'text');t.textContent=value;t.setAttribute('x','0');t.setAttribute('y',y);t.setAttribute('text-anchor','middle');t.setAttribute('class',cls);n.append(t);return t;};
- text(v.district+'・'+v.name,-62,'hover-name');
- const chart=radar(v,120,true).querySelector('svg');chart.setAttribute('x','-60');chart.setAttribute('y','-58');chart.setAttribute('width','120');chart.setAttribute('height','120');n.append(chart);
- RADAR_CAPABILITIES.forEach((c,i)=>{const col=i%3,row=Math.floor(i/3),t=text(c.emoji+' '+(c.unavailable?'N/A':v.scores[c.key]+' / 100'),68+row*14,'hover-score');t.setAttribute('x',(col-1)*55);t.dataset.capability=c.key;});
- text('N/A 以 0 位置顯示・非實際零分',99,'hover-na');
+ text(v.district+'・'+v.name,-12,'hover-name');
+ const rating=compositeRating(v.scores);n.dataset.rating=rating===null?'N/A':rating.toFixed(1);n.dataset.ratingPolicy=RATING_POLICY.version;
+ const foreign=document.createElementNS(ns,'foreignObject');foreign.setAttribute('x','-130');foreign.setAttribute('y','0');foreign.setAttribute('width','260');foreign.setAttribute('height','65');const stars=el('div',undefined,'hover-stars');stars.setAttribute('aria-label','資料綜合星等（暫定） '+(rating===null?'N/A':rating.toFixed(1)+' / 5'));const back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');front.style.width=(rating===null?0:rating/5*100)+'%';const glyph=el('span',undefined,'stars-glyph');glyph.append(back,front);stars.append(glyph,el('span',rating===null?'N/A':rating.toFixed(1)+' / 5','stars-number'));foreign.append(stars);n.append(foreign);
  hoverRenderer._rootGroup.append(n);positionHover();
 }
 function openDetails(trigger,advice=false) {openPanel('passport',trigger);$('planting-advice').hidden=!advice;$('passport').querySelector('.panel-scroll').scrollTop=0;}
 function showOverview(v,latlng,trigger) {
  hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('passport-toggle');
  const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
- content.append(el('h2',v.district+'・'+v.name),radar(v),el('p',dominantCapability(v.scores).text,'overview-strength'));
- const summary=el('p',undefined,'overview-summary');summary.append(el('span','管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆'),el('br'),el('span','來源名稱 '+fmt(v.richness)+' 類'),el('br'),el('span','快照相對分數；密度為代理指標'));content.append(summary);
+ content.append(el('h2',v.district+'・'+v.name),radar(v,105,true),el('p',dominantCapability(v.scores).text,'overview-strength'));
+ const summary=el('p',undefined,'overview-summary');summary.append(el('span','管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆'),el('br'),el('span','來源名稱 '+fmt(v.richness)+' 類'),el('br'),el('span','快照相對分數；密度為代理指標'));content.append(summary);const rating=compositeRating(v.scores);content.append(el('p','資料綜合星等（暫定） '+(rating===null?'N/A':rating.toFixed(1)+' / 5')+'；三項有效能力等權平均 ÷ 20，非使用者評論。','rating-note'));
  const low=CAPABILITIES.filter(c=>Number.isFinite(v.scores[c.key])).sort((a,b)=>v.scores[a.key]-v.scores[b.key])[0]; if(low && v.scores[low.key]<Math.max(...CAPABILITIES.map(c=>v.scores[c.key]))) content.append(el('p',low.label+'分數低於本里其他指標；仍須考量面積與調查覆蓋。','overview-state')); const actions=el('div',undefined,'overview-actions');for(const [text,advice] of [['查看細節',false],['種樹建議',true]]) {const b=el('button',text);b.type='button';b.onclick=()=>openDetails(b,advice);actions.append(b);}content.append(actions);
  L.DomEvent.disableClickPropagation(content);L.DomEvent.disableScrollPropagation(content);
- popup=L.popup({className:'village-popup',maxWidth:330,minWidth:Math.min(270,innerWidth-72),maxHeight:Math.max(130,Math.min(510,innerHeight-205)),autoPanPaddingTopLeft:[16,135],autoPanPaddingBottomRight:[16,35],closeOnEscapeKey:false}).setLatLng(latlng||layers.get(v.id).getBounds().getCenter()).setContent(content).openOn(map);
- popup.on('remove',()=>{if(!panelIds.some(id=>!$(id).hidden)){const n=popupFocus;if(n?.isConnected&&!n.closest('[hidden]'))n.focus({preventScroll:true});else $('passport-toggle').focus({preventScroll:true});}});
+ switching=true;if(popup)map.closePopup(popup);switching=false;
+ popup=L.popup({autoClose:false,closeOnClick:false,autoPan:false,className:'village-popup',maxWidth:330,minWidth:Math.min(270,innerWidth-72),maxHeight:Math.max(130,Math.min(510,innerHeight-205)),autoPanPaddingTopLeft:[16,135],autoPanPaddingBottomRight:[16,35],closeOnEscapeKey:false}).setLatLng([layers.get(v.id).getBounds().getNorth(),layers.get(v.id).getBounds().getCenter().lng]).setContent(content).openOn(map);
+ popup.on('remove',()=>{if(!switching)clearSelection();});
+ fitVillage();
 }
 function switchBasemap(kind,retry=false) {
  if(activeBasemap)map.removeLayer(activeBasemap);basemapKind=kind;$('basemap').value=kind;$('tile-retry').hidden=true;
@@ -69,10 +102,10 @@ function switchBasemap(kind,retry=false) {
  $('tile-status').textContent='';layer.addTo(map);
 }
 function select(id, fit = true, latlng, trigger = document.activeElement) {
-  const v = data.villages.find(r => r.id === id); if (!v) return; selected = id;pinnedTreeVillage=id;showVillageTrees(id,false);
+  const v = data.villages.find(r => r.id === id); if (!v) return; if(level==='overview')overviewCamera={center:map.getCenter(),zoom:map.getZoom()};switching=true;villageTrees?.closeRecord(false);switching=false;setLevel('village');selected = id;pinnedTreeVillage=id;showVillageTrees(id,false);
   layers.forEach((l,key)=>styleVillage(key));
   map.stop(); map.invalidateSize({pan:false,animate:false});
-  layers.get(id)?.bringToFront(); if(fit&&layers.has(id))map.fitBounds(layers.get(id).getBounds(),{animate:false,paddingTopLeft:[35,145],paddingBottomRight:[35,60],maxZoom:16});
+  layers.get(id)?.bringToFront();
   showOverview(v,latlng,trigger);
   const strongest = dominantCapability(v.scores); $('strongest').textContent = strongest.text; $('strongest').style.borderColor = strongest.color;
   $('passport-toggle').hidden = false;
@@ -95,11 +128,11 @@ function filter() {
   const district = $('district').value, query = $('search').value.trim();
   visible = data.villages.filter(v => (!district || v.district === district) && (v.district + v.name).includes(query));
   const ids = new Set(visible.map(v => v.id));
-  if(pinnedTreeVillage&&!ids.has(pinnedTreeVillage)){pinnedTreeVillage=null;restorePinnedTrees();}
+  if(pinnedTreeVillage&&!ids.has(pinnedTreeVillage)){map.closePopup(popup);clearSelection();}
   layers.forEach((l,id) => { if (ids.has(id)) { if (!group.hasLayer(l)) group.addLayer(l); } else group.removeLayer(l); });
   $('result-count').textContent = visible.length + ' 里符合條件';
   $('villages').replaceChildren(...visible.map(v => { const li = el('li'), b = el('button', v.district + '・' + v.name); b.type = 'button'; b.dataset.id = v.id; b.setAttribute('aria-pressed', String(v.id === selected)); b.onclick = () => select(v.id); li.append(b); return li; }));
-  if (visible.length && district) map.fitBounds(group.getBounds(), { animate: false, padding: [15,15] });
+  if (level==='overview' && visible.length && district) map.fitBounds(group.getBounds(), { animate: false, padding: [15,15] });
 }
 function provenance() {
   const p = $('provenance'); p.replaceChildren();
@@ -120,7 +153,7 @@ async function load() {
     if (data.schemaVersion !== 1 || data.villages.length !== 456 || regions.features.length !== 456 || regions.treeSnapshot !== data.treeSnapshot || digest !== data.inputHashes['regions.json']) throw new Error('快照或里界版本不一致');
     const ids = new Set(regions.features.map(f => f.properties.id)); if (new Set(data.villages.map(v => v.id)).size !== 456 || data.villages.some(v => !ids.has(v.id))) throw new Error('里代碼不一致');
     if (!map) {
-      map = L.map('map', { scrollWheelZoom: true, zoomControl: false, zoomAnimation: false, fadeAnimation: false }).setView([25.06,121.55],11);
+      map = L.map('map', { scrollWheelZoom: true, zoomControl: false, zoomAnimation: false, fadeAnimation: false,zoomSnap:0 }).setView([25.06,121.55],11);
       switchBasemap('street');
       $('basemap').onchange=()=>switchBasemap($('basemap').value);
       $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
@@ -130,9 +163,9 @@ async function load() {
       hoverRenderer=L.svg({pane:'village-hover',padding:0.5}).addTo(map);
       hoverRenderer._container.style.pointerEvents='none';
       recordLayers=installRecordLayers({map,host:$('record-layers-list'),base,onFeatureOpen:()=>{hideHover();panelIds.forEach(id=>closePanel(id,false));}});
-      villageTrees=createVillageTrees({map,base,statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,onFeatureOpen:({villageId}={})=>{if(villageId){pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';}hideHover(true);panelIds.forEach(id=>closePanel(id,false));},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
+      villageTrees=createVillageTrees({map,base,statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,villageInfo:id=>data.villages.find(v=>v.id===id),onFeatureClose:()=>{if(!switching&&selected){setLevel('village');fitVillage();}},onFeatureOpen:({villageId,preview}={})=>{if(preview){select(villageId);return;}if(villageId&&selected!==villageId)select(villageId);pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';hideHover(true);panelIds.forEach(id=>closePanel(id,false));setLevel('tree');fitVillage();},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
       recordLayers.setPriorityHitTest(event=>villageTrees.containsEvent?.(event)||false);
-      map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',()=>hideHover());
+      map.on('resize',()=>{if(selected)fitVillage();});map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',()=>hideHover());
     }
     hideHover();hoverAnchors.clear();group.clearLayers(); layers = new Map();
     const villagesById = new Map(data.villages.map(v => [v.id,v]));
@@ -141,11 +174,11 @@ async function load() {
       const l = L.geoJSON(f, { style: { color: '#50616a', weight: 1, fillColor: strength.color, fillOpacity: .48 } });
       l.on('mouseover',()=>showHover(v));
       l.on('mouseout',()=>hideHover());
-      l.on('click',e=>select(v.id,false,e.latlng,e.originalEvent?.target));
+      l.on('click',e=>select(v.id,true,e.latlng,e.originalEvent?.target));
       l.eachLayer(path => {
         path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜' + strength.text);
           node.onfocus=()=>showHover(v,true);node.onblur=()=>hideHover();
-          node.onkeydown = e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,false,undefined,node); popup?.getElement()?.querySelector('button')?.focus({preventScroll:true}); } };
+          node.onkeydown = e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,true,undefined,node); popup?.getElement()?.querySelector('button')?.focus({preventScroll:true}); } };
         });
       });
       layers.set(v.id,l); group.addLayer(l);
@@ -153,11 +186,11 @@ async function load() {
     $('district').replaceChildren(el('option', '全臺北市')); $('district').firstChild.value = '';
     [...new Set(data.villages.map(v => v.district))].sort().forEach(d => { const o = el('option',d); o.value = d; $('district').append(o); });
     ['district','search','reset'].forEach(id => $(id).disabled = false);
-    $('district').onchange = filter; $('search').oninput = filter;
+    $('district').onchange = filter; $('search').oninput = filter;$('search').onkeydown=e=>{if(e.key==='Enter'&&visible.length){e.preventDefault();select(visible[0].id);}};
     $('reset').onclick = () => { map.closePopup();pinnedTreeVillage=null;hideHover(); $('district').value = ''; $('search').value = ''; filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] }); };
     filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] });
     provenance();
-    $('status').textContent = '護照已就緒・456里界與真實快照｜分數是資料相對位置，不是地方好壞。';
+    $('status').textContent = '護照已就緒・456里界與真實快照｜暫定星等為三項有效能力等權平均 ÷ 20；受里面積、取樣與保護名冊影響，非生態品質認證／使用者評價。';
   } catch (error) { $('status').textContent = '資料載入失敗：' + error.message + '。請檢查連線後重試。'; $('retry').hidden = false; }
 }
 const panelIds = ['finder','passport','legend','method','records'], returnFocus = new Map();
@@ -177,10 +210,10 @@ panelIds.forEach(id => {
 });
 $('passport-toggle').onclick=()=>{if(selected)select(selected,false,undefined,$('passport-toggle'));};
 for(const node of document.querySelectorAll('.surface')) { L.DomEvent.disableClickPropagation(node); L.DomEvent.disableScrollPropagation(node); }
-document.addEventListener('keydown', e => { if(e.key === 'Escape') { const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') {if(villageTrees?.isRecordOpen()){e.preventDefault();villageTrees.closeRecord();return;} const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
 for(const item of [...CAPABILITIES, {label:'多項正值能力並列最高',color:TIE_COLOR}, {label:'有效分數皆0／無有效分數',color:NEUTRAL_COLOR}]) {
   const li = el('li',(item.emoji?item.emoji+' ':'')+item.label); const swatch = el('span',undefined,'swatch'); swatch.style.background = item.color; li.prepend(swatch); $('legend-items').append(li);
 }
 $('detail-method').onclick=()=>openPanel('method',$('detail-method'));
-$('clear-village-trees').onclick=()=>{pinnedTreeVillage=null;hideHover();};
-$('retry').onclick = load; load();
+$('clear-village-trees').onclick=()=>{map.closePopup(popup);clearSelection();};
+setLevel('overview');$('retry').onclick = load; load();
