@@ -21,3 +21,6 @@ Verification: syntax/build and one1100×800 changed-render pass for17px heading,
 
 ## Resting map opacity and default imagery — 2026-10-24 19:36
 Non-hover village fill opacity reduced by another30% relative to the current setting: base0.384→0.2688; selected0.56→0.392; hover remains0.78. Tree-square renderer/colors/opacity are unchanged. Initial basemap is now the existing NLSC PHOTO2 aerial layer, with matching select and source note; this is aerial imagery, not a live satellite feed. Existing street fallback/retry behavior is retained. One changed opacity unit assertion and one1100×800 scoped render verify actual resting/hover SVG fill-opacity and initial aerial/PHOTO2 selection (tile responses mocked for deterministic UI verification). Syntax and isolated build pass; no tree-marker regressions or AI inference rerun.
+
+## Selected fill emphasis — 2026-10-24 19:41
+Selected village fill opacity increases20% relative to its latest setting:0.392→0.4704. Base0.2688, hover0.78, tree markers and aerial default remain unchanged. Only the display constant and directly affected opacity assertion change; focused assertion and required build pass. No unrelated interaction/render regression rerun.
