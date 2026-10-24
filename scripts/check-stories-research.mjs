@@ -27,7 +27,7 @@ try{
   assert.match(await page.locator('#message').textContent(),/2 筆／共 2/);
   assert.equal(await page.locator('#rows img').count(),0,'source text is not interpreted as HTML');
   assert.equal(await page.getByRole('link',{name:'返回首頁',exact:true}).getAttribute('href'),base.pathname+'index.html');
-  assert.equal(await page.getByRole('link',{name:'返回樹木故事',exact:true}).getAttribute('href'),base.pathname+'stories/index.html');
+  assert.equal(await page.getByRole('link',{name:'返回植物文化地層',exact:true}).getAttribute('href'),base.pathname+'stories/index.html');
   for(const format of ['JSON','CSV']){const url=new URL(await page.getByRole('link',{name:'下載 '+format,exact:true}).getAttribute('href'),base);assert.equal(url.pathname,base.pathname+'data/tree-cultural-stories.'+format.toLowerCase());assert.match(url.searchParams.get('v'),/^[a-f0-9]{64}$/);}
   await page.getByLabel('樹種',{exact:true}).fill('樹甲');assert.equal(await page.locator('#rows tr').count(),1);
   await page.getByLabel('地點',{exact:true}).fill('地乙');await page.locator('#empty').waitFor({state:'visible'});
