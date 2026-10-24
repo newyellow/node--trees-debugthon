@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { computeRadarGeometry as geometry } from '../src/workspaces/02/capability-radar.js';
+import { computeRadarGeometry as geometry, createCapabilityRadar } from '../src/workspaces/02/capability-radar.js';
 const axes = values => values.map((value, i) => ({key:'a'+i,label:'完整項目 '+i,color:'#238443',value}));
 const close = (a,b) => assert.ok(Math.abs(a-b)<1e-9, a+' != '+b);
 test('radar: cardinal symmetry, clockwise from top, maximum and rings', () => {
@@ -47,4 +47,88 @@ test('radar: pure, deterministic, preserves labels and uses safe colors',()=>{
 test('radar: reject unsupported axes and sizes',()=>{
  for(const a of [undefined,null,[],axes([1,2])])assert.throws(()=>geometry(a),TypeError);
  for(const size of [0,-1,Infinity,NaN,'180',10001])assert.throws(()=>geometry(axes([0,50,100]),{size}),RangeError);
+});
+
+test('radar: six emoji axes keep measurements separate from zero-radius display',()=>{
+ const emoji=['🌳','🌿','🦋','🌱','🍃','🐦'];
+ const input=axes([0,25.125,50,100,null,null]).map((a,i)=>({...a,emoji:emoji[i]}));
+ const g=geometry(input,{size:240,missingAtZero:true});
+ assert.equal(g.axes.length,6);assert.equal(g.complete,false);assert.equal(g.polygon,null);
+ assert.equal(g.displayPolygon.length,6);assert.equal(g.missingAtZero,true);
+ g.axes.forEach((a,i)=>{assert.equal(a.emoji,emoji[i]);close(a.angle,-Math.PI/2+i*Math.PI/3);});
+ for(const i of [4,5]){
+  assert.equal(g.axes[i].value,null);assert.equal(g.axes[i].point,null);
+  assert.deepEqual(g.axes[i].displayPoint,g.center);assert.deepEqual(g.displayPolygon[i],g.center);
+ }
+ assert.equal(g.axes[0].value,0);assert.deepEqual(g.axes[0].point,g.center);
+ assert.equal(g.axes[1].value,25.125);
+ assert.equal(g.segments.length,3); // Display-only edges never contaminate measured segments.
+ const defaults=geometry(input);
+ assert.equal(defaults.displayPolygon,null);assert.equal(defaults.axes[4].displayPoint,null);
+});
+test('radar: opt-in invalid values remain missing and never become measurements',()=>{
+ for(const value of [null,undefined,NaN,Infinity,-Infinity,-1,101,'50','',false,{},[]]){
+  const g=geometry(axes([50,value,100]),{missingAtZero:true});
+  assert.equal(g.axes[1].value,null);assert.equal(g.axes[1].point,null);
+  assert.deepEqual(g.axes[1].displayPoint,g.center);assert.equal(g.complete,false);
+  assert.equal(g.polygon,null);assert.equal(g.displayPolygon.length,3);assert.equal(g.segments.length,1);
+ }
+ for(const values of [[null,null,null],[null,50,null],[0,0,0]]){
+  const g=geometry(axes(values),{missingAtZero:true});
+  assert.equal(g.displayPolygon.length,3);
+  assert.ok(g.displayPolygon.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)));
+ }
+ // Only explicit boolean true opts in; absent/false retain gaps.
+ for(const missingAtZero of [undefined,false,'true',1]){
+  const g=geometry(axes([0,null,100]),{missingAtZero});
+  assert.equal(g.axes[1].displayPoint,null);assert.equal(g.displayPolygon,null);
+ }
+});
+test('radar: emoji and opt-in geometry are pure and preserve frozen caller input',()=>{
+ const input=axes([0,25,null,100,null,50]).map((a,i)=>Object.freeze({...a,emoji:['🌳','🌿','🦋','🌱','🍃','🐦'][i]}));
+ Object.freeze(input);const before=structuredClone(input);
+ const options=Object.freeze({size:110,missingAtZero:true});
+ const first=geometry(input,options);assert.deepEqual(first,geometry(input,options));assert.deepEqual(input,before);
+ first.axes[4].displayPoint.x=-1;assert.deepEqual(geometry(input,options).axes[4].displayPoint,{x:55,y:55});
+ assert.equal(geometry(axes([0,0,0])).axes[0].emoji,'');
+ const complete=geometry(input.map(a=>({...a,value:0})),options);
+ assert.equal(complete.complete,true);assert.deepEqual(complete.displayPolygon,complete.polygon);
+});
+
+// Minimal DOM double: reject HTML insertion; inspect the renderer without extra dependencies.
+const renderRadar = options => {
+ const previous=globalThis.document;
+ const element=tag=>({tag,attrs:{},children:[],className:'',textContent:'',style:{setProperty(){}},
+  setAttribute(k,v){this.attrs[k]=v;},append(...children){this.children.push(...children);},
+  set innerHTML(_){throw new Error('Unsafe HTML insertion');}});
+ globalThis.document={createElement:element,createElementNS:(_,tag)=>element(tag)};
+ try{return createCapabilityRadar(options);}finally{globalThis.document=previous;}
+};
+const descendants = node => [node,...node.children.flatMap(descendants)];
+const hasClass = (el,cls) => (el.attrs.class || el.className).split(' ').includes(cls);
+test('radar render: emoji, exact scores, N/A, missing center outline and real-zero solid point',()=>{
+ const input=axes([0,25.125,50,100,null,null]).map((a,i)=>({...a,emoji:['🌳','🌿','🦋','🌱','🍃','🐦'][i]}));
+ input[4].label='<img onerror=alert(1)>';
+ const root=renderRadar({axes:input,missingAtZero:true});const els=descendants(root);
+ assert.deepEqual(els.filter(e=>hasClass(e,'radar-axis-index')).map(e=>e.textContent),['🌳','🌿','🦋','🌱','🍃 N/A','🐦 N/A']);
+ assert.equal(els.filter(e=>hasClass(e,'radar-area--missing')).length,1);
+ assert.equal(els.filter(e=>hasClass(e,'radar-point')).length,4);
+ const zero=els.find(e=>hasClass(e,'radar-point'));assert.equal(zero.attrs.cx,'120');assert.equal(zero.attrs.cy,'120');
+ const missing=els.filter(e=>hasClass(e,'radar-missing--center'));assert.equal(missing.length,2);
+ missing.forEach(e=>{assert.equal(e.attrs.cx,'120');assert.equal(e.attrs.cy,'120');});
+ assert.equal(els.filter(e=>hasClass(e,'radar-missing-cross')).length,2);
+ assert.ok(els.some(e=>e.textContent==='25.125 / 100'));
+ assert.equal(els.filter(e=>e.textContent==='N/A（無可用分數）').length,2);
+ assert.ok(els.some(e=>e.textContent==='🍃 <img onerror=alert(1)>'));
+ const desc=els.find(e=>e.tag==='desc').textContent;
+ assert.match(desc,/0–100/);assert.match(desc,/非生態健康/);assert.match(desc,/缺值而非實際 0 分/);
+});
+test('radar render: generic default retains numeric fallback and unfilled gaps',()=>{
+ const els=descendants(renderRadar({axes:axes([0,null,100])}));
+ assert.deepEqual(els.filter(e=>hasClass(e,'radar-axis-index')).map(e=>e.textContent),['1','2 N/A','3']);
+ assert.equal(els.filter(e=>hasClass(e,'radar-area')).length,0);
+ assert.equal(els.filter(e=>hasClass(e,'radar-segment')).length,1);
+ const missing=els.find(e=>hasClass(e,'radar-missing'));
+ assert.notEqual(missing.attrs.cx,'120');assert.equal(hasClass(missing,'radar-missing--center'),false);
+ assert.match(els.find(e=>e.tag==='desc').textContent,/不跨越缺值連線/);
 });

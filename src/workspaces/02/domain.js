@@ -29,11 +29,18 @@ export function validCoordinate(lng, lat) {
 
 // Only validated, currently scored capabilities may contribute; never coerce N/A to zero.
 export const CAPABILITIES = Object.freeze([
-  { key: 'treeDensity', label: '管理樹木密度', color: '#238443' },
-  { key: 'protectedDensity', label: '受保護樹木', color: '#e58b19' },
-  { key: 'richness', label: '來源名稱豐富度', color: '#8654b9' },
-  { key: 'binDensity', label: '清潔箱便利代理', color: '#1685b5' }
+  { key: 'treeDensity', label: '管理樹木密度', emoji: '🌳', color: '#238443' },
+  { key: 'protectedDensity', label: '受保護樹木', emoji: '🛡️', color: '#e58b19' },
+  { key: 'richness', label: '來源名稱豐富度', emoji: '🌿', color: '#8654b9' },
+  { key: 'binDensity', label: '清潔箱便利代理', emoji: '🚶', color: '#1685b5' }
 ].map(Object.freeze));
+// Display-only axes do not join dominant capability or ranking calculations.
+export const RADAR_CAPABILITIES = Object.freeze([
+  ...CAPABILITIES.slice(0,3),
+  Object.freeze({key:'nativeShare',label:'原生比例',emoji:'🌱',color:'#667867',unavailable:true}),
+  Object.freeze({key:'birdInsect',label:'鳥類／昆蟲',emoji:'🦋',color:'#667867',unavailable:true}),
+  CAPABILITIES[3]
+]);
 export const TIE_COLOR = '#b45b83', NEUTRAL_COLOR = '#a6adb0';
 export function dominantCapability(scores = {}) {
   const valid = CAPABILITIES.filter(c => Number.isFinite(scores?.[c.key]) && scores[c.key] >= 0 && scores[c.key] <= 100);

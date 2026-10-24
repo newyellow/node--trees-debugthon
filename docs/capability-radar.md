@@ -1,41 +1,44 @@
 # Capability radar module
 
-Owned files:
-- src/workspaces/02/capability-radar.js
-- src/workspaces/02/capability-radar.css
-- tests/capability-radar.test.mjs
-- docs/capability-radar.md
+Owned files: src/workspaces/02/capability-radar.js, src/workspaces/02/capability-radar.css, tests/capability-radar.test.mjs, docs/capability-radar.md.
 
 ## Integration
 
-Import createCapabilityRadar from './capability-radar.js' and explicitly import './capability-radar.css' in the parent UI. Mount the returned HTMLElement with append/replaceChildren. No implicit mount, stylesheet import, data fetch, map dependency, listeners, storage or teardown is needed. Each call creates an independent subtree and cryptographically unique SVG title/description IDs (modern secure-context browser crypto.randomUUID).
+Import createCapabilityRadar from './capability-radar.js' and explicitly import './capability-radar.css' in the parent UI. Mount the returned figure with append/replaceChildren. No implicit mount, stylesheet import, fetch, listeners, storage or teardown. Each call creates an independent subtree with cryptographically unique SVG title/description IDs (browser crypto.randomUUID).
 
-Signature: createCapabilityRadar({axes, size=180, compact=false, label='能力概覽'}) => HTMLElement (figure).
+Signature: createCapabilityRadar({axes, size=180, compact=false, label='能力概覽', missingAtZero=false}) => HTMLElement.
 
-axes is an ordered array with at least three entries: {key, label, color, value}. Values must be numeric finite scores in inclusive 0–100. null, undefined, strings, nonfinite and out-of-range values are missing, never clamped or coerced to zero. Size is a finite number >0 and <=10000 CSS pixels. Unsupported axis counts and dimensions throw TypeError/RangeError. Caller colors support #RGB/#RRGGBB; other paints use safe #53666f. Labels are inserted through textContent, never interpreted as HTML.
+axes is an ordered array of at least three {key, label, emoji?, color, value} entries. Numeric finite values in inclusive 0–100 are scores. null, undefined, strings, nonfinite and out-of-range values are missing, never coerced/clamped to zero. Size must be finite >0 and <=10000 CSS pixels. Unsupported axes/dimensions throw TypeError/RangeError. Colors support #RGB/#RRGGBB, otherwise safe #53666f. Caller labels and emoji use textContent only, never HTML. Optional string emoji is preserved by geometry and replaces numeric identifiers on spokes and in the legend; omitted/empty emoji falls back to the 1-based number. Caller chooses meaningful emoji and ordering; no domain rules are hardcoded here.
 
-For the current village UI pass ONLY its four scored capability axes, in the desired stable order, with caller palette and scores. Native/bird unavailable indicators remain explicit parent N/A badges; do not feed fabricated zeros or substitute axes. This module also supports generic incomplete arrays for other hosts.
+### Village six-axis opt-in
+
+Pass all six village axes, including native/bird with value:null, and explicitly set missingAtZero:true. Attach meaningful emoji to each axis. This is a display-only policy: missing measurements remain null, complete remains false, and neither scores nor rankings change. Missing vertices display at zero radius, with dashed missing spokes, a dashed low-opacity display polygon, center outlined crosses, and explicit N/A spoke labels plus full-label N/A legend entries. Real zero remains a solid score point; center missing outlines are transparent and drawn above it. The description and visible caption explain that center N/A is NOT an actual zero score or a complete assessment.
+
+Only boolean true enables this policy. Default/false preserves generic missing semantics: missing point and displayPoint are null, marker is at the spoke endpoint, no filled polygon for incomplete data, and only adjacent measured points connect, including cyclic last/first adjacency. Never bridge gaps by default.
 
 ## Reading and accessibility
 
-The fixed 240×240 SVG viewBox scales to requested width, capped at container width. Default view uses numbered clockwise spokes (first at top) plus a visible ordered legend containing the complete, untruncated caller labels and exact scores. This keeps long source labels readable without overlapping the polygon. Compact mode, e.g. size:110, visually hides the caption but retains the complete accessible text; numbered spokes and N/A indicators remain visible. Parent should provide visible explanatory context for compact-only charts.
+Fixed 240×240 SVG viewBox scales to requested width, capped at container width. Spoke identifiers are emoji when supplied, numeric otherwise. Visible legend always keeps full labels and exact unrounded scores or N/A. Compact mode (e.g. size:110) visually hides the caption but retains complete accessible text; identifiers and N/A stay visible. Parent provides visible explanatory context for compact-only charts.
 
-SVG role=img references its own title and description. Description and textual caption identify units as snapshot-relative 0–100 scores, NOT ecological health. Real zero is a solid point at center. Missing values use dashed spokes and an outlined cross at the spoke end labelled N/A; this is a missing marker, not a numeric point. Filled polygon exists only when every axis is valid. Otherwise only known points and adjacent known-to-known segments are drawn, including the cyclic last/first adjacency; never bridge across a missing axis. All-zero values are valid and yield a degenerate center polygon; single-known/all-missing cases are supported.
+SVG role=img references its unique title/description. Description and caption identify units as snapshot-relative 0–100 scores, NOT ecological health. Solid points represent measured scores including zero; outlined crosses represent missing values. All-zero scores are valid, producing a degenerate center polygon. Single-known/all-missing cases work in either policy. This module does not compute domain scores or ecological-health judgments.
 
 ## Pure geometry API
 
-computeRadarGeometry(axes, {size=180}={}) is DOM-free, deterministic, and does not mutate input. Returns {size,center,radius,axes,complete,rings,polygon,segments}.
+computeRadarGeometry(axes, {size=180, missingAtZero=false}={}) is DOM-free, deterministic and does not mutate input. Returns {size,center,radius,axes,complete,missingAtZero,rings,polygon,displayPolygon,segments}.
 
-- center: {x,y}; radius: size*0.30; equally spaced clockwise angles in radians starting -PI/2.
-- axes: normalized {key,label,color,value,angle,end,labelPoint,point}; missing point/value are null. end is always the 100-score spoke endpoint, not a measurement.
+- center: {x,y}; radius: size*0.30. Equally spaced clockwise angles begin at -PI/2.
+- axes: normalized {key,label,emoji,color,value,angle,end,labelPoint,point,displayPoint}. emoji defaults to ''. Missing value/point remain null in BOTH policies. end is the 100-score spoke endpoint, not a measurement.
+- displayPoint: measured point when valid; center when missing and explicitly opted in; otherwise null.
+- complete: true only when ALL measurements are valid; opt-in never changes completeness.
 - rings: four coordinate arrays at 25/50/75/100.
-- polygon: ordered points only when all scores valid, otherwise null.
-- segments: [{from,to}] for adjacent valid axes only; no missing-value fill.
+- polygon: measured points only when complete; otherwise null, including opt-in.
+- displayPolygon: complete measured polygon, or all ordered display points when opted in; otherwise null. Not evidence of complete measured data.
+- segments: adjacent valid measured points only; opt-in never introduces fabricated measurement edges.
 
-Geometry size controls coordinate scale; DOM uses fixed geometry for scalable type and markers.
+Geometry size controls coordinate scale; DOM uses fixed geometry for scalable type/markers.
 
 ## Verification
 
-Node 24.22.1: node --test tests/capability-radar.test.mjs — 7/7 pass. Covers symmetry, rings, endpoints, real/all zero, invalid/missing coercion, wraparound gaps, single/all missing, 3–100 axes, sizes 1/110/180/320/10000, finite coordinates, safe colors, input preservation and invalid arguments.
+Verified Node v24.22.1 at /Users/piyellow/Library/Application Support/TreesDebugthon/node-v24.22.1-darwin-arm64/bin/node. Run node --test tests/capability-radar.test.mjs.
 
-Ephemeral Playwright/installed Chrome smoke (no saved files, requests or dependency installs): six simultaneous default/compact/partial/zero/single-known/all-missing instances; expected fill counts [1,0,1,1,0,0], unique IDs and valid ARIA references, literal malicious-looking labels, exact accessible zero score, 110px compact SVG, no horizontal overflow at 390px, no page errors. Passed. Whole-app build/integration and publication remain parent-owned.
+Original seven pure tests are preserved. Added coverage for six axes/emoji, explicit opt-in vs unchanged default, invalid inputs remaining null, real zero, all-missing/single-known/all-zero display polygons, frozen caller input/options and deterministic independent output. Render tests use a minimal DOM double to check safe text insertion, emoji/numeric fallback, exact scores/N/A, display-only description, dashed missing polygon class, center crosses and solid zero points. Browser layout, app build/integration and publication remain parent-owned.

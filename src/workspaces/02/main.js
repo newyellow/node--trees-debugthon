@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import './style.css';
 import { createCapabilityRadar } from './capability-radar.js';
 import './capability-radar.css';
-import { CAPABILITIES, dominantCapability, TIE_COLOR, NEUTRAL_COLOR } from './domain.js';
+import { CAPABILITIES, RADAR_CAPABILITIES, dominantCapability, TIE_COLOR, NEUTRAL_COLOR } from './domain.js';
 const $ = id => document.getElementById(id), base = import.meta.env.BASE_URL;
 let data, regions, map, group, selected, visible = [], layers = new Map();
 function el(tag, text, className) { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (className) n.className = className; return n; }
@@ -16,7 +16,7 @@ function card(title, score, raw, note) {
   n.append(el('p', raw, 'raw'), el('p', note, 'caveat')); return n;
 }
 let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
-function radar(v,size=170,compact=false) { return createCapabilityRadar({axes:CAPABILITIES.map(c=>({...c,value:v.scores[c.key]})),size,compact,label:'能力概覽'}); }
+function radar(v,size=170,compact=false) { return createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,label:'能力概覽'}); }
 function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?.78:id===selected?.70:.48}); }
 const hoverAnchors = new Map();
 function hideHover() { $('hover-preview')?.remove(); if(hovered) {styleVillage(hovered);hovered=null;} }
@@ -39,8 +39,8 @@ function showHover(v,keyboard=false) {
  const text=(value,y,cls)=>{const t=document.createElementNS(ns,'text');t.textContent=value;t.setAttribute('x','0');t.setAttribute('y',y);t.setAttribute('text-anchor','middle');t.setAttribute('class',cls);n.append(t);return t;};
  text(v.district+'・'+v.name,-62,'hover-name');
  const chart=radar(v,120,true).querySelector('svg');chart.setAttribute('x','-60');chart.setAttribute('y','-58');chart.setAttribute('width','120');chart.setAttribute('height','120');n.append(chart);
- const scores=text('',68,'hover-scores');CAPABILITIES.forEach((c,i)=>{const t=document.createElementNS(ns,'tspan');t.classList.add('radar-score');t.textContent=v.scores[c.key]+' / 100';if(i)t.setAttribute('dx','7');scores.append(t);});
- text('原生／鳥蟲 N/A',82,'hover-na');
+ RADAR_CAPABILITIES.forEach((c,i)=>{const col=i%3,row=Math.floor(i/3),t=text(c.emoji+' '+(c.unavailable?'N/A':v.scores[c.key]+' / 100'),68+row*14,'hover-score');t.setAttribute('x',(col-1)*55);t.dataset.capability=c.key;});
+ text('N/A 以 0 位置顯示・非實際零分',99,'hover-na');
  path.parentNode.append(n);positionHover();
 }
 function openDetails(trigger,advice=false) {openPanel('passport',trigger);$('planting-advice').hidden=!advice;$('passport').querySelector('.panel-scroll').scrollTop=0;}
@@ -48,7 +48,7 @@ function showOverview(v,latlng,trigger) {
  hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('passport-toggle');
  const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
  content.append(el('h2',v.district+'・'+v.name),radar(v),el('p',dominantCapability(v.scores).text,'overview-strength'));
- const summary=el('p',undefined,'overview-summary');summary.append(el('span','管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆'),el('br'),el('span','來源名稱 '+fmt(v.richness)+' 類 · 清潔箱 '+fmt(v.bins)+' 處'),el('br'),el('span','快照相對分數；密度／便利為代理指標'),el('br'),el('span','原生比例 N/A · 鳥蟲 N/A'));content.append(summary);
+ const summary=el('p',undefined,'overview-summary');summary.append(el('span','管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆'),el('br'),el('span','來源名稱 '+fmt(v.richness)+' 類 · 清潔箱 '+fmt(v.bins)+' 處'),el('br'),el('span','快照相對分數；密度／便利為代理指標'));content.append(summary);
  const low=CAPABILITIES.filter(c=>Number.isFinite(v.scores[c.key])).sort((a,b)=>v.scores[a.key]-v.scores[b.key])[0]; if(low && v.scores[low.key]<Math.max(...CAPABILITIES.map(c=>v.scores[c.key]))) content.append(el('p',low.label+'分數低於本里其他指標；仍須考量面積與調查覆蓋。','overview-state')); const actions=el('div',undefined,'overview-actions');for(const [text,advice] of [['查看細節',false],['種樹建議',true]]) {const b=el('button',text);b.type='button';b.onclick=()=>openDetails(b,advice);actions.append(b);}content.append(actions);
  L.DomEvent.disableClickPropagation(content);L.DomEvent.disableScrollPropagation(content);
  popup=L.popup({className:'village-popup',maxWidth:330,minWidth:Math.min(270,innerWidth-72),maxHeight:Math.max(130,Math.min(510,innerHeight-205)),autoPanPaddingTopLeft:[16,135],autoPanPaddingBottomRight:[16,35],closeOnEscapeKey:false}).setLatLng(latlng||layers.get(v.id).getBounds().getCenter()).setContent(content).openOn(map);
@@ -165,7 +165,7 @@ $('passport-toggle').onclick=()=>{if(selected)select(selected,false,undefined,$(
 for(const node of document.querySelectorAll('.surface')) { L.DomEvent.disableClickPropagation(node); L.DomEvent.disableScrollPropagation(node); }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') { const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
 for(const item of [...CAPABILITIES, {label:'多項正值能力並列最高',color:TIE_COLOR}, {label:'有效分數皆0／無有效分數',color:NEUTRAL_COLOR}]) {
-  const li = el('li',item.label); const swatch = el('span',undefined,'swatch'); swatch.style.background = item.color; li.prepend(swatch); $('legend-items').append(li);
+  const li = el('li',(item.emoji?item.emoji+' ':'')+item.label); const swatch = el('span',undefined,'swatch'); swatch.style.background = item.color; li.prepend(swatch); $('legend-items').append(li);
 }
 $('detail-method').onclick=()=>openPanel('method',$('detail-method'));
 $('retry').onclick = load; load();

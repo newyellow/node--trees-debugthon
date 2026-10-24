@@ -13,3 +13,5 @@
 
 .polygon-hover.radar-chart{display:inline;margin:0;overflow:visible}.polygon-hover .radar-svg{width:120px;height:120px}
 .polygon-hover.radar-chart .radar-ring,.polygon-hover.radar-chart .radar-spoke{stroke:#355b4a;stroke-opacity:.6;stroke-width:1.5}.polygon-hover.radar-chart .radar-area{fill:#174c3e;fill-opacity:.22;stroke:#174c3e;stroke-width:3}
+
+.polygon-hover .hover-score{font-size:9px;font-weight:700}.polygon-hover.radar-chart .radar-svg{width:120px;height:120px}.polygon-hover.radar-chart .radar-axis-index{font-size:23px;stroke-width:1px}.village-overview .radar-chart .radar-axis-index{font-size:21px}
