@@ -1,11 +1,11 @@
-import {presentText} from './progressive-text.js';
+import {readAdviceStream} from './advice-stream.js';
 import {API, createClient, identityWarning, safeHTTPS} from '../03/model.js';
 import {exactPlants, lookupName, normalizeName, referenceImage} from './flora-lookup.js';
 import {createWikiFigureSession, createWikiImages, scientificName} from '../../shared/wiki-plant-images.js';
 
 export const INITIAL_MESSAGES = Object.freeze({
-  planting: '請先依這個里的公開樹木統計與來源名稱，提供簡短概括的種樹建議，並說明四區綠網未來願景；不要先要求填答或連續詢問條件。區分構想與現地查核，不將建議當作已核定計畫；最後可簡短邀請繼續討論。',
-  home: '請先根據所選里的公開資料，給出簡短概括的居家與陽台綠化建議，不要先要求填答或列出問卷。以不同日照、空間和寵物情境提供條件式方向，不推定我家的實際條件，不將四區藍圖的19個用名一律當作室內適種清單；最後可簡短邀請繼續討論。'
+  planting: '請像懂植物的朋友，先用一句四區綠網未來願景，再連結本里公開資料，推薦2至3種可供現勘評估的樹。約120至180個中文字、短段落，不先問卷、不列長篇免責；願景是構想，不是全里適種保證。請附可精確核對的植物用名，讓介面配來源照片。',
+  home: '請像懂植物的朋友，先用一句綠生活願景連結本里公開資料，再分明亮陽台、較少光室內兩種情境推薦植物；少光不等於無光。約120至180個中文字、短段落，不推定我家日照、寵物或安全，不先問卷；最多一句選答問題放最後。請附精確植物用名讓介面配來源照片。'
 });
 export const boundedHistory = history => (Array.isArray(history) ? history : []).filter(m => ['user','assistant'].includes(m?.role) && typeof m.content === 'string').slice(-8).map(m => ({role:m.role,content:m.content.slice(0,1200)}));
 // Root-scoped proxy even when static assets use /review/. No remote origin from base.
@@ -79,18 +79,20 @@ export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()
     retry.hidden=true;busyState(true);panel.dataset.phase='loading';status.textContent='正在整理建議…';
     const currentController=controller,timer=setTimeout(()=>currentController.abort(),60000),clearNetworkTimer=()=>clearTimeout(timer);signal.addEventListener('abort',clearNetworkTimer,{once:true});let failureText='暫時未能回覆，請重試。';
     try{
-      const response=await fetcher(adviceEndpoint(base),{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','Accept':'application/json'},signal,body:JSON.stringify(payload)});
+      const response=await fetcher(adviceEndpoint(base),{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','Accept':'application/x-ndjson'},signal,body:JSON.stringify(payload)});
       if(!response.ok){if(response.status===429){const seconds=Number(response.headers?.get('Retry-After'));failureText=seconds>0&&seconds<=3600?'回覆暫時忙碌，可約 '+Math.ceil(seconds)+' 秒後重試。':'回覆暫時忙碌，請稍後重試。';}throw Error('HTTP '+response.status);}
-      const result=validateAdvice(await response.json());clearNetworkTimer();if(token!==generation||signal.aborted||panel.hidden)return;
-      cancelImages();const row=appendTurn('assistant',''),answer=row.querySelector('.advice-answer');row.setAttribute('aria-live','off');answer.setAttribute('aria-hidden','true');panel.dataset.phase='presenting';status.textContent='';
-      let tourNote='',tourFinished=Promise.resolve();
-      const typing=presentText(answer,result.answer,{signal,media}).then(complete=>{if(complete&&token===generation&&!panel.hidden&&tourHandle){panel.dataset.phase='tour';status.textContent='願景導覽進行中…';}return complete;});
-      if(current.mode==='planting'&&result.tour&&!visionPlayed){visionPlayed=true;if(!media?.matches){try{const handle=onVision()||null;tourHandle=handle;tourFinished=Promise.resolve(handle?.finished).catch(()=>{if(token===generation&&!signal.aborted){handle?.cancel?.();tourNote='導覽暫時未能完成，仍可繼續討論。';}});}catch{tourNote='導覽暫時無法開啟，仍可繼續討論。';}}}
-      const [complete]=await Promise.all([typing,tourFinished]);if(!complete||token!==generation||signal.aborted||panel.hidden)return;
+      let row,answer,tourNote='',tourFinished=Promise.resolve();
+      const startTour=()=>{if(current.mode==='planting'&&!visionPlayed&&!media?.matches){visionPlayed=true;try{const handle=onVision()||null;tourHandle=handle;tourFinished=Promise.resolve(handle?.finished).catch(()=>{if(token===generation&&!signal.aborted){handle?.cancel?.();tourNote='導覽暫時未能完成，仍可繼續討論。';}});}catch{tourNote='導覽暫時無法開啟，仍可繼續討論。';}}};
+      const delta=text=>{if(token!==generation||signal.aborted||panel.hidden)return;if(!row){cancelImages();row=appendTurn('assistant','');answer=row.querySelector('.advice-answer');row.setAttribute('aria-live','off');answer.setAttribute('aria-hidden','true');panel.dataset.phase='streaming';status.textContent='';if(initial||last?.initial)startTour();}answer.textContent+=text;};
+      const result=validateAdvice(await readAdviceStream(response,{signal,onDelta:delta}));clearNetworkTimer();if(token!==generation||signal.aborted||panel.hidden)return;
+      if(!row)delta(result.answer);
+      if(result.tour)startTour();
+      if(tourHandle){panel.dataset.phase='tour';status.textContent='願景導覽進行中…';}
+      await tourFinished;if(token!==generation||signal.aborted||panel.hidden)return;
       answer.removeAttribute('aria-hidden');row.removeAttribute('aria-live');history=boundedHistory([...payload.history,{role:'user',content:message},{role:'assistant',content:result.answer}]);
       if(result.sources.length){const sources=el('details'),summary=el('summary','參考來源'),list=el('ul');sources.className='advice-sources';for(const source of result.sources){const item=el('li');item.append(source.url?link(source.title,source.url):el('span',source.title));list.append(item);}sources.append(summary,list);row.append(sources);}
       composerReady=true;panel.dataset.phase='ready';status.textContent=tourNote;last=null;input.value='';void pictures(row,result.plants,token);
-    }catch{if(token===generation&&!panel.hidden){composerReady=true;panel.dataset.phase='error';status.textContent=signal.aborted?'回覆逾時，可重試或繼續提問。':failureText;retry.hidden=false;}}
+    }catch{if(token===generation&&!panel.hidden){tourHandle?.cancel?.();for(const node of log.querySelectorAll('.advice-answer[aria-hidden]'))node.removeAttribute('aria-hidden');composerReady=true;panel.dataset.phase='error';status.textContent=signal.aborted?'回覆逾時，可重試或繼續提問。':failureText;retry.hidden=false;}}
     finally{clearNetworkTimer();signal.removeEventListener('abort',clearNetworkTimer);if(token===generation){tourHandle=null;busyState(false);}}
   }
   form.addEventListener('submit',event=>{event.preventDefault();void request(input.value);});retry.onclick=()=>{if(last)void request(last.message,{repeat:true,initial:last.initial});};stop.onclick=()=>cancel();closeButton.onclick=()=>close();
