@@ -1,4 +1,6 @@
 import L from 'leaflet';
+import { installRecordLayers } from './record-layers.js';
+import './record-layers.css';
 import { interiorAnchor } from './hover-anchor.js';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
@@ -6,7 +8,7 @@ import { createCapabilityRadar } from './capability-radar.js';
 import './capability-radar.css';
 import { CAPABILITIES, RADAR_CAPABILITIES, dominantCapability, TIE_COLOR, NEUTRAL_COLOR } from './domain.js';
 const $ = id => document.getElementById(id), base = import.meta.env.BASE_URL;
-let data, regions, map, group, selected, visible = [], layers = new Map();
+let data, regions, map, group, selected, recordLayers, visible = [], layers = new Map();
 function el(tag, text, className) { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (className) n.className = className; return n; }
 const fmt = (v, digits = 0) => Number.isFinite(v) ? v.toLocaleString('zh-TW', { maximumFractionDigits: digits }) : 'N/A';
 function card(title, score, raw, note) {
@@ -119,6 +121,7 @@ async function load() {
       $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
       L.control.zoom({ position: 'bottomleft' }).addTo(map);
       group = L.featureGroup().addTo(map);
+      recordLayers=installRecordLayers({map,host:$('record-layers-list'),base,onFeatureOpen:()=>{hideHover();panelIds.forEach(id=>closePanel(id,false));}});
       map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',hideHover);
     }
     hideHover();hoverAnchors.clear();group.clearLayers(); layers = new Map();
@@ -147,7 +150,7 @@ async function load() {
     $('status').textContent = '護照已就緒・456里界與真實快照｜分數是資料相對位置，不是地方好壞。';
   } catch (error) { $('status').textContent = '資料載入失敗：' + error.message + '。請檢查連線後重試。'; $('retry').hidden = false; }
 }
-const panelIds = ['finder','passport','legend','method'], returnFocus = new Map();
+const panelIds = ['finder','passport','legend','method','records'], returnFocus = new Map();
 function closePanel(id, focus = true) {
   $(id).hidden = true; $(id+'-toggle')?.setAttribute('aria-expanded','false');
   if(focus) { const target = returnFocus.get(id); if(target?.isConnected && !target.closest('[hidden]')) target.focus({preventScroll:true}); else $(id+'-toggle')?.focus({preventScroll:true}); }
@@ -156,6 +159,7 @@ function openPanel(id, trigger) {
   panelIds.forEach(other => { if(other !== id) closePanel(other,false); });
   returnFocus.set(id,trigger); $(id).hidden = false; $(id+'-toggle')?.setAttribute('aria-expanded','true');
   hideHover();$(id).querySelector('button')?.focus({preventScroll:true});
+  if(id==='records'&&recordLayers)Promise.resolve(recordLayers.ensure()).catch(error=>{$('record-layers-list').textContent='圖層清單載入失敗：'+error.message;});
 }
 panelIds.forEach(id => {
   const toggle = $(id+'-toggle'); toggle.onclick = () => $(id).hidden ? openPanel(id,toggle) : closePanel(id);
