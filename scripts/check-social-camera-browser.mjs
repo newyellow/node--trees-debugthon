@@ -32,7 +32,6 @@ try{for(const viewport of [{width:1440,height:1000},{width:390,height:844},{widt
  // Immediate close and retarget do not install late completion callbacks.
  await choose();await page.keyboard.press('Escape');await cameraIdle(page);assert.equal((await read()).level,'overview');
  await choose();await page.locator('#finder-toggle').click();await page.locator('#search').fill('');await page.keyboard.press('Escape');const next=page.locator('path[aria-label^=大安區光信里]');await next.focus();await next.press('Enter');await cameraIdle(page);assert.match(await page.locator('.village-overview').getAttribute('aria-label'),/光信里/);await fit();
- await choose();await page.locator('#finder-toggle').click();await page.locator('#reset').click();await page.keyboard.press('Escape');await cameraIdle(page);assert.equal((await read()).level,'overview');assert.ok(Math.abs((await read()).zoom-initial.zoom)<.001);
  // Live reduced preference, including in-flight change; no global animation freeze.
  await choose();await page.emulateMedia({reducedMotion:'reduce'});await cameraIdle(page);await fit();await page.locator('.village-popup .leaflet-popup-close-button').click();await cameraIdle(page);assert.equal((await read()).phase,'idle');
  await choose();assert.equal((await read()).phase,'idle');await fit();await page.emulateMedia({reducedMotion:'no-preference'});await sample(()=>page.locator('.village-popup .leaflet-popup-close-button').click(),'live-motion-restored');

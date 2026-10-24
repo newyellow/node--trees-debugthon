@@ -111,7 +111,6 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
   retry.type = 'button'; retry.textContent = '重試管理樹'; retry.hidden = true;
   caveat.textContent = '管理樹來源紀錄，非全里所有現地樹木；非即時普查。';
   const legend=document.createElement('section');legend.className='tree-species-legend';const rawDetails=document.createElement('details'),rawSummary=document.createElement('summary');rawDetails.className='raw-tree-details';rawSummary.append(title);rawDetails.append(rawSummary,message,caveat,retry,legend);statusHost.append(rawDetails);
-  let lastReady;const rawToggle=document.createElement('button');rawToggle.type='button';rawToggle.textContent='里內樹圖例';rawToggle.setAttribute('aria-expanded','false');rawToggle.onclick=()=>{if(state.phase==='clear'&&lastReady){title.textContent=lastReady.entry.district+'・'+lastReady.entry.name+'（上次檢視）';message.textContent='圖例為上次檢視的 '+lastReady.count+' 筆來源紀錄；不是目前全市圖例。';updateSpeciesLegend(legend,lastReady.records.map(r=>r.feature));}statusHost.parentElement.hidden=false;rawDetails.open=!rawDetails.open;rawToggle.setAttribute('aria-expanded',String(rawDetails.open));statusHost.parentElement.classList.toggle('raw-status-expanded',rawDetails.open);};document.querySelector('.toolbar').append(rawToggle); statusHost.setAttribute('aria-live','polite');
   const stories=createStoryPanel({base}),flora=createFloraPanel();
   const sidebar=document.createElement('aside');sidebar.id='species-panel';sidebar.className='surface species-panel';sidebar.hidden=true;sidebar.setAttribute('aria-label','樹種與原始紀錄');container.parentElement.append(sidebar);
   let tooltip,hoverSpecies=null;
@@ -161,11 +160,11 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
   async function render(next) {
     resetRender(); state = next; const current = token;
     statusHost.dataset.phase = next.phase; statusHost.dataset.villageId = next.villageId || ''; statusHost.dataset.count = String(next.count);
-    canvas.dataset.villageId = next.villageId || ''; canvas.dataset.phase = next.phase; retry.hidden = next.phase !== 'error';if(next.phase==='error')rawDetails.open=true;else if(next.phase==='loading'||next.phase==='clear'){rawDetails.open=false;statusHost.parentElement.classList.remove('raw-status-expanded');rawToggle.setAttribute('aria-expanded','false');}
+    canvas.dataset.villageId = next.villageId || ''; canvas.dataset.phase = next.phase; retry.hidden = next.phase !== 'error';if(next.phase==='error')rawDetails.open=true;else if(next.phase==='loading'||next.phase==='clear'){rawDetails.open=false;statusHost.parentElement.classList.remove('raw-status-expanded');}
     title.textContent = next.entry ? next.entry.district + '・' + next.entry.name : next.villageId || '里內管理樹';
     message.textContent = next.phase === 'loading' ? '管理樹載入中…' : next.phase === 'error' ? '管理樹載入失敗：' + next.error.message : next.phase === 'clear' ? '指向或選取里以顯示每筆管理樹' : '共 ' + next.count.toLocaleString('zh-TW') + ' 筆（行道樹 ' + next.entry.byLayer['street-trees'] + '／公園樹 ' + next.entry.byLayer['park-trees'] + '）';
     keyboardLabel(); updateSpeciesLegend(legend,(next.records||[]).map(r=>r.feature)); onState(next);
-    if (next.phase !== 'ready') return;lastReady=next;
+    if (next.phase !== 'ready') return;
     statusHost.dataset.phase = 'rendering';
     for (let i = 0; i < next.records.length; i++) {
       if (dead || current !== token) return;
@@ -219,6 +218,6 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     async show(villageId, options = {}) {return loader.show(String(villageId),options);},
     clear() {loader.clear();},
     containsEvent, hitTestLayerPoint, closeRecord, isRecordOpen:()=>!sidebar.hidden,
-    destroy() {if (dead) return; loader.clear(); loader.destroy(); dead = true; resetRender();sidebar.remove();rawDetails.remove();rawToggle.remove();container.removeEventListener('mousemove',move);container.removeEventListener('mouseleave',clearHover);container.removeEventListener('click',hit,true);canvas.removeEventListener('keydown',key);map.removeLayer(group);map.removeLayer(renderer);pane.remove();delete map._panes[paneName];title.remove();message.remove();caveat.remove();retry.remove();legend.remove();}
+    destroy() {if (dead) return; loader.clear(); loader.destroy(); dead = true; resetRender();sidebar.remove();rawDetails.remove();container.removeEventListener('mousemove',move);container.removeEventListener('mouseleave',clearHover);container.removeEventListener('click',hit,true);canvas.removeEventListener('keydown',key);map.removeLayer(group);map.removeLayer(renderer);pane.remove();delete map._panes[paneName];title.remove();message.remove();caveat.remove();retry.remove();legend.remove();}
   };
 }
