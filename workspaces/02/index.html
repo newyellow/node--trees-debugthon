@@ -3,7 +3,7 @@
 <main id="stage" aria-label="臺北里環境護照">
 <div id="map" aria-label="臺北456里可拖曳縮放地圖"></div>
 <header class="surface"><a href="%BASE_URL%index.html">♧ TREES</a><h1>里環境護照</h1><a href="%BASE_URL%explorer/index.html">資料探索 ↗</a></header>
-<div id="hover-preview" aria-hidden="true" hidden></div>
+
 <nav class="toolbar surface" aria-label="地圖工具"><label class="basemap-label" for="basemap">底圖</label><select id="basemap" aria-label="切換底圖"><option value="street">街道圖</option><option value="aerial">航照圖</option></select><button id="finder-toggle" aria-controls="finder" aria-expanded="false">找里</button><button id="reset" disabled>回到臺北全景</button><button id="legend-toggle" aria-controls="legend" aria-expanded="false">能力圖例</button><button id="method-toggle" aria-controls="method" aria-expanded="false">方法／來源</button><button id="passport-toggle" aria-haspopup="dialog" hidden>里概覽</button></nav>
 <div class="status-wrap surface"><div id="status" role="status" aria-live="polite">正在整理地圖與里環境護照…</div><button id="retry" hidden>重新載入資料</button><div id="imagery-note">OpenStreetMap 街道圖</div><div id="tile-status" role="status"></div><button id="tile-retry" hidden>重試底圖</button></div>
 <aside id="finder" class="panel surface" aria-labelledby="finder-title" hidden><div class="panel-head"><h2 id="finder-title">找一個里</h2><button data-close="finder" aria-label="關閉搜尋">✕</button></div><div class="panel-scroll"><label for="district">行政區</label><select id="district" disabled><option value="">全臺北市</option></select><label for="search">搜尋里名或行政區</label><input id="search" type="search" placeholder="例如：大安、龍安里" disabled><p id="result-count" aria-live="polite"></p><ul id="villages" aria-label="里名清單"></ul></div></aside>

@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import { interiorAnchor } from './hover-anchor.js';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
 import { createCapabilityRadar } from './capability-radar.js';
@@ -17,11 +18,30 @@ function card(title, score, raw, note) {
 let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
 function radar(v,size=170,compact=false) { return createCapabilityRadar({axes:CAPABILITIES.map(c=>({...c,value:v.scores[c.key]})),size,compact,label:'能力概覽'}); }
 function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?.78:id===selected?.70:.48}); }
-function hideHover() { $('hover-preview').hidden=true; if(hovered) {styleVillage(hovered);hovered=null;} }
-function showHover(v,point,keyboard=false) {
+const hoverAnchors = new Map();
+function hideHover() { $('hover-preview')?.remove(); if(hovered) {styleVillage(hovered);hovered=null;} }
+function positionHover() {
+ const n=$('hover-preview'), anchor=hoverAnchors.get(hovered);if(!n||!anchor)return;
+ const p=map.latLngToLayerPoint(anchor);n.setAttribute('transform','translate('+p.x+','+p.y+')');
+}
+function showHover(v,keyboard=false) {
  if(popup?.isOpen() || (!keyboard&&!matchMedia('(hover:hover)').matches))return;
- if(hovered!==v.id) {hideHover();hovered=v.id;$('hover-preview').replaceChildren(el('strong',v.district+'・'+v.name),radar(v,100,true),el('small',CAPABILITIES.map((c,i)=>(i+1)+': '+v.scores[c.key]).join(' · ')),el('small','原生／鳥蟲 N/A'));styleVillage(v.id,true);}
- const n=$('hover-preview');n.hidden=false;n.style.left=Math.max(8,Math.min(point.x+16,innerWidth-n.offsetWidth-8))+'px';n.style.top=Math.max(120,Math.min(point.y+12,innerHeight-n.offsetHeight-30))+'px';
+ if(hovered===v.id)return;
+ hideHover();const layer=layers.get(v.id),path=layer.getLayers()[0]?.getElement();if(!path)return;
+ if(!hoverAnchors.has(v.id)) {
+  const geometry=layer.toGeoJSON().features[0].geometry;
+  const polygons=geometry.type==='Polygon'?[geometry.coordinates]:geometry.coordinates;
+  const projected=polygons.map(p=>p.map(r=>r.map(([lng,lat])=>{const p=map.project([lat,lng],0);return [p.x,p.y];})));
+  const point=interiorAnchor(projected);if(!point)return;hoverAnchors.set(v.id,map.unproject(point,0));
+ }
+ hovered=v.id;styleVillage(v.id,true);
+ const ns='http://www.w3.org/2000/svg', n=document.createElementNS(ns,'g');n.id='hover-preview';n.classList.add('polygon-hover','radar-chart');n.dataset.village=v.id;n.setAttribute('role','img');n.setAttribute('aria-label',v.district+v.name+'能力概覽');
+ const text=(value,y,cls)=>{const t=document.createElementNS(ns,'text');t.textContent=value;t.setAttribute('x','0');t.setAttribute('y',y);t.setAttribute('text-anchor','middle');t.setAttribute('class',cls);n.append(t);return t;};
+ text(v.district+'・'+v.name,-62,'hover-name');
+ const chart=radar(v,120,true).querySelector('svg');chart.setAttribute('x','-60');chart.setAttribute('y','-58');chart.setAttribute('width','120');chart.setAttribute('height','120');n.append(chart);
+ const scores=text('',68,'hover-scores');CAPABILITIES.forEach((c,i)=>{const t=document.createElementNS(ns,'tspan');t.classList.add('radar-score');t.textContent=v.scores[c.key]+' / 100';if(i)t.setAttribute('dx','7');scores.append(t);});
+ text('原生／鳥蟲 N/A',82,'hover-na');
+ path.parentNode.append(n);positionHover();
 }
 function openDetails(trigger,advice=false) {openPanel('passport',trigger);$('planting-advice').hidden=!advice;$('passport').querySelector('.panel-scroll').scrollTop=0;}
 function showOverview(v,latlng,trigger) {
@@ -65,6 +85,7 @@ function select(id, fit = true, latlng, trigger = document.activeElement) {
   document.querySelectorAll('#villages button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
 }
 function filter() {
+  hideHover();
   const district = $('district').value, query = $('search').value.trim();
   visible = data.villages.filter(v => (!district || v.district === district) && (v.district + v.name).includes(query));
   const ids = new Set(visible.map(v => v.id));
@@ -83,6 +104,7 @@ function provenance() {
   link('管理樹／里界：政府資料開放授權條款', data.treeSource.licenseUrl);
 }
 async function load() {
+  hideHover();
   $('retry').hidden = true; $('status').textContent = '正在整理地圖與里環境護照…';
   try {
     const fetchJSON = async name => { const r = await fetch(base + 'data/' + name, { signal: AbortSignal.timeout(30000) }); if (!r.ok) throw new Error('HTTP ' + r.status); const bytes = await r.arrayBuffer(); return { bytes, json: JSON.parse(new TextDecoder().decode(bytes)) }; };
@@ -97,18 +119,19 @@ async function load() {
       $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
       L.control.zoom({ position: 'bottomleft' }).addTo(map);
       group = L.featureGroup().addTo(map);
+      map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',hideHover);
     }
-    group.clearLayers(); layers = new Map();
+    hideHover();hoverAnchors.clear();group.clearLayers(); layers = new Map();
     const villagesById = new Map(data.villages.map(v => [v.id,v]));
     regions.features.forEach(f => {
       const v = villagesById.get(f.properties.id), strength = dominantCapability(v.scores);
       const l = L.geoJSON(f, { style: { color: '#50616a', weight: 1, fillColor: strength.color, fillOpacity: .48 } });
-      l.on('mouseover mousemove',e=>showHover(v,e.containerPoint||map.latLngToContainerPoint(l.getBounds().getCenter())));
+      l.on('mouseover',()=>showHover(v));
       l.on('mouseout',hideHover);
       l.on('click',e=>select(v.id,false,e.latlng,e.originalEvent?.target));
       l.eachLayer(path => {
         path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜' + strength.text);
-          node.onfocus=()=>showHover(v,map.latLngToContainerPoint(l.getBounds().getCenter()),true);node.onblur=hideHover;
+          node.onfocus=()=>showHover(v,true);node.onblur=hideHover;
           node.onkeydown = e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,false,undefined,node); popup?.getElement()?.querySelector('button')?.focus({preventScroll:true}); } };
         });
       });
