@@ -1,0 +1,546 @@
+{
+  "updatedAt": "2026-10-24",
+  "total": 54,
+  "entries": [
+    {
+      "id": "community-fuyuan-second-opinion",
+      "summaryBeforeSHA256": "7fb12731d9c221deba7e9cbfcb325754fee8df6fd2e9157650f8129e508e0907",
+      "summaryAfterSHA256": "b2c6594acf245d6c171c0781077f08f769b23ad61c84e2c12cfac8ba6e7bd90c",
+      "immutableSHA256": "5a226eef3c13e5fda68f93a3bf74df3e6233028e04ee9d416f6239ddb39592fe",
+      "photoStatus": "rights-review-needed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。",
+      "candidateImageURL": "https://cdn.taisounds.com/newsimages/img/2026/0904/20260904160311.jpg",
+      "sourceArticleUrl": "https://www.taisounds.com/specialtopic/content/194/291501"
+    },
+    {
+      "id": "community-gangqian-fengshui",
+      "summaryBeforeSHA256": "9b0cf6bf7be01cac6b5626ab33c94e24e62ce9fa51e22827bb8f56c71bbfe2d9",
+      "summaryAfterSHA256": "7c44ecf57d45b595b3ff7ab4e34ac1f508fcc6f4b5322813d933ef0985ddfef2",
+      "immutableSHA256": "add6e365edec2db930f9b15d326f5f77eac58034e2a82fad1d0a0f49f1547fb0",
+      "photoStatus": "missing",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=9648FB336235885C"
+    },
+    {
+      "id": "community-lions-sakura-family",
+      "summaryBeforeSHA256": "2f0128346cb6af9ef90691686cd38c4ef7640f4d6871a5b156a70d201af878a5",
+      "summaryAfterSHA256": "6626d3706b89c9a76c79780aee844885301faabdfee43e60f0425c36fb2c4ce4",
+      "immutableSHA256": "15f2bb60bc2f9509eb24d1fb0b5edb4bf0f2bd2996f6ed6a9a5b46eb6af73aa7",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/297/relpic/10162/4108229/106836e3-d012-46e4-a8d6-3d4d22282b67@710x470.jpg",
+      "sourceArticleUrl": "https://tct.gov.taipei/News_Content.aspx?n=B4C9AF5D5D4BF947&sms=72544237BBE4C5F6&s=57C1A99AB1898B6D"
+    },
+    {
+      "id": "community-rongjin-preservation",
+      "summaryBeforeSHA256": "9f59f2ff182c06d1e4a2789d10b6887c834cc2a4a18d086a27adb987f1be2457",
+      "summaryAfterSHA256": "2aba8f1264a4a761756cd9d649292f238303dde2e4055027e10020b26f677004",
+      "immutableSHA256": "cbf99959ad6fc4d5e62fe1fd080fbf582436cce201888d7069d360ed98879798",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/686/relpic/10162/8743499/688afcb8-1753-422b-8d16-9f256c9d1245@710x470.jpg",
+      "sourceArticleUrl": "https://culture.gov.taipei/News_Content.aspx?n=63F36AA6E434AD08&s=04221DA9959EBB88"
+    },
+    {
+      "id": "community-roosevelt-bischofia",
+      "summaryBeforeSHA256": "453975f2dbb06dc2784acee29b2aad1eb258e129dc537f47e240bd40b355a286",
+      "summaryAfterSHA256": "6e03f296d21b0b4d5beba121a0cf62d22d4a1643e30d47e9933bfdf3480d3c05",
+      "immutableSHA256": "3c5f69f267a99292a521b901e429e8d113af7d00ddf16d84fe8fcd020c2b83c1",
+      "photoStatus": "rights-review-needed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": "https://image.taisounds.com/newsimages/img/2026/1001/20261001085015.jpg",
+      "sourceArticleUrl": "https://www.taisounds.com/specialtopic/content/194/291501"
+    },
+    {
+      "id": "community-xingan-temple-banyan",
+      "summaryBeforeSHA256": "a9c6ba42f36a51496e073b2b624b8440586480f2331d661732d5e6a982fbda61",
+      "summaryAfterSHA256": "bd821d4aaf212546d7a82c61a5bd7aa6bdb59259aebbee1794cdde4413e37251",
+      "immutableSHA256": "72785453d8829adecdfa221ebeca0166666fdc8751799a58abe7b71c7c6a0323",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/public/MMO/WSDO/真奇廟圖.jpg",
+      "sourceArticleUrl": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=4C07F836DF5E13C3"
+    },
+    {
+      "id": "community-yangming-et-donation",
+      "summaryBeforeSHA256": "68ee7329ab17a2070a2cd13d0cc8899aa9471ebdde4dcac27b9ef6a3472d96d6",
+      "summaryAfterSHA256": "aafa2f29ee089f16f8b2a2368012c60a2a54c58424152e6a18422404461104fd",
+      "immutableSHA256": "e0b1c60778149ebfb39b9d69769eda625f8aa486133630d1e0c7e354727863b2",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/8110911/dbda1511-c836-4ff2-837b-cd59d466dd47@710x470.jpg",
+      "sourceArticleUrl": "https://pkl.gov.taipei/News_Content.aspx?n=43E05059FCC72525&s=673A8B2C15249D45"
+    },
+    {
+      "id": "community-yongkang-preservation",
+      "summaryBeforeSHA256": "d6c86c58a2d5c736ada52f24e849f771d08bffc9fbdfa3fadd6db98dbffe7649",
+      "summaryAfterSHA256": "4e46d979a9acc293a7ecd507c97c114549bb93792fa8ea17ae4c6a3390d76ed4",
+      "immutableSHA256": "6b7629672d43819bae16f5781a48e2cd19b376d1d1c7d9026b5f2d6b9be1dbe7",
+      "photoStatus": "missing",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": "https://vita.tw/%E8%AD%B7%E6%A8%B9%E9%81%8B%E5%8B%95-%E8%AE%93%E6%B0%B8%E5%BA%B7%E7%A4%BE%E5%8D%80%E5%8B%95%E8%B5%B7%E4%BE%86/"
+    },
+    {
+      "id": "inst-cksmh-osmanthus-consolidation",
+      "summaryBeforeSHA256": "94101dbedb3ddbe3dad78a47265223bf438c76306685f7cedeacb578fd71da56",
+      "summaryAfterSHA256": "b8bdaac6fcb5b70691f69ee96b2f451dbc078596a4c81f372411950abf92c6f5",
+      "immutableSHA256": "955d9d7cd4cd03c73022d88726362b991bf61ee058ce248c2c95790d28110d8f",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": "https://file.moc.gov.tw/001/Upload/531/relpic/15089/174392/b1205b62-4d7c-4a44-a063-9bbbf217a540.jpg",
+      "sourceArticleUrl": "https://www.cksmh.gov.tw/cp.aspx?n=7273"
+    },
+    {
+      "id": "inst-ntu-azalea-donation",
+      "summaryBeforeSHA256": "400655c2e3a236e4e0d9a7018ca79d47efed96c809fd0eaa462d520a4c85cc16",
+      "summaryAfterSHA256": "acc0d8da91ae1a53c1b85c8db6cf22df9429b2897788a8d47c530ccaacd68f0a",
+      "immutableSHA256": "e8558885774c87efdbcf228b0d9f49d5d86db6b76f3219af17d0d022bdf39af0",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": "https://ntualumnibm.ntu.edu.tw/upload/editor/bm_bimonthly_article/img/00000004462/20250813133652689c247412014.jpg",
+      "sourceArticleUrl": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462"
+    },
+    {
+      "id": "inst-ntu-camphor-wave",
+      "summaryBeforeSHA256": "7aad3ef008ffbd1a554ed43d81cb0f1e5b01c948a20f5807369141abb4dc1795",
+      "summaryAfterSHA256": "7bee913890de41cd6b40ce06f4d2fd78928ed0a63b6e9526aac9b8cef5e647c3",
+      "immutableSHA256": "e7321ee4508d934a335093610f9cea1fa81df201de3e013e81e3babb3ba10ed0",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": "https://ntualumnibm.ntu.edu.tw/upload/editor/bm_bimonthly_article/img/00000004462/20250813133350689c23be8f005.jpg",
+      "sourceArticleUrl": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462"
+    },
+    {
+      "id": "inst-ntu-fu-phoenix",
+      "summaryBeforeSHA256": "a01cf16436ace96e3b86c188855f778cd060a63346b9d331dcbf7a4fa682b688",
+      "summaryAfterSHA256": "0b1d17b4084aec25a8dc8372cf4a32d513f055b05dc440f3aa85c8b9de65a065",
+      "immutableSHA256": "647c000d898884a0ccbc9c84d8419e8da3ea788c33f2b584b569abbc5ba00403",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。",
+      "candidateImageURL": "https://ntualumnibm.ntu.edu.tw/upload/editor/bm_bimonthly_article/img/00000004462/20250813133316689c239c183f0.jpg",
+      "sourceArticleUrl": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462"
+    },
+    {
+      "id": "inst-ntu-juniper-road-widening",
+      "summaryBeforeSHA256": "66d851b14034979c28d54f83dbc10c4d0605d93a2550040b4c8eb7e04d598dd0",
+      "summaryAfterSHA256": "ec9decbeab3fcaed5eced9f2e789708ea077540884134b69d12fcd4b52c58e9c",
+      "immutableSHA256": "434264b962977ada14e2da5e736452b1833a31f1897c9a252da7130dd9dc301c",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。",
+      "candidateImageURL": "https://ntualumnibm.ntu.edu.tw/upload/editor/bm_bimonthly_article/img/00000004462/20250813133944689c252076e65.jpg",
+      "sourceArticleUrl": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462"
+    },
+    {
+      "id": "inst-ntu-palm-axis",
+      "summaryBeforeSHA256": "48a113b4f80b057398734e1a930b966fae80e4cd5a6e4d3dfb827d46d4c2116a",
+      "summaryAfterSHA256": "6285f517d4abaf21b7b8a607cc5df043013ed305ec130e639f42851551732981",
+      "immutableSHA256": "c59028552666571be5e2d8974742b944bae57c088984effeeb8b4e851390d6b4",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。",
+      "candidateImageURL": "https://historygallery.ntu.edu.tw/web-ntusym/img/3-6.jpg",
+      "sourceArticleUrl": "https://historygallery.ntu.edu.tw/web-ntusym/tree.html"
+    },
+    {
+      "id": "inst-renai-palms-retention",
+      "summaryBeforeSHA256": "1f111e62ae77371a2f2fef9b62116998fff3c1d383f04353c4e3a9020209700c",
+      "summaryAfterSHA256": "827c6789584d23817683a4e6e0c2c853972df8eb740bab1d8c12e306c1d532d8",
+      "immutableSHA256": "78df33d6d6dc4f2f40f2d0618337d9c1c5b02d8ccdb36692707a49b935154dc6",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。",
+      "candidateImageURL": "https://img.eyesonplace.net/2022/03/259277480_690538715592274_6620044005071618804_n.png",
+      "sourceArticleUrl": "https://eyesonplace.net/2022/03/30/20124/"
+    },
+    {
+      "id": "inst-three-lane-uniform-policy",
+      "summaryBeforeSHA256": "60d2f6b87b3e087c8048dc166e74d31f8896d86dfeecac1ac6c308b0b17d52f3",
+      "summaryAfterSHA256": "9b81ef0fc6ac92211d8b7e8271df5c8f3c87551595932560467ebe21d1199cc3",
+      "immutableSHA256": "36df45862da64ed8dd1d0ceb3dec1b43cae401390607c94eddbe7872f48b18a7",
+      "photoStatus": "rights-review-needed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 原文正文取得受阻；摘要依既有已讀講座研究紀要改寫。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。 親稿2026-10-24正常瀏覽器與web_fetch200已重讀完整講座紀要，原主視覺1200x628可讀；但著作權聲明明示禁止未經同意轉載／嵌入／重製，所以保留原文圖片候選連結，不納入公開資產。",
+      "candidateImageURL": "https://www.linking.vision/prods3/2021/12/03123429/%E9%A1%8F%E6%9D%8F%E5%A6%82%EF%BC%9A%E8%B5%B0%E5%9C%A8%E5%8F%B0%E5%8C%97%E7%9A%84%E8%A1%8C%E9%81%93%E6%A8%B9%E4%B8%8B%EF%BC%8C%E9%AB%94%E5%AF%9F%E5%B8%9D%E5%9C%8B%E6%83%B3%E5%83%8F%E8%88%87%E9%81%B7%E7%A7%BB%E7%B6%93%E9%A9%97-1.jpg",
+      "sourceArticleUrl": "https://www.linking.vision/archives/6977"
+    },
+    {
+      "id": "inst-zhongshan-diplomatic-avenue",
+      "summaryBeforeSHA256": "196c3254f60a918687b434f69b1437c6eaa02258b13b93b4ebd24ab004ba68fe",
+      "summaryAfterSHA256": "e7f15aa78a3fabcaa57e54368bc8dfa1787d3fc16849bc29b5430d81b99c37c1",
+      "immutableSHA256": "430e6f621152cbd430d6e47c6090f756e56bf234d4f13b052fd7342e4efe208c",
+      "photoStatus": "source-attributed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 已讀原文正文及配圖。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/7589015/e7611f3e-dcd0-4ad1-ad12-9ab0029d9045@710x470.jpg",
+      "sourceArticleUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=CFF16DF881820E64"
+    },
+    {
+      "id": "inst-zhongshan-practical-acacia",
+      "summaryBeforeSHA256": "d9e2ba2edf821ed4b279413940d362aaf5aad7daf3bebd69a182d5fe7cb70820",
+      "summaryAfterSHA256": "df960b34027fe71e4a29b35c789bca784848e1ed75429a26f1fc16cf31322911",
+      "immutableSHA256": "7340f5117c605766b3613b0303472c2bf5d8aaa95ec79a38a036e27b7728a89e",
+      "photoStatus": "rights-review-needed",
+      "photoNote": "保留原有物種、地點、時期及查證狀態；圖為原文素材，場域脈絡不等於逐株證據。 原文正文取得受阻；摘要依既有已讀講座研究紀要改寫。 編輯複核：將重複逐株限制留在原limitations欄，摘要保留實際敘事來源。 親稿2026-10-24正常瀏覽器與web_fetch200已重讀完整講座紀要，原主視覺1200x628可讀；但著作權聲明明示禁止未經同意轉載／嵌入／重製，所以保留原文圖片候選連結，不納入公開資產。",
+      "candidateImageURL": "https://www.linking.vision/prods3/2021/12/03123429/%E9%A1%8F%E6%9D%8F%E5%A6%82%EF%BC%9A%E8%B5%B0%E5%9C%A8%E5%8F%B0%E5%8C%97%E7%9A%84%E8%A1%8C%E9%81%93%E6%A8%B9%E4%B8%8B%EF%BC%8C%E9%AB%94%E5%AF%9F%E5%B8%9D%E5%9C%8B%E6%83%B3%E5%83%8F%E8%88%87%E9%81%B7%E7%A7%BB%E7%B6%93%E9%A9%97-1.jpg",
+      "sourceArticleUrl": "https://www.linking.vision/archives/6977"
+    },
+    {
+      "id": "meilun-presidential-banyans-removal",
+      "summaryBeforeSHA256": "0e14d7a28bcb641d22822affa4479c8c4d7f6c2ea99ee268b47693ec3c502d3e",
+      "summaryAfterSHA256": "c1a2a87952bdcaaf50883e928b4296d596ce300edcd79a356b9976477ba3ca89",
+      "immutableSHA256": "cb924d46c237d209a4aca468181973667d31e3bdce9ae726eba3b43aafdc77ea",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/9720452/46886cea-0d97-4de6-acbe-7940d95f5d3c@710x470.jpg",
+      "sourceArticleUrl": "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108"
+    },
+    {
+      "id": "cukeng-bischofia-road-preservation",
+      "summaryBeforeSHA256": "902876579516662569454869f9458a30fff337f858d41f3949968d991f2a033b",
+      "summaryAfterSHA256": "5e36e67ce41cedce82cfcce5342bbec91aa62c859e0137967a43a5b3fea8eaf1",
+      "immutableSHA256": "d5927ffc2c35ca0e960501915dcec304de9a98da951741f0fd25603f0407e5b5",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://ecultureuser.gov.taipei/oldsysfile/d_upload_tca_pro/cms/image/A0/B0/C0/D33/E288/F982/eaced914-d8e9-42df-aab9-c0b1c5e97a7b.JPG",
+      "sourceArticleUrl": "https://eculture.gov.taipei/trees/zh-tw/tree/2070"
+    },
+    {
+      "id": "tmu-maple-walk-campus-memory",
+      "summaryBeforeSHA256": "3ef9c6d03b3e739ac2bec5d4681fa6304ff832ec4611f7a049589c9a28e3881b",
+      "summaryAfterSHA256": "170e5cdff5d6df2ad8f82f0dff7cb7c6099a3d3a2a677895920bf1a7be52c15d",
+      "immutableSHA256": "3f93a4d646b72abec03feebfa25385a09794f6223ea4ee7babc89fc8f47685aa",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://history.tmu.edu.tw/wp-content/uploads/2021/04/0989-1.jpg",
+      "sourceArticleUrl": "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/"
+    },
+    {
+      "id": "ntu-koelreuteria-road-naming",
+      "summaryBeforeSHA256": "2f25ff9b3f4285db073c8b35fee9f00c579dbe0cd413e3b4abfd61b6ec3feb2a",
+      "summaryAfterSHA256": "072e4a341f1c494c1fa8d26adc2143cf1a27958c3d5e400b1b3b8d1ca0da013b",
+      "immutableSHA256": "a0b7387d9276acb483242f2d5bc37b12a9b4bd078649c8d53e3206a132ce88fd",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://images.agriharvest.tw/wp-content/uploads/2025/08/不同色型的欒樹果，最後都會乾裂成淡褐色的果瓣-1024x768.jpg",
+      "sourceArticleUrl": "https://www.agriharvest.tw/archives/128445/"
+    },
+    {
+      "id": "round1-xiaokeng-celtis-shrine",
+      "summaryBeforeSHA256": "7fea3e4447288714d159b018c1b096aaf3d9752c25754f969de5a9e87078d146",
+      "summaryAfterSHA256": "5d9b356eb01379123bb8d3b98b2b5bf3dd959df9d1dc8f8190c2fc88d724cc2b",
+      "immutableSHA256": "09b348f99ecb0232960b7cc5516fdf26ca22c53c4f4afb0e01f7d0ec5b694bb8",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/public/MMO/WSDO/鄭厝百歲香楠圖.jpg",
+      "sourceArticleUrl": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66"
+    },
+    {
+      "id": "ntu-indian-rosewood-rescue-debate",
+      "summaryBeforeSHA256": "639059076ca4923638ea8610ccd708f623905037a8be896c2c6caf6a8f976aaa",
+      "summaryAfterSHA256": "fdabfdafa0c7b347c2c88427a891f0cbff02c227a3a9ccfec0023ea566eb1ea6",
+      "immutableSHA256": "23b57435087202a1cc6e0b52d16cc6efed69ecb9c12d395faa882b76936b0951",
+      "photoStatus": "no-article-photo",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。 正文未刊照片；og為中央社標誌，其他圖片均為推薦新聞，已排除。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": "https://www.cna.com.tw/news/ahel/202204060351.aspx"
+    },
+    {
+      "id": "lishan-plaza-cypress-school-memory",
+      "summaryBeforeSHA256": "ec2f464110a4d8a67b7760497e8c0c84a1f397ec6d288588e1c23bba18da80cd",
+      "summaryAfterSHA256": "96799e695ddf01d05b84336c2604b30aa12a6e1c9667cf18310deb9b8a2624cb",
+      "immutableSHA256": "706b86c50c31b6d2afa9a7e518b9dc68ee34c3598cb7a656712ac68a4f8f5a71",
+      "photoStatus": "rights-review-needed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。 ETtoday條款僅對個人非商業合理使用設例外；公開網站並非當然適用，保留候選，不落地。",
+      "candidateImageURL": "https://cdn2.ettoday.net/images/6021/d6021065.jpg",
+      "sourceArticleUrl": "https://travel.ettoday.net/article/2131139.htm"
+    },
+    {
+      "id": "xinglong-scolopia-community-stele",
+      "summaryBeforeSHA256": "035603d196b9c9089c1907a2a885a4568429fdd36de06018cdeba3517b3f7569",
+      "summaryAfterSHA256": "cb1900882ff9bee2cd6faf46f51523a31ef2206ad730bc2ce10c83a50d591ff4",
+      "immutableSHA256": "d443d2875e36c29af104e9d59ebc03ebd996d09e654f138bd7bf5f3b90e2b98f",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://wenshan.org.tw/wss/media/k2/items/cache/825c939ed3e8f5731bfe6f5becd14d5e_XL.jpg",
+      "sourceArticleUrl": "https://wenshan.org.tw/wss/index.php/%E7%94%9F%E6%85%8B/item/2079-%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%89%E6%AE%B5%E7%9A%84%E7%99%BE%E5%B9%B4%E9%AD%AF%E8%8A%B1%E6%A8%B9%E8%88%87%E5%8F%B0%E5%8C%97%E6%B9%96"
+    },
+    {
+      "id": "rongxing-hibiscus-play-care",
+      "summaryBeforeSHA256": "763e58dd68c046eb9b2e6c2469c3855124318f5f1cf5cb5dfadfce9ca609b594",
+      "summaryAfterSHA256": "1176c91b892eaa2c1f2ef1d1eb8c60d78e26fff179f21b6aae51195f67f9144d",
+      "immutableSHA256": "6eb6352fd05fb1ce48951ddf5f06961fc518624284252ca5950b7eadfa8c29c0",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/7982307/e5de2a0b-d7f1-40b9-b6ae-218db0d6779a@710x470.jpg",
+      "sourceArticleUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=C97A944E3C88A5D0"
+    },
+    {
+      "id": "beitou-citrus-naming-orchard-memory",
+      "summaryBeforeSHA256": "f1f19ab509baf13840b109c3402c1e469b78e0b35426724f61b0e066fe73b82b",
+      "summaryAfterSHA256": "35aa47419b75b62145de082875107a9ea936ed91006df7aef90970b714e7ece3",
+      "immutableSHA256": "ddc1eab4108086c22fdc731e102c6419de33e6e1f853ea8ba45a009f9bbc95d2",
+      "photoStatus": "rights-review-needed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。 照片由北投區農會提供；市府開放宣告不自動授權第三方照片，保留候選。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/public/MMO/ed/bbb1.jpg",
+      "sourceArticleUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E789E8819879CC5"
+    },
+    {
+      "id": "site-zhongzheng138-mango-early-planting",
+      "summaryBeforeSHA256": "544d5655f3c85cb150012058a29eacd3ec5790e8387531d4008aa9861384563c",
+      "summaryAfterSHA256": "fadda73c00d5547a062ab8263cc6112e9a137ca920c8b645fc6be56d76ab6280",
+      "immutableSHA256": "6e9c9140398313b9381b077683fe00dafbc1ea88ce6b79d79a95a4b858735b6a",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/9531097/f7caecac-99b2-4b3e-b9ef-1498a2664ca4@710x470.jpg",
+      "sourceArticleUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=26843120BAF90963"
+    },
+    {
+      "id": "inst-tbg-palmetto-donation-import",
+      "summaryBeforeSHA256": "5d1f47e628f99fd5c70b7be7611d45b6c6601d65c33b78dd7a565697e0479ca6",
+      "summaryAfterSHA256": "1d56c2a288612f21997ecc0c16c8c0d35aecac2b9117f51130ce51cb8b10990d",
+      "immutableSHA256": "75219d5e29db928082ac52cc5b3a93debba0cc2d6e81b45b04ea27e8fc70fa18",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://ws.tfri.gov.tw/001/Upload/OldFile/cht/files/D/D1/好花共賞61-1.JPG",
+      "sourceArticleUrl": "https://www.tfri.gov.tw/News_Content.aspx?n=7658&s=262"
+    },
+    {
+      "id": "site-jingshan-grafted-japanese-maple",
+      "summaryBeforeSHA256": "1e73a7b98c2207bea8d008a317dd5b96e7591c459917510cb6fc64261babaa9e",
+      "summaryAfterSHA256": "07b1fcd44114445ea308d9b8ecdc2dcd3fadc66fb87cd098775c9a1de6441448",
+      "immutableSHA256": "bd9ecc9c7b4c711ad029118290bfd0d846b28d6e71cffa15ae443676d2737932",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/297/relpic/10162/4080293/fedf0e8b-8598-42a9-ade6-5be2dea99c94@710x470.jpg",
+      "sourceArticleUrl": "https://www.geo.gov.taipei/News_Content.aspx?n=23285747C0511EC4&sms=72544237BBE4C5F6&s=43EC368CF988933B"
+    },
+    {
+      "id": "site-shuanglian-cassia-spacing-2026",
+      "summaryBeforeSHA256": "e106064f7b04d559d5d63a89d2dab8301d6b370565f3279358b87c6f7afabf38",
+      "summaryAfterSHA256": "6450632604fe7ca9daf10fa13951c81234b310cc88e22937afdf7d709e444801",
+      "immutableSHA256": "7e3c4b65147fd2723d78431d48ecf4bd332e8970a06ef79921c8ac31bbdd44c5",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/9726281/a74d7843-4778-4acc-895b-0e0167105c08@710x470.jpg",
+      "sourceArticleUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E23EF226D87E480"
+    },
+    {
+      "id": "site-daan-hundredflowers-loropetalum-design",
+      "summaryBeforeSHA256": "ac8ee91ad68f40f48fd6dc17e66cf11d83f39c67b84f30a37d7f053732c37969",
+      "summaryAfterSHA256": "07a86162b9ddee9c6054d84e70abfb66ecca6374ba3212f1b7026dd79e3786c9",
+      "immutableSHA256": "8fdeccc134db9bee7d39872acc1c90a78431a352d6c289b9d94034a17a4e28a2",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/8366979/dbf38420-8073-4a33-967d-e5a4508255e5@710x470.jpg",
+      "sourceArticleUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=208EAE53ED2BFF08"
+    },
+    {
+      "id": "round1-dalunwei-myrsine-2021",
+      "summaryBeforeSHA256": "b2836932f2144f155dcad69aa2aae3dfc5481f3f2acc957e42e83059b1750954",
+      "summaryAfterSHA256": "adab4cc330e5280b41599831921f1a39a6cb2747b1ba36917142d15e554b1d45",
+      "immutableSHA256": "3b58a9f285132955afb372fa9f74bdcb768827e82051030221f81e552f72a5fc",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://ourisland.pts.org.tw/sites/default/files/u73/1117%20%2828%29.jpg",
+      "sourceArticleUrl": "https://ourisland.pts.org.tw/content/8106"
+    },
+    {
+      "id": "round1-daan-rubber-family-memory",
+      "summaryBeforeSHA256": "31361dd37642cac580904ce6fe472d7e39be2a2bc131a56d36de43a8b09d413d",
+      "summaryAfterSHA256": "5cb8ffd57a43d0ed55f5ecfd217631e499ea9b919e85cb61bd22e18f755c903d",
+      "immutableSHA256": "31373a530b5b86b05b2ef6e318013b811bb7e57decf2422458ee3f6eebe1ffe6",
+      "photoStatus": "source-attributed",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。",
+      "candidateImageURL": "https://images.vocus.cc/07e4014b-10f6-4ef6-b995-92398ffd090f.jpg",
+      "sourceArticleUrl": "https://vocus.cc/article/63e74f3cfd8978000140015f"
+    },
+    {
+      "id": "round1-neihu-citrus-leisure-2011",
+      "summaryBeforeSHA256": "f07c782edfabc3909ef5313d38cd809cbbe9811b4a067f94b0a5c91a9109a0c1",
+      "summaryAfterSHA256": "289ddf5f920f534a82e0cfa0181fe7f8dd80718d1855ad0c2f498f8842c4a493",
+      "immutableSHA256": "ad1608a37b816755c99b0162739b3c94340df2baf558682dff7b7cd4f39a04df",
+      "photoStatus": "no-article-photo",
+      "photoNote": "已閱讀原文全文；保留原有來源歸屬、時間界線及不確定性；未改動樹種、地點或核實狀態。 原文主圖是公視新聞制式banner，其餘圖片屬推薦新聞；沒有可確認的本篇照片。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": "https://news.pts.org.tw/article/198873"
+    },
+    {
+      "id": "yuanshan-pollen-oak",
+      "summaryBeforeSHA256": "d67c2c86696ec20e2f8b907ea79f6d36ebcff9b9b65f90ccd6c202a3b58d5d33",
+      "summaryAfterSHA256": "98e0f46dbad596cfc372085b1b9d03a8243382388502ce37be8ea572356ea501",
+      "immutableSHA256": "9dd7762aa6bfa565d41baa07227f6128ffd34172f8a64f241e31966d13174da2",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-21.pdf，PDF第1頁／印刷頁21）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-pollen-castanopsis",
+      "summaryBeforeSHA256": "68ea405dedc834677e87ab26856de553cf0331635060fe12d36071104b67e7ca",
+      "summaryAfterSHA256": "4ccf2cb4ca4286ba58f12edb818c38f8c9386ac48a3b3d5b25fe7a52ef6d9836",
+      "immutableSHA256": "1739c56b70c7b93155558fb6da938d625182a3ce6ede66788acf7c21c3f9bb9e",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-21.pdf，PDF第1頁／印刷頁21）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-machilus",
+      "summaryBeforeSHA256": "ece867b4b899810902d99ae6e8b49f3643ab55f99009f7ce0c01284d6d3e91b3",
+      "summaryAfterSHA256": "9de03ad052ab90a783dbb6e5398e6c925686e3dc2a3b6c2a0ddc4c5f49af0753",
+      "immutableSHA256": "8747b356e016c77e3fe9b49271ebfd458d53f110fb9218bdf30ee34a11f7729b",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-21.pdf，PDF第1頁／印刷頁21）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-camphor-prehistory",
+      "summaryBeforeSHA256": "fc2f538386ccb2f65340c7f98bd49fa7b04c2650f5425efd5a5b7165566fafeb",
+      "summaryAfterSHA256": "e501ed05a3e759dbac7427cc6ee94c14cae019369b1785e90fd5d4b90c3c4cf3",
+      "immutableSHA256": "e81a3a765d494326681914a823c2b0d36ae6d0716a8b149212a80cd25ba51617",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-21.pdf，PDF第1頁／印刷頁21）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-ficus-prehistory",
+      "summaryBeforeSHA256": "2468962d98e0908e59a3393d55e4e6e582050e0b22abcad77845230c5346fac1",
+      "summaryAfterSHA256": "f76bf69f84b249540eceb0b82cb0864fc5fe266d1b43251c74213855dfba0a4f",
+      "immutableSHA256": "a55c2772feab1971444004f3e3b54ac29ec59a3bb70ed261dd5fbc803abd79d6",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-21.pdf，PDF第1頁／印刷頁21）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-barringtonia-lagoon",
+      "summaryBeforeSHA256": "1ef05661ecda258ce41f4d9975d6da3767cebed2d9ec73e2591fd3a32f834689",
+      "summaryAfterSHA256": "e2c2bcf19aa231d7b514fadab733500490891a7b63e69d24d675956a6fb9c052",
+      "immutableSHA256": "06d7affdbe67f98e4b52554f530edf62b2d2dcaa3ae47276a122e44c14206247",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-21.pdf，PDF第1頁／印刷頁21）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-cephalanthus-lagoon",
+      "summaryBeforeSHA256": "8d4f038cbcac4c036895c7fbc430863c64f6d101f9160e064188367783bec884",
+      "summaryAfterSHA256": "85955af930e3c6d30fe29eb5962b7a428a289f7688e911bad720d219ce2ff4ec",
+      "immutableSHA256": "f5856c1329c56d180a47627040332e3a3551b9664dff7e30679140d49b6b5641",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-21.pdf，PDF第1頁／印刷頁21）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-dalongdong-banyan",
+      "summaryBeforeSHA256": "05f733a58a06d7ada5191a0977730b174040219a765880a214d85981b5779205",
+      "summaryAfterSHA256": "cd4286f5b286e34268a33f61ba337dc2c3d06703eda37cbcc699046fc54d63e3",
+      "immutableSHA256": "5a99ece2ea274422e12a892d2e550a0858f7878cdbf8396131400fcfb969346b",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-22.pdf，PDF第1頁／印刷頁22）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-dalongdong-acacia",
+      "summaryBeforeSHA256": "036769fc1898ac639cd75000e74835e7a676e5e63f291e370efc4cca41d604fa",
+      "summaryAfterSHA256": "2b1019fd5903693ff4e43dd17c724c6367fda5b40272c9d2213fd5bbd4b3b7c5",
+      "immutableSHA256": "7ad7cd50cc7998efee598cedf7a577bffd604b805c0426fef8ee2ece5f7047ab",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-22.pdf，PDF第1頁／印刷頁22）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-park-cherry",
+      "summaryBeforeSHA256": "a0d225dbc3df6075b1126f47884ea01656a7547ce9ea05ba3195bdbfd4fb26a3",
+      "summaryAfterSHA256": "92c25e0df5feef1bb1fec544b7f7a70353fa86f9d62a69df56ee71333032654d",
+      "immutableSHA256": "189c509d4beff5ab89409438c1ae0e0abd6d5ac0979fafc9079b81da16882dd3",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-23.pdf，PDF第1頁／印刷頁23）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-park-camphor",
+      "summaryBeforeSHA256": "57720dc3aa89f5744414a655f9a1f60541f8c165e6b41b1350aa63b14642aa83",
+      "summaryAfterSHA256": "d9ecc31870544a559fdb1feeca96a88a85e701a67163acc514991e84e072c054",
+      "immutableSHA256": "14bfae70d319fda3dcc02f5e4093b7d591c0a72152c07b1ce721929f97e11849",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-23.pdf，PDF第1頁／印刷頁23）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-park-pine",
+      "summaryBeforeSHA256": "ef9a19337165fb4136aefb83bd29ac3472465e76acc1252379edd5e83c9c844e",
+      "summaryAfterSHA256": "def0eb74ae7e5e8de6aa6528fd5de324cf92944b582854d74d01062a03c2e089",
+      "immutableSHA256": "89b4492fa55d9a9b596101f414fc4b617e1b569b621dc121a6e439e0af318dd3",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-23.pdf，PDF第1頁／印刷頁23）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-park-cedar",
+      "summaryBeforeSHA256": "58e78014aeda9fbc19693453e1644c2447be12e1b418e8bbed41ee8c3d04e9e8",
+      "summaryAfterSHA256": "2a860cf5c8af5cb2c51db48266e9f91e1748227774cf5b7f50170fc1308cebdf",
+      "immutableSHA256": "be21736fc3e4d21cb6afc6471c4a723904f3b67fc615dfe3610b313a01d6ec3f",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-23.pdf，PDF第1頁／印刷頁23）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-shrine-forest",
+      "summaryBeforeSHA256": "eb0d9fbbbbb3d0b36765c097e80e8dc5123a578e7348ae8ef4349d75b321224f",
+      "summaryAfterSHA256": "05989a5b260f655e8ff43b831522a6274cd511831b727dea4ff6cc14d00e36e1",
+      "immutableSHA256": "64104e9bbbda0edd5a618d44fe0ae869d4fba98c094f3f9316a79ad75d5c3a1b",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-23.pdf，PDF第1頁／印刷頁23）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-palm-introduction",
+      "summaryBeforeSHA256": "57afa57368c105e5e8ddf164533013c1246b3d198b9ee095abc6c7e13af99055",
+      "summaryAfterSHA256": "cc6e4f6cb5e06ad089a3a690f2a77240f03ad8c9cee431c32228bf163407e907",
+      "immutableSHA256": "d6699884b7eb3ba63f3ce55a9faa5c6ee38c6343a538719500c1f7d8a71664a5",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-23.pdf，PDF第1頁／印刷頁23）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-avenue-banyan-removal",
+      "summaryBeforeSHA256": "2d5a8dc9050af9b8a3ff87c15947532e5141a53a4d4c44c535e8691496596347",
+      "summaryAfterSHA256": "e14729efc952d7a0d1a43177b5625a387c1242928d7a2270984b8f75fb3a54a9",
+      "immutableSHA256": "4713272e12837ed825c0c55282f441ddfc66cb4aa06184ceb4f3877679a27a7c",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-23.pdf，PDF第1頁／印刷頁23）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "yuanshan-expo-barringtonia",
+      "summaryBeforeSHA256": "9d0478f06ffc41a53f468a60bf025811e59702644c4fbe07c53909edd7864dbe",
+      "summaryAfterSHA256": "74a93802be39c91d04834ee28ddb2dcfb944f83952240d7e1a45c310c645d8ad",
+      "immutableSHA256": "44e53e635d7e74790412c1d91eef9cfa5227bc6629b954fc887bfc6be2ea01c9",
+      "photoStatus": "missing-original-article-photo",
+      "photoNote": "已閱讀完整提供摘頁文字（docs/research/provided-yuanshan-20261024/source-page-24.pdf，PDF第1頁／印刷頁24）。無公開sourceArticleUrl／imageUrl可保留；照片候選定位僅能記為此來源頁，尚無已核實的獨立原文照片。保留原有lead、不添加逐樹證據。",
+      "candidateImageURL": null,
+      "sourceArticleUrl": null
+    },
+    {
+      "id": "royal-palm-southern-imagination",
+      "summaryBeforeSHA256": "f2a5103b06e246812b1b48eaff1139c2d9f9928a21eff5f911cb4b38dedcf0e4",
+      "summaryAfterSHA256": "ebc541ca77b0615aa02014f3873835f0182f86b981a7f732953784b956a36e22",
+      "immutableSHA256": "292dd79c01ce16eff8a55859959304425c1393f945395c890e30faa1b41b1353",
+      "photoStatus": "user-provided",
+      "photoNote": "2026-10-24重新完整讀取聯經思想空間講座紀要及眼底城事原文，原文HTML首張內文圖為電影街景；保存既有使用者JPEG且SHA256完全相同。 保留使用者原始附件與既有圖說。",
+      "candidateImageURL": "https://lh4.googleusercontent.com/76mOJbMQthHCaaLJNAN7kLK8XONu3gLrxDnlkfxbOtRa26tthclQo3kJ9vqeTXpxULeGodkvBmjI9DEev94KOAH7vkTGQ0bYQhUUQRZiefoJwmPaMCLmJu5PT0HSnWcQxhlSjlI5",
+      "sourceArticleUrl": "https://eyesonplace.net/2022/03/30/20124/"
+    }
+  ]
+}

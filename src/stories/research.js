@@ -16,6 +16,7 @@ function renderRow(e) {
  const story=cell('摘要',el('p',e.summary));
  if(e.storyText?.length){const text=el('details',undefined,'story-text');text.append(el('summary','閱讀完整故事'),...e.storyText.map(p=>el('p',p)));story.append(text);}
  appendStoredStoryImages(story,e.images??[],import.meta.env.BASE_URL);
+ if(!e.images?.length && e.imageNote)story.append(el('p',e.imageNote,'muted story-photo-note'));
  details.append(el('summary','查閱來源與限制（'+e.sources.length+'）'),el('p','適用限制：'+e.limitations,'limitations'));
  const list=el('ol',undefined,'sources');
  for (const s of e.sources) {

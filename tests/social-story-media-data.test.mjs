@@ -6,7 +6,7 @@ const read = name => JSON.parse(readFileSync(new URL('../public/data/' + name, i
 const catalogue = read('tree-cultural-stories.json');
 const data = read('social-story-media.json');
 const report = readFileSync(new URL('../docs/research/social-story-media-audit.md', import.meta.url), 'utf8');
-const statuses = ['displayable', 'source-only', 'unavailable', 'blocked', 'provided-document', 'user-provided'];
+const statuses = ['displayable', 'source-only', 'unavailable', 'blocked', 'provided-document', 'user-provided', 'source-attributed'];
 const https = value => { const u = new URL(value); assert.equal(u.protocol, 'https:'); assert.equal(u.username, ''); assert.equal(u.password, ''); };
 test('media manifest covers exactly the 54 canonical story IDs', () => {
  assert.equal(data.schemaVersion, 1);
@@ -25,7 +25,7 @@ test('displayable images have original source, credit, caption, grant and audit 
    https(entry.sourceUrl);
    assert.ok(story.sources.some(s => s.url === entry.sourceUrl));
   }
-  if(entry.status==='user-provided'){validateStoryMedia({images:[entry.image]});assert.deepEqual(entry.image,story.images[0]);assert.ok(report.includes(entry.image.path));continue;}
+  if(['user-provided','source-attributed'].includes(entry.status)){validateStoryMedia({images:[entry.image]});assert.deepEqual(entry.image,story.images[0]);assert.ok(report.includes(entry.image.path));continue;}
   if (entry.status !== 'displayable') { assert.equal(Object.hasOwn(entry, 'image'), false); continue; }
   const image = entry.image;
   for (const field of ['url','sourceUrl','license','licenseUrl','credit','caption']) assert.ok(image[field]?.trim(), story.id + ': ' + field);

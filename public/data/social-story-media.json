@@ -5,315 +5,631 @@
     "community-fuyuan-second-opinion": {
       "status": "source-only",
       "sourceUrl": "https://www.taisounds.com/specialtopic/content/194/291501",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "原文配圖尚缺：太報明示「未經授權．不得轉載」，保留候選圖與原文連結，不下載或公開展示。"
     },
     "community-gangqian-fengshui": {
       "status": "source-only",
       "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=9648FB336235885C",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "原文配圖尚缺：原文僅見網站介面圖片，沒有可用的文章照片。"
     },
     "community-lions-sakura-family": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://tct.gov.taipei/News_Content.aspx?n=B4C9AF5D5D4BF947&sms=72544237BBE4C5F6&s=57C1A99AB1898B6D",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-d12b59e75341a3879112.jpg",
+        "width": 960,
+        "height": 720,
+        "alt": "北區獅子會櫻花捐贈剪綵典禮；不是外公參與華盛頓捐櫻的歷史照片。",
+        "caption": "北區獅子會櫻花捐贈剪綵典禮；不是外公參與華盛頓捐櫻的歷史照片。",
+        "credit": "臺北市政府工務局公園路燈工程管理處／孔廟管理委員會轉載",
+        "sourcePage": "https://tct.gov.taipei/News_Content.aspx?n=B4C9AF5D5D4BF947&sms=72544237BBE4C5F6&s=57C1A99AB1898B6D",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/297/relpic/10162/4108229/106836e3-d012-46e4-a8d6-3d4d22282b67@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "d12b59e75341a3879112885f47e1f1f23ae6210d3d5f9dffd85a21b4907103d8",
+        "rightsNote": "依出版機關政府網站資料開放宣告註明出處；本次選圖未見另行許可或第三方限制標記，非CC授權。 政策：https://tct.gov.taipei/News_Content.aspx?Create=1&n=07FE36502D4BD1E1&state=F5D336F102ACBC68&s=F726C36A041E5E0D&sms=2CB2B04CE204ADF1"
+      }
     },
     "community-rongjin-preservation": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://culture.gov.taipei/News_Content.aspx?n=63F36AA6E434AD08&s=04221DA9959EBB88",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-9f24a7060cb7a876978b.jpg",
+        "width": 960,
+        "height": 640,
+        "alt": "榕錦時光園區的樹屋浴場，原文圖說「樹屋浴場」。",
+        "caption": "榕錦時光園區的樹屋浴場，原文圖說「樹屋浴場」。",
+        "credit": "臺北市政府文化局",
+        "sourcePage": "https://culture.gov.taipei/News_Content.aspx?n=63F36AA6E434AD08&s=04221DA9959EBB88",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/686/relpic/10162/8743499/688afcb8-1753-422b-8d16-9f256c9d1245@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "9f24a7060cb7a876978b0bbf3eca1c956d62f9a8e231ce7ad9019a411d298480",
+        "rightsNote": "依出版機關政府網站資料開放宣告註明出處；本次選圖未見另行許可或第三方限制標記，非CC授權。 政策：https://culture.gov.taipei/cp.aspx?n=F8CBB1FA607C0808"
+      }
     },
     "community-roosevelt-bischofia": {
       "status": "source-only",
       "sourceUrl": "https://www.taisounds.com/specialtopic/content/194/291501",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "原文配圖尚缺：太報明示「未經授權．不得轉載」，保留候選圖與原文連結，不下載或公開展示。"
     },
     "community-xingan-temple-banyan": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=4C07F836DF5E13C3",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-06d7f42e0f41f86d2b78.jpg",
+        "width": 800,
+        "height": 960,
+        "alt": "興安宮老樹與廟相依的原文配圖，原圖題為「真奇廟圖」。",
+        "caption": "興安宮老樹與廟相依的原文配圖，原圖題為「真奇廟圖」。",
+        "credit": "黃怡仁攝影／臺北市文山區公所",
+        "sourcePage": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=4C07F836DF5E13C3",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/public/MMO/WSDO/真奇廟圖.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "06d7f42e0f41f86d2b78a64f8152f12803d1bd07fa2a041d1db7b91ef678a549",
+        "rightsNote": "原圖權利歸原權利人；本頁作故事介紹並附原文來源，未宣稱開放授權。非商業用途不等於已獲授權。 原文明列攝影黃怡仁，未推定市府擁有完整授權。"
+      }
     },
     "community-yangming-et-donation": {
-      "status": "displayable",
+      "status": "source-attributed",
       "sourceUrl": "https://pkl.gov.taipei/News_Content.aspx?n=43E05059FCC72525&s=673A8B2C15249D45",
-      "reason": "已核對原篇實際圖片、圖說及明示政府素材開放授權；未見第三方署名或須另取許可標記。僅遠端顯示縮圖並註明出處。",
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
       "image": {
-        "url": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/8110911/a2755cc8-8985-4625-ad46-8cd89ff00bf6@710x470.jpg",
-        "sourceUrl": "https://pkl.gov.taipei/News_Content.aspx?n=43E05059FCC72525&s=673A8B2C15249D45",
-        "license": "臺北市政府網站資料開放宣告（註明出處；排除另行聲明素材）",
-        "licenseUrl": "https://pkl.gov.taipei/News_Content.aspx?n=E6C86666B7A86451&sms=9E2FE7F26B57E721&s=40CFBA6200D34643",
+        "path": "story-media/article-9ec8dfb9600173e9dbb3.jpg",
+        "width": 960,
+        "height": 640,
+        "alt": "原文圖2：百株櫻花樹增添公園賞花景觀；場域配圖，不作逐株捐植證明。",
+        "caption": "原文圖2：百株櫻花樹增添公園賞花景觀；場域配圖，不作逐株捐植證明。",
         "credit": "臺北市政府工務局公園路燈工程管理處",
-        "caption": "圖1：迎接櫻花的來到，世界及全臺各地的百萬遊客如鮭魚返鄉般，絡繹不絕。"
+        "sourcePage": "https://pkl.gov.taipei/News_Content.aspx?n=43E05059FCC72525&s=673A8B2C15249D45",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/8110911/dbda1511-c836-4ff2-837b-cd59d466dd47@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "9ec8dfb9600173e9dbb3ee7d681977919fc7bb87df5339bb087bae9e2ab7a2ef",
+        "rightsNote": "依出版機關政府網站資料開放宣告註明出處；本次選圖未見另行許可或第三方限制標記，非CC授權。 政策：https://pkl.gov.taipei/News_Content.aspx?n=E6C86666B7A86451&sms=9E2FE7F26B57E721&s=40CFBA6200D34643"
       }
     },
     "community-yongkang-preservation": {
       "status": "source-only",
       "sourceUrl": "https://vita.tw/%E8%AD%B7%E6%A8%B9%E9%81%8B%E5%8B%95-%E8%AE%93%E6%B0%B8%E5%BA%B7%E7%A4%BE%E5%8D%80%E5%8B%95%E8%B5%B7%E4%BE%86/",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "原文配圖尚缺：原文只見媒體標誌與分享介面，未拿logo充作故事照片。"
     },
     "inst-cksmh-osmanthus-consolidation": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://www.cksmh.gov.tw/cp.aspx?n=7273",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-1c2bd2bdfe104fe62126.jpg",
+        "width": 960,
+        "height": 639,
+        "alt": "中正紀念堂桂花林，原文圖說「桂花林」。",
+        "caption": "中正紀念堂桂花林，原文圖說「桂花林」。",
+        "credit": "國立中正紀念堂管理處",
+        "sourcePage": "https://www.cksmh.gov.tw/cp.aspx?n=7273",
+        "originalImageURL": "https://file.moc.gov.tw/001/Upload/531/relpic/15089/174392/b1205b62-4d7c-4a44-a063-9bbbf217a540.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "1c2bd2bdfe104fe6212657b129086ee1760e672dcffa9ac32f7f19c1173d3f9f",
+        "rightsNote": "原圖權利歸原權利人；本頁作故事介紹並附原文來源，未宣稱開放授權。非商業用途不等於已獲授權。 該處著作權聲明准許合理範圍內附來源引用，非開放圖庫授權：https://www.cksmh.gov.tw/cp.aspx?n=6262"
+      }
     },
     "inst-ntu-azalea-donation": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-29487e7c178aa4482152.jpg",
+        "width": 960,
+        "height": 720,
+        "alt": "原文圖5：杜鵑花節的展示空間及求才攤位；非1960年贈苗現場。",
+        "caption": "原文圖5：杜鵑花節的展示空間及求才攤位；非1960年贈苗現場。",
+        "credit": "臺大校友雙月刊；文章凌德麟，照片攝影未另署名",
+        "sourcePage": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
+        "originalImageURL": "https://ntualumnibm.ntu.edu.tw/upload/editor/bm_bimonthly_article/img/00000004462/20250813133652689c247412014.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "29487e7c178aa4482152a60234ea9966b39ecce79b05e4008fa123391c8074e9",
+        "rightsNote": "原圖權利歸原權利人；本頁作故事介紹並附原文來源，未宣稱開放授權。非商業用途不等於已獲授權。"
+      }
     },
     "inst-ntu-camphor-wave": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-70c15dcb27bc4da9f0de.jpg",
+        "width": 600,
+        "height": 960,
+        "alt": "原文圖2：清涼寧靜的雨中散步。校園景觀脈絡照，不用來證明樟樹遮蔭因果。",
+        "caption": "原文圖2：清涼寧靜的雨中散步。校園景觀脈絡照，不用來證明樟樹遮蔭因果。",
+        "credit": "臺大校友雙月刊；文章凌德麟，照片攝影未另署名",
+        "sourcePage": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
+        "originalImageURL": "https://ntualumnibm.ntu.edu.tw/upload/editor/bm_bimonthly_article/img/00000004462/20250813133350689c23be8f005.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "70c15dcb27bc4da9f0dec4c46db9e0b6fdf6e3a519ded7af6ed6b686ac9f791c",
+        "rightsNote": "原圖權利歸原權利人；本頁作故事介紹並附原文來源，未宣稱開放授權。非商業用途不等於已獲授權。"
+      }
     },
     "inst-ntu-fu-phoenix": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-e04b6b84ba799c1e60e4.jpg",
+        "width": 960,
+        "height": 645,
+        "alt": "原文圖1：約1965年椰林大道東端尚待延伸。作校園歷史脈絡，不是1951年紀念鐘植樹現場。",
+        "caption": "原文圖1：約1965年椰林大道東端尚待延伸。作校園歷史脈絡，不是1951年紀念鐘植樹現場。",
+        "credit": "臺大校友雙月刊；文章凌德麟，照片攝影未另署名",
+        "sourcePage": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
+        "originalImageURL": "https://ntualumnibm.ntu.edu.tw/upload/editor/bm_bimonthly_article/img/00000004462/20250813133316689c239c183f0.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "e04b6b84ba799c1e60e48602396d96b0cd7a1aa962046fb1c3b73216cdb59c18",
+        "rightsNote": "原圖權利歸原權利人；本頁作故事介紹並附原文來源，未宣稱開放授權。非商業用途不等於已獲授權。"
+      }
     },
     "inst-ntu-juniper-road-widening": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-7da2003392758595f895.jpg",
+        "width": 960,
+        "height": 542,
+        "alt": "原文圖8：1977年施工完成後的椰林大道端景庭園，尚未建總圖書館；不是1965年龍柏移植驗收照。",
+        "caption": "原文圖8：1977年施工完成後的椰林大道端景庭園，尚未建總圖書館；不是1965年龍柏移植驗收照。",
+        "credit": "臺大校友雙月刊；文章凌德麟，照片攝影未另署名",
+        "sourcePage": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
+        "originalImageURL": "https://ntualumnibm.ntu.edu.tw/upload/editor/bm_bimonthly_article/img/00000004462/20250813133944689c252076e65.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "7da2003392758595f895148982964bb3317075a909c12299d861f9aee319bf39",
+        "rightsNote": "原圖權利歸原權利人；本頁作故事介紹並附原文來源，未宣稱開放授權。非商業用途不等於已獲授權。"
+      }
     },
     "inst-ntu-palm-axis": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://historygallery.ntu.edu.tw/web-ntusym/tree.html",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-647c6a25fb6950b44cf5.jpg",
+        "width": 960,
+        "height": 605,
+        "alt": "臺大校史館校樹介紹配圖；椰林大道的校園脈絡，不作所有現存樹木同齡的證明。",
+        "caption": "臺大校史館校樹介紹配圖；椰林大道的校園脈絡，不作所有現存樹木同齡的證明。",
+        "credit": "國立臺灣大學校史館",
+        "sourcePage": "https://historygallery.ntu.edu.tw/web-ntusym/tree.html",
+        "originalImageURL": "https://historygallery.ntu.edu.tw/web-ntusym/img/3-6.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "647c6a25fb6950b44cf5f2a56b604fcd41b05a8497eca12a3a6a1bed2919e6af",
+        "rightsNote": "原圖權利歸原權利人；本頁作故事介紹並附原文來源，未宣稱開放授權。非商業用途不等於已獲授權。"
+      }
     },
     "inst-renai-palms-retention": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://eyesonplace.net/2022/03/30/20124/",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-350af37c0a1d1889e44a.png",
+        "width": 960,
+        "height": 932,
+        "alt": "眼底城事〈空中的綠色炸彈〉原文首圖；僅作大王椰子議題脈絡，不視為1968年保留決策現場。",
+        "caption": "眼底城事〈空中的綠色炸彈〉原文首圖；僅作大王椰子議題脈絡，不視為1968年保留決策現場。",
+        "credit": "眼底城事／文章楊絜媖；首圖攝影未另署名",
+        "sourcePage": "https://eyesonplace.net/2022/03/30/20124/",
+        "originalImageURL": "https://img.eyesonplace.net/2022/03/259277480_690538715592274_6620044005071618804_n.png",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "350af37c0a1d1889e44a782eb7b4ff0c8c90b70e25154e52f3b7e21ae93f7964",
+        "rightsNote": "原圖權利歸原權利人；本頁作故事介紹並附原文來源，未宣稱開放授權。非商業用途不等於已獲授權。"
+      }
     },
     "inst-three-lane-uniform-policy": {
-      "status": "blocked",
+      "status": "source-only",
       "sourceUrl": "https://www.linking.vision/archives/6977",
-      "reason": "原文存取受阻，未繞過驗證或重試；僅保留文章連結。"
+      "reason": "原文配圖尚缺：聯經思想空間著作權聲明明示圖文未經同意不得轉載、嵌入或重製；本次不公開展示。政策：https://www.linking.vision/copyright"
     },
     "inst-zhongshan-diplomatic-avenue": {
-      "status": "displayable",
+      "status": "source-attributed",
       "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=CFF16DF881820E64",
-      "reason": "已核對原篇實際圖片、圖說及明示政府素材開放授權；未見第三方署名或須另取許可標記。僅遠端顯示縮圖並註明出處。",
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
       "image": {
-        "url": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/7589015/20f4103b-1193-4a12-a2cd-be2f30302b3c@710x470.jpg",
-        "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=CFF16DF881820E64",
-        "license": "臺北市政府網站資料開放宣告（註明出處；排除另行聲明素材）",
-        "licenseUrl": "https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611",
+        "path": "story-media/article-e788f1c52c2aefdd5cb5.jpg",
+        "width": 960,
+        "height": 720,
+        "alt": "原文圖2：中山北路樟樹林蔭大道；現地景觀照，不是歷史密植工程現場。",
+        "caption": "原文圖2：中山北路樟樹林蔭大道；現地景觀照，不是歷史密植工程現場。",
         "credit": "臺北市政府工務局公園路燈工程管理處",
-        "caption": "圖1.日治時期的敕使街道(今中山北路)是通往神社(現址圓山飯店)參拜的道路；楓紅的四季變化在塵囂的都市裡也感受的到。"
+        "sourcePage": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=CFF16DF881820E64",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/7589015/e7611f3e-dcd0-4ad1-ad12-9ab0029d9045@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "e788f1c52c2aefdd5cb5473d8a5eeb73eabc4c7171bff45057ce32ba6f9a3422",
+        "rightsNote": "依出版機關政府網站資料開放宣告註明出處；本次選圖未見另行許可或第三方限制標記，非CC授權。 政策：https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611"
       }
     },
     "inst-zhongshan-practical-acacia": {
-      "status": "blocked",
+      "status": "source-only",
       "sourceUrl": "https://www.linking.vision/archives/6977",
-      "reason": "原文存取受阻，未繞過驗證或重試；僅保留文章連結。"
+      "reason": "原文配圖尚缺：聯經思想空間著作權聲明明示圖文未經同意不得轉載、嵌入或重製；本次不公開展示。政策：https://www.linking.vision/copyright"
     },
     "meilun-presidential-banyans-removal": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-cc7246b75df7710efb0b.jpg",
+        "width": 898,
+        "height": 1200,
+        "alt": "美崙公園兩株榕樹病況，公園處原公告照片；樹木已於2026年4月移除。",
+        "caption": "美崙公園兩株榕樹病況，公園處原公告照片；樹木已於2026年4月移除。",
+        "credit": "臺北市政府工務局公園路燈工程管理處",
+        "sourcePage": "https://treesmatch.gov.taipei/pkl/public/tree-map?id=108",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/9720452/46886cea-0d97-4de6-acbe-7940d95f5d3c@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "cc7246b75df7710efb0b2ba819d65de9a6e29919ea773d3ca9eae367a22c74ee",
+        "rightsNote": "依臺北市政府政府網站資料開放宣告註明出處使用；原稿未見本圖另須同意之聲明；授權不代表市府認可本頁。政策：https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611"
+      }
     },
     "cukeng-bischofia-road-preservation": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://eculture.gov.taipei/trees/zh-tw/tree/2070",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-8ab767ebb115cd21bb89.jpg",
+        "width": 1200,
+        "height": 900,
+        "alt": "受保護樹木平臺所刊粗坑茄苳照片，樹木編號2070。",
+        "caption": "受保護樹木平臺所刊粗坑茄苳照片，樹木編號2070。",
+        "credit": "臺北市政府文化局",
+        "sourcePage": "https://eculture.gov.taipei/trees/zh-tw/tree/2070",
+        "originalImageURL": "https://ecultureuser.gov.taipei/oldsysfile/d_upload_tca_pro/cms/image/A0/B0/C0/D33/E288/F982/eaced914-d8e9-42df-aab9-c0b1c5e97a7b.JPG",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "8ab767ebb115cd21bb89037dbdc7aab67f80b89cfdc581aa34d1953b60e5e649",
+        "rightsNote": "原圖權利歸原權利人；本頁作非商業故事介紹並附原文來源，未宣稱開放授權。"
+      }
     },
     "tmu-maple-walk-campus-memory": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-0f1da321eb13880e5ade.jpg",
+        "width": 817,
+        "height": 1200,
+        "alt": "北醫校史館〈楓林道〉原文所刊校園景觀；不指認現存個別原株。",
+        "caption": "北醫校史館〈楓林道〉原文所刊校園景觀；不指認現存個別原株。",
+        "credit": "臺北醫學大學校史館",
+        "sourcePage": "https://history.tmu.edu.tw/portfolio-item/%E6%A5%93%E6%9E%97%E9%81%93/",
+        "originalImageURL": "https://history.tmu.edu.tw/wp-content/uploads/2021/04/0989-1.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "0f1da321eb13880e5ade135387e3d9054cd8ee2e5ac98a80d95170848314d4a9",
+        "rightsNote": "原圖權利歸原權利人；本頁作非商業故事介紹並附原文來源，未宣稱開放授權。"
+      }
     },
     "ntu-koelreuteria-road-naming": {
-      "status": "blocked",
+      "status": "source-attributed",
       "sourceUrl": "https://www.agriharvest.tw/archives/128445/",
-      "reason": "原文存取受阻，未繞過驗證或重試；僅保留文章連結。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-81ed7e55e323c11b006a.jpg",
+        "width": 1200,
+        "height": 900,
+        "alt": "不同色型的欒樹果與乾裂果瓣，黃瀚嶢原文配圖；非臺大欒樹道個株照片。",
+        "caption": "不同色型的欒樹果與乾裂果瓣，黃瀚嶢原文配圖；非臺大欒樹道個株照片。",
+        "credit": "黃瀚嶢／農傳媒",
+        "sourcePage": "https://www.agriharvest.tw/archives/128445/",
+        "originalImageURL": "https://images.agriharvest.tw/wp-content/uploads/2025/08/不同色型的欒樹果，最後都會乾裂成淡褐色的果瓣-1024x768.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "81ed7e55e323c11b006a4e24e81b731f6ec1696a77d7c6cc6a91736a52188735",
+        "rightsNote": "原圖權利歸原權利人；本頁作非商業故事介紹並附原文來源，未宣稱開放授權。"
+      }
     },
     "round1-xiaokeng-celtis-shrine": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-10cb193f99759947fba2.jpg",
+        "width": 948,
+        "height": 1200,
+        "alt": "原文所刊「鄭厝百歲香楠圖」：小坑地方環境脈絡，並非故事中的朴樹。",
+        "caption": "原文所刊「鄭厝百歲香楠圖」：小坑地方環境脈絡，並非故事中的朴樹。",
+        "credit": "臺北市文山區公所",
+        "sourcePage": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=6FC4EE6C0D3BCE66",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/public/MMO/WSDO/鄭厝百歲香楠圖.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "10cb193f99759947fba28892dbf91794dd6dc14b621964019202fc187e55b5a5",
+        "rightsNote": "依臺北市政府政府網站資料開放宣告註明出處使用；原稿未見本圖另須同意之聲明；授權不代表市府認可本頁。政策：https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611"
+      }
     },
     "ntu-indian-rosewood-rescue-debate": {
       "status": "source-only",
       "sourceUrl": "https://www.cna.com.tw/news/ahel/202204060351.aspx",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "原文配圖尚缺：正文未刊照片；og為中央社標誌，其他圖片均為推薦新聞，已排除。"
     },
     "lishan-plaza-cypress-school-memory": {
       "status": "source-only",
       "sourceUrl": "https://travel.ettoday.net/article/2131139.htm",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "原文配圖尚缺：ETtoday條款僅對個人非商業合理使用設例外；公開網站並非當然適用，保留候選，不落地。"
     },
     "xinglong-scolopia-community-stele": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://wenshan.org.tw/wss/index.php/%E7%94%9F%E6%85%8B/item/2079-%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%89%E6%AE%B5%E7%9A%84%E7%99%BE%E5%B9%B4%E9%AD%AF%E8%8A%B1%E6%A8%B9%E8%88%87%E5%8F%B0%E5%8C%97%E6%B9%96",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-0d36c8586fd89c28318b.jpg",
+        "width": 782,
+        "height": 1200,
+        "alt": "文山社大〈興隆路三段的百年魯花樹與台北湖〉原文主圖。",
+        "caption": "文山社大〈興隆路三段的百年魯花樹與台北湖〉原文主圖。",
+        "credit": "臺北市文山社區大學／林寬興文章，照片作者未另標",
+        "sourcePage": "https://wenshan.org.tw/wss/index.php/%E7%94%9F%E6%85%8B/item/2079-%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%89%E6%AE%B5%E7%9A%84%E7%99%BE%E5%B9%B4%E9%AD%AF%E8%8A%B1%E6%A8%B9%E8%88%87%E5%8F%B0%E5%8C%97%E6%B9%96",
+        "originalImageURL": "https://wenshan.org.tw/wss/media/k2/items/cache/825c939ed3e8f5731bfe6f5becd14d5e_XL.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "0d36c8586fd89c28318be7481dc7db5f3b17b511cefd8085e9b11f901cc7551f",
+        "rightsNote": "原圖權利歸原權利人；本頁作非商業故事介紹並附原文來源，未宣稱開放授權。"
+      }
     },
     "rongxing-hibiscus-play-care": {
-      "status": "displayable",
+      "status": "source-attributed",
       "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=C97A944E3C88A5D0",
-      "reason": "已核對原篇實際圖片、圖說及明示政府素材開放授權；未見第三方署名或須另取許可標記。僅遠端顯示縮圖並註明出處。",
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
       "image": {
-        "url": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/7982307/e5de2a0b-d7f1-40b9-b6ae-218db0d6779a@710x470.jpg",
-        "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=C97A944E3C88A5D0",
-        "license": "臺北市政府網站資料開放宣告（註明出處；排除另行聲明素材）",
-        "licenseUrl": "https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611",
+        "path": "story-media/article-75d6ffc388efb1ccff12.jpg",
+        "width": 1200,
+        "height": 800,
+        "alt": "榮星花園公園黃槿樹，公園處原稿圖1。",
+        "caption": "榮星花園公園黃槿樹，公園處原稿圖1。",
         "credit": "臺北市政府工務局公園路燈工程管理處",
-        "caption": "圖1.位在榮星花園公園的黃槿樹，他的樹葉大而茂密，非常適合乘涼.JPG"
+        "sourcePage": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=C97A944E3C88A5D0",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/7982307/e5de2a0b-d7f1-40b9-b6ae-218db0d6779a@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "75d6ffc388efb1ccff128ccb7e3a3b111cf0226aa2bb5a13088ebb04c5402bb1",
+        "rightsNote": "依臺北市政府政府網站資料開放宣告註明出處使用；原稿未見本圖另須同意之聲明；授權不代表市府認可本頁。政策：https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611"
       }
     },
     "beitou-citrus-naming-orchard-memory": {
       "status": "source-only",
       "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E789E8819879CC5",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "原文配圖尚缺：照片由北投區農會提供；市府開放宣告不自動授權第三方照片，保留候選。"
     },
     "site-zhongzheng138-mango-early-planting": {
-      "status": "displayable",
+      "status": "source-attributed",
       "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=26843120BAF90963",
-      "reason": "已核對原篇實際圖片、圖說及明示政府素材開放授權；未見第三方署名或須另取許可標記。僅遠端顯示縮圖並註明出處。",
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
       "image": {
-        "url": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/9531097/9491cbf6-8228-45c1-b7f4-4d8a2ed4fd06@710x470.jpg",
-        "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=26843120BAF90963",
-        "license": "臺北市政府網站資料開放宣告（註明出處；排除另行聲明素材）",
-        "licenseUrl": "https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611",
+        "path": "story-media/article-f17e7dbd27d4c3ea1d8d.jpg",
+        "width": 1200,
+        "height": 901,
+        "alt": "中正138號綠地林蔭，公園處原稿圖2；不指認其中某株為檬果。",
+        "caption": "中正138號綠地林蔭，公園處原稿圖2；不指認其中某株為檬果。",
         "credit": "臺北市政府工務局公園路燈工程管理處",
-        "caption": "(圖1) 中正138號綠地串聯舊城外植物園、城中商圈、機關古蹟群等觀光場所，值得連假來散步、小旅行。"
+        "sourcePage": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=26843120BAF90963",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/9531097/f7caecac-99b2-4b3e-b9ef-1498a2664ca4@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "f17e7dbd27d4c3ea1d8d52f69c8089c030ceb02aab47ae96dcabb584524f5ba3",
+        "rightsNote": "依臺北市政府政府網站資料開放宣告註明出處使用；原稿未見本圖另須同意之聲明；授權不代表市府認可本頁。政策：https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611"
       }
     },
     "inst-tbg-palmetto-donation-import": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://www.tfri.gov.tw/News_Content.aspx?n=7658&s=262",
-      "reason": "原文歡迎轉載文章，但政府政策另明示圖像需經機關同意；僅連結原文章。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-069b5bab8c760ba7cc30.jpg",
+        "width": 1200,
+        "height": 968,
+        "alt": "臺北植物園棕櫚植物區龍鱗櫚，呂勝由原文攝影。",
+        "caption": "臺北植物園棕櫚植物區龍鱗櫚，呂勝由原文攝影。",
+        "credit": "攝影：呂勝由／農業部林業試驗所",
+        "sourcePage": "https://www.tfri.gov.tw/News_Content.aspx?n=7658&s=262",
+        "originalImageURL": "https://ws.tfri.gov.tw/001/Upload/OldFile/cht/files/D/D1/好花共賞61-1.JPG",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "069b5bab8c760ba7cc30d50d23e33a1c443b6b3f0bc42832562a836148b1847d",
+        "rightsNote": "原文明示歡迎轉載及引用好花共賞系列，須註明作者及出處；保留呂勝由／林業試驗所署名，未另宣稱CC授權。"
+      }
     },
     "site-jingshan-grafted-japanese-maple": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://www.geo.gov.taipei/News_Content.aspx?n=23285747C0511EC4&sms=72544237BBE4C5F6&s=43EC368CF988933B",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-8b3d249ddee245c87856.jpg",
+        "width": 1200,
+        "height": 901,
+        "alt": "菁山社區日本槭，2014年大地工程處原稿配圖。",
+        "caption": "菁山社區日本槭，2014年大地工程處原稿配圖。",
+        "credit": "臺北市政府工務局大地工程處",
+        "sourcePage": "https://www.geo.gov.taipei/News_Content.aspx?n=23285747C0511EC4&sms=72544237BBE4C5F6&s=43EC368CF988933B",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/297/relpic/10162/4080293/fedf0e8b-8598-42a9-ade6-5be2dea99c94@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "8b3d249ddee245c878565455cc6624c3aa55364d09091548323b4749691f57ab",
+        "rightsNote": "依臺北市政府政府網站資料開放宣告註明出處使用；原稿未見本圖另須同意之聲明；授權不代表市府認可本頁。政策：https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611"
+      }
     },
     "site-shuanglian-cassia-spacing-2026": {
-      "status": "displayable",
+      "status": "source-attributed",
       "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E23EF226D87E480",
-      "reason": "已核對原篇實際圖片、圖說及明示政府素材開放授權；未見第三方署名或須另取許可標記。僅遠端顯示縮圖並註明出處。",
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
       "image": {
-        "url": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/9726281/a74d7843-4778-4acc-895b-0e0167105c08@710x470.jpg",
-        "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E23EF226D87E480",
-        "license": "臺北市政府網站資料開放宣告（註明出處；排除另行聲明素材）",
-        "licenseUrl": "https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611",
+        "path": "story-media/article-2e824bbaf325f5b2c703.jpg",
+        "width": 1200,
+        "height": 590,
+        "alt": "雙連捷運站線型公園種樹，公園處2026年10月說明配圖。",
+        "caption": "雙連捷運站線型公園種樹，公園處2026年10月說明配圖。",
         "credit": "臺北市政府工務局公園路燈工程管理處",
-        "caption": "雙連捷運站線型公園種樹"
+        "sourcePage": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=7E23EF226D87E480",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/9726281/a74d7843-4778-4acc-895b-0e0167105c08@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "2e824bbaf325f5b2c703d83852c1a9a35044ad8b86205c7fe182d38a6b90468f",
+        "rightsNote": "依臺北市政府政府網站資料開放宣告註明出處使用；原稿未見本圖另須同意之聲明；授權不代表市府認可本頁。政策：https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611"
       }
     },
     "site-daan-hundredflowers-loropetalum-design": {
-      "status": "displayable",
+      "status": "source-attributed",
       "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=208EAE53ED2BFF08",
-      "reason": "已核對原篇實際圖片、圖說及明示政府素材開放授權；未見第三方署名或須另取許可標記。僅遠端顯示縮圖並註明出處。",
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
       "image": {
-        "url": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/8366979/d9aa8b6a-8a2b-4554-85d1-1b5f304017e1@710x470.jpg",
-        "sourceUrl": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=208EAE53ED2BFF08",
-        "license": "臺北市政府網站資料開放宣告（註明出處；排除另行聲明素材）",
-        "licenseUrl": "https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611",
+        "path": "story-media/article-ebadf4e04d4790e985e8.jpg",
+        "width": 1200,
+        "height": 901,
+        "alt": "大安森林公園百花園混植景觀，原文配圖；不作紅花繼木個株證明。",
+        "caption": "大安森林公園百花園混植景觀，原文配圖；不作紅花繼木個株證明。",
         "credit": "臺北市政府工務局公園路燈工程管理處",
-        "caption": "小造景也是很好的拍照打卡地點.JPG"
+        "sourcePage": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=208EAE53ED2BFF08",
+        "originalImageURL": "https://www-ws.gov.taipei/001/Upload/348/relpic/10162/8366979/dbf38420-8073-4a33-967d-e5a4508255e5@710x470.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "ebadf4e04d4790e985e8b31fec26df94625afbbc95064449bf6dfd7150f070a3",
+        "rightsNote": "依臺北市政府政府網站資料開放宣告註明出處使用；原稿未見本圖另須同意之聲明；授權不代表市府認可本頁。政策：https://www.gov.taipei/News_Content.aspx?n=10FDEA7683714512&sms=AA987E1C50412097&s=3B6C92FD22C01611"
       }
     },
     "round1-dalunwei-myrsine-2021": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://ourisland.pts.org.tw/content/8106",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-7ab604d7c1a2a3b65154.jpg",
+        "width": 1200,
+        "height": 675,
+        "alt": "公視〈大崙尾山整形記〉原文森林環境配圖；不作大明橘個株辨識證明。",
+        "caption": "公視〈大崙尾山整形記〉原文森林環境配圖；不作大明橘個株辨識證明。",
+        "credit": "公共電視《我們的島》",
+        "sourcePage": "https://ourisland.pts.org.tw/content/8106",
+        "originalImageURL": "https://ourisland.pts.org.tw/sites/default/files/u73/1117%20%2828%29.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "7ab604d7c1a2a3b651543cbd5e23841ec50737a54249fa21cdbeddf47a091083",
+        "rightsNote": "原圖權利歸原權利人；本頁作非商業故事介紹並附原文來源，未宣稱開放授權。"
+      }
     },
     "round1-daan-rubber-family-memory": {
-      "status": "source-only",
+      "status": "source-attributed",
       "sourceUrl": "https://vocus.cc/article/63e74f3cfd8978000140015f",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "依使用者要求呈現原文實際配圖，保留圖說、署名與來源；不將非營利或附來源標示為開放授權。",
+      "image": {
+        "path": "story-media/article-e609c71a7e7ce536531a.jpg",
+        "width": 900,
+        "height": 1200,
+        "alt": "大安森林公園竹林中的印度橡膠樹，文青原文攝影；與舊家的關聯依作者回憶。",
+        "caption": "大安森林公園竹林中的印度橡膠樹，文青原文攝影；與舊家的關聯依作者回憶。",
+        "credit": "文青攝影／方格子",
+        "sourcePage": "https://vocus.cc/article/63e74f3cfd8978000140015f",
+        "originalImageURL": "https://images.vocus.cc/07e4014b-10f6-4ef6-b995-92398ffd090f.jpg",
+        "provenance": "source-attributed",
+        "editorialUse": "source-article-context",
+        "sha256": "e609c71a7e7ce536531af1a2dda7e8bb9ed3a8bd5a2d0024530d3ef050c81fb0",
+        "rightsNote": "原圖權利歸原權利人；本頁作非商業故事介紹並附原文來源，未宣稱開放授權。"
+      }
     },
     "round1-neihu-citrus-leisure-2011": {
       "status": "source-only",
       "sourceUrl": "https://news.pts.org.tw/article/198873",
-      "reason": "原文可讀但未確認涵蓋此篇圖片的再利用許可；僅連結原文章，不載入圖片。"
+      "reason": "原文配圖尚缺：原文主圖是公視新聞制式banner，其餘圖片屬推薦新聞；沒有可確認的本篇照片。"
     },
     "yuanshan-pollen-oak": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-pollen-castanopsis": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-machilus": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-camphor-prehistory": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-ficus-prehistory": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-barringtonia-lagoon": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-cephalanthus-lagoon": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-dalongdong-banyan": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-dalongdong-acacia": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-park-cherry": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-park-camphor": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-park-pine": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-park-cedar": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-shrine-forest": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-palm-introduction": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-avenue-banyan-removal": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "yuanshan-expo-barringtonia": {
       "status": "provided-document",
       "sourceUrl": null,
-      "reason": "使用者提供研究摘頁，並非公開圖片許可；不發布附件影像。"
+      "reason": "原文配圖尚缺：僅有私人提供PDF摘頁，沒有公開原文或照片URL與獨立照片刊登授權；不擷取插圖、不公開原PDF。"
     },
     "royal-palm-southern-imagination": {
       "status": "user-provided",
@@ -336,20 +652,56 @@
   "coverage": {
     "total": 54,
     "byStatus": {
-      "displayable": 6,
-      "source-only": 27,
-      "unavailable": 0,
-      "blocked": 3,
+      "source-only": 10,
+      "source-attributed": 26,
       "provided-document": 17,
-      "user-provided": 1
+      "user-provided": 1,
+      "displayable": 0,
+      "unavailable": 0,
+      "blocked": 0
     },
     "uniqueOriginalSourceUrls": 32,
     "originalArticleRequests": 32,
     "readableOriginalSources": 30,
     "blockedOriginalSources": 2,
     "licensePolicyRequests": 6,
-    "verifiedImageUrls": 6,
+    "verifiedImageUrls": 0,
     "articleRequestLimit": 40,
     "auditDocument": "docs/research/social-story-media-audit.md"
+  },
+  "editorialAudit": {
+    "total": 54,
+    "summariesRewritten": 54,
+    "withStoredArticlePhotos": 27,
+    "missingArticlePhoto": [
+      "community-fuyuan-second-opinion",
+      "community-gangqian-fengshui",
+      "community-roosevelt-bischofia",
+      "community-yongkang-preservation",
+      "inst-three-lane-uniform-policy",
+      "inst-zhongshan-practical-acacia",
+      "ntu-indian-rosewood-rescue-debate",
+      "lishan-plaza-cypress-school-memory",
+      "beitou-citrus-naming-orchard-memory",
+      "round1-neihu-citrus-leisure-2011",
+      "yuanshan-pollen-oak",
+      "yuanshan-pollen-castanopsis",
+      "yuanshan-machilus",
+      "yuanshan-camphor-prehistory",
+      "yuanshan-ficus-prehistory",
+      "yuanshan-barringtonia-lagoon",
+      "yuanshan-cephalanthus-lagoon",
+      "yuanshan-dalongdong-banyan",
+      "yuanshan-dalongdong-acacia",
+      "yuanshan-park-cherry",
+      "yuanshan-park-camphor",
+      "yuanshan-park-pine",
+      "yuanshan-park-cedar",
+      "yuanshan-shrine-forest",
+      "yuanshan-palm-introduction",
+      "yuanshan-avenue-banyan-removal",
+      "yuanshan-expo-barringtonia"
+    ],
+    "auditDocument": "docs/research/story-editorial-audit.json"
   }
 }
