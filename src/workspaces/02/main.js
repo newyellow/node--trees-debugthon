@@ -34,10 +34,15 @@ function setLevel(value){level=value;$('stage').dataset.level=value;}
 function fitVillage(instant = false) {
   if (!selected) return;
   const toolbar = Math.ceil(document.querySelector('.toolbar').getBoundingClientRect().bottom + 12);
-  if(popup)popup.options.maxHeight=Math.max(50,Math.min(440,innerHeight-toolbar-80));
-  popup?.update();
   const sidebar = level === 'tree'
     ? Math.min(innerWidth < 761 ? Math.max(145, innerWidth * .43) : 360, innerWidth * .48) : 0;
+  if(popup){
+    popup.options.maxHeight=Math.max(50,Math.min(440,innerHeight-toolbar-80));
+    const cardWidth=innerWidth>760?Math.max(300,Math.min(500,innerWidth-sidebar-80)):280;
+    popup.options.maxWidth=cardWidth;
+    popup.getElement()?.querySelector('.village-overview')?.style.setProperty('--overview-width',cardWidth+'px');
+  }
+  popup?.update();
   const bubble = popup?.getElement()?.getBoundingClientRect().height || 280;
   if ($('species-panel')) $('species-panel').style.top = toolbar + 'px';
   const viewport=map.getContainer().getBoundingClientRect(),width=viewport.width,height=viewport.height;
