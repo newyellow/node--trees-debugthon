@@ -29,3 +29,10 @@ body{margin:0;width:100%;color:#213e2e;font-family:'PingFang TC','Microsoft Jhen
 @media(max-width:680px){.entries{padding:32px 6% 48px;min-height:auto}.entry-grid{grid-template-columns:1fr;gap:18px}.entry{min-height:325px;padding:22px 24px 30px}.entry-top{margin-bottom:17px}.entry h3{font-size:29px;margin-bottom:16px}.entry p{font-size:15px;line-height:1.85;margin-bottom:26px}.entry-symbol{width:28px;height:28px}.entry-action{min-width:174px;min-height:50px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){.botanical{animation:none}}
 @media print{.botanical{animation:none}.pixel{opacity:1!important}.homepage{height:auto;aspect-ratio:16/9}.entries{min-height:0}.entry{break-inside:avoid}}
+
+/* Link hit regions share the artwork's undistorted 1920x1080 contain coordinates. */
+.author-links{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}
+.author-links a{pointer-events:auto;cursor:pointer;color:#fffdf4}
+.author-links rect{fill:transparent;stroke:transparent;stroke-width:3px}
+.author-links a:hover rect,.author-links a:focus-visible rect{stroke:currentColor}
+.author-links a:focus-visible{outline:none}
