@@ -42,4 +42,3 @@ export async function loadGrounding({root}) {
     return groundVillage(v,shard.records,blueprint,game.treeSnapshot);
   }};
 }
-

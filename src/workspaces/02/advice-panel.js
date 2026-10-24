@@ -101,4 +101,3 @@ export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()
     panel.hidden=false;panel.dataset.mode=mode;panel.dataset.villageId=village.id;closeButton.focus({preventScroll:true});void request(INITIAL_MESSAGES[mode]);
   },close,cancel,isOpen:()=>!panel.hidden};
 }
-
