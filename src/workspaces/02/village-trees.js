@@ -145,7 +145,7 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     if (record.feature.id !== undefined) add('p','GeoJSON Feature ID：' + String(record.feature.id));
     const provenance=document.createElement('details'),summary=document.createElement('summary'),sourceInfo=document.createElement('p');summary.textContent='來源版本與雜湊';sourceInfo.textContent='快照 '+state.treeSnapshot+'；來源索引（0起算）'+record.sourceIndex+'；SHA-256：'+(state.sourceHashes[record.layerId+'.geojson']??state.sourceHashes[record.layerId]);provenance.append(summary,sourceInfo);box.append(provenance);
     L.DomEvent.disableClickPropagation(box); L.DomEvent.disableScrollPropagation(box);
-    const close=document.createElement('button');close.type='button';close.textContent='關閉樹種';close.className='species-close';close.onclick=()=>closeRecord();
+    const close=document.createElement('button');close.type='button';close.textContent='✕';close.setAttribute('aria-label','關閉樹種');close.className='species-close';close.onclick=()=>closeRecord();
     const floraHost=document.createElement('section');floraHost.className='species-flora';const storyHost=document.createElement('section');storyHost.className='species-stories';
     const traitsHost=document.createElement('section');traitsHost.className='species-traits';const coverageHost=document.createElement('section');coverageHost.className='species-coverage';
     const heading=box.querySelector('h3'),source=[...box.querySelectorAll('p')].find(n=>n.textContent.startsWith('來源：'));
