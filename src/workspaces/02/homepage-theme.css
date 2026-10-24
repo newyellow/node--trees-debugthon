@@ -1,0 +1,57 @@
+/* Homepage family: earth, forest, paper and discrete square accents.
+   No map data colors, score semantics, camera geometry or tour state changes. */
+:root{--ne-earth:#95865e;--ne-forest:#014f35;--ne-leaf:#3e7046;--ne-lime:#97ca46;--ne-sage:#a0c69f;--ne-paper:#fffdf4;font-family:"PingFang TC","Microsoft JhengHei",system-ui,sans-serif;color:#173d29}
+#stage{background:var(--ne-earth)}
+.surface{background:var(--ne-paper);border:1px solid var(--ne-forest);border-radius:0;box-shadow:none}
+header.surface{background:var(--ne-forest);color:var(--ne-paper);border:0;padding:12px 16px;gap:20px}
+header h1{font-size:18px;font-weight:800;letter-spacing:.045em;line-height:1.35}
+header a{color:var(--ne-paper);font-weight:700;letter-spacing:.025em}
+.neighborhood-brand{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.brand-grid{display:inline-block;width:6px;height:6px;background:var(--ne-lime);box-shadow:8px 0 var(--ne-lime),0 8px var(--ne-lime),8px 8px var(--ne-lime);margin-right:8px;margin-bottom:8px;flex:none}
+button,input,select{border-radius:0;border-color:var(--ne-leaf);background:var(--ne-paper);color:#173d29}
+button{font-weight:750}button:hover{background:#e7edce}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline-color:var(--ne-forest)}
+header a:focus-visible{outline-color:var(--ne-lime)}
+.toolbar.surface{border:0;padding:6px;gap:6px}
+.toolbar button{border:0;border-radius:999px;padding:8px 14px;background:#e7edce}
+.toolbar button[aria-expanded=true]{background:var(--ne-forest);color:var(--ne-paper)}
+.toolbar select{border:0;border-left:2px solid var(--ne-sage);background:transparent;padding:5px 8px}
+.basemap-label{color:var(--ne-leaf);font-weight:800}
+.panel-head{background:var(--ne-forest);color:var(--ne-paper);border:0;padding:13px 16px}
+.panel-head h2{font-weight:800;letter-spacing:.04em}
+.panel-head button{border:0;background:transparent;color:var(--ne-paper)}
+.panel-head button:hover{background:var(--ne-leaf)}
+.panel-head button:focus-visible{outline-color:var(--ne-lime)}
+.panel-scroll{padding:16px}.panel p{line-height:1.75}
+#finder label{color:var(--ne-forest);font-weight:800}#villages li{margin:0}
+#villages button{border:0;border-bottom:1px solid var(--ne-sage);padding:12px 8px;background:transparent}
+#villages button:hover{background:#e7edce}#villages button[aria-pressed=true]{background:var(--ne-forest);color:var(--ne-paper)}
+#result-count,#ranking-count{font-weight:750;color:var(--ne-leaf)}
+#village-rankings li{margin:0}#village-rankings button{border:0;border-bottom:1px solid var(--ne-sage);padding:12px 8px}
+.ranking-swatch{border-radius:0}.ranking-place{color:var(--ne-leaf)}
+.card{border-radius:0;box-shadow:none;background:#f4f3e6}.card h3{font-weight:800}
+.strength{background:#e7edce}.field-note,.caveat{font-size:11px;line-height:1.7}
+.leaflet-popup-content-wrapper,.village-popup .leaflet-popup-content-wrapper{border-radius:0;background:var(--ne-paper);box-shadow:none;border-top:5px solid var(--ne-forest)}
+.leaflet-popup-tip{background:var(--ne-paper)}
+.village-overview h2{color:var(--ne-forest);font-weight:800;letter-spacing:.04em}
+.overview-actions button{border-radius:999px;background:var(--ne-forest);color:var(--ne-paper);border:0;padding:8px 12px}
+.overview-actions button:hover{background:var(--ne-leaf)}
+.species-panel{background:var(--ne-paper);border:1px solid var(--ne-forest);border-radius:0;box-shadow:none}
+.species-stories h3,.species-stories h4{color:var(--ne-forest);font-weight:800}
+.species-close{background:var(--ne-paper)}
+.status-wrap{background:var(--ne-paper);border:0;border-left:4px solid var(--ne-leaf);color:#435747;box-shadow:none}
+.advice-panel{background:var(--ne-paper);border:1px solid var(--ne-forest);border-top:6px solid var(--ne-forest);border-radius:0;box-shadow:none;font-family:inherit;color:#173d29}
+.advice-panel h2{font-weight:800;letter-spacing:.025em;color:var(--ne-forest)}
+.advice-panel h3{font-weight:800;color:var(--ne-leaf)}
+.advice-panel .advice-turn{border-radius:0;background:transparent;border-left:3px solid var(--ne-sage);padding:8px 12px;margin:18px 0}
+.advice-panel .advice-turn--user{background:#e7edce;border-left-color:var(--ne-leaf)}
+.advice-panel button{border-radius:999px;border:0;background:var(--ne-forest);color:var(--ne-paper);font-weight:750}
+.advice-panel button:hover{background:var(--ne-leaf)}
+.advice-panel .advice-close{background:transparent;color:var(--ne-forest);border-radius:0}
+.advice-panel textarea{border-radius:0;border-color:var(--ne-leaf);background:#fffef9;font-family:inherit}
+.advice-panel img{border-radius:0}.advice-panel a{color:var(--ne-forest)}
+.advice-panel .advice-footnotes{border-color:var(--ne-sage);font-size:11px;color:#435747}
+.advice-panel .advice-sources summary{font-weight:750}
+.vision-tour-banner{border-top:5px solid var(--ne-forest)}
+.vision-region-label{border-radius:0;background:var(--ne-paper);color:var(--ne-forest)}
+@media(max-width:760px){header.surface{padding:10px;gap:10px}header h1{font-size:16px;letter-spacing:.025em}header a{font-size:11px}.neighborhood-brand{gap:6px}.toolbar.surface{gap:4px;padding:5px}.toolbar button{padding:7px 10px}.panel,#finder{border-radius:0}.panel-head{padding:11px 12px}.panel-scroll{padding:12px}.advice-panel{padding:18px}}

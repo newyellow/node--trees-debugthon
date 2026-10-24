@@ -16,6 +16,7 @@ import 'leaflet/dist/leaflet.css';
 import './style.css';
 import { createCapabilityRadar } from './capability-radar.js';
 import './capability-radar.css';
+import './homepage-theme.css';
 import { CAPABILITIES, RADAR_CAPABILITIES, dominantCapability, NEUTRAL_COLOR } from './domain.js';
 const $ = id => document.getElementById(id), base = import.meta.env.BASE_URL;
 let data, regions, map, group, hoverRenderer, selected, recordLayers, villageTrees, visible = [], layers = new Map();
