@@ -23,13 +23,12 @@ export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()
   if (!container?.append) throw Error('建議面板需要 container');
   const panel=el('aside');panel.className='advice-panel';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-label','預生成植物建議');panel.tabIndex=-1;
   const heading=el('h2'),closeButton=button('✕');closeButton.className='advice-close';closeButton.setAttribute('aria-label','關閉預生成建議');
-  const readingLabel=el('p','預生成建議・逐字播放');readingLabel.className='advice-reading-label';
   const notice=el('p','此為預生成閱讀模式，逐字播放僅在本機呈現，不是即時 AI 回覆。不傳送使用者輸入，不呼叫 AI 推論，也不產生本次推論費用；仍會讀取建議檔與植物參考資料。建議僅供參考，適地性與人寵安全仍需確認。');notice.className='advice-notice';
   const policy=el('p'),log=el('div');log.className='advice-log';log.setAttribute('aria-label','預生成建議內容');
   const status=el('p');status.className='advice-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
   const retry=button('重新讀取'),stop=button('停止播放');retry.hidden=true;stop.hidden=true;
   const controls=el('div');controls.className='advice-controls';controls.append(retry,stop);
-  const footnotes=el('footer');footnotes.className='advice-footnotes';footnotes.append(notice,policy);panel.append(closeButton,heading,readingLabel,log,status,controls,footnotes);container.append(panel);
+  const footnotes=el('footer');footnotes.className='advice-footnotes';footnotes.append(notice,policy);panel.append(closeButton,heading,log,status,controls,footnotes);container.append(panel);
   const flora=createClient(fetcher),wikiResolver=createWikiImages({fetcher});let figures=createWikiFigureSession({resolver:wikiResolver});
   let generation=0,controller,busy=false,current,trigger,tourHandle=null;
   function busyState(value){busy=value;panel.setAttribute('aria-busy',String(value));stop.hidden=!value;}
@@ -63,20 +62,20 @@ export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()
     try{
       const result=await loadCachedAdvice({...selection,fetcher,signal,isCurrent});clearTimeout(timeout);
       if(!isCurrent()||signal.aborted)return;
-      const row=el('article');row.className='advice-turn advice-turn--assistant';const answer=el('p','');answer.className='advice-answer';answer.setAttribute('aria-hidden','true');row.append(el('h3','預生成建議'),answer);log.append(row);
+      const row=el('article');row.className='advice-turn advice-turn--assistant';const answer=el('p','');answer.className='advice-answer';answer.setAttribute('aria-hidden','true');row.append(el('h3',selection.name+' '+(selection.mode==='planting'?'種樹建議':'居家植栽建議')),answer);log.append(row);
       let tourFinished=Promise.resolve();
       if(selection.mode==='planting'&&result.tour&&!media?.matches){
         try{tourHandle=onVision()||null;const handle=tourHandle;tourFinished=Promise.resolve(handle?.finished).catch(()=>{if(isCurrent()&&!signal.aborted){handle?.cancel?.();tourNote='願景導覽暫時未能完成。';}});}catch{tourNote='願景導覽暫時無法開啟。';}
       }
-      panel.dataset.phase='playing';status.textContent=media?.matches?'預生成建議・直接顯示':'預生成建議・逐字播放';stop.textContent='停止播放';
+      panel.dataset.phase='playing';status.textContent=media?.matches?'建議已顯示。':'逐字播放中…';stop.textContent='停止播放';
       await playCachedAnswer(result.answer,{signal,isCurrent,reducedMotion:!!media?.matches,onText:text=>{answer.textContent=text;}});
       if(!isCurrent()||signal.aborted)return;
       answer.removeAttribute('aria-hidden');const quote=el('small',AI_ADVICE_QUOTE);quote.className='advice-ai-quote';answer.after(quote);
       if(result.sources.length){const sources=el('details'),summary=el('summary','參考來源'),list=el('ul');sources.className='advice-sources';for(const source of result.sources){const item=el('li');item.append(source.url?link(source.title,source.url):el('span',source.title));list.append(item);}sources.append(summary,list);row.append(sources);}
       void pictures(row,result.plants,token);
-      if(tourHandle){panel.dataset.phase='tour';status.textContent='預生成建議已播放完成，願景導覽進行中…';}
+      if(tourHandle){panel.dataset.phase='tour';status.textContent='建議已播放完成，願景導覽進行中…';}
       await tourFinished;if(!isCurrent()||signal.aborted)return;
-      panel.dataset.phase='ready';status.textContent=tourNote||'預生成建議已閱讀完成。';retry.hidden=false;
+      panel.dataset.phase='ready';status.textContent=tourNote||'已閱讀完成。';retry.hidden=false;
     }catch{
       if(isCurrent()){tourHandle?.cancel?.();for(const node of log.querySelectorAll('.advice-answer[aria-hidden]'))node.removeAttribute('aria-hidden');panel.dataset.phase='error';status.textContent=signal.aborted?'讀取逾時，可重新讀取預生成建議。':'預生成建議暫時無法讀取或資料版本不符，請重新讀取。不會改用即時 AI。';retry.hidden=false;}
     }finally{clearTimeout(timeout);if(token===generation){tourHandle=null;busyState(false);}}
@@ -85,8 +84,8 @@ export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()
   panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();event.stopPropagation();close();}});
   const pagehide=()=>close(false);globalThis.addEventListener?.('pagehide',pagehide);
   return {open({village,mode='planting',trigger:source}={}){
-    validateSelection(village?.id,mode);cancel({notify:false});current={villageId:village.id,mode};trigger=source||document.activeElement;log.replaceChildren();retry.hidden=true;
-    heading.textContent=[village.district,village.name||village.id].filter(Boolean).join('・')+'｜'+(mode==='planting'?'種樹建議':'居家植物');
+    validateSelection(village?.id,mode);cancel({notify:false});current={villageId:village.id,mode,name:village.name||village.id};trigger=source||document.activeElement;log.replaceChildren();retry.hidden=true;
+    heading.textContent=[village.district,village.name||village.id].filter(Boolean).join('・')+'｜'+(mode==='planting'?'種樹建議':'居家植栽');
     policy.textContent=mode==='planting'?'四區綠網為構想示意，非已核定方案；適種與施工仍需現地查核。':'里內資料不代表家中環境；室內與陽台選擇仍須依實際光照、空間與人寵條件確認。';
     panel.hidden=false;panel.dataset.mode=mode;panel.dataset.villageId=village.id;closeButton.focus({preventScroll:true});void read();
   },close,cancel,isOpen:()=>!panel.hidden,destroy(){close(false);globalThis.removeEventListener?.('pagehide',pagehide);panel.remove();}};

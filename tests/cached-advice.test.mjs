@@ -48,7 +48,7 @@ test('panel inference-spy: read/retry/error/cancel/switch/close/reopen are GET s
   const fetcher=async(url,options)=>{calls.push({url,options});assert.equal(options.method,'GET');assert.equal(new URL(url).pathname.startsWith('/review/data/precomputed-advice/'),true);assert.equal(options.body,undefined);if(hold){hold=false;return new Promise(r=>held=r);}if(fail){fail=false;return {ok:false};}const id=new URL(url).pathname.split('/').at(-1).replace('.json','');return {ok:true,json:async()=>shard(id)};};
   const panel=createAdvicePanel({container,base:'/review/',fetcher,media:{matches:true},onVision:()=>{visions++;return {finished:new Promise(r=>completeTour=r),cancel:()=>{cancels++;completeTour();}};}});
   const open=(mode='home',id='v1')=>panel.open({village:{id,name:id,district:'測試區'},mode});const root=container.children[0];
-  open();await settle();assert.equal(root.dataset.phase,'ready');assert.equal(find(root,n=>['form','input','textarea'].includes(n.tagName)).length,0);assert.equal(find(root,n=>n.className==='advice-ai-quote').length,1);assert.equal(visions,0);
+  open();await settle();assert.equal(root.dataset.phase,'ready');assert.equal(find(root,n=>n.tagName==='h3')[0].textContent,'v1 居家植栽建議');assert.equal(find(root,n=>['form','input','textarea'].includes(n.tagName)).length,0);assert.equal(find(root,n=>n.className==='advice-ai-quote').length,1);assert.equal(visions,0);
   const retry=find(root,n=>n.tagName==='button'&&n.textContent==='重新讀取')[0];retry.onclick();await settle();assert.equal(calls.length,2);assert.equal(find(root,n=>n.className==='advice-ai-quote').length,1);
   fail=true;open();await settle();assert.equal(root.dataset.phase,'error');retry.onclick();await settle();assert.equal(root.dataset.phase,'ready');
   hold=true;open('planting');await settle();const staleCall=calls.at(-1);open('home','v2');await settle();held({ok:true,json:async()=>shard()});await settle();assert.equal(staleCall.options.signal.aborted,true);assert.equal(root.dataset.villageId,'v2');assert.equal(root.dataset.phase,'ready');assert.equal(visions,0);
@@ -61,5 +61,5 @@ test('panel inference-spy: read/retry/error/cancel/switch/close/reopen are GET s
 test('production reading modules have no live inference imports, endpoint, chat composer or history',async()=>{
  const panel=await readFile(new URL('../src/workspaces/02/advice-panel.js',import.meta.url),'utf8');const loader=await readFile(new URL('../src/workspaces/02/cached-advice.js',import.meta.url),'utf8');
  for(const src of [panel,loader])for(const forbidden of ['advice-stream','readAdviceStream','/api/plant-advice',"method:'POST'","el('form'","el('textarea'","el('input'",'boundedHistory'])assert.equal(src.includes(forbidden),false,forbidden);
- assert.match(panel,/預生成建議・逐字播放/);assert.ok(panel.includes("appendPlantDetails(section,p)"));assert.match(panel,/figures.attach/);
+ assert.ok(panel.includes('此為預生成閱讀模式'));assert.ok(!panel.includes('advice-reading-label'));assert.ok(!panel.includes("el('h3','預生成建議')"));assert.ok(panel.includes("appendPlantDetails(section,p)"));assert.match(panel,/figures.attach/);
 });

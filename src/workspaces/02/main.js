@@ -109,7 +109,7 @@ function showOverview(v,latlng,trigger) {
  const rating=compositeRating(v.scores),ratingText=rating===null?'N/A':rating.toFixed(1)+' / 5';
  const stars=el('div',undefined,'rating-note summary-stars');stars.setAttribute('role','img');stars.setAttribute('aria-label','綜合星等 '+ratingText);
  const glyph=el('span',undefined,'stars-glyph'),back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');glyph.setAttribute('aria-hidden','true');front.style.width=(rating===null?0:rating/5*100)+'%';glyph.append(back,front);stars.append(glyph,el('span',ratingText,'stars-number'));content.append(stars);
- const actions=el('div',undefined,'overview-actions');for(const [text,mode] of [['查看細節',null],['種樹建議','planting'],['居家植物建議','home']]) {const b=el('button',text);b.type='button';b.onclick=()=>mode?openAdvice(v,mode,b):openDetails(b);actions.append(b);}content.append(actions);
+ const actions=el('div',undefined,'overview-actions');for(const [text,mode] of [['查看細節',null],['種樹建議','planting'],['居家植栽','home']]) {const b=el('button',text);b.type='button';b.onclick=()=>mode?openAdvice(v,mode,b):openDetails(b);actions.append(b);}content.append(actions);
  L.DomEvent.disableClickPropagation(content);L.DomEvent.disableScrollPropagation(content);
  switching=true;if(popup)map.closePopup(popup);switching=false;
  popup=L.popup({autoClose:false,closeOnClick:false,autoPan:false,className:'village-popup',maxWidth:280,minWidth:Math.min(230,innerWidth-72),maxHeight:Math.max(130,Math.min(510,innerHeight-205)),autoPanPaddingTopLeft:[16,135],autoPanPaddingBottomRight:[16,35],closeOnEscapeKey:false}).setLatLng([layers.get(v.id).getBounds().getNorth(),layers.get(v.id).getBounds().getCenter().lng]).setContent(content).openOn(map);
