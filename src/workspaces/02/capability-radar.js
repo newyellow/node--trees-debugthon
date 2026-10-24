@@ -53,7 +53,7 @@ export function createCapabilityRadar({ axes, size = 180, compact = false, pixel
     svg.append(el);
     return el;
   };
-  const score = a => a.value === null ? 'N/A（無可用分數）' : a.value + ' / 100';
+  const score = a => a.value === null ? 'N/A（無可用分數）' : Math.round(a.value) + ' / 100';
   const summary = g.axes.map(a => a.label + '：' + score(a)).join('；');
   append('title', { id: uid + '-title' }, String(label));
   const policy = g.missingAtZero
@@ -84,7 +84,7 @@ export function createCapabilityRadar({ axes, size = 180, compact = false, pixel
     if(pixelStyle){
       const group=append('g',{class:'radar-axis-index radar-axis-pixel','data-metric-key':a.key});
       group.append(createMetricIcon(a.key,{x:a.labelPoint.x-43,y:a.labelPoint.y-12}));
-      const text=document.createElementNS(SVG_NS,'text');for(const[k,v]of Object.entries({class:'radar-axis-label',x:a.labelPoint.x-15,y:a.labelPoint.y,'text-anchor':'start','dominant-baseline':'central'}))text.setAttribute(k,String(v));text.textContent=(a.shortLabel||a.label)+(a.value===null?' N/A':'');group.append(text);return;
+      const text=document.createElementNS(SVG_NS,'text');for(const[k,v]of Object.entries({class:'radar-axis-label',x:a.labelPoint.x-15,y:a.labelPoint.y,'text-anchor':'start','dominant-baseline':'central'}))text.setAttribute(k,String(v));text.setAttribute('style','font-size:'+([...a.shortLabel||a.label].length>4?'10':'14')+'px');text.textContent=(a.shortLabel||a.label)+(a.value===null?' N/A':'');group.append(text);return;
     }
     if (!a.shortLabel) { append('text', { class: 'radar-axis-index' + (a.emoji ? ' radar-axis-emoji' : ''), x: a.labelPoint.x, y: a.labelPoint.y, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, (a.emoji || index + 1) + (a.value === null ? ' N/A' : '')); return; }
     const axis = append('text', { class: 'radar-axis-index' + (a.emoji ? ' radar-axis-emoji' : ''), x: a.labelPoint.x, y: a.labelPoint.y, 'text-anchor': 'middle', 'dominant-baseline': 'central' });

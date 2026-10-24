@@ -117,7 +117,7 @@ test('radar render: emoji, exact scores, N/A, missing center outline and real-ze
  const missing=els.filter(e=>hasClass(e,'radar-missing--center'));assert.equal(missing.length,2);
  missing.forEach(e=>{assert.equal(e.attrs.cx,'120');assert.equal(e.attrs.cy,'120');});
  assert.equal(els.filter(e=>hasClass(e,'radar-missing-cross')).length,2);
- assert.ok(els.some(e=>e.textContent==='25.125 / 100'));
+ assert.ok(els.some(e=>e.textContent==='25 / 100'));
  assert.equal(els.filter(e=>e.textContent==='N/A（無可用分數）').length,2);
  assert.ok(els.some(e=>e.textContent==='🍃 <img onerror=alert(1)>'));
  const desc=els.find(e=>e.tag==='desc').textContent;
@@ -138,8 +138,8 @@ test('radar render: compact names sit next to matching icons without replacing f
  const input=CAPABILITIES.map(c=>({...c,value:50}));
  const els=descendants(renderRadar({axes:input}));
  const labels=els.filter(e=>hasClass(e,'radar-axis-label'));
- assert.deepEqual(labels.map(e=>e.textContent),['樹木密度','保護樹木','名稱多樣','原生代理','鳥蟲模擬','回報模擬']);
- assert.ok(labels.every(e=>[...e.textContent].length<=4));
+ assert.deepEqual(labels.map(e=>e.textContent),['綠覆率','受保護樹木量','物種多樣性','原生種比例','鳥類昆蟲','民眾貢獻度']);
+ assert.ok(labels.every(e=>[...e.textContent].length<=6));
  const axis=els.filter(e=>hasClass(e,'radar-axis-index'));
  axis.forEach((e,i)=>{assert.equal(e.children[0].textContent,CAPABILITIES[i].emoji);assert.equal(e.children[1],labels[i]);});
  for(const c of CAPABILITIES)assert.ok(els.find(e=>e.tag==='desc').textContent.includes(c.label));

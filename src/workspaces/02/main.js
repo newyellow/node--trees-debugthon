@@ -25,7 +25,7 @@ function el(tag, text, className) { const n = document.createElement(tag); if (t
 const fmt = (v, digits = 0) => Number.isFinite(v) ? v.toLocaleString('zh-TW', { maximumFractionDigits: digits }) : 'N/A';
 function card(title, score, raw, note) {
   const n = el('article', undefined, 'card'); n.append(el('h3', title));
-  const number = el('p', score === null ? 'N/A' : score + ' / 100', 'score'); n.append(number);
+  const number = el('p', score === null ? 'N/A' : fmt(score) + ' / 100', 'score'); n.append(number);
   if (score !== null) { const meter = el('meter'); meter.min = 0; meter.max = 100; meter.value = score; meter.setAttribute('aria-label', title + '相對分數'); n.append(meter); }
   n.append(el('p', raw, 'raw'), el('p', note, 'caveat')); return n;
 }
@@ -62,7 +62,7 @@ function clearSelection() {
   suppressPreview = false;
 }
 let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
-function radar(v,size=170,compact=false) { const chart=createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,label:c.key==='activity'?'回報活躍度（DEMO）':c.label,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,pixelStyle:true,label:'六項能力：含鳥蟲／回報 DEMO 模擬'});chart.querySelector('.radar-units').textContent='0–100：快照3項＋原生代理＋DEMO 2項；非生態評估';return chart; }
+function radar(v,size=170,compact=false) { const chart=createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,pixelStyle:true,label:'六項能力概覽'});chart.querySelector('.radar-units').textContent='0–100 分；指標定義與資料限制請查看細節';return chart; }
 function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?VILLAGE_OPACITY.hover:id===selected?VILLAGE_OPACITY.selected:VILLAGE_OPACITY.base}); }
 const hoverAnchors = new Map();
 let previewTimer,pinnedTreeVillage=null,shownTreeKey=null;
@@ -88,7 +88,7 @@ function showHover(v,keyboard=false) {
  const text=(value,y,cls)=>{const t=document.createElementNS(ns,'text');t.textContent=value;t.setAttribute('x','0');t.setAttribute('y',y);t.setAttribute('text-anchor','middle');t.setAttribute('class',cls);n.append(t);return t;};
  text(v.district+'・'+v.name,-12,'hover-name');
  const rating=compositeRating(v.scores);n.dataset.rating=rating===null?'N/A':rating.toFixed(1);n.dataset.ratingPolicy=RATING_POLICY.version;
- const foreign=document.createElementNS(ns,'foreignObject');foreign.setAttribute('x','-130');foreign.setAttribute('y','0');foreign.setAttribute('width','260');foreign.setAttribute('height','65');const stars=el('div',undefined,'hover-stars');stars.setAttribute('aria-label','綜合星等（含模擬資料） '+(rating===null?'N/A':rating.toFixed(1)+' / 5'));const back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');front.style.width=(rating===null?0:rating/5*100)+'%';const glyph=el('span',undefined,'stars-glyph');glyph.append(back,front);stars.append(glyph); foreign.append(stars);n.append(foreign);
+ const foreign=document.createElementNS(ns,'foreignObject');foreign.setAttribute('x','-130');foreign.setAttribute('y','0');foreign.setAttribute('width','260');foreign.setAttribute('height','65');const stars=el('div',undefined,'hover-stars');stars.setAttribute('aria-label','綜合星等 '+(rating===null?'N/A':rating.toFixed(1)+' / 5'));const back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');front.style.width=(rating===null?0:rating/5*100)+'%';const glyph=el('span',undefined,'stars-glyph');glyph.append(back,front);stars.append(glyph); foreign.append(stars);n.append(foreign);
  hoverRenderer._rootGroup.append(n);positionHover();
 }
 function openDetails(trigger) {openPanel('passport',trigger);$('passport').querySelector('.panel-scroll').scrollTop=0;}
@@ -96,9 +96,9 @@ function openAdvice(v,mode,trigger){visionTour?.cancel('new-advice');panelIds.fo
 function showOverview(v,latlng,trigger) {
  hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('finder-toggle');
  const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
- content.append(el('div','里鄰自然輪廓','overview-radar-title'),el('div','快照分數・原生代理・鳥蟲／回報模擬','overview-radar-status'),radar(v,220,true));
+ content.append(el('div','里鄰自然輪廓','overview-radar-title'),el('div','六項指標・資料說明請查看細節','overview-radar-status'),radar(v,220,true));
  const rating=compositeRating(v.scores),ratingText=rating===null?'N/A':rating.toFixed(1)+' / 5';
- const stars=el('div',undefined,'rating-note summary-stars');stars.setAttribute('role','img');stars.setAttribute('aria-label','綜合星等（含模擬資料） '+ratingText);
+ const stars=el('div',undefined,'rating-note summary-stars');stars.setAttribute('role','img');stars.setAttribute('aria-label','綜合星等 '+ratingText);
  const glyph=el('span',undefined,'stars-glyph'),back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');glyph.setAttribute('aria-hidden','true');front.style.width=(rating===null?0:rating/5*100)+'%';glyph.append(back,front);stars.append(glyph,el('span',ratingText,'stars-number'));content.append(stars);
  const actions=el('div',undefined,'overview-actions');for(const [text,mode] of [['查看細節',null],['種樹建議','planting'],['居家植物建議','home']]) {const b=el('button',text);b.type='button';b.onclick=()=>mode?openAdvice(v,mode,b):openDetails(b);actions.append(b);}content.append(actions);
  L.DomEvent.disableClickPropagation(content);L.DomEvent.disableScrollPropagation(content);
@@ -124,14 +124,14 @@ function select(id, fit = true, latlng, trigger = document.activeElement) {
   $('village-title').textContent = v.district + '・' + v.name;
   $('village-meta').textContent = '里全面積 ' + fmt(v.areaKm2, 3) + ' km²｜固定參考母體：全臺北456里｜快照 ' + data.treeSnapshot.slice(0,10);
   $('village-summary').textContent='管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆 · 來源名稱 '+fmt(v.richness)+' 類。';
-  const rating=compositeRating(v.scores);$('village-rating-method').textContent='綜合星等（含模擬資料） '+(rating===null?'N/A':rating.toFixed(1)+' / 5')+'：六項有效能力等權平均 ÷ 20。前三項為快照相對分數，原生比例為藍圖代理值，鳥蟲與回報活躍度為 DEMO 模擬。密度是代理指標；非使用者評論或生態品質評鑑。各項分母與限制見下方。';
+  const rating=compositeRating(v.scores);$('village-rating-method').textContent='綜合星等 '+(rating===null?'N/A':rating.toFixed(1)+' / 5')+'：六項有效能力等權平均 ÷ 20。前三項為快照相對分數，原生比例為藍圖代理值，鳥蟲與回報活躍度為 DEMO 模擬。密度是代理指標；非使用者評論或生態品質評鑑。各項分母與限制見下方。';
   $('cards').replaceChildren(
-    card('01 管理樹木密度 · 代理指標', v.scores.treeDensity, fmt(v.treeDensity,1) + ' 筆/km²｜' + fmt(v.trees) + ' 筆 ÷ ' + fmt(v.areaKm2,3) + ' km²', '不是綠覆率、樹冠面積或全里樹木普查。'),
-    card('02 官方受保護樹木紀錄', v.scores.protectedDensity, fmt(v.protectedDensity,1) + ' 筆/km²｜名冊 ' + fmt(v.protected) + ' 筆 ÷ ' + fmt(v.areaKm2,3) + ' km²', '文化局名冊空間歸屬；非候選大樹。資料期間較舊，法律現況須查證。'),
-    card('03 管理樹木名稱豐富度', v.scores.richness, fmt(v.richness) + ' 類｜有名稱 ' + fmt(v.knownNames) + '/' + fmt(v.trees) + ' 筆', 'Shannon ' + fmt(v.shannon,3) + '；最大類別占比 ' + (v.dominance === null ? 'N/A' : fmt(v.dominance*100,1) + '%') + '。未知 ' + v.missingNames + '、枯木 ' + v.deadStatus + ' 筆。非全植物物種數；受取樣量影響。'),
-    card('04 原生比例 · 藍圖 PROXY', v.scores.nativeShare,fmt(v.socialMetrics.native.matched)+' / '+fmt(v.trees)+' 筆（全部管理樹分母）','只比對藍圖19個名稱；未列者為本原型假設非原生，不是植物學事實。未知 '+v.socialMetrics.native.unknown+'、枯木 '+v.socialMetrics.native.dead+' 筆仍在分母；API 原生旗標不計分。'),
-    card('05 鳥類／昆蟲 · DEMO 模擬',v.scores.birdInsect,'seeded DEMO 指派分數','非真實觀測、圖鑑數量或生態品質；固定種子僅供介面展示。'),
-    card('06 回報活躍度 · DEMO 模擬',v.scores.activity,fmt(v.socialMetrics.activity.reportedCount)+' / '+fmt(v.socialMetrics.activity.dueCount)+' 筆 · 7日模擬回報／應回報樹數','7日模擬回報數 ÷ 應回報樹數 ×100；2026-10-18–24。沒有真實市民回報、上傳或使用者評論。'),
+    card('01 綠覆率', v.scores.treeDensity, fmt(v.treeDensity,1) + ' 筆/km²｜' + fmt(v.trees) + ' 筆 ÷ ' + fmt(v.areaKm2,3) + ' km²', '此處以管理樹木密度作為代理分數，並非實測綠覆百分比、樹冠面積或全里樹木普查。'),
+    card('02 受保護樹木量', v.scores.protectedDensity, fmt(v.protectedDensity,1) + ' 筆/km²｜名冊 ' + fmt(v.protected) + ' 筆 ÷ ' + fmt(v.areaKm2,3) + ' km²', '此分數依名冊紀錄密度計算，上方另列實際紀錄量。文化局名冊空間歸屬；非候選大樹。資料期間較舊，法律現況須查證。'),
+    card('03 物種多樣性', v.scores.richness, fmt(v.richness) + ' 類｜有名稱 ' + fmt(v.knownNames) + '/' + fmt(v.trees) + ' 筆', 'Shannon ' + fmt(v.shannon,3) + '；最大類別占比 ' + (v.dominance === null ? 'N/A' : fmt(v.dominance*100,1) + '%') + '。未知 ' + v.missingNames + '、枯木 ' + v.deadStatus + ' 筆。非全植物物種數；受取樣量影響。'),
+    card('04 原生種比例', v.scores.nativeShare,fmt(v.socialMetrics.native.matched)+' / '+fmt(v.trees)+' 筆（全部管理樹分母）','只比對藍圖19個名稱；未列者為本原型假設非原生，不是植物學事實。未知 '+v.socialMetrics.native.unknown+'、枯木 '+v.socialMetrics.native.dead+' 筆仍在分母；API 原生旗標不計分。'),
+    card('05 鳥類昆蟲',v.scores.birdInsect,'介面展示分數','非真實觀測、圖鑑數量或生態品質；固定種子僅供介面展示。※ 回報互動系統尚未實裝，目前為模擬資料'),
+    card('06 民眾貢獻度',v.scores.activity,fmt(v.socialMetrics.activity.reportedCount)+' / '+fmt(v.socialMetrics.activity.dueCount)+' 筆 · 7日模擬回報／應回報樹數','7日模擬回報數 ÷ 應回報樹數 ×100；2026-10-18–24。沒有真實市民回報、上傳或使用者評論。※ 回報互動系統尚未實裝，目前為模擬資料'),
   );
   [...$('cards').children].forEach((n,i) => { const c = CAPABILITIES[i]; if(c) { const icon=createMetricIcon(c.key); icon.classList.add('capability-icon'); n.querySelector('h3').prepend(icon,document.createTextNode(' ')); } n.style.setProperty('--capability', c?.color || NEUTRAL_COLOR); if(c) n.dataset.capability = c.key; });
   document.querySelectorAll('#villages button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
@@ -156,7 +156,7 @@ function filter() {
   if (level==='overview' && visible.length && district) camera.fit(group.getBounds(), { padding: [15,15] });
 }
 function provenance() {
-  const p = $('provenance'); p.replaceChildren();p.append(el('p','六項綜合星等：原有三項快照相對分數＋藍圖原生比例代理＋鳥蟲、回報兩項 seeded DEMO；有效值等權平均 ÷20。原生代理：藍圖19名稱相符紀錄／全部管理樹，未列者假設非原生僅供原型，不是分類事實。回報活躍度：7日模擬已回報／應回報樹數；零分母為0。沒有真實公民回報。'));
+  const p = $('provenance'); p.replaceChildren();p.append(el('p','六項綜合星等：有效值等權平均 ÷20。各項指標的分母、資料來源與限制請見里的「查看細節」。'));
   p.append(el('p', '管理樹快照：' + data.treeSnapshot + '；里界擷取：' + data.boundaryFetchedAt + '；彙整：' + data.preparedAt));
   p.append(el('p', '管理樹162,369筆＝里內162,321＋未歸屬48。以實際座標重新驗證全部歸屬與來源SHA-256；有來源名稱不等於已校對物種。'));
   function link(text, url) { const a = el('a', text); a.href = url; a.target = '_blank'; a.rel = 'noopener'; p.append(a, el('br')); }
@@ -200,7 +200,7 @@ async function load() {
       l.on('mouseout',()=>hideHover());
       l.on('click',e=>select(v.id,true,e.latlng,e.originalEvent?.target));
       l.eachLayer(path => {
-        path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜綜合星等（含模擬）'+(rating===null?'N/A':rating.toFixed(1)+' / 5'));
+        path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜綜合星等'+(rating===null?'N/A':rating.toFixed(1)+' / 5'));
           node.onfocus=()=>showHover(v,true);node.onblur=()=>hideHover();
           node.onkeydown = e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,true,undefined,node); popup?.getElement()?.querySelector('button')?.focus({preventScroll:true}); } };
         });
@@ -238,11 +238,11 @@ panelIds.forEach(id => {
 for(const node of document.querySelectorAll('.surface')) { L.DomEvent.disableClickPropagation(node); L.DomEvent.disableScrollPropagation(node); }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') {if(advice?.isOpen()){e.preventDefault();advice.close();return;}if(villageTrees?.isRecordOpen()){e.preventDefault();villageTrees.closeRecord();return;} const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
 for(const item of CAPABILITIES) {
- const li=el('li',(item.emoji?item.emoji+' ':'')+(item.key==='activity'?'回報活躍度（DEMO）':item.label)),swatch=el('span',undefined,'swatch');swatch.style.background=item.color;li.prepend(swatch);$('legend-items').append(li);
+ const li=el('li',(item.emoji?item.emoji+' ':'')+item.label),swatch=el('span',undefined,'swatch');swatch.style.background=item.color;li.prepend(swatch);$('legend-items').append(li);
 }
 for(const item of [...STAR_BANDS,{label:'N/A 無有效星等',color:STAR_UNKNOWN_COLOR}]){const li=el('li',item.label),swatch=el('span',undefined,'swatch');swatch.style.background=item.color;li.prepend(swatch);$('star-color-items').append(li);}
 $('detail-method').onclick=()=>openPanel('method',$('detail-method'));
 $('indicator-back').onclick=()=>closePanel('method');
 $('clear-village-trees').onclick=()=>{map.closePopup(popup);clearSelection();};
-for(const p of document.querySelectorAll('#legend p,#method p')){if(p.textContent.includes('原生比例、鳥蟲缺資料'))p.textContent='六項均參與著色與綜合星等：三項快照指標、藍圖原生代理、鳥蟲／回報 DEMO（非真實觀測）。';if(p.textContent.includes('沒有原生分類對照'))p.textContent=p.textContent.replace('沒有原生分類對照、鳥蟲可靠觀測時不給數字。','原生比例另用藍圖名稱代理；鳥蟲與回報為 seeded DEMO，不是可靠觀測。');if(p.textContent==='沒有帳號、總分、上傳或儲存紀錄。')p.textContent='沒有公民回報或照片上傳功能。AI 對話可能由服務端保留，請勿輸入個資。綜合星等含兩項模擬，不是使用者評價。';}
+for(const p of document.querySelectorAll('#legend p,#method p')){if(p.textContent.includes('原生比例、鳥蟲缺資料'))p.textContent='六項均參與著色與綜合星等；指標定義、資料來源及限制請查看細節。';if(p.textContent.includes('沒有原生分類對照'))p.textContent=p.textContent.replace('沒有原生分類對照、鳥蟲可靠觀測時不給數字。','原生種比例及鳥類昆蟲的定義與資料限制請查看細節。');if(p.textContent==='沒有帳號、總分、上傳或儲存紀錄。')p.textContent='沒有公民回報或照片上傳功能。AI 對話可能由服務端保留，請勿輸入個資。綜合星等不是使用者評價；資料說明請查看細節。';}
 setLevel('overview');$('retry').onclick = load; load();
