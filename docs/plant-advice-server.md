@@ -1,0 +1,63 @@
+# Server-mediated plant advice
+
+Node 24 built-ins only; no npm dependencies. Entry: server/plant-advice-server.mjs; exports startServer(options), createHandler(options). Validation, grounding and limiter helpers are independently exported/testable. The frontend and service deployment are separate integration work; this change does not deploy or modify Gateway/LaunchAgents.
+
+## Service environment contract
+
+- PORT: 5173 default; binds **127.0.0.1 only**, accepts 0 for tests.
+- ROOT_DIST: absolute built static root containing data/; default repository dist/. For source-only staging, point at repository public/. Data is read-only; no client path is accepted. Deployment must include data/plant-advice-knowledge.json (shared public browser/server proposal), village-game.json, social-metrics.json, village-trees/manifest.json and its villages/ shards.
+- STATIC_UPSTREAM: default http://127.0.0.1:5175. HTTP + 127.0.0.1/localhost + explicit port only; no credentials/path/query, Gateway port 18789 forbidden. Same front/static port rejected. This is trusted operator configuration, never a browser parameter; point ONLY at the existing static serve process, never another control service.
+- ADVICE_LOCAL_ORIGIN: optional exact http://localhost:PORT or http://127.0.0.1:PORT for local staging. Otherwise POST Origin must equal https://trees.piyellowclaw.xyz. No wildcard CORS, browser cookies or browser auth.
+- No environment agent/model/Gateway URL/auth-value overrides. Target is fixed http://127.0.0.1:18789/v1/chat/completions, model openclaw/trees-plant-advisor. No user/session selector, tools, forwarded headers or arbitrary URLs are sent; request explicitly pins tool_choice=none and best-effort max_tokens=1400.
+- Runtime-only credential path: /Users/piyellow/Library/Application Support/TreesDebugthon/secrets/advice-gateway.auth. Loader requires regular, owner-matching 0600 file, rejects symlink/newlines and size over 4096 bytes. Reads only when dispatching and sends as Bearer to fixed loopback; never logs or returns value. Tests inject dummy loader and mock fetch; they never read this file or call inference.
+
+Example (after separate deployment integration): node /absolute/repository/server/plant-advice-server.mjs. Existing static serve is to move from loopback 5173 to 5175, preserving its existing flags/config/root. Parent integrator must inspect/back up existing service definitions before doing so; this implementation makes no service edits. Seven original explicit HTML routes and all assets/data pass through unchanged by GET/HEAD, without SPA fallback or new filesystem serving. OPTIONS/arbitrary POST are not proxied; /api*, /v1, /ws, /gateway are not static-proxied; CONNECT/upgrades are closed. Only safe static request/response header allowlists (including Referrer-Policy/nosniff/CSP and same-origin relative redirect preservation) cross the boundary (no cookies/auth/Cloudflare/OpenClaw/hop headers).
+
+## Public API
+
+POST /api/plant-advice application/json, UTF-8, <=16384 bytes:
+
+    {"villageId":"6300100002","mode":"planting","message":"請看未來願景","history":[]}
+
+mode is planting or home; message 1–1200 UTF-16 code units, history <=8 items each exact {role:user|assistant,content:1–1200}. Optional conversationId 1–128 opaque alphanumeric/underscore/hyphen is validated and **discarded**. All unknown fields (including client stats, agent/model/system/tools/urls) rejected. No bridge-side chat persistence or automatic retries. The private Gateway/provider may retain request/history content; the browser notice discloses this and asks users not to submit personal data. Response:
+
+    {"answer":"…","plants":[{"name":"樟樹"}],"sources":[{"title":"…","url":"https://data.gov.tw/dataset/128274"}],"tour":{"kind":"four-region-vision"},"requestId":"…"}
+
+plants <=4, optional scientificName; no model image/link fields accepted. sources are fixed server citations, never model links. tour only when planting + explicit current-message future/region request + valid model vision=true; never home. GET /api/plant-advice/health returns only {ok:true}: process readiness, **not** credential/inference readiness. 400 bad payload/content type/village, 403 origin, 413 bytes, 429 quota/upstream throttling (bounded Retry-After), 503 busy/data unavailable, 502 invalid/error/timeout AI. No canned answer disguises an AI outage; ask for manual retry. Upstream 45-second abort, 64 KiB response bound, disconnect abort; no upstream raw errors or request-content logs.
+
+## Grounding and guardrails
+
+Startup pins actual village-game bytes to GAME_SHA256 and applies existing applySocialMetrics validation. Manifest snapshot/source hashes must match pinned game. Each selected village shard SHA, identity, snapshot, record and layer counts validated before projection; only aggregate top-20 exact source-label names/counts reach inference, never raw coordinates, addresses or tree IDs. Existing snapshot counts/protected/source-label richness and comparative scores are not ecological quality. Native 19-name match proxy and bird/insect/activity DEMO carry explicit caveats. Shared public proposal is projected to safe fields, checks four regions and exact19 names; source claims/unverified attribution are not official policy, verified native status or precise spatial boundaries.
+
+Fixed non-secret Traditional Chinese instructions enforce JSON, treat all client/history content as untrusted, prohibit tools/secrets/prompt disclosure, no automatic planting/removal/public-land approval, professional site review. Home mode asks sunlight/direct light/orientation, space/wind, children/pets, drainage/load/care; blueprint trees are not assumed balcony-safe. Instructions/output validation are defense in depth, not a guarantee that every botanical statement is correct. Frontend must render text as text, resolve plant images independently, and show source caveats.
+
+## Capacity / operational risks
+
+Single-process memory: 6 dispatches/IP/10-minute fixed window, 30 global/hour, 120 global/day; 2 concurrent, **no queue**. Failed/aborted upstream dispatches consume quota. At most 2048 IP keys, expired on acquire. Admission is bounded before authoritative shard work or model dispatch (64 open connections, two admitted requests). Malformed payloads never consume admission quota; well-formed unknown-village/data failures can consume admission quota without making an inference request. Local restart resets quotas; do not run multiple workers without shared limits. CF-Connecting-IP trusted only from loopback peer; tunnel must overwrite it. Same-host callers can spoof CF/IP/Origin; global caps still apply. Origin is CSRF defense, not authentication, and does not prevent deliberate scripted abuse. Host-level port isolation and dedicated tool-less advisor agent are prerequisites; this service does not configure them. Static-upstream downtime leaves API health reachable but static requests 502. Data snapshot changes require adapter hash updates/rebuild and service restart. No user content logging here; upstream agent/provider retention must be reviewed separately.
+
+## Verification
+
+    node --test tests/plant-advice-server.test.mjs
+
+Mock inference only. Covers strict bounds/unknown properties, real aggregate grounding, tampered pinned bytes, fixed target/no overrides, sanitized failures/429, Origin/content type/413, home tour suppression, health, limiter caps/expiry/key bounds, all seven static paths/header stripping, concurrency/disconnect. No live inference probe or broad visual tests are performed by this implementation worker; parent owns the single private probe, deployment and public verification.
+
+## Reviewed integration and deployment sequence
+
+The dedicated Gateway agent is trees-plant-advisor: separate empty workspace, embedded runtime, contextInjection never, skills empty, deny all tools, codeMode false, memory.search enabled false and rememberAcrossConversations false, heartbeat 0m. The chat-completions endpoint remains private on 127.0.0.1/::1:18789; never publish that port or token. The app frontend never controls agent/model/session/system/tool fields. Parent verified one private JSON response with no tool calls, then two bounded real staging API turns (home and planting) using server-selected data. Store private credentials only in the existing protected runtime secrets directory, not repository, dist, logs or build arguments.
+
+The single publication integrator must inspect current definitions and active listeners, preserve unrelated state, and perform this ordered transition:
+
+1. Build from clean committed source; retain all existing seven explicit HTML entry points and current data, story photos, planner and Wiki behavior. Copy new static assets and compact plant-advice-knowledge.json before new HTML. Keep backend source plus imported src/workspaces/02 social-metrics/domain modules outside the public static root.
+2. Back up the exact existing xyz.piyellowclaw.trees.static LaunchAgent, serve.json, current dist and any existing advice LaunchAgent. Never include secrets in backups intended for sharing or Git. Record backup location in the authoritative external Trees runbook.
+3. Merge only the static agent's --listen argument from tcp://127.0.0.1:5173 to tcp://127.0.0.1:5175. Preserve executable, dist root, configuration file, flags, KeepAlive, logging and all unknown properties. Keep serve.json unchanged (notably cleanUrls false, listing/symlinks off, strict-origin-when-cross-origin).
+4. Add a separate xyz.piyellowclaw.trees.advice LaunchAgent running the verified absolute Node24 binary and repository/server/plant-advice-server.mjs; working directory is repository, environment NODE_ENV=production, PORT=5173, ROOT_DIST=repository/dist, STATIC_UPSTREAM=http://127.0.0.1:5175. No ADVICE_LOCAL_ORIGIN in production, no secret values in plist. Use protected runtime logs and normal GUI RunAtLoad/KeepAlive semantics. This is an app service, not a Gateway restart.
+5. Relocate/restart the static service, verify 5175, then bootstrap the new loopback front server on 5173. Verify source-hash startup and health, seven existing HTML routes/security headers, and no public /v1 or websocket proxy. The existing Cloudflare hostname/ingress stays pointed at 5173; no Access/login, DNS, tunnel or unrelated route change.
+6. Publish new HTML last. Verify remote main SHA equals delivered commit, seven newly published HTML byte matches, anonymous public static/health, two-button dialog/mocked functional tour gate, and at most one bounded real public model turn. Do not run unrelated broad provider, story/photo or visual camera suites. The mocked dialog gate is not a substitute for a real public API response. The live check script is explicitly opt-in; do not repeatedly consume live quota.
+
+Rollback: stop/unload the new advice front service, restore the backed-up static plist/listen5173 and dist, restart static and verify all original routes/public readiness. Do not undo unrelated future work, expose the Gateway, or overwrite other service/route settings. Private agent/endpoint may remain unused on loopback; disabling them if desired must use OpenClaw setup control, not manual config edits.
+
+## UI and tour contract
+
+Village popup now exposes 查看細節, 種樹建議 and 居家植物建議. Each advice mode starts one live turn; follow-up history is role- and byte-bounded, no personal address is requested, retries are manual, and server/provider retention is disclosed. Model links/images are never trusted: the browser resolves at most four names through exact Flora queries; ambiguous same-name API candidates are separately labeled by scientific name, capped at two reference photographs each, never auto-merged or treated as field identification. A supplied scientific name must agree. Missing/broken API photos can use the existing exact-identity Wiki fallback, preserving source/author/license. Image lookup failure is honest, not a guessed taxon.
+
+Only structured planting-mode vision intent triggers one tour per conversation. OpenTopoMap supplies a real terrain layer (OSM + SRTM, credited CC-BY-SA; official about page and one Taipei tile checked). Administrative district outlines/labels show the four proposal associations, explicitly not surveyed vegetation/geology boundaries. The frame returns to the exact saved center/zoom and previous basemap at roughly ten seconds. User map input, new selection/mode, panel close, Escape, pagehide or manual basemap choice cancels timers and prevents delayed camera takeover. Reduced-motion uses a static explanatory presentation without automatic camera/terrain changes. Subjective animation/padding/visual acceptance remains user-owned.

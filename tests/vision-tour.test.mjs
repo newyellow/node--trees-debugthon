@@ -1,0 +1,17 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createVisionTour} from '../src/workspaces/02/vision-tour.js';
+class Node {constructor(){this.children=[];this.dataset={};this.style={};this.classList={add(){},remove(){}};}append(...nodes){this.children.push(...nodes);}setAttribute(){}remove(){this.removed=true;}}
+function fixture(reduced=false){
+ const oldDocument=globalThis.document,oldWidth=globalThis.innerWidth;globalThis.document={createElement:()=>new Node()};globalThis.innerWidth=1440;
+ const callbacks=new Map(),events=new Map(),calls=[],host=new Node(),container={addEventListener:(t,f)=>events.set(t,f),removeEventListener:t=>events.delete(t)};let next=0,kind='street';const bounds={extend(){},isValid:()=>true,getCenter:()=>({lat:25.1,lng:121.5})};
+ const map={getCenter:()=>({lat:25.0123,lng:121.5678}),getZoom:()=>16.25,getContainer:()=>container,getPane:()=>null,createPane:()=>({style:{}}),removeLayer:g=>calls.push(['remove',g])};
+ const camera={cancel:()=>calls.push(['cancel']),fit:(...a)=>calls.push(['fit',...a]),run:(...a)=>calls.push(['return',...a])};const L={featureGroup:()=>({addTo(){return this;}}),latLngBounds:()=>bounds,geoJSON:()=>({addTo(){return this;},getBounds:()=>bounds}),marker:()=>({addTo(){return this;}}),divIcon:x=>x};
+ const knowledge={principle:'都市綠網構想',regions:Array.from({length:4},(_,i)=>({id:String(i),name:'區域'+i,districts:['北投區'],plants:['樟樹']}))};
+ const tour=createVisionTour({map,camera,leaflet:L,host,getRegions:()=>({districts:[{properties:{district:'北投區'}}]}),getBasemap:()=>kind,setBasemap:k=>{kind=k;calls.push(['basemap',k]);},media:{matches:reduced,addEventListener(){},removeEventListener(){}},setTimer:(f,delay)=>{const id=++next;callbacks.set(id,{f,delay});return id;},clearTimer:id=>callbacks.delete(id)});
+ const fire=delay=>{for(const [id,x]of [...callbacks])if(x.delay===delay){callbacks.delete(id);x.f();}};
+ return {tour,knowledge,calls,events,callbacks,host,fire,restore(){tour.destroy();globalThis.document=oldDocument;globalThis.innerWidth=oldWidth;}};
+}
+test('ten-second tour returns exact original center zoom and basemap, not a new fit',()=>{const f=fixture();try{f.tour.start(f.knowledge);assert.equal(f.tour.isActive(),true);f.fire(9000);const back=f.calls.find(x=>x[0]==='return');assert.deepEqual(back[1],{center:{lat:25.0123,lng:121.5678},zoom:16.25});assert.deepEqual(f.calls.filter(x=>x[0]==='basemap').map(x=>x[1]),['terrain','street']);f.fire(10000);assert.equal(f.tour.isActive(),false);assert.equal(f.callbacks.size,0);}finally{f.restore();}});
+test('map input cancels during hold and prevents delayed return',()=>{const f=fixture();try{f.tour.start(f.knowledge);f.events.get('wheel')({target:{closest:()=>false}});assert.equal(f.tour.isActive(),false);assert.equal(f.callbacks.size,0);f.fire(9000);assert.equal(f.calls.some(x=>x[0]==='return'),false);}finally{f.restore();}});
+test('reduced-motion presentation has no automatic camera or terrain changes',()=>{const f=fixture(true);try{f.tour.start(f.knowledge);assert.equal(f.calls.some(x=>['fit','return','basemap'].includes(x[0])),false);f.fire(10000);assert.equal(f.tour.isActive(),false);assert.equal(f.calls.some(x=>['fit','return','basemap'].includes(x[0])),false);}finally{f.restore();}});

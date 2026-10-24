@@ -1,0 +1,8 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><link rel="stylesheet" href="/src/workspaces/02/advice-panel.css"><title>Advice isolated mock fixture</title><body><button id="trigger">開啟建議</button><main id="fixture"></main><script type="module">
+import {createAdvicePanel} from '/src/workspaces/02/advice-panel.js';
+window.calls=[];window.vision=0;window.queue=[];window.pending=[];
+const fetcher=(url,options)=>{window.calls.push({url,body:JSON.parse(options.body),signal:options.signal});const item=window.queue.shift();if(item==='hold')return new Promise(resolve=>window.pending.push(resolve));return Promise.resolve({ok:item?.ok!==false,status:item?.status||200,headers:new Headers(),json:async()=>item?.data||{answer:'請補充日照與寵物條件',plants:[],sources:[],tour:{kind:'four-region-vision'}}});};
+window.panel=createAdvicePanel({base:'/review/',container:document.querySelector('#fixture'),fetcher,onVision:()=>window.vision++});
+window.openPanel=(mode='planting',id='v1')=>window.panel.open({village:{id,name:id==='v1'?'測試里':'另一里',district:'測試區'},mode,trigger:document.querySelector('#trigger')});
+window.ready=true;
+</script></body></html>

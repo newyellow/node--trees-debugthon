@@ -1,3 +1,7 @@
+import {createAdvicePanel} from './advice-panel.js';
+import './advice-panel.css';
+import {createVisionTour} from './vision-tour.js';
+import './vision-tour.css';
 import {STAR_BANDS,STAR_UNKNOWN_COLOR,VILLAGE_OPACITY,starColor,rankVillages} from './star-display.js';
 import {createCameraMotion} from './camera-motion.js';
 import {applySocialMetrics,GAME_SHA256} from './social-metrics.js';
@@ -23,7 +27,7 @@ function card(title, score, raw, note) {
   if (score !== null) { const meter = el('meter'); meter.min = 0; meter.max = 100; meter.value = score; meter.setAttribute('aria-label', title + '相對分數'); n.append(meter); }
   n.append(el('p', raw, 'raw'), el('p', note, 'caveat')); return n;
 }
-let level='overview',camera,switching=false,suppressPreview=false;
+let level='overview',camera,advice,visionTour,adviceKnowledge,switching=false,suppressPreview=false;
 function setLevel(value){level=value;$('stage').dataset.level=value;}
 function fitVillage(instant = false) {
   if (!selected) return;
@@ -41,6 +45,7 @@ function fitVillage(instant = false) {
 }
 function clearSelection() {
   if (switching || !selected) return;
+  advice?.close(false);visionTour?.cancel('selection-close');
   camera.cancel();
   selected = null; pinnedTreeVillage = null; setLevel('overview');
   villageTrees?.closeRecord(false); shownTreeKey = null; hideHover();
@@ -84,7 +89,8 @@ function showHover(v,keyboard=false) {
  const foreign=document.createElementNS(ns,'foreignObject');foreign.setAttribute('x','-130');foreign.setAttribute('y','0');foreign.setAttribute('width','260');foreign.setAttribute('height','65');const stars=el('div',undefined,'hover-stars');stars.setAttribute('aria-label','綜合星等（含模擬資料） '+(rating===null?'N/A':rating.toFixed(1)+' / 5'));const back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');front.style.width=(rating===null?0:rating/5*100)+'%';const glyph=el('span',undefined,'stars-glyph');glyph.append(back,front);stars.append(glyph); foreign.append(stars);n.append(foreign);
  hoverRenderer._rootGroup.append(n);positionHover();
 }
-function openDetails(trigger,advice=false) {openPanel('passport',trigger);$('planting-advice').hidden=!advice;$('passport').querySelector('.panel-scroll').scrollTop=0;}
+function openDetails(trigger) {openPanel('passport',trigger);$('passport').querySelector('.panel-scroll').scrollTop=0;}
+function openAdvice(v,mode,trigger){visionTour?.cancel('new-advice');panelIds.forEach(id=>closePanel(id,false));hideHover(true);advice.open({village:v,mode,trigger});}
 function showOverview(v,latlng,trigger) {
  hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('finder-toggle');
  const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
@@ -92,7 +98,7 @@ function showOverview(v,latlng,trigger) {
  const rating=compositeRating(v.scores),ratingText=rating===null?'N/A':rating.toFixed(1)+' / 5';
  const stars=el('div',undefined,'rating-note summary-stars');stars.setAttribute('role','img');stars.setAttribute('aria-label','綜合星等（含模擬資料） '+ratingText);
  const glyph=el('span',undefined,'stars-glyph'),back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');glyph.setAttribute('aria-hidden','true');front.style.width=(rating===null?0:rating/5*100)+'%';glyph.append(back,front);stars.append(glyph,el('span',ratingText,'stars-number'));content.append(stars);
- const actions=el('div',undefined,'overview-actions');for(const [text,advice] of [['查看細節',false],['種樹建議',true]]) {const b=el('button',text);b.type='button';b.onclick=()=>openDetails(b,advice);actions.append(b);}content.append(actions);
+ const actions=el('div',undefined,'overview-actions');for(const [text,mode] of [['查看細節',null],['種樹建議','planting'],['居家植物建議','home']]) {const b=el('button',text);b.type='button';b.onclick=()=>mode?openAdvice(v,mode,b):openDetails(b);actions.append(b);}content.append(actions);
  L.DomEvent.disableClickPropagation(content);L.DomEvent.disableScrollPropagation(content);
  switching=true;if(popup)map.closePopup(popup);switching=false;
  popup=L.popup({autoClose:false,closeOnClick:false,autoPan:false,className:'village-popup',maxWidth:280,minWidth:Math.min(230,innerWidth-72),maxHeight:Math.max(130,Math.min(510,innerHeight-205)),autoPanPaddingTopLeft:[16,135],autoPanPaddingBottomRight:[16,35],closeOnEscapeKey:false}).setLatLng([layers.get(v.id).getBounds().getNorth(),layers.get(v.id).getBounds().getCenter().lng]).setContent(content).openOn(map);
@@ -100,14 +106,13 @@ function showOverview(v,latlng,trigger) {
  fitVillage();
 }
 function switchBasemap(kind,retry=false) {
- if(activeBasemap)map.removeLayer(activeBasemap);basemapKind=kind;$('basemap').value=kind;$('tile-retry').hidden=true;
- $('imagery-note').textContent=kind==='aerial'?'國土測繪中心最新拼接航照；非即時影像，未提供精確攝影日期。':'OpenStreetMap 街道圖';
- const layer=L.tileLayer(kind==='aerial'?'https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}':'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:21,maxNativeZoom:19,attribution:kind==='aerial'?'© <a href="https://www.nlsc.gov.tw/">內政部國土測繪中心</a>':'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
- activeBasemap=layer;let failed=false;layer.on('tileerror',()=>{if(failed||activeBasemap!==layer)return;failed=true;if(kind==='aerial'){switchBasemap('street');$('tile-status').textContent='航照載入失敗，已回到街道圖。';$('tile-retry').textContent='重試航照';}else{$('tile-status').textContent='街道底圖載入失敗；里界仍可操作。';$('tile-retry').textContent='重試底圖';}$('tile-retry').hidden=false;});
- $('tile-status').textContent='';layer.addTo(map);
+ const sources={street:{url:'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',note:'OpenStreetMap 街道圖',credit:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'},aerial:{url:'https://wmts.nlsc.gov.tw/wmts/PHOTO2/default/GoogleMapsCompatible/{z}/{y}/{x}',note:'國土測繪中心最新拼接航照；非即時影像，未提供精確攝影日期。',credit:'© <a href="https://www.nlsc.gov.tw/">內政部國土測繪中心</a>'},terrain:{url:'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',note:'OpenTopoMap 地形圖｜OSM / SRTM；非即時地質或植群調查。',credit:'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Map style © <a href="https://opentopomap.org/about">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'}};
+ if(!sources[kind])kind='street';const source=sources[kind];if(activeBasemap)map.removeLayer(activeBasemap);basemapKind=kind;$('basemap').value=kind;$('tile-retry').hidden=true;$('imagery-note').textContent=source.note;
+ const layer=L.tileLayer(source.url,{maxZoom:21,maxNativeZoom:kind==='terrain'?17:19,attribution:source.credit});activeBasemap=layer;let failed=false;
+ layer.on('tileerror',()=>{if(failed||activeBasemap!==layer)return;failed=true;if(kind!=='street'){switchBasemap('street');$('tile-status').textContent=(kind==='terrain'?'地形':'航照')+'載入失敗，已回到街道圖。';$('tile-retry').textContent=kind==='terrain'?'重試地形':'重試航照';}else{$('tile-status').textContent='街道底圖載入失敗；里界仍可操作。';$('tile-retry').textContent='重試底圖';}$('tile-retry').hidden=false;});$('tile-status').textContent='';layer.addTo(map);
 }
 function select(id, fit = true, latlng, trigger = document.activeElement) {
-  const v = data.villages.find(r => r.id === id); if (!v) return; camera.cancel();switching=true;villageTrees?.closeRecord(false);switching=false;setLevel('village');selected = id;pinnedTreeVillage=id;showVillageTrees(id,false);
+  const v = data.villages.find(r => r.id === id); if (!v) return;advice?.close(false);visionTour?.cancel('new-village');camera.cancel();switching=true;villageTrees?.closeRecord(false);switching=false;setLevel('village');selected = id;pinnedTreeVillage=id;showVillageTrees(id,false);
   layers.forEach((l,key)=>styleVillage(key));
   camera.cancel(); map.invalidateSize({pan:false,animate:false});
   layers.get(id)?.bringToFront();
@@ -115,7 +120,6 @@ function select(id, fit = true, latlng, trigger = document.activeElement) {
   const strongest = dominantCapability(v.scores); $('strongest').textContent = strongest.text; $('strongest').style.borderColor = strongest.color;
   $('passport').querySelector('.panel-scroll').scrollTop = 0;
   $('village-title').textContent = v.district + '・' + v.name;
-  $('advice-evidence').textContent='本里快照：管理樹 '+fmt(v.trees)+' 筆、來源名稱 '+fmt(v.richness)+' 類、保護名冊 '+fmt(v.protected)+' 筆。先核對現場紀錄與遮蔭缺口；名稱類別不等於原生物種。';
   $('village-meta').textContent = '里全面積 ' + fmt(v.areaKm2, 3) + ' km²｜固定參考母體：全臺北456里｜快照 ' + data.treeSnapshot.slice(0,10);
   $('village-summary').textContent='管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆 · 來源名稱 '+fmt(v.richness)+' 類。';
   const rating=compositeRating(v.scores);$('village-rating-method').textContent='綜合星等（含模擬資料） '+(rating===null?'N/A':rating.toFixed(1)+' / 5')+'：六項有效能力等權平均 ÷ 20。前三項為快照相對分數，原生比例為藍圖代理值，鳥蟲與回報活躍度為 DEMO 模擬。密度是代理指標；非使用者評論或生態品質評鑑。各項分母與限制見下方。';
@@ -163,16 +167,18 @@ async function load() {
   $('retry').hidden = true; $('status').textContent = '正在整理地圖與里環境護照…';
   try {
     const fetchJSON = async name => { const r = await fetch(base + 'data/' + name, { signal: AbortSignal.timeout(30000) }); if (!r.ok) throw new Error('HTTP ' + r.status); const bytes = await r.arrayBuffer(); return { bytes, json: JSON.parse(new TextDecoder().decode(bytes)) }; };
-    const [d,r,m] = await Promise.all([fetchJSON('village-game.json'), fetchJSON('regions.json'),fetchJSON('social-metrics.json')]); const gameHash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',d.bytes))].map(n=>n.toString(16).padStart(2,'0')).join('');if(gameHash!==GAME_SHA256)throw Error('管理樹統計檔案 SHA 不符');data=applySocialMetrics(d.json,m.json);regions=r.json;
+    const [d,r,m,k] = await Promise.all([fetchJSON('village-game.json'), fetchJSON('regions.json'),fetchJSON('social-metrics.json'),fetchJSON('plant-advice-knowledge.json').catch(()=>({json:null}))]);adviceKnowledge=k.json; const gameHash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',d.bytes))].map(n=>n.toString(16).padStart(2,'0')).join('');if(gameHash!==GAME_SHA256)throw Error('管理樹統計檔案 SHA 不符');data=applySocialMetrics(d.json,m.json);regions=r.json;
     const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', r.bytes))].map(n => n.toString(16).padStart(2,'0')).join('');
     if (data.schemaVersion !== 1 || data.villages.length !== 456 || regions.features.length !== 456 || regions.treeSnapshot !== data.treeSnapshot || digest !== data.inputHashes['regions.json']) throw new Error('快照或里界版本不一致');
     const ids = new Set(regions.features.map(f => f.properties.id)); if (new Set(data.villages.map(v => v.id)).size !== 456 || data.villages.some(v => !ids.has(v.id))) throw new Error('里代碼不一致');
     if (!map) {
       map = L.map('map', { scrollWheelZoom: true, zoomControl: false, zoomAnimation: true, fadeAnimation: true, markerZoomAnimation:true, zoomSnap:0, zoomDelta:.5, wheelPxPerZoomLevel:110, wheelDebounceTime:35 }).setView([25.06,121.55],11);
       camera=createCameraMotion(map,{host:$('stage')});
+      visionTour=createVisionTour({map,camera,leaflet:L,host:$('stage'),getRegions:()=>regions,getBasemap:()=>basemapKind,setBasemap:kind=>switchBasemap(kind)});
+      advice=createAdvicePanel({base,container:$('stage'),onVision:()=>{if(!adviceKnowledge)throw Error('願景資料暫不可用');return visionTour.start(adviceKnowledge);},onClose:()=>visionTour.cancel('advice-close')});
       switchBasemap('street');
-      $('basemap').onchange=()=>switchBasemap($('basemap').value);
-      $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
+      $('basemap').onchange=()=>{visionTour.cancel('manual-basemap',{restoreBasemap:false});switchBasemap($('basemap').value);};
+      $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('地形')?'terrain':$('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
       L.control.zoom({ position: 'bottomleft' }).addTo(map);
       group = L.featureGroup().addTo(map);
       const hoverPane=map.createPane('village-hover');hoverPane.style.zIndex='490';hoverPane.style.pointerEvents='none';
@@ -181,7 +187,7 @@ async function load() {
       recordLayers=installRecordLayers({map,isCameraMoving:()=>camera.isMoving(),host:$('record-layers-list'),base,onFeatureOpen:()=>{hideHover();panelIds.forEach(id=>closePanel(id,false));}});
       villageTrees=createVillageTrees({map,base,isCameraMoving:()=>camera.isMoving(),statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,villageInfo:id=>data.villages.find(v=>v.id===id),onFeatureClose:()=>{if(!switching&&selected){setLevel('village');fitVillage();}},onFeatureOpen:({villageId,preview}={})=>{if(preview){select(villageId);return;}if(villageId&&selected!==villageId)select(villageId);pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';hideHover(true);panelIds.forEach(id=>closePanel(id,false));setLevel('tree');fitVillage();},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
       recordLayers.setPriorityHitTest(event=>villageTrees.containsEvent?.(event)||false);
-      map.on('resize',()=>{if(selected)fitVillage(true);});map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',()=>hideHover());
+      map.on('resize',()=>{visionTour?.cancel('resize');if(selected)fitVillage(true);});map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',()=>hideHover());
     }
     hideHover();hoverAnchors.clear();group.clearLayers(); layers = new Map();
     const villagesById = new Map(data.villages.map(v => [v.id,v]));
@@ -216,6 +222,7 @@ function closePanel(id, focus = true) {
   if(focus) { const target = returnFocus.get(id); if(target?.isConnected && !target.closest('[hidden]')) target.focus({preventScroll:true}); else $(id+'-toggle')?.focus({preventScroll:true}); }
 }
 function openPanel(id, trigger) {
+  advice?.close(false);visionTour?.cancel('open-panel');
   if(id==='method')indicatorScroll=$('passport').querySelector('.panel-scroll').scrollTop;
   panelIds.forEach(other => { if(other !== id) closePanel(other,false); });
   returnFocus.set(id,trigger); $(id).hidden = false; $(id+'-toggle')?.setAttribute('aria-expanded','true');
@@ -227,7 +234,7 @@ panelIds.forEach(id => {
   $(id).querySelector('[data-close]').onclick = () => closePanel(id);
 });
 for(const node of document.querySelectorAll('.surface')) { L.DomEvent.disableClickPropagation(node); L.DomEvent.disableScrollPropagation(node); }
-document.addEventListener('keydown', e => { if(e.key === 'Escape') {if(villageTrees?.isRecordOpen()){e.preventDefault();villageTrees.closeRecord();return;} const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') {if(advice?.isOpen()){e.preventDefault();advice.close();return;}if(villageTrees?.isRecordOpen()){e.preventDefault();villageTrees.closeRecord();return;} const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
 for(const item of CAPABILITIES) {
  const li=el('li',(item.emoji?item.emoji+' ':'')+(item.key==='activity'?'回報活躍度（DEMO）':item.label)),swatch=el('span',undefined,'swatch');swatch.style.background=item.color;li.prepend(swatch);$('legend-items').append(li);
 }
@@ -235,5 +242,5 @@ for(const item of [...STAR_BANDS,{label:'N/A 無有效星等',color:STAR_UNKNOWN
 $('detail-method').onclick=()=>openPanel('method',$('detail-method'));
 $('indicator-back').onclick=()=>closePanel('method');
 $('clear-village-trees').onclick=()=>{map.closePopup(popup);clearSelection();};
-for(const p of document.querySelectorAll('#legend p,#method p')){if(p.textContent.includes('原生比例、鳥蟲缺資料'))p.textContent='六項均參與著色與綜合星等：三項快照指標、藍圖原生代理、鳥蟲／回報 DEMO（非真實觀測）。';if(p.textContent.includes('沒有原生分類對照'))p.textContent=p.textContent.replace('沒有原生分類對照、鳥蟲可靠觀測時不給數字。','原生比例另用藍圖名稱代理；鳥蟲與回報為 seeded DEMO，不是可靠觀測。');if(p.textContent==='沒有帳號、總分、上傳或儲存紀錄。')p.textContent='沒有帳號、真實回報、上傳或儲存紀錄。綜合星等含兩項模擬，不是使用者評價。';}
+for(const p of document.querySelectorAll('#legend p,#method p')){if(p.textContent.includes('原生比例、鳥蟲缺資料'))p.textContent='六項均參與著色與綜合星等：三項快照指標、藍圖原生代理、鳥蟲／回報 DEMO（非真實觀測）。';if(p.textContent.includes('沒有原生分類對照'))p.textContent=p.textContent.replace('沒有原生分類對照、鳥蟲可靠觀測時不給數字。','原生比例另用藍圖名稱代理；鳥蟲與回報為 seeded DEMO，不是可靠觀測。');if(p.textContent==='沒有帳號、總分、上傳或儲存紀錄。')p.textContent='沒有公民回報或照片上傳功能。AI 對話可能由服務端保留，請勿輸入個資。綜合星等含兩項模擬，不是使用者評價。';}
 setLevel('overview');$('retry').onclick = load; load();
