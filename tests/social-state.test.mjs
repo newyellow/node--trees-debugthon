@@ -19,9 +19,12 @@ test('real456 enriched snapshot stars independently reproducible',async()=>{
  const metrics=JSON.parse(await readFile(new URL('../public/data/social-metrics.json',import.meta.url)));
  for(const v of applySocialMetrics(game,metrics).villages)assert.equal(compositeRating(v.scores),Math.round(Object.values(v.scores).reduce((a,b)=>a+b,0)/6/20*10)/10);
 });
-test('one level unwind and five-percent vertical frame without extra toolbar reservation',()=>{
+test('five-percent margins use unobscured height and preserve horizontal/sidebar clearance',()=>{
  assert.equal(unwindLevel('tree'),'village');assert.equal(unwindLevel('village'),'overview');
  for(const [width,height,sidebar]of [[1440,1000,360],[390,844,168],[667,375,285]]){
- const p=villageFitPadding(width,height,{bubble:160,toolbar:115,sidebar});assert.ok(p.paddingTopLeft[0]>0);assert.equal(p.paddingTopLeft[1],160+height*.05);assert.ok(p.paddingBottomRight[0]>sidebar);assert.equal(p.paddingBottomRight[1],height*.05);
+ const bubble=160,bottom=24,p=villageFitPadding(width,height,{bubble,bottom,sidebar}),margin=(height-bubble-bottom)*.05;
+ assert.equal(p.paddingTopLeft[0],Math.max(40,width-sidebar)*.1);assert.equal(p.paddingTopLeft[1],bubble+margin);assert.equal(p.paddingBottomRight[0],sidebar+Math.max(40,width-sidebar)*.1);assert.equal(p.paddingBottomRight[1],bottom+margin);
  }
+ const tall=villageFitPadding(1100,800,{bubble:550,bottom:17}),short=villageFitPadding(1100,800,{bubble:450,bottom:17});
+ assert.ok(short.paddingTopLeft[1]<tall.paddingTopLeft[1]);assert.equal(villageFitPadding(390,300,{bubble:400,bottom:30}).paddingBottomRight[1],30);
 });

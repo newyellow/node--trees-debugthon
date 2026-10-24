@@ -40,9 +40,14 @@ function fitVillage(instant = false) {
     ? Math.min(innerWidth < 761 ? Math.max(145, innerWidth * .43) : 360, innerWidth * .48) : 0;
   const bubble = popup?.getElement()?.getBoundingClientRect().height || 280;
   if ($('species-panel')) $('species-panel').style.top = toolbar + 'px';
+  const viewport=map.getContainer().getBoundingClientRect(),width=viewport.width,height=viewport.height;
+  const usableWidth=Math.max(40,width-sidebar),left=viewport.left+usableWidth*.1,right=viewport.right-sidebar-usableWidth*.1;
+  // Reserve only visible lower controls that overlap the retained horizontal frame.
+  const lowerEdges=[...document.querySelectorAll('.status-wrap,#village-trees-controls,.leaflet-control-zoom,.leaflet-control-attribution')].map(n=>n.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0&&r.top>=viewport.top+height/2&&r.right>left&&r.left<right);
+  const bottom=lowerEdges.length?Math.max(0,viewport.bottom-Math.min(...lowerEdges.map(r=>r.top))):0;
   camera.fit(layers.get(selected).getBounds(), {
     maxZoom: 18,
-    ...villageFitPadding(innerWidth, innerHeight, {bubble: bubble + 18 + toolbar, sidebar})
+    ...villageFitPadding(width, height, {bubble: bubble + 18 + toolbar-viewport.top, bottom, sidebar})
   }, instant);
 }
 function clearSelection() {

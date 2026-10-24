@@ -24,3 +24,8 @@ Non-hover village fill opacity reduced by another30% relative to the current set
 
 ## Selected fill emphasis — 2026-10-24 19:41
 Selected village fill opacity increases20% relative to its latest setting:0.392→0.4704. Base0.2688, hover0.78, tree markers and aerial default remain unchanged. Only the display constant and directly affected opacity assertion change; focused assertion and required build pass. No unrelated interaction/render regression rerun.
+
+## Adaptive selected-village frame — 2026-10-24 19:46
+Retained existing10% horizontal/sidebar clearance, map orientation, interaction owner and maxZoom18. Vertical5% margins now use the remaining unobscured height after measuring the actual popup/toolbar and visible bottom controls, rather than5% of the whole viewport. Lower controls only reserve height if they overlap the retained horizontal frame; corner zoom controls already outside it do not shrink the frame again. Hidden/zero-size controls are ignored. No fixed old radar height is introduced; the existing popup/tip clearance remains.
+
+One directly affected geometry assertion passes. One1100×800 actual selected-village render (same 龍安里) verifies closer zoom15.6614→15.9264, measured popup bottom533px, village bounds544–771px and lower attribution edge783.20px: approximately5% clear space above/below within pixel rounding. Toolbar remains clear, zero JS errors. Required isolated build696ms passes; no unrelated tree/AI/camera regression suite. Batch artifact and all concurrent UI changes preserved.
