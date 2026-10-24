@@ -34,15 +34,10 @@ function setLevel(value){level=value;$('stage').dataset.level=value;}
 function fitVillage(instant = false) {
   if (!selected) return;
   const toolbar = Math.ceil(document.querySelector('.toolbar').getBoundingClientRect().bottom + 12);
+  if(popup)popup.options.maxHeight=Math.max(50,Math.min(440,innerHeight-toolbar-80));
+  popup?.update();
   const sidebar = level === 'tree'
     ? Math.min(innerWidth < 761 ? Math.max(145, innerWidth * .43) : 360, innerWidth * .48) : 0;
-  if(popup){
-    popup.options.maxHeight=Math.max(50,Math.min(440,innerHeight-toolbar-80));
-    const cardWidth=innerWidth>760?Math.max(300,Math.min(500,innerWidth-sidebar-80)):280;
-    popup.options.maxWidth=cardWidth;
-    popup.getElement()?.querySelector('.village-overview')?.style.setProperty('--overview-width',cardWidth+'px');
-  }
-  popup?.update();
   const bubble = popup?.getElement()?.getBoundingClientRect().height || 280;
   if ($('species-panel')) $('species-panel').style.top = toolbar + 'px';
   const viewport=map.getContainer().getBoundingClientRect(),width=viewport.width,height=viewport.height;
@@ -78,13 +73,13 @@ const hoverAnchors = new Map();
 let previewTimer,pinnedTreeVillage=null,shownTreeKey=null;
 function showVillageTrees(id,preview=false){clearTimeout(previewTimer);if(!villageTrees)return;const key=id+':'+preview;if(shownTreeKey===key)return;shownTreeKey=key;$('village-trees-controls').hidden=false;villageTrees.show(id,{preview});}
 function restorePinnedTrees(){clearTimeout(previewTimer);if(!villageTrees)return;if(pinnedTreeVillage)showVillageTrees(pinnedTreeVillage,false);else{shownTreeKey=null;villageTrees.clear();$('village-trees-controls').hidden=true;}}
-function hideHover(keepTrees=false) { $('hover-preview')?.remove(); if(hovered) {styleVillage(hovered);hovered=null;} if(!keepTrees)restorePinnedTrees(); }
+function hideHover(keepTrees=false) { $('hover-preview')?.remove(); if(hovered) {if(!selected)styleVillage(hovered);hovered=null;} if(!keepTrees)restorePinnedTrees(); }
 function positionHover() {
  const n=$('hover-preview'), anchor=hoverAnchors.get(hovered);if(!n||!anchor)return;
  const p=map.latLngToLayerPoint(anchor);n.setAttribute('transform','translate('+p.x+','+p.y+')');
 }
 function showHover(v,keyboard=false) {
- if(suppressPreview||$('stage').dataset.cameraPhase==='moving'||level!=='overview'||map?.getContainer().querySelector('.leaflet-popup') || (!keyboard&&!matchMedia('(hover:hover)').matches))return;
+ if(suppressPreview||$('stage').dataset.cameraPhase==='moving'||(level!=='overview'&&!selected) || (!keyboard&&!matchMedia('(hover:hover)').matches))return;
  if(hovered===v.id)return;
  hideHover();const layer=layers.get(v.id),path=layer.getLayers()[0]?.getElement();if(!path)return;
  if(!hoverAnchors.has(v.id)) {
@@ -93,12 +88,14 @@ function showHover(v,keyboard=false) {
   const projected=polygons.map(p=>p.map(r=>r.map(([lng,lat])=>{const p=map.project([lat,lng],0);return [p.x,p.y];})));
   const point=interiorAnchor(projected);if(!point)return;hoverAnchors.set(v.id,map.unproject(point,0));
  }
- hovered=v.id;styleVillage(v.id,true);previewTimer=setTimeout(()=>{if(!map.getContainer().querySelector('.leaflet-popup'))showVillageTrees(v.id,true);},180);
+ // A pinned selection owns its markers/filter/highlight; B hover is text-only.
+ hovered=v.id;if(!selected){styleVillage(v.id,true);previewTimer=setTimeout(()=>{if(!selected&&hovered===v.id)showVillageTrees(v.id,true);},180);}
  const ns='http://www.w3.org/2000/svg', n=document.createElementNS(ns,'g');n.id='hover-preview';n.classList.add('polygon-hover','radar-chart');n.dataset.village=v.id;n.setAttribute('role','img');n.setAttribute('aria-label',v.district+v.name+'能力概覽');
  const text=(value,y,cls)=>{const t=document.createElementNS(ns,'text');t.textContent=value;t.setAttribute('x','0');t.setAttribute('y',y);t.setAttribute('text-anchor','middle');t.setAttribute('class',cls);n.append(t);return t;};
  text(v.district+'・'+v.name,-12,'hover-name');
  const rating=compositeRating(v.scores);n.dataset.rating=rating===null?'N/A':rating.toFixed(1);n.dataset.ratingPolicy=RATING_POLICY.version;
  const foreign=document.createElementNS(ns,'foreignObject');foreign.setAttribute('x','-130');foreign.setAttribute('y','0');foreign.setAttribute('width','260');foreign.setAttribute('height','65');const stars=el('div',undefined,'hover-stars');stars.setAttribute('aria-label','綜合星等 '+(rating===null?'N/A':rating.toFixed(1)+' / 5'));const back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');front.style.width=(rating===null?0:rating/5*100)+'%';const glyph=el('span',undefined,'stars-glyph');glyph.append(back,front);stars.append(glyph); foreign.append(stars);n.append(foreign);
+ if(selected)text('管理樹 '+fmt(v.trees)+' 筆 · 保護名冊 '+fmt(v.protected)+' 筆 · 來源名稱 '+fmt(v.richness)+' 類',80,'hover-tree-summary');
  hoverRenderer._rootGroup.append(n);positionHover();
 }
 function openDetails(trigger) {openPanel('passport',trigger);$('passport').querySelector('.panel-scroll').scrollTop=0;}
@@ -201,9 +198,10 @@ async function load() {
       hoverRenderer=L.svg({pane:'village-hover',padding:0.5}).addTo(map);
       hoverRenderer._container.style.pointerEvents='none';
       recordLayers=installRecordLayers({map,isCameraMoving:()=>camera.isMoving(),host:$('record-layers-list'),base,onFeatureOpen:()=>{hideHover();panelIds.forEach(id=>closePanel(id,false));}});
-      villageTrees=createVillageTrees({map,base,isCameraMoving:()=>camera.isMoving(),statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,villageInfo:id=>data.villages.find(v=>v.id===id),onFeatureClose:()=>{if(!switching&&selected){setLevel('village');fitVillage();}},onFeatureOpen:({villageId,preview}={})=>{if(preview){select(villageId);return;}if(villageId&&selected!==villageId)select(villageId);pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';hideHover(true);panelIds.forEach(id=>closePanel(id,false));setLevel('tree');fitVillage();},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
+      villageTrees=createVillageTrees({map,base,isCameraMoving:()=>camera.isMoving(),statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,villageInfo:id=>data.villages.find(v=>v.id===id),onFeatureClose:()=>{if(!switching&&selected){setLevel('village');}},onFeatureOpen:({villageId,preview}={})=>{if(preview){select(villageId);return;}if(villageId&&selected!==villageId)select(villageId);pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';hideHover(true);panelIds.forEach(id=>closePanel(id,false));setLevel('tree');$('species-panel').style.top=Math.ceil(document.querySelector('.toolbar').getBoundingClientRect().bottom+12)+'px';},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
       recordLayers.setPriorityHitTest(event=>villageTrees.containsEvent?.(event)||false);
-      map.on('resize',()=>{visionTour?.cancel('resize');if(selected)fitVillage(true);});map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',()=>hideHover());
+      // Overlay lifecycle and resize never imply a new village-selection camera intent.
+      map.on('resize',()=>{visionTour?.cancel('resize');});map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',()=>hideHover());
     }
     hideHover();hoverAnchors.clear();group.clearLayers(); layers = new Map();
     const villagesById = new Map(data.villages.map(v => [v.id,v]));

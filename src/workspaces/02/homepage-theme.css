@@ -108,15 +108,5 @@ header a:focus-visible{outline-color:var(--ne-lime)}
 #legend-items .nature-metric-icon{width:24px;height:24px;flex:none}
 #legend-items p{margin:8px 0 0;font-size:13px}
 
-/* Desktop overview: larger chart at left, stars and actions at right. Mobile DOM/order stays unchanged. */
-@media(min-width:761px){
- .village-overview{display:grid;grid-template-columns:minmax(0,1fr) 160px;column-gap:20px;align-items:start;width:var(--overview-width,500px);max-width:100%}
- .village-overview .overview-radar-title{grid-column:1;grid-row:1;font-size:17px;line-height:1.3;margin:0 0 8px;padding:0 0 8px}
- .village-overview .overview-radar-wrap{grid-column:1;grid-row:2;min-width:0}
- .village-overview .radar-chart--pixel{width:100%;max-width:300px;margin:0 auto}
- .village-overview .radar-chart--pixel .radar-svg{width:100%!important;max-width:100%;height:auto!important}
- .village-overview .summary-stars{grid-column:2;grid-row:1;border-top:0;padding-top:0;margin:0;align-self:center}
- .village-overview .overview-actions{grid-column:2;grid-row:2;display:flex;flex-direction:column;align-items:stretch;gap:10px;padding-top:14px}
- .village-overview .overview-actions button{width:100%;min-height:44px}
-}
-@media(min-width:761px) and (max-width:950px){.village-overview{grid-template-columns:minmax(0,1fr) 130px;column-gap:16px}}
+/* Hover statistics are independent of the pinned village tree layer. */
+.hover-tree-summary{font-size:12px;fill:#fffdf4;paint-order:stroke;stroke:#014f35;stroke-width:4px;stroke-linejoin:round}
