@@ -17,7 +17,7 @@ html=(root/'index.template.html').read_text(encoding='utf-8')
 typography=(root/'public/assets/kv-typography.svg').read_text(encoding='utf-8')
 import re
 paths=re.findall(r'<path\b[^>]+/>',typography)
-for marker,left,right in [('AUTHOR_NEWYELLOW_GLYPHS',980,1230),('AUTHOR_SWI_GLYPHS',1445,1620)]:
+for marker,left,right in [('AUTHOR_NEWYELLOW_GLYPHS',980,1230),('AUTHOR_PIYELLOW_GLYPHS',1270,1410),('AUTHOR_SWI_GLYPHS',1445,1620)]:
     selected=[]
     for path in paths:
         matrix=re.search(r'transform="matrix\(([^)]+)\)"',path)
