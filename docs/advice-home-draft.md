@@ -1,3 +1,9 @@
+# Current native reader-facing draft authority
+
+For new offline home draft preparation use [advice-home-reader-contract.md](advice-home-reader-contract.md), version home-reader-v3.1. Policy/schema/request assembly and rubric are reusable repository code, not one-off child instructions. The three editorial v3 samples predate that assembled contract and remain candidate-unapproved, not clean-generation validation. No new HTTP call or full batch is authorized. The original production912 and planting prompt are unchanged.
+
+## Historical HTTP attempt (retained for provenance; not a run instruction)
+
 # Three-village home draft (not a production batch)
 
 Newyellow message1563536930778652675 at2026-10-24 20:57 authorizes exactly three selected home jobs, one actual client POST each. No retries, repairs, replacement villages, planting generation, original-batch mutation, or public-content deployment. Any global recalculation requires separate authorization after the three full texts are reviewed.
