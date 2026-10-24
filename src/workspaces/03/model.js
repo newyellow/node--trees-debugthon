@@ -1,7 +1,7 @@
 export const API='https://flora-api.bankofculture.com/api/v1/plants/';
 export const forms={tree:'喬木',shrub:'灌木',herb:'草本',groundcover:'地被',vine:'藤本',aquatic:'水生'};
 export const districts=['北投區','士林區','內湖區','松山區','中山區','南港區','信義區','大安區','中正區','文山區','大同區','萬華區'];
-export function policyGroup(d,h=''){if(h)return h==='社子'?'社子（使用者指定）':'河濱 · '+h+'（使用者指定）';return ['北投區','士林區'].includes(d)?'陽明組':['內湖區','松山區','中山區'].includes(d)?'內湖組':['南港區','信義區','大安區','中正區','文山區'].includes(d)?'南港組':['大同區','萬華區'].includes(d)?'河濱組':'尚未選區';}
+export function policyGroup(d,h=''){if(h==='社子島'&&d==='士林區')return '河口平地（社子島・使用者指定）';return ['北投區','士林區'].includes(d)?'陽明組':['內湖區','松山區','中山區'].includes(d)?'內湖組':['南港區','信義區','大安區','中正區','文山區'].includes(d)?'南港組':['大同區','萬華區'].includes(d)?'河口平地':'尚未選區';}
 const aliases={sun_exposure:{full_sun:'full_sun','全日照':'full_sun',partial_shade:'partial_shade','半日照':'partial_shade','半陰':'partial_shade',full_shade:'full_shade','全陰':'full_shade','全遮陰':'full_shade'},water_needs:{low:'low','低':'low',medium:'medium','中':'medium',high:'high','高':'high'}};
 export const normalize=(k,v)=>aliases[k]?.[v]??null;
 export function numberOrNull(v){if(v===''||v==null)return null;const n=Number(v);return Number.isFinite(n)&&n>=0?n:null;}
