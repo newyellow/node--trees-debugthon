@@ -60,3 +60,30 @@ header a:focus-visible{outline-color:var(--ne-lime)}
 .village-overview .radar-svg { width:220px!important; height:auto!important; }
 .village-overview .radar-chart .radar-axis-index { font-size:18px; }
 #cards .capability-icon { display:inline-block; margin-inline-end:3px; font-size:1.2em; }
+
+/* Supplied Radar Design Kit: visual-only adaptation; actual metric semantics retained. */
+.village-popup .leaflet-popup-content-wrapper{background:#014f35;color:#fffdf4;border:0}
+.village-popup .leaflet-popup-tip{background:#014f35}
+.village-popup .leaflet-popup-close-button{color:#e7edce!important}
+.village-overview{color:#fffdf4}
+.overview-radar-title{text-align:left;font-size:15px;font-weight:750;letter-spacing:.04em;margin:2px 0 8px}
+.overview-radar-status{font-size:10px;line-height:1.5;background:#e7edce;color:#014f35;border-radius:999px;padding:4px 8px;margin-bottom:8px}
+.village-overview .radar-chart--pixel{background:transparent;color:#fffdf4;border-radius:0}
+.village-overview .radar-chart--pixel .radar-svg{width:220px!important;max-width:100%;height:auto!important}
+.radar-chart--pixel .radar-ring{stroke:#a0c69f;stroke-opacity:.25;stroke-width:1}
+.radar-chart--pixel .radar-spoke{stroke:#a0c69f;stroke-opacity:.35}
+.radar-chart--pixel .radar-area{fill:#97ca46;fill-opacity:.22;stroke:#97ca46;stroke-width:2.5;stroke-linejoin:miter}
+.radar-chart--pixel .radar-segment{stroke:#97ca46}
+.radar-chart--pixel .radar-point{fill:#97ca46;stroke:#014f35;stroke-width:2}
+.radar-chart--pixel .radar-axis-label{fill:#fffdf4;font-size:14px;font-weight:550}
+.radar-chart--pixel .radar-scale{fill:#e7edce;stroke:#014f35;font-size:9px}
+.nature-metric-icon{color:#014f35;fill:#97ca46;vertical-align:middle;flex:none}
+.radar-chart--pixel .nature-metric-icon{color:#fffdf4}
+.village-overview .summary-stars{border-top:1px solid #a0c69f55;padding-top:10px}
+.village-overview .summary-stars .stars-number{color:#fffdf4}
+.village-overview .summary-stars .stars-back{color:#a0c69f88}
+.village-overview .overview-actions{border-top:1px solid #a0c69f55;padding-top:10px;gap:6px}
+.village-overview .overview-actions button{background:#e7edce;color:#014f35;min-height:44px;padding:7px 10px}
+.village-overview .overview-actions button:hover{background:#97ca46}
+.village-overview .overview-actions button:focus-visible{outline:2px solid #fffdf4;outline-offset:2px}
+#cards .nature-metric-icon{width:24px;height:24px}

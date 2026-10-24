@@ -144,3 +144,15 @@ test('radar render: compact names sit next to matching icons without replacing f
  axis.forEach((e,i)=>{assert.equal(e.children[0].textContent,CAPABILITIES[i].emoji);assert.equal(e.children[1],labels[i]);});
  for(const c of CAPABILITIES)assert.ok(els.find(e=>e.tag==='desc').textContent.includes(c.label));
 });
+
+test('pixel kit: five honest rings, square nodes at original coordinates, safe six icons and short names',async()=>{
+ const {CAPABILITIES}=await import('../src/workspaces/02/domain.js');
+ const input=CAPABILITIES.map((c,i)=>({...c,value:[0,21,43,64,87,100][i]}));
+ const g=geometry(input,{size:240});const els=descendants(renderRadar({axes:input,pixelStyle:true}));
+ assert.equal(els.filter(e=>hasClass(e,'radar-ring')).length,5);
+ const nodes=els.filter(e=>hasClass(e,'radar-point'));assert.equal(nodes.length,6);nodes.forEach((e,i)=>{assert.equal(e.tag,'rect');close(Number(e.attrs.x)+4,g.axes[i].point.x);close(Number(e.attrs.y)+4,g.axes[i].point.y);});
+ const icons=els.filter(e=>hasClass(e,'nature-metric-icon'));assert.deepEqual(icons.map(e=>e.attrs['data-metric-key']),CAPABILITIES.map(c=>c.key));
+ assert.ok(icons.every(e=>e.children.length>0&&e.children.every(p=>p.tag==='path'&&!Object.keys(p.attrs).some(k=>/href|on/.test(k)))));
+ assert.deepEqual(els.filter(e=>hasClass(e,'radar-axis-label')).map(e=>e.textContent),CAPABILITIES.map(c=>c.shortLabel));
+ const partial=descendants(renderRadar({axes:input.map((c,i)=>({...c,value:i===1?null:c.value})),pixelStyle:true}));assert.equal(partial.filter(e=>hasClass(e,'radar-area')).length,0);assert.equal(partial.filter(e=>hasClass(e,'radar-point')).length,5);
+});

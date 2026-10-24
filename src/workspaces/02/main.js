@@ -1,3 +1,4 @@
+import {createMetricIcon} from './radar-icons.js';
 import {createAdvicePanel} from './advice-panel.js';
 import './advice-panel.css';
 import {createVisionTour} from './vision-tour.js';
@@ -33,7 +34,7 @@ function setLevel(value){level=value;$('stage').dataset.level=value;}
 function fitVillage(instant = false) {
   if (!selected) return;
   const toolbar = Math.ceil(document.querySelector('.toolbar').getBoundingClientRect().bottom + 12);
-  if(popup)popup.options.maxHeight=Math.max(50,Math.min(340,(innerHeight-toolbar-50)*.5-40));
+  if(popup)popup.options.maxHeight=Math.max(50,Math.min(440,innerHeight-toolbar-80));
   popup?.update();
   const sidebar = level === 'tree'
     ? Math.min(innerWidth < 761 ? Math.max(145, innerWidth * .43) : 360, innerWidth * .48) : 0;
@@ -41,7 +42,7 @@ function fitVillage(instant = false) {
   if ($('species-panel')) $('species-panel').style.top = toolbar + 'px';
   camera.fit(layers.get(selected).getBounds(), {
     maxZoom: 18,
-    ...villageFitPadding(innerWidth, innerHeight, {bubble: bubble + 18, sidebar})
+    ...villageFitPadding(innerWidth, innerHeight, {bubble: bubble + 18 + toolbar, sidebar})
   }, instant);
 }
 function clearSelection() {
@@ -61,7 +62,7 @@ function clearSelection() {
   suppressPreview = false;
 }
 let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
-function radar(v,size=170,compact=false) { const chart=createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,label:c.key==='activity'?'回報活躍度（DEMO）':c.label,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,label:'六項能力：含鳥蟲／回報 DEMO 模擬'});chart.querySelector('.radar-units').textContent='0–100：快照3項＋原生代理＋DEMO 2項；非生態評估';return chart; }
+function radar(v,size=170,compact=false) { const chart=createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,label:c.key==='activity'?'回報活躍度（DEMO）':c.label,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,pixelStyle:true,label:'六項能力：含鳥蟲／回報 DEMO 模擬'});chart.querySelector('.radar-units').textContent='0–100：快照3項＋原生代理＋DEMO 2項；非生態評估';return chart; }
 function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?VILLAGE_OPACITY.hover:id===selected?VILLAGE_OPACITY.selected:VILLAGE_OPACITY.base}); }
 const hoverAnchors = new Map();
 let previewTimer,pinnedTreeVillage=null,shownTreeKey=null;
@@ -95,7 +96,7 @@ function openAdvice(v,mode,trigger){visionTour?.cancel('new-advice');panelIds.fo
 function showOverview(v,latlng,trigger) {
  hideHover();panelIds.forEach(id=>closePanel(id,false));popupFocus=trigger||$('finder-toggle');
  const content=el('section',undefined,'village-overview');content.setAttribute('aria-label',v.district+v.name+'概覽');
- content.append(radar(v,130,true));
+ content.append(el('div','里鄰自然輪廓','overview-radar-title'),el('div','快照分數・原生代理・鳥蟲／回報模擬','overview-radar-status'),radar(v,220,true));
  const rating=compositeRating(v.scores),ratingText=rating===null?'N/A':rating.toFixed(1)+' / 5';
  const stars=el('div',undefined,'rating-note summary-stars');stars.setAttribute('role','img');stars.setAttribute('aria-label','綜合星等（含模擬資料） '+ratingText);
  const glyph=el('span',undefined,'stars-glyph'),back=el('span','☆☆☆☆☆','stars-back'),front=el('span','★★★★★','stars-front');glyph.setAttribute('aria-hidden','true');front.style.width=(rating===null?0:rating/5*100)+'%';glyph.append(back,front);stars.append(glyph,el('span',ratingText,'stars-number'));content.append(stars);
@@ -132,7 +133,7 @@ function select(id, fit = true, latlng, trigger = document.activeElement) {
     card('05 鳥類／昆蟲 · DEMO 模擬',v.scores.birdInsect,'seeded DEMO 指派分數','非真實觀測、圖鑑數量或生態品質；固定種子僅供介面展示。'),
     card('06 回報活躍度 · DEMO 模擬',v.scores.activity,fmt(v.socialMetrics.activity.reportedCount)+' / '+fmt(v.socialMetrics.activity.dueCount)+' 筆 · 7日模擬回報／應回報樹數','7日模擬回報數 ÷ 應回報樹數 ×100；2026-10-18–24。沒有真實市民回報、上傳或使用者評論。'),
   );
-  [...$('cards').children].forEach((n,i) => { const c = CAPABILITIES[i]; if(c) { const icon=el('span',c.emoji,'capability-icon'); icon.setAttribute('aria-hidden','true'); n.querySelector('h3').prepend(icon,document.createTextNode(' ')); } n.style.setProperty('--capability', c?.color || NEUTRAL_COLOR); if(c) n.dataset.capability = c.key; });
+  [...$('cards').children].forEach((n,i) => { const c = CAPABILITIES[i]; if(c) { const icon=createMetricIcon(c.key); icon.classList.add('capability-icon'); n.querySelector('h3').prepend(icon,document.createTextNode(' ')); } n.style.setProperty('--capability', c?.color || NEUTRAL_COLOR); if(c) n.dataset.capability = c.key; });
   document.querySelectorAll('#villages button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
 }
 function renderRankings(){

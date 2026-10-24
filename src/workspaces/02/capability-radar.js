@@ -1,3 +1,4 @@
+import {createMetricIcon} from './radar-icons.js';
 /** Snapshot-relative scores, not ecological health. No DOM access at import time. */
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const isScore = v => typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= 100;
@@ -36,11 +37,11 @@ export function computeRadarGeometry(axes, { size = 180, missingAtZero = false }
 }
 
 /** Host imports CSS explicitly. Creates a fresh, independent DOM subtree. */
-export function createCapabilityRadar({ axes, size = 180, compact = false, label = '能力概覽', missingAtZero = false } = {}) {
+export function createCapabilityRadar({ axes, size = 180, compact = false, pixelStyle = false, label = '能力概覽', missingAtZero = false } = {}) {
   computeRadarGeometry(axes, { size, missingAtZero }); // Validate display dimensions.
   const g = computeRadarGeometry(axes, { size: 240, missingAtZero });
   const wrapper = document.createElement('figure');
-  wrapper.className = 'radar-chart' + (compact ? ' radar-chart--compact' : '');
+  wrapper.className = 'radar-chart' + (compact ? ' radar-chart--compact' : '') + (pixelStyle ? ' radar-chart--pixel' : '');
   wrapper.style.setProperty('--radar-size', size + 'px');
   const svg = document.createElementNS(SVG_NS, 'svg');
   const uid = 'radar-' + globalThis.crypto.randomUUID();
@@ -60,7 +61,8 @@ export function createCapabilityRadar({ axes, size = 180, compact = false, label
     : '缺值在軸端標記；資料不完整時不繪製填色區域，亦不跨越缺值連線。';
   append('desc', { id: uid + '-desc' }, '快照相對分數，單位為 0–100 分，非生態健康評估。' + summary + '。空心叉記號代表 N/A，實心點代表有效分數（包含 0）。' + policy);
   const points = pp => pp.map(p => p.x + ',' + p.y).join(' ');
-  for (const ring of g.rings) append('polygon', { class: 'radar-ring', points: points(ring) });
+  const rings=pixelStyle ? [.2,.4,.6,.8,1].map(f=>g.axes.map(a=>({x:g.center.x+(a.end.x-g.center.x)*f,y:g.center.y+(a.end.y-g.center.y)*f}))) : g.rings;
+  for (const ring of rings) append('polygon', { class: 'radar-ring', points: points(ring) });
   for (const a of g.axes) append('line', { class: 'radar-spoke' + (a.value === null ? ' radar-spoke--missing' : ''), x1: g.center.x, y1: g.center.y, x2: a.end.x, y2: a.end.y });
   append('text', { class: 'radar-scale', x: g.center.x + 4, y: g.center.y - g.radius - 5 }, '100');
   append('text', { class: 'radar-scale', x: g.center.x + 5, y: g.center.y + 13 }, '0');
@@ -68,7 +70,7 @@ export function createCapabilityRadar({ axes, size = 180, compact = false, label
   else for (const s of g.segments) append('line', { class: 'radar-segment', x1: s.from.x, y1: s.from.y, x2: s.to.x, y2: s.to.y });
   g.axes.forEach(a => {
     const p = a.displayPoint ?? a.end;
-    if (a.point) append('circle', { class: 'radar-point', cx: p.x, cy: p.y, r: 4.5, fill: a.color });
+    if (a.point) { if(pixelStyle)append('rect',{class:'radar-point',x:p.x-4,y:p.y-4,width:8,height:8});else append('circle', { class: 'radar-point', cx: p.x, cy: p.y, r: 4.5, fill: a.color }); }
   });
   // Draw crosses last so a real zero cannot obscure the missing marker.
   g.axes.forEach(a => {
@@ -79,6 +81,11 @@ export function createCapabilityRadar({ axes, size = 180, compact = false, label
     }
   });
   g.axes.forEach((a, index) => {
+    if(pixelStyle){
+      const group=append('g',{class:'radar-axis-index radar-axis-pixel','data-metric-key':a.key});
+      group.append(createMetricIcon(a.key,{x:a.labelPoint.x-43,y:a.labelPoint.y-12}));
+      const text=document.createElementNS(SVG_NS,'text');for(const[k,v]of Object.entries({class:'radar-axis-label',x:a.labelPoint.x-15,y:a.labelPoint.y,'text-anchor':'start','dominant-baseline':'central'}))text.setAttribute(k,String(v));text.textContent=(a.shortLabel||a.label)+(a.value===null?' N/A':'');group.append(text);return;
+    }
     if (!a.shortLabel) { append('text', { class: 'radar-axis-index' + (a.emoji ? ' radar-axis-emoji' : ''), x: a.labelPoint.x, y: a.labelPoint.y, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, (a.emoji || index + 1) + (a.value === null ? ' N/A' : '')); return; }
     const axis = append('text', { class: 'radar-axis-index' + (a.emoji ? ' radar-axis-emoji' : ''), x: a.labelPoint.x, y: a.labelPoint.y, 'text-anchor': 'middle', 'dominant-baseline': 'central' });
     const icon = document.createElementNS(SVG_NS, 'tspan'); icon.textContent = a.emoji || index + 1; axis.append(icon);
