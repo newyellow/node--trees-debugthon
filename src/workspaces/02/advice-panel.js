@@ -6,7 +6,7 @@ import {createWikiFigureSession, createWikiImages, scientificName} from '../../s
 
 export const INITIAL_MESSAGES = Object.freeze({
   planting: '請用四個以空白行分隔的短段落，像植物朋友聊本里的未來願景：整體山系綠網願景；有依據的研究與本里綠網機會連結；實際樹木組成與養護方向；直接行動優先序及2至3種候選。山名、鄰近、地質只用資料支持，不編造。沒有樹況證據不建議移除。約180至240字，不重複免責註記。plants請完整對應第四段所有候選，讓介面配資料庫照片與詳細介紹。',
-  home: '請像懂植物的朋友，先用一句綠生活願景連結本里公開資料，再分明亮陽台、較少光室內兩種情境推薦植物；少光不等於無光。約120至180個中文字、短段落，不推定我家日照、寵物或安全，不先問卷；最多一句選答問題放最後。請附精確植物用名讓介面配來源照片。'
+  home: '請像植物朋友寫可獨立閱讀的完整居家建議，用空白行分成明亮陽台與室內擺飾兩組，每組1至2種，總共推薦2至4種具名植物，各給一句簡短理由。室內依明亮散射光或較少光的實際適合情境，少光不等於無光。可用有依據的山系或鄰里綠網作輕巧意象，不推定我家日照、寵物或安全，不把山系植物自動當室內適種。約120至180字，相關誤食風險短註於植物旁；不要邀請聊天、索取條件或在結尾提問。plants完整列出兩組全部候選，最多4種，讓介面配精確照片與介紹。'
 });
 export const boundedHistory = history => (Array.isArray(history) ? history : []).filter(m => ['user','assistant'].includes(m?.role) && typeof m.content === 'string').slice(-8).map(m => ({role:m.role,content:m.content.slice(0,1200)}));
 // Root-scoped proxy even when static assets use /review/. No remote origin from base.

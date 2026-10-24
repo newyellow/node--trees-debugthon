@@ -132,6 +132,6 @@ test('DONE terminates promptly without waiting for upstream EOF',async()=>{
 
 test('concise friendly prompt retains safety and limits generation tokens',async()=>{
  const {SYSTEM_PROMPT}=await import('../server/plant-advice-model.mjs');
- for(const phrase of ['120至180','植物朋友','2至3種','明亮陽台','較少光室內','必要的補充問題只放最後一句','不可信資料','不可由里資料推定真實住家','居家vision一律false','首次回覆先依所選里','不要先要求填答或連續盤問','非官方政策','公共土地','未核實參考'])assert.ok(SYSTEM_PROMPT.includes(phrase),phrase);
+ for(const phrase of ['120至180','植物朋友','2至3種','明亮陽台','明亮散射光','不追加問題或聊天邀請','不可信資料','不可由里資料推定真實住家','居家vision一律false','首次回覆先依所選里','不要先要求填答或連續盤問','非官方政策','公共土地','未核實參考'])assert.ok(SYSTEM_PROMPT.includes(phrase),phrase);
  let request;await client(async(_url,opts)=>{request=JSON.parse(opts.body);return response(event(JSON.stringify(output))+done);})(input,{},signal());assert.equal(request.max_tokens,750);assert.equal(request.tool_choice,'none');
 });
