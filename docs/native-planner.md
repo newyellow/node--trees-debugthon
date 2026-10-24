@@ -38,3 +38,8 @@ node scripts/check-native-planner-browser.mjs --real
 單元：12區政策、覆寫、混語映射、null/zero、限制不符、query allowlist、URL/授權、孔洞、混植未知、cache/429/stale。
 瀏覽器 mock：真實本機 regions、stub底圖，桌機／390px、選區／選點、候選／詳情、shortlist、合成照片本機預覽及清除、空推薦、503重試、無樹木資料或POST。real：實際瀏覽器 CORS GET 搜尋／詳情／filter+recommend，影像 stub不下載，仍驗證照片不導致API流量。兩者分開報告。
 
+
+## Public integration verification
+2026-10-24: prototype published at /workspaces/03/index.html; portal metadata exposes this entry. Parent added four policy-group colors and legend, malformed-record rejection and image-load fallback. Clean committed snapshot:143 tests,141passed,2skipped; public mock/real API browser checks pass desktop/mobile, including real lazy photo load and local photo preview without API upload. Existing same-origin Cloudflare /cdn-cgi/rum analytics POST is separately reported, not a planner data upload; no analytics configuration changed. Public existing vegetation/raw-village regression and HTML comparison preserve other features.
+
+This is not the completed native species recommendation product: no per-region200-species cited inventory, verified native status, root-space suitability/density model, AI photo analysis, or Tianwei supplier/stock feed. These remain explicit data/validation gates, not successful empty results.
