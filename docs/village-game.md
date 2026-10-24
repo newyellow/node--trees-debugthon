@@ -195,3 +195,9 @@ Overview hover retains village name and visual fractional stars only; numeric ra
 ## Roomier selected-village framing
 
 Selected-village framing now uses a five-percent viewport margin above the combined north bubble/village and below the village. The separate toolbar-height reservation and old ten-percent vertical breathing room are removed; north-bubble and sidebar/horizontal clearance remain. Menu DEMO banner is removed; simulation/proxy disclosures remain in village details, indicator meanings and accessible labels. Visual zoom/fullness acceptance is explicitly user-owned; only unit arithmetic/build and normal public loading are release checks for this adjustment.
+
+## Star-hue choropleth and global village ranking
+
+Village polygon fill now uses the unchanged displayed one-decimal composite star value, grouped by nearest whole star: 0.0–0.4 brick red, 0.5–1.4 orange, 1.5–2.4 gold, 2.5–3.4 green, 3.5–4.4 blue, 4.5–5.0 purple; invalid ratings are neutral gray. This is hue variation, not a sequential opacity scale. Resting fill opacity is reduced relatively twenty percent (0.48→0.384; selected 0.70→0.56), hover remains 0.78. Tree-point species colors are unchanged.
+
+里排行榜 is a left overlay of all456 villages using those same exact stars descending, independent of finder filters. Equal displayed ratings share competition rank (1,1,3), deterministic ID orders ties; N/A is last/unranked. Clicking a row clears finder filters so its polygon exists, then uses the existing select/smooth-camera path and closes the ranking panel. It never recomputes scores or simulation values. Rating map palette and six radar indicator meanings are both available in 指標含義. Validation is pure policy/snapshot unit tests, build, and one functional ranking/navigation flow; subjective hue contrast and camera feel remain user-owned.

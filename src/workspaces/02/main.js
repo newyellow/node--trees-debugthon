@@ -1,3 +1,4 @@
+import {STAR_BANDS,STAR_UNKNOWN_COLOR,VILLAGE_OPACITY,starColor,rankVillages} from './star-display.js';
 import {createCameraMotion} from './camera-motion.js';
 import {applySocialMetrics,GAME_SHA256} from './social-metrics.js';
 import {compositeRating,villageFitPadding,RATING_POLICY} from './social-state.js';
@@ -11,7 +12,7 @@ import 'leaflet/dist/leaflet.css';
 import './style.css';
 import { createCapabilityRadar } from './capability-radar.js';
 import './capability-radar.css';
-import { CAPABILITIES, RADAR_CAPABILITIES, dominantCapability, TIE_COLOR, NEUTRAL_COLOR } from './domain.js';
+import { CAPABILITIES, RADAR_CAPABILITIES, dominantCapability, NEUTRAL_COLOR } from './domain.js';
 const $ = id => document.getElementById(id), base = import.meta.env.BASE_URL;
 let data, regions, map, group, hoverRenderer, selected, recordLayers, villageTrees, visible = [], layers = new Map();
 function el(tag, text, className) { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; if (className) n.className = className; return n; }
@@ -55,7 +56,7 @@ function clearSelection() {
 }
 let popup, popupFocus, hovered, activeBasemap, basemapKind = 'street';
 function radar(v,size=170,compact=false) { const chart=createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,label:c.key==='activity'?'回報活躍度（DEMO）':c.label,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,label:'六項能力：含鳥蟲／回報 DEMO 模擬'});chart.querySelector('.radar-units').textContent='0–100：快照3項＋原生代理＋DEMO 2項；非生態評估';return chart; }
-function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?.78:id===selected?.70:.48}); }
+function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?VILLAGE_OPACITY.hover:id===selected?VILLAGE_OPACITY.selected:VILLAGE_OPACITY.base}); }
 const hoverAnchors = new Map();
 let previewTimer,pinnedTreeVillage=null,shownTreeKey=null;
 function showVillageTrees(id,preview=false){clearTimeout(previewTimer);if(!villageTrees)return;const key=id+':'+preview;if(shownTreeKey===key)return;shownTreeKey=key;$('village-trees-controls').hidden=false;villageTrees.show(id,{preview});}
@@ -129,6 +130,14 @@ function select(id, fit = true, latlng, trigger = document.activeElement) {
   [...$('cards').children].forEach((n,i) => { const c = CAPABILITIES[i]; n.style.setProperty('--capability', c?.color || NEUTRAL_COLOR); if(c) n.dataset.capability = c.key; });
   document.querySelectorAll('#villages button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
 }
+function renderRankings(){
+ const rows=rankVillages(data.villages);$('ranking-count').textContent='全臺北 '+rows.length+' 里｜依目前綜合星等排序；同分並列，下一名依序跳號。';
+ $('village-rankings').replaceChildren(...rows.map(({village:v,rating,rank})=>{
+  const li=el('li'),button=el('button');button.type='button';button.dataset.village=v.id;button.dataset.rating=rating===null?'N/A':String(rating);button.dataset.rank=rank===null?'N/A':String(rank);
+  const dot=el('span',undefined,'ranking-swatch');dot.style.background=starColor(rating);dot.setAttribute('aria-hidden','true');button.append(el('span',rank===null?'—':String(rank),'ranking-place'),dot,el('span',v.district+'・'+v.name,'ranking-name'),el('span',rating===null?'N/A':rating.toFixed(1)+' ★','ranking-stars'));button.setAttribute('aria-label',(rank===null?'未排名':'第 '+rank+' 名')+'，'+v.district+v.name+'，'+(rating===null?'無有效星等':rating.toFixed(1)+' 星'));
+  button.onclick=()=>{$('district').value='';$('search').value='';filter();select(v.id,true,undefined,button);};li.append(button);return li;
+ }));
+}
 function filter() {
   hideHover();
   const district = $('district').value, query = $('search').value.trim();
@@ -177,13 +186,13 @@ async function load() {
     hideHover();hoverAnchors.clear();group.clearLayers(); layers = new Map();
     const villagesById = new Map(data.villages.map(v => [v.id,v]));
     regions.features.forEach(f => {
-      const v = villagesById.get(f.properties.id), strength = dominantCapability(v.scores);
-      const l = L.geoJSON(f, { style: { color: '#50616a', weight: 1, fillColor: strength.color, fillOpacity: .48 } });
+      const v = villagesById.get(f.properties.id), rating=compositeRating(v.scores);
+      const l = L.geoJSON(f, { style: { color: '#50616a', weight: 1, fillColor: starColor(rating), fillOpacity: VILLAGE_OPACITY.base } });
       l.on('mouseover',()=>showHover(v));
       l.on('mouseout',()=>hideHover());
       l.on('click',e=>select(v.id,true,e.latlng,e.originalEvent?.target));
       l.eachLayer(path => {
-        path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜' + strength.text);
+        path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜綜合星等（含模擬）'+(rating===null?'N/A':rating.toFixed(1)+' / 5'));
           node.onfocus=()=>showHover(v,true);node.onblur=()=>hideHover();
           node.onkeydown = e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,true,undefined,node); popup?.getElement()?.querySelector('button')?.focus({preventScroll:true}); } };
         });
@@ -195,11 +204,11 @@ async function load() {
     ['district','search'].forEach(id => $(id).disabled = false);
     $('district').onchange = filter; $('search').oninput = filter;$('search').onkeydown=e=>{if(e.key==='Enter'&&visible.length){e.preventDefault();select(visible[0].id);}};
     filter(); map.fitBounds(group.getBounds(), { animate: false, padding: [12,12] });
-    provenance();
+    renderRankings();provenance();
     $('status').textContent = '護照已就緒・456里界與真實快照｜暫定星等為六項有效能力等權平均 ÷ 20；受里面積、取樣與保護名冊影響，非生態品質認證／使用者評價。';
   } catch (error) { $('status').textContent = '資料載入失敗：' + error.message + '。請檢查連線後重試。'; $('retry').hidden = false; }
 }
-const panelIds = ['finder','passport','method','records'], returnFocus = new Map();
+const panelIds = ['finder','ranking','passport','method','records'], returnFocus = new Map();
 let indicatorScroll=0;
 function closePanel(id, focus = true) {
   $(id).hidden = true; $(id+'-toggle')?.setAttribute('aria-expanded','false');
@@ -219,9 +228,10 @@ panelIds.forEach(id => {
 });
 for(const node of document.querySelectorAll('.surface')) { L.DomEvent.disableClickPropagation(node); L.DomEvent.disableScrollPropagation(node); }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') {if(villageTrees?.isRecordOpen()){e.preventDefault();villageTrees.closeRecord();return;} const id = panelIds.find(id => !$(id).hidden); if(id) { e.preventDefault(); closePanel(id); } else if(popup?.isOpen()) {e.preventDefault();map.closePopup();} else hideHover(); } });
-for(const item of [...CAPABILITIES, {label:'多項正值能力並列最高',color:TIE_COLOR}, {label:'有效分數皆0／無有效分數',color:NEUTRAL_COLOR}]) {
-  const li = el('li',(item.emoji?item.emoji+' ':'')+(item.key==='activity'?'回報活躍度（DEMO）':item.label)); const swatch = el('span',undefined,'swatch'); swatch.style.background = item.color; li.prepend(swatch); $('legend-items').append(li);
+for(const item of CAPABILITIES) {
+ const li=el('li',(item.emoji?item.emoji+' ':'')+(item.key==='activity'?'回報活躍度（DEMO）':item.label)),swatch=el('span',undefined,'swatch');swatch.style.background=item.color;li.prepend(swatch);$('legend-items').append(li);
 }
+for(const item of [...STAR_BANDS,{label:'N/A 無有效星等',color:STAR_UNKNOWN_COLOR}]){const li=el('li',item.label),swatch=el('span',undefined,'swatch');swatch.style.background=item.color;li.prepend(swatch);$('star-color-items').append(li);}
 $('detail-method').onclick=()=>openPanel('method',$('detail-method'));
 $('indicator-back').onclick=()=>closePanel('method');
 $('clear-village-trees').onclick=()=>{map.closePopup(popup);clearSelection();};
