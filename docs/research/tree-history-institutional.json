@@ -1,0 +1,207 @@
+[
+  {
+    "id": "inst-cksmh-osmanthus-consolidation",
+    "species": [
+      "桂花"
+    ],
+    "location": "中正紀念堂堂體往大孝門方向、親民健身場前桂花區",
+    "period": "1980年開堂時已有栽植；約1986年集中移植",
+    "title": "景觀規劃把園內桂花集中成區",
+    "summary": "中正紀念堂官方桂花區介紹記載，民國69年開堂時已有桂花；民國75年前後因其他區域的景觀規劃，將園內桂花集中移植至堂體往大孝門、親民健身場前的區域，形成其最早的植物專區。",
+    "evidenceScope": "site-history",
+    "verificationStatus": "source-supported",
+    "limitations": "官方頁未列發布日；民國69、75年分別換算1980、1986年，後者保留「前後」的不確定性。桂花不在此擅自補學名；頁面株數不當作2026現況普查。",
+    "sources": [
+      {
+        "title": "桂花區",
+        "publisher": "國立中正紀念堂",
+        "url": "https://www.cksmh.gov.tw/cp.aspx?n=7273",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "桂花區正文",
+        "excerpt": "民國75年前後，因應園區其他區域之景觀規劃，遂將園區內所有桂花移植此處"
+      }
+    ]
+  },
+  {
+    "id": "inst-ntu-camphor-wave",
+    "species": [
+      "樟樹"
+    ],
+    "location": "臺灣大學校園（原文未列逐株位置）",
+    "period": "約1985–1990年",
+    "title": "一波大量種樟樹的校園景觀回憶",
+    "summary": "校友刊物作者回顧1985–1990年大量種樟的建議，並批評樹木長大後對其他植栽的遮蔭影響。",
+    "evidenceScope": "planting-policy",
+    "verificationStatus": "source-supported",
+    "limitations": "這是刊物作者的回顧與評價，不是已核對的正式決議或生態因果研究；原文無數量、逐株清冊，不能套用全校樟樹。",
+    "sources": [
+      {
+        "title": "椰林風情：從椰林大道之端景談振興草坪與孔子像預定地",
+        "publisher": "國立臺灣大學《臺大校友雙月刊》",
+        "url": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "椰林大道栽植之變遷，第6段",
+        "excerpt": "建議總務處大量栽植樟樹"
+      }
+    ]
+  },
+  {
+    "id": "inst-ntu-fu-phoenix",
+    "species": [
+      "鳳凰樹"
+    ],
+    "location": "臺灣大學傅斯年紀念鐘周圍",
+    "period": "約1951年",
+    "title": "紀念傅斯年的鐘與鳳凰樹植栽",
+    "summary": "校友刊物回顧，約1951年在傅斯年紀念鐘周圍栽植鳳凰樹，將植物配置於校園紀念空間。",
+    "evidenceScope": "site-history",
+    "verificationStatus": "source-supported",
+    "limitations": "保留來源用名「鳳凰樹」，未另補學名或與GIS樹種作同物異名比對；紀錄不證明今日個別樹木存續。",
+    "sources": [
+      {
+        "title": "椰林風情：從椰林大道之端景談振興草坪與孔子像預定地",
+        "publisher": "國立臺灣大學《臺大校友雙月刊》",
+        "url": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "椰林大道栽植之變遷，第3段",
+        "excerpt": "週圍種植鳳凰樹，變葉木和檜柏。"
+      }
+    ]
+  },
+  {
+    "id": "inst-ntu-palm-axis",
+    "species": [
+      "大王椰子"
+    ],
+    "location": "臺灣大學總校區椰林大道",
+    "period": "臺北帝國大學時期（1928–1945）；約1932年規劃；1956–1961年延伸",
+    "title": "大王椰子與逐步形成的校園主軸",
+    "summary": "校史館記錄大道由帝大時期逐步發展、1956–1961年延伸；校友刊物另將約1932年的景觀規劃歸於中村三八夫與大沼三郎。",
+    "evidenceScope": "site-history",
+    "verificationStatus": "source-supported",
+    "limitations": "是大道發展史，不能據此認定今天每株大王椰子皆為1932年種植；校友文章的約年與校史館分期不宜合併成單一精確植樹日期。",
+    "sources": [
+      {
+        "title": "臺大學校象徵：校樹",
+        "publisher": "國立臺灣大學校史館",
+        "url": "https://historygallery.ntu.edu.tw/web-ntusym/tree.html",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "校樹，第2段",
+        "excerpt": "1956年至1961年間，椰林大到延伸到了現今森林系前面，成為目前所見的規模。"
+      },
+      {
+        "title": "椰林風情：從椰林大道之端景談振興草坪與孔子像預定地",
+        "publisher": "國立臺灣大學《臺大校友雙月刊》",
+        "url": "https://ntualumnibm.ntu.edu.tw/bm.bimonthly.article/detail/sn/4462",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "椰林大道栽植之變遷，第1段",
+        "excerpt": "約1932年，臺北帝大興建椰林大道"
+      }
+    ]
+  },
+  {
+    "id": "inst-renai-palms-retention",
+    "species": [
+      "大王椰子"
+    ],
+    "location": "臺北市仁愛路杭州南路至新生南路；後延續至仁愛路一、三、四段分隔島",
+    "period": "1960年代；引述1968年報導",
+    "title": "從機場到總統府的門面：仁愛路保留與延續大王椰子",
+    "summary": "眼底城事研究文章引述1968年報紙，說明仁愛路杭州南路至新生南路的大王椰子曾被建議移除，市府因樹木已長成、並欲營造國際機場往總統府的氣派林蔭大道而保留。道路拓寬後，高玉樹指示其他路段分隔島延續大王椰子景觀語彙。",
+    "evidenceScope": "planting-policy",
+    "verificationStatus": "source-supported",
+    "limitations": "已讀研究文章正文及文末書目，未直接取得所引1968年報紙原版；不把文中歷史樹齡當作今日個體樹齡，也不沿用其有歧異的全臺首次引入年份。",
+    "sources": [
+      {
+        "title": "空中的綠色炸彈：在都市垂直縱走的大王椰子",
+        "publisher": "眼底城事；楊絜媖",
+        "url": "https://eyesonplace.net/2022/03/30/20124/",
+        "publishedAt": "2022-03-30",
+        "accessedAt": "2026-10-24",
+        "locator": "從高空到地面：大王椰子逐步成為都市炸彈，第2段；文末1968年書目",
+        "excerpt": "當局欲打造從國際機場至總統府往來之氣派的林蔭大道，因而保留這裡的椰子樹"
+      }
+    ]
+  },
+  {
+    "id": "inst-three-lane-uniform-policy",
+    "species": [
+      "蒲葵",
+      "大王椰子",
+      "茄苳",
+      "楓香"
+    ],
+    "location": "臺北舊城北三線、東三線、南三線、西三線道路（歷史路段名稱）",
+    "period": "1936年之後（日治後期）",
+    "title": "三線道路由混植轉向各路段單一樹種",
+    "summary": "顏杏如講座紀要比較三線道路植栽，指出1936年後追求整齊劃一：北三線蒲葵、東三線大王椰子、南三線茄苳、西三線楓香。紀要將轉變與管理機關演變、1932年行道樹納入都市計畫及都市美觀觀念連結。",
+    "evidenceScope": "planting-policy",
+    "verificationStatus": "source-supported",
+    "limitations": "保留歷史路名，未自行對照現代全路段或座標；紀要描述的是歷史配置，不能認定現存路樹都是此批栽植。",
+    "sources": [
+      {
+        "title": "顏杏如：台灣為什麼遍植椰子樹？日治時代的「南方想像」",
+        "publisher": "聯經思想空間（顏杏如講座紀要）",
+        "url": "https://www.linking.vision/archives/6977",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "行道樹，被移植到台灣的南方想像，第2–3段",
+        "excerpt": "北三線（蒲葵）、東三線（大王椰子）、南三線（茄苳）、西三線（楓香）都是單一樹種的"
+      }
+    ]
+  },
+  {
+    "id": "inst-zhongshan-diplomatic-avenue",
+    "species": [
+      "樟樹",
+      "楓香"
+    ],
+    "location": "臺北市中山北路分隔島及人行道",
+    "period": "日治奠基；其後蔣中正通勤與外交接待時期（新聞稿未列密植年份）",
+    "title": "敕使街道到外交大道：安全考量下的密植",
+    "summary": "公園處新聞稿介紹中山北路分隔島種樟樹、人行道種楓香，並追溯其為通往臺灣神社的敕使街道。新聞稿另指出，後來成為蔣中正上下班及接待外國使節的道路，為安全與隱蔽考量又將兩側路樹密植。",
+    "evidenceScope": "planting-policy",
+    "verificationStatus": "source-supported",
+    "limitations": "新聞稿未給密植確切年份、逐株栽種或更換記錄；「日治奠基」不表示今日所有樟樹、楓香均為日治原株。",
+    "sources": [
+      {
+        "title": "漫步全台最老行道樹街道 中山北路思古幽情",
+        "publisher": "臺北市政府工務局公園處（市府新聞稿）",
+        "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=CFF16DF881820E64",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "末段；首段樹種配置",
+        "excerpt": "為考量安全性和增加隱蔽性，又將兩側路樹更為密植。"
+      }
+    ]
+  },
+  {
+    "id": "inst-zhongshan-practical-acacia",
+    "species": [
+      "相思樹"
+    ],
+    "location": "今臺北市中山北路沿線（講座紀要用名）",
+    "period": "1901年起",
+    "title": "從防風與容易取得出發的行道樹",
+    "summary": "顏杏如研究講座紀要指出，1901年起官方開始介入臺北植樹，在中山北路栽植相思樹，重視防風、枝葉繁茂與容易取得等功能。紀要也將此期植樹連結至天皇生日、逝世等紀念活動，顯示早期路樹不只服務景觀。",
+    "evidenceScope": "planting-policy",
+    "verificationStatus": "source-supported",
+    "limitations": "二手講座紀要，未查核其引用的日文原始檔案；紀念活動是該期植樹的概述，不代表每株相思樹都對應同一次事件。",
+    "sources": [
+      {
+        "title": "顏杏如：台灣為什麼遍植椰子樹？日治時代的「南方想像」",
+        "publisher": "聯經思想空間（顏杏如講座紀要）",
+        "url": "https://www.linking.vision/archives/6977",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "行道樹，被移植到台灣的南方想像，第1段",
+        "excerpt": "自1901年起，官方才開始介入，在中山北路栽植的相思樹，理由是防風、枝葉繁茂"
+      }
+    ]
+  }
+]

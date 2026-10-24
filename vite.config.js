@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         home: fileURLToPath(new URL('./index.html', import.meta.url)),
         stories: fileURLToPath(new URL('./stories/index.html', import.meta.url)),
+        storyResearch: fileURLToPath(new URL('./stories/research/index.html', import.meta.url)),
         explorer: fileURLToPath(new URL('./explorer/index.html', import.meta.url)),
         workspace02: fileURLToPath(new URL('./workspaces/02/index.html', import.meta.url)),
         workspace03: fileURLToPath(new URL('./workspaces/03/index.html', import.meta.url)),

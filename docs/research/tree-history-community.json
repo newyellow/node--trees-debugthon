@@ -1,0 +1,194 @@
+[
+  {
+    "id": "community-fuyuan-second-opinion",
+    "species": [
+      "榕樹"
+    ],
+    "location": "臺北市松山區民生社區撫遠公園及園外道路",
+    "period": "2024年3月起；2026年報導回顧",
+    "title": "居民要求再看一次：撫遠公園21棵樹獲保留",
+    "summary": "太報回顧，2024年撫遠公園內32棵、園外道路45棵榕樹被列移除名單。居民與護樹團體反對後，公園處另邀4名專家重新現勘，處置改為移除56棵、保留21棵，呈現社區參與與第二次專業檢視改變樹木命運的案例。",
+    "evidenceScope": "site-history",
+    "verificationStatus": "source-supported",
+    "limitations": "數字與程序據2026年專題報導，未取得77株逐樹評估表；不同輪評估結果不直接等於首次評估錯誤，也不代表所有原列移除樹均安全。未比對今日樹號與存活狀態。",
+    "sources": [
+      {
+        "title": "【砍樹之亂2-2】一棵樹如何走到非砍不可？從病害、風險評估到工程讓路拆解台北砍樹制度",
+        "publisher": "太報",
+        "url": "https://www.taisounds.com/specialtopic/content/194/291501",
+        "publishedAt": "2026-10-05",
+        "accessedAt": "2026-10-24",
+        "locator": "「77棵原列移除、重評後21棵留下」段落",
+        "excerpt": "居民與護樹團體反對後，公園處另邀4名專家重新現勘，結果改為移除56棵、保留21棵。"
+      }
+    ]
+  },
+  {
+    "id": "community-gangqian-fengshui",
+    "species": [
+      "山埔姜"
+    ],
+    "location": "臺北市內湖區港墘公園",
+    "period": "2014年官稿記錄的地方口述記憶",
+    "title": "岩塊與「青蛙穴」傳說保存的山埔姜",
+    "summary": "民政局2014年新聞稿轉述當地九十多歲長者記憶，港墘公園的山埔姜在其幼年已存在。稿件並記錄地方相信園地岩塊是青蛙風水穴，不敢輕易破壞，因而使山埔姜免於當時因民間藥用需求而遭挖掘的命運。",
+    "evidenceScope": "specific-tree",
+    "verificationStatus": "source-supported",
+    "limitations": "樹齡與保存原因均為官方刊載的地方口述／民俗解釋，非獨立驗年的科學結論或完整採挖史；藥用只描述當時民間說法，不提供療效背書。數量與受保護狀態為2014年資訊，不代表現況。",
+    "sources": [
+      {
+        "title": "鄰里公園好朋友 珍貴老樹陪你過生活 保護樹種藏公園 歡迎市民一起來尋寶",
+        "publisher": "臺北市政府民政局",
+        "url": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&sms=72544237BBE4C5F6&s=9648FB336235885C",
+        "publishedAt": "2014-09-11",
+        "accessedAt": "2026-10-24",
+        "locator": "正文港墘公園山埔姜與當地長者、青蛙風水穴段落",
+        "excerpt": "當地人認為此處為一青蛙風水穴，不敢輕易破壞，山埔姜才能順利保留下來。"
+      }
+    ]
+  },
+  {
+    "id": "community-lions-sakura-family",
+    "species": [
+      "櫻花（來源未細分品種）"
+    ],
+    "location": "臺北市陽明山住六公二公園",
+    "period": "北區獅子會成立55周年期間；來源頁未明示發布日",
+    "title": "想接續外公心願：獅子會捐櫻的祖孫敘事",
+    "summary": "公園處府級新聞稿記錄，臺北市北區獅子會在認養的住六公二公園再捐櫻花並協助維護。前會長說，某會員外公曾參與美國華盛頓櫻花林捐贈，會員希望在臺灣延續外公心願；經會員與公園處共同規劃、勘查後，形成這次捐植。",
+    "evidenceScope": "site-history",
+    "verificationStatus": "source-supported",
+    "limitations": "捐櫻與認養有官方敘述；外公參與華盛頓櫻花林一事是未具名會員家族的轉述，缺姓名、年代與美方檔案，不能作跨國捐贈史定論。正文作住六公二，末圖說誤作住二公六，採正文；發布日不以更新日代替。",
+    "sources": [
+      {
+        "title": "複製華盛頓櫻花林 公二公園傳承祖孫情",
+        "publisher": "臺北市政府工務局公園路燈工程管理處（孔廟管理委員會轉載府級新聞稿）",
+        "url": "https://tct.gov.taipei/News_Content.aspx?n=B4C9AF5D5D4BF947&sms=72544237BBE4C5F6&s=57C1A99AB1898B6D",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "正文第1至2段及「臺北市北區獅子會許前會長表示」段落",
+        "excerpt": "該位會員這幾年來也一直在台灣找尋適當的地點，想與其外公一樣營造出像華盛頓特區那般美麗的櫻花林供國人觀賞"
+      }
+    ]
+  },
+  {
+    "id": "community-rongjin-preservation",
+    "species": [
+      "未載明樹種"
+    ],
+    "location": "臺北市大安區榕錦時光生活園區（原臺北刑務所官舍、華光社區）",
+    "period": "2013年保存倡議；2017年起修復；2022年活化",
+    "title": "華光社區護育倡議與公共浴池旁的大樹",
+    "summary": "文化局記錄，2013年民間成立「臺北刑務所群落文化資產護育聯盟」，爭取文化資產指定與老樹保護。官舍修復活化時，也保留昔日公共浴池旁大樹的生長環境，使紅磚建物與樹木共生，延續社區空間的不同時代痕跡。",
+    "evidenceScope": "site-history",
+    "verificationStatus": "source-supported",
+    "limitations": "來源支持民間倡議及修復時保留生長環境，但未逐株交代樹種、種植年代或倡議到保留的直接因果；不因園名「榕錦」推定浴池旁樹種，也不將現樹一律稱為1905年監獄原植樹。",
+    "sources": [
+      {
+        "title": "金華街原臺北刑務所官舍群打造全齡生活園區 公私協力再添臺北遊憩新熱點",
+        "publisher": "臺北市政府文化局",
+        "url": "https://culture.gov.taipei/News_Content.aspx?n=63F36AA6E434AD08&s=04221DA9959EBB88",
+        "publishedAt": "2022-08-30",
+        "accessedAt": "2026-10-24",
+        "locator": "「老房子計畫公私協力活化文資」及「公共浴池建築與老樹依偎共生」兩節",
+        "excerpt": "民間團體發起「臺北刑務所群落文化資產護育聯盟」，爭取文化資產指定與老樹保護"
+      }
+    ]
+  },
+  {
+    "id": "community-roosevelt-bischofia",
+    "species": [
+      "茄苳"
+    ],
+    "location": "臺北市中正區羅斯福路三段2號、金門街口",
+    "period": "2026年9月",
+    "title": "把箱體移開，讓社區「家樹」留下",
+    "summary": "太報報導，羅斯福路與金門街口茄苳因根系與通訊、號誌箱及轉彎視線衝突，曾公告移除。居民視其為遮蔭與陪伴社區的「家樹」而陳情；9月23日會勘後改以遷移箱體、擴大樹穴為處理方向，留下原樹。",
+    "evidenceScope": "specific-tree",
+    "verificationStatus": "source-supported",
+    "limitations": "證據為新聞報導的公告與會勘結果，非本研究取得原始會勘紀錄；尚未現勘確認箱體遷移及樹穴工程全部完工。居民所稱樹先於箱體存在，屬報導轉述其歷史影像比對，不據此推定種植年。",
+    "sources": [
+      {
+        "title": "【砍樹之亂2-2】一棵樹如何走到非砍不可？從病害、風險評估到工程讓路拆解台北砍樹制度",
+        "publisher": "太報",
+        "url": "https://www.taisounds.com/specialtopic/content/194/291501",
+        "publishedAt": "2026-10-05",
+        "accessedAt": "2026-10-24",
+        "locator": "「工程退、樹留下」段落與現地照片說明",
+        "excerpt": "9月23日相關單位辦理會勘，最後決議的方向不是把樹移走，而是將中華電信箱與交通號誌控制箱遷移，再擴大樹穴"
+      }
+    ]
+  },
+  {
+    "id": "community-xingan-temple-banyan",
+    "species": [
+      "榕樹"
+    ],
+    "location": "臺北市文山區仙岩路16巷興安宮",
+    "period": "地方耆老回憶1946年建廟前後至多次修建期間",
+    "title": "樹頭在廟內、樹身在外：興安宮老榕樹",
+    "summary": "文山區公所刊文引述興安宮前主委賴琳松，稱老榕樹在開宮前已茂盛，樹蔭曾供孩童遊戲、老人休憩。歷經廟宇擴建，樹根被廟牆圍入，形成樹頭在內、樹身在外的景象；修剪前擲筊請示的故事，反映居民將樹與土地公信仰相連的地方記憶。",
+    "evidenceScope": "specific-tree",
+    "verificationStatus": "source-supported",
+    "limitations": "建廟前樹況、樹齡及修剪夢境均為官網保存的口述記憶；擲筊與夢境只作民俗敘事，不當作超自然事件的史實。頁面未明示出版年，不把「近百歲」換算為種植年或現齡。",
+    "sources": [
+      {
+        "title": "《真奇廟》樹頭在廟內 樹身在外",
+        "publisher": "臺北市文山區公所",
+        "url": "https://wsdo.gov.taipei/News_Content.aspx?n=D4057E6FCFAC77AF&s=4C07F836DF5E13C3",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "正文「興安宮旁年近百歲的老樹」及修剪敘事段落；文／攝影黃怡仁",
+        "excerpt": "這棵老樹在興安宮開宮之前就已十分茂盛，樹蔭下是當年孩童嬉戲、老人休憩的好去處"
+      }
+    ]
+  },
+  {
+    "id": "community-yangming-et-donation",
+    "species": [
+      "寒櫻"
+    ],
+    "location": "臺北市陽明公園櫻花溪流區",
+    "period": "2019年",
+    "title": "東森捐百株寒櫻，也接下日常維護",
+    "summary": "公園處2019年新聞稿記錄，東森文化基金會在「植樹共護林．台北好森活」活動捐贈並認養陽明公園櫻花溪流區，該次新植100株均為寒櫻；除捐樹外，也認養該區日常維護，將賞花景觀與民間持續照護相連。",
+    "evidenceScope": "site-history",
+    "verificationStatus": "source-supported",
+    "limitations": "此案可確認捐贈者、樹種、數量與認養區域，但未取得逐株清冊、定植位置及後續存活資料；不得將溪流區全部櫻花或今日每株寒櫻皆歸於此次捐贈。",
+    "sources": [
+      {
+        "title": "「植樹共護林．台北好森活」東森捐百株櫻花樹 豎立認養新典範",
+        "publisher": "臺北市政府工務局公園路燈工程管理處",
+        "url": "https://pkl.gov.taipei/News_Content.aspx?n=43E05059FCC72525&s=673A8B2C15249D45",
+        "publishedAt": "2019-11-27",
+        "accessedAt": "2026-10-24",
+        "locator": "正文第2至3段；原HTML datePublished／發布日期108-11-27",
+        "excerpt": "本次「植樹共護林．台北好森活」認養新植100株樹木皆為寒櫻"
+      }
+    ]
+  },
+  {
+    "id": "community-yongkang-preservation",
+    "species": [
+      "未載明樹種"
+    ],
+    "location": "臺北市大安區永康公園與永康社區",
+    "period": "1990年代（來源記為民國83年起）",
+    "title": "護樹把鄰居組織起來：永康社區發展協會",
+    "summary": "生命力新聞訪問居民林碧霞，記錄永康公園因道路拓寬面臨失去五十多棵樹；台大學生與附近居民奔走尋求保留，護樹成功後進而成立永康社區發展協會，並透過居民技能與活動維繫社區。",
+    "evidenceScope": "site-history",
+    "verificationStatus": "source-supported",
+    "limitations": "採用實際讀到的訪談報導，不統一不同資料所載1994／1995年、學生姓名與樹木數量差異；原文作陳心儀，其他來源有不同寫法。此來源未交代樹種、個別樹號或今日存續，故不把現存任一樹當作當年原株。",
+    "sources": [
+      {
+        "title": "護樹運動 讓永康社區動起來",
+        "publisher": "生命力新聞",
+        "url": "https://vita.tw/%E8%AD%B7%E6%A8%B9%E9%81%8B%E5%8B%95-%E8%AE%93%E6%B0%B8%E5%BA%B7%E7%A4%BE%E5%8D%80%E5%8B%95%E8%B5%B7%E4%BE%86/",
+        "publishedAt": null,
+        "accessedAt": "2026-10-24",
+        "locator": "正文第1至3段；居民林碧霞回憶",
+        "excerpt": "不僅將永康公園的樹保留下來，而且進而成立了「永康社區發展協會」。"
+      }
+    ]
+  }
+]
