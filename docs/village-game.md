@@ -140,3 +140,42 @@ Verification: Node24.22.1 + installed Chrome; npm test; isolated root build test
 Audited supplement delivered: six genuine story photographs carry the Taipei government website open-data notice, not Creative Commons. story-media.js permits this exact notice only with www-ws.gov.taipei images and audited www.gov.taipei/pkl.gov.taipei source/license hosts; arbitrary license text is not accepted. check-social-story-media-browser.mjs verifies actual lazy catalogue→matching story ID→government image load and full caption/license/agency attribution (one live image). Latest complete unit run:172 total /171 pass /0 fail /1 existing skip. Root and prefix build/state+baseline/record gates passed; deterministic tiles do not assert new OSM/NLSC provider availability.
 
 Parent integration acceptance: empty story results remove the entire story section (including heading), while transport errors retain an explicit retry. API photos precede expandable traits/UUID/source metadata; reference photos never claim to depict the selected individual tree. Run `node scripts/check-social-media-e2e-browser.mjs` with VILLAGE_GAME_URL for Vite, built prefix or public origin: real same-name Flora lookup plus fully decoded photograph, original-story government image/credit, six axes, desktop/mobile and close-unwind. Source-module contract tests remain Vite-only.
+
+## Smooth camera and interruption
+
+The social map keeps fractional zoom (zoomSnap 0), native Leaflet tile / marker
+zoom and fade animation, half-level zoom buttons, 110 wheel pixels per level,
+and 35 ms wheel debounce. Village and tree-side-panel framing uses the existing
+80%-usable-area padding calculation over the full geometry (north bubble,
+toolbar and sidebar included), capped at zoom 18. Flights take 450 ms; closing
+village pulls back 1.25 levels in 400 ms from the **current** camera center, with
+the map minimum as floor. It never restores a saved pre-selection overview.
+Initial city framing is instant; explicit city reset remains available.
+
+Camera intents synchronously stop the previous flight before calculating a new
+one. There are no completion callbacks that reselect / refocus old villages.
+Pointer/touch/wheel and drag may interrupt flights; basemap toggles do not move
+the camera. Resize while selected immediately reapplies current responsive fit.
+Reduced-motion is live: flights settle instantly and native zoom animation is
+disabled only while the preference is enabled, then restored to Leaflet's
+original capability. Tree pointer/keyboard hit testing and overview hover
+preview are suspended during camera motion so cached canvas point positions
+cannot open a wrong record. Closing remains tree → village → overview.
+
+Read-only stage DOM diagnostics: data-camera-phase (idle/moving),
+data-camera-zoom, data-camera-lat and data-camera-lng. Tests wait for idle before
+geometry or tile-origin source-coordinate projection; no writable map test API.
+Leaflet's bounds calculation and native zoom transition finalizer are used
+internally to preserve exact padding and safely interrupt a native CSS zoom.
+
+Camera verification: node --test tests/camera-motion.test.mjs and
+VILLAGE_GAME_URL=<full-root-or-prefixed-url> node scripts/check-social-camera-browser.mjs.
+The public-compatible browser gate records rAF logical zoom plus actual polygon
+bounds and tile matrices, checks intermediate frames within the first 400 ms,
+three viewport sizes, fractional button/wheel movement, drag-center pullback
+(with subpixel Leaflet rounding tolerance), fast retarget / close / reset,
+live reduced-motion both ways, and a real CDP two-finger mobile pinch. Artifacts
+are written outside the repository to ~/.openclaw/media/social-camera. Existing
+state / baseline, actual source record hit quality and bounded real-media gates
+remain separate and retain all prior assertions. Remote test tiles are stubbed;
+these checks do not certify a basemap provider's availability.

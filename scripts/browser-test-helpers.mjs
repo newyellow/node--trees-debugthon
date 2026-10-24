@@ -12,3 +12,9 @@ export async function stubRemoteTiles(page) {
     return route.continue();
   });
 }
+
+// Wait through Leaflet fly/zoom/drag settling before projecting actual source records.
+export async function cameraIdle(page) {
+  await page.waitForTimeout(60); await page.waitForFunction(() => document.querySelector('#stage')?.dataset.cameraPhase !== 'moving');
+  await page.waitForFunction(() => document.querySelectorAll('.village-popup').length <= 1); await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+}

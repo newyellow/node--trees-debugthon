@@ -1,3 +1,4 @@
+import {cameraIdle} from './browser-test-helpers.mjs';
 import {chromium} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {readFile,mkdir} from 'node:fs/promises';
@@ -18,7 +19,7 @@ try{for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  await page.locator('#finder-toggle').click();await page.locator('#search').fill(chosen.name);await page.locator('#villages button').filter({hasText:chosen.district+'・'+chosen.name}).click();
  await page.waitForFunction(id=>{const c=document.querySelector('canvas[data-village-trees]');return c?.dataset.phase==='ready'&&c.dataset.villageId===id;},chosen.id);
  assert.equal(await page.locator('.village-overview .radar-axis-index').count(),6);assert.match(await page.locator('.rating-note').innerText(),/含模擬/);
- const canvas=page.locator('canvas[data-village-trees]');let position=0;
+ await cameraIdle(page);const canvas=page.locator('canvas[data-village-trees]');let position=0;
  for(const name of ['榕樹','樟樹']){
   const index=records.findIndex(r=>treeSpecies(r.feature)===name),steps=(index-position+records.length)%records.length;await canvas.focus();
   await canvas.evaluate((c,steps)=>{for(let i=0;i<steps;i++)c.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));},steps);position=index;await page.keyboard.press('Enter');
@@ -33,7 +34,7 @@ try{for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
    const story=page.locator('[data-story-id="inst-zhongshan-diplomatic-avenue"]');await story.waitFor();const img=story.locator('img');await img.waitFor();await img.evaluate(n=>n.loading='eager');await img.scrollIntoViewIfNeeded();await page.waitForFunction(()=>{const i=document.querySelector('[data-story-id="inst-zhongshan-diplomatic-avenue"] img');return i?.complete&&i.naturalWidth>0;});await img.evaluate(i=>i.decode());
    assert.match(await story.locator('figcaption').innerText(),/臺北市政府/);assert.ok(await page.locator('[data-story-group]').evaluateAll(ns=>ns.every(n=>n.querySelector('article'))));
   }
-  await page.screenshot({path:new URL(viewport.width+'-'+name+'.png',out).pathname});await page.keyboard.press('Escape');assert.equal(await page.locator('#stage').getAttribute('data-level'),'village');
+  await page.screenshot({path:new URL(viewport.width+'-'+name+'.png',out).pathname});await page.keyboard.press('Escape');await cameraIdle(page);assert.equal(await page.locator('#stage').getAttribute('data-level'),'village');
  }
- assert.equal(api.length,2);await page.keyboard.press('Escape');assert.equal(await page.locator('#stage').getAttribute('data-level'),'overview');assert.deepEqual(errors,[]);await page.close();
+ assert.equal(api.length,2);await page.keyboard.press('Escape');await cameraIdle(page);assert.equal(await page.locator('#stage').getAttribute('data-level'),'overview');assert.deepEqual(errors,[]);await page.close();
 }console.log(JSON.stringify({passed:true,url,village:chosen.id,viewports:2,realFlora:true,realStoryImage:true,sixAxes:true,errors:[]}));}finally{await browser.close();}

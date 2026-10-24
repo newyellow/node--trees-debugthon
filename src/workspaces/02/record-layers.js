@@ -54,7 +54,7 @@ export function buildTreeExclusions(records=[]) {
 }
 export function filterExcludedTreeRecords(features,excluded) {return excluded?.size?features.filter(f=>!excluded.has(String(f.properties.TreeID))):features;}
 
-export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () => {} }) {
+export function installRecordLayers({ map, host, isCameraMoving = () => false, base = '/', onFeatureOpen = () => {} }) {
   if (!map || !host) throw new Error('Record layers require map and host');
   const root = (base.endsWith('/') ? base.slice(0,-1) : base) + '/data/';
   let dead=false, initialized=false, pendingMetadata=null, district='',exclusionVersion=0,exclusionSignature='[]';
@@ -103,7 +103,7 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
     const canvas=renderer._container;if(!canvas||canvas.dataset.recordKeyboard)return;
     canvas.dataset.recordKeyboard='true';canvas.tabIndex=0;canvas.setAttribute('role','group');
     canvas.setAttribute('aria-label','資料圖徵：方向鍵逐筆瀏覽，Enter 或空白鍵開啟');let selected=0;
-    canvas.addEventListener('keydown',event=>{
+    canvas.addEventListener('keydown',event=>{if(isCameraMoving())return;
       const layers=[];for(let order=renderer._drawFirst;order;order=order.next)if(order.layer.options.interactive)layers.push(order.layer);
       if(!layers.length)return;
       if(['ArrowRight','ArrowDown','ArrowLeft','ArrowUp','Enter',' '].includes(event.key)){
@@ -155,7 +155,7 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
   }
   // Hit only real shapes. Empty canvas space must not steal village SVG events.
   const container=map.getContainer();
-  function hitRecord(event){
+  function hitRecord(event){if(isCameraMoving())return;
     if(priorityHitTest(event))return;
     if(map.dragging?.moved() || map.boxZoom?.moved())return;
     if(event.target.closest?.('.leaflet-popup, .leaflet-marker-icon, .leaflet-control'))return;
@@ -165,7 +165,7 @@ export function installRecordLayers({ map, host, base = '/', onFeatureOpen = () 
       layer.fire('preclick',data);layer.fire('click',data);return;
     }}
   }
-  function hoverRecord(event){
+  function hoverRecord(event){if(isCameraMoving())return;
     if(priorityHitTest(event))return;
     if(event.target.closest?.('.leaflet-popup, .leaflet-marker-icon, .leaflet-control'))return;
     const point=map.mouseEventToLayerPoint(event);

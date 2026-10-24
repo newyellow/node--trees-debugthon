@@ -99,7 +99,7 @@ export function createVillageTreeLoader({base = '/', expectedSnapshot, expectedS
   };
 }
 
-export function createVillageTrees({map, base = '/', statusHost, onFeatureOpen = () => {}, onFeatureClose = () => {}, villageInfo = () => ({}), onState = () => {}, expectedSnapshot, expectedSourceHashes}) {
+export function createVillageTrees({map, isCameraMoving = () => false, base = '/', statusHost, onFeatureOpen = () => {}, onFeatureClose = () => {}, villageInfo = () => ({}), onState = () => {}, expectedSnapshot, expectedSourceHashes}) {
   if (!map || !statusHost) throw new Error('Village trees require map and statusHost');
   const paneName = 'village-trees-' + L.Util.stamp(statusHost), pane = map.createPane(paneName);
   pane.style.zIndex = '470'; pane.style.pointerEvents = 'none'; pane.classList.add('village-trees-pane');
@@ -178,14 +178,15 @@ export function createVillageTrees({map, base = '/', statusHost, onFeatureOpen =
   const loader = createVillageTreeLoader({base,expectedSnapshot,expectedSourceHashes,changed:next => {void render(next);}});
   retry.onclick = () => loader.show(state.villageId,{preview:state.preview});
   function hitTestLayerPoint(point) {
+    if(isCameraMoving()) return false;
     return markers.some(({marker}) => marker._point && marker._point.distanceTo(point) <= 7);
   }
   function containsEvent(event) {
-    if (dead || map.dragging?.moved() || map.boxZoom?.moved() || event.target?.closest?.('.leaflet-popup,.leaflet-control,button,input,select,textarea,a')) return false;
+    if (dead || isCameraMoving() || map.dragging?.moved() || map.boxZoom?.moved() || event.target?.closest?.('.leaflet-popup,.leaflet-control,button,input,select,textarea,a')) return false;
     return hitTestLayerPoint(map.mouseEventToLayerPoint(event));
   }
   function hit(event) {
-    if (dead || map.dragging?.moved() || map.boxZoom?.moved() || event.target.closest?.('.species-panel,.leaflet-popup,.leaflet-control,button,input,select,textarea,a')) return;
+    if (dead || isCameraMoving() || map.dragging?.moved() || map.boxZoom?.moved() || event.target.closest?.('.species-panel,.leaflet-popup,.leaflet-control,button,input,select,textarea,a')) return;
     const p = map.mouseEventToLayerPoint(event);
     for (let i = markers.length-1; i >= 0; i--) {
       const {marker,record} = markers[i];
@@ -193,17 +194,20 @@ export function createVillageTrees({map, base = '/', statusHost, onFeatureOpen =
     }
   }
   function move(event){
+    if(isCameraMoving()){clearHover();return;}
     if(state.preview||event.target.closest?.('.species-panel,.leaflet-popup,.surface,.leaflet-control')){clearHover();return;}
     const p=map.mouseEventToLayerPoint(event);const hit=[...markers].reverse().find(({marker})=>marker._point&&marker._point.distanceTo(p)<=7);
     if(!hit){clearHover();return;}const name=treeSpecies(hit.record.feature);highlight(name);
     if(!tooltip){tooltip=L.tooltip({className:'tree-name-tooltip',direction:'top',offset:[0,-8],opacity:1}).setLatLng(hit.marker.getLatLng()).setContent(document.createTextNode(name)).addTo(map);}else tooltip.setLatLng(hit.marker.getLatLng()).setContent(document.createTextNode(name));
   }
   function keyboardPreview(){
+    if(isCameraMoving())return;
     const record=state.records[selected];if(!record||state.preview)return;const name=treeSpecies(record.feature);highlight(name);const [lng,lat]=record.feature.geometry.coordinates;
     if(!tooltip)tooltip=L.tooltip({className:'tree-name-tooltip',direction:'top',offset:[0,-8],opacity:1}).setLatLng([lat,lng]).setContent(document.createTextNode(name)).addTo(map);
     else tooltip.setLatLng([lat,lng]).setContent(document.createTextNode(name));
   }
   function key(event) {
+    if(isCameraMoving())return;
     if (!state.records.length || !['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter',' '].includes(event.key)) return;
     event.preventDefault(); event.stopPropagation();
     if (event.key.startsWith('Arrow')) {selected = (selected + (['ArrowLeft','ArrowUp'].includes(event.key) ? -1 : 1) + state.records.length) % state.records.length; const [lng,lat] = state.records[selected].feature.geometry.coordinates; if (!map.getBounds().contains([lat,lng])) map.panTo([lat,lng],{animate:false});}
