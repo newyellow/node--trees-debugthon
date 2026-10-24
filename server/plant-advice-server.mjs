@@ -1,8 +1,10 @@
+import {realpath} from 'node:fs/promises';
+import serveHandler from 'serve-handler';
 import http from 'node:http';
 import {isIP} from 'node:net';
 import {randomUUID} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-import {resolve} from 'node:path';
+import {resolve,sep} from 'node:path';
 import {pipeline} from 'node:stream/promises';
 import {loadGrounding} from './plant-advice-grounding.mjs';
 import {createModelClient} from './plant-advice-model.mjs';
@@ -48,8 +50,9 @@ function proxyStatic(req,res,upstream) {
   });
   upstreamReq.setTimeout(30000,()=>upstreamReq.destroy());upstreamReq.on('error',()=>{if(!res.headersSent)reply(res,502,{error:'靜態頁面暫時無法載入。'});else res.destroy();});res.on('close',()=>upstreamReq.destroy());upstreamReq.end();
 }
-export function createHandler({grounding,model=createModelClient(),limiter=createLimiter(),staticUpstream='http://127.0.0.1:5175',localOrigin}={}) {
-  if(!grounding?.get)throw new Error('Grounding required');const upstream=validateStaticUpstream(staticUpstream);
+export function createHandler({grounding,model=createModelClient(),limiter=createLimiter(),staticUpstream='http://127.0.0.1:5175',localOrigin,staticRoot}={}) {
+  if(!grounding?.get)throw new Error('Grounding required');const upstream=staticRoot?null:validateStaticUpstream(staticUpstream);
+  const staticOptions=staticRoot?{public:resolve(staticRoot),cleanUrls:false,directoryListing:false,symlinks:false,etag:true,headers:[{source:'**/*',headers:[{key:'X-Content-Type-Options',value:'nosniff'},{key:'Referrer-Policy',value:'strict-origin-when-cross-origin'}]}],rewrites:[{source:'/',destination:'/index.html'}]}:null;
   const origins=new Set([PUBLIC_ORIGIN]);if(localOrigin){const u=new URL(localOrigin);if(u.protocol!=='http:'||!['127.0.0.1','localhost'].includes(u.hostname)||u.origin!==localOrigin)throw new Error('Invalid local staging origin');origins.add(localOrigin);}
   return async(req,res)=>{
     const requestId=randomUUID();let release,streaming=false;const controller=new AbortController();const abort=()=>{if(!res.writableEnded){controller.abort();release?.();}};req.on('aborted',abort);res.on('close',abort);
@@ -83,6 +86,12 @@ export function createHandler({grounding,model=createModelClient(),limiter=creat
       }
       if(path.startsWith('/api')||/^\/(?:v1|ws|gateway)(?:\/|$)/i.test(path))throw new HttpError(404,'找不到此服務。');
       if(!['GET','HEAD'].includes(req.method))throw new HttpError(405,'不支援此請求。');
+      if(staticOptions){
+        if(path.split('/').some(segment=>segment.startsWith('.')))throw new HttpError(404,'找不到此檔案。');
+        // The handler rejects final-file symlinks; also contain intermediate directory symlinks.
+        try {const root=await realpath(staticOptions.public),target=await realpath(resolve(staticOptions.public,'.'+path));if(target!==root&&!target.startsWith(root+sep))throw new HttpError(404,'找不到此檔案。');}catch(error){if(!['ENOENT','ENOTDIR'].includes(error.code))throw error;}
+        return await serveHandler(req,res,staticOptions);
+      }
       return proxyStatic(req,res,upstream);
     }catch(error){
       const safe=error instanceof HttpError?error:new HttpError(503,'服務暫時無法使用，請手動重試。');
@@ -94,10 +103,12 @@ export function createHandler({grounding,model=createModelClient(),limiter=creat
 }
 export async function startServer(options={}) {
   const port=options.port??Number(process.env.PORT||6996);if(!Number.isInteger(port)||port<0||port>65535)throw new Error('Invalid port');
-  const grounding=options.grounding??await loadGrounding({root:process.env.ROOT_DIST||fileURLToPath(new URL('../dist',import.meta.url))});
-  const staticUpstream=options.staticUpstream??process.env.STATIC_UPSTREAM??'http://127.0.0.1:5175';
-  if(Number(new URL(staticUpstream).port)===port)throw new Error('Static proxy loop');
-  const server=http.createServer({maxHeaderSize:8192,requestTimeout:15000,headersTimeout:10000},createHandler({...options,grounding,staticUpstream,localOrigin:options.localOrigin??process.env.ADVICE_LOCAL_ORIGIN}));
+  const rootDist=options.rootDist??process.env.ROOT_DIST??fileURLToPath(new URL('../dist',import.meta.url));
+  const grounding=options.grounding??await loadGrounding({root:rootDist});
+  const staticUpstream=options.staticUpstream??process.env.STATIC_UPSTREAM;
+  const staticRoot=staticUpstream?undefined:rootDist;
+  if(staticUpstream&&Number(new URL(staticUpstream).port)===port)throw new Error('Static proxy loop');
+  const server=http.createServer({maxHeaderSize:8192,requestTimeout:15000,headersTimeout:10000},createHandler({...options,grounding,staticUpstream,staticRoot,localOrigin:options.localOrigin??process.env.ADVICE_LOCAL_ORIGIN}));
   server.maxConnections=64;
   server.on('upgrade',(_req,socket)=>socket.destroy());server.on('connect',(_req,socket)=>socket.destroy());
   await new Promise((yes,no)=>{server.once('error',no);server.listen(port,'127.0.0.1',yes);});return server;

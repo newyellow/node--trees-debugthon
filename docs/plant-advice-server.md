@@ -108,4 +108,35 @@ Verification: one focused prompt/request-fixture test with mock SSE, syntax chec
 
 ## Future production deployment port (2026-10-24)
 
-Default app entry is 127.0.0.1:6996 (npm start); PORT remains an explicit override. Vite dev and preview also use6996 with strictPort to avoid silently selecting another port. The app static upstream remains127.0.0.1:5175; serve dist there separately as documented, after building. Keep Gateway18789 private and unchanged. The existing demonstration LaunchAgent explicitly sets PORT5173, so this source-default change does not move or interrupt that existing public route. Future production hostname/reverse proxy should forward to6996 when that host is deployed; no Cloudflare route was changed here.
+Default app entry is 127.0.0.1:6996 (npm start); PORT remains an explicit override. Vite dev and preview also use6996 with strictPort to avoid silently selecting another port. By default the app now serves its built dist directory directly; no separate5175 service is required. Explicit STATIC_UPSTREAM retains the older split-service deployment. Keep Gateway18789 private and unchanged. The existing demonstration LaunchAgent explicitly sets PORT5173, so this source-default change does not move or interrupt that existing public route. Future production hostname/reverse proxy should forward to6996 when that host is deployed; no Cloudflare route was changed here.
+
+## Portable static serving correction (2026-10-24 18:03)
+
+`npm start` now serves built `dist/` and the advice API on one loopback entry6996. The former default5175 proxy caused `靜態頁面暫時無法載入。` on servers lacking the separate static process. Set STATIC_UPSTREAM only when deliberately using that legacy architecture; the current demonstration LaunchAgent already explicitly sets it and is not changed by this fix. ROOT_DIST optionally sets an absolute dist path; otherwise resolution is relative to the server source, not PM2 working-directory guesses.
+
+Production commands (Node24 recommended; Python3 needed for build):
+
+```sh
+git pull --ff-only
+npm ci --include=dev
+npm run build
+# First start:
+PORT=6996 NODE_ENV=production pm2 start npm --name trees -- start
+# Or update an existing trees process; empty STATIC_UPSTREAM clears an old proxy override:
+STATIC_UPSTREAM= PORT=6996 NODE_ENV=production pm2 restart trees --update-env
+pm2 save
+curl -f http://127.0.0.1:6996/
+curl -f http://127.0.0.1:6996/api/plant-advice/health
+```
+
+Merge into the existing Caddy site (replace example domain; preserve unrelated routes):
+
+```caddy
+example.com {
+    reverse_proxy 127.0.0.1:6996
+}
+```
+
+No Vite preview process or second static server is required. Static serving disables directory listings, clean-URL rewriting, dotfiles and final-file symlinks; realpath containment additionally blocks intermediate-directory symlink escapes. HEAD, MIME, Range and exact index.html routes are handled by pinned serve-handler6.1.7. Only dist is exposed; server sources and credentials remain outside. API/control route filtering remains in front of static serving.
+
+This fixes web-page delivery, not AI portability: the current Gateway address, runtime credential file and public-origin policy remain local-demo-specific. AI migration/cached-read integration requires a separate explicit change; health is not evidence of AI inference readiness. No live model call is used for this correction.
