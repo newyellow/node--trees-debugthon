@@ -52,8 +52,8 @@ try{
    await p.getByRole('button',{name:'清除篩選'}).click();
   }
   await p.screenshot({path:'test-results/tree-history-real-'+width+'.png',fullPage:true});
-  await p.getByRole('link',{name:'返回植物文化地層',exact:true}).click();
-  await p.getByRole('link',{name:'歷史文化資料表',exact:true}).click();
+  await p.getByRole('link',{name:'返回首頁',exact:true}).click();
+  await p.getByRole('link',{name:'進入植物文化地層',exact:true}).click();
   await p.locator('#filters').waitFor({state:'visible'});
   assert.equal((await p.reload()).status(),200);
   assert.deepEqual(errors,[]);await p.close();

@@ -14,3 +14,6 @@ Original SHA256:
 - styles.css: 0ca08f3d6c132ee13a043416466f782d5211ac566978b2956a4f250aed00bf68
 
 Do not publish Illustrator source, ZIP, previews, or internal handoff documents. Existing static service, backend, Cloudflare route, and public-access semantics are unchanged.
+
+## Entry selection — 2026-10-24 15:17
+Newyellow requested only 植物文化地層 (stories/research/index.html, real story database) and 鄰里共生實驗 (workspaces/02/index.html) on the homepage. Explorer/planner are hidden from the homepage, not deleted. Original SVG/CSS/animation bytes remain unchanged.
