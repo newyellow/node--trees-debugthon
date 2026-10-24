@@ -12,6 +12,7 @@ const api=()=>requests.filter(r=>r.url.includes('/api/v1/plants/'));
 let terrainDelay=0;
 if(!realTerrain)await page.route('https://api.open-meteo.com/v1/elevation**',async r=>{await new Promise(resolve=>setTimeout(resolve,terrainDelay));await r.fulfill({contentType:'application/json',body:JSON.stringify({elevation:[12]})});});
 await page.route(/https:\/\/[^/]*tile.openstreetmap.org\//,r=>r.fulfill({contentType:'image/png',body:pixel}));
+if(!real)await page.route(url=>['en.wikipedia.org','www.wikidata.org','commons.wikimedia.org'].includes(url.hostname)&&url.pathname==='/w/api.php',r=>r.fulfill({json:{query:{pages:{}}}}));
 if(!real)await page.route('https://example.org/photo.png',r=>r.fulfill({contentType:'image/png',body:pixel}));
 const plant={id:'963ec644-2763-494c-ab4f-7649c5a73f6c',scientific_name:'Test plant',vernacular_name_zh:'測試植物',plant_form:'tree',sun_exposure:'全日照',water_needs:null,elevation_min:0,elevation_max:9000,image_url:'https://example.org/photo.png',image_license:'cc0',description:'SECRET_UNLICENSED_TEXT'};
 let responseMode='normal',delay=0;
