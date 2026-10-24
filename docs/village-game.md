@@ -191,3 +191,7 @@ The selected-tree sidebar reserves stable hosts in this order: plant photos, cul
 ## Minimal toolbar and indicator navigation
 
 Overview hover retains village name and visual fractional stars only; numeric rating and DEMO text are available to assistive technology/details but not drawn beneath the hover stars. Toolbar contains only basemap, record layers and finder; retired city-reset, capability/method, dynamic passport and tree-legend toolbar entries are removed. Village details open 指標含義, combining capability legend and full method/provenance. Back, close or Escape restore village details and keyboard focus without camera movement or changing selected village. Global DEMO disclosure remains. Focused smoke: scripts/check-social-toolbar-browser.mjs. Old broad gates no longer attempt intentionally deleted reset/tree-legend controls; interaction feel remains user-tested.
+
+## Roomier selected-village framing
+
+Selected-village framing now uses a five-percent viewport margin above the combined north bubble/village and below the village. The separate toolbar-height reservation and old ten-percent vertical breathing room are removed; north-bubble and sidebar/horizontal clearance remain. Menu DEMO banner is removed; simulation/proxy disclosures remain in village details, indicator meanings and accessible labels. Visual zoom/fullness acceptance is explicitly user-owned; only unit arithmetic/build and normal public loading are release checks for this adjustment.

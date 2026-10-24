@@ -35,7 +35,7 @@ function fitVillage(instant = false) {
   if ($('species-panel')) $('species-panel').style.top = toolbar + 'px';
   camera.fit(layers.get(selected).getBounds(), {
     maxZoom: 18,
-    ...villageFitPadding(innerWidth, innerHeight, {bubble: bubble + 18, sidebar, toolbar})
+    ...villageFitPadding(innerWidth, innerHeight, {bubble: bubble + 18, sidebar})
   }, instant);
 }
 function clearSelection() {
@@ -225,6 +225,5 @@ for(const item of [...CAPABILITIES, {label:'多項正值能力並列最高',colo
 $('detail-method').onclick=()=>openPanel('method',$('detail-method'));
 $('indicator-back').onclick=()=>closePanel('method');
 $('clear-village-trees').onclick=()=>{map.closePopup(popup);clearSelection();};
-const demoBanner=el('div','原型 DEMO｜鳥蟲／回報為模擬；綜合星等含模擬資料，非生態評鑑。','demo-banner');document.querySelector('.toolbar').append(demoBanner);
 for(const p of document.querySelectorAll('#legend p,#method p')){if(p.textContent.includes('原生比例、鳥蟲缺資料'))p.textContent='六項均參與著色與綜合星等：三項快照指標、藍圖原生代理、鳥蟲／回報 DEMO（非真實觀測）。';if(p.textContent.includes('沒有原生分類對照'))p.textContent=p.textContent.replace('沒有原生分類對照、鳥蟲可靠觀測時不給數字。','原生比例另用藍圖名稱代理；鳥蟲與回報為 seeded DEMO，不是可靠觀測。');if(p.textContent==='沒有帳號、總分、上傳或儲存紀錄。')p.textContent='沒有帳號、真實回報、上傳或儲存紀錄。綜合星等含兩項模擬，不是使用者評價。';}
 setLevel('overview');$('retry').onclick = load; load();

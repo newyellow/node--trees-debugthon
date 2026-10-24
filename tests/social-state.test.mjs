@@ -19,9 +19,9 @@ test('real456 enriched snapshot stars independently reproducible',async()=>{
  const metrics=JSON.parse(await readFile(new URL('../public/data/social-metrics.json',import.meta.url)));
  for(const v of applySocialMetrics(game,metrics).villages)assert.equal(compositeRating(v.scores),Math.round(Object.values(v.scores).reduce((a,b)=>a+b,0)/6/20*10)/10);
 });
-test('one level unwind and responsive 80% geometry reservation',()=>{
+test('one level unwind and five-percent vertical frame without extra toolbar reservation',()=>{
  assert.equal(unwindLevel('tree'),'village');assert.equal(unwindLevel('village'),'overview');
  for(const [width,height,sidebar]of [[1440,1000,360],[390,844,168],[667,375,285]]){
- const p=villageFitPadding(width,height,{bubble:160,toolbar:115,sidebar});assert.ok(p.paddingTopLeft[0]>0);assert.ok(p.paddingTopLeft[1]>=275);assert.ok(p.paddingBottomRight[0]>sidebar);assert.ok(p.paddingBottomRight[1]>32);
+ const p=villageFitPadding(width,height,{bubble:160,toolbar:115,sidebar});assert.ok(p.paddingTopLeft[0]>0);assert.equal(p.paddingTopLeft[1],160+height*.05);assert.ok(p.paddingBottomRight[0]>sidebar);assert.equal(p.paddingBottomRight[1],height*.05);
  }
 });
