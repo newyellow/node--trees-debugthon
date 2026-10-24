@@ -10,18 +10,13 @@ import {HttpError,validateRequest,formatResponse} from './plant-advice-validatio
 export const PUBLIC_ORIGIN='https://trees.piyellowclaw.xyz';
 const loopback=ip=>['127.0.0.1','::1','::ffff:127.0.0.1'].includes(ip);
 export function requestIP(req) {const peer=req.socket.remoteAddress;const cf=req.headers['cf-connecting-ip'];return loopback(peer)&&typeof cf==='string'&&isIP(cf) ? cf : peer || 'unknown';}
-export function createLimiter({now=Date.now,maxKeys=2048}={}) {
-  const ips=new Map();let hour={until:0,count:0},day={until:0,count:0},active=0;
-  return {acquire(ip) {
-    const t=now();for(const [key,v]of ips)if(v.until<=t)ips.delete(key);
-    if(t>=hour.until)hour={until:t+3600000,count:0};if(t>=day.until)day={until:t+86400000,count:0};
-    const row=ips.get(ip)||{until:t+600000,count:0};
-    const blocked=row.count>=6?row:hour.count>=30?hour:day.count>=120?day:null;
-    if(blocked)throw new HttpError(429,'請稍後再試。',Math.max(1,Math.ceil((blocked.until-t)/1000)));
-    if(active>=2||(!ips.has(ip)&&ips.size>=maxKeys))throw new HttpError(503,'服務忙碌，請稍後手動重試。',30);
-    row.count++;ips.set(ip,row);hour.count++;day.count++;active++;
-    let released=false;return ()=>{if(!released){released=true;active--;}};
-  },get size(){return ips.size;}};
+// Admission protects concurrent resources only; there are no per-IP/hour/day quotas.
+export function createLimiter() {
+  let active=0;
+  return {acquire() {
+    if(active>=2)throw new HttpError(503,'服務忙碌，請稍後手動重試。',30);
+    active++;let released=false;return ()=>{if(!released){released=true;active--;}};
+  },get active(){return active;}};
 }
 export function validateStaticUpstream(value='http://127.0.0.1:5175') {
   const u=new URL(value);if(u.protocol!=='http:'||!['127.0.0.1','localhost'].includes(u.hostname)||!u.port||Number(u.port)===18789||u.username||u.password||u.pathname!=='/'||u.search||u.hash)throw new Error('Invalid static upstream');return u;

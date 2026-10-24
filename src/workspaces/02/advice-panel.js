@@ -1,10 +1,11 @@
+import {presentText} from './progressive-text.js';
 import {API, createClient, identityWarning, safeHTTPS} from '../03/model.js';
 import {exactPlants, lookupName, normalizeName, referenceImage} from './flora-lookup.js';
 import {createWikiFigureSession, createWikiImages, scientificName} from '../../shared/wiki-plant-images.js';
 
 export const INITIAL_MESSAGES = Object.freeze({
-  planting: '請依這個里的資料提供初步種樹建議，說明四區綠網願景；區分藍圖、待覆核資料與現地調查，不將建議當作已核定種植計畫。',
-  home: '請協助我選居家植物，先詢問日照、空間與寵物等條件；不需要地址，不將四區藍圖的 19 個原圖用名直接當作適合所有居家的清單。'
+  planting: '請先依這個里的公開樹木統計與來源名稱，提供簡短概括的種樹建議，並說明四區綠網未來願景；不要先要求填答或連續詢問條件。區分構想與現地查核，不將建議當作已核定計畫；最後可簡短邀請繼續討論。',
+  home: '請先根據所選里的公開資料，給出簡短概括的居家與陽台綠化建議，不要先要求填答或列出問卷。以不同日照、空間和寵物情境提供條件式方向，不推定我家的實際條件，不將四區藍圖的19個用名一律當作室內適種清單；最後可簡短邀請繼續討論。'
 });
 export const boundedHistory = history => (Array.isArray(history) ? history : []).filter(m => ['user','assistant'].includes(m?.role) && typeof m.content === 'string').slice(-8).map(m => ({role:m.role,content:m.content.slice(0,1200)}));
 // Root-scoped proxy even when static assets use /review/. No remote origin from base.
@@ -33,71 +34,73 @@ const link = (title,url) => {const node=el('a',title);node.href=url;node.target=
  * onVision is called once per planting conversation, only for structured tour intent.
  * Import advice-panel.css from integrating entry. No browser Gateway state is used.
  */
-export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()=>{},fetcher=(...args)=>fetch(...args)}={}) {
+export function createAdvicePanel({base='/',container,onVision=()=>{},onClose=()=>{},fetcher=(...args)=>fetch(...args),media=globalThis.matchMedia?.('(prefers-reduced-motion: reduce)')}={}) {
   if (!container?.append) throw Error('建議面板需要 container');
   const panel=el('aside'); panel.className='advice-panel';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-label','AI 植物建議');panel.tabIndex=-1;
   const heading=el('h2'),closeButton=button('✕');closeButton.className='advice-close';closeButton.setAttribute('aria-label','關閉 AI 建議');
-  const notice=el('p','AI 試用：訊息與所選里的公開資料會交由 AI 處理，對話可能保留於服務端；請勿提供地址、姓名或其他個資。回覆可能有誤，並非現地鑑定、寵物安全或施工保證。');notice.className='advice-notice';
+  const notice=el('p','對話由 AI 處理並可能保留，請勿提供個資。建議僅供參考，適地性與人寵安全仍需確認。');notice.className='advice-notice';
   const policy=el('p'),log=el('div');log.className='advice-log';log.setAttribute('role','log');log.setAttribute('aria-label','建議對話');log.setAttribute('aria-live','polite');log.setAttribute('aria-relevant','additions');
   const status=el('p');status.className='advice-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
-  const form=el('form'),label=el('label','補充條件或繼續提問（最多 1200 字）'),input=el('textarea');input.name='message';input.maxLength=1200;input.rows=3;label.append(input);
-  const send=el('button','傳送');send.type='submit';const retry=button('手動重試'),stop=button('取消產生');retry.hidden=true;stop.hidden=true;
-  const controls=el('div');controls.className='advice-controls';controls.append(send,retry,stop);form.append(label,controls);panel.append(closeButton,heading,notice,policy,log,status,form);container.append(panel);
+  const form=el('form'),label=el('label','想進一步聊聊？'),input=el('textarea');form.className='advice-composer';form.hidden=true;input.name='message';input.maxLength=1200;input.rows=3;label.append(input);
+  const send=el('button','傳送');send.type='submit';const retry=button('重試'),stop=button('停止');retry.hidden=true;stop.hidden=true;
+  const controls=el('div');controls.className='advice-controls';controls.append(retry,stop);form.append(label,send);const footnotes=el('footer');footnotes.className='advice-footnotes';footnotes.append(notice,policy);panel.append(closeButton,heading,log,status,form,controls,footnotes);container.append(panel);
   const flora=createClient(fetcher),wikiResolver=createWikiImages({fetcher});let figures=createWikiFigureSession({resolver:wikiResolver});
-  let generation=0,controller,busy=false,current,trigger,history=[],last=null,visionPlayed=false,cooldown=0;
-  function busyState(value){busy=value;panel.setAttribute('aria-busy',String(value));send.disabled=value;stop.hidden=!value;input.disabled=value;}
+  let generation=0,controller,busy=false,current,trigger,history=[],last=null,visionPlayed=false,composerReady=false,tourHandle=null;
+  function busyState(value){busy=value;panel.setAttribute('aria-busy',String(value));form.hidden=!composerReady;send.disabled=value;stop.hidden=!value;input.disabled=value;}
   function cancelImages(){flora.cancel();figures.cancel();figures=createWikiFigureSession({resolver:wikiResolver});}
-  function cancel(){generation++;controller?.abort();cancelImages();const wasBusy=busy;busyState(false);if(wasBusy){status.textContent='已取消產生；先前回覆已保留。';retry.hidden=!last;}}
-  function close(focus=true){cancel();panel.hidden=true;onClose();if(focus&&trigger?.isConnected)trigger.focus({preventScroll:true});}
-  function appendTurn(role,text){const row=el('article');row.className='advice-turn advice-turn--'+role;row.append(el('h3',role==='user'?'你':'AI 建議'),el('p',text));log.append(row);while(log.children.length>16)log.firstElementChild.remove();return row;}
+  function cancel({reveal=true,notify=true}={}){generation++;controller?.abort();tourHandle?.cancel?.();tourHandle=null;cancelImages();const wasBusy=busy;if(reveal&&!panel.hidden)composerReady=true;busyState(false);for(const node of log.querySelectorAll('.advice-answer[aria-hidden]'))node.removeAttribute('aria-hidden');if(wasBusy&&notify){panel.dataset.phase='cancelled';status.textContent='已停止，可繼續提問或重試。';retry.hidden=!last;}}
+  function close(focus=true){cancel({reveal:false,notify:false});panel.hidden=true;composerReady=false;form.hidden=true;onClose();if(focus&&trigger?.isConnected)trigger.focus({preventScroll:true});}
+  function appendTurn(role,text){const row=el('article');row.className='advice-turn advice-turn--'+role;const answer=el('p',text);answer.className='advice-answer';row.append(el('h3',role==='user'?'你':'建議'),answer);log.append(row);while(log.children.length>16)log.firstElementChild.remove();return row;}
   async function pictures(host,plants,token){
-    if(!plants.length)return;host.append(el('p','物種參考照片，非所選里現存樹木。僅查完全同中文名的 API 資料；有同名候選時分列學名，不自動合併分類或判定適種。'));
+    if(!plants.length)return;host.append(el('p','植物參考照片，非本里現存樹木或適種鑑定。'));
     for(const plant of plants){
       if(token!==generation||panel.hidden)return;const section=el('section');section.className='advice-plant-images';section.append(el('h4',plant.name));host.append(section);
       if(!lookupName(plant.name)||(plant.scientificName!==undefined&&!scientificName(plant.scientificName))){section.append(el('p','缺少可確認的植物用名，未配圖。'));continue;}
       try{
         const url=new URL(API);url.searchParams.set('q',plant.name);url.searchParams.set('limit','12');const matches=referenceCandidates(await flora.get(url.href),plant);
-        if(token!==generation||panel.hidden)return;if(!matches.length){section.append(el('p','沒有同中文名且身分相符的 API 資料，未以近似名稱配圖。'));continue;}
-        if(matches.length>1)section.append(el('p','同名 API 候選 '+matches.length+' 筆（最多展示前兩筆參考照）；以下分類身分未合併，也不代表 AI 已選定。'));
+        if(token!==generation||panel.hidden)return;if(!matches.length){section.append(el('p','暫無可確認身分的參考照片。'));continue;}
+        if(matches.length>1)section.append(el('p','同名植物候選 '+matches.length+' 筆，以下以學名分列，尚未確定分類身分。'));
         for(const p of matches.slice(0,2)){
           const figure=el('figure'),image=referenceImage(p);section.append(figure);
-          if(image){const img=el('img');img.alt=plant.name+'｜'+p.scientific_name+'（API 候選參考照，非現存樹鑑定）';img.loading='lazy';img.referrerPolicy='no-referrer';img.src=image.url;const cap=el('figcaption',plant.name+' · '+p.scientific_name+' · '+image.attribution+' · '+image.license+' · ');cap.append(link('圖片來源',image.source));figure.append(img,cap);img.addEventListener('error',()=>{if(token===generation){img.remove();cap.prepend('照片無法載入 · ');}},{once:true});}
-          else figure.append(el('figcaption',plant.name+' · '+p.scientific_name+'：暫無 API 參考照片。'));figures.attach(figure,p,image,{blocked:!!identityWarning(p)});
+          if(image){const img=el('img');img.alt=plant.name+'｜'+p.scientific_name+'（參考照片，非現存樹鑑定）';img.loading='lazy';img.referrerPolicy='no-referrer';img.src=image.url;const cap=el('figcaption',plant.name+' · '+p.scientific_name+' · '+image.attribution+' · '+image.license+' · ');cap.append(link('圖片來源',image.source));figure.append(img,cap);img.addEventListener('error',()=>{if(token===generation){img.remove();cap.prepend('照片無法載入 · ');}},{once:true});}
+          else figure.append(el('figcaption',plant.name+' · '+p.scientific_name+'：暫無參考照片。'));figures.attach(figure,p,image,{blocked:!!identityWarning(p)});
         }
-      }catch{if(token===generation)section.append(el('p','參考照片查詢未完成；請稍後再試，未用近似植物替代。'));}
+      }catch{if(token===generation)section.append(el('p','參考照片暫時未能載入。'));}
     }
   }
-  async function request(message,{repeat=false}={}){
-    if(busy || panel.hidden)return;
-    if(Date.now()<cooldown){status.textContent='服務限流，約 '+Math.ceil((cooldown-Date.now())/1000)+' 秒後可手動重試。';return;}
+  async function request(message,{repeat=false,initial=false}={}){
+    if(busy||panel.hidden)return;
     message=String(message).trim().slice(0,1200);if(!message)return;
-    cancel();const token=generation;controller=new AbortController();const signal=controller.signal;
-    const prior=boundedHistory(history);if(!repeat){last={message,history:prior};appendTurn('user',message);}else if(!last)return;
+    cancel({reveal:false,notify:false});const token=generation;controller=new AbortController();const signal=controller.signal;
+    const prior=boundedHistory(history);if(!repeat){last={message,history:prior,initial};if(!initial)appendTurn('user',message);}else if(!last)return;
+    if(repeat?last.initial:initial)composerReady=false;
     const payload={villageId:current.id,mode:current.mode,message,history:[...(repeat?last.history:prior)]};
     while(new TextEncoder().encode(JSON.stringify(payload)).byteLength>15000&&payload.history.length)payload.history.shift();
-    retry.hidden=true;busyState(true);status.textContent='AI 正在產生建議…';
-    const timer=setTimeout(()=>{if(controller?.signal===signal)controller.abort();},60000);
+    retry.hidden=true;busyState(true);panel.dataset.phase='loading';status.textContent='正在整理建議…';
+    const currentController=controller,timer=setTimeout(()=>currentController.abort(),60000),clearNetworkTimer=()=>clearTimeout(timer);signal.addEventListener('abort',clearNetworkTimer,{once:true});let failureText='暫時未能回覆，請重試。';
     try{
       const response=await fetcher(adviceEndpoint(base),{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','Accept':'application/json'},signal,body:JSON.stringify(payload)});
-      if(!response.ok){if(response.status===429){const raw=response.headers?.get('Retry-After'),seconds=Number(raw);cooldown=Math.max(Date.now()+1000,raw && Number.isFinite(seconds)?Date.now()+seconds*1000:Date.parse(raw)||Date.now()+60000);}throw Error('HTTP '+response.status);}
-      const result=validateAdvice(await response.json());if(token!==generation || signal.aborted || panel.hidden)return;
-      cancelImages();history=boundedHistory([...payload.history,{role:'user',content:message},{role:'assistant',content:result.answer}]);
-      const row=appendTurn('assistant',result.answer);
-      if(result.sources.length){const sources=el('details'),summary=el('summary','AI 引用來源（仍需覆核）'),list=el('ul');for(const s of result.sources){const item=el('li');item.append(s.url?link(s.title,s.url):el('span',s.title+'（未提供可用來源網址）'));list.append(item);}sources.append(summary,list);row.append(sources);}
-      status.textContent='已收到 AI 回覆。';last=null;input.value='';
-      // Structured intent only. Home mode never invokes map navigation.
-      if(current.mode==='planting'&&result.tour&&!visionPlayed){visionPlayed=true;try{onVision();}catch{status.textContent='已收到回覆；願景導覽暫時無法開啟。';}}
-      void pictures(row,result.plants,token);
-    }catch{if(token===generation && !panel.hidden){status.textContent=Date.now()<cooldown?'服務限流，約 '+Math.ceil((cooldown-Date.now())/1000)+' 秒後可手動重試。':signal.aborted?'產生逾時；請手動重試。':'AI 服務未完成回覆，請手動重試。先前回覆已保留。';retry.hidden=false;}}
-    finally{clearTimeout(timer);if(token===generation)busyState(false);}
+      if(!response.ok){if(response.status===429){const seconds=Number(response.headers?.get('Retry-After'));failureText=seconds>0&&seconds<=3600?'回覆暫時忙碌，可約 '+Math.ceil(seconds)+' 秒後重試。':'回覆暫時忙碌，請稍後重試。';}throw Error('HTTP '+response.status);}
+      const result=validateAdvice(await response.json());clearNetworkTimer();if(token!==generation||signal.aborted||panel.hidden)return;
+      cancelImages();const row=appendTurn('assistant',''),answer=row.querySelector('.advice-answer');row.setAttribute('aria-live','off');answer.setAttribute('aria-hidden','true');panel.dataset.phase='presenting';status.textContent='';
+      let tourNote='',tourFinished=Promise.resolve();
+      const typing=presentText(answer,result.answer,{signal,media}).then(complete=>{if(complete&&token===generation&&!panel.hidden&&tourHandle){panel.dataset.phase='tour';status.textContent='願景導覽進行中…';}return complete;});
+      if(current.mode==='planting'&&result.tour&&!visionPlayed){visionPlayed=true;if(!media?.matches){try{tourHandle=onVision()||null;tourFinished=Promise.resolve(tourHandle?.finished).catch(()=>{tourHandle?.cancel?.();tourNote='導覽暫時未能完成，仍可繼續討論。';});}catch{tourNote='導覽暫時無法開啟，仍可繼續討論。';}}}
+      const [complete]=await Promise.all([typing,tourFinished]);if(!complete||token!==generation||signal.aborted||panel.hidden)return;
+      answer.removeAttribute('aria-hidden');row.removeAttribute('aria-live');history=boundedHistory([...payload.history,{role:'user',content:message},{role:'assistant',content:result.answer}]);
+      if(result.sources.length){const sources=el('details'),summary=el('summary','參考來源'),list=el('ul');sources.className='advice-sources';for(const source of result.sources){const item=el('li');item.append(source.url?link(source.title,source.url):el('span',source.title));list.append(item);}sources.append(summary,list);row.append(sources);}
+      composerReady=true;panel.dataset.phase='ready';status.textContent=tourNote;last=null;input.value='';void pictures(row,result.plants,token);
+    }catch{if(token===generation&&!panel.hidden){composerReady=true;panel.dataset.phase='error';status.textContent=signal.aborted?'回覆逾時，可重試或繼續提問。':failureText;retry.hidden=false;}}
+    finally{clearNetworkTimer();signal.removeEventListener('abort',clearNetworkTimer);if(token===generation){tourHandle=null;busyState(false);}}
   }
-  form.addEventListener('submit',event=>{event.preventDefault();void request(input.value);});retry.onclick=()=>{if(last)void request(last.message,{repeat:true});};stop.onclick=cancel;closeButton.onclick=close;
+  form.addEventListener('submit',event=>{event.preventDefault();void request(input.value);});retry.onclick=()=>{if(last)void request(last.message,{repeat:true,initial:last.initial});};stop.onclick=()=>cancel();closeButton.onclick=()=>close();
   panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();event.stopPropagation();close();}});
+  const pagehide=()=>close(false);globalThis.addEventListener?.('pagehide',pagehide);
   return {open({village,mode='planting',trigger:source}={}){
     if(!village || typeof village.id!=='string' || !village.id.trim() || village.id.length>100 || !Object.hasOwn(INITIAL_MESSAGES,mode))throw Error('需要有效所選里與建議模式');
-    cancel();current={id:village.id,mode};trigger=source||document.activeElement;history=[];last=null;visionPlayed=false;log.replaceChildren();input.value='';retry.hidden=true;
+    cancel({reveal:false,notify:false});composerReady=false;current={id:village.id,mode};trigger=source||document.activeElement;history=[];last=null;visionPlayed=false;log.replaceChildren();input.value='';retry.hidden=true;
     heading.textContent=[village.district,village.name||village.id].filter(Boolean).join('・')+'｜'+(mode==='planting'?'種樹建議':'居家植物');
-    policy.textContent=mode==='planting'?'四區綠網是規劃藍圖，非已核定方案；適地適種仍需覆核現地、管線、日照與維護條件。':'居家建議會依日照、空間與寵物等條件討論；不把藍圖的 19 個原圖用名一律當作室內植物。';
-    panel.hidden=false;panel.dataset.mode=mode;panel.dataset.villageId=village.id;closeButton.focus({preventScroll:true});void request(INITIAL_MESSAGES[mode]);
-  },close,cancel,isOpen:()=>!panel.hidden};
+    policy.textContent=mode==='planting'?'四區綠網為構想示意，非已核定方案；適種與施工仍需現地查核。':'里內資料不代表家中環境；室內與陽台選擇仍須依實際光照、空間與人寵條件確認。';
+    panel.hidden=false;panel.dataset.mode=mode;panel.dataset.villageId=village.id;closeButton.focus({preventScroll:true});busyState(false);void request(INITIAL_MESSAGES[mode],{initial:true});
+  },close,cancel,isOpen:()=>!panel.hidden,destroy(){close(false);globalThis.removeEventListener?.('pagehide',pagehide);panel.remove();}};
 }

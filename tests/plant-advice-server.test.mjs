@@ -6,7 +6,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {startServer,createLimiter,requestIP,validateStaticUpstream,PUBLIC_ORIGIN} from '../server/plant-advice-server.mjs';
 import {loadGrounding,summarizeSourceSpecies} from '../server/plant-advice-grounding.mjs';
-import {createModelClient,GATEWAY_URL} from '../server/plant-advice-model.mjs';
+import {createModelClient,GATEWAY_URL,SYSTEM_PROMPT} from '../server/plant-advice-model.mjs';
 import {validateRequest,validateModelOutput,formatResponse,boundedRetryAfter} from '../server/plant-advice-validation.mjs';
 const input={villageId:'6300100002',mode:'planting',message:'請看未來願景',history:[]};
 const output={answer:'這是規劃構想，請由專業人員現勘。',plants:[{name:'樟樹'}],vision:true};
@@ -53,11 +53,15 @@ test('HTTP success, health, origin, content type, limits and unknown routes',asy
  assert.equal((await fetch(base+'/other',{method:'POST'})).status,405);assert.equal(calls,1);
 });
 test('invalid AI output remains honest 502; no fallback static answer',async t=>{const base=await fixture(t,{model:async()=>({bad:'reply'})});assert.equal((await post(base)).status,502);});
-test('limiter per IP, global hour/day, no queue, expiry, bound map and trusted peer',()=>{
- let now=0;const l=createLimiter({now:()=>now,maxKeys:2});const a=l.acquire('a'),b=l.acquire('b');assert.throws(()=>l.acquire('c'),e=>e.status===503);a();b();assert.throws(()=>l.acquire('c'),e=>e.status===503);for(let i=0;i<5;i++)l.acquire('a')();assert.throws(()=>l.acquire('a'),e=>e.status===429);now=600001;l.acquire('c')();assert.equal(l.size,1);
- let time=0;const global=createLimiter({now:()=>time});for(let hour=0;hour<4;hour++){for(let i=0;i<30;i++)global.acquire(hour+'-'+i)();assert.throws(()=>global.acquire('extra'),e=>e.status===429);time+=3600000;}assert.throws(()=>global.acquire('daily'),e=>e.status===429);time=86400001;global.acquire('next')();
+test('admission has no per-IP hourly or daily quota and still bounds concurrency',()=>{
+ const l=createLimiter();for(let i=0;i<1000;i++)l.acquire('same-ip')();assert.equal(l.active,0);
+ const a=l.acquire('a'),b=l.acquire('b');assert.equal(l.active,2);assert.throws(()=>l.acquire('c'),e=>e.status===503);a();a();assert.equal(l.active,1);l.acquire('c')();b();assert.equal(l.active,0);
  assert.equal(requestIP({socket:{remoteAddress:'10.0.0.2'},headers:{'cf-connecting-ip':'8.8.8.8'}}),'10.0.0.2');assert.equal(requestIP({socket:{remoteAddress:'127.0.0.1'},headers:{'cf-connecting-ip':'8.8.8.8'}}),'8.8.8.8');
  for(const u of ['https://127.0.0.1:5175','http://evil.invalid:5175','http://127.0.0.1:18789','http://127.0.0.1:5175/v1'])assert.throws(()=>validateStaticUpstream(u));
+});
+test('more than all old request thresholds pass sequential HTTP mock calls without clock reset',async t=>{
+ let calls=0;const base=await fixture(t,{model:async()=>{calls++;return output;}});
+ for(let i=0;i<125;i++){const response=await post(base);assert.equal(response.status,200,'mock dispatch '+i);await response.json();}assert.equal(calls,125);
 });
 test('static GET/HEAD streams exact paths and strips sensitive/hop headers across seven routes',async t=>{
  const paths=[];const staticServer=http.createServer((req,res)=>{paths.push(req.url);assert.equal(req.headers.authorization,undefined);assert.equal(req.headers.cookie,undefined);assert.equal(req.headers['cf-connecting-ip'],undefined);assert.equal(req.headers['x-openclaw-agent-id'],undefined);res.writeHead(200,{'content-type':'text/plain','set-cookie':'private=x','x-openclaw-token':'never','referrer-policy':'strict-origin-when-cross-origin','x-content-type-options':'nosniff'});res.end('static:'+req.url);});await new Promise(r=>staticServer.listen(0,'127.0.0.1',r));t.after(()=>close(staticServer));
@@ -80,3 +84,7 @@ test('mock inference timeout aborts and maps to sanitized 502',async()=>{
 });
 
 test('static redirects remain relative and never reveal private upstream origin',async t=>{const staticServer=http.createServer((_req,res)=>{res.writeHead(301,{location:'http://127.0.0.1:'+staticServer.address().port+'/explorer/'});res.end();});await new Promise(r=>staticServer.listen(0,'127.0.0.1',r));t.after(()=>close(staticServer));const base=await fixture(t,{staticUpstream:'http://127.0.0.1:'+staticServer.address().port});const response=await fetch(base+'/explorer',{redirect:'manual'});assert.equal(response.status,301);assert.equal(response.headers.get('location'),'/explorer/');});
+
+test('first-turn prompt gives broad guidance instead of an initial questionnaire',()=>{
+ assert.match(SYSTEM_PROMPT,/首次回覆先依所選里/);assert.match(SYSTEM_PROMPT,/不要先要求填答或連續盤問/);assert.match(SYSTEM_PROMPT,/不可由里資料推定真實住家/);assert.match(SYSTEM_PROMPT,/居家vision一律false/);
+});

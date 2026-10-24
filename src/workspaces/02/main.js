@@ -175,7 +175,7 @@ async function load() {
       map = L.map('map', { scrollWheelZoom: true, zoomControl: false, zoomAnimation: true, fadeAnimation: true, markerZoomAnimation:true, zoomSnap:0, zoomDelta:.5, wheelPxPerZoomLevel:110, wheelDebounceTime:35 }).setView([25.06,121.55],11);
       camera=createCameraMotion(map,{host:$('stage')});
       visionTour=createVisionTour({map,camera,leaflet:L,host:$('stage'),getRegions:()=>regions,getBasemap:()=>basemapKind,setBasemap:kind=>switchBasemap(kind)});
-      advice=createAdvicePanel({base,container:$('stage'),onVision:()=>{if(!adviceKnowledge)throw Error('願景資料暫不可用');return visionTour.start(adviceKnowledge);},onClose:()=>visionTour.cancel('advice-close')});
+      advice=createAdvicePanel({base,container:$('stage'),onVision:()=>{if(!adviceKnowledge)throw Error('願景資料暫不可用');const started=visionTour.start(adviceKnowledge);return started?{finished:visionTour.whenFinished(),cancel:()=>visionTour.cancel('advice-cancel')}:null;},onClose:()=>visionTour.cancel('advice-close')});
       switchBasemap('street');
       $('basemap').onchange=()=>{visionTour.cancel('manual-basemap',{restoreBasemap:false});switchBasemap($('basemap').value);};
       $('tile-retry').onclick=()=>switchBasemap($('tile-retry').textContent.includes('地形')?'terrain':$('tile-retry').textContent.includes('航照')?'aerial':basemapKind,true);
