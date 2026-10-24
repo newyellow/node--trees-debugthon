@@ -32,12 +32,10 @@ body{margin:0;width:100%;color:#213e2e;font-family:'PingFang TC','Microsoft Jhen
 
 /* Link hit regions share the artwork's undistorted 1920x1080 contain coordinates. */
 .author-links{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}
-.author-links a{pointer-events:auto;cursor:pointer;color:#e7edce}
+.author-links a{pointer-events:auto;cursor:pointer;color:#fff}
 .author-links rect{fill:transparent;stroke:none}
-.author-links .author-glyphs path{fill:currentColor;stroke:#014f35;stroke-width:.65px;vector-effect:non-scaling-stroke;paint-order:stroke}
-.author-links .author-underline{fill:none;stroke:currentColor;stroke-width:2.5px;vector-effect:non-scaling-stroke}
-.author-links a:hover,.author-links a:focus-visible{color:#97ca46}
-.author-links a:hover .author-glyphs path,.author-links a:focus-visible .author-glyphs path{stroke:#014f35}
-.author-links a:hover .author-underline{stroke-width:3.5px}
+.author-links .author-glyphs path{fill:currentColor;stroke:none}
+.author-links .author-underline{visibility:hidden;fill:none;stroke:currentColor;stroke-width:4px;vector-effect:non-scaling-stroke}
+.author-links a:hover,.author-links a:focus-visible{color:#fff}
 .author-links a:focus-visible{outline:none}
-.author-links a:focus-visible .author-underline{stroke-width:4px;stroke-dasharray:7 3}
+.author-links a:focus-visible .author-underline{visibility:visible;stroke-dasharray:7 3}
