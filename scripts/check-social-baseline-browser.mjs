@@ -1,3 +1,5 @@
+import {applySocialMetrics} from '../src/workspaces/02/social-metrics.js';
+import {compositeRating} from '../src/workspaces/02/social-state.js';
 import {chromium} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {readFile,mkdir} from 'node:fs/promises';
@@ -13,7 +15,7 @@ try{
  const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.route('https://*.tile.openstreetmap.org/**',r=>r.fulfill({contentType:'image/svg+xml',body:tile}));
  let failAerial=true;await page.route('https://wmts.nlsc.gov.tw/**',r=>failAerial?r.fulfill({status:503,body:'unavailable'}):r.fulfill({contentType:'image/svg+xml',body:tile}));
- await page.goto(url);await page.getByText('護照已就緒',{exact:false}).waitFor();
+ await page.route('https://flora-api.bankofculture.com/**',r=>r.fulfill({contentType:'application/json',body:'{"plants":[],"total":0}'}));await page.goto(url);await page.getByText('護照已就緒',{exact:false}).waitFor();
  assert.match(await page.locator('.leaflet-control-attribution').innerText(),/OpenStreetMap/);
  const polygon=page.locator('path[data-village="'+v.id+'"]');const initial=await polygon.boundingBox();
  const bbox=async()=>polygon.boundingBox();const same=(a,b)=>{for(const k of ['x','y','width','height'])assert.ok(Math.abs(a[k]-b[k])<2,JSON.stringify({a,b}));};
@@ -26,7 +28,7 @@ try{
  await page.locator('#finder-toggle').click();await page.locator('#reset').click();await page.keyboard.press('Escape');same(initial,await bbox());
  const choose=async entry=>{if(!await page.locator('#finder').isVisible())await page.locator('#finder-toggle').click();await page.locator('#search').fill(entry.name);await page.locator('#villages button').filter({hasText:entry.district+'・'+entry.name}).click();await page.waitForFunction(id=>document.querySelector('canvas[data-village-trees]').dataset.phase==='ready'&&document.querySelector('canvas[data-village-trees]').dataset.villageId===id,entry.id);};
  await choose(zero);assert.equal(await page.locator('canvas[data-village-trees]').getAttribute('data-rendered-count'),'0');assert.equal(await page.locator('#stage').getAttribute('data-level'),'village');assert.equal(await page.locator('.village-popup').count(),1);await page.keyboard.press('Escape');
- const zeroRating=data.villages.find(v=>Object.values(v.scores).filter(Number.isFinite).every(n=>n===0));await choose(zeroRating);assert.ok((await page.locator('.rating-note').innerText()).includes('0.0 / 5'));await page.keyboard.press('Escape');
+ const zeroRating=data.villages.find(v=>Object.values(v.scores).filter(Number.isFinite).every(n=>n===0));await choose(zeroRating);const scored=applySocialMetrics(data,JSON.parse(await readFile(new URL('../public/data/social-metrics.json',import.meta.url))));assert.ok((await page.locator('.rating-note').innerText()).includes(compositeRating(scored.villages.find(v=>v.id===zeroRating.id).scores).toFixed(1)+' / 5'));assert.match(await page.locator('.rating-note').innerText(),/含模擬資料/);await page.keyboard.press('Escape');
  await page.setViewportSize({width:667,height:375});await choose(v);
  const checkFit=async()=>{const b=await page.locator('.village-popup').boundingBox(),p=await bbox(),toolbar=await page.locator('.toolbar').boundingBox();assert.ok(b.x>=0&&b.x+b.width<=667&&b.y>=toolbar.y+toolbar.height,JSON.stringify({b,toolbar}));assert.ok(p.x>=0&&p.x+p.width<=667&&p.y>=b.y+b.height-3&&p.y+p.height<=350,JSON.stringify({p,b}));};
  await checkFit();assert.ok(await page.locator('.leaflet-popup-content').evaluate(n=>n.scrollHeight>n.clientHeight),'landscape bubble scrolls instead of consuming map');await page.screenshot({path:new URL('landscape-village.png',out).pathname});

@@ -52,3 +52,9 @@
 .original-record-details{margin-top:12px}.species-stories h3{margin:8px 0}.species-stories h4{margin:10px 0 4px}
 
 #stage #village-trees-controls.raw-status-expanded{display:block}.village-popup .leaflet-popup-content{overscroll-behavior:contain}.village-popup .leaflet-popup-scrolled{overflow-y:auto}
+header.surface { flex-wrap:wrap; }
+.demo-banner { flex-basis:100%; font-size:11px; line-height:1.35; color:#705018; background:#fff5d8; padding:3px 6px; border-radius:4px; }
+.hover-stars { position:relative; }
+.hover-demo { position:absolute; top:32px; left:0; width:100%; font-size:11px; color:white; text-shadow:0 1px 3px #15382c; text-align:center; white-space:nowrap; }
+@media(max-height:450px) { .demo-banner { font-size:10px; padding:1px 4px; } }
+.toolbar .demo-banner { order:99; max-width:100%; margin-top:1px; }

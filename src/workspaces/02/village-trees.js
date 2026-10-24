@@ -1,3 +1,4 @@
+import {createFloraPanel} from './flora-lookup.js';
 import {createStoryPanel} from './story-panel.js';
 import L from 'leaflet';
 import {treeSpecies,treeSpeciesColor,updateSpeciesLegend} from './tree-species.js';
@@ -111,12 +112,12 @@ export function createVillageTrees({map, base = '/', statusHost, onFeatureOpen =
   caveat.textContent = '管理樹來源紀錄，非全里所有現地樹木；非即時普查。';
   const legend=document.createElement('section');legend.className='tree-species-legend';const rawDetails=document.createElement('details'),rawSummary=document.createElement('summary');rawDetails.className='raw-tree-details';rawSummary.append(title);rawDetails.append(rawSummary,message,caveat,retry,legend);statusHost.append(rawDetails);
   let lastReady;const rawToggle=document.createElement('button');rawToggle.type='button';rawToggle.textContent='里內樹圖例';rawToggle.setAttribute('aria-expanded','false');rawToggle.onclick=()=>{if(state.phase==='clear'&&lastReady){title.textContent=lastReady.entry.district+'・'+lastReady.entry.name+'（上次檢視）';message.textContent='圖例為上次檢視的 '+lastReady.count+' 筆來源紀錄；不是目前全市圖例。';updateSpeciesLegend(legend,lastReady.records.map(r=>r.feature));}statusHost.parentElement.hidden=false;rawDetails.open=!rawDetails.open;rawToggle.setAttribute('aria-expanded',String(rawDetails.open));statusHost.parentElement.classList.toggle('raw-status-expanded',rawDetails.open);};document.querySelector('.toolbar').append(rawToggle); statusHost.setAttribute('aria-live','polite');
-  const stories=createStoryPanel({base});
+  const stories=createStoryPanel({base}),flora=createFloraPanel();
   const sidebar=document.createElement('aside');sidebar.id='species-panel';sidebar.className='surface species-panel';sidebar.hidden=true;sidebar.setAttribute('aria-label','樹種與原始紀錄');container.parentElement.append(sidebar);
   let tooltip,hoverSpecies=null;
   function highlight(species){if(species===hoverSpecies)return;hoverSpecies=species;canvas.dataset.highlightSpecies=species||'';let count=0;for(const {marker,record} of markers){const match=!species||treeSpecies(record.feature)===species;if(species&&match)count++;marker.setStyle({fillOpacity:match?.95:.15,opacity:match?1:.18,weight:species&&match?2:1});}canvas.dataset.highlightCount=String(count);}
   function clearHover(){highlight(null);if(tooltip){map.removeLayer(tooltip);tooltip=null;}}
-  function closeRecord(focus=true){stories.cancel();sidebar.hidden=true;sidebar.replaceChildren();clearHover();onFeatureClose();if(focus)canvas.focus({preventScroll:true});clearHover();}
+  function closeRecord(focus=true){flora.cancel();stories.cancel();sidebar.hidden=true;sidebar.replaceChildren();clearHover();onFeatureClose();if(focus)canvas.focus({preventScroll:true});clearHover();}
   let dead = false, token = 0, state = {records:[]}, markers = [], selected = 0, popup;
   const label = r => String(r.feature.properties.TreeType || r.feature.properties.Name || r.feature.properties._name || '管理樹') + ' · TreeID ' + r.treeId;
   function keyboardLabel() {
@@ -146,13 +147,13 @@ export function createVillageTrees({map, base = '/', statusHost, onFeatureOpen =
     const provenance=document.createElement('details'),summary=document.createElement('summary'),sourceInfo=document.createElement('p');summary.textContent='來源版本與雜湊';sourceInfo.textContent='快照 '+state.treeSnapshot+'；來源索引（0起算）'+record.sourceIndex+'；SHA-256：'+(state.sourceHashes[record.layerId+'.geojson']??state.sourceHashes[record.layerId]);provenance.append(summary,sourceInfo);box.append(provenance);
     L.DomEvent.disableClickPropagation(box); L.DomEvent.disableScrollPropagation(box);
     const close=document.createElement('button');close.type='button';close.textContent='關閉樹種';close.className='species-close';close.onclick=()=>closeRecord();
-    const storyHost=document.createElement('section');storyHost.className='species-stories';
+    const floraHost=document.createElement('section');floraHost.className='species-flora';const storyHost=document.createElement('section');storyHost.className='species-stories';
     const heading=box.querySelector('h3'),source=[...box.querySelectorAll('p')].find(n=>n.textContent.startsWith('來源：'));
     const originals=document.createElement('details'),originalSummary=document.createElement('summary');originals.className='original-record-details';originalSummary.textContent='完整原始紀錄／同座標紀錄';originals.append(originalSummary);
     for(const child of [...box.children])if(child!==heading&&child!==source)originals.append(child);
-    box.replaceChildren(heading,source,storyHost,originals);
+    box.replaceChildren(heading,source,floraHost,storyHost,originals);
     sidebar.replaceChildren(close,box);sidebar.hidden=false;close.focus({preventScroll:true});sidebar.scrollTop=0;
-    const info=villageInfo(state.villageId);void stories.show(storyHost,{species:treeSpecies(record.feature),village:info.name||state.entry.name,district:info.district||state.entry.district});
+    void flora.show(floraHost,treeSpecies(record.feature));const info=villageInfo(state.villageId);void stories.show(storyHost,{species:treeSpecies(record.feature),village:info.name||state.entry.name,district:info.district||state.entry.district});
 
   }
   function resetRender() {clearHover();if(!sidebar.hidden)closeRecord(false);token++; group.clearLayers(); markers = []; selected = 0; canvas.dataset.renderedCount = '0'; if (popup) {map.closePopup(popup); popup = null;} }

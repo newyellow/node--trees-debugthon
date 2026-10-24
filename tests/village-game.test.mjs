@@ -46,7 +46,7 @@ test('derived snapshot conservation, source attribution, identities and all scor
 
 test('dominant capability: stable palette, ties, zero and missing', async () => {
  const {dominantCapability:d, CAPABILITIES:c,TIE_COLOR,NEUTRAL_COLOR}=await import('../src/workspaces/02/domain.js');
- assert.equal(new Set(c.map(x=>x.color)).size,3);
+ assert.equal(new Set(c.map(x=>x.color)).size,6);
  for(const x of c) {const r=d({[x.key]:99,native:100,birdsInsects:100});assert.equal(r.color,x.color);assert.deepEqual(r.keys,[x.key]);assert.equal(r.score,99);}
  const tie=d({richness:80,treeDensity:80,binDensity:10}); assert.equal(tie.kind,'tie');assert.equal(tie.color,TIE_COLOR);assert.deepEqual(tie.keys,['treeDensity','richness']);assert.match(tie.text,/並列/);
  for(const scores of [{},{treeDensity:NaN,richness:null},{treeDensity:-1,binDensity:101},{treeDensity:0,protectedDensity:0}]) {const r=d(scores);assert.equal(r.kind,'neutral');assert.equal(r.color,NEUTRAL_COLOR);assert.deepEqual(r.keys,[]);}

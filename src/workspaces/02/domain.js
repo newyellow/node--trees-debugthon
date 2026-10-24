@@ -27,18 +27,16 @@ export function validCoordinate(lng, lat) {
   return String(lng).trim() !== '' && String(lat).trim() !== '' && Number.isFinite(Number(lng)) && Number.isFinite(Number(lat)) && +lng >= 121.3 && +lng <= 121.8 && +lat >= 24.8 && +lat <= 25.3;
 }
 
-// Only validated, currently scored capabilities may contribute; never coerce N/A to zero.
+// All six scores participate; demo/proxy status is explicit, not field evidence.
 export const CAPABILITIES = Object.freeze([
-  { key: 'treeDensity', label: '管理樹木密度', emoji: '🌳', color: '#238443' },
-  { key: 'protectedDensity', label: '受保護樹木', emoji: '🛡️', color: '#e58b19' },
-  { key: 'richness', label: '來源名稱豐富度', emoji: '🌿', color: '#8654b9' }
+  {key:'treeDensity',label:'管理樹木密度',emoji:'🌳',color:'#238443',simulated:false},
+  {key:'protectedDensity',label:'受保護樹木',emoji:'🛡️',color:'#e58b19',simulated:false},
+  {key:'richness',label:'來源名稱豐富度',emoji:'🌿',color:'#8654b9',simulated:false},
+  {key:'nativeShare',label:'原生比例（藍圖 PROXY）',emoji:'🌱',color:'#478b79',proxy:true,simulated:false,method:'blueprint-native-proxy-v1'},
+  {key:'birdInsect',label:'鳥類／昆蟲（DEMO）',emoji:'🦋',color:'#c96998',simulated:true,method:'seeded-demo-v1'},
+  {key:'activity',label:'七日回報活躍（DEMO）',emoji:'📣',color:'#278bad',simulated:true,method:'seeded-seven-day-demo-v1'}
 ].map(Object.freeze));
-// Display-only axes do not join dominant capability or ranking calculations.
-export const RADAR_CAPABILITIES = Object.freeze([
-  ...CAPABILITIES.slice(0,3),
-  Object.freeze({key:'nativeShare',label:'原生比例',emoji:'🌱',color:'#667867',unavailable:true}),
-  Object.freeze({key:'birdInsect',label:'鳥類／昆蟲',emoji:'🦋',color:'#667867',unavailable:true})
-]);
+export const RADAR_CAPABILITIES = CAPABILITIES;
 export const TIE_COLOR = '#b45b83', NEUTRAL_COLOR = '#a6adb0';
 export function dominantCapability(scores = {}) {
   const valid = CAPABILITIES.filter(c => Number.isFinite(scores?.[c.key]) && scores[c.key] >= 0 && scores[c.key] <= 100);

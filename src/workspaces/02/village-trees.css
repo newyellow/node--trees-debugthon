@@ -20,3 +20,9 @@
 .tree-species-legend details[open] { max-height:130px; overflow:auto; }
 
 #village-trees-controls { max-height:32dvh; overflow:auto; overscroll-behavior:contain; }
+.species-flora { border-bottom:1px solid #cbd8d1; padding-bottom:12px; margin-bottom:12px; }
+.species-panel figure { margin:8px 0; }
+.species-panel figure img { display:block; width:100%; max-height:230px; object-fit:contain; background:#f2f5f1; }
+.species-panel figcaption { font-size:11px; line-height:1.45; color:#405b4e; }
+.species-flora article+article { border-top:1px solid #ccd8d0; margin-top:12px; }
+.species-flora dl { font-size:12px; }

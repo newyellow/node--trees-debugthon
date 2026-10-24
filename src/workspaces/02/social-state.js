@@ -1,6 +1,6 @@
 import {CAPABILITIES} from './domain.js';
 // Version the policy independently of source percentile scores.
-export const RATING_POLICY = Object.freeze({version:'three-capability-mean-v1',weights:Object.freeze(Object.fromEntries(CAPABILITIES.map(c=>[c.key,1])))});
+export const RATING_POLICY = Object.freeze({version:'equal-six-capability-demo-mean-v1',weights:Object.freeze(Object.fromEntries(CAPABILITIES.map(c=>[c.key,1])))});
 export function compositeRating(scores={}, policy=RATING_POLICY) {
  let total=0,weight=0;
  for(const {key} of CAPABILITIES){const value=scores[key],w=policy.weights[key];if(Number.isFinite(value)&&value>=0&&value<=100&&Number.isFinite(w)&&w>0){total+=value*w;weight+=w;}}
