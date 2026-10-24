@@ -54,7 +54,7 @@ export function buildTreeExclusions(records=[]) {
 }
 export function filterExcludedTreeRecords(features,excluded) {return excluded?.size?features.filter(f=>!excluded.has(String(f.properties.TreeID))):features;}
 
-export function installRecordLayers({ map, host, isCameraMoving = () => false, base = '/', onFeatureOpen = () => {} }) {
+export function installRecordLayers({ map, host, isCameraMoving = () => false, base = '/', onFeatureOpen = () => {}, onPointerHit = () => {} }) {
   if (!map || !host) throw new Error('Record layers require map and host');
   const root = (base.endsWith('/') ? base.slice(0,-1) : base) + '/data/';
   let dead=false, initialized=false, pendingMetadata=null, district='',exclusionVersion=0,exclusionSignature='[]';
@@ -91,7 +91,7 @@ export function installRecordLayers({ map, host, isCameraMoving = () => false, b
   function adapt(layer) {
     if(layer.eachLayer) layer.eachLayer(adapt);
     if(layer.options){const kind=layer.options.pane==='areas'?'areas':'points';layer.options.pane=panes[kind];layer.options.bubblingMouseEvents=false;if(layer instanceof L.Path)layer.options.renderer=renderers[kind];}
-    layer.on('preclick',()=>onFeatureOpen());
+    layer.on('preclick',()=>{const popup=layer.getPopup?.();if(popup?.options.autoPan===false&&layer.getLatLng)popup.options.maxHeight=Math.max(60,map.latLngToContainerPoint(layer.getLatLng()).y-110);onFeatureOpen();});layer.on('mouseover',()=>onPointerHit());
     layer.on('popupopen',event=>{const content=event.popup.getElement();if(content&&!content.dataset.recordCapture){content.dataset.recordCapture='true';content.addEventListener('click',event=>{if(event.target.closest('.overlap-list button'))onFeatureOpen();},true);}});
     return layer;
   }
@@ -123,7 +123,7 @@ export function installRecordLayers({ map, host, isCameraMoving = () => false, b
       const count=active?displayData.index.search(query).filter(({feature})=>matches(feature,district,'')).length:0;
       if(active||scenes.has(id)){
         const {scene,adapter}=getScene(id);scene.begin('records:'+(exclusions.has(id)?exclusionVersion:0));
-        if(active)renderPointLayer({definition,dataset:displayData,state,map,bounds,scene:adapter,featurePopup,pointColor:['street-trees','park-trees'].includes(id)?treeSpeciesColor:null,fitBounds:(bbox,maxZoom)=>map.fitBounds([[bbox[1],bbox[0]],[bbox[3],bbox[2]]],{maxZoom})});
+        if(active)renderPointLayer({definition,dataset:displayData,state,map,bounds,scene:adapter,featurePopup,pointColor:['street-trees','park-trees'].includes(id)?treeSpeciesColor:null,...(['street-trees','park-trees','protected-trees'].includes(id)?{popupOptions:{autoPan:false},clusterZoom:false}:{}),fitBounds:(bbox,maxZoom)=>map.fitBounds([[bbox[1],bbox[0]],[bbox[3],bbox[2]]],{maxZoom})});
         scene.finish();for(const renderer of Object.values(renderers))keyboard(renderer);
       }
       if(row){row.input.checked=Boolean(record?.enabled);row.status.textContent=record?.status==='loading'?'載入中…':record?.status==='error'?'載入失敗：'+(record.error?.message||'未知錯誤'):active?'目前視窗 '+count.toLocaleString('zh-TW')+' 筆'+(exclusions.get(id)?.size?'（里內樹木另以逐棵顯示）':''):record?.data?'已快取 · 未顯示':'可用 · 尚未載入';row.status.dataset.count=String(count);row.retry.hidden=record?.status!=='error';}
@@ -161,19 +161,20 @@ export function installRecordLayers({ map, host, isCameraMoving = () => false, b
     if(event.target.closest?.('.leaflet-popup, .leaflet-marker-icon, .leaflet-control'))return;
     const point=map.mouseEventToLayerPoint(event);
     for(const renderer of Object.values(renderers).reverse())for(let order=renderer._drawLast;order;order=order.prev){const layer=order.layer;if(layer.options.interactive&&layer._containsPoint(point)){
-      event.stopImmediatePropagation();event.preventDefault();const data={originalEvent:event,layerPoint:point,containerPoint:map.layerPointToContainerPoint(point),latlng:map.layerPointToLatLng(point)};
+      onPointerHit();event.stopImmediatePropagation();event.preventDefault();const data={originalEvent:event,layerPoint:point,containerPoint:map.layerPointToContainerPoint(point),latlng:map.layerPointToLatLng(point)};
       layer.fire('preclick',data);layer.fire('click',data);return;
     }}
   }
+  function containsEvent(event){if(!event||isCameraMoving())return false;const point=map.mouseEventToLayerPoint(event);return Object.values(renderers).some(renderer=>{for(let order=renderer._drawLast;order;order=order.prev)if(order.layer.options.interactive&&order.layer._containsPoint(point))return true;return false;});}
   function hoverRecord(event){if(isCameraMoving())return;
     if(priorityHitTest(event))return;
     if(event.target.closest?.('.leaflet-popup, .leaflet-marker-icon, .leaflet-control'))return;
     const point=map.mouseEventToLayerPoint(event);
-    for(const renderer of Object.values(renderers))for(let order=renderer._drawLast;order;order=order.prev)if(order.layer.options.interactive&&order.layer._containsPoint(point)){event.stopImmediatePropagation();return;}
+    for(const renderer of Object.values(renderers))for(let order=renderer._drawLast;order;order=order.prev)if(order.layer.options.interactive&&order.layer._containsPoint(point)){onPointerHit();event.stopImmediatePropagation();return;}
   }
   container.addEventListener('mousemove',hoverRecord,true);container.addEventListener('mouseover',hoverRecord,true);
   container.addEventListener('click',hitRecord,true);map.on('moveend zoomend',render);
-  return {ensure,setPriorityHitTest(fn){priorityHitTest=typeof fn==='function'?fn:()=>false;},setExcludedTrees(records=[]){const signature=JSON.stringify(records.map(r=>[r.layerId,String(r.treeId)]));if(signature===exclusionSignature)return;exclusionSignature=signature;exclusions=buildTreeExclusions(records);exclusionVersion++;views.clear();render();},setFilter(filter={}){district=typeof filter.district==='string'?filter.district:'';state.district=district;render();},destroy(){
+  return {ensure,containsEvent,setPriorityHitTest(fn){priorityHitTest=typeof fn==='function'?fn:()=>false;},setExcludedTrees(records=[]){const signature=JSON.stringify(records.map(r=>[r.layerId,String(r.treeId)]));if(signature===exclusionSignature)return;exclusionSignature=signature;exclusions=buildTreeExclusions(records);exclusionVersion++;views.clear();render();},setFilter(filter={}){district=typeof filter.district==='string'?filter.district:'';state.district=district;render();},destroy(){
     dead=true;loader.destroy();map.off('moveend zoomend',render);container.removeEventListener('click',hitRecord,true);container.removeEventListener('mousemove',hoverRecord,true);container.removeEventListener('mouseover',hoverRecord,true);
     for(const {group}of scenes.values())map.removeLayer(group);
     for(const renderer of Object.values(renderers))if(map.hasLayer(renderer))map.removeLayer(renderer);

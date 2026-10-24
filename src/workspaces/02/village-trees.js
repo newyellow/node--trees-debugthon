@@ -100,7 +100,7 @@ export function createVillageTreeLoader({base = '/', expectedSnapshot, expectedS
   };
 }
 
-export function createVillageTrees({map, isCameraMoving = () => false, base = '/', statusHost, onFeatureOpen = () => {}, onFeatureClose = () => {}, villageInfo = () => ({}), onState = () => {}, expectedSnapshot, expectedSourceHashes}) {
+export function createVillageTrees({map, isCameraMoving = () => false, base = '/', statusHost, onFeatureOpen = () => {}, onFeatureClose = () => {}, onPointerHit = () => {}, villageInfo = () => ({}), onState = () => {}, expectedSnapshot, expectedSourceHashes}) {
   if (!map || !statusHost) throw new Error('Village trees require map and statusHost');
   const paneName = 'village-trees-' + L.Util.stamp(statusHost), pane = map.createPane(paneName);
   pane.style.zIndex = '470'; pane.style.pointerEvents = 'none'; pane.classList.add('village-trees-pane');
@@ -203,7 +203,7 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     return markers.some(({marker}) => marker._point && marker._point.distanceTo(point) <= TREE_MARKER_HIT_RADIUS);
   }
   function containsEvent(event) {
-    if (dead || isCameraMoving() || map.dragging?.moved() || map.boxZoom?.moved() || event.target?.closest?.('.leaflet-popup,.leaflet-control,button,input,select,textarea,a')) return false;
+    if (!event || dead || isCameraMoving() || map.dragging?.moved() || map.boxZoom?.moved() || event.target?.closest?.('.leaflet-popup,.leaflet-control,button,input,select,textarea,a')) return false;
     return hitTestLayerPoint(map.mouseEventToLayerPoint(event));
   }
   function hit(event) {
@@ -211,14 +211,16 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     const p = map.mouseEventToLayerPoint(event);
     for (let i = markers.length-1; i >= 0; i--) {
       const {marker,record} = markers[i];
-      if (marker._point && marker._point.distanceTo(p) <= TREE_MARKER_HIT_RADIUS) {event.preventDefault();event.stopImmediatePropagation();openRecord(record);return;}
+      if (marker._point && marker._point.distanceTo(p) <= TREE_MARKER_HIT_RADIUS) {onPointerHit();event.preventDefault();event.stopImmediatePropagation();openRecord(record);return;}
     }
   }
   function move(event){
     if(isCameraMoving()){clearHover();return;}
     if(state.preview||event.target.closest?.('.species-panel,.leaflet-popup,.surface,.leaflet-control')){clearHover();return;}
     const p=map.mouseEventToLayerPoint(event);const hit=[...markers].reverse().find(({marker})=>marker._point&&marker._point.distanceTo(p)<=TREE_MARKER_HIT_RADIUS);
-    if(!hit){clearHover();return;}hoverTree(hit.marker);const name=treeSpecies(hit.record.feature);highlight(name);
+    if(!hit){clearHover();return;}
+    // The visible square is noninteractive Canvas; consume before underlying SVG/map dispatch.
+    event.stopImmediatePropagation();onPointerHit();hoverTree(hit.marker);const name=treeSpecies(hit.record.feature);highlight(name);
     if(!tooltip){tooltip=L.tooltip({className:'tree-name-tooltip',direction:'top',offset:[0,-8],opacity:1}).setLatLng(hit.marker.getLatLng()).setContent(document.createTextNode(name)).addTo(map);}else tooltip.setLatLng(hit.marker.getLatLng()).setContent(document.createTextNode(name));
   }
   function keyboardPreview(){
@@ -234,11 +236,11 @@ export function createVillageTrees({map, isCameraMoving = () => false, base = '/
     if (event.key.startsWith('Arrow')) {selected = (selected + (['ArrowLeft','ArrowUp'].includes(event.key) ? -1 : 1) + state.records.length) % state.records.length; const [lng,lat] = state.records[selected].feature.geometry.coordinates; if (!map.getBounds().contains([lat,lng])) map.panTo([lat,lng],{animate:false});}
     keyboardLabel();keyboardPreview(); if (event.key === 'Enter' || event.key === ' ') openRecord(state.records[selected]);
   }
-  container.addEventListener('mousemove',move);container.addEventListener('mouseleave',clearHover);canvas.addEventListener('focus',keyboardPreview);canvas.addEventListener('blur',clearHover);container.addEventListener('click',hit,true); canvas.addEventListener('keydown',key);
+  container.addEventListener('mousemove',move,true);container.addEventListener('mouseover',move,true);container.addEventListener('mouseleave',clearHover);canvas.addEventListener('focus',keyboardPreview);canvas.addEventListener('blur',clearHover);container.addEventListener('click',hit,true); canvas.addEventListener('keydown',key);
   return {
     async show(villageId, options = {}) {return loader.show(String(villageId),options);},
     clear() {loader.clear();},
     containsEvent, hitTestLayerPoint, closeRecord, isRecordOpen:()=>!sidebar.hidden,
-    destroy() {if (dead) return; loader.clear(); loader.destroy(); dead = true; resetRender();sidebar.remove();rawDetails.remove();container.removeEventListener('mousemove',move);container.removeEventListener('mouseleave',clearHover);container.removeEventListener('click',hit,true);canvas.removeEventListener('keydown',key);map.removeLayer(group);map.removeLayer(renderer);pane.remove();delete map._panes[paneName];title.remove();message.remove();caveat.remove();retry.remove();legend.remove();}
+    destroy() {if (dead) return; loader.clear(); loader.destroy(); dead = true; resetRender();sidebar.remove();rawDetails.remove();container.removeEventListener('mousemove',move,true);container.removeEventListener('mouseover',move,true);container.removeEventListener('mouseleave',clearHover);container.removeEventListener('click',hit,true);canvas.removeEventListener('keydown',key);map.removeLayer(group);map.removeLayer(renderer);pane.remove();delete map._panes[paneName];title.remove();message.remove();caveat.remove();retry.remove();legend.remove();}
   };
 }

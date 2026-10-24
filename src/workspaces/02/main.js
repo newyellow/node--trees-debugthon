@@ -68,12 +68,12 @@ function clearSelection() {
 }
 let popup, popupFocus, hovered, activeBasemap, basemapKind = 'aerial';
 function radar(v,size=170,compact=false) { const chart=createCapabilityRadar({axes:RADAR_CAPABILITIES.map(c=>({...c,value:c.unavailable?null:v.scores[c.key]})),missingAtZero:true,size,compact,pixelStyle:true,label:'六項能力概覽'});chart.querySelector('.radar-units').textContent='0–100 分；指標定義與資料限制請查看細節';return chart; }
-function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:hover?VILLAGE_OPACITY.hover:id===selected?VILLAGE_OPACITY.selected:VILLAGE_OPACITY.base}); }
+function styleVillage(id,hover=false) { layers.get(id)?.setStyle({color:id===selected?'#172f35':'#50616a',weight:id===selected?4:1,fillOpacity:id===selected?VILLAGE_OPACITY.selected:hover?VILLAGE_OPACITY.hover:VILLAGE_OPACITY.base}); }
 const hoverAnchors = new Map();
 let previewTimer,pinnedTreeVillage=null,shownTreeKey=null;
 function showVillageTrees(id,preview=false){clearTimeout(previewTimer);if(!villageTrees)return;const key=id+':'+preview;if(shownTreeKey===key)return;shownTreeKey=key;$('village-trees-controls').hidden=false;villageTrees.show(id,{preview});}
 function restorePinnedTrees(){clearTimeout(previewTimer);if(!villageTrees)return;if(pinnedTreeVillage)showVillageTrees(pinnedTreeVillage,false);else{shownTreeKey=null;villageTrees.clear();$('village-trees-controls').hidden=true;}}
-function hideHover(keepTrees=false) { $('hover-preview')?.remove(); if(hovered) {if(!selected)styleVillage(hovered);hovered=null;} if(!keepTrees)restorePinnedTrees(); }
+function hideHover(keepTrees=false) { $('hover-preview')?.remove(); if(hovered) {styleVillage(hovered);hovered=null;} if(!keepTrees)restorePinnedTrees(); }
 function positionHover() {
  const n=$('hover-preview'), anchor=hoverAnchors.get(hovered);if(!n||!anchor)return;
  const p=map.latLngToLayerPoint(anchor);n.setAttribute('transform','translate('+p.x+','+p.y+')');
@@ -88,8 +88,8 @@ function showHover(v,keyboard=false) {
   const projected=polygons.map(p=>p.map(r=>r.map(([lng,lat])=>{const p=map.project([lat,lng],0);return [p.x,p.y];})));
   const point=interiorAnchor(projected);if(!point)return;hoverAnchors.set(v.id,map.unproject(point,0));
  }
- // A pinned selection owns its markers/filter/highlight; B hover is text-only.
- hovered=v.id;if(!selected){styleVillage(v.id,true);previewTimer=setTimeout(()=>{if(!selected&&hovered===v.id)showVillageTrees(v.id,true);},180);}
+ // Selection owns markers/filter; hover styling never overrides selected styling.
+ hovered=v.id;styleVillage(v.id,true);if(!selected){previewTimer=setTimeout(()=>{if(!selected&&hovered===v.id)showVillageTrees(v.id,true);},180);}
  const ns='http://www.w3.org/2000/svg', n=document.createElementNS(ns,'g');n.id='hover-preview';n.classList.add('polygon-hover','radar-chart');n.dataset.village=v.id;n.setAttribute('role','img');n.setAttribute('aria-label',v.district+v.name+'能力概覽');
  const text=(value,y,cls)=>{const t=document.createElementNS(ns,'text');t.textContent=value;t.setAttribute('x','0');t.setAttribute('y',y);t.setAttribute('text-anchor','middle');t.setAttribute('class',cls);n.append(t);return t;};
  text(v.district+'・'+v.name,-12,'hover-name');
@@ -197,8 +197,8 @@ async function load() {
       const hoverPane=map.createPane('village-hover');hoverPane.style.zIndex='490';hoverPane.style.pointerEvents='none';
       hoverRenderer=L.svg({pane:'village-hover',padding:0.5}).addTo(map);
       hoverRenderer._container.style.pointerEvents='none';
-      recordLayers=installRecordLayers({map,isCameraMoving:()=>camera.isMoving(),host:$('record-layers-list'),base,onFeatureOpen:()=>{hideHover();panelIds.forEach(id=>closePanel(id,false));}});
-      villageTrees=createVillageTrees({map,base,isCameraMoving:()=>camera.isMoving(),statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,villageInfo:id=>data.villages.find(v=>v.id===id),onFeatureClose:()=>{if(!switching&&selected){setLevel('village');}},onFeatureOpen:({villageId,preview}={})=>{if(preview){select(villageId);return;}if(villageId&&selected!==villageId)select(villageId);pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';hideHover(true);panelIds.forEach(id=>closePanel(id,false));setLevel('tree');$('species-panel').style.top=Math.ceil(document.querySelector('.toolbar').getBoundingClientRect().bottom+12)+'px';},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
+      recordLayers=installRecordLayers({map,isCameraMoving:()=>camera.isMoving(),host:$('record-layers-list'),base,onPointerHit:()=>hideHover(true),onFeatureOpen:()=>{hideHover();panelIds.forEach(id=>closePanel(id,false));}});
+      villageTrees=createVillageTrees({map,base,isCameraMoving:()=>camera.isMoving(),statusHost:$('village-tree-status'),expectedSnapshot:data.treeSnapshot,expectedSourceHashes:data.inputHashes,villageInfo:id=>data.villages.find(v=>v.id===id),onPointerHit:()=>hideHover(true),onFeatureClose:()=>{if(!switching&&selected){setLevel('village');}},onFeatureOpen:({villageId,preview}={})=>{if(preview){select(villageId);return;}if(villageId&&selected!==villageId)select(villageId);pinnedTreeVillage=villageId;shownTreeKey=villageId+':false';hideHover(true);panelIds.forEach(id=>closePanel(id,false));setLevel('tree');$('species-panel').style.top=Math.ceil(document.querySelector('.toolbar').getBoundingClientRect().bottom+12)+'px';},onState:state=>{recordLayers.setExcludedTrees(state.phase==='ready'?state.records:[]);}});
       recordLayers.setPriorityHitTest(event=>villageTrees.containsEvent?.(event)||false);
       // Overlay lifecycle and resize never imply a new village-selection camera intent.
       map.on('resize',()=>{visionTour?.cancel('resize');});map.on('zoom viewreset moveend',positionHover);map.on('dragstart zoomstart',()=>hideHover());
@@ -208,12 +208,12 @@ async function load() {
     regions.features.forEach(f => {
       const v = villagesById.get(f.properties.id), rating=compositeRating(v.scores);
       const l = L.geoJSON(f, { style: { color: '#50616a', weight: 1, fillColor: starColor(rating), fillOpacity: VILLAGE_OPACITY.base } });
-      l.on('mouseover',()=>showHover(v));
+      l.on('mouseover mousemove',e=>{if(villageTrees?.containsEvent(e.originalEvent)||recordLayers?.containsEvent(e.originalEvent))return;showHover(v);});
       l.on('mouseout',()=>hideHover());
       l.on('click',e=>select(v.id,true,e.latlng,e.originalEvent?.target));
       l.eachLayer(path => {
         path.on('add', () => { const node = path.getElement(); node.dataset.village = v.id; node.setAttribute('tabindex','0'); node.setAttribute('role','button'); node.setAttribute('aria-label',v.district + v.name + '｜綜合星等'+(rating===null?'N/A':rating.toFixed(1)+' / 5'));
-          node.onfocus=()=>showHover(v,true);node.onblur=()=>hideHover();
+          node.onfocus=()=>{if(node.matches(':focus-visible'))showHover(v,true);};node.onblur=()=>hideHover();
           node.onkeydown = e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); select(v.id,true,undefined,node); popup?.getElement()?.querySelector('button')?.focus({preventScroll:true}); } };
         });
       });
