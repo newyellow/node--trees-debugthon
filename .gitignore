@@ -7,3 +7,10 @@ data/offline-imagery/**/*.part
 data/offline-imagery/**/*.tmp
 data/offline-imagery/**/source-key.txt
 .DS_Store
+
+# Raw aerial downloads are local-only; never redistribute via Git.
+data/offline-imagery/tiles/
+data/offline-imagery/**/*.mbtiles
+data/offline-imagery/**/*.tif
+data/offline-imagery/**/*.tiff
+data/offline-imagery/**/*.zip
